@@ -38,6 +38,9 @@
   with_items: "{{ jenkins_plugins }}"
   when: jenkins_admin_password != ""
   notify: restart jenkins
+  retries: 10
+  delay: 5
+  ignore_errors: yes
 
 - name: Install Jenkins plugins using token.
   jenkins_plugin:
@@ -49,3 +52,6 @@
   with_items: "{{ jenkins_plugins }}"
   when: jenkins_admin_token != ""
   notify: restart jenkins
+  retries: 10
+  delay: 5
+  ignore_errors: yes
