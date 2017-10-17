@@ -1,0 +1,17 @@
+---
+
+- name: "Yarn | Install RPM repository"
+  become: yes
+  become_user: root
+  get_url:
+    url: http://dl.yarnpkg.com/rpm/yarn.repo
+    dest: /etc/yum.repos.d/yarn.repo
+    owner: root
+    mode: 0644
+
+- name: "Install dependencies from yum"
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items: "{{ jenkins_role_yum_packages }}"
+  ignore_errors: yes
