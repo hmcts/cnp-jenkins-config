@@ -1,0 +1,220 @@
+---
+- hosts: all
+  become: true
+  vars:
+    repos_role_remove_repos: []
+    repos_role_install_gpg_keys: []
+    repos_role_install_repos: []
+
+    docker_port: 2375
+    docker_opts: []
+
+    jenkins_disable_proxy: true
+    jenkins_enable_security: false
+    jenkins_plugins:
+      - blueocean-github-pipeline
+      - blueocean-jwt
+#      - blueocean-rest-impl
+#      - favorite
+#      - credentials
+#      - credentials-binding
+#      - pipeline-npm
+#      - blueocean-pipeline-api-impl
+#      - plain-credentials
+#      - github
+#      - pipeline-build-step
+#      - pipeline-model-declarative-agent
+#      - script-security
+#      - jquery
+#      - token-macro
+#      - git
+#      - workflow-job
+#      - pipeline-model-extensions
+#      - workflow-cps-global-lib
+#      - ant
+#      - jackson2-api
+#      - pipeline-rest-api
+#      - ws-cleanup
+#      - blueocean-i18n
+#      - pam-auth
+#      - antisamy-markup-formatter
+#      - matrix-project
+#      - display-url-api
+#      - mapdb-api
+#      - email-ext
+#      - blueocean-rest
+#      - external-monitor-job
+#      - handlebars
+#      - workflow-support
+#      - role-strategy
+#      - junit
+#      - matrix-auth
+#      - ssh-slaves
+#      - pipeline-stage-tags-metadata
+#      - pipeline-maven
+#      - timestamper
+#      - blueocean-dashboard
+#      - nodejs
+#      - maven-plugin
+#      - durable-task
+#      - workflow-durable-task-step
+#      - structs
+#      - icon-shim
+#      - blueocean-display-url
+#      - config-file-provider
+#      - metrics
+#      - pipeline-github-lib
+#      - extended-choice-parameter
+#      - ace-editor
+#      - blueocean-commons
+#      - workflow-step-api
+#      - momentjs
+#      - blueocean-pipeline-editor
+#      - blueocean-personalization
+#      - blueocean-git-pipeline
+#      - github-api
+#      - lockable-resources
+#      - blueocean
+#      - workflow-aggregator
+#      - windows-slaves
+#      - pipeline-model-definition
+#      - github-organization-folder
+#      - gradle
+#      - workflow-api
+#      - variant
+#      - pipeline-input-step
+#      - docker-workflow
+#      - blueocean-config
+#      - ldap
+#      - build-timeout
+#      - ssh-agent
+#      - blueocean-web
+#      - blueocean-pipeline-scm-api
+#      - mailer
+#      - pipeline-model-api
+#      - bouncycastle-api
+#      - ansicolor
+#      - javadoc
+#      - pipeline-stage-view
+#      - cloudbees-folder
+#      - workflow-scm-step
+#      - workflow-multibranch
+#      - github-branch-source
+#      - branch-api
+#      - jquery-detached
+#      - workflow-basic-steps
+#      - pipeline-graph-analysis
+#      - pipeline-stage-step
+#      - blueocean-events
+#      - git-client
+#      - pubsub-light
+#      - sse-gateway
+#      - workflow-cps
+#      - blueocean-autofavorite
+#      - custom-tools-plugin
+#      - resource-disposer
+#      - subversion
+#      - slack
+#      - authentication-tokens
+#      - pipeline-milestone-step
+#      - docker-commons
+#      - ssh-credentials
+#      - git-server
+#      - scm-api
+
+    github_folder_jobs:
+      - name: 'Core-Infrastructure'
+        displayName: 'Core Infrastructure'
+        description: 'Core Infrastructure pipeline'
+        credentials_id: 'jenkins-ghe-api-token'
+        github_api_url: 'https://github.com'
+
+      - name: 'Applications'
+        displayName: 'Applications'
+        description: 'Applications pipeline'
+        credentials_id: 'jenkins-ghe-api-token'
+        github_api_url: 'https://github.com'
+
+#    pipeline_jobs:
+#      - name: "run-ansible"
+#        displayName: "Run Ansible"
+#        description: "Run the ansible plays"
+#        path: "jenkins_jobs/ansible_pipeline.groovy"
+#        repo: "devops/ansible-management"
+
+    jenkins_credentials:
+        - id: jenkins-github-api-token
+          description: Jenkins GitHub credentials (Username/password format)
+          username: moj-jenkins-user
+          password: "{{ jenkins_gh_password }}"
+          type: username-password
+        - id: subscription_id
+          description: Azure subscription_id
+          secret: "{{ jenkins_subscription_id }}"
+          type: string
+        - id: tenant_id
+          description: Azure tenant_id
+          secret: "{{ jenkins_tenant_id }}"
+          type: string
+        - id: object_id
+          description: Azure object_id
+          secret: "{{ jenkins_object_id }}"
+          type: string
+        - id: sp_password
+          description: Azure sp_password
+          secret: "{{ jenkins_sp_password }}"
+          type: string
+        - id: kitchen_subscription_id
+          description: Azure subscription_id for kitchen
+          secret: "{{ jenkins_kitchen_subscription_id }}"
+          type: string
+        - id: kitchen_tenant_id
+          description: Azure tenant_id for kitchen
+          secret: "{{ jenkins_kitchen_tenant_id }}"
+          type: string
+        - id: kitchen_client_id
+          description: Azure client_id for kitchen
+          secret: "{{ jenkins_kitchen_client_id }}"
+          type: string
+        - id: kitchen_client_secret
+          description: Azure sp_password for kitchen
+          secret: "{{ jenkins_kitchen_client_secret }}"
+          type: string
+        - id: gitcontino_password
+          description: Azure deployment user password
+          secret: "{{ jenkins_gitcontino_password }}"
+          type: string
+
+  roles:
+#    - role: epel-repo-role
+#    - role: clamav-role
+#    - role: cis-role
+#    - role: yarn-repo-role
+#    - role: jenkins-repo-role
+    - role: jenkins
+
+  tasks:
+  - name: Install docker
+    yum:
+      name: docker
+      state: latest
+  - name: Temporarly adding the jenkins user to the dockerroot group
+    command: usermod -aG dockerroot jenkins
+  - name: Config docker daemon
+    copy:
+      src: files/daemon.json
+      dest: /etc/docker/daemon.json
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+  - name: Enabling docker service
+    systemd:
+      name: docker
+      state: started
+      enabled: True
+  - name: Rebooting node
+    command: /sbin/shutdown -r +1
+    async: 0
+    poll: 0
+    ignore_errors: true
