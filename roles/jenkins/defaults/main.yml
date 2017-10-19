@@ -29,7 +29,7 @@ jenkins_admin_password_file: ""
 jenkins_admin_token: ""
 jenkins_admin_token_file: ""
 
-jenkins_process_user: vagrant
+jenkins_process_user: adminssh
 jenkins_process_group: "{{ jenkins_process_user }}"
 
 jenkins_init_changes:
