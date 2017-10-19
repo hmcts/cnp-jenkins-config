@@ -76,7 +76,7 @@
 - include: detect-cli-method.yml
 - include: plugins.yml
 - include: credentials.yml
-- include: jobs.ymlcd 
+- include: jobs.yml
 #- include: main-config.yml
 
 
