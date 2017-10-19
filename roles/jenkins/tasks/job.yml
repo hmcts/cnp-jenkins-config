@@ -13,8 +13,8 @@
   file:
     state: directory
     path: "{{ this_job_dir }}"
-    owner: jenkins
-    group: jenkins
+    owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
     mode: 0775
   tags:
     - jenkins-jobs
@@ -23,8 +23,8 @@
   template:
     src: "{{ job.template | default(template) }}"
     dest: "{{ this_job_full_path }}.template"
-    owner: jenkins
-    group: jenkins
+    owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
   register: job_template_file
   tags:
     - jenkins-jobs
@@ -37,7 +37,7 @@
       {{ jenkins_role_cli_command }} create-job {{ job.name }} < {{ this_job_full_path }}.template
     fi
   become: yes
-  become_user: jenkins
+  become_user: "{{jenkins_process_user}}"
   when: job_template_file.changed
   tags:
     - jenkins-jobs

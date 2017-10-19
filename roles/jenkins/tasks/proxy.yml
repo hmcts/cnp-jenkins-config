@@ -4,8 +4,8 @@
   copy:
     src: "templates/proxy.xml.j2"
     dest: "{{ jenkins_home }}/proxy.xml"
-    owner: jenkins
-    group: jenkins
+    owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
   notify:
     - restart jenkins
     - wait for jenkins to start

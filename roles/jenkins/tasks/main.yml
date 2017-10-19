@@ -81,7 +81,7 @@
   meta: flush_handlers
 
 - include: credentials.yml
-#- include: jobs.yml
+- include: jobs.yml
 #- include: main-config.yml
 
 

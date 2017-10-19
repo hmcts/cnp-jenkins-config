@@ -4,8 +4,8 @@
   template:
     src: "templates/config.xml.j2"
     dest: "{{ jenkins_home}}/config.xml.possible"
-    owner: jenkins
-    group: jenkins
+    owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
     mode: 0664
   register: jenkins_config_xml_template
 
