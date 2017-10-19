@@ -1,0 +1,10 @@
+Host *
+{% if jenkins_override_ssh_user is defined %}
+    User {{ jenkins_override_ssh_user }}
+{% endif %}
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+Host git.reform.hmcts.net
+    HostName gitssh.reform
+    User git

@@ -1,0 +1,6 @@
+Vagrantfile
+portredirect.sh
+portredirect_disable.sh
+keys
+.vagrant
+*.retry

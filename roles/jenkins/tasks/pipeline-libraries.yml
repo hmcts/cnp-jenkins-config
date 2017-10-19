@@ -6,9 +6,9 @@
     src: "global-pipeline-libraries.xml.j2"
     dest: "{{ jenkins_home }}/org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml"
     mode: "u+rw"
-    owner: jenkins
-    group: jenkins
+    owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
   when: "jenkins_global_pipeline_libraries|length > 0"
-  notify:
-    - restart jenkins
-    - wait for jenkins to start
+#  notify:
+#    - restart jenkins
+#    - wait for jenkins to start

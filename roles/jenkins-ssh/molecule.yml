@@ -1,0 +1,26 @@
+---
+dependency:
+  name: galaxy
+  requirements_file: tests/requirements.yml
+
+driver:
+  name: docker
+docker:
+  containers:
+    - name: jenkins-common-role-${BRANCH_NAME}-${BUILD_NUMBER}
+      # dockerfile: Dockerfile
+      image: centos
+      image_version: 7.3.1611
+      build_image: yes
+      privileged: yes
+      cap_add:
+        - SYS_ADMIN
+      environment:
+        http_proxy: "http://reformmgmtproxyout.reform.hmcts.net:8080/"
+        https_proxy: "http://proxyout.reform.hmcts.net:8080"
+        no_proxy: "localhost,127.0.0.0/8,127.0.0.1,127.0.0.1*,local.home,reform.hmcts.net,*.reform.hmcts.net"
+verifier:
+  name: testinfra
+
+ansible:
+  playbook: tests/playbook.yml

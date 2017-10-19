@@ -1,0 +1,59 @@
+---
+
+- name: "Ensure the group exists"
+  group:
+    name: jenkins
+    state: present
+
+- name: "Ensure the user exists"
+  user:
+    name: jenkins
+    home: /var/lib/jenkins
+    state: present
+
+- name: "Get jenkins home dir"
+  shell: echo ~jenkins
+  register: jenkins_home_task
+  changed_when: false
+  tags:
+    - skip_ansible_lint
+
+- include: "ssh-config.yml"
+
+- name: "Ensure maven config dir exists"
+  file:
+    path: "{{ jenkins_home_task.stdout }}/.m2"
+    state: directory
+    owner: jenkins
+    group: jenkins
+    mode: 0755
+
+- name: "Maven settings file"
+  copy:
+    src: "mvn_settings.xml"
+    dest: "{{ jenkins_home_task.stdout }}/.m2/settings.xml"
+
+- name: "Ensure ansible config dir exists"
+  file:
+    path: "/etc/ansible"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: "Copy ansible.cfg"
+  copy:
+    src: "ansible.cfg"
+    dest: "/etc/ansible/ansible.cfg"
+
+
+- name: Add user and create ssh key
+  user:
+    name: "{{jenkins_process_user}}"
+
+- name: dowanload pubkey from Github and placed as authorized_keys
+  get_url: url=https://github.com/shohey1226.keys dest=/tmp/shohei.authorized_keys
+  delegate_to: 127.0.0.1
+
+- name: Create authorized_keys from the file that just downloaded
+  authorized_key: user=shohei key="{{ lookup('file', '/tmp/shohei.authorized_keys') }}"
