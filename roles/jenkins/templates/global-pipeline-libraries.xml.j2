@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinsci.plugins.workflow.libs.GlobalLibraries plugin="workflow-cps-global-lib@2.9-PR34">
+  <libraries>
+    {% for library in jenkins_global_pipeline_libraries %}
+    <org.jenkinsci.plugins.workflow.libs.LibraryConfiguration>
+      <name>{{ library.name }}</name>
+      <retriever class="org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever">
+        <scm class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source@2.0.5">
+          <id>{{ library.name }}</id>
+          <apiUri>https://{{ library.git_hostname|default(jenkins_default_git_hostname) }}/api/v3</apiUri>
+          <checkoutCredentialsId>SAME</checkoutCredentialsId>
+          <scanCredentialsId>{{ library.github_api_token|default(jenkins_default_github_api_token) }}</scanCredentialsId>
+          <repoOwner>{{ library.repo_owner }}</repoOwner>
+          <repository>{{ library.repository }}</repository>
+          <includes>*</includes>
+          <excludes></excludes>
+          <buildOriginBranch>true</buildOriginBranch>
+          <buildOriginBranchWithPR>true</buildOriginBranchWithPR>
+          <buildOriginPRMerge>false</buildOriginPRMerge>
+          <buildOriginPRHead>false</buildOriginPRHead>
+          <buildForkPRMerge>true</buildForkPRMerge>
+          <buildForkPRHead>false</buildForkPRHead>
+        </scm>
+      </retriever>
+      <defaultVersion>{{ library.default_version|default('master') }}</defaultVersion>
+      <implicit>false</implicit>
+      <allowVersionOverride>true</allowVersionOverride>
+      <includeInChangesets>false</includeInChangesets>
+    </org.jenkinsci.plugins.workflow.libs.LibraryConfiguration>
+    {% endfor %}
+  </libraries>
+</org.jenkinsci.plugins.workflow.libs.GlobalLibraries>

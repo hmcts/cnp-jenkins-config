@@ -41,6 +41,8 @@
   retries: 10
   delay: 5
   ignore_errors: yes
+  become: yes
+  become_user: "{{jenkins_process_user}}"
 
 - name: Install Jenkins plugins using token.
   jenkins_plugin:
@@ -55,3 +57,19 @@
   retries: 10
   delay: 5
   ignore_errors: yes
+  become: yes
+  become_user: "{{jenkins_process_user}}"
+
+#- name: Install Jenkins plugins using cli
+#  command: >
+#    {{ jenkins_role_cli_command }} install-plugin {{ item }}
+#    creates="{{ jenkins_home }}/plugins/{{ item }}.jpi"
+#  with_items: "{{ jenkins_plugins + jenkins_minimum_plugins }}"
+#  notify:
+#    - restart jenkins
+#    - wait for jenkins to start
+#  become: yes
+#  become_user: "{{jenkins_process_user}}"
+#
+#- name: force all notified handlers to run at this point, not waiting for normal sync points
+#  meta: flush_handlers

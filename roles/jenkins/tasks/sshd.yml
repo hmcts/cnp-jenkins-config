@@ -1,0 +1,29 @@
+---
+- name: "Create directory for user if needed"
+  file:
+    name: "{{ jenkins_home }}/users/{{ jenkins_override_ssh_user }}"
+    state: directory
+    owner: jenkins
+    group: jenkins
+  when: jenkins_override_ssh_user is defined and jenkins_common_role_ssh_public_key is defined
+
+- name: "Set the main users public key if provided (for CLI etc)"
+  template:
+    src: "ssh-user.xml.j2"
+    dest: "{{ jenkins_home }}/users/{{ jenkins_override_ssh_user }}/config.xml"
+    owner: jenkins
+    group: jenkins
+  when: jenkins_override_ssh_user is defined and jenkins_common_role_ssh_public_key is defined
+  notify:
+    - restart jenkins
+    - wait for jenkins to start
+
+- name: "Enable Jenkins SSH daemon (not normal ssh)"
+  template:
+    src: "org.jenkinsci.main.modules.sshd.SSHD.xml"
+    dest: "{{ jenkins_home }}/org.jenkinsci.main.modules.sshd.SSHD.xml"
+    owner: jenkins
+    group: jenkins
+  notify:
+    - restart jenkins
+    - wait for jenkins to start

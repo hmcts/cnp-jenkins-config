@@ -1,0 +1,14 @@
+---
+
+# TODO: DO THIS WITH THE CLI?
+- name: Add Global Pipeline Libraries
+  template:
+    src: "global-pipeline-libraries.xml.j2"
+    dest: "{{ jenkins_home }}/org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml"
+    mode: "u+rw"
+    owner: jenkins
+    group: jenkins
+  when: "jenkins_global_pipeline_libraries|length > 0"
+  notify:
+    - restart jenkins
+    - wait for jenkins to start

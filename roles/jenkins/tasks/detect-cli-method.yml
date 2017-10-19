@@ -1,0 +1,30 @@
+---
+# find out if we can do -remoting or need to use ssh to do cli commands
+
+- name: "Try SSH cli method"
+  command: >
+    {{ jenkins_role_cli_command_ssh }} install-plugin greenballs
+  changed_when: false
+  failed_when: false
+  register: jenkins_role_cli_command_remoting_attempt
+  become: yes
+  become_user: jenkins
+
+- debug:
+    var: jenkins_role_cli_command_remoting_attempt
+
+# enforce ssh method if above worked
+- set_fact:
+    jenkins_role_cli_ssh_method_needed: true
+    jenkins_role_cli_command: "{{ jenkins_role_cli_command_ssh }}"
+  when: jenkins_role_cli_command_remoting_attempt.rc == 0
+# else
+- set_fact:
+    jenkins_role_cli_ssh_method_needed: false
+    jenkins_role_cli_command: "{{ jenkins_role_cli_command_remoting }}"
+  when: jenkins_role_cli_command_remoting_attempt.rc != 0
+
+- debug:
+    var: jenkins_role_cli_command
+
+

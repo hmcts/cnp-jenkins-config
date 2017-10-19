@@ -1,7 +1,7 @@
 ---
 # Optional method of pinning a specific version of Jenkins and/or overriding the
 # default Jenkins packaging URL.
-# jenkins_version: "1.644"
+#jenkins_version: "1.644"
 # jenkins_pkg_url: "https://www.example.com"
 
 # Change this to `latest` to update Jenkins if a newer version is available.
@@ -14,12 +14,14 @@ jenkins_hostname: localhost
 jenkins_http_port: 8080
 jenkins_jar_location: /opt/jenkins-cli.jar
 jenkins_url_prefix: ""
-jenkins_java_options: "-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
+jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
+
+# "-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
 
 jenkins_plugins: []
 jenkins_plugins_state: present
 jenkins_plugin_updates_expiration: 86400
-jenkins_plugin_timeout: 30
+jenkins_plugin_timeout: 60
 
 jenkins_admin_username: admin
 jenkins_admin_password: admin
@@ -35,3 +37,29 @@ jenkins_init_changes:
     value: "--prefix={{ jenkins_url_prefix }}"
   - option: "{{ jenkins_java_options_env_var }}"
     value: "{{ jenkins_java_options }}"
+
+jenkins_global_pipeline_libraries: []
+# - name:             Reform
+#   repo_owner:       reform
+#   repository:       jenkins-library
+#   default_version:  master
+#   git_hostname:     git.reform
+#   github_api_token: jenkins-github-api-token
+
+jenkins_github_api_token: "PLACEHOLDER"
+slack_token: "PLACEHOLDER"
+
+jenkins_role_cli_command_remoting: "java -jar {{ jenkins_jar_location }} -s http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix | default('/') }} -remoting"
+# jenkins_role_cli_command_ssh: "java -jar {{ jenkins_jar_location }} -s http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix | default('/') }} -ssh -user {{ jenkins_override_ssh_user }}"
+jenkins_role_cli_command_ssh: "ssh -i ~jenkins/.ssh/id_rsa {{ jenkins_override_ssh_user }}@localhost -p 2020 -o StrictHostKeyChecking=false"
+jenkins_role_cli_command: "NO DEFAULT"
+jenkins_role_cli_ssh_method_needed: false
+
+jenkins_override_ssh_user: "{{ ansible_user_id }}"
+jenkins_jobs_directory: /opt/jenkins-jobs
+# jenkins_admin_key_path: "/var/lib/jenkins/.ssh/id_rsa"
+git_hostname: 'git.reform.hmcts.net'
+github_api_url: 'https://{{ git_hostname }}/api/v3'
+pipeline_jobs: false
+github_folder_jobs: false
+

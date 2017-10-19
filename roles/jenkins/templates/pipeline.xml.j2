@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><flow-definition plugin="workflow-job@2.9">
+
+{% macro job_param(model, param) %}
+        <{{ model }}>
+          <name>{{ param.name }}</name>
+          <description>{{ param.description }}</description>
+          {{ caller() }}
+        </{{ model }}>
+{% endmacro %}
+
+{% macro string_param(param) %}
+  {% call job_param("hudson.model.StringParameterDefinition", param) %}
+    {% if param.defaultValue is defined %}
+          <defaultValue>{{ param.defaultValue }}</defaultValue>
+    {% endif %}
+  {% endcall %}
+{% endmacro %}
+
+{% macro choice_param(param) %}
+  {% call job_param("hudson.model.ChoiceParameterDefinition", param) %}
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              {% for choice in param.choices %}
+              <string>{{ choice }}</string>
+              {% endfor %}
+            </a>
+          </choices>
+  {% endcall %}
+{% endmacro %}
+
+{% macro boolean_param(param) %}
+  {% call job_param("hudson.model.BooleanParameterDefinition", param) %}
+    {% if param.defaultValue is defined %}
+          <defaultValue>{{ param.defaultValue }}</defaultValue>
+    {% endif %}
+  {% endcall %}
+{% endmacro %}
+
+  <actions/>
+  <description>
+!! Managed by Ansible. Do not edit here !!
+!! Template: {{ git_hostname }}/devops/jenkins-jobs-role !!
+!! Pipeline: {{ git_hostname }}/{{ job.repo }}/tree/master/{{ job.path }} !!
+{{ job.description }}
+  </description>
+  <displayName>{{ job.displayName }}</displayName>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+{% if job.libraries is defined %}
+    <org.jenkinsci.plugins.workflow.libs.FolderLibraries plugin="workflow-cps-global-lib@2.5">
+      <libraries>
+        {% for library in job.libraries %}
+         <org.jenkinsci.plugins.workflow.libs.LibraryConfiguration>
+           <name>{{ library.name }}</name>
+           <retriever class="org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever">
+             <scm class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source@2.0.1">
+               <id>{{ library.name }}</id>
+               <apiUri>https://{{ git_hostname }}/api/v3</apiUri>
+               <checkoutCredentialsId>SAME</checkoutCredentialsId>
+               <scanCredentialsId>jenkins-github-api-token</scanCredentialsId>
+               <repoOwner>{{ library.owner }}</repoOwner>
+               <repository>{{ library.repoName | default('jenkins-library') }}</repository>
+               <includes>*</includes>
+               <excludes></excludes>
+               <buildOriginBranch>true</buildOriginBranch>
+               <buildOriginBranchWithPR>true</buildOriginBranchWithPR>
+               <buildOriginPRMerge>false</buildOriginPRMerge>
+               <buildOriginPRHead>false</buildOriginPRHead>
+               <buildForkPRMerge>true</buildForkPRMerge>
+               <buildForkPRHead>false</buildForkPRHead>
+             </scm>
+           </retriever>
+           <defaultVersion>master</defaultVersion>
+           <implicit>false</implicit>
+           <allowVersionOverride>true</allowVersionOverride>
+         </org.jenkinsci.plugins.workflow.libs.LibraryConfiguration>
+        {% endfor %}
+      </libraries>
+    </org.jenkinsci.plugins.workflow.libs.FolderLibraries>
+{% endif %}
+{% if job.params is defined and job.params|length > 0 %}
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+{% for param in job.params %}
+  {% if param.type is not defined or param.type == "string" %}
+    {{ string_param(param) }}
+  {% elif param.type == "choice" %}
+    {{ choice_param(param) }}
+  {% elif param.type == "bool" or param.type == "boolean" %}
+    {{ boolean_param(param) }}
+  {% endif %}
+{% endfor %}
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+{% endif %}
+    <jenkins.model.BuildDiscarderProperty>
+       <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>{{ job.build_days_to_keep|default(7) }}</daysToKeep>
+        <numToKeep>{{ job.build_num_to_keep|default(10) }}</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy> 
+    </jenkins.model.BuildDiscarderProperty>
+    {% if job.allowConcurrentBuilds is not defined or job.allowConcurrentBuilds == false %}
+    <org.jenkinsci.plugins.workflow.job.properties.DisableConcurrentBuildsJobProperty/>
+    {% endif %}
+      {% if job.poll is defined or job.trigger_gitpush is defined or job.trigger_periodic is defined %}
+        <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+          <triggers>
+            {% if job.poll is defined and job.poll %}
+              <hudson.triggers.SCMTrigger>
+                <spec>{{ job.crontab|default('H/3 * * * *') }}</spec>
+                <ignorePostCommitHooks>false</ignorePostCommitHooks>
+              </hudson.triggers.SCMTrigger>
+            {% endif %}
+            {% if job.trigger_gitpush is defined and job.trigger_gitpush %}
+              <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.27.0">
+                <spec></spec>
+              </com.cloudbees.jenkins.GitHubPushTrigger>
+            {% endif %}
+            {% if job.trigger_periodic is defined and job.trigger_periodic %}
+              <hudson.triggers.TimerTrigger>
+                <spec>{{ job.trigger_periodic }}</spec>
+              </hudson.triggers.TimerTrigger>
+            {% endif %}
+          </triggers>
+        </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      {% endif %}
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@2.9">
+    <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.1">
+      <configVersion>2</configVersion>
+      <userRemoteConfigs>
+        <hudson.plugins.git.UserRemoteConfig>
+          <url>git@{{ git_hostname }}:{{ job.repo }}.git</url>
+        </hudson.plugins.git.UserRemoteConfig>
+      </userRemoteConfigs>
+      <branches>
+        <hudson.plugins.git.BranchSpec>
+          <name>*/master</name>
+        </hudson.plugins.git.BranchSpec>
+      </branches>
+      <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+      <submoduleCfg class="list"/>
+      <extensions>
+        <hudson.plugins.git.extensions.impl.WipeWorkspace/>
+      </extensions>
+    </scm>
+    <scriptPath>{{ job.path }}</scriptPath>
+  </definition>
+  <triggers/>
+</flow-definition>

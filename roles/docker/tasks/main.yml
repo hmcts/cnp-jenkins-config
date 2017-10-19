@@ -1,0 +1,29 @@
+---
+
+- name: Install Docker
+  yum:
+    name: docker
+    state: latest
+
+- name: Temporarly adding the jenkins user to the dockerroot group
+  command: usermod -aG dockerroot jenkins
+
+- name: Config docker daemon
+  template:
+    src: "daemon.json"
+    dest: "/etc/docker/daemon.json"
+    mode: 0644
+    owner: jenkins
+    group: jenkins
+
+- name: Enabling docker service
+  systemd:
+    name: docker
+    state: started
+    enabled: True
+
+- name: Rebooting node
+  command: /sbin/shutdown -r +1
+  async: 0
+  poll: 0
+  ignore_errors: true

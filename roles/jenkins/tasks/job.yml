@@ -1,0 +1,43 @@
+---
+
+- set_fact:
+   this_job_dir: "{{ jenkins_home }}/jobs/{{ job.name }}"
+  tags:
+    - jenkins-jobs
+- set_fact:
+   this_job_full_path: "{{ this_job_dir }}/config.xml"
+  tags:
+    - jenkins-jobs
+
+- name: "Ensure {{ job.name }} {{ this_job_dir }} job folder exists"
+  file:
+    state: directory
+    path: "{{ this_job_dir }}"
+    owner: jenkins
+    group: jenkins
+    mode: 0775
+  tags:
+    - jenkins-jobs
+
+- name: Render {{ job.name }} job xml
+  template:
+    src: "{{ job.template | default(template) }}"
+    dest: "{{ this_job_full_path }}.template"
+    owner: jenkins
+    group: jenkins
+  register: job_template_file
+  tags:
+    - jenkins-jobs
+
+- name: Create {{ job.name }} job
+  shell: |
+    if {{ jenkins_role_cli_command }} list-jobs | grep "^{{ job.name }}$"; then
+      {{ jenkins_role_cli_command }} update-job {{ job.name }} < {{ this_job_full_path }}.template
+    else
+      {{ jenkins_role_cli_command }} create-job {{ job.name }} < {{ this_job_full_path }}.template
+    fi
+  become: yes
+  become_user: jenkins
+  when: job_template_file.changed
+  tags:
+    - jenkins-jobs

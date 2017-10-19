@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<slave>
+  <name>{{ item.hostname }}</name>
+  <description>{{ item.description | default("") }}</description>
+  <remoteFS>/home/jenkins/slave</remoteFS>
+  <numExecutors>{{ item.executors }}</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.slaves.CommandLauncher">
+    <agentCommand>ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no {{ item.hostname }} java -jar slave.jar</agentCommand>
+  </launcher>
+  <label>{{ item.label | default("") }}</label>
+  <nodeProperties/>
+</slave>

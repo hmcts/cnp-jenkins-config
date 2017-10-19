@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><jenkins.branch.OrganizationFolder plugin="branch-api@2.0.11">
+  <actions>
+    <io.jenkins.blueocean.service.embedded.BlueOceanUrlAction plugin="blueocean-rest-impl@1.1.5">
+      <blueOceanUrlObject class="io.jenkins.blueocean.service.embedded.BlueOceanUrlObjectImpl">
+        <mappedUrl>blue/organizations/jenkins/pipelines/</mappedUrl>
+      </blueOceanUrlObject>
+    </io.jenkins.blueocean.service.embedded.BlueOceanUrlAction>
+  </actions>
+  <description>
+    !! Managed by Ansible. Do not edit here !!
+    !! Template: https://{{ git_hostname }}/devops/jenkins-role !!
+    {{ job.description }}
+  </description>
+  <displayName>{{ job.displayName }}</displayName>
+  <properties>
+    <org.jenkinsci.plugins.workflow.libs.FolderLibraries plugin="workflow-cps-global-lib@2.9-PR34">
+      <libraries>
+        {% if job.libraries is defined %}
+        {% for library in job.libraries %}
+        <org.jenkinsci.plugins.workflow.libs.LibraryConfiguration>
+          <name>{{ library.name }}</name>
+          <retriever class="org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever">
+            <scm class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source@2.2.2">
+              <id>{{ library.name }}</id>
+              <apiUri>{{ library.github_api_url | default(github_api_url) }}</apiUri>
+              <credentialsId>{{ library.scan_credentials_id | default('jenkins-github-api-token') }}</credentialsId>
+              <repoOwner>{{ library.owner }}</repoOwner>
+              <repository>{{ library.repoName | default('jenkins-library') }}</repository>
+              <traits>
+                <org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait>
+                  <strategyId>3</strategyId>
+                </org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait>
+                <org.jenkinsci.plugins.github__branch__source.ForkPullRequestDiscoveryTrait>
+                  <strategyId>1</strategyId>
+                  <trust
+                    class="org.jenkinsci.plugins.github_branch_source.ForkPullRequestDiscoveryTrait$TrustPermission"/>
+                </org.jenkinsci.plugins.github__branch__source.ForkPullRequestDiscoveryTrait>
+              </traits>
+            </scm>
+          </retriever>
+          <defaultVersion>master</defaultVersion>
+          <implicit>false</implicit>
+          <allowVersionOverride>true</allowVersionOverride>
+          <includeInChangesets>false</includeInChangesets>
+        </org.jenkinsci.plugins.workflow.libs.LibraryConfiguration>
+        {% endfor %}
+        {% endif %}
+      </libraries>
+    </org.jenkinsci.plugins.workflow.libs.FolderLibraries>
+    <com.datapipe.jenkins.vault.configuration.FolderVaultConfiguration plugin="hashicorp-vault-plugin@2.1.0">
+      <configuration>
+        <vaultUrl/>
+        <vaultCredentialId/>
+      </configuration>
+    </com.datapipe.jenkins.vault.configuration.FolderVaultConfiguration>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.config.FolderConfig plugin="pipeline-model-definition@1.1.8">
+      <dockerLabel/>
+      <registry plugin="docker-commons@1.8"/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.config.FolderConfig>
+    <jenkins.branch.NoTriggerOrganizationFolderProperty>
+      <branches>.*</branches>
+    </jenkins.branch.NoTriggerOrganizationFolderProperty>
+  </properties>
+  <folderViews class="jenkins.branch.OrganizationFolderViewHolder">
+    <owner reference="../.."/>
+  </folderViews>
+  <healthMetrics>
+    <com.cloudbees.hudson.plugins.folder.health.WorstChildHealthMetric plugin="cloudbees-folder@6.1.0">
+      <nonRecursive>false</nonRecursive>
+    </com.cloudbees.hudson.plugins.folder.health.WorstChildHealthMetric>
+  </healthMetrics>
+  <icon class="jenkins.branch.MetadataActionFolderIcon">
+    <owner class="jenkins.branch.OrganizationFolder" reference="../.."/>
+  </icon>
+  <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@6.1.0">
+    <pruneDeadBranches>true</pruneDeadBranches>
+    <daysToKeep>{{ job.build_days_to_keep|default(7) }}</daysToKeep>
+    <numToKeep>{{ job.build_num_to_keep|default(10) }}</numToKeep>
+  </orphanedItemStrategy>
+  <triggers>
+    <com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger plugin="cloudbees-folder@6.1.0">
+      <spec>H H * * *</spec>
+      <interval>86400000</interval>
+    </com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger>
+  </triggers>
+  <disabled>false</disabled>
+  <navigators>
+    <org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator plugin="github-branch-source@2.2.2">
+      <repoOwner>{{ job.name }}</repoOwner>
+      <apiUri>{{ job.github_api_url | default(github_api_url) }}</apiUri>
+      <credentialsId>{{ job.credentials_id | default('jenkins-github-api-token') }}</credentialsId>
+      <traits>
+        {% if job.repoPattern is defined %}
+        <jenkins.scm.impl.trait.RegexSCMSourceFilterTrait plugin="scm-api@2.2.0">
+          <regex>{{ job.repoPattern }}</regex>
+        </jenkins.scm.impl.trait.RegexSCMSourceFilterTrait>
+        {% endif %}
+        <org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait>
+          <strategyId>3</strategyId>
+        </org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait>
+        <org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait>
+          <strategyId>1</strategyId>
+        </org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait>
+        <org.jenkinsci.plugins.github__branch__source.ForkPullRequestDiscoveryTrait>
+          <strategyId>1</strategyId>
+          <trust class="org.jenkinsci.plugins.github_branch_source.ForkPullRequestDiscoveryTrait$TrustPermission"/>
+        </org.jenkinsci.plugins.github__branch__source.ForkPullRequestDiscoveryTrait>
+        <jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait plugin="scm-api@2.2.0">
+          <includes>{{ job.branchesToInclude | default('master') }} PR*</includes>
+          <excludes/>
+        </jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait>
+      </traits>
+    </org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator>
+  </navigators>
+  <projectFactories>
+    <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory plugin="workflow-multibranch@2.16">
+      <scriptPath>Jenkinsfile</scriptPath>
+    </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory>
+  </projectFactories>
+</jenkins.branch.OrganizationFolder> 

@@ -1,4 +1,14 @@
 ---
+
+#- name: Doing some debug on Ansible User
+#  shell: "echo {{ansible_user_id}}"
+#  register: result
+#
+#- debug:
+#    var: result
+#    verbosity: 2
+
+
 # Variable setup.
 - name: Include OS-Specific variables
   include_vars: "{{ ansible_os_family }}.yml"
@@ -56,5 +66,18 @@
     path: "{{ jenkins_home }}/init.groovy.d/basic-security.groovy"
     state: absent
 
-# Update Jenkins and install configured plugins.
+## Sections that can run before Jenkins it started:
+- include: hosts-file.yml
+- include: pipeline-libraries.yml
+- include: sshd.yml
+#- include: proxy.yml
+#  when: jenkins_disable_proxy is not defined
+## Update Jenkins and install configured plugins.
+- include: detect-cli-method.yml
 - include: plugins.yml
+- include: credentials.yml
+- include: jobs.ymlcd 
+#- include: main-config.yml
+
+
+
