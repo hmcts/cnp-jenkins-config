@@ -55,7 +55,7 @@ jenkins_role_cli_command_ssh: "ssh -i ~jenkins/.ssh/id_rsa {{ jenkins_override_s
 jenkins_role_cli_command: "NO DEFAULT"
 jenkins_role_cli_ssh_method_needed: false
 
-jenkins_override_ssh_user: "{{jenkins_admin_username}}" #"{{ ansible_user_id }}"
+jenkins_override_ssh_user: "{{ ansible_user_id }}"
 jenkins_jobs_directory: /opt/jenkins-jobs
 # jenkins_admin_key_path: "/var/lib/jenkins/.ssh/id_rsa"
 git_hostname: 'git.reform.hmcts.net'

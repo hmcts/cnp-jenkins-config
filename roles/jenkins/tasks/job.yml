@@ -29,15 +29,31 @@
   tags:
     - jenkins-jobs
 
+#- name: Create {{ job.name }} job
+#  shell: |
+#    if {{ jenkins_role_cli_command }} list-jobs | grep "^{{ job.name }}$"; then
+#      {{ jenkins_role_cli_command }} update-job {{ job.name }} < {{ this_job_full_path }}.template
+#    else
+#      {{ jenkins_role_cli_command }} create-job {{ job.name }} < {{ this_job_full_path }}.template
+#    fi
+#  become: yes
+#  become_user: "{{jenkins_process_user}}"
+#  when: job_template_file.changed
+#  tags:
+#    - jenkins-jobs
+
 - name: Create {{ job.name }} job
-  shell: |
-    if {{ jenkins_role_cli_command }} list-jobs | grep "^{{ job.name }}$"; then
-      {{ jenkins_role_cli_command }} update-job {{ job.name }} < {{ this_job_full_path }}.template
-    else
-      {{ jenkins_role_cli_command }} create-job {{ job.name }} < {{ this_job_full_path }}.template
-    fi
+  jenkins_job:
+    config: "{{ lookup('file', 'templates/test.xml') }}"
+    name: "{{ job.name }}"
+    password: "{{jenkins_admin_password}}"
+    url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}"
+    user: "{{jenkins_admin_username}}"
   become: yes
   become_user: "{{jenkins_process_user}}"
   when: job_template_file.changed
+  register: result
+  until: result|succeeded
+  ignore_errors: yes
   tags:
     - jenkins-jobs

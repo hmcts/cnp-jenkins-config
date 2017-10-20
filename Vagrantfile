@@ -27,6 +27,7 @@ Vagrant.configure("2") do |config|
   # end
   
   config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 2020, host: 2020
   # config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
   # config.ssh.forward_agent = true
 
