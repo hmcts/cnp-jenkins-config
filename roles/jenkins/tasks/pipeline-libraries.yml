@@ -7,6 +7,10 @@
   register: result
   until: result|succeeded
   ignore_errors: yes
+  loop_control:
+    loop_var: global_lib
+  with_items: "{{ jenkins_global_pipeline_libraries }}"
+  when: jenkins_global_pipeline_libraries
 
 ## TODO: DO THIS WITH THE CLI?
 #- name: Add Global Pipeline Libraries

@@ -70,7 +70,6 @@
 
 ## Sections that can run before Jenkins it started:
 
-- include: pipeline-libraries.yml
 #- include: proxy.yml
 #  when: jenkins_disable_proxy is not defined
 ## Update Jenkins and install configured plugins.
@@ -97,6 +96,8 @@
   check_mode: no
 
 #needs to be after plugin installation and Jenkins restarted
+- include: pipeline-libraries.yml
+
 - name: Add Jenkins Azure SP to Credentials
   include: push-credentials.yml
 #- include: credentials.yml

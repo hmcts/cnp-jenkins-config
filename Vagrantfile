@@ -14,33 +14,28 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
+    v.memory = 4096
+    v.cpus = 2
     v.name = "jenkins-vm"
+    v.customize ["modifyvm", :id, "--ioapic", "on", "--vram", "16"]
   end
 
-  # Redirections on OSX Host machine - requires vagrant plugin trigger
-  # config.trigger.after [:up, :resume] do
-  #   run "./portredirect.sh"
-  # end
-  #
-  # config.trigger.after :halt do
-  #   run "./portredirect_disable.sh"
-  # end
-  
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network "forwarded_port", guest: 2020, host: 2020
   # config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
   # config.ssh.forward_agent = true
 
-  # config.vm.provision "file", source: "~/.ssh/", destination: "$HOME/.ssh"
-
-  config.vm.provision "shell", inline: "sudo systemctl stop firewalld"
+  config.vm.provision "shell",
+                      inline: "sudo systemctl stop firewalld",
+                      privileged: true
 
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook        = "playbook.yml"
-    ansible.verbose        = false
+    ansible.verbose        = true
     ansible.install        = true
     ansible.limit          = "all"
     ansible.inventory_path = "hosts"
+    ansible.extra_vars = "@local_env.json"
   end
+
 end

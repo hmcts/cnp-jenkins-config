@@ -195,6 +195,25 @@
           description: "Azure deployment user password"
           secret: "{{ jenkins_gitcontino_password }}"
           type: string
+    jenkins_global_pipeline_libraries:
+        - name: "Infrastructure"
+          remote: "git@github.com:contino/moj-jenkins-library.git"
+          credentials_id: "github_access_key"
+          includes: "*"
+          excludes: ""
+          ignore_on_push_notifications: true
+          default_version: "master"
+          set_implicit: true
+          allow_version_override: true
+        - name: "some-other-name-to-test"
+          remote: "git@github.com:contino/moj-jenkins-library.git"
+          credentials_id: ""
+          includes: "*"
+          excludes: ""
+          ignore_on_push_notifications: true
+          default_version: "master"
+          implicit: true
+          allow_version_override: true
 
   roles:
     - role: jenkins

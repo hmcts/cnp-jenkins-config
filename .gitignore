@@ -4,3 +4,4 @@ portredirect_disable.sh
 keys
 .vagrant
 *.retry
+local_env.json
