@@ -16,9 +16,19 @@
       - blueocean
       - blueocean-autofavorite
       - blueocean-personalization
+      - blueocean-jwt
+      - blueocean-rest-impl
+      - blueocean-pipeline-api-impl
+      - blueocean-rest
+      - blueocean-dashboard
       - azure-credentials
-#      - blueocean-jwt
-#      - blueocean-rest-impl
+      - branch-api
+      - cloudbees-folder
+      - plain-credentials
+      - github
+      - github-organization-folder
+      - greenballs
+
 #      - favorite
 #      - credentials
 #      - credentials-binding
@@ -139,12 +149,19 @@
 #        credentials_id: 'jenkins-ghe-api-token'
 #        github_api_url: 'https://github.com'
 
-    github_folder_jobs:
-      - name: 'contino'
+    organization_folders:
+      - name: 'Contino'
         displayName: 'Contino'
         description: 'Contino'
         credentials_id: 'jenkins-ghe-api-token'
         github_api_url: 'https://github.com'
+        repoPattern: 'moj-.*'
+      - name: 'Test'
+        displayName: 'Test'
+        description: 'Test'
+        credentials_id: 'jenkins-ghe-api-token'
+        github_api_url: 'https://github.com'
+        repoPattern: 'moj-.*'
 
     pipeline_jobs:
       - name: "run-ansible"
@@ -195,6 +212,8 @@
           description: "Azure deployment user password"
           secret: "{{ jenkins_gitcontino_password }}"
           type: string
+
+
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
           remote: "git@github.com:contino/moj-jenkins-library.git"

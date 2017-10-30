@@ -1,7 +1,7 @@
 ---
 
 - name: Create pipeline jobs
-  include: job.yml
+  include_task: job.yml
   vars:
     template: "pipeline.xml.j2"
   loop_control:
@@ -9,17 +9,16 @@
   with_items:
     - "{{ pipeline_jobs }}"
   when: pipeline_jobs
-  tags:
-    - jenkins-jobs
 
-- name: Create github folder jobs
-  include: job.yml
-  vars:
-    template: "github-folder-multi-branch.xml.j2"
-  loop_control:
-    loop_var: job
-  with_items:
-    - "{{ github_folder_jobs }}"
-  when: github_folder_jobs
-  tags:
-    - jenkins-jobs
+
+#- name: Create github folder jobs
+#  include: job.yml
+#  vars:
+#    template: "github-folder-multi-branch.xml"
+#  loop_control:
+#    loop_var: job
+#  with_items:
+#    - "{{ github_folder_jobs }}"
+#  when: github_folder_jobs
+#  tags:
+#    - jenkins-jobs

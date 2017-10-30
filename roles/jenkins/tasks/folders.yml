@@ -1,0 +1,13 @@
+---
+
+- name: Create Organization Folders
+  include_task: folder.yml
+  vars:
+    template: "github-folder-multi-branch.xml"
+  loop_control:
+    loop_var: folder
+  with_items:
+    - "{{ organization_folders }}"
+  when: organization_folders
+  tags:
+    - orgs-folders

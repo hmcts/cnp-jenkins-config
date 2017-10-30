@@ -29,16 +29,16 @@
   when: jenkins_pkg_url is not defined
 
 # Setup/install tasks.
-- include: setup-RedHat.yml
+- include_task: setup-RedHat.yml
   when: ansible_os_family == 'RedHat'
 
-- include: setup-Debian.yml
+- include_task: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
 # Configure Jenkins init settings.
-- include: settings.yml
-- include: hosts-file.yml
-- include: sshd.yml
+- include_task: settings.yml
+- include_task: hosts-file.yml
+- include_task: sshd.yml
 
 # Make sure Jenkins starts, then configure Jenkins.
 - name: Ensure Jenkins is started and runs on startup.
@@ -73,11 +73,14 @@
 #- include: proxy.yml
 #  when: jenkins_disable_proxy is not defined
 ## Update Jenkins and install configured plugins.
-- include: detect-cli-method.yml
-- include: plugins.yml
+#- include_task: detect-cli-method.yml
+- include_task: plugins.yml
 
 - name: force all notified handlers to run at this point, not waiting for normal sync points
   meta: flush_handlers
+
+- include_task: credentials.yml
+- include_task: folders.yml
 
 - name: Immediately restart Jenkins on http or user changes.
   service: name=jenkins state=restarted
@@ -96,11 +99,10 @@
   check_mode: no
 
 #needs to be after plugin installation and Jenkins restarted
-- include: pipeline-libraries.yml
+- include_task: pipeline-libraries.yml
 
 - name: Add Jenkins Azure SP to Credentials
-  include: push-credentials.yml
-#- include: credentials.yml
-- include: jobs.yml
+  include_task: push-credentials.yml
+- include_task: jobs.yml
 #- include: main-config.yml
 

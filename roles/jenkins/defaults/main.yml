@@ -14,9 +14,7 @@ jenkins_hostname: localhost
 jenkins_http_port: 8080
 jenkins_jar_location: /opt/jenkins-cli.jar
 jenkins_url_prefix: ""
-jenkins_java_options: "-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
-
-# "-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
+jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
 
 jenkins_plugins: []
 jenkins_plugins_state: present
