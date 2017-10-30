@@ -18,12 +18,3 @@
     - restart jenkins
     - wait for jenkins to start
 
-- name: "Enable Jenkins SSH daemon (not normal ssh)"
-  template:
-    src: "org.jenkinsci.main.modules.sshd.SSHD.xml"
-    dest: "{{ jenkins_home }}/org.jenkinsci.main.modules.sshd.SSHD.xml"
-    owner: "{{ jenkins_process_user }}"
-    group: "{{ jenkins_process_group }}"
-  notify:
-    - restart jenkins
-    - wait for jenkins to start

@@ -1,7 +1,10 @@
 import com.cloudbees.plugins.credentials.impl.*
 import com.cloudbees.plugins.credentials.*
 import com.cloudbees.plugins.credentials.domains.*
+import com.cloudbees.plugins.credentials.common.*
+import com.cloudbees.jenkins.plugins.sshcredentials.impl.*
 import com.microsoft.azure.util.*
+
 
 def subscription_id = "{{ jenkins_subscription_id }}"
 def client_id = "{{ jenkins_client_id }}"
@@ -22,3 +25,12 @@ AzureCredentials ac = (AzureCredentials) new AzureCredentials(
     graphEndpoint= "https://graph.windows.net/")
 
 SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), ac)
+
+credentials = new BasicSSHUserPrivateKey(
+    CredentialsScope.GLOBAL,
+    "git_access_key",
+    "jenkins",
+    new BasicSSHUserPrivateKey.UsersPrivateKeySource(),
+    "",
+    "Credential ID: git_access_key")
+SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), credentials)
