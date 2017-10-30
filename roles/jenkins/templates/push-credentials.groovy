@@ -11,7 +11,7 @@ def client_id = "{{ jenkins_client_id }}"
 def client_secret = "{{ jenkins_client_secret }}"
 def token_id = "{{ jenkins_token_id }}"
 
-AzureCredentials ac = (AzureCredentials) new AzureCredentials(
+AzureCredentials azureCred = (AzureCredentials) new AzureCredentials(
     scope= CredentialsScope.GLOBAL,
     id= "jenkinsServicePrincipal",
     description= "Jenkins Service Principal - only has access to infra key vault",
@@ -23,14 +23,21 @@ AzureCredentials ac = (AzureCredentials) new AzureCredentials(
     authenticationEndpoint= "https://login.microsoftonline.com/",
     resourceManagerEndpoint= "https://management.azure.com/",
     graphEndpoint= "https://graph.windows.net/")
+SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), azureCred)
 
-SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), ac)
-
-credentials = new BasicSSHUserPrivateKey(
+sshKeyCred = new BasicSSHUserPrivateKey(
     CredentialsScope.GLOBAL,
-    "git_access_key",
+    "git_access_ssh_key",
     "jenkins",
     new BasicSSHUserPrivateKey.UsersPrivateKeySource(),
     "",
     "Credential ID: git_access_key")
-SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), credentials)
+SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), sshKeyCred)
+
+gitUserKeyCred = new UsernamePasswordCredentialsImpl(
+    CredentialsScope.GLOBAL,
+    "id-moj-jenkins-user",
+    "Username/API Key for Jenkins to access Git",
+    "moj-jenkins-user",
+    "{{ jenkins_gh_password }}")
+SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), gitUserKeyCred)
