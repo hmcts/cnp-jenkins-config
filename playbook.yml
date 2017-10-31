@@ -163,12 +163,12 @@
         github_api_url: 'https://github.com'
         repoPattern: 'moj-.*'
 
-    pipeline_jobs:
-      - name: "run-ansible"
-        displayName: "Run Ansible"
-        description: "Run the ansible plays"
-        path: "jenkins_jobs/ansible_pipeline.groovy"
-        repo: "devops/ansible-management"
+    pipeline_jobs: []
+#      - name: "run-ansible"
+#        displayName: "Run Ansible"
+#        description: "Run the ansible plays"
+#        path: "jenkins_jobs/ansible_pipeline.groovy"
+#        repo: "devops/ansible-management"
 
     jenkins_credentials:
         - id: jenkins-github-api-token
@@ -176,63 +176,55 @@
           username: moj-jenkins-user
           password: "{{ jenkins_gh_password }}"
           type: username-password
-        - id: subscription_id
-          description: "Azure subscription_id"
-          secret: "{{ jenkins_subscription_id }}"
-          type: string
-        - id: tenant_id
-          description: "Azure tenant_id"
-          secret: "{{ jenkins_tenant_id }}"
-          type: string
-        - id: object_id
-          description: "Azure object_id"
-          secret: "{{ jenkins_object_id }}"
-          type: string
-        - id: sp_password
-          description: "Azure sp_password"
-          secret: "{{ jenkins_sp_password }}"
-          type: string
-        - id: kitchen_subscription_id
-          description: "Azure subscription_id for kitchen"
-          secret: "{{ jenkins_kitchen_subscription_id }}"
-          type: string
-        - id: kitchen_tenant_id
-          description: "Azure tenant_id for kitchen"
-          secret: "{{ jenkins_kitchen_tenant_id }}"
-          type: string
-        - id: kitchen_client_id
-          description: "Azure client_id for kitchen"
-          secret: "{{ jenkins_kitchen_client_id }}"
-          type: string
-        - id: kitchen_client_secret
-          description: "Azure sp_password for kitchen"
-          secret: "{{ jenkins_kitchen_client_secret }}"
-          type: string
-        - id: gitcontino_password
-          description: "Azure deployment user password"
-          secret: "{{ jenkins_gitcontino_password }}"
-          type: string
+#        - id: subscription_id
+#          description: "Azure subscription_id"
+#          secret: "{{ jenkins_subscription_id }}"
+#          type: string
+#        - id: tenant_id
+#          description: "Azure tenant_id"
+#          secret: "{{ jenkins_tenant_id }}"
+#          type: string
+#        - id: object_id
+#          description: "Azure object_id"
+#          secret: "{{ jenkins_object_id }}"
+#          type: string
+#        - id: sp_password
+#          description: "Azure sp_password"
+#          secret: "{{ jenkins_sp_password }}"
+#          type: string
+#        - id: kitchen_subscription_id
+#          description: "Azure subscription_id for kitchen"
+#          secret: "{{ jenkins_kitchen_subscription_id }}"
+#          type: string
+#        - id: kitchen_tenant_id
+#          description: "Azure tenant_id for kitchen"
+#          secret: "{{ jenkins_kitchen_tenant_id }}"
+#          type: string
+#        - id: kitchen_client_id
+#          description: "Azure client_id for kitchen"
+#          secret: "{{ jenkins_kitchen_client_id }}"
+#          type: string
+#        - id: kitchen_client_secret
+#          description: "Azure sp_password for kitchen"
+#          secret: "{{ jenkins_kitchen_client_secret }}"
+#          type: string
+#        - id: gitcontino_password
+#          description: "Azure deployment user password"
+#          secret: "{{ jenkins_gitcontino_password }}"
+#          type: string
 
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
           remote: "git@github.com:contino/moj-jenkins-library.git"
           credentials_id: "github_access_key"
-          includes: "*"
+          include: "*"
           excludes: ""
           ignore_on_push_notifications: true
           default_version: "master"
           set_implicit: true
           allow_version_override: true
-        - name: "some-other-name-to-test"
-          remote: "git@github.com:contino/moj-jenkins-library.git"
-          credentials_id: ""
-          includes: "*"
-          excludes: ""
-          ignore_on_push_notifications: true
-          default_version: "master"
-          implicit: true
-          allow_version_override: true
+
 
   roles:
     - role: jenkins
