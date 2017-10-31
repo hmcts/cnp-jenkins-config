@@ -7,9 +7,8 @@ WORKSPACE = "../../"
 Vagrant.configure("2") do |config|
   config.vm.box = "puppetlabs/centos-7.2-64-nocm"
   #config.vm.box = "puppetlabs/ubuntu-16.04-64-nocm"
-  config.vm.provision "shell",
-                      inline: "sudo systemctl disable firewalld",
-                      privileged: true
+  config.vm.provision "shell", inline: "sudo systemctl disable firewalld", privileged: true
+
   if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
     config.vm.synced_folder WORKSPACE, "/Workspace", mount_options: ["dmode=700,fmode=600"]
   else
@@ -28,14 +27,13 @@ Vagrant.configure("2") do |config|
   # config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
   # config.ssh.forward_agent = true
 
-  # ansible.verbose         = "vvvv"
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook        = "playbook.yml"
     ansible.install         = true
     ansible.limit           = "all"
     ansible.inventory_path  = "hosts"
     ansible.extra_vars      = "@local_env.json"
-    #ansible.verbose         = "vvvv"
+    # ansible.verbose         = "vvvv"
     ansible.version         = "latest"
   end
 

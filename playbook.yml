@@ -172,64 +172,26 @@
 
     jenkins_credentials:
         - id: jenkins-github-api-token
+          type: cred-usrpwd
           description: "Jenkins GitHub credentials (Username/password format)"
           username: "moj-jenkins-user"
           password: "{{ jenkins_gh_password }}"
-          type: cred-usrpwd
         - id: git_access_ssh_key
+          type: cred-usrkey
           description: "Credential ID: git_access_key"
           username: "jenkins"
           password: ""
-          type: cred-usrkey
-#        - id: subscription_id
-#          description: "Azure subscription_id"
-#          secret: "{{ jenkins_subscription_id }}"
-#          type: string
-#        - id: tenant_id
-#          description: "Azure tenant_id"
-#          secret: "{{ jenkins_tenant_id }}"
-#          type: string
-#        - id: object_id
-#          description: "Azure object_id"
-#          secret: "{{ jenkins_object_id }}"
-#          type: string
-#        - id: sp_password
-#          description: "Azure sp_password"
-#          secret: "{{ jenkins_sp_password }}"
-#          type: string
-#        - id: kitchen_subscription_id
-#          description: "Azure subscription_id for kitchen"
-#          secret: "{{ jenkins_kitchen_subscription_id }}"
-#          type: string
-#        - id: kitchen_tenant_id
-#          description: "Azure tenant_id for kitchen"
-#          secret: "{{ jenkins_kitchen_tenant_id }}"
-#          type: string
-#        - id: kitchen_client_id
-#          description: "Azure client_id for kitchen"
-#          secret: "{{ jenkins_kitchen_client_id }}"
-#          type: string
-#        - id: kitchen_client_secret
-#          description: "Azure sp_password for kitchen"
-#          secret: "{{ jenkins_kitchen_client_secret }}"
-#          type: string
-#        - id: gitcontino_password
-#          description: "Azure deployment user password"
-#          secret: "{{ jenkins_gitcontino_password }}"
-#          type: string
-
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
           remote: "git@github.com:contino/moj-jenkins-library.git"
-          credentials_id: "github_access_key"
+          credentials_id: "git_access_ssh_key"
           include: "*"
           excludes: ""
           ignore_on_push_notifications: true
           default_version: "master"
           set_implicit: true
           allow_version_override: true
-
 
   roles:
     - role: jenkins
