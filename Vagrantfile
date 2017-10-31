@@ -28,14 +28,15 @@ Vagrant.configure("2") do |config|
   # config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
   # config.ssh.forward_agent = true
 
-
+  # ansible.verbose         = "vvvv"
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook        = "playbook.yml"
-    ansible.verbose        = true
-    ansible.install        = true
-    ansible.limit          = "all"
-    ansible.inventory_path = "hosts"
-    ansible.extra_vars = "@local_env.json"
+    ansible.install         = true
+    ansible.limit           = "all"
+    ansible.inventory_path  = "hosts"
+    ansible.extra_vars      = "@local_env.json"
+    #ansible.verbose         = "vvvv"
+    ansible.version         = "latest"
   end
 
 end

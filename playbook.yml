@@ -154,13 +154,13 @@
         displayName: 'Contino'
         description: 'Contino'
         credentials_id: 'jenkins-ghe-api-token'
-        github_api_url: 'https://github.com'
+        github_api_url: 'https://api.github.com'
         repoPattern: 'moj-.*'
       - name: 'Test'
         displayName: 'Test'
         description: 'Test'
         credentials_id: 'jenkins-ghe-api-token'
-        github_api_url: 'https://github.com'
+        github_api_url: 'https://api.github.com'
         repoPattern: 'moj-.*'
 
     pipeline_jobs: []
@@ -173,9 +173,14 @@
     jenkins_credentials:
         - id: jenkins-github-api-token
           description: "Jenkins GitHub credentials (Username/password format)"
-          username: moj-jenkins-user
+          username: "moj-jenkins-user"
           password: "{{ jenkins_gh_password }}"
-          type: username-password
+          type: cred-usrpwd
+        - id: git_access_ssh_key
+          description: "Credential ID: git_access_key"
+          username: "jenkins"
+          password: ""
+          type: cred-usrkey
 #        - id: subscription_id
 #          description: "Azure subscription_id"
 #          secret: "{{ jenkins_subscription_id }}"

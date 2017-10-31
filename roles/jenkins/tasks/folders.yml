@@ -1,9 +1,9 @@
 ---
 
 - name: Create Organization Folders
-  include_task: folder.yml
+  include_tasks: folder.yml
   vars:
-    template: "github-folder-multi-branch.xml"
+    template: "github-folder-multi-branch.xml.j2"
   loop_control:
     loop_var: folder
   with_items:

@@ -1,7 +1,7 @@
 ---
 
 - name: Create pipeline jobs
-  include_task: job.yml
+  include_tasks: job.yml
   vars:
     template: "pipeline.xml.j2"
   loop_control:
@@ -12,7 +12,7 @@
 
 
 #- name: Create github folder jobs
-#  include: job.yml
+#  include_tasks: job.yml
 #  vars:
 #    template: "github-folder-multi-branch.xml"
 #  loop_control:

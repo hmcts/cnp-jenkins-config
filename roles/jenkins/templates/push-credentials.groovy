@@ -34,10 +34,10 @@ sshKeyCred = new BasicSSHUserPrivateKey(
     "Credential ID: git_access_key")
 SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), sshKeyCred)
 
-gitUserKeyCred = new UsernamePasswordCredentialsImpl(
-    CredentialsScope.GLOBAL,
-    "id-moj-jenkins-user",
-    "Username/API Key for Jenkins to access Git",
-    "moj-jenkins-user",
-    "{{ jenkins_gh_password }}")
-SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), gitUserKeyCred)
+//gitUserKeyCred = new UsernamePasswordCredentialsImpl(
+//    CredentialsScope.GLOBAL,
+//    "id-moj-jenkins-user",
+//    "Username/API Key for Jenkins to access Git",
+//    "moj-jenkins-user",
+//    "{{ jenkins_gh_password }}")
+//SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), gitUserKeyCred)
