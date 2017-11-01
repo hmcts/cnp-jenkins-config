@@ -179,7 +179,7 @@
         - id: git_access_ssh_key
           type: cred-usrkey
           description: "Credential ID: git_access_key"
-          username: "jenkins"
+          username: "moj-jenkins-user"
           password: ""
 
     jenkins_global_pipeline_libraries:
