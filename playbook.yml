@@ -28,6 +28,7 @@
       - github
       - github-organization-folder
       - greenballs
+      - custom-tools-plugin
 
 #      - favorite
 #      - credentials
@@ -125,7 +126,6 @@
 #      - sse-gateway
 #      - workflow-cps
 #      - blueocean-autofavorite
-#      - custom-tools-plugin
 #      - resource-disposer
 #      - subversion
 #      - slack
@@ -193,6 +193,11 @@
           set_implicit: true
           allow_version_override: true
 
+    terraform_version: 0.10.8
+
+
   roles:
     - role: jenkins
+    - role: ansible-terraform
+    - role: ansible-azure-cli
     - role: docker
