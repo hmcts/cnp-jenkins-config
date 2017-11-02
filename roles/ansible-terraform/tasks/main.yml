@@ -57,7 +57,16 @@
   command: unzip {{ terraform_download_dir }}/terraform.zip -d {{ terraform_install_dir }}
   args:
     creates: "{{ terraform_install_dir }}/terraform"
-#  unarchive:
-#    src: {{ terraform_url }}
-#    dest: {{ terraform_install_dir }}/terraform
   tags: terraform
+#  tasks:
+#    - name: step one
+#      stat:
+#        path: "{{ terraform_download_dir }}/terraform.zip"
+#      register: st
+#
+#    - name: get it
+#      unarchive:
+#        src: "{{ terraform_url }}"
+#        dest: "{{ terraform_download_dir }}"
+#        copy: "no"
+#      when: st.stat.checksum|default('None') != terraform_sha256sum

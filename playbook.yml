@@ -197,7 +197,7 @@
     terraform_sha256sum: b786c0cf936e24145fad632efd0fe48c831558cc9e43c071fffd93f35e3150db
 
   roles:
-    - role: jenkins
     - role: ansible-terraform
     - role: azure-cli
+    - role: jenkins
     - role: docker

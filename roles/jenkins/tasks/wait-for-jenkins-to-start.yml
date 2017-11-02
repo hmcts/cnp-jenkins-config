@@ -2,8 +2,11 @@
   get_url:
     url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}/cli/"
     dest: "/tmp/call.html"
+    force: yes
   register: result
-  until: result.failed is not defined or not result.failed
+  until: result|succeeded
+  #until: (result.failed is not defined or not result.failed)
   retries: "{{ jenkins_connection_retries }}"
   delay: "{{ jenkins_connection_delay }}"
   changed_when: false
+  ignore_errors: yes
