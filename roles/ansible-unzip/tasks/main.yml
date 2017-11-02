@@ -1,0 +1,17 @@
+---
+# tasks file for unzip
+
+- name: Include distribution specific variables
+  include_vars: "{{ ansible_distribution }}.yml"
+  tags:
+    - unzip
+
+- include: CentOS.yml
+  when: ansible_distribution == "CentOS"
+  tags:
+    - unzip
+
+- include: Ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+  tags:
+    - unzip

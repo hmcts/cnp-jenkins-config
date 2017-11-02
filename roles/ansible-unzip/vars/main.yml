@@ -1,0 +1,5 @@
+---
+# vars file for unzip
+
+unzip_packages:
+  - unzip

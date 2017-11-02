@@ -1,0 +1,6 @@
+---
+# vars file for terraform
+
+terraform_url: https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip
+terraform_download_dir: /root
+terraform_install_dir: /usr/local/bin

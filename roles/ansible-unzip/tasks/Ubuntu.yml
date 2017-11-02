@@ -1,0 +1,13 @@
+---
+# tasks file for unzip (Ubuntu specific)
+
+- name: Install unzip packages
+  become: yes
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: present
+  with_items:
+    - "{{ unzip_packages }}"
+  tags:
+    - unzip
