@@ -9,16 +9,10 @@
   with_items:
     - "{{ pipeline_jobs }}"
   when: pipeline_jobs
+  notify:
+  - restart jenkins
+  - wait for jenkins to start
+  - Check Jenkins is started
 
+- meta: flush_handlers
 
-#- name: Create github folder jobs
-#  include_tasks: job.yml
-#  vars:
-#    template: "github-folder-multi-branch.xml"
-#  loop_control:
-#    loop_var: job
-#  with_items:
-#    - "{{ github_folder_jobs }}"
-#  when: github_folder_jobs
-#  tags:
-#    - jenkins-jobs

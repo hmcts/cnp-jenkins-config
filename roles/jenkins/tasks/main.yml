@@ -43,8 +43,10 @@
 # Make sure Jenkins starts, then configure Jenkins.
 - name: Ensure Jenkins is started and runs on startup.
   service: name=jenkins state=started enabled=yes
+  notify:
+  - wait for jenkins to start
 
-- include_tasks: wait-for-jenkins-to-start.yml
+- meta: flush_handlers
 
 - name: Get the jenkins-cli jarfile from the Jenkins server.
   get_url:
@@ -74,12 +76,18 @@
 
 - name: Immediately restart Jenkins on http or user changes.
   service: name=jenkins state=restarted
+  notify:
+  - wait for jenkins to start
+
+- meta: flush_handlers
 
 # Make sure Jenkins starts, then configure Jenkins.
 - name: Ensure Jenkins is started and runs on startup.
   service: name=jenkins state=started enabled=yes
+  notify:
+  - wait for jenkins to start
 
-- include_tasks: wait-for-jenkins-to-start.yml
+- meta: flush_handlers
 
 #needs to be after plugin installation and Jenkins restarted
 - include_tasks: credentials.yml

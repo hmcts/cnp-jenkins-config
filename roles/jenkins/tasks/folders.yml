@@ -9,5 +9,9 @@
   with_items:
     - "{{ organization_folders }}"
   when: organization_folders
-  tags:
-    - orgs-folders
+  notify:
+  - restart jenkins
+  - wait for jenkins to start
+  - Check Jenkins is started
+
+- meta: flush_handlers

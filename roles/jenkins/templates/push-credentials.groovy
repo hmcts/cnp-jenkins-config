@@ -25,14 +25,14 @@ AzureCredentials azureCred = (AzureCredentials) new AzureCredentials(
     graphEndpoint= "https://graph.windows.net/")
 SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), azureCred)
 
-sshKeyCred = new BasicSSHUserPrivateKey(
-    CredentialsScope.GLOBAL,
-    "git_access_ssh_key",
-    "jenkins",
-    new BasicSSHUserPrivateKey.UsersPrivateKeySource(),
-    "",
-    "Credential ID: git_access_key")
-SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), sshKeyCred)
+//sshKeyCred = new BasicSSHUserPrivateKey(
+//    CredentialsScope.GLOBAL,
+//    "git_access_ssh_key",
+//    "jenkins",
+//    new BasicSSHUserPrivateKey.UsersPrivateKeySource(),
+//    "",
+//    "Credential ID: git_access_key")
+//SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), sshKeyCred)
 
 //gitUserKeyCred = new UsernamePasswordCredentialsImpl(
 //    CredentialsScope.GLOBAL,
