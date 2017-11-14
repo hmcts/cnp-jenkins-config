@@ -12,7 +12,7 @@ jenkins_connection_retries: 60
 jenkins_home: /var/lib/jenkins
 jenkins_hostname: localhost
 jenkins_http_port: 8080
-jenkins_jar_location: {{ jenkins_home }}/jenkins-cli.jar
+jenkins_jar_location: "{{ jenkins_home }}/jenkins-cli.jar"
 jenkins_url_prefix: ""
 jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
 
@@ -54,7 +54,7 @@ jenkins_role_cli_command: "NO DEFAULT"
 jenkins_role_cli_ssh_method_needed: false
 
 jenkins_override_ssh_user: "{{ ansible_user_id }}"
-jenkins_jobs_directory: {{ jenkins_home }}/jenkins-jobs
+jenkins_jobs_directory: "{{ jenkins_home }}/jenkins-jobs"
 # jenkins_admin_key_path: "/var/lib/jenkins/.ssh/id_rsa"
 git_hostname: 'git.reform.hmcts.net'
 github_api_url: 'https://{{ git_hostname }}/api/v3'
