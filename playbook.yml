@@ -11,6 +11,7 @@
 
     jenkins_disable_proxy: true
     jenkins_enable_security: false
+    jenkins_master_executors: 0
     jenkins_plugins:
       - blueocean-git-pipeline
       - blueocean
@@ -186,7 +187,7 @@
           type: cred-usrpwd
           description: "SSH credentials for Jenkins agents"
           username: "jenkinsssh"
-          password: "P@ssw0rd123!"
+          password: "{{ jenkins_agent_password }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
@@ -206,4 +207,4 @@
     - role: ansible-terraform
     - role: azure-cli
     - role: jenkins
-    - role: docker
+#    - role: docker
