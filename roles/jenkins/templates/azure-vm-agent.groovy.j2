@@ -18,7 +18,17 @@ def myCloud = new AzureVMCloudBuilder()
         .withCustomImage("https://mgmtvmimgstorelpdev.blob.core.windows.net/system/Microsoft.Compute/Images/centos-7-4-x86-64-2017-11-13-1/moj-osDisk.3cf7dc0e-ca28-472c-8698-15443dad0de2.vhd")
         .withOsType("Linux")
         .withLaunchMethod("SSH")
-        .withInitScript("yum install -y java-1.8.0-openjdk-headless java-1.8.0-openjdk docker maven git")
+        .withInitScript("
+        cat /etc/yum.repos.d/yarn.repo <<EOF
+        [yarn]
+        name=Yarn Repository
+        baseurl=https://dl.yarnpkg.com/rpm/
+        enabled=1
+        gpgcheck=1
+        gpgkey=https://dl.yarnpkg.com/rpm/pubkey.gpg
+        EOF
+        yum install -y java-1.8.0-openjdk-headless java-1.8.0-openjdk docker maven git yarn curl libselinux-python initscripts which nodejs rpmdevtools gettext python-jenkins
+        ")
         .withRunScriptAsRoot(true)
         .withDoNotUseMachineIfInitFails(true)
     .endAdvancedImage()
