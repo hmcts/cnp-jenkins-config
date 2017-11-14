@@ -58,6 +58,7 @@
 - name: Install Azure VM Agents plugin
   template:
     src: templates/azure-vm-agent.groovy.j2
-    dest: "{{ jenkins_home }}/init.groovy.d/azure-vm-agent.groovy"
+    dest: "{{ jenkins_home }}/init.groovy.d/10-azure-vm-agent.groovy"
     group: jenkins
     owner: jenkins
+    mode: 0700
