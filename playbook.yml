@@ -185,8 +185,8 @@
         - id: vm_agent_creds
           type: cred-usrpwd
           description: "SSH credentials for Jenkins agents"
-          username: "adminssh"
-          password: "adminssh"
+          username: "jenkinsssh"
+          password: "P@ssw0rd123!"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
