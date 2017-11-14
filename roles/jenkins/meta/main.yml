@@ -1,6 +1,6 @@
 ---
-dependencies:
-  - jenkins-dependencies
+#dependencies:
+#  - jenkins-dependencies
 
 galaxy_info:
   author: geerlingguy
