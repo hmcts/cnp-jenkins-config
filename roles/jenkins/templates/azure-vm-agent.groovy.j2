@@ -1,0 +1,28 @@
+#!groovy
+import com.microsoft.azure.vmagent.builders.*;
+
+def myCloud = new AzureVMCloudBuilder()
+.withCloudName("moj-azure")
+.withAzureCredentialsId("jenkinsServicePrincipal")
+.withExistingResourceGroupName("mgmt-vmimg-store-lpdev")
+.withMaxVirtualMachinesLimit("3")
+.withDeploymentTimeout("1200")
+.addNewTemplate()
+    .withName("moj-jenkins-builders")
+    .withLabels("jenkins-workers")
+    .withLocation("UK South")
+    .withVirtualMachineSize("Standard_DS11_v2")
+    .withExistingStorageAccount("mgmtvmimgstorelpdev")
+    .addNewAdvancedImage()
+        .withCustomImage("https://mgmtvmimgstorelpdev.blob.core.windows.net/system/Microsoft.Compute/Images/centos-7-4-x86-64-2017-11-13-1/moj-osDisk.3cf7dc0e-ca28-472c-8698-15443dad0de2.vhd")
+        .withOsType("Linux")
+        .withLaunchMethod("SSH")
+        .withInitScript("yum install -y java-1.8.0-openjdk-headless java-1.8.0-openjdk docker maven git")
+        .withRunScriptAsRoot(true)
+        .withDoNotUseMachineIfInitFails(true)
+    .endAdvancedImage()
+    .withAdminCredential("vm_agent_creds")
+.endTemplate()
+.build();
+
+Jenkins.getInstance().clouds.add(myCloud);

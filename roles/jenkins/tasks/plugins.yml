@@ -40,10 +40,6 @@
   register: result
   until: result|succeeded
   ignore_errors: yes
-  notify:
-  - restart jenkins
-  - wait for jenkins to start
-  - Check Jenkins is started
 
 
 - name: Install Jenkins plugins using token.
@@ -58,10 +54,10 @@
   register: result
   until: result|succeeded
   ignore_errors: yes
-  notify:
-  - restart jenkins
-  - wait for jenkins to start
-  - Check Jenkins is started
 
-- meta: flush_handlers
-
+- name: Install Azure VM Agents plugin
+  temaplte:
+    src: templates/azure-vm-agent.groovy.j2
+    dest: "{{ jenkins_home }}/init.groovy.d/azure-vm-agent.groovy"
+    group: jenkins
+    owner: jenkins

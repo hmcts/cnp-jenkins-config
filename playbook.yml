@@ -22,6 +22,7 @@
       - blueocean-rest
       - blueocean-dashboard
       - azure-credentials
+      - azure-vm-agents
       - branch-api
       - cloudbees-folder
       - plain-credentials
@@ -181,6 +182,11 @@
           description: "Credential ID: git_access_key"
           username: "moj-jenkins-user"
           password: ""
+        - id: vm_agent_creds
+          type: cred-usrpwd
+          description: "SSH credentials for Jenkins agents"
+          username: "adminssh"
+          password: "adminssh"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
