@@ -6,6 +6,7 @@
       - libselinux-python
       - initscripts
       - java-1.8.0-openjdk
+      - python-jenkins
     state: installed
 
 - name: Ensure Jenkins repo is installed.
