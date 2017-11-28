@@ -39,5 +39,5 @@ SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(
 //    "id-moj-jenkins-user",
 //    "Username/API Key for Jenkins to access Git",
 //    "moj-jenkins-user",
-//    "{{ jenkins_gh_password }}")
+//    "{{ github_apikey }}")
 //SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), gitUserKeyCred)

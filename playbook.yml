@@ -177,7 +177,7 @@
           type: cred-usrpwd
           description: "Jenkins GitHub credentials (Username/password format)"
           username: "moj-jenkins-user"
-          password: "{{ jenkins_gh_password }}"
+          password: "{{ github_apikey }}"
         - id: git_access_ssh_key
           type: cred-usrkey
           description: "Credential ID: git_access_key"
