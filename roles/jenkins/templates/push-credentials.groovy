@@ -9,7 +9,7 @@ import com.microsoft.azure.util.*
 def subscription_id = "{{ jenkins_subscription_id }}"
 def client_id = "{{ jenkins_client_id }}"
 def client_secret = "{{ jenkins_client_secret }}"
-def token_id = "{{ jenkins_token_id }}"
+def token_id = "{{ jenkins_tenant_id }}"
 
 AzureCredentials azureCred = (AzureCredentials) new AzureCredentials(
     scope= CredentialsScope.GLOBAL,
