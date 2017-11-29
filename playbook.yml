@@ -1,5 +1,6 @@
 ---
 - hosts: all
+  strategy: debug
   become: true
   vars:
     repos_role_remove_repos: []
