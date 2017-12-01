@@ -103,6 +103,9 @@
           <includes>{{ folder.branchesToinclude | default('master') }} PR*</includes>
           <excludes/>
         </jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait>
+        <org.jenkinsci.plugins.github__branch__source.SSHCheckoutTrait>
+          <credentialsId>git_access_ssh_key</credentialsId>
+        </org.jenkinsci.plugins.github__branch__source.SSHCheckoutTrait>
       </traits>
     </org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator>
   </navigators>

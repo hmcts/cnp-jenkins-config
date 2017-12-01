@@ -47,7 +47,10 @@
 
 - name: Add ssh key to {{ jenkins_home }}/.ssh
   copy:
-    content: "{{ jenkins_ssh_priv_key }}"
+    content: |
+      -----BEGIN RSA PRIVATE KEY-----
+      {{ jenkins_ssh_priv_key | regex_replace(' ', '\n') }}
+      -----END RSA PRIVATE KEY-----
     dest: "{{ jenkins_home }}/.ssh/id_rsa"
     owner: jenkins
     group: jenkins
