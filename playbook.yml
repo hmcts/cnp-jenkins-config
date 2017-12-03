@@ -31,6 +31,7 @@
       - github-organization-folder
       - greenballs
       - custom-tools-plugin
+      - http-request
 
 #      - favorite
 #      - credentials
