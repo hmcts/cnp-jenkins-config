@@ -31,6 +31,7 @@
       - github-organization-folder
       - greenballs
       - custom-tools-plugin
+      - git
 
 #      - favorite
 #      - credentials
@@ -44,7 +45,6 @@
 #      - script-security
 #      - jquery
 #      - token-macro
-#      - git
 #      - workflow-job
 #      - pipeline-model-extensions
 #      - workflow-cps-global-lib
@@ -204,6 +204,7 @@
 #    terraform_sha256sum: b786c0cf936e24145fad632efd0fe48c831558cc9e43c071fffd93f35e3150db
 
     # Variables specific to azure-vm-agent plugin
+    jenkins_home: /var/lib/jenkins
     jenkins_agent_user: "jenkinsssh"
     jenkins_agent_cloud_name: "moj-azure"
     jenkins_agent_azure_sp_id: "jenkinsServicePrincipal"
@@ -219,6 +220,6 @@
 
   roles:
 #    - role: ansible-terraform
-#    - role: azure-cli
+    - role: azure-cli
     - role: jenkins
 #    - role: docker
