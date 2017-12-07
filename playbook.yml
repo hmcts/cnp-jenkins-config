@@ -32,6 +32,9 @@
       - greenballs
       - custom-tools-plugin
       - git
+      - lockable-resources
+      - ansicolor
+
 
 #      - favorite
 #      - credentials
@@ -204,7 +207,7 @@
 #    terraform_sha256sum: b786c0cf936e24145fad632efd0fe48c831558cc9e43c071fffd93f35e3150db
 
     # Variables specific to azure-vm-agent plugin
-    jenkins_home: /var/lib/jenkins
+    jenkins_home: /opt/jenkins
     jenkins_agent_user: "jenkinsssh"
     jenkins_agent_cloud_name: "moj-azure"
     jenkins_agent_azure_sp_id: "jenkinsServicePrincipal"
@@ -219,7 +222,7 @@
     jenkins_agent_private_ip: true
 
   roles:
-#    - role: ansible-terraform
+    - role: ansible-terraform
     - role: azure-cli
     - role: jenkins
-#    - role: docker
+    - role: docker
