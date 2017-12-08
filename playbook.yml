@@ -17,6 +17,7 @@
       - blueocean-autofavorite
       - blueocean-personalization
       - azure-credentials
+      - timestamper
 #      - blueocean-jwt
 #      - blueocean-rest-impl
 #      - favorite
