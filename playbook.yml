@@ -224,5 +224,6 @@
   roles:
     - role: ansible-terraform
     - role: azure-cli
+    - role: jenkins-dependencies
     - role: jenkins
     - role: docker
