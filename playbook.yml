@@ -199,7 +199,7 @@
           include: "*"
           excludes: ""
           ignore_on_push_notifications: true
-          default_version: "master"
+          default_version: "private-ase"
           set_implicit: true
           allow_version_override: true
 
