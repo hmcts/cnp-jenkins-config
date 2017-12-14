@@ -32,6 +32,9 @@
       - greenballs
       - custom-tools-plugin
       - http-request
+      - slack
+      - timestamper
+      
 
 #      - favorite
 #      - credentials
