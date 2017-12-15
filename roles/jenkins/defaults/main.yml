@@ -9,7 +9,6 @@ jenkins_package_state: present
 
 jenkins_connection_delay: 5
 jenkins_connection_retries: 60
-jenkins_home: /var/lib/jenkins
 jenkins_hostname: localhost
 jenkins_http_port: 8080
 jenkins_jar_location: "{{ jenkins_home }}/jenkins-cli.jar"
@@ -60,9 +59,3 @@ git_hostname: 'git.reform.hmcts.net'
 github_api_url: 'https://{{ git_hostname }}/api/v3'
 pipeline_jobs: false
 github_folder_jobs: false
-
-#will be set via commandline but for now it's here so code works with variables already present in the env
-jenkins_subscription_id: "{{ jenkins_kitchen_subscription_id }}"
-jenkins_client_id: "{{ jenkins_kitchen_client_id }}"
-jenkins_client_secret: "{{ jenkins_kitchen_client_secret }}"
-jenkins_token_id: "{{ jenkins_kitchen_tenant_id }}"

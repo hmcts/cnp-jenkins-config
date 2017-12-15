@@ -31,11 +31,12 @@
       - github-organization-folder
       - greenballs
       - custom-tools-plugin
-      - http-request
+      - git
+      - lockable-resources
+      - ansicolor
+      - http_request
       - slack
       - timestamper
-      
-
 #      - favorite
 #      - credentials
 #      - credentials-binding
@@ -48,7 +49,6 @@
 #      - script-security
 #      - jquery
 #      - token-macro
-#      - git
 #      - workflow-job
 #      - pipeline-model-extensions
 #      - workflow-cps-global-lib
@@ -181,7 +181,7 @@
           type: cred-usrpwd
           description: "Jenkins GitHub credentials (Username/password format)"
           username: "moj-jenkins-user"
-          password: "{{ jenkins_gh_password }}"
+          password: "{{ github_apikey }}"
         - id: git_access_ssh_key
           type: cred-usrkey
           description: "Credential ID: git_access_key"
@@ -200,14 +200,15 @@
           include: "*"
           excludes: ""
           ignore_on_push_notifications: true
-          default_version: "master"
+          default_version: "private-ase"
           set_implicit: true
           allow_version_override: true
 
-#    terraform_version: 0.10.8
-#    terraform_sha256sum: b786c0cf936e24145fad632efd0fe48c831558cc9e43c071fffd93f35e3150db
+    terraform_version: 0.11.1
+    terraform_sha256sum: 4e3d5e4c6a267e31e9f95d4c1b00f5a7be5a319698f0370825b459cb786e2f35
 
     # Variables specific to azure-vm-agent plugin
+    jenkins_home: /opt/jenkins
     jenkins_agent_user: "jenkinsssh"
     jenkins_agent_cloud_name: "moj-azure"
     jenkins_agent_azure_sp_id: "jenkinsServicePrincipal"
@@ -222,7 +223,8 @@
     jenkins_agent_private_ip: true
 
   roles:
-#    - role: ansible-terraform
-#    - role: azure-cli
+    - role: ansible-terraform
+    - role: azure-cli
+    - role: jenkins-dependencies
     - role: jenkins
-#    - role: docker
+    - role: docker

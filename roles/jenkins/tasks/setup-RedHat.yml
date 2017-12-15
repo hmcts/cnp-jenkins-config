@@ -45,3 +45,9 @@
     state: "{{ jenkins_package_state }}"
   notify: configure default users
 
+- name: Ensure linux jenkins user has the right home directory in /etc/passwd
+  user:
+    name: jenkins
+    home: "{{ jenkins_home }}"
+    createhome: no
+  notify: configure default users
