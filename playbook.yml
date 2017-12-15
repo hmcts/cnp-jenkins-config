@@ -35,7 +35,8 @@
       - lockable-resources
       - ansicolor
       - http_request
-
+      - slack
+      - timestamper
 #      - favorite
 #      - credentials
 #      - credentials-binding
