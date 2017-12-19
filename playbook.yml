@@ -37,6 +37,8 @@
       - http_request
       - slack
       - timestamper
+      - sonar
+      - nodejs
 #      - favorite
 #      - credentials
 #      - credentials-binding
