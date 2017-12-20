@@ -11,14 +11,34 @@
 
     jenkins_disable_proxy: true
     jenkins_enable_security: false
+    jenkins_master_executors: 0
     jenkins_plugins:
       - blueocean-git-pipeline
       - blueocean
       - blueocean-autofavorite
       - blueocean-personalization
+      - blueocean-jwt
+      - blueocean-rest-impl
+      - blueocean-pipeline-api-impl
+      - blueocean-rest
+      - blueocean-dashboard
       - azure-credentials
-#      - blueocean-jwt
-#      - blueocean-rest-impl
+      - azure-vm-agents
+      - branch-api
+      - cloudbees-folder
+      - plain-credentials
+      - github
+      - github-organization-folder
+      - greenballs
+      - custom-tools-plugin
+      - git
+      - lockable-resources
+      - ansicolor
+      - http_request
+      - slack
+      - timestamper
+      - sonar
+      - nodejs
 #      - favorite
 #      - credentials
 #      - credentials-binding
@@ -31,7 +51,6 @@
 #      - script-security
 #      - jquery
 #      - token-macro
-#      - git
 #      - workflow-job
 #      - pipeline-model-extensions
 #      - workflow-cps-global-lib
@@ -115,7 +134,6 @@
 #      - sse-gateway
 #      - workflow-cps
 #      - blueocean-autofavorite
-#      - custom-tools-plugin
 #      - resource-disposer
 #      - subversion
 #      - slack
@@ -139,63 +157,76 @@
 #        credentials_id: 'jenkins-ghe-api-token'
 #        github_api_url: 'https://github.com'
 
-    github_folder_jobs:
-      - name: 'contino'
+    organization_folders:
+      - name: 'Contino'
         displayName: 'Contino'
         description: 'Contino'
         credentials_id: 'jenkins-ghe-api-token'
-        github_api_url: 'https://github.com'
+        github_api_url: 'https://api.github.com'
+        repoPattern: 'moj-.*'
+      - name: 'Test'
+        displayName: 'Test'
+        description: 'Test'
+        credentials_id: 'jenkins-ghe-api-token'
+        github_api_url: 'https://api.github.com'
+        repoPattern: 'moj-.*'
 
-    pipeline_jobs:
-      - name: "run-ansible"
-        displayName: "Run Ansible"
-        description: "Run the ansible plays"
-        path: "jenkins_jobs/ansible_pipeline.groovy"
-        repo: "devops/ansible-management"
+    pipeline_jobs: []
+#      - name: "run-ansible"
+#        displayName: "Run Ansible"
+#        description: "Run the ansible plays"
+#        path: "jenkins_jobs/ansible_pipeline.groovy"
+#        repo: "devops/ansible-management"
 
     jenkins_credentials:
         - id: jenkins-github-api-token
+          type: cred-usrpwd
           description: "Jenkins GitHub credentials (Username/password format)"
-          username: moj-jenkins-user
-          password: "{{ jenkins_gh_password }}"
-          type: username-password
-        - id: subscription_id
-          description: "Azure subscription_id"
-          secret: "{{ jenkins_subscription_id }}"
-          type: string
-        - id: tenant_id
-          description: "Azure tenant_id"
-          secret: "{{ jenkins_tenant_id }}"
-          type: string
-        - id: object_id
-          description: "Azure object_id"
-          secret: "{{ jenkins_object_id }}"
-          type: string
-        - id: sp_password
-          description: "Azure sp_password"
-          secret: "{{ jenkins_sp_password }}"
-          type: string
-        - id: kitchen_subscription_id
-          description: "Azure subscription_id for kitchen"
-          secret: "{{ jenkins_kitchen_subscription_id }}"
-          type: string
-        - id: kitchen_tenant_id
-          description: "Azure tenant_id for kitchen"
-          secret: "{{ jenkins_kitchen_tenant_id }}"
-          type: string
-        - id: kitchen_client_id
-          description: "Azure client_id for kitchen"
-          secret: "{{ jenkins_kitchen_client_id }}"
-          type: string
-        - id: kitchen_client_secret
-          description: "Azure sp_password for kitchen"
-          secret: "{{ jenkins_kitchen_client_secret }}"
-          type: string
-        - id: gitcontino_password
-          description: "Azure deployment user password"
-          secret: "{{ jenkins_gitcontino_password }}"
-          type: string
+          username: "moj-jenkins-user"
+          password: "{{ github_apikey }}"
+        - id: git_access_ssh_key
+          type: cred-usrkey
+          description: "Credential ID: git_access_key"
+          username: "moj-jenkins-user"
+          password: ""
+        - id: vm_agent_creds
+          type: cred-usrpwd
+          description: "SSH credentials for Jenkins agents"
+          username: "{{ jenkins_agent_user }}"
+          password: "{{ jenkins_agent_password }}"
+
+    jenkins_global_pipeline_libraries:
+        - name: "Infrastructure"
+          remote: "git@github.com:contino/moj-jenkins-library.git"
+          credentials_id: "git_access_ssh_key"
+          include: "*"
+          excludes: ""
+          ignore_on_push_notifications: true
+          default_version: "private-ase"
+          set_implicit: true
+          allow_version_override: true
+
+    terraform_version: 0.11.1
+    terraform_sha256sum: 4e3d5e4c6a267e31e9f95d4c1b00f5a7be5a319698f0370825b459cb786e2f35
+
+    # Variables specific to azure-vm-agent plugin
+    jenkins_home: /opt/jenkins
+    jenkins_agent_user: "jenkinsssh"
+    jenkins_agent_cloud_name: "moj-azure"
+    jenkins_agent_azure_sp_id: "jenkinsServicePrincipal"
+    jenkins_agent_vm_limit: "3"
+    jenkins_agent_deployment_timeout: "1200"
+    jenkins_agent_storage_type: "Standard_LRS"
+    jenkins_agent_machine_size: "Standard_DS11_v2"
+    jenkins_agent_vm_creds: "vm_agent_creds"
+    jenkins_agent_template_name: "moj-jenkins-builders"
+    jenkins_agent_labels: "jenkins-workers"
+    jenkins_agent_executors: "4"
+    jenkins_agent_private_ip: true
 
   roles:
+    - role: ansible-terraform
+    - role: azure-cli
+    - role: jenkins-dependencies
     - role: jenkins
     - role: docker

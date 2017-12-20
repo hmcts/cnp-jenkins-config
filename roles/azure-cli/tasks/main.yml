@@ -1,0 +1,14 @@
+- name: Get the key
+  rpm_key:
+    state: present
+    key: "https://packages.microsoft.com/keys/microsoft.asc"
+
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+  shell: "sh -c 'echo -e \"[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc\" > /etc/yum.repos.d/azure-cli.repo'"
+  become: true
+
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+  yum:
+    name: "azure-cli"
+    update_cache: yes
+  become: true

@@ -5,6 +5,8 @@
       - curl
       - libselinux-python
       - initscripts
+      - java-1.8.0-openjdk
+      - python-jenkins
     state: installed
 
 - name: Ensure Jenkins repo is installed.
@@ -41,4 +43,11 @@
   package:
     name: jenkins
     state: "{{ jenkins_package_state }}"
+  notify: configure default users
+
+- name: Ensure linux jenkins user has the right home directory in /etc/passwd
+  user:
+    name: jenkins
+    home: "{{ jenkins_home }}"
+    createhome: no
   notify: configure default users

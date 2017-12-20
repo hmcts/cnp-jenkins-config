@@ -9,22 +9,19 @@ jenkins_package_state: present
 
 jenkins_connection_delay: 5
 jenkins_connection_retries: 60
-jenkins_home: /var/lib/jenkins
 jenkins_hostname: localhost
 jenkins_http_port: 8080
 jenkins_jar_location: "{{ jenkins_home }}/jenkins-cli.jar"
 jenkins_url_prefix: ""
-jenkins_java_options: "-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
-
-# "-Djava.awt.headless=true -Djenkins.install.runSetupWizard=false"
+jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
 
 jenkins_plugins: []
 jenkins_plugins_state: present
 jenkins_plugin_updates_expiration: 86400
 jenkins_plugin_timeout: 60
 
-jenkins_admin_username: admin
-jenkins_admin_password: admin
+jenkins_admin_username: "admin"
+jenkins_admin_password: "admin"
 jenkins_admin_password_file: ""
 jenkins_admin_token: ""
 jenkins_admin_token_file: ""
@@ -49,7 +46,7 @@ jenkins_global_pipeline_libraries: []
 jenkins_github_api_token: "PLACEHOLDER"
 slack_token: "PLACEHOLDER"
 
-jenkins_role_cli_command_remoting: "java -jar {{ jenkins_jar_location }} -s http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix | default('/') }} -remoting"
+# jenkins_role_cli_command_remoting: "java -jar {{ jenkins_jar_location }} -s http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix | default('/') }} -remoting"
 # jenkins_role_cli_command_ssh: "java -jar {{ jenkins_jar_location }} -s http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix | default('/') }} -ssh -user {{ jenkins_override_ssh_user }}"
 jenkins_role_cli_command_ssh: "ssh -i ~jenkins/.ssh/id_rsa {{ jenkins_override_ssh_user }}@localhost -p 2020 -o StrictHostKeyChecking=false"
 jenkins_role_cli_command: "NO DEFAULT"
@@ -62,4 +59,3 @@ git_hostname: 'git.reform.hmcts.net'
 github_api_url: 'https://{{ git_hostname }}/api/v3'
 pipeline_jobs: false
 github_folder_jobs: false
-

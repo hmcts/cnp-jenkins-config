@@ -6,8 +6,6 @@
     - jenkins-jobs
 - set_fact:
    this_job_full_path: "{{ this_job_dir }}/config.xml"
-  tags:
-    - jenkins-jobs
 
 - name: "Ensure {{ job.name }} {{ this_job_dir }} job folder exists"
   file:
@@ -16,8 +14,6 @@
     owner: "{{ jenkins_process_user }}"
     group: "{{ jenkins_process_group }}"
     mode: 0775
-  tags:
-    - jenkins-jobs
 
 - name: Render {{ job.name }} job xml
   template:
@@ -26,25 +22,11 @@
     owner: "{{ jenkins_process_user }}"
     group: "{{ jenkins_process_group }}"
   register: job_template_file
-  tags:
-    - jenkins-jobs
 
-#- name: Create {{ job.name }} job
-#  shell: |
-#    if {{ jenkins_role_cli_command }} list-jobs | grep "^{{ job.name }}$"; then
-#      {{ jenkins_role_cli_command }} update-job {{ job.name }} < {{ this_job_full_path }}.template
-#    else
-#      {{ jenkins_role_cli_command }} create-job {{ job.name }} < {{ this_job_full_path }}.template
-#    fi
-#  become: yes
-#  become_user: "{{jenkins_process_user}}"
-#  when: job_template_file.changed
-#  tags:
-#    - jenkins-jobs
 
 - name: Create {{ job.name }} job
   jenkins_job:
-    config: "{{ lookup('file', 'templates/test.xml') }}"
+    config: "{{ this_job_full_path }}.template"
     name: "{{ job.name }}"
     password: "{{jenkins_admin_password}}"
     url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}"
@@ -55,5 +37,3 @@
   register: result
   until: result|succeeded
   ignore_errors: yes
-  tags:
-    - jenkins-jobs

@@ -11,6 +11,10 @@
     mode: 0775
   register: jenkins_users_config
 
+# Make sure Jenkins starts, then configure Jenkins.
+- name: Check Jenkins is started
+  service: name=jenkins state=started enabled=yes
+
   # updated this to wait 1 second if the service is still down
   # wait 5 seconds once it says it is up, so it can finish starting
   # otherwise strange issues were happening

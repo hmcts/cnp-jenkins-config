@@ -37,6 +37,25 @@
     group: jenkins
     mode: u+rwx
 
+- name: Create directory {{ jenkins_home }}/.ssh
+  file:
+    path: "{{ jenkins_home }}/.ssh"
+    state: directory
+    owner: jenkins
+    group: jenkins
+    mode: u+rwx
+
+- name: Add ssh key to {{ jenkins_home }}/.ssh
+  copy:
+    content: |
+      -----BEGIN RSA PRIVATE KEY-----
+      {{ jenkins_ssh_priv_key | regex_replace(' ', '\n') }}
+      -----END RSA PRIVATE KEY-----
+    dest: "{{ jenkins_home }}/.ssh/id_rsa"
+    owner: jenkins
+    group: jenkins
+    mode: 0600
+
 - name: Create custom init scripts directory.
   file:
     path: "{{ jenkins_home }}/init.groovy.d"
@@ -53,3 +72,11 @@
   when: (jenkins_users_config is defined and jenkins_users_config.changed) or
         (jenkins_http_config is defined and jenkins_http_config.changed) or
         (jenkins_home_config is defined and jenkins_home_config.changed)
+
+- name: Increase Jenkins Security
+  template:
+    src: templates/disable-jenkins-cli.groovy
+    dest: "{{ jenkins_home }}/init.groovy.d/disable-jenkins-cli.groovy"
+    group: jenkins
+    owner: jenkins
+    mode: 0700

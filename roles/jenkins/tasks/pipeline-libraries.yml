@@ -1,14 +1,19 @@
 ---
-
-# TODO: DO THIS WITH THE CLI?
 - name: Add Global Pipeline Libraries
-  template:
-    src: "global-pipeline-libraries.xml.j2"
-    dest: "{{ jenkins_home }}/org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml"
-    mode: "u+rw"
-    owner: "{{ jenkins_process_user }}"
-    group: "{{ jenkins_process_group }}"
-  when: "jenkins_global_pipeline_libraries|length > 0"
-#  notify:
-#    - restart jenkins
-#    - wait for jenkins to start
+  jenkins_script:
+    script: "{{ lookup('template', 'global-pipeline-library.groovy') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  register: result
+  until: result|succeeded
+  ignore_errors: yes
+  loop_control:
+    loop_var: global_lib
+  with_items: "{{ jenkins_global_pipeline_libraries }}"
+  when: jenkins_global_pipeline_libraries
+  notify:
+  - restart jenkins
+  - wait for jenkins to start
+  - Check Jenkins is started
+
+- meta: flush_handlers

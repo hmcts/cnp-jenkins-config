@@ -8,7 +8,7 @@
         <scm class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source@2.0.5">
           <id>{{ library.name }}</id>
           <apiUri>https://{{ library.git_hostname|default(jenkins_default_git_hostname) }}/api/v3</apiUri>
-          <checkoutCredentialsId>SAME</checkoutCredentialsId>
+          <checkoutCredentialsId>jenkins-github-api-token</checkoutCredentialsId>
           <scanCredentialsId>{{ library.github_api_token|default(jenkins_default_github_api_token) }}</scanCredentialsId>
           <repoOwner>{{ library.repo_owner }}</repoOwner>
           <repository>{{ library.repository }}</repository>

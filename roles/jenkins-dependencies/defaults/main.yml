@@ -7,6 +7,7 @@ jenkins_role_yum_packages:
   - sudo
   # from geerlingguy java dep:
   - java-1.8.0-openjdk
+  - java-1.8.0-openjdk-devel
   # from ocha.yarn dep:
   - nodejs
   - yarn
@@ -14,3 +15,4 @@ jenkins_role_yum_packages:
   - rpmdevtools
   - gettext
   - git
+  - python-jenkins

@@ -1,0 +1,72 @@
+---
+# tasks file for terraform
+
+- name: Include distribution specific variables
+  include_vars: "{{ ansible_distribution }}.yml"
+  tags: terraform
+
+- include: CentOS.yml
+  when: ansible_distribution == "CentOS"
+  tags: terraform
+
+- include: Ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+  tags: terraform
+
+- name: Check if Terraform is already installed
+  stat: >
+    path={{ terraform_install_dir }}/terraform
+  register: terraform_bin
+  changed_when: false
+  tags: terraform
+
+- name: Get currently installed Terraform version
+  shell: "{{ terraform_install_dir }}/terraform version | grep '^Terraform' | cut -d' ' -f2 | sed -e 's/^v//'"
+  register: installed_terraform_version
+  when: terraform_bin.stat.exists
+  changed_when: false
+  tags: terraform
+
+- name: Get list of installed Terraform files
+  shell: ls -1 {{ terraform_install_dir }}/terraform*
+  register: terraform_files
+  when:
+    - not installed_terraform_version | skipped
+  changed_when: false
+  tags: terraform
+
+- name: Download Terraform
+  get_url: >
+    url={{ terraform_url }}
+    dest={{ terraform_download_dir }}/terraform.zip
+    sha256sum={{ terraform_sha256sum }}
+  tags: terraform
+
+- name: Remove old files if upgrading
+  file: >
+    path={{ item }}
+    state=absent
+  with_items:
+    - "{{ terraform_files.stdout_lines | default([]) }}"
+  when:
+    - not installed_terraform_version | skipped
+    - installed_terraform_version.stdout | version_compare(terraform_version, operator='lt', strict=True)
+  tags: terraform
+
+- name: Unzip Terraform to installation directory
+  command: unzip {{ terraform_download_dir }}/terraform.zip -d {{ terraform_install_dir }}
+  args:
+    creates: "{{ terraform_install_dir }}/terraform"
+  tags: terraform
+#  tasks:
+#    - name: step one
+#      stat:
+#        path: "{{ terraform_download_dir }}/terraform.zip"
+#      register: st
+#
+#    - name: get it
+#      unarchive:
+#        src: "{{ terraform_url }}"
+#        dest: "{{ terraform_download_dir }}"
+#        copy: "no"
+#      when: st.stat.checksum|default('None') != terraform_sha256sum
