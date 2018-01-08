@@ -170,6 +170,12 @@
         credentials_id: 'jenkins-ghe-api-token'
         github_api_url: 'https://api.github.com'
         repoPattern: 'moj-.*'
+      - name: 'HMCTS'
+        displayName: 'HMCTS'
+        description: 'HMCTS public repositories'
+        credentials_id: 'jenkins-github-api-token'
+        github_api_url: 'https://api.github.com'
+        jenkinsfile_path: 'Jenkinsfile_CNP'
 
     pipeline_jobs: []
 #      - name: "run-ansible"
