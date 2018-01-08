@@ -175,6 +175,7 @@
         description: 'HMCTS public repositories'
         credentials_id: 'jenkins-github-api-token'
         github_api_url: 'https://api.github.com'
+        jenkinsfile_path: 'Jenkinsfile_CNP'
 
     pipeline_jobs: []
 #      - name: "run-ansible"
