@@ -170,6 +170,12 @@
         credentials_id: 'jenkins-ghe-api-token'
         github_api_url: 'https://api.github.com'
         repoPattern: 'moj-.*'
+      - name: "infra-pipeline"
+        displayName: "Infra Pipeline"
+        description: "Runs infra pipeline to build complete infra"
+        credentials_id: 'jenkins-ghe-api-token'
+        github_api_url: 'https://api.github.com'
+        repoPattern: 'moj-infra-pipeline'
 
     pipeline_jobs: []
 #      - name: "run-ansible"
