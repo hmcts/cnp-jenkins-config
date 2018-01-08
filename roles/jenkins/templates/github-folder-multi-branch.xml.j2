@@ -111,7 +111,7 @@
   </navigators>
   <projectFactories>
     <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory plugin="workflow-multibranch@2.16">
-      <scriptPath>Jenkinsfile</scriptPath>
+      <scriptPath>{{ folder.jenkinsfile_path | default('Jenkinsfile') }}</scriptPath>
     </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory>
   </projectFactories>
 </jenkins.branch.OrganizationFolder>
