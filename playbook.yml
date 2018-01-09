@@ -179,7 +179,7 @@
       - name: 'HMCTS'
         displayName: 'HMCTS'
         description: 'HMCTS public repositories'
-        credentials_id: 'jenkins-github-api-token'
+        credentials_id: 'jenkins-github-hmcts-api-token'
         github_api_url: 'https://api.github.com'
         jenkinsfile_path: 'Jenkinsfile_CNP'
 
@@ -196,6 +196,11 @@
           description: "Jenkins GitHub credentials (Username/password format)"
           username: "moj-jenkins-user"
           password: "{{ github_apikey }}"
+        - id: jenkins-github-hmcts-api-token
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "jenkins-reform-hmcts"
+          password: "{{ hmcts_github_apikey }}"
         - id: git_access_ssh_key
           type: cred-usrkey
           description: "Credential ID: git_access_key"
