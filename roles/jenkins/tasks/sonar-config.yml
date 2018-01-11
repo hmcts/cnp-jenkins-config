@@ -26,7 +26,7 @@
   xml:
     path: "{{ jenkins_home}}/hudson.plugins.sonar.SonarGlobalConfiguration.xml"
     xpath: /hudson.plugins.sonar.SonarGlobalConfiguration/installations/hudson.plugins.sonar.SonarInstallation/serverUrl
-    value: "https://sonar.reform.hmcts.net"
+    value: "{{ sonar_server_url }}"
   notify:
   - restart jenkins
   - wait for jenkins to start
