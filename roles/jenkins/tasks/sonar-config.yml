@@ -1,0 +1,44 @@
+---
+
+- name: Set the SonarQube Scanner config
+  copy:
+    src: "templates/hudson.plugins.sonar.SonarRunnerInstallation.xml"
+    dest: "{{ jenkins_home}}/hudson.plugins.sonar.SonarRunnerInstallation.xml"
+    owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
+    mode: 0600
+  notify:
+  - restart jenkins
+  - wait for jenkins to start
+  - Check Jenkins is started
+
+- name: Set the SonarQube instance name
+  xml:
+    path: "{{ jenkins_home}}/hudson.plugins.sonar.SonarGlobalConfiguration.xml"
+    xpath: /hudson.plugins.sonar.SonarGlobalConfiguration/installations/hudson.plugins.sonar.SonarInstallation/name
+    value: "SonarQube"
+  notify:
+  - restart jenkins
+  - wait for jenkins to start
+  - Check Jenkins is started
+
+- name: Set the SonarQube host
+  xml:
+    path: "{{ jenkins_home}}/hudson.plugins.sonar.SonarGlobalConfiguration.xml"
+    xpath: /hudson.plugins.sonar.SonarGlobalConfiguration/installations/hudson.plugins.sonar.SonarInstallation/serverUrl
+    value: "https://sonar.reform.hmcts.net"
+  notify:
+  - restart jenkins
+  - wait for jenkins to start
+  - Check Jenkins is started
+
+- name: Set the SonarQube api token
+  xml:
+    path: "{{ jenkins_home}}/hudson.plugins.sonar.SonarGlobalConfiguration.xml"
+    xpath: /hudson.plugins.sonar.SonarGlobalConfiguration/installations/hudson.plugins.sonar.SonarInstallation/serverAuthenticationToken
+    value: "9d964ad3e53c62de98c108154f5164163c6d360a"
+  notify:
+  - restart jenkins
+  - wait for jenkins to start
+  - Check Jenkins is started
+  
