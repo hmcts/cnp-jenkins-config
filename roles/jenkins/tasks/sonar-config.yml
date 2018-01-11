@@ -36,7 +36,7 @@
   xml:
     path: "{{ jenkins_home}}/hudson.plugins.sonar.SonarGlobalConfiguration.xml"
     xpath: /hudson.plugins.sonar.SonarGlobalConfiguration/installations/hudson.plugins.sonar.SonarInstallation/serverAuthenticationToken
-    value: "9d964ad3e53c62de98c108154f5164163c6d360a"
+    value: "{{ sonar_api_key }}"
   notify:
   - restart jenkins
   - wait for jenkins to start
