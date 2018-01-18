@@ -45,9 +45,9 @@ A Jenkins API token (generated after installation) for [authenticated scripted c
 
 A file (with full path) on the Jenkins server containing the admin token. If this variable is set in addition to the `jenkins_admin_token`, the contents of this file will overwrite the value of `jenkins_admin_token`.
 
-    jenkins_jar_location: /opt/jenkins-cli.jar
+    <!-- jenkins_jar_location: /opt/jenkins-cli.jar
 
-The location at which the `jenkins-cli.jar` jarfile will be kept. This is used for communicating with Jenkins via the CLI.
+The location at which the `jenkins-cli.jar` jarfile will be kept. This is used for communicating with Jenkins via the CLI. -->
 
     jenkins_plugins: []
 
