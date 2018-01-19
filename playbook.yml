@@ -214,8 +214,8 @@
           include: "*"
           excludes: ""
           ignore_on_push_notifications: true
-          default_version: "private-ase"
-          set_implicit: true
+          #default_version: "private-ase"
+          set_implicit: false
           allow_version_override: true
 
     terraform_version: 0.11.1
