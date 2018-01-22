@@ -214,7 +214,7 @@
           include: "*"
           excludes: ""
           ignore_on_push_notifications: true
-          #default_version: "private-ase"
+          default_version: "master"
           set_implicit: false
           allow_version_override: true
 
