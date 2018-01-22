@@ -11,7 +11,6 @@ jenkins_connection_delay: 5
 jenkins_connection_retries: 60
 jenkins_hostname: localhost
 jenkins_http_port: 8080
-# jenkins_jar_location: "{{ jenkins_home }}/jenkins-cli.jar"
 jenkins_url_prefix: ""
 jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
 
