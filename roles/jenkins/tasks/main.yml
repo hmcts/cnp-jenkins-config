@@ -48,16 +48,6 @@
 
 - meta: flush_handlers
 
-- name: Get the jenkins-cli jarfile from the Jenkins server.
-  get_url:
-    url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}/jnlpJars/jenkins-cli.jar"
-    dest: "{{ jenkins_jar_location }}"
-  register: jarfile_get
-  until: "'OK' in jarfile_get.msg or 'file already exists' in jarfile_get.msg"
-  retries: 5
-  delay: 10
-  check_mode: no
-
 - name: Remove Jenkins security init scripts after first startup.
   file:
     path: "{{ jenkins_home }}/init.groovy.d/basic-security.groovy"
@@ -98,5 +88,6 @@
 - include_tasks: pipeline-libraries.yml
 - include_tasks: folders.yml
 - include_tasks: jobs.yml
+- include_tasks: sonar-config.yml
 #- include_tasks: main-config.yml
 

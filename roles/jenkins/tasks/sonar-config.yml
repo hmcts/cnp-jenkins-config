@@ -1,0 +1,26 @@
+---
+
+- name: Set the SonarQube Scanner config
+  copy:
+    src: "templates/hudson.plugins.sonar.SonarRunnerInstallation.xml"
+    dest: "{{ jenkins_home}}/hudson.plugins.sonar.SonarRunnerInstallation.xml"
+    owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
+    mode: 0600
+  notify:
+  - restart jenkins
+  - wait for jenkins to start
+  - Check Jenkins is started
+
+
+- name: Set the SonarQube Global config
+  template:
+    src: "templates/hudson.plugins.sonar.SonarGlobalConfiguration.xml.j2"
+    dest: "{{ jenkins_home}}/hudson.plugins.sonar.SonarGlobalConfiguration.xml"
+    owner: "{{ jenkins_process_user }}"
+    group: "{{ jenkins_process_group }}"
+    mode: 0600
+  notify:
+  - restart jenkins
+  - wait for jenkins to start
+  - Check Jenkins is started
