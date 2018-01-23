@@ -1,0 +1,9 @@
+---
+- hosts: docker-role-test
+  pre_tasks:
+    - name: Ensure jenkins user is present
+      user:
+        name: jenkins
+        group: jenkins
+  roles:
+    - role: roles/docker

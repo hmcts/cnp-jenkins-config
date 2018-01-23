@@ -1,8 +1,7 @@
 ---
-
 - name: Ensure default Red Hat Docker packages are removed
   yum:
-    name: {{ item }}
+    name: "{{ item }}"
     state: absent
   with_items:
     - docker
@@ -12,7 +11,7 @@
 
 - name: Install required dependencies
   yum:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   with_items:
     - device-mapper-persistent-data
@@ -20,7 +19,8 @@
 
 - name: Enable Docker CE respository
   yum_repository:
-    name: Docker CE Stable
+    name: docker-ce-stable
+    description: Docker CE Stable
     baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
     gpgcheck: yes
     gpgkey: https://download.docker.com/linux/centos/gpg
@@ -30,7 +30,15 @@
     name: docker-ce
     state: present
 
-- name: Provide socket ownership configuration to allow dockerroot group users to use Docker
+- name: Ensure /etc/docker directory exists
+  file:
+    path: "/etc/docker"
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+
+- name: Provide socket ownership configuration to allow docker group users to use Docker
   template:
     src: "daemon.json"
     dest: "/etc/docker/daemon.json"
@@ -38,10 +46,10 @@
     owner: root
     group: root
 
-- name: Add Jenkins to dockerroot group
+- name: Add Jenkins to docker group
   user:
     name: jenkins
-    groups: dockerroot
+    groups: docker
     append: yes
 
 - name: Start and enable Docker service within systemd
