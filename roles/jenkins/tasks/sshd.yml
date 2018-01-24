@@ -17,4 +17,3 @@
   notify:
     - restart jenkins
     - wait for jenkins to start
-

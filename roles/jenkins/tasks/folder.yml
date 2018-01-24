@@ -12,7 +12,3 @@
   register: result
   until: result|succeeded
   ignore_errors: yes
-
-
-
-
