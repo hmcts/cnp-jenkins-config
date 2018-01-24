@@ -1,6 +1,10 @@
 ---
 - hosts: docker-role-test
   pre_tasks:
+    - name: Ensure jenkins group is present
+      group:
+        name: jenkins
+        state: present
     - name: Ensure jenkins user is present
       user:
         name: jenkins
