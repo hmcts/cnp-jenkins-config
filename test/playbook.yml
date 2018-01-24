@@ -9,5 +9,6 @@
       user:
         name: jenkins
         group: jenkins
+        state: present
   roles:
     - role: roles/docker
