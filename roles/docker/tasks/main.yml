@@ -44,6 +44,8 @@
     mode: 0644
     owner: root
     group: root
+  notify:
+    - Restart Docker service
 
 - name: Add Jenkins to docker group
   user:
