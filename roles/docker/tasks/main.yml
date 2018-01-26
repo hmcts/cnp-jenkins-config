@@ -1,29 +1,60 @@
 ---
-
-- name: Install Docker
+- name: Ensure default Red Hat Docker packages are removed
   yum:
-    name: docker
-    state: latest
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - docker
+    - docker-common
+    - docker-engine
 
-- name: Temporarly adding the jenkins user to the dockerroot group
-  command: usermod -aG dockerroot jenkins
+- name: Install required dependencies
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - device-mapper-persistent-data
+    - lvm2
 
-- name: Config docker daemon
+- name: Enable Docker CE respository
+  yum_repository:
+    name: docker-ce-stable
+    description: Docker CE Stable
+    baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/centos/gpg
+
+- name: Install Docker CE
+  yum:
+    name: docker-ce
+    state: present
+
+- name: Ensure /etc/docker directory exists
+  file:
+    path: "/etc/docker"
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+
+- name: Provide socket ownership configuration to allow docker group users to use Docker
   template:
     src: "daemon.json"
     dest: "/etc/docker/daemon.json"
     mode: 0644
-    owner: jenkins
-    group: jenkins
+    owner: root
+    group: root
+  notify:
+    - Restart Docker service
 
-- name: Enabling docker service
+- name: Add Jenkins to docker group
+  user:
+    name: jenkins
+    groups: docker
+    append: yes
+
+- name: Start and enable Docker service within systemd
   systemd:
     name: docker
     state: started
-    enabled: True
-
-- name: Rebooting node
-  command: /sbin/shutdown -r +1
-  async: 0
-  poll: 0
-  ignore_errors: true
+    enabled: yes

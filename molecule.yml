@@ -1,0 +1,25 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: vagrant
+
+vagrant:
+  platforms:
+    - name: centos7
+      box: centos/7
+  providers:
+    - name: virtualbox
+      type: virtualbox
+      options:
+        memory: 1024
+        cpus: 2
+  instances:
+    - name: docker-role-test
+
+ansible:
+  playbook: test/playbook.yml
+
+verifier:
+  name: testinfra

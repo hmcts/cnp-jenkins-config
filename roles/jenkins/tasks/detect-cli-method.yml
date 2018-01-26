@@ -26,5 +26,3 @@
 
 - debug:
     var: jenkins_role_cli_command
-
-

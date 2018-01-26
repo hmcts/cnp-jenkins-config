@@ -1,4 +1,4 @@
 {
     "live-restore": true,
-    "group": "dockerroot"
+    "group": "docker"
 }

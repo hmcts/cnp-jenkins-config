@@ -5,3 +5,7 @@ keys
 .vagrant
 *.retry
 local_env.json
+
+.idea
+
+.molecule
