@@ -39,6 +39,8 @@
       - timestamper
       - sonar
       - nodejs
+      - workflow-aggregator
+      
 #      - favorite
 #      - credentials
 #      - credentials-binding
