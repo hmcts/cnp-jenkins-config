@@ -15,6 +15,7 @@
   with_items:
     - device-mapper-persistent-data
     - lvm2
+    - epel-release
 
 - name: Enable Docker CE respository
   yum_repository:
@@ -46,6 +47,16 @@
     group: root
   notify:
     - Restart Docker service
+
+- name: Install python-pip
+  yum:
+    name:  python-pip
+    state: present
+
+- name: Install docker-compose
+  pip:
+    name: docker-compose
+    state: present
 
 - name: Add Jenkins to docker group
   user:
