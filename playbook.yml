@@ -33,6 +33,7 @@
       - custom-tools-plugin
       - git
       - lockable-resources
+      - pipeline-stage-view
       - ansicolor
       - http_request
       - slack
@@ -119,7 +120,6 @@
 #      - bouncycastle-api
 #      - ansicolor
 #      - javadoc
-#      - pipeline-stage-view
 #      - cloudbees-folder
 #      - workflow-scm-step
 #      - workflow-multibranch
