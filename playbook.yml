@@ -250,3 +250,4 @@
     - role: jenkins-dependencies
     - role: jenkins
     - role: docker
+    - role: nginx
