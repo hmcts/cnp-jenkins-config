@@ -44,7 +44,7 @@ nginx_extra_http_options: ""
 nginx_remove_default_vhost: true
 nginx_vhosts:
   - listen: "80"
-    server_name: "jwjenkins.uksouth.cloudapp.azure.com"
+    server_name: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}"
     error_page: "403 /jenkins-on-azure"
     extra_parameters: |
       location /github-webhook {
