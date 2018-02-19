@@ -1,20 +1,31 @@
 ---
 
-- name: "Template config.xml main config file"
+- name: "Template jenkins.model.JenkinsLocationConfiguration.xml config file"
   template:
-    src: "templates/config.xml.j2"
-    dest: "{{ jenkins_home}}/config.xml.possible"
-    owner: "{{ jenkins_process_user }}"
-    group: "{{ jenkins_process_group }}"
+    src: "jenkins.model.JenkinsLocationConfiguration.xml.j2"
+    dest: "{{ jenkins_home}}/jenkins.model.JenkinsLocationConfiguration.xml"
+    owner: jenkins
+    group: jenkins
     mode: 0664
-  register: jenkins_config_xml_template
-
-- name: "Apply config.xml if changed"
-  command: cp -f {{ jenkins_home}}/config.xml.possible {{ jenkins_home}}/config.xml
-  when: jenkins_config_xml_template.changed
   notify:
-    - restart jenkins
-    - wait for jenkins to start
+    - reload jenkins config
 
-- name: force all notified handlers to run at this point, not waiting for normal sync points
-  meta: flush_handlers
+- name: "Template org.jenkinsci.plugins.azurekeyvaultplugin.AzureKeyVaultBuildWrapper.xml config file"
+  template:
+    src: "org.jenkinsci.plugins.azurekeyvaultplugin.AzureKeyVaultBuildWrapper.xml.j2"
+    dest: "{{ jenkins_home}}/org.jenkinsci.plugins.azurekeyvaultplugin.AzureKeyVaultBuildWrapper.xml"
+    owner: jenkins
+    group: jenkins
+    mode: 0664
+  notify:
+    - reload jenkins config
+
+- name: "Template jenkins.plugins.slack.SlackNotifier.xml config file"
+  template:
+    src: "jenkins.plugins.slack.SlackNotifier.xml.j2"
+    dest: "{{ jenkins_home}}/jenkins.plugins.slack.SlackNotifier.xmll"
+    owner: jenkins
+    group: jenkins
+    mode: 0664
+  notify:
+    - reload jenkins config

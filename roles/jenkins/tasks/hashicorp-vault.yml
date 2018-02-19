@@ -1,0 +1,9 @@
+---
+
+- name: 'Add hashicorp vault token'
+  copy:
+    content: "{{ hashicorp_vault_token }}"
+    dest: "{{ jenkins_home }}/.vault-token"
+    owner: jenkins
+    group: jenkins
+    mode: 0600

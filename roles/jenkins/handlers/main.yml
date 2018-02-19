@@ -29,3 +29,7 @@
   args:
     warn: no
   listen: "wait for jenkins to start"
+
+- name: reload jenkins config
+  jenkins_script: 'Jenkins.instance.reload()'
+  listen: "reload jenkins config"

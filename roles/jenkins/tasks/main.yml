@@ -89,4 +89,5 @@
 - include_tasks: folders.yml
 - include_tasks: jobs.yml
 - include_tasks: sonar-config.yml
-#- include_tasks: main-config.yml
+- include_tasks: main-config.yml
+- include_tasks: hashicorp-vault.yml
