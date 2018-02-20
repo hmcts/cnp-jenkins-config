@@ -4,11 +4,13 @@ import com.cloudbees.plugins.credentials.common.*
 import com.cloudbees.plugins.credentials.domains.*
 import com.cloudbees.plugins.credentials.*
 import com.cloudbees.plugins.credentials.impl.*
+import hudson.util.Secret
+import org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl
 
-domain = Domain.global()
-store = SystemCredentialsProvider.getInstance().getStore()
+def domain = Domain.global()
+def store = SystemCredentialsProvider.getInstance().getStore()
 
-credential = new StringCredentialsImpl(
+def credential = new StringCredentialsImpl(
         CredentialsScope.GLOBAL,
         "${cred_id}",
         "${cred_desc}",
@@ -22,7 +24,7 @@ if (success) {
 } else {
     // Need to update the credential which requires the old one
     for (cred in store.getCredentials(domain)) {
-        if (cred.getId().equals(${cred_id})) {
+        if (cred.getId().equals("${cred_id}")) {
             store.updateCredentials(domain, cred, credential)
             println "Updated credential with id ${cred_id}"
             break

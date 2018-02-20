@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  strategy: debug
   vars:
     jenkins_enable_security: false
 
