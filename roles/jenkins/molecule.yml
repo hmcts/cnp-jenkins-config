@@ -1,0 +1,28 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+docker:
+  containers:
+    - name: jenkins-role-${BRANCH_NAME}-${BUILD_NUMBER}
+      image: centos/systemd
+      image_version: latest
+      build_image: True
+      dockerfile: tests/Dockerfile
+      cap_add:
+        - SYS_ADMIN
+      privileged: True
+      disable_cache: True
+
+ansible:
+  playbook: tests/playbook.yml
+  extra_vars: jenkins_role_configured_address="http://molecule-test-jenkins-role"
+
+verifier:
+  name: testinfra
+
+_disabled:
+  - ansible_lint

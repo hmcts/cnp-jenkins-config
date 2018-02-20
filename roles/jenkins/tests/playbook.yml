@@ -1,0 +1,23 @@
+---
+- hosts: all
+  vars:
+    jenkins_enable_security: false
+    jenkins_plugins:
+      - greenballs
+      - github-organization-folder
+    github_folder_jobs:
+      - name: 'example_reform'
+        displayName: 'Reform'
+        description: 'Reform'
+      - name: 'example_cmc'
+        displayName: 'CMC'
+        description: 'Civil Money Claims'
+        buildPullRequests: true
+      - name: 'example_probate'
+        description: 'Probate description'
+        displayName: 'Probate'
+        buildPullRequests: true
+        branchesToInclude: "master develop"
+  roles:
+    - role: ../jenkins-dependencies
+    - role: jenkins
