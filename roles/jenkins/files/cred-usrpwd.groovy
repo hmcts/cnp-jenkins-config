@@ -17,7 +17,7 @@ def credential = new UsernamePasswordCredentialsImpl(
 )
 
 def success = store.addCredentials(domain, credential)
-//
+
 if (success) {
     println "Created credential with id ${cred_id}"
 } else {
