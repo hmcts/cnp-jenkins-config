@@ -16,10 +16,11 @@ docker:
         - SYS_ADMIN
       privileged: True
       disable_cache: True
+      port_bindings:
+        6060: 8080
 
 ansible:
   playbook: tests/playbook.yml
-  extra_vars: jenkins_role_configured_address="http://molecule-test-jenkins-role"
 
 verifier:
   name: testinfra

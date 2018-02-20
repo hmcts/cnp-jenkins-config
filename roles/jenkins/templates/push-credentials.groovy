@@ -24,20 +24,3 @@ AzureCredentials azureCred = (AzureCredentials) new AzureCredentials(
     resourceManagerEndpoint= "https://management.azure.com/",
     graphEndpoint= "https://graph.windows.net/")
 SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), azureCred)
-
-//sshKeyCred = new BasicSSHUserPrivateKey(
-//    CredentialsScope.GLOBAL,
-//    "git_access_ssh_key",
-//    "jenkins",
-//    new BasicSSHUserPrivateKey.UsersPrivateKeySource(),
-//    "",
-//    "Credential ID: git_access_key")
-//SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), sshKeyCred)
-
-//gitUserKeyCred = new UsernamePasswordCredentialsImpl(
-//    CredentialsScope.GLOBAL,
-//    "id-moj-jenkins-user",
-//    "Username/API Key for Jenkins to access Git",
-//    "moj-jenkins-user",
-//    "{{ github_apikey }}")
-//SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), gitUserKeyCred)

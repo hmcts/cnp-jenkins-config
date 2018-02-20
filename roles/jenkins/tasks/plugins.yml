@@ -62,3 +62,4 @@
     group: jenkins
     owner: jenkins
     mode: 0700
+  when: jenkins_agent_cloud_name is defined

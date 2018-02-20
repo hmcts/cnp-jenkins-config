@@ -55,6 +55,7 @@
     owner: jenkins
     group: jenkins
     mode: 0600
+  when: jenkins_ssh_priv_key is defined
 
 - name: Create custom init scripts directory.
   file:
