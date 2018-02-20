@@ -10,10 +10,10 @@ def store = SystemCredentialsProvider.getInstance().getStore()
 
 def credential = new UsernamePasswordCredentialsImpl(
         CredentialsScope.GLOBAL,
-        "hardcode the things",
-        "hardcode the things",
-        "hardcode the things",
-        "hardcode the things"
+        "${cred_id}",
+        "${cred_desc}",
+        "${cred_user}",
+        "${cred_secret}"
 )
 
 def success = store.addCredentials(domain, credential)
