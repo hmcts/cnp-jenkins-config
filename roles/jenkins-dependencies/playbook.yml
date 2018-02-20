@@ -1,0 +1,6 @@
+---
+- name: Setting up Jenkins dependencies
+  hosts: all
+  become: true
+  roles:
+    - role: ../jenkins-dependencies
