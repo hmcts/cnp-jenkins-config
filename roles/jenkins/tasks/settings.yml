@@ -8,18 +8,18 @@
     state: present
   with_items:
       "{{ jenkins_init_changes }}"
-  register: jenkins_init_prefix
+  notify:
+    - restart jenkins
+    - wait for jenkins to start
 
 - name: Set the Jenkins home directory
   lineinfile:
     dest: "{{ jenkins_init_file }}"
     regexp: '^JENKINS_HOME=.*'
     line: 'JENKINS_HOME={{ jenkins_home }}'
-  register: jenkins_home_config
-
-- name: Immediately restart Jenkins on init config changes.
-  service: name=jenkins state=restarted
-  when: jenkins_init_prefix.changed
+  notify:
+    - restart jenkins
+    - wait for jenkins to start
 
 - name: Set HTTP port in Jenkins config.
   lineinfile:
@@ -27,7 +27,10 @@
     dest: "{{ jenkins_init_file }}"
     regexp: '^{{ jenkins_http_port_param }}='
     line: '{{ jenkins_http_port_param }}={{ jenkins_http_port }}'
-  register: jenkins_http_config
+  notify:
+    - restart jenkins
+    - wait for jenkins to start
+
 
 - name: Ensure jenkins_home {{ jenkins_home }} exists
   file:
@@ -67,12 +70,6 @@
 
 - name: Trigger handlers immediately in case Jenkins was installed
   meta: flush_handlers
-
-- name: Immediately restart Jenkins on http or user changes.
-  service: name=jenkins state=restarted
-  when: (jenkins_users_config is defined and jenkins_users_config.changed) or
-        (jenkins_http_config is defined and jenkins_http_config.changed) or
-        (jenkins_home_config is defined and jenkins_home_config.changed)
 
 - name: Increase Jenkins Security
   template:
