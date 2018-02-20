@@ -15,4 +15,4 @@ jenkins_role_yum_packages:
   - rpmdevtools
   - gettext
   - git
-  - epel-release
+  - python-jenkins
