@@ -28,6 +28,6 @@ def test_epel_release_is_installed(host):
 
 
 def test_python_pip_is_installed(host):
-    p = host.package("python2-pip")
+    p = host.package("python-jenkins")
 
     assert p.is_installed

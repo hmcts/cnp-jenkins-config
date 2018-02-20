@@ -28,11 +28,7 @@
   with_items: "{{ jenkins_role_yum_packages }}"
   ignore_errors: 'yes'
 
-- name: "Install python-pip from yum"
-  yum:
-    name: python-pip
-    state: installed
-
 - name: "Install python-jenkins"
-  pip:
+  yum:
     name: python-jenkins
+    state: installed
