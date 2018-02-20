@@ -9,3 +9,5 @@ local_env.json
 .idea
 
 .molecule
+.swp
+.pyc

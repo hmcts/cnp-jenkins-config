@@ -1,7 +1,7 @@
 ---
 
 - name: "Yarn | Install RPM repository"
-  become: yes
+  become: 'yes'
   become_user: root
   get_url:
     url: http://dl.yarnpkg.com/rpm/yarn.repo
@@ -9,9 +9,30 @@
     owner: root
     mode: 0644
 
+- name: "NodeJs | Get setup script"
+  get_url:
+    url: https://rpm.nodesource.com/setup_8.x
+    dest: /tmp/node_setup
+    owner: root
+    mode: 750
+  register: getting_setup
+  notify:
+    - NodeJs Run setup script
+
+- meta: flush_handlers
+
 - name: "Install dependencies from yum"
   yum:
     name: "{{ item }}"
     state: installed
   with_items: "{{ jenkins_role_yum_packages }}"
-  ignore_errors: yes
+  ignore_errors: 'yes'
+
+- name: "Install python-pip from yum"
+  yum:
+    name: python-pip
+    state: installed
+
+- name: "Install python-jenkins"
+  pip:
+    name: python-jenkins
