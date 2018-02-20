@@ -15,6 +15,7 @@
   with_items:
     - device-mapper-persistent-data
     - lvm2
+    - epel-release
 
 - name: Enable Docker CE respository
   yum_repository:
