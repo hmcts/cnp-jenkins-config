@@ -39,9 +39,10 @@
   when: jenkins_admin_password != ""
   register: result
   until: result|succeeded
+  notify:
+    - restart jenkins
+    - wait for jenkins to start
   ignore_errors: yes
-  when: tim_says_skip is defined
-
 
 - name: Install Jenkins plugins using token.
   jenkins_plugin:
@@ -54,8 +55,10 @@
   when: jenkins_admin_token != ""
   register: result
   until: result|succeeded
+  notify:
+    - restart jenkins
+    - wait for jenkins to start
   ignore_errors: yes
-  when: tim_says_skip is defined
 
 - name: Install Azure VM Agents plugin
   template:

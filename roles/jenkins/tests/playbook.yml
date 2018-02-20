@@ -61,6 +61,8 @@
       - workflow-aggregator
 
     slack_credential_id: 'slack-token'
+    slack_domain: 'a-domain'
+    hashicorp_vault_token: 'asdasda'
 
     jenkins_credentials:
         - id: jenkins-github-api-token
