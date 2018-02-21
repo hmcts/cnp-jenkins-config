@@ -2,8 +2,11 @@
 - hosts: all
   become: true
   tasks:
+    - name: set additional vars
+      set_fact:
+        resolved_env: "{{ (env == 'prod') | ternary('prod', 'sandbox') }}"
     - name: Include environment specific vars
-      include_vars: "env_vars/{{ env }}.yml"
+      include_vars: "env_vars/{{ resolved_env }}.yml"
   vars:
     jenkins_enable_security: false
     jenkins_master_executors: 0
