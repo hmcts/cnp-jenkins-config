@@ -1,6 +1,9 @@
 ---
 - hosts: all
   become: true
+  tasks:
+    - name: Include environment specific vars
+      include_vars: "env_vars/{{ env }}.yml"
   vars:
     jenkins_enable_security: false
     jenkins_master_executors: 0
