@@ -58,3 +58,5 @@ git_hostname: 'git.reform.hmcts.net'
 github_api_url: 'https://{{ git_hostname }}/api/v3'
 pipeline_jobs: false
 github_folder_jobs: false
+
+jenkins_manual_plugins: []
