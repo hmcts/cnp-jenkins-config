@@ -44,8 +44,8 @@
 
     jenkins_manual_plugins:
       - file_name: 'azure-keyvault.hpi'
-        checksum: 'sha256:d2cb20fbe071b2e69757ba0fca4d0bd8a0b06ebda67cbd6c5528fdd8a5a57f52'
-        url: 'https://github.com/hmcts/azure-keyvault-plugin/releases/download/0.9.5-hmcts.3/azure-keyvault.hpi'
+        checksum: 'sha256:556a8491a092bc743e874534247cf3f0cf94c91222434f0111a55129319ea94e'
+        url: 'https://github.com/hmcts/azure-keyvault-plugin/releases/download/0.9.5-hmcts.4/azure-keyvault.hpi'
 
     organization_folders:
       - name: 'Contino'
