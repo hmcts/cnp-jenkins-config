@@ -39,7 +39,6 @@
       - slack
       - timestamper
       - sonar
-      - nodejs
       - workflow-aggregator
 #      - favorite
 #      - credentials
