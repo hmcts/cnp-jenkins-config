@@ -64,13 +64,6 @@
 - name: force all notified handlers to run at this point, not waiting for normal sync points
   meta: flush_handlers
 
-- name: Immediately restart Jenkins on http or user changes.
-  service: name=jenkins state=restarted
-  notify:
-  - wait for jenkins to start
-
-- meta: flush_handlers
-
 # Make sure Jenkins starts, then configure Jenkins.
 - name: Ensure Jenkins is started and runs on startup.
   service: name=jenkins state=started enabled=yes
@@ -89,4 +82,5 @@
 - include_tasks: folders.yml
 - include_tasks: jobs.yml
 - include_tasks: sonar-config.yml
-#- include_tasks: main-config.yml
+- include_tasks: main-config.yml
+- include_tasks: hashicorp-vault.yml

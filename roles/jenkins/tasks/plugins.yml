@@ -39,8 +39,10 @@
   when: jenkins_admin_password != ""
   register: result
   until: result|succeeded
+  notify:
+    - restart jenkins
+    - wait for jenkins to start
   ignore_errors: yes
-
 
 - name: Install Jenkins plugins using token.
   jenkins_plugin:
@@ -53,7 +55,21 @@
   when: jenkins_admin_token != ""
   register: result
   until: result|succeeded
+  notify:
+    - restart jenkins
+    - wait for jenkins to start
   ignore_errors: yes
+
+# Needed if plugins aren't on the update centre
+- name: Install plugins manually - warning doesn't handle dependencies
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ jenkins_home }}/plugins/{{ item.file_name }}"
+    checksum: "{{ item.checksum }}"
+  notify:
+    - restart jenkins
+    - wait for jenkins to start
+  with_items: "{{ jenkins_manual_plugins }}"
 
 - name: Install Azure VM Agents plugin
   template:
@@ -62,3 +78,4 @@
     group: jenkins
     owner: jenkins
     mode: 0700
+  when: jenkins_agent_cloud_name is defined

@@ -1,0 +1,96 @@
+---
+- hosts: all
+  vars:
+    jenkins_enable_security: false
+
+    jenkins_global_pipeline_libraries:
+        - name: "Infrastructure"
+          remote: "git@github.com:contino/moj-jenkins-library.git"
+          credentials_id: "git_access_ssh_key"
+          include: "*"
+          excludes: ""
+          ignore_on_push_notifications: true
+          default_version: "master"
+          set_implicit: false
+          allow_version_override: true
+
+    organization_folders:
+      - name: 'Contino'
+        displayName: 'Contino'
+        description: 'Contino'
+        credentials_id: 'jenkins-ghe-api-token'
+        github_api_url: 'https://api.github.com'
+        repoPattern: 'moj-.*'
+      - name: 'HMCTS'
+        displayName: 'HMCTS'
+        description: 'HMCTS public repositories'
+        credentials_id: 'jenkins-github-hmcts-api-token'
+        github_api_url: 'https://api.github.com'
+        jenkinsfile_path: 'Jenkinsfile_CNP'
+
+    jenkins_home: /var/lib/jenkins
+
+    jenkins_plugins:
+      - blueocean-git-pipeline
+      - blueocean
+      - blueocean-autofavorite
+      - blueocean-personalization
+      - blueocean-jwt
+      - blueocean-rest-impl
+      - blueocean-pipeline-api-impl
+      - blueocean-rest
+      - blueocean-dashboard
+      - azure-credentials
+      - azure-vm-agents
+      - branch-api
+      - cloudbees-folder
+      - plain-credentials
+      - github
+      - github-organization-folder
+      - greenballs
+      - custom-tools-plugin
+      - git
+      - lockable-resources
+      - pipeline-stage-view
+      - ansicolor
+      - http_request
+      - slack
+      - timestamper
+      - sonar
+      - nodejs
+      - workflow-aggregator
+
+    jenkins_manual_plugins:
+      - file_name: 'azure-keyvault.hpi'
+        checksum: 'sha256:d2cb20fbe071b2e69757ba0fca4d0bd8a0b06ebda67cbd6c5528fdd8a5a57f52'
+        url: 'https://github.com/hmcts/azure-keyvault-plugin/releases/download/0.9.5-hmcts.3/azure-keyvault.hpi'
+
+    slack_credential_id: 'slack-token'
+    slack_domain: 'a-domain'
+    hashicorp_vault_token: 'asdasda'
+
+    jenkins_credentials:
+        - id: jenkins-github-api-token
+          type: cred-usrpwd
+          description: "Jenkins GitHub credentials (Username/password format)"
+          username: "moj-jenkins-user"
+          password: "abcdefgh"
+        - id: jenkins-github-hmcts-api-token
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "jenkins-reform-hmcts"
+          password: "not a real password"
+        - id: git_access_ssh_key
+          type: cred-usrkey
+          description: "Credential ID: git_access_key"
+          username: "moj-jenkins-user"
+        - id: '{{ slack_credential_id }}'
+          type: cred-secret-text
+          description: "Slack token"
+          password: "not a real slack token"
+    sonar_server_url: 'http://localhost:9080'
+    sonar_api_key: 'abcd'
+    jenkins_external_url: 'http://molecule-test-jenkins-role'
+  roles:
+    - role: ../jenkins-dependencies
+    - role: jenkins

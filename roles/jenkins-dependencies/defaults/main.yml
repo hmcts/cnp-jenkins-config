@@ -16,3 +16,4 @@ jenkins_role_yum_packages:
   - gettext
   - git
   - python-jenkins
+  - python-pip

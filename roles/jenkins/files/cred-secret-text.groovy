@@ -4,16 +4,17 @@ import com.cloudbees.plugins.credentials.common.*
 import com.cloudbees.plugins.credentials.domains.*
 import com.cloudbees.plugins.credentials.*
 import com.cloudbees.plugins.credentials.impl.*
+import hudson.util.Secret
+import org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl
 
 def domain = Domain.global()
 def store = SystemCredentialsProvider.getInstance().getStore()
 
-def credential = new UsernamePasswordCredentialsImpl(
+def credential = new StringCredentialsImpl(
         CredentialsScope.GLOBAL,
         "${cred_id}",
         "${cred_desc}",
-        "${cred_user}",
-        "${cred_secret}"
+        new Secret("${cred_secret}")
 )
 
 def success = store.addCredentials(domain, credential)
