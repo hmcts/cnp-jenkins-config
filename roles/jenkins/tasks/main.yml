@@ -60,7 +60,7 @@
 ## Update Jenkins and install configured plugins.
 #- include_tasks: detect-cli-method.yml
 - include_tasks: envvars.yml
-  when: resolved_env == 'sandbox'
+  when: resolved_env != 'sandbox'
 
 - include_tasks: plugins.yml
 
