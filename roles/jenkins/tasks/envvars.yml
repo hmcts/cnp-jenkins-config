@@ -1,0 +1,5 @@
+---
+- name: Configuring env vars for sandbox
+  copy:
+    src: env-var-config.groovy
+    dest: /opt/jenkins/init.groovy.d/env-var-config.groovy
