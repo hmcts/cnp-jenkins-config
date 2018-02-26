@@ -77,6 +77,12 @@
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
           username: "jenkins-reform-hmcts"
           password: "{{ hmcts_github_apikey }}"
+        - id: github-enterprise-token
+          type: cred-usrpwd
+          description: "cnpjenkins service account GitHub Enterprise API Token (Username/password format)"
+          username: "github-enterprise-token"
+          password: "{{ github_enterprise_apikey }}"
+          description: "Github Enterprise API token from cnpjenkins AD service account"
         - id: git_access_ssh_key
           type: cred-usrkey
           description: "Credential ID: git_access_key"
