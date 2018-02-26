@@ -100,7 +100,11 @@
           <trust class="org.jenkinsci.plugins.github_branch_source.ForkPullRequestDiscoveryTrait$TrustPermission"/>
         </org.jenkinsci.plugins.github__branch__source.ForkPullRequestDiscoveryTrait>
         <jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait plugin="scm-api@2.2.0">
+          {% if resolved_env is 'sandbox' and folder.name is 'Contino'%}
+          <includes>*</includes>
+          {% else %}
           <includes>{{ folder.branchesToinclude | default('master') }} cnp PR*</includes>
+          {% endif %}
           <excludes/>
         </jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait>
         <org.jenkinsci.plugins.github__branch__source.SSHCheckoutTrait>
