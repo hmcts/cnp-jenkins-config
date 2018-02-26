@@ -52,7 +52,7 @@
       <registry plugin="docker-commons@1.8"/>
     </org.jenkinsci.plugins.pipeline.modeldefinition.config.FolderConfig>
     <jenkins.branch.NoTriggerOrganizationFolderProperty>
-      <branches>.*</branches>
+      <branches></branches>
     </jenkins.branch.NoTriggerOrganizationFolderProperty>
   </properties>
   <folderViews class="jenkins.branch.OrganizationFolderViewHolder">
@@ -113,5 +113,10 @@
     <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory plugin="workflow-multibranch@2.16">
       <scriptPath>{{ folder.jenkinsfile_path | default('Jenkinsfile') }}</scriptPath>
     </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory>
+    {% if resolved_env=='sandbox' %}
+    <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory plugin="workflow-multibranch@2.16">
+      <scriptPath>{{ folder.jenkinsfile_path | default('Jenkinsfile') }}</scriptPath>
+    </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory>
+    {% endif %}
   </projectFactories>
 </jenkins.branch.OrganizationFolder>

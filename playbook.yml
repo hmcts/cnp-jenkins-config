@@ -54,6 +54,7 @@
         credentials_id: 'jenkins-ghe-api-token'
         github_api_url: 'https://api.github.com'
         repoPattern: 'moj-.*'
+        jenkinsfile_path: "{{ (env == 'prod') | ternary('Jenkinsfile_CNP', 'Jenkinsfile_parameterised') }}"
       - name: 'HMCTS'
         displayName: 'HMCTS'
         description: 'HMCTS public repositories'
