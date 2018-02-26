@@ -52,7 +52,7 @@
       <registry plugin="docker-commons@1.8"/>
     </org.jenkinsci.plugins.pipeline.modeldefinition.config.FolderConfig>
     <jenkins.branch.NoTriggerOrganizationFolderProperty>
-      {% if resolved_env == 'sandbox' and folder.name == 'Contino'%}
+      {% if resolved_env == 'prod' and folder.name == 'Contino'%}
       <branches></branches>
       {% else %}
       <branches>.*</branches>
