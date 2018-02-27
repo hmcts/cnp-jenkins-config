@@ -52,7 +52,7 @@
       <registry plugin="docker-commons@1.8"/>
     </org.jenkinsci.plugins.pipeline.modeldefinition.config.FolderConfig>
     <jenkins.branch.NoTriggerOrganizationFolderProperty>
-      <branches>.*</branches>
+      <branches>{{ folder.branchesToAutoBuild | default('') }}</branches>
     </jenkins.branch.NoTriggerOrganizationFolderProperty>
   </properties>
   <folderViews class="jenkins.branch.OrganizationFolderViewHolder">
