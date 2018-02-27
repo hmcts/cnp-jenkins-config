@@ -44,5 +44,6 @@
 - name: Ensure nginx is started and enabled to start at boot.
   service: name=nginx state=started enabled=yes
 
-- name: Configure SELinux
-  command: setsebool -P httpd_can_network_connect 1
+# DO NOT MERGE TO MASTER - Temporarily Disabling this as it won't work on Vagrant Machine
+# - name: Configure SELinux
+#  command: setsebool -P httpd_can_network_connect 1

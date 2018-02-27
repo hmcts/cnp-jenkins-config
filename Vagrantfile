@@ -7,7 +7,7 @@ WORKSPACE = "../../"
 Vagrant.configure("2") do |config|
   config.vm.box = "puppetlabs/centos-7.2-64-nocm"
   #config.vm.box = "puppetlabs/ubuntu-16.04-64-nocm"
-  config.vm.provision "shell", inline: "sudo systemctl disable firewalld", privileged: true
+  config.vm.provision "shell", inline: "sudo systemctl stop firewalld", privileged: true
 
   if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
     config.vm.synced_folder WORKSPACE, "/Workspace", mount_options: ["dmode=700,fmode=600"]
@@ -21,20 +21,19 @@ Vagrant.configure("2") do |config|
     v.name = "jenkins-vm"
     v.customize ["modifyvm", :id, "--ioapic", "on", "--vram", "16"]
   end
+  config.vm.hostname = "jenkins"
+  config.vm.network :private_network, ip: "192.168.33.55"
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 8080, host: 8081
 
-  config.vm.network "forwarded_port", guest: 8080, host: 8080
-  config.vm.network "forwarded_port", guest: 2020, host: 2020
-  # config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-  # config.ssh.forward_agent = true
 
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook        = "playbook.yml"
     ansible.install         = true
     ansible.limit           = "all"
     ansible.inventory_path  = "hosts"
-    ansible.extra_vars      = "@local_env.json"
-    # ansible.verbose         = "vvvv"
     ansible.version         = "latest"
+    ansible.extra_vars      = "@externalvariables.yml"
   end
 
 end

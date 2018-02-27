@@ -1,5 +1,6 @@
 ---
 - hosts: all
+#  become: true
   tasks:
     - name: set additional vars
       set_fact:
@@ -102,8 +103,8 @@
           set_implicit: false
           allow_version_override: true
 
-    terraform_version: 0.11.1
-    terraform_sha256sum: 4e3d5e4c6a267e31e9f95d4c1b00f5a7be5a319698f0370825b459cb786e2f35
+    terraform_version: 0.11.3
+    terraform_sha256sum: 6b8a7b83954597d36bbed23913dd51bc253906c612a070a21db373eab71b277b
 
     sonar_server_url: "https://sonar.reform.hmcts.net"
 
