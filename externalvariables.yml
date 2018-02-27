@@ -1,16 +1,17 @@
 ---
-# External Variable Required to build an instance of Jenkins via Vagrant
+# External Variable Required to build an instance of Jenkins via Vagrant. These are dummy values
+# only and should NOT contain real secrets!
 env: sandbox
-jenkins_agent_env: sandbox
-jenkins_agent_location: UK South
-jenkins_agent_image_uri: www.example.com
-jenkins_agent_password: mypass123
 github_apikey: mykey123
 hmcts_github_apikey: mykey123
 slack_token: slack123
 slack_credential_id: slackcred123
 sonar_api_key: sonar123
 hashicorp_vault_token: hashi123
+jenkins_agent_env: sandbox
+jenkins_agent_location: UK South
+jenkins_agent_image_uri: www.example.com
+jenkins_agent_password: mypass123
 jenkins_agent_virtual_net: vnet1
 jenkins_agent_net_rg: vnet1-RG
 jenkins_agent_subnet: subnet1
