@@ -20,6 +20,7 @@ LibraryConfiguration libToAdd =
 libToAdd.setDefaultVersion("{{ global_lib.default_version }}")
 libToAdd.setImplicit(true)
 libToAdd.setAllowVersionOverride(true);
+libToAdd.setIncludeInChangesets(false);
 
 def preConfiguredLibs = globalLibsConfigurator.get().getLibraries()
 if (preConfiguredLibs != null) {
