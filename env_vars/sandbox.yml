@@ -1,3 +1,21 @@
 ---
 
 jenkins_external_url: 'https://sandbox-build.platform.hmcts.net'
+
+organization_folders:
+  - name: 'Contino'
+    displayName: 'Contino'
+    description: 'Contino'
+    credentials_id: 'jenkins-ghe-api-token'
+    github_api_url: 'https://api.github.com'
+    repoPattern: 'moj-.*'
+    branchesToinclude: '*'
+    branchesToAutoBuild: 'master'
+  - name: 'HMCTS'
+    displayName: 'HMCTS'
+    description: 'HMCTS public repositories'
+    credentials_id: 'jenkins-github-hmcts-api-token'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: 'Jenkinsfile_CNP'
+    branchesToAutoBuild: '.*'
+
