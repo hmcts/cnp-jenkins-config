@@ -115,7 +115,7 @@
     </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory>
     {% if resolved_env=='sandbox' %}
     <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory plugin="workflow-multibranch@2.16">
-      <scriptPath>{{ folder.jenkinsfile_path | default('Jenkinsfile') }}</scriptPath>
+      <scriptPath>Jenkinsfile</scriptPath>
     </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory>
     {% endif %}
   </projectFactories>
