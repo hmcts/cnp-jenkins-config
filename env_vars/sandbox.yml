@@ -11,6 +11,7 @@ organization_folders:
     repoPattern: 'moj-.*'
     branchesToinclude: '*'
     branchesToAutoBuild: 'master'
+    jenkinsfile_path: 'Jenkins_parameterised'
   - name: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'

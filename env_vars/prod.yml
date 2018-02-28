@@ -9,6 +9,7 @@ organization_folders:
     credentials_id: 'jenkins-ghe-api-token'
     github_api_url: 'https://api.github.com'
     repoPattern: 'moj-.*'
+    jenkinsfile_path: 'Jenkinsfile_CNP'
   - name: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'
