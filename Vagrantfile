@@ -5,8 +5,7 @@ Vagrant.require_version ">= 2.0.0"
 WORKSPACE = "../../"
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "puppetlabs/centos-7.2-64-nocm"
-  #config.vm.box = "puppetlabs/ubuntu-16.04-64-nocm"
+  config.vm.box = "centos/7"
   config.vm.provision "shell", inline: "sudo systemctl stop firewalld", privileged: true
 
   if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
