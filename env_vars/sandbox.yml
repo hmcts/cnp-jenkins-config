@@ -11,12 +11,12 @@ organization_folders:
     repoPattern: 'moj-.*'
     branchesToinclude: '*'
     branchesToAutoBuild: 'master'
-    jenkinsfile_path: 'Jenkins_parameterised'
+    jenkinsfile_path: ['Jenkinsfile_parameterised', 'Jenkinsfile' ]
   - name: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
-    jenkinsfile_path: 'Jenkinsfile_CNP'
+    jenkinsfile_path: ['Jenkinsfile_CNP']
     branchesToAutoBuild: '.*'
 

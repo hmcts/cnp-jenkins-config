@@ -110,13 +110,10 @@
     </org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator>
   </navigators>
   <projectFactories>
+    {% for recognizer in folder.jenkinsfile_path %}
     <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory plugin="workflow-multibranch@2.16">
-      <scriptPath>{{ folder.jenkinsfile_path | default('Jenkinsfile') }}</scriptPath>
+      <scriptPath>{{ recognizer }}</scriptPath>
     </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory>
-    {% if resolved_env=='sandbox' %}
-    <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory plugin="workflow-multibranch@2.16">
-      <scriptPath>Jenkinsfile</scriptPath>
-    </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory>
-    {% endif %}
+    {% endfor %}
   </projectFactories>
 </jenkins.branch.OrganizationFolder>
