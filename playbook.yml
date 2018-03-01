@@ -47,20 +47,6 @@
         checksum: 'sha256:556a8491a092bc743e874534247cf3f0cf94c91222434f0111a55129319ea94e'
         url: 'https://github.com/hmcts/azure-keyvault-plugin/releases/download/0.9.5-hmcts.4/azure-keyvault.hpi'
 
-    organization_folders:
-      - name: 'Contino'
-        displayName: 'Contino'
-        description: 'Contino'
-        credentials_id: 'jenkins-ghe-api-token'
-        github_api_url: 'https://api.github.com'
-        repoPattern: 'moj-.*'
-      - name: 'HMCTS'
-        displayName: 'HMCTS'
-        description: 'HMCTS public repositories'
-        credentials_id: 'jenkins-github-hmcts-api-token'
-        github_api_url: 'https://api.github.com'
-        jenkinsfile_path: 'Jenkinsfile_CNP'
-
     pipeline_jobs: []
 
     slack_domain: 'hmcts-reform'
