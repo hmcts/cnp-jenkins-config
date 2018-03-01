@@ -71,11 +71,11 @@
     - wait for jenkins to start
   with_items: "{{ jenkins_manual_plugins }}"
 
-#- name: Install Azure VM Agents plugin
-#  template:
-#    src: templates/azure-vm-agent.groovy.j2
-#    dest: "{{ jenkins_home }}/init.groovy.d/10-azure-vm-agent.groovy"
-#    group: jenkins
-#    owner: jenkins
-#    mode: 0700
-#  when: jenkins_agent_cloud_name is defined
+- name: Install Azure VM Agents plugin
+  template:
+    src: templates/azure-vm-agent.xml.j2
+    dest: "{{ jenkins_home }}/azure-vm-agent.xml"
+    group: jenkins
+    owner: jenkins
+    mode: 0700
+  when: jenkins_agent_cloud_name is defined
