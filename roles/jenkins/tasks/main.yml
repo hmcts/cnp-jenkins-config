@@ -86,3 +86,5 @@
 - include_tasks: sonar-config.yml
 - include_tasks: main-config.yml
 - include_tasks: hashicorp-vault.yml
+
+- include_tasks: azure-agents.yml
