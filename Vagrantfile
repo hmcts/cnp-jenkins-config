@@ -8,11 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.provision "shell", inline: "sudo systemctl stop firewalld", privileged: true
 
-  if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
-    config.vm.synced_folder WORKSPACE, "/Workspace", mount_options: ["dmode=700,fmode=600"]
-  else
-    config.vm.synced_folder WORKSPACE, "/Workspace"
-  end
+  config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 4096
