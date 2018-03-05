@@ -32,3 +32,10 @@
     state: installed
   with_items: "{{ jenkins_role_yum_packages }}"
   ignore_errors: 'yes'
+
+- name: "Install dependencies from pip"
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ jenkins_role_pip_packages }}"
+  ignore_errors: 'yes'

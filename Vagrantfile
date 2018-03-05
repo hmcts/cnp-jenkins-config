@@ -4,9 +4,23 @@
 Vagrant.require_version ">= 2.0.0"
 WORKSPACE = "../../"
 
+
+$set_environment_variables = <<SCRIPT
+tee "/etc/profile.d/myvars.sh" > "/dev/null" <<EOF
+# Ansible environment variables.
+  export AZURE_CLIENT_ID=#{ENV['AZURE_CLIENT_ID']}
+  export AZURE_VAULT_URI=#{ENV['AZURE_VAULT_URI']}
+  export AZURE_SECRET=#{ENV['AZURE_SECRET']}
+  export AZURE_TENANT=#{ENV['AZURE_TENANT']}
+EOF
+SCRIPT
+
+
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.provision "shell", inline: "sudo systemctl stop firewalld", privileged: true
+  config.vm.provision "shell", inline: $set_environment_variables, run: "always"
+
 
   config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
