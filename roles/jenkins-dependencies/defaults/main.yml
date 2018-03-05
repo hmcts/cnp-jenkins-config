@@ -17,3 +17,6 @@ jenkins_role_yum_packages:
   - git
   - python-jenkins
   - python-pip
+
+jenkins_role_pip_packages:
+  - azure-keyvault
