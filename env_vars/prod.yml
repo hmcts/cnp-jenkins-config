@@ -10,7 +10,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     repoPattern: 'moj-.*'
     jenkinsfile_path: ['Jenkinsfile_CNP']
-    branchesToinclude: 'demo'
+    branchesToinclude: 'master demo'
   - name: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'
@@ -18,5 +18,5 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP']
     branchesToAutoBuild: '.*'
-    branchesToinclude: 'demo'
+    branchesToinclude: 'master demo'
 
