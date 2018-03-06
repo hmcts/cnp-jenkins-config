@@ -23,7 +23,7 @@
 - name: "Template jenkins.plugins.slack.SlackNotifier.xml config file"
   template:
     src: "jenkins.plugins.slack.SlackNotifier.xml.j2"
-    dest: "{{ jenkins_home}}/jenkins.plugins.slack.SlackNotifier.xmll"
+    dest: "{{ jenkins_home}}/jenkins.plugins.slack.SlackNotifier.xml"
     owner: jenkins
     group: jenkins
     mode: 0664
