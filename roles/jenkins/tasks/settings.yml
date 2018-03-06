@@ -60,6 +60,14 @@
     mode: 0600
   when: jenkins_ssh_priv_key is defined
 
+- name: Create known_hosts file with github host key
+  copy:
+    src: files/github-known_hosts
+    dest: "{{ jenkins_home }}/.ssh/known_hosts"
+    group: jenkins
+    owner: jenkins
+    mode: 600
+
 - name: Create custom init scripts directory.
   file:
     path: "{{ jenkins_home }}/init.groovy.d"
