@@ -23,7 +23,7 @@ propertiesConfig.ENVIRONMENT_VARIABLES.each { envVar ->
     }
 }
 
-jenkins.getGlobalNodeProperties().replaceBy(
+jenkins.getGlobalNodeProperties().add(
         Collections.singleton(
                 new EnvironmentVariablesNodeProperty(envVarList)
         )
