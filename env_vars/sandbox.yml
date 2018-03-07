@@ -1,12 +1,6 @@
 ---
 
 jenkins_external_url: 'https://sandbox-build.platform.hmcts.net'
-jenkins_environment_variables:
-  JENKINS_VAULT_NAME: 'infra-vault-sandbox'
-  NONPROD_ENVIRONMENT_NAME: 'saat'
-  NONPROD_SUBSCRIPTION_NAME: 'sandbox'
-  PROD_ENVIRONMENT_NAME: 'sprod'
-  PROD_SUBSCRIPTION_NAME: 'sandbox'
 
 organization_folders:
   - name: 'Contino'

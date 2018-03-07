@@ -1,8 +1,6 @@
 ---
 
 jenkins_external_url: 'https://build.platform.hmcts.net'
-jenkins_environment_variables:
-  JENKINS_VAULT_NAME: 'infra-vault'
 
 organization_folders:
   - name: 'Contino'
