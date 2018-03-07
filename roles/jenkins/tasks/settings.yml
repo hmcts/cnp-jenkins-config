@@ -66,7 +66,7 @@
     dest: "{{ jenkins_home }}/.ssh/known_hosts"
     group: jenkins
     owner: jenkins
-    mode: 600
+    mode: 0600
 
 - name: Create custom init scripts directory.
   file:
