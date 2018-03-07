@@ -42,6 +42,7 @@
       - sonar
       - workflow-aggregator
       - build-monitor-plugin
+      - jacoco
 
     jenkins_manual_plugins:
       - file_name: 'azure-keyvault.hpi'
