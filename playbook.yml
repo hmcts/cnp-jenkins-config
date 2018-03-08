@@ -84,7 +84,7 @@
           type: cred-secret-text
           description: "Slack token"
           password: "{{ slack_token }}"
-        - id: '{{ COSMOSDB_TOKEN_KEY }}'
+        - id: COSMOSDB_TOKEN_KEY
           type: cred-secret-text
           description: "Read/Write Key To Publish CosmosDB Metrics"
           password: "{{ pipelinemetrics_cosmosdb_key }}"
