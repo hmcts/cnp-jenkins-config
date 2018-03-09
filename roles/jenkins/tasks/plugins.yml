@@ -70,12 +70,3 @@
     - restart jenkins
     - wait for jenkins to start
   with_items: "{{ jenkins_manual_plugins }}"
-
-#- name: Install Azure VM Agents plugin
-#  template:
-#    src: templates/azure-vm-agent.xml.j2
-#    dest: "{{ jenkins_home }}/azure-vm-agent.xml"
-#    group: jenkins
-#    owner: jenkins
-#    mode: 0644
-#  when: jenkins_agent_cloud_name is defined
