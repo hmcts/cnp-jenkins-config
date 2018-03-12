@@ -60,13 +60,24 @@
     mode: 0600
   when: jenkins_ssh_priv_key is defined
 
+#- name: Create known_hosts file with github host key
+#  copy:
+#    src: files/github-known_hosts
+#    dest: "{{ jenkins_home }}/.ssh/known_hosts"
+#    group: jenkins
+#    owner: jenkins
+#    mode: 0600
+
 - name: Create known_hosts file with github host key
-  copy:
-    src: files/github-known_hosts
-    dest: "{{ jenkins_home }}/.ssh/known_hosts"
+  shell: "ssh-keyscan -T 10 github.com >> {{ jenkins_home }}/.ssh/known_hosts"
+    creates: {{ jenkins_home }}/.ssh/known_hosts
+
+- name: Set permissions on {{ jenkins_home }}/.ssh/known_hosts
+  file:
+    path: "{{ jenkins_home }}/.ssh/known_hosts"
     group: jenkins
     owner: jenkins
-    mode: 0600
+    mode: 0600    
 
 - name: Create custom init scripts directory.
   file:
