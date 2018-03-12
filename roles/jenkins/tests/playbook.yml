@@ -18,7 +18,7 @@
       - name: 'Contino'
         displayName: 'Contino'
         description: 'Contino'
-        credentials_id: 'jenkins-ghe-api-token'
+        credentials_id: 'jenkins-github-api-token'
         github_api_url: 'https://api.github.com'
         repoPattern: 'moj-.*'
       - name: 'HMCTS'
