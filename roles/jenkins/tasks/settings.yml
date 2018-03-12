@@ -70,7 +70,8 @@
 
 - name: Create known_hosts file with github host key
   shell: "ssh-keyscan -T 10 github.com >> {{ jenkins_home }}/.ssh/known_hosts"
-    creates: {{ jenkins_home }}/.ssh/known_hosts
+  args:
+    creates: "{{ jenkins_home }}/.ssh/known_hosts"
 
 - name: Set permissions on {{ jenkins_home }}/.ssh/known_hosts
   file:
