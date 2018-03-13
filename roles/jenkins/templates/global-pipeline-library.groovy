@@ -13,7 +13,7 @@ LibraryConfiguration libToAdd =
             new GitSCMSource(
                 null,
                 remote = "git@github.com:contino/moj-jenkins-library.git",
-                credentialsId = "github_access_key",
+                credentialsId = "git_access_key",
                 includes = "*",
                 excludes = "",
                 ignoreOnPushNotifications = true)))
