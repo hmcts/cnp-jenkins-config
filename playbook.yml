@@ -42,6 +42,7 @@
       - sonar
       - workflow-aggregator
       - build-monitor-plugin
+      - jacoco
 
     jenkins_manual_plugins:
       - file_name: 'azure-keyvault.hpi'
@@ -83,6 +84,10 @@
           type: cred-secret-text
           description: "Slack token"
           password: "{{ slack_token }}"
+        - id: COSMOSDB_TOKEN_KEY
+          type: cred-secret-text
+          description: "Read/Write Key To Publish CosmosDB Metrics"
+          password: "{{ pipelinemetrics_cosmosdb_key }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
