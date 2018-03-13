@@ -1,0 +1,19 @@
+---
+
+- name: Set executors on Jenkins master to zero.
+  jenkins_script:
+    script: "{{ lookup('file', 'files/zero-executors.groovy') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result|succeeded
+
+- name: Install Jenkins credential using script for the {{ credential.id }} secret.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result|succeeded
