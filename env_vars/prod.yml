@@ -9,14 +9,14 @@ organization_folders:
     credentials_id: 'jenkins-github-api-token'
     github_api_url: 'https://api.github.com'
     repoPattern: 'moj-.*'
-    jenkinsfile_path: ['Jenkinsfile_CNP']
+    jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
     branchesToinclude: 'master demo'
   - name: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
-    jenkinsfile_path: ['Jenkinsfile_CNP']
+    jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
     branchesToAutoBuild: '.*'
     branchesToinclude: 'master demo'
 
