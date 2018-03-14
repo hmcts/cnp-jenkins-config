@@ -29,6 +29,7 @@
       - cloudbees-folder
       - plain-credentials
       - github
+      - github-branch-source
       - github-organization-folder
       - greenballs
       - custom-tools-plugin
