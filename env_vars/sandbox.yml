@@ -1,6 +1,7 @@
 ---
 
 jenkins_external_url: 'https://sandbox-build.platform.hmcts.net'
+hookUrl: ''
 manage_webhooks: false
 
 organization_folders:
