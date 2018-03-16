@@ -75,6 +75,10 @@
           username: "github-enterprise-token"
           password: "{{ github_enterprise_apikey }}"
           description: "Github Enterprise API token from cnpjenkins AD service account"
+        - id: github-enterprise-token-secret-text
+          type: cred-secret-text
+          description: "cnpjenkins service account GitHub Enterprise API Token (Used by the Github plugin for managing webhooks)"
+          password: "{{ github_enterprise_apikey }}"
         - id: git_access_ssh_key
           type: cred-usrkey
           description: "Credential ID: git_access_key"
