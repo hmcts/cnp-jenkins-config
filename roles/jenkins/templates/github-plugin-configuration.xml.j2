@@ -16,7 +16,9 @@
       <clientCacheSize>20</clientCacheSize>
     </github-server-config>
   </configs>
+  {% if manage_webhooks == true %}
   <hookUrl>{{hookUrl}}</hookUrl>
+  {% endif %}
   <hookSecretConfig>
     <credentialsId></credentialsId>
   </hookSecretConfig>
