@@ -32,7 +32,7 @@
 
 - name: "Template github-plugin-configuration.xml config file"
   template:
-    src: "github-plugin-configuration.xml"
+    src: "github-plugin-configuration.xml.j2"
     dest: "{{ jenkins_home}}/github-plugin-configuration.xml"
     owner: jenkins
     group: jenkins
