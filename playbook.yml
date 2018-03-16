@@ -60,6 +60,10 @@
           description: "Jenkins GitHub credentials (Username/password format)"
           username: "moj-jenkins-user"
           password: "{{ github_apikey }}"
+        - id: jenkins-github-api-token-secret-text
+          type: cred-secret-text
+          description: "moj-jenkins-user Public Github API Token (Used by the Github plugin for managing webhooks)"
+          password: "{{ github_apikey }}"
         - id: jenkins-github-hmcts-api-token
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"

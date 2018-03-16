@@ -29,3 +29,13 @@
     mode: 0664
   notify:
     - reload jenkins config
+
+- name: "Template github-plugin-configuration.xml config file"
+  template:
+    src: "github-plugin-configuration.xml"
+    dest: "{{ jenkins_home}}/github-plugin-configuration.xml"
+    owner: jenkins
+    group: jenkins
+    mode: 0664
+  notify:
+    - reload jenkins config
