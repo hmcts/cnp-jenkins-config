@@ -1,6 +1,8 @@
 ---
 
 jenkins_external_url: 'https://build.platform.hmcts.net'
+hookUrl: 'http://build.platform.hmcts.net'
+manage_webhooks: true
 
 organization_folders:
   - name: 'Contino'
