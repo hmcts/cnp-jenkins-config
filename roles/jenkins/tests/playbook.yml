@@ -5,7 +5,7 @@
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
-          remote: "git@github.com:contino/moj-jenkins-library.git"
+          remote: "git@github.com:hmcts/moj-jenkins-library.git"
           credentials_id: "git_access_ssh_key"
           include: "*"
           excludes: ""
