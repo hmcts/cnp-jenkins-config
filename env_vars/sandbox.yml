@@ -11,7 +11,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     repoPattern: 'moj-.*'
     branchesToinclude: '*'
-    branchesToAutoBuild: 'master'
+    branchesToAutoBuild: '' # Builds will be triggered by webhooks
     jenkinsfile_path: ['Jenkinsfile_parameterized']
   - name: 'HMCTS'
     displayName: 'HMCTS'
@@ -19,5 +19,5 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
-    branchesToAutoBuild: '.*'
+    branchesToAutoBuild: '' # Builds will be triggered by webhooks
 

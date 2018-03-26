@@ -13,12 +13,13 @@ organization_folders:
     repoPattern: 'moj-.*'
     jenkinsfile_path: ['Jenkinsfile_CNP']
     branchesToinclude: 'master demo'
+    branchesToAutoBuild: '' # Builds will be triggered by webhooks
   - name: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP']
-    branchesToAutoBuild: '.*'
+    branchesToAutoBuild: '' # Builds will be triggered by webhooks
     branchesToinclude: 'master demo'
 
