@@ -4,15 +4,6 @@ jenkins_external_url: 'https://sandbox-build.platform.hmcts.net'
 manage_webhooks: false
 
 organization_folders:
-  - name: 'Contino'
-    displayName: 'Contino'
-    description: 'Contino'
-    credentials_id: 'jenkins-github-api-token'
-    github_api_url: 'https://api.github.com'
-    repoPattern: 'moj-.*'
-    branchesToinclude: '*'
-    branchesToAutoBuild: '' # Builds will be triggered by webhooks
-    jenkinsfile_path: ['Jenkinsfile_parameterized']
   - name: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'
