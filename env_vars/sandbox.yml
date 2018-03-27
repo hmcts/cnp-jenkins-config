@@ -11,4 +11,3 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branchesToAutoBuild: '' # Builds will be triggered by webhooks
-
