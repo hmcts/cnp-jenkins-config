@@ -38,6 +38,7 @@
       - pipeline-stage-view
       - ansicolor
       - http_request
+      - saml
       - slack
       - timestamper
       - sonar
