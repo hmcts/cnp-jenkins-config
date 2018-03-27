@@ -20,3 +20,4 @@ jenkins_role_yum_packages:
 
 jenkins_role_pip_packages:
   - azure-keyvault
+  - lxml
