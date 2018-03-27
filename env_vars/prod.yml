@@ -5,21 +5,13 @@ hookUrl: 'http://build.platform.hmcts.net'
 manage_webhooks: true
 
 organization_folders:
-  - name: 'Contino'
-    displayName: 'Contino'
-    description: 'Contino'
-    credentials_id: 'jenkins-github-api-token'
-    github_api_url: 'https://api.github.com'
-    repoPattern: 'moj-.*'
-    jenkinsfile_path: ['Jenkinsfile_CNP']
-    branchesToinclude: 'master demo'
   - name: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP']
-    branchesToAutoBuild: '.*'
+    branchesToAutoBuild: '' # Builds will be triggered by webhooks
     branchesToinclude: 'master demo'
 
 jenkins_permissions_list:

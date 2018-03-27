@@ -4,23 +4,13 @@ jenkins_external_url: 'https://sandbox-build.platform.hmcts.net'
 manage_webhooks: false
 
 organization_folders:
-  - name: 'Contino'
-    displayName: 'Contino'
-    description: 'Contino'
-    credentials_id: 'jenkins-github-api-token'
-    github_api_url: 'https://api.github.com'
-    repoPattern: 'moj-.*'
-    branchesToinclude: '*'
-    branchesToAutoBuild: 'master'
-    jenkinsfile_path: ['Jenkinsfile_parameterized']
   - name: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
-    branchesToAutoBuild: '.*'
-
+    
 jenkins_permissions_list:
   - com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
@@ -351,3 +341,6 @@ jenkins_permissions_list:
   - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:92435fed-43d8-4824-b050-7344a46bcc02
   - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:a02411d2-3cca-4c61-8911-c1a093f4d12f
   - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:faf6cf1a-ac66-4781-8190-0e388ef8d394
+
+branchesToAutoBuild: '' # Builds will be triggered by webhooks
+
