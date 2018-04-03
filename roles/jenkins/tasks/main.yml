@@ -87,5 +87,5 @@
 - include_tasks: main-config.yml
 - include_tasks: hashicorp-vault.yml
 
-- include_tasks: security.yml
 - include_tasks: azure-agents.yml
+- include_tasks: security.yml
