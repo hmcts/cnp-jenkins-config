@@ -30,6 +30,7 @@ jenkins_permissions_list:
   - hudson.model.Hudson.Administer:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Hudson.Read:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Hudson.Read:authenticated
+  - hudson.model.Hudson.Read:anonymous
   - hudson.model.Item.Build:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Item.Cancel:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Item.Configure:300e771f-856c-45cc-b899-40d78281e9c1
