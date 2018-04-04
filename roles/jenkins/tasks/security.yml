@@ -93,5 +93,3 @@
       - xml: "{{ aad_xml_config }}"
       - url: "https://login.microsoftonline.com/hmcts.net/FederationMetadata/2007-06/FederationMetadata.xml"
       - period: "15"
-  notify: 
-     - reload jenkins config
