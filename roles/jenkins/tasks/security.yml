@@ -77,7 +77,7 @@
     xpath: "/hudson/securityRealm/usernameAttributeName"
     value: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
 
-- name: Set Security Realm SAML plugin usernameAttributeName
+- name: Set Security Realm SAML plugin binding
   xml:
     path: "{{ jenkins_home}}/config.xml"
     xpath: "/hudson/securityRealm/binding"
