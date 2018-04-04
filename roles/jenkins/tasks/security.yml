@@ -35,7 +35,7 @@
 - name: Set Security Realm SAML plugin displayNameAttributeName
   xml:
     path: "{{ jenkins_home}}/config.xml"
-    xpath: "/hudson/securityRealm/securityRealm"
+    xpath: "/hudson/securityRealm/displayNameAttributeName"
     value: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
 
 - name: Set Security Realm SAML plugin groupsAttributeName
