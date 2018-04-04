@@ -113,6 +113,7 @@ jenkins_permissions_list:
   - hudson.model.Hudson.Read:92435fed-43d8-4824-b050-7344a46bcc02
   - hudson.model.Hudson.Read:a02411d2-3cca-4c61-8911-c1a093f4d12f
   - hudson.model.Hudson.Read:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - hudson.model.Hudson.Read:anonymous
   - hudson.model.Item.Build:10825718-ddc3-4839-b9bd-8e448299c1f4
   - hudson.model.Item.Build:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
   - hudson.model.Item.Build:300e771f-856c-45cc-b899-40d78281e9c1
