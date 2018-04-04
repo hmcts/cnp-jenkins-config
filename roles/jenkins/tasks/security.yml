@@ -24,7 +24,7 @@
   xml:
     path: "{{ jenkins_home}}/config.xml"
     xpath: "/hudson/authorizationStrategy/denyAnonymousReadAccess"
-    state: absent   
+    state: absent
 
 - name: Add Security Realm SAML
   xml:
