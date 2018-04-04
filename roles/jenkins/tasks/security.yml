@@ -17,16 +17,14 @@
   xml:
     path: "{{ jenkins_home}}/config.xml"
     xpath: "/hudson/authorizationStrategy/permission"
-    attribute: "class"
     value: "{{ item }}" 
-    with_items: "{{ jenkins_permissions_list }}"
+  with_items: "{{ jenkins_permissions_list }}"
 
 - name: Set Jenkins Authorization Strategy to denyAnonymousReadAccess
   xml:
     path: "{{ jenkins_home}}/config.xml"
     xpath: "/hudson/authorizationStrategy/denyAnonymousReadAccess"
-    attribute: "class"
-    value: "true"    
+    state: absent
 
 - name: Add Security Realm SAML
   xml:
