@@ -13,6 +13,21 @@
     attribute: "class"
     value: "hudson.security.GlobalMatrixAuthorizationStrategy"
 
+- name: Set Jenkins Authorization Strategy Permissions
+  xml:
+    path: "{{ jenkins_home}}/config.xml"
+    xpath: "/hudson/authorizationStrategy/permission"
+    attribute: "class"
+    value: "{{ item }}" 
+    with_items: "{{ jenkins_permissions_list }}"
+
+- name: Set Jenkins Authorization Strategy to denyAnonymousReadAccess
+  xml:
+    path: "{{ jenkins_home}}/config.xml"
+    xpath: "/hudson/authorizationStrategy/denyAnonymousReadAccess"
+    attribute: "class"
+    value: "true"    
+
 - name: Add Security Realm SAML
   xml:
     path: "{{ jenkins_home}}/config.xml"
@@ -35,7 +50,7 @@
 - name: Set Security Realm SAML plugin displayNameAttributeName
   xml:
     path: "{{ jenkins_home}}/config.xml"
-    xpath: "/hudson/securityRealm/displayNameAttributeName"
+    xpath: "/hudson/securityRealm/securityRealm/displayNameAttributeName" 
     value: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
 
 - name: Set Security Realm SAML plugin groupsAttributeName
