@@ -56,6 +56,7 @@
 - name: Install docker-compose
   pip:
     name: docker-compose
+    version: 2.1
     state: present
 
 - name: Add Jenkins to docker group
