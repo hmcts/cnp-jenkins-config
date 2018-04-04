@@ -18,7 +18,7 @@
     path: "{{ jenkins_home}}/config.xml"
     xpath: "/hudson/authorizationStrategy/permission"
     value: "{{ item }}" 
-    with_items: "{{ jenkins_permissions_list }}"
+  with_items: "{{ jenkins_permissions_list }}"
 
 - name: Set Jenkins Authorization Strategy to denyAnonymousReadAccess
   xml:
