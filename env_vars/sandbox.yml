@@ -342,4 +342,3 @@ jenkins_permissions_list:
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:92435fed-43d8-4824-b050-7344a46bcc02
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:a02411d2-3cca-4c61-8911-c1a093f4d12f
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:faf6cf1a-ac66-4781-8190-0e388ef8d394
-
