@@ -16,6 +16,7 @@ organization_folders:
 
 jenkins_permissions_list:
   - com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
+  - com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
   - com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:300e771f-856c-45cc-b899-40d78281e9c1
   - com.cloudbees.plugins.credentials.CredentialsProvider.Update:300e771f-856c-45cc-b899-40d78281e9c1
@@ -28,22 +29,30 @@ jenkins_permissions_list:
   - hudson.model.Computer.Disconnect:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Hudson.Administer:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Hudson.Read:300e771f-856c-45cc-b899-40d78281e9c1
+  - hudson.model.Hudson.Read:authenticated
   - hudson.model.Item.Build:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Item.Cancel:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Item.Configure:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Item.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Item.Delete:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Item.Discover:300e771f-856c-45cc-b899-40d78281e9c1
+  - hudson.model.Item.Discover:authenticated
   - hudson.model.Item.Move:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Item.Read:300e771f-856c-45cc-b899-40d78281e9c1
+  - hudson.model.Item.Read:authenticated
   - hudson.model.Item.Workspace:300e771f-856c-45cc-b899-40d78281e9c1
+  - hudson.model.Item.Workspace:authenticated
   - hudson.model.Run.Delete:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Run.Replay:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.Run.Update:300e771f-856c-45cc-b899-40d78281e9c1
   - hudson.model.View.Configure:300e771f-856c-45cc-b899-40d78281e9c1
+  - hudson.model.View.Configure:authenticated
   - hudson.model.View.Create:300e771f-856c-45cc-b899-40d78281e9c1
+  - hudson.model.View.Create:authenticated
   - hudson.model.View.Delete:300e771f-856c-45cc-b899-40d78281e9c1
+  - hudson.model.View.Delete:authenticated
   - hudson.model.View.Read:300e771f-856c-45cc-b899-40d78281e9c1
+  - hudson.model.View.Read:authenticated
   - hudson.scm.SCM.Tag:300e771f-856c-45cc-b899-40d78281e9c1
   - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:300e771f-856c-45cc-b899-40d78281e9c1
   - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:300e771f-856c-45cc-b899-40d78281e9c1
