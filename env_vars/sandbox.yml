@@ -12,333 +12,334 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branchesToAutoBuild: '' # Builds will be triggered by webhooks
 jenkins_permissions_list:
-  - com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
-  - com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
-  - com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:300e771f-856c-45cc-b899-40d78281e9c1
-  - com.cloudbees.plugins.credentials.CredentialsProvider.Update:300e771f-856c-45cc-b899-40d78281e9c1
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:300e771f-856c-45cc-b899-40d78281e9c1
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:38f9dea6-e861-4a50-9e73-21e64f563537
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:68839600-92da-4862-bb24-1259814d1384
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:87099fce-881e-4654-88d2-7c36b634e622
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:92435fed-43d8-4824-b050-7344a46bcc02
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - com.cloudbees.plugins.credentials.CredentialsProvider.View:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Computer.Build:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Computer.Build:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Computer.Build:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Computer.Build:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Computer.Build:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Computer.Build:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Computer.Build:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Computer.Build:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Computer.Build:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Computer.Build:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Computer.Build:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Computer.Build:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Computer.Configure:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Computer.Configure:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Computer.Configure:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Computer.Configure:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Computer.Configure:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Computer.Configure:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Computer.Configure:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Computer.Configure:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Computer.Configure:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Computer.Configure:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Computer.Configure:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Computer.Configure:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Computer.Connect:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Computer.Connect:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Computer.Connect:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Computer.Connect:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Computer.Connect:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Computer.Connect:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Computer.Connect:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Computer.Connect:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Computer.Connect:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Computer.Connect:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Computer.Connect:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Computer.Connect:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Computer.Create:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Computer.Create:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Computer.Create:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Computer.Create:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Computer.Create:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Computer.Create:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Computer.Create:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Computer.Create:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Computer.Create:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Computer.Create:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Computer.Create:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Computer.Create:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Computer.Delete:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Computer.Delete:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Computer.Delete:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Computer.Delete:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Computer.Delete:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Computer.Delete:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Computer.Delete:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Computer.Delete:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Computer.Delete:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Computer.Delete:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Computer.Delete:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Computer.Delete:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Computer.Disconnect:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Computer.Disconnect:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Computer.Disconnect:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Computer.Disconnect:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Computer.Disconnect:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Computer.Disconnect:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Computer.Disconnect:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Computer.Disconnect:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Computer.Disconnect:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Computer.Disconnect:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Computer.Disconnect:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Computer.Disconnect:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Hudson.Administer:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Hudson.Read:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Hudson.Read:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Hudson.Read:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Hudson.Read:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Hudson.Read:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Hudson.Read:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Hudson.Read:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Hudson.Read:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Hudson.Read:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Hudson.Read:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Hudson.Read:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Hudson.Read:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Hudson.Read:anonymous
-  - hudson.model.Item.Build:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Item.Build:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Item.Build:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Item.Build:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Item.Build:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Item.Build:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Item.Build:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Item.Build:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Item.Build:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Item.Build:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Item.Build:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Item.Build:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Item.Cancel:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Item.Cancel:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Item.Cancel:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Item.Cancel:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Item.Cancel:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Item.Cancel:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Item.Cancel:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Item.Cancel:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Item.Cancel:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Item.Cancel:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Item.Cancel:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Item.Cancel:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Item.Configure:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Item.Configure:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Item.Configure:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Item.Configure:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Item.Configure:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Item.Configure:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Item.Configure:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Item.Configure:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Item.Configure:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Item.Configure:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Item.Configure:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Item.Configure:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Item.Create:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Item.Create:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Item.Create:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Item.Create:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Item.Create:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Item.Create:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Item.Create:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Item.Create:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Item.Create:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Item.Create:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Item.Create:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Item.Create:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Item.Delete:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Item.Delete:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Item.Delete:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Item.Delete:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Item.Delete:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Item.Delete:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Item.Delete:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Item.Delete:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Item.Delete:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Item.Delete:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Item.Delete:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Item.Delete:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Item.Discover:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Item.Discover:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Item.Discover:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Item.Discover:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Item.Discover:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Item.Discover:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Item.Discover:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Item.Discover:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Item.Discover:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Item.Discover:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Item.Discover:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Item.Discover:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Item.Move:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Item.Move:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Item.Move:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Item.Move:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Item.Move:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Item.Move:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Item.Move:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Item.Move:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Item.Move:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Item.Move:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Item.Move:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Item.Move:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Item.Read:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Item.Read:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Item.Read:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Item.Read:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Item.Read:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Item.Read:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Item.Read:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Item.Read:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Item.Read:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Item.Read:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Item.Read:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Item.Read:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Item.Workspace:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Item.Workspace:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Item.Workspace:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Item.Workspace:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Item.Workspace:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Item.Workspace:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Item.Workspace:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Item.Workspace:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Item.Workspace:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Item.Workspace:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Item.Workspace:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Item.Workspace:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Run.Delete:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Run.Delete:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Run.Delete:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Run.Delete:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Run.Delete:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Run.Delete:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Run.Delete:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Run.Delete:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Run.Delete:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Run.Delete:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Run.Delete:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Run.Delete:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Run.Replay:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Run.Replay:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Run.Replay:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Run.Replay:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Run.Replay:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Run.Replay:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Run.Replay:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Run.Replay:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Run.Replay:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Run.Replay:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Run.Replay:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Run.Replay:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.Run.Update:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.Run.Update:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.Run.Update:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.Run.Update:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.Run.Update:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.Run.Update:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.Run.Update:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.Run.Update:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.Run.Update:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.Run.Update:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.Run.Update:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.Run.Update:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.View.Configure:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.View.Configure:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.View.Configure:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.View.Configure:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.View.Configure:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.View.Configure:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.View.Configure:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.View.Configure:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.View.Configure:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.View.Configure:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.View.Configure:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.View.Configure:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.View.Create:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.View.Create:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.View.Create:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.View.Create:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.View.Create:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.View.Create:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.View.Create:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.View.Create:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.View.Create:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.View.Create:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.View.Create:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.View.Create:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.View.Delete:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.View.Delete:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.View.Delete:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.View.Delete:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.View.Delete:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.View.Delete:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.View.Delete:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.View.Delete:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.View.Delete:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.View.Delete:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.View.Delete:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.View.Delete:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.model.View.Read:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.model.View.Read:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.model.View.Read:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.model.View.Read:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.model.View.Read:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.model.View.Read:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.model.View.Read:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.model.View.Read:68839600-92da-4862-bb24-1259814d1384
-  - hudson.model.View.Read:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.model.View.Read:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.model.View.Read:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.model.View.Read:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - hudson.scm.SCM.Tag:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - hudson.scm.SCM.Tag:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - hudson.scm.SCM.Tag:300e771f-856c-45cc-b899-40d78281e9c1
-  - hudson.scm.SCM.Tag:38f9dea6-e861-4a50-9e73-21e64f563537
-  - hudson.scm.SCM.Tag:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - hudson.scm.SCM.Tag:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - hudson.scm.SCM.Tag:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - hudson.scm.SCM.Tag:68839600-92da-4862-bb24-1259814d1384
-  - hudson.scm.SCM.Tag:87099fce-881e-4654-88d2-7c36b634e622
-  - hudson.scm.SCM.Tag:92435fed-43d8-4824-b050-7344a46bcc02
-  - hudson.scm.SCM.Tag:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - hudson.scm.SCM.Tag:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:300e771f-856c-45cc-b899-40d78281e9c1
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:38f9dea6-e861-4a50-9e73-21e64f563537
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:68839600-92da-4862-bb24-1259814d1384
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:87099fce-881e-4654-88d2-7c36b634e622
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:92435fed-43d8-4824-b050-7344a46bcc02
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:faf6cf1a-ac66-4781-8190-0e388ef8d394
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:10825718-ddc3-4839-b9bd-8e448299c1f4
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:300e771f-856c-45cc-b899-40d78281e9c1
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:38f9dea6-e861-4a50-9e73-21e64f563537
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:59ed95bc-365f-4be8-9c85-30b9bff4a048
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:5d9cd025-a293-4b97-a0e5-6f43efce02c0
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:68839600-92da-4862-bb24-1259814d1384
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:87099fce-881e-4654-88d2-7c36b634e622
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:92435fed-43d8-4824-b050-7344a46bcc02
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:a02411d2-3cca-4c61-8911-c1a093f4d12f
-  - org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Update:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:68839600-92da-4862-bb24-1259814d1384
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Computer.Build:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Computer.Build:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Computer.Build:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Build:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Computer.Build:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Computer.Build:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Computer.Build:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Computer.Build:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Computer.Build:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Computer.Build:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Computer.Build:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Computer.Build:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Computer.Configure:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Computer.Configure:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Computer.Configure:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Configure:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Computer.Configure:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Computer.Configure:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Computer.Configure:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Computer.Configure:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Computer.Configure:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Computer.Configure:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Computer.Configure:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Computer.Configure:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Computer.Connect:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Computer.Connect:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Computer.Connect:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Connect:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Computer.Connect:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Computer.Connect:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Computer.Connect:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Computer.Connect:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Computer.Connect:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Computer.Connect:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Computer.Connect:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Computer.Connect:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Computer.Create:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Computer.Create:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Computer.Create:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Create:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Computer.Create:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Computer.Create:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Computer.Create:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Computer.Create:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Computer.Create:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Computer.Create:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Computer.Create:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Computer.Create:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Computer.Delete:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Computer.Delete:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Computer.Delete:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Delete:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Computer.Delete:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Computer.Delete:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Computer.Delete:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Computer.Delete:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Computer.Delete:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Computer.Delete:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Computer.Delete:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Computer.Delete:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Computer.Disconnect:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Computer.Disconnect:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Computer.Disconnect:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Disconnect:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Computer.Disconnect:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Computer.Disconnect:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Computer.Disconnect:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Computer.Disconnect:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Computer.Disconnect:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Computer.Disconnect:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Computer.Disconnect:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Computer.Disconnect:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Hudson.Administer:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Hudson.Read:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Hudson.Read:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Hudson.Read:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Hudson.Read:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Hudson.Read:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Hudson.Read:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Hudson.Read:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Hudson.Read:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Hudson.Read:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Hudson.Read:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Hudson.Read:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Hudson.Read:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Hudson.Read:anonymous
+  - permission: hudson.model.Item.Build:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Item.Build:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Item.Build:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Build:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Item.Build:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Item.Build:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Item.Build:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Item.Build:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Item.Build:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Item.Build:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Item.Build:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Item.Build:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Item.Cancel:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Item.Cancel:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Item.Cancel:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Cancel:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Item.Cancel:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Item.Cancel:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Item.Cancel:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Item.Cancel:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Item.Cancel:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Item.Cancel:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Item.Cancel:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Item.Cancel:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Item.Configure:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Item.Configure:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Item.Configure:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Configure:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Item.Configure:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Item.Configure:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Item.Configure:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Item.Configure:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Item.Configure:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Item.Configure:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Item.Configure:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Item.Configure:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Item.Create:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Item.Create:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Item.Create:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Create:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Item.Create:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Item.Create:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Item.Create:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Item.Create:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Item.Create:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Item.Create:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Item.Create:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Item.Create:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Item.Delete:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Item.Delete:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Item.Delete:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Delete:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Item.Delete:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Item.Delete:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Item.Delete:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Item.Delete:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Item.Delete:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Item.Delete:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Item.Delete:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Item.Delete:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Item.Discover:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Item.Discover:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Item.Discover:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Discover:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Item.Discover:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Item.Discover:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Item.Discover:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Item.Discover:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Item.Discover:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Item.Discover:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Item.Discover:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Item.Discover:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Item.Move:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Item.Move:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Item.Move:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Move:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Item.Move:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Item.Move:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Item.Move:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Item.Move:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Item.Move:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Item.Move:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Item.Move:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Item.Move:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Item.Read:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Item.Read:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Item.Read:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Read:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Item.Read:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Item.Read:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Item.Read:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Item.Read:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Item.Read:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Item.Read:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Item.Read:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Item.Read:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Item.Workspace:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Item.Workspace:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Item.Workspace:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Workspace:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Item.Workspace:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Item.Workspace:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Item.Workspace:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Item.Workspace:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Item.Workspace:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Item.Workspace:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Item.Workspace:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Item.Workspace:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Run.Delete:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Run.Delete:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Run.Delete:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Run.Delete:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Run.Delete:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Run.Delete:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Run.Delete:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Run.Delete:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Run.Delete:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Run.Delete:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Run.Delete:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Run.Delete:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Run.Replay:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Run.Replay:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Run.Replay:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Run.Replay:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Run.Replay:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Run.Replay:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Run.Replay:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Run.Replay:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Run.Replay:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Run.Replay:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Run.Replay:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Run.Replay:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.Run.Update:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.Run.Update:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.Run.Update:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Run.Update:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.Run.Update:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.Run.Update:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.Run.Update:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.Run.Update:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.Run.Update:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.Run.Update:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.Run.Update:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.Run.Update:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.View.Configure:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.View.Configure:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.View.Configure:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.View.Configure:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.View.Configure:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.View.Configure:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.View.Configure:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.View.Configure:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.View.Configure:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.View.Configure:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.View.Configure:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.View.Configure:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.View.Create:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.View.Create:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.View.Create:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.View.Create:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.View.Create:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.View.Create:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.View.Create:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.View.Create:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.View.Create:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.View.Create:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.View.Create:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.View.Create:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.View.Delete:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.View.Delete:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.View.Delete:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.View.Delete:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.View.Delete:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.View.Delete:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.View.Delete:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.View.Delete:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.View.Delete:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.View.Delete:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.View.Delete:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.View.Delete:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.model.View.Read:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.model.View.Read:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.model.View.Read:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.View.Read:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.model.View.Read:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.model.View.Read:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.model.View.Read:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.model.View.Read:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.model.View.Read:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.model.View.Read:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.model.View.Read:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.model.View.Read:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: hudson.scm.SCM.Tag:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: hudson.scm.SCM.Tag:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: hudson.scm.SCM.Tag:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.scm.SCM.Tag:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: hudson.scm.SCM.Tag:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: hudson.scm.SCM.Tag:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: hudson.scm.SCM.Tag:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: hudson.scm.SCM.Tag:68839600-92da-4862-bb24-1259814d1384
+  - permission: hudson.scm.SCM.Tag:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: hudson.scm.SCM.Tag:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: hudson.scm.SCM.Tag:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: hudson.scm.SCM.Tag:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:68839600-92da-4862-bb24-1259814d1384
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:faf6cf1a-ac66-4781-8190-0e388ef8d394
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:10825718-ddc3-4839-b9bd-8e448299c1f4
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:2492c1be-9805-4dbb-bc9b-a834bd3dc5d0
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:38f9dea6-e861-4a50-9e73-21e64f563537
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:4cfb1e76-33fe-434b-9635-b91b7e2a55d0
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:59ed95bc-365f-4be8-9c85-30b9bff4a048
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:5d9cd025-a293-4b97-a0e5-6f43efce02c0
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:68839600-92da-4862-bb24-1259814d1384
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:87099fce-881e-4654-88d2-7c36b634e622
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:92435fed-43d8-4824-b050-7344a46bcc02
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:a02411d2-3cca-4c61-8911-c1a093f4d12f
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:faf6cf1a-ac66-4781-8190-0e388ef8d394
+
