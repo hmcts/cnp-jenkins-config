@@ -11,7 +11,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP']
-    branchesToAutoBuild: '' # Builds will be triggered by webhooks
+    branchesToAutoBuild: '(PR-\d+.*|master)'
     branchesToinclude: 'master demo'
 
 jenkins_permissions_list:
