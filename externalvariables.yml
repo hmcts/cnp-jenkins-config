@@ -5,10 +5,12 @@ env: sandbox
 
 #Get Values from Azure Vault
 github_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault.vault.azure.net/') }}"
+github_enterprise_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-enterprise-apikey vault_uri=https://infra-vault.vault.azure.net/') }}"
+pipelinemetrics_cosmosdb_key: "{{ lookup('azure_keyvault', 'secret_name=pipelinemetrics-cosmosdb-key vault_uri=https://infra-vault.vault.azure.net/') }}"
 hmcts_github_apikey: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey vault_uri=https://infra-vault.vault.azure.net/') }}"
 slack_token: "{{ lookup('azure_keyvault', 'secret_name=slack-token vault_uri=https://infra-vault.vault.azure.net/') }}"
 slack_credential_id: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault.vault.azure.net/') }}"
-sonar_api_key: "{{ lookup('azure_keyvault', 'secret_name=sonar-apikey vault_uri=https://infra-vault.vault.azure.net/') }}"
+sonar_api_key: "{{ lookup('azure_keyvault', 'secret_name=sonar-api-key vault_uri=https://infra-vault.vault.azure.net/') }}"
 hashicorp_vault_token: "{{ lookup('azure_keyvault', 'secret_name=hashicorp-vault-token vault_uri=https://infra-vault.vault.azure.net/') }}"
 
 jenkins_agent_env: sandbox
