@@ -1,7 +1,7 @@
 ---
 
 jenkins_external_url: 'https://build.platform.hmcts.net'
-hookUrl: 'http://build.platform.hmcts.net'
+hookUrl: 'http://build.platform.hmcts.net/github-webhook/'
 manage_webhooks: true
 
 organization_folders:
