@@ -16,11 +16,12 @@ organization_folders:
 
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
-  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Update:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:authenticated
+  - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.Computer.Build:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Computer.Configure:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Computer.Connect:300e771f-856c-45cc-b899-40d78281e9c1
@@ -30,30 +31,45 @@ jenkins_permissions_list:
   - permission: hudson.model.Hudson.Administer:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Hudson.Read:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Hudson.Read:authenticated
-  - permission: hudson.model.Hudson.Read:anonymous
+  - permission: hudson.model.Hudson.Read:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.Item.Build:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Build:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.Item.Cancel:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Configure:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Configure:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.Item.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Delete:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Discover:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Discover:authenticated
+  - permission: hudson.model.Item.Discover:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.Item.Move:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Move:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.Item.Read:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Read:authenticated
+  - permission: hudson.model.Item.Read:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.Item.Workspace:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Workspace:authenticated
+  - permission: hudson.model.Item.Workspace:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.Run.Delete:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Run.Replay:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Run.Replay:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.Run.Update:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Run.Update:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.View.Configure:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.View.Configure:authenticated
+  - permission: hudson.model.View.Configure:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.View.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.View.Create:authenticated
+  - permission: hudson.model.View.Create:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.View.Delete:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.View.Delete:authenticated
+  - permission: hudson.model.View.Delete:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.View.Read:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.View.Read:authenticated
+  - permission: hudson.model.View.Read:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.scm.SCM.Tag:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.scm.SCM.Tag:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:b433063f-3da2-4865-9313-81ec472a53a
