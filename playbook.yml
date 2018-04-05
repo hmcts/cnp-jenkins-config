@@ -34,6 +34,7 @@
       - greenballs
       - custom-tools-plugin
       - git
+      - hashicorp-vault-plugin
       - lockable-resources
       - pipeline-stage-view
       - ansicolor
