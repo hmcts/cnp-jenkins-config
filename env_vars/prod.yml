@@ -8,7 +8,7 @@ organization_folders:
     description: 'HMCTS public repositories'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
-    jenkinsfile_path: ['Jenkinsfile_CNP']
+    jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
     branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branchesToinclude: 'master demo'
 
