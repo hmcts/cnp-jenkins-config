@@ -21,9 +21,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: "sudo systemctl stop firewalld", privileged: true
   config.vm.provision "shell", inline: $set_environment_variables, run: "always"
 
-
-  config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
-
   config.vm.provider "virtualbox" do |v|
     v.memory = 4096
     v.cpus = 2

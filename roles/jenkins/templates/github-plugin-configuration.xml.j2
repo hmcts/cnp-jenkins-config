@@ -4,21 +4,18 @@
     <github-server-config>
       <name>Public Git</name>
       <apiUrl>https://api.github.com</apiUrl>
-      <manageHooks>{{manage_webhooks}}</manageHooks>
+      <manageHooks>false</manageHooks>
       <credentialsId>jenkins-github-api-token-secret-text</credentialsId>
       <clientCacheSize>20</clientCacheSize>
     </github-server-config>
     <github-server-config>
       <name>Reform GitHub Enterprise</name>
       <apiUrl>https://git.reform.hmcts.net/api/v3</apiUrl>
-      <manageHooks>{{manage_webhooks}}</manageHooks>
+      <manageHooks>false</manageHooks>
       <credentialsId>github-enterprise-token-secret-text</credentialsId>
       <clientCacheSize>20</clientCacheSize>
     </github-server-config>
   </configs>
-  {% if manage_webhooks == true %}
-  <hookUrl>{{hookUrl}}</hookUrl>
-  {% endif %}
   <hookSecretConfig>
     <credentialsId></credentialsId>
   </hookSecretConfig>
