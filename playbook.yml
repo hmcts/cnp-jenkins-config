@@ -45,6 +45,7 @@
       - workflow-aggregator
       - build-monitor-plugin
       - jacoco
+      - gatling
 
     jenkins_manual_plugins:
       - file_name: 'azure-keyvault.hpi'
