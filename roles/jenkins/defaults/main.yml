@@ -28,6 +28,9 @@ jenkins_admin_token_file: ""
 jenkins_process_user: jenkins
 jenkins_process_group: "{{ jenkins_process_user }}"
 
+jenkins_soft_nofile: 40960
+jenkins_hard_nofile: 40960
+
 jenkins_init_changes:
   - option: "JENKINS_ARGS"
     value: "--prefix={{ jenkins_url_prefix }}"

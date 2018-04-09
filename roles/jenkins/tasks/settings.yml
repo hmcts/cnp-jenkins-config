@@ -31,6 +31,13 @@
     - restart jenkins
     - wait for jenkins to start
 
+- name: Set file limits for Jenkins jenkins user
+  template:
+    src: templates/jenkins-limits.conf
+    dest: "/etc/security/limits.d/30-jenkins.conf"
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Ensure jenkins_home {{ jenkins_home }} exists
   file:
@@ -59,14 +66,6 @@
     group: jenkins
     mode: 0600
   when: jenkins_ssh_priv_key is defined
-
-#- name: Create known_hosts file with github host key
-#  copy:
-#    src: files/github-known_hosts
-#    dest: "{{ jenkins_home }}/.ssh/known_hosts"
-#    group: jenkins
-#    owner: jenkins
-#    mode: 0600
 
 - name: Create known_hosts file with github host key
   shell: "ssh-keyscan -T 10 github.com >> {{ jenkins_home }}/.ssh/known_hosts"
