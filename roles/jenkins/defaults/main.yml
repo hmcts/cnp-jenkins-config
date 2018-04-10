@@ -4,6 +4,9 @@
 #jenkins_version: "1.644"
 # jenkins_pkg_url: "https://www.example.com"
 
+# Allows additional JVM options to be passed to Jenkins
+jenkins_java_options: ""
+
 # Change this to `latest` to update Jenkins if a newer version is available.
 jenkins_package_state: present
 
