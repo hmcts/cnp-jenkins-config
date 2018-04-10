@@ -55,7 +55,7 @@
 - name: Update /etc/sysconfig/jenkins to provide additional JAVA_ARGS
   lineinfile:
     path: /etc/sysconfig/jenkins
-    create=yes
-    state=present
+    create: yes
+    state: present
     insertafter: 'JENKINS_JAVA_OPTIONS="$JENKINS_JAVA_OPTIONS -Djenkins.install.runSetupWizard=false"'
     line: 'JENKINS_JAVA_OPTIONS="$JENKINS_JAVA_OPTIONS {{ jenkins_java_options }}"'
