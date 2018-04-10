@@ -42,3 +42,11 @@
     name: jenkins
     state: "{{ jenkins_package_state }}"
   notify: configure default users
+
+- name: Update /etc/default/jenkins to provide additional JAVA_ARGS
+  lineinfile:
+    path: /etc/default/jenkins
+    create=yes
+    state=present
+    insertafter: 'JENKINS_JAVA_OPTIONS="$JENKINS_JAVA_OPTIONS -Djenkins.install.runSetupWizard=false"'
+    line: 'JENKINS_JAVA_OPTIONS="$JENKINS_JAVA_OPTIONS {{ jenkins_java_options }}"'
