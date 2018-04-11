@@ -60,7 +60,7 @@
   xml:
     path: "{{ jenkins_home}}/config.xml"
     xpath: "/hudson/securityRealm/maximumAuthenticationLifetime"
-    value: "86400" 
+    value: "1209600" 
 
 - name: Set Security Realm SAML plugin usernameCaseConversion
   xml:
