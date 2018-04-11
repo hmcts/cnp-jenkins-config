@@ -141,7 +141,8 @@
     
     # JVM options for Jenkins based on https://support.cloudbees.com/hc/en-us/articles/204859670-Java-Heap-settings-best-practice
     # and https://jenkins.io/blog/2016/11/21/gc-tuning/. Below assumes Standard DS13 v2 (8 vcpus, 56 GB memory) host
-    jenkins_java_options: "-Xms20G -Xmx31G -XX:+UseCompressedOops -XX:+ExplicitGCInvokesConcurrent -Djenkins.install.runSetupWizard=false {{ jenkins_csp_policy }} {{ jenkins_timezone }}'"
+    jvm_options = "-Xms20G -Xmx31G -XX:+UseCompressedOops -XX:+ExplicitGCInvokesConcurrent"
+    jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }}'"
 
   roles:
     - role: ansible-terraform
