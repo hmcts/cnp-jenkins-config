@@ -7,8 +7,6 @@
     owner: jenkins
     group: jenkins
     mode: 0664
-  notify:
-    - reload jenkins config
 
 - name: "Template org.jenkinsci.plugins.azurekeyvaultplugin.AzureKeyVaultBuildWrapper.xml config file"
   template:
@@ -17,8 +15,6 @@
     owner: jenkins
     group: jenkins
     mode: 0664
-  notify:
-    - reload jenkins config
 
 - name: "Template jenkins.plugins.slack.SlackNotifier.xml config file"
   template:
@@ -27,8 +23,6 @@
     owner: jenkins
     group: jenkins
     mode: 0664
-  notify:
-    - reload jenkins config
 
 - name: "Template github-plugin-configuration.xml config file"
   template:
@@ -37,5 +31,3 @@
     owner: jenkins
     group: jenkins
     mode: 0664
-  notify:
-    - reload jenkins config
