@@ -7,8 +7,19 @@ import hudson.slaves.EnvironmentVariablesNodeProperty
 import hudson.slaves.EnvironmentVariablesNodeProperty.Entry
 import hudson.model.Node.Mode
 
-Jenkins jenkins = Jenkins.getInstance()
+def populateEnvVarList(envVarList, propertyConfigKey){
+  propertiesConfig[propertyConfigKey].each{ envVar ->
+  	try {
+    	envVarList.add(new Entry(envVar.NAME, envVar.VALUE))
+    	println(envVar.NAME)
+  	} catch (MissingMethodException e) {
+    	jenkins.doSafeExit(null)
+    	System.exit(1)
+  	}
+  }
+}
 
+Jenkins jenkins = Jenkins.getInstance()
 
 propertiesConfig = ['sandbox': [['NAME': 'NONPROD_SUBSCRIPTION_NAME', 'VALUE': 'sandbox'],
                                 ['NAME': 'NONPROD_ENVIRONMENT_NAME', 'VALUE': 'saat'],
@@ -20,15 +31,8 @@ propertiesConfig = ['sandbox': [['NAME': 'NONPROD_SUBSCRIPTION_NAME', 'VALUE': '
                                 ['NAME': 'GRADLE_OPTS', 'VALUE': '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"']]]
 
 List<Entry> envVarList = new ArrayList<Entry>()
-
-propertiesConfig["${jenkins_env}", "common"].each { envVar ->
-  try {
-    envVarList.add(new Entry(envVar.NAME, envVar.VALUE))
-  } catch (MissingMethodException e) {
-    jenkins.doSafeExit(null)
-    System.exit(1)
-  }
-}
+populateEnvVarList(envVarList, "${jenkins_env}")
+populateEnvVarList(envVarList, "common")
 
 jenkins.getGlobalNodeProperties().replaceBy(
     Collections.singleton(
