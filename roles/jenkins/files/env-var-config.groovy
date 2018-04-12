@@ -11,7 +11,6 @@ def populateEnvVarList(envVarList, propertyConfigKey){
   propertiesConfig[propertyConfigKey].each{ envVar ->
   	try {
     	envVarList.add(new Entry(envVar.NAME, envVar.VALUE))
-    	println(envVar.NAME)
   	} catch (MissingMethodException e) {
     	jenkins.doSafeExit(null)
     	System.exit(1)
