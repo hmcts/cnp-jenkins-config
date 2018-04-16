@@ -45,6 +45,7 @@
       - workflow-aggregator
       - build-monitor-plugin
       - jacoco
+      - xvfb
 
     jenkins_manual_plugins:
       - file_name: 'azure-keyvault.hpi'
@@ -139,7 +140,7 @@
     # JVM options for Jenkins based on https://support.cloudbees.com/hc/en-us/articles/204859670-Java-Heap-settings-best-practice
     # and https://jenkins.io/blog/2016/11/21/gc-tuning/. Below assumes Standard DS13 v2 (8 vcpus, 56 GB memory) host
     jvm_options: "-Xms20G -Xmx31G -XX:+UseCompressedOops -XX:+ExplicitGCInvokesConcurrent"
-    
+
     jenkins_timezone: '-Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/London'
     jenkins_csp_policy: '-Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src ''self''; script-src ''self'' ''unsafe-inline''; style-src ''self'' ''unsafe-inline''; font-src data:\"'
     jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }}"
