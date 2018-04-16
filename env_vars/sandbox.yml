@@ -4,12 +4,23 @@ jenkins_external_url: 'https://sandbox-build.platform.hmcts.net'
 
 organization_folders:
   - name: 'HMCTS'
+    repo_owner: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
-    branchesToAutoBuild: '' # Builds to manually triggered in sandbox
+    branchesToAutoBuild: '' # Builds to be manually triggered in sandbox
+  - name: 'HMCTS_pipeline_test'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS Pipeline Test'
+    description: 'DO NOT USE! For automated pipeline testing only'
+    repoPattern: 'moj-rhubarb-.*'
+    credentials_id: 'jenkins-github-hmcts-api-token'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_pipeline_test']
+    branchesToinclude: 'master'
+    branchesToAutoBuild: '' # Builds to be manually triggered in sandbox
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1

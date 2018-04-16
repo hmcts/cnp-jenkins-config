@@ -80,7 +80,7 @@
   <disabled>false</disabled>
   <navigators>
     <org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator plugin="github-branch-source@2.2.2">
-      <repoOwner>{{ folder.name }}</repoOwner>
+      <repoOwner>{{ folder.repo_owner }}</repoOwner>
       <apiUri>{{ folder.github_api_url | default(github_api_url) }}</apiUri>
       <credentialsId>{{ folder.credentials_id | default('jenkins-github-api-token') }}</credentialsId>
       <traits>

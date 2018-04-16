@@ -4,6 +4,7 @@ jenkins_external_url: 'https://build.platform.hmcts.net'
 
 organization_folders:
   - name: 'HMCTS'
+    repo_owner: 'HMCTS'
     displayName: 'HMCTS'
     description: 'HMCTS public repositories'
     credentials_id: 'jenkins-github-hmcts-api-token'
