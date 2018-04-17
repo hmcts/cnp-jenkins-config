@@ -16,12 +16,12 @@ organization_folders:
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Pipeline Test'
     description: 'DO NOT USE! For automated pipeline testing only'
-    repoPattern: 'moj-rhubarb-.*'
+    repoPattern: 'moj-rhubarb-.* moj-jenkins-library'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_pipeline_test']
-    branches_to_include: 'master'
-    branchesToAutoBuild: '' # Builds to be manually triggered in sandbox
+    branches_to_include: 'master PR*'
+    branchesToAutoBuild: '(PR-\d+.*|master)'
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
