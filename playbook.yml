@@ -116,7 +116,7 @@
           title: "SSCS Dashboard"
         }
 
-    terraform_version: 0.11.3
+    terraform_version: 0.11.7
     terraform_sha256sum: 6b8a7b83954597d36bbed23913dd51bc253906c612a070a21db373eab71b277b
 
     sonar_server_url: "https://sonar.reform.hmcts.net"
