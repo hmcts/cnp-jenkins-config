@@ -80,7 +80,7 @@
   <disabled>false</disabled>
   <navigators>
     <org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator plugin="github-branch-source@2.2.2">
-      <repoOwner>{{ folder.name }}</repoOwner>
+      <repoOwner>{{ folder.repo_owner }}</repoOwner>
       <apiUri>{{ folder.github_api_url | default(github_api_url) }}</apiUri>
       <credentialsId>{{ folder.credentials_id | default('jenkins-github-api-token') }}</credentialsId>
       <traits>
@@ -100,7 +100,7 @@
           <trust class="org.jenkinsci.plugins.github_branch_source.ForkPullRequestDiscoveryTrait$TrustPermission"/>
         </org.jenkinsci.plugins.github__branch__source.ForkPullRequestDiscoveryTrait>
         <jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait plugin="scm-api@2.2.0">
-          <includes>{{ folder.branchesToinclude | default('master') }} cnp PR*</includes>
+          <includes>{{ folder.branches_to_include | default('master') }}</includes>
           <excludes/>
         </jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait>
         <org.jenkinsci.plugins.github__branch__source.SSHCheckoutTrait>
