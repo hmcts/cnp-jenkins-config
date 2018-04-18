@@ -16,10 +16,10 @@ LibraryConfiguration libToAdd =
                 credentialsId = "git_access_key",
                 includes = "*",
                 excludes = "",
-                ignoreOnPushNotifications = true)))
+                ignoreOnPushNotifications = Boolean.valueOf("{{ global_lib.ignore_on_push_notifications }}"))))
 libToAdd.setDefaultVersion("{{ global_lib.default_version }}")
-libToAdd.setImplicit(true)
-libToAdd.setAllowVersionOverride(true);
+libToAdd.setImplicit(Boolean.valueOf("{{ global_lib.set_implicit }}"))
+libToAdd.setAllowVersionOverride(Boolean.valueOf("{{ global_lib.allow_version_override }}"));
 libToAdd.setIncludeInChangesets(false);
 
 def preConfiguredLibs = globalLibsConfigurator.get().getLibraries()
