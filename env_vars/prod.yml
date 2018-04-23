@@ -41,6 +41,7 @@ jenkins_permissions_list:
   - permission: hudson.model.Item.Discover:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Discover:authenticated
   - permission: hudson.model.Item.Discover:b433063f-3da2-4865-9313-81ec472a53ae
+  - permission: hudson.model.Item.Discover:anonymous
   - permission: hudson.model.Item.Move:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Move:b433063f-3da2-4865-9313-81ec472a53ae
   - permission: hudson.model.Item.Read:300e771f-856c-45cc-b899-40d78281e9c1
