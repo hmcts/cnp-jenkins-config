@@ -134,11 +134,12 @@
     jenkins_agent_template_name: "moj-jenkins-builders"
     jenkins_agent_labels: ""
     jenkins_agent_executors: "4"
+    jenkins_agent_jvm_options: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
     jenkins_agent_private_ip: true
 
     # JVM options for Jenkins based on https://support.cloudbees.com/hc/en-us/articles/204859670-Java-Heap-settings-best-practice
     # and https://jenkins.io/blog/2016/11/21/gc-tuning/. Below assumes Standard DS13 v2 (8 vcpus, 56 GB memory) host
-    jvm_options: "-Xms20G -Xmx31G -XX:+UseCompressedOops -XX:+ExplicitGCInvokesConcurrent"
+    jvm_options: "-Xms6G -Xmx12G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
     
     jenkins_timezone: '-Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/London'
     jenkins_csp_policy: '-Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src ''self''; script-src ''self'' ''unsafe-inline''; style-src ''self'' ''unsafe-inline''; font-src data:\"'
