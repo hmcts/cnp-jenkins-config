@@ -26,7 +26,7 @@ propertiesConfig = ['sandbox': [['NAME': 'NONPROD_SUBSCRIPTION_NAME', 'VALUE': '
                                 ['NAME': 'PROD_ENVIRONMENT_NAME', 'VALUE': 'sprod'],
                                 ['NAME': 'INFRA_VAULT_NAME', 'VALUE': 'infra-vault-sandbox']],
                     'prod'   : [['NAME': 'INFRA_VAULT_NAME', 'VALUE': 'infra-vault']],
-                    'common' : [['NAME': 'JAVA_OPTS', 'VALUE': '-Xmx2g -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8'],
+                    'common' : [['NAME': 'JAVA_OPTS', 'VALUE': '-Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8'],
                                 ['NAME': 'GRADLE_OPTS', 'VALUE': '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"']]]
 
 List<Entry> envVarList = new ArrayList<Entry>()
