@@ -181,6 +181,11 @@
           type: cred-secret-text
           description: "Read/Write Key To Publish CosmosDB Metrics"
           password: "{{ pipelinemetrics_cosmosdb_key }}"
+        - id: owasp-db-login
+          type: cred-usrpwd
+          description: "Username and password for the OWASP vulnerability database"
+          username: "owasp_administrator"
+          password: "{{ owaspdb_password }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
