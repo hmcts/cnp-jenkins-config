@@ -1,0 +1,18 @@
+---
+info_dir: "/usr/share/nginx/html/info"
+
+- name: Create info folder in htdocs
+  file:
+    path: "{{ info_dir }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Increase Jenkins Security
+  template:
+    src: templates/info.j2
+    dest: "{{ info_dir }}/index.html"
+    group: root
+    owner: root
+    mode: 0644

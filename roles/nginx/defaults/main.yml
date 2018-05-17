@@ -68,6 +68,9 @@ nginx_vhosts:
       location /jenkins-on-azure {
              alias /usr/share/nginx/azure;
              }
+      location /info {}
+             alias /usr/share/nginx/html/info
+             }
 
 nginx_upstreams: []
 

@@ -47,3 +47,6 @@
 # This allows Nginx to work with SELinux
 - name: Configure SELinux
   command: setsebool -P httpd_can_network_connect 1
+
+# Deploy info template
+- include: info.yml
