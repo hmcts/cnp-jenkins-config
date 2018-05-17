@@ -83,3 +83,5 @@ jenkins_permissions_list:
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:authenticated
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:authenticated
+  
+api_key_username: 'jenkins-reform-hmcts3'
