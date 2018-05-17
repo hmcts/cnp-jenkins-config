@@ -1,6 +1,4 @@
 ---
-info_dir: /usr/share/nginx/html/info
-
 - name: Create info folder in htdocs
   file:
     path: "{{ info_dir }}"
