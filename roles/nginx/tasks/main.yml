@@ -27,6 +27,9 @@
 - include: setup-Archlinux.yml
   when: ansible_os_family == 'Archlinux'
 
+# Deploy info template
+- include: info.yml
+
 # Vhost configuration.
 - include: vhosts.yml
 
@@ -47,6 +50,3 @@
 # This allows Nginx to work with SELinux
 - name: Configure SELinux
   command: setsebool -P httpd_can_network_connect 1
-
-# Deploy info template
-- include: info.yml
