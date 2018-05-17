@@ -152,7 +152,7 @@
         - id: jenkins-github-hmcts-api-token
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
-          username: "jenkins-reform-hmcts"
+          username: "{{ api_key_username }}"
           password: "{{ hmcts_github_apikey }}"
         - id: github-enterprise-token
           type: cred-usrpwd
