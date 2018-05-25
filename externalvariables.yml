@@ -24,4 +24,4 @@ jenkins_agent_subnet: subnet1
 jenkins_agent_executors: 2
 jenkins_agent_vm_creds: mycred
 
-
+jvm_options: "-Xms1G -Xmx2G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
