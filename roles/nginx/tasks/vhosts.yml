@@ -12,6 +12,42 @@
     state: directory
   notify: reload nginx
 
+- name: Copy certificate CRT files if needed
+  copy:
+    content: '{{ item.ssl_certificate_crt }}'
+    dest: "{{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.crt"
+    owner: nginx
+    mode: 0644
+  when: item.ssl_certificate_crt is defined and item.state|default('present') != 'absent'
+  with_items: "{{ nginx_vhosts }}"
+  notify: reload nginx
+
+- name: Copy certificate KEY files if needed
+  copy:
+    content: '{{ item.ssl_certificate_key }}'
+    dest: "{{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.key"
+    owner: nginx
+    mode: 0400
+  when: item.ssl_certificate_key is defined and item.state|default('present') != 'absent'
+  with_items: "{{ nginx_vhosts }}"
+  notify: reload nginx
+
+- name: Remove certificate CRT files if needed
+  file:
+    path: "{{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.crt"
+    state: absent
+  when: item.ssl_certificate_crt is defined and item.state|default('present') == 'absent'
+  with_items: "{{ nginx_vhosts }}"
+  notify: reload nginx
+
+- name: Remove certificate KEY files if needed
+  file:
+    path: "{{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.key"
+    state: absent
+  when: item.ssl_certificate_key is defined and item.state|default('present') == 'absent'
+  with_items: "{{ nginx_vhosts }}"
+  notify: reload nginx
+
 - name: Add managed vhost config files.
   template:
     src: "{{ item.template|default(nginx_vhost_template) }}"

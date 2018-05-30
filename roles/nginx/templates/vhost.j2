@@ -22,6 +22,14 @@ server {
     root {{ item.root }};
 {% endif %}
 
+{% if item.ssl_certificate_crt is defined %}
+    ssl_certificate {{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.crt;
+{% endif %}
+
+{% if item.ssl_certificate_key is defined %}
+    ssl_certificate_key {{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.key;
+{% endif %}
+
 {% if item.error_page is defined %}
     error_page {{ item.error_page }};
 {% endif %}
