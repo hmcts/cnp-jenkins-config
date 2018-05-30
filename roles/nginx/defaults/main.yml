@@ -47,7 +47,7 @@ nginx_vhosts:
     server_name: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}"
     error_page: "403 /jenkins-on-azure"
     extra_parameters: |
-      location /github-webhook {
+      location / {
             proxy_pass http://localhost:8080;
             proxy_set_header Host $host:$server_port;
             proxy_set_header X-Real-IP $remote_addr;
@@ -60,9 +60,6 @@ nginx_vhosts:
             client_body_buffer_size 128k;
             }
       location /cli {
-             rewrite ^ /jenkins-on-azure permanent;
-             }
-      location ~ /login* {
              rewrite ^ /jenkins-on-azure permanent;
              }
       location /jenkins-on-azure {
