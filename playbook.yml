@@ -233,9 +233,9 @@
     jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }}"
 
   roles:
-    - role: ansible-terraform
-    - role: azure-cli
-    - role: jenkins-dependencies
-    - role: jenkins
-    - role: docker
-    - role: nginx
+    - {role: ansible-terraform, tags: ['ansible-terraform']}
+    - {role: azure-cli, tags: ['azure-cli']}
+    - {role: jenkins-dependencies, tags: ['jenkins-dependencies']}
+    - {role: jenkins, tags: ['jenkins']}
+    - {role: docker, tags: ['docker']}
+    - {role: nginx, tags: ['nginx']}
