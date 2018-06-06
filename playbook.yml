@@ -185,6 +185,11 @@
           description: "Username and password for the OWASP vulnerability database"
           username: "owasp_administrator"
           password: "{{ owaspdb_password }}"
+        - id: buildlog-storage-account
+          type: cred-usrpwd
+          description: "Storage account name and access key for storing build reports"
+          username: "{{ buildlog_sa_name }}"
+          password: "{{ buildlog_sa_key }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
