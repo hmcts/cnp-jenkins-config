@@ -127,6 +127,7 @@
       - { name: pipeline-stage-view, version: "2.10" }
       - { name: workflow-aggregator, version: "2.5" }
       - { name: build-monitor-plugin, version: "1.12+build.201708172343" }
+      - { name: gatling, version: "1.2.3" }
 #      - { name: azure-keyvault, version: "0.9.5-hmcts.4" }
 
     jenkins_manual_plugins:
