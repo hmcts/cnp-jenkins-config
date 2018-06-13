@@ -13,6 +13,8 @@ slack_token: "{{ lookup('azure_keyvault', 'secret_name=slack-token vault_uri=htt
 slack_credential_id: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 sonar_api_key: "{{ lookup('azure_keyvault', 'secret_name=sonar-api-key vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 hashicorp_vault_token: "{{ lookup('azure_keyvault', 'secret_name=hashicorp-vault-token vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+buildlog_sa_name: "blah"
+buildlog_sa_key: "blah"
 
 jenkins_agent_env: sandbox
 jenkins_agent_location: UK South
