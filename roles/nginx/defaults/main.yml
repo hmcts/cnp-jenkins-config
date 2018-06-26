@@ -70,7 +70,8 @@ nginx_vhosts:
     server_name: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}"
     filename: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}-ssl.conf"
     error_page: "403 /jenkins-on-azure"
-    ssl_certificate_pxf: "{{ lookup('azure_keyvault', 'secret_name=STAR-platform-hmcts-net vault_uri={{ vault_uri }}') }}"
+    #ssl_certificate_crt: "{{ lookup('azure_keyvault', 'secret_name=ssl_crt_STAR_platform_hmcts_net vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+    #ssl_certificate_key: "{{ lookup('azure_keyvault', 'secret_name=ssl_key_STAR_platform_hmcts_net vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
     extra_parameters: |
       location / {
             proxy_pass http://localhost:8080;
