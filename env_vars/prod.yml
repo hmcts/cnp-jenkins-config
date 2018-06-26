@@ -2,7 +2,7 @@
 
 jenkins_external_url: 'https://build.platform.hmcts.net'
 
-vault_uri: 'https://infra-vault-prod.vault.azure.net/'
+vault_uri: 'https://infra-vault.vault.azure.net/'
 
 organization_folders:
   - name: 'HMCTS'
