@@ -1,12 +1,12 @@
 ---
 
-- name: Configuring environment vars for {{ resolved_env }}.
-  jenkins_script:
-    script: "{{ lookup('file', 'env-var-config.groovy') }}"
-    args:
-      jenkins_env: "{{ resolved_env }}"
-    user: "{{ jenkins_admin_username }}"
-    password: "{{ jenkins_admin_password }}"
-  become_user: "{{jenkins_process_user}}"
-  register: result
-  until: result|succeeded
+#- name: Configuring environment vars for {{ resolved_env }}.
+#  jenkins_script:
+#    script: "{{ lookup('file', 'env-var-config.groovy') }}"
+#    args:
+#      jenkins_env: "{{ resolved_env }}"
+#    user: "{{ jenkins_admin_username }}"
+#    password: "{{ jenkins_admin_password }}"
+#  become_user: "{{ jenkins_process_user }}"
+#  register: result
+#  until: result is succeeded
