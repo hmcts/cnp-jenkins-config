@@ -13,15 +13,15 @@
   notify: reload nginx
 
 - name: Copy certificate CRT files if needed
-  shell: "echo '{{ item.ssl_certificate_pxf }}' | base64 --decode | openssl pkcs12 -out {{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.crt -nodes -passin pass: -nokeys"
-  when: item.ssl_certificate_pxf is defined and item.state|default('present') != 'absent'
+  shell: "echo '{{ item.ssl_certificate_pfx }}' | base64 --decode | openssl pkcs12 -out {{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.crt -nodes -passin pass: -nokeys"
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') != 'absent'
   with_items: "{{ nginx_vhosts }}"
   notify: reload nginx
   no_log: true
 
 - name: Copy certificate KEY files if needed
-  shell: "echo '{{ item.ssl_certificate_pxf }}' | base64 --decode | openssl pkcs12 -out {{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.key -nodes -passin pass: -nocerts"
-  when: item.ssl_certificate_pxf is defined and item.state|default('present') != 'absent'
+  shell: "echo '{{ item.ssl_certificate_pfx }}' | base64 --decode | openssl pkcs12 -out {{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.key -nodes -passin pass: -nocerts"
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') != 'absent'
   with_items: "{{ nginx_vhosts }}"
   notify: reload nginx
   no_log: true
@@ -32,7 +32,7 @@
     owner: nginx
     group: root
     mode: 0644
-  when: item.ssl_certificate_pxf is defined and item.state|default('present') != 'absent'
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') != 'absent'
   with_items: "{{ nginx_vhosts }}"
   no_log: true
 
@@ -42,7 +42,7 @@
     owner: nginx
     group: root
     mode: 0440
-  when: item.ssl_certificate_pxf is defined and item.state|default('present') != 'absent'
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') != 'absent'
   with_items: "{{ nginx_vhosts }}"
   no_log: true
 
@@ -50,7 +50,7 @@
   file:
     path: "{{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.crt"
     state: absent
-  when: item.ssl_certificate_pxf is defined and item.state|default('present') == 'absent'
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') == 'absent'
   with_items: "{{ nginx_vhosts }}"
   notify: reload nginx
   no_log: true
@@ -59,7 +59,7 @@
   file:
     path: "{{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.key"
     state: absent
-  when: item.ssl_certificate_pxf is defined and item.state|default('present') == 'absent'
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') == 'absent'
   with_items: "{{ nginx_vhosts }}"
   notify: reload nginx
   no_log: true
