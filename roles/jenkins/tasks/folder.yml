@@ -10,4 +10,4 @@
   become: yes
   become_user: "{{jenkins_process_user}}"
   register: result
-  until: result|succeeded
+  until: result is succeeded
