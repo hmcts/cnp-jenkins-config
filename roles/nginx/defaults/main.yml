@@ -49,23 +49,8 @@ nginx_vhosts:
     error_page: "403 /jenkins-on-azure"
     extra_parameters: |
       location / {
-            proxy_pass http://localhost:8080;
-            proxy_set_header Host $host:$server_port;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_connect_timeout 150;
-            proxy_send_timeout 100;
-            proxy_read_timeout 100;
-            proxy_buffers 4 32k;
-            client_max_body_size 8m;
-            client_body_buffer_size 128k;
-            }
-      location /cli {
-             rewrite ^ /jenkins-on-azure permanent;
-             }
-      location /jenkins-on-azure {
-             alias /usr/share/nginx/azure;
-             }
+            return 301 https://$host$request_uri;
+      }
   - listen: "443 ssl"
     server_name: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}"
     filename: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}-ssl.conf"
