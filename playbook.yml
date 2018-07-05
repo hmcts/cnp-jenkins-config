@@ -75,7 +75,7 @@
       - { name: pipeline-stage-step, version: "2.3" }
       - { name: github-api, version: "1.90" }
       - { name: pipeline-graph-analysis, version: "1.6" }
-      - { name: azure-vm-agents, version: "0.6.2" }
+      - { name: azure-vm-agents, version: "0.7.1" }
       - { name: plain-credentials, version: "1.4" }
       - { name: pipeline-github-lib, version: "1.0" }
       - { name: credentials-binding, version: "1.16" }
