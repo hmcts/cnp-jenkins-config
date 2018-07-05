@@ -131,6 +131,9 @@
       - { name: pipeline-utility-steps, version: "2.1.0"}
 #      - { name: azure-keyvault, version: "0.9.5-hmcts.4" }
       - { name: sauce-ondemand, version: "1.176" }
+      - { name: maven-plugin, version: "3.1.2" }
+      - { name: run-condition, version: "1.0" }
+      - { name: javadoc, version: "1.4" }
 
     jenkins_manual_plugins:
       - file_name: 'azure-keyvault.hpi'
