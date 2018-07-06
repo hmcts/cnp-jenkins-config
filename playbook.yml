@@ -224,7 +224,7 @@
     jenkins_agent_user: "jenkinsssh"
     jenkins_agent_cloud_name: "moj-azure"
     jenkins_agent_azure_sp_id: "jenkinsServicePrincipal"
-    jenkins_agent_vm_limit: "10"
+    jenkins_agent_vm_limit: "20"
     jenkins_agent_deployment_timeout: "1200"
     jenkins_agent_storage_type: "Standard_LRS"
     jenkins_agent_machine_size: "Standard_D4_v3"
