@@ -196,6 +196,14 @@
           description: "Storage account name and access key for storing build reports"
           username: "{{ buildlog_sa_name }}"
           password: "{{ buildlog_sa_key }}"
+        - id: SAUCE_USERNAME
+          type: cred-usrpwd
+          description: "SauceLabs Username to run CrossBrowser tests"
+          username: "{{ sauce_user }}"
+        - id: SAUCE_ACCESS_KEY
+          type: cred-usrkey
+          description: "SauceLabs access Key"
+          password: "{{ sauce_access_key }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
