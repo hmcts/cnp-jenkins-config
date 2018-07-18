@@ -7,7 +7,7 @@
     password: "{{ jenkins_admin_password }}"
   become_user: "{{jenkins_process_user}}"
   register: result
-  until: result|succeeded
+  until: result is succeeded
 
 - name: Install Jenkins credential using script for the {{ credential.id }} secret.
   jenkins_script:
@@ -16,4 +16,4 @@
     password: "{{ jenkins_admin_password }}"
   become_user: "{{jenkins_process_user}}"
   register: result
-  until: result|succeeded
+  until: result is succeeded

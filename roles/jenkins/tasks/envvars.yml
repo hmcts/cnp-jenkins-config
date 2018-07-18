@@ -7,6 +7,6 @@
       jenkins_env: "{{ resolved_env }}"
     user: "{{ jenkins_admin_username }}"
     password: "{{ jenkins_admin_password }}"
-  become_user: "{{jenkins_process_user}}"
+  become_user: "{{ jenkins_process_user }}"
   register: result
-  until: result|succeeded
+  until: result is succeeded

@@ -2,6 +2,10 @@
 
 jenkins_external_url: 'https://build.platform.hmcts.net'
 
+vault_uri: 'https://infra-vault-prod.vault.azure.net/'
+
+login_security_enabled: true
+
 organization_folders:
   - name: 'HMCTS'
     repo_owner: 'HMCTS'
@@ -12,6 +16,15 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
     branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master demo cnp PR*'
+
+  - name: 'HMCTS_Nightly'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS Nightly Tests'
+    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
+    credentials_id: 'jenkins-github-hmcts-api-token'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_nightly']
+    branches_to_include: 'master'
 
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
@@ -38,6 +51,7 @@ jenkins_permissions_list:
   - permission: hudson.model.Item.Delete:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Discover:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Discover:authenticated
+  - permission: hudson.model.Item.Discover:anonymous
   - permission: hudson.model.Item.Move:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Move:authenticated
   - permission: hudson.model.Item.Read:300e771f-856c-45cc-b899-40d78281e9c1
@@ -63,3 +77,5 @@ jenkins_permissions_list:
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:authenticated
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:b433063f-3da2-4865-9313-81ec472a53a
+
+api_key_username: 'jenkins-reform-hmcts2'

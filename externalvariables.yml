@@ -4,15 +4,17 @@
 env: sandbox
 
 #Get Values from Azure Vault
-github_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault.vault.azure.net/') }}"
-github_enterprise_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-enterprise-apikey vault_uri=https://infra-vault.vault.azure.net/') }}"
-pipelinemetrics_cosmosdb_key: "{{ lookup('azure_keyvault', 'secret_name=OWASPDb-Password vault_uri=https://infra-vault.vault.azure.net/') }}"
-owaspdb_password: "{{ lookup('azure_keyvault', 'secret_name=pipelinemetrics-cosmosdb-key vault_uri=https://infra-vault.vault.azure.net/') }}"
-hmcts_github_apikey: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey vault_uri=https://infra-vault.vault.azure.net/') }}"
-slack_token: "{{ lookup('azure_keyvault', 'secret_name=slack-token vault_uri=https://infra-vault.vault.azure.net/') }}"
-slack_credential_id: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault.vault.azure.net/') }}"
-sonar_api_key: "{{ lookup('azure_keyvault', 'secret_name=sonar-api-key vault_uri=https://infra-vault.vault.azure.net/') }}"
-hashicorp_vault_token: "{{ lookup('azure_keyvault', 'secret_name=hashicorp-vault-token vault_uri=https://infra-vault.vault.azure.net/') }}"
+github_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+github_enterprise_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-enterprise-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+pipelinemetrics_cosmosdb_key: "{{ lookup('azure_keyvault', 'secret_name=OWASPDb-Password vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+owaspdb_password: "{{ lookup('azure_keyvault', 'secret_name=pipelinemetrics-cosmosdb-key vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+hmcts_github_apikey: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+slack_token: "{{ lookup('azure_keyvault', 'secret_name=slack-token vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+slack_credential_id: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+sonar_api_key: "{{ lookup('azure_keyvault', 'secret_name=sonar-api-key vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+hashicorp_vault_token: "{{ lookup('azure_keyvault', 'secret_name=hashicorp-vault-token vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+buildlog_sa_name: "blah"
+buildlog_sa_key: "blah"
 
 jenkins_agent_env: sandbox
 jenkins_agent_location: UK South
@@ -24,4 +26,4 @@ jenkins_agent_subnet: subnet1
 jenkins_agent_executors: 2
 jenkins_agent_vm_creds: mycred
 
-
+jvm_options: "-Xms1G -Xmx2G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"

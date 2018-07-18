@@ -4,7 +4,7 @@
     dest: "/tmp/call.html"
     force: yes
   register: result
-  until: result|succeeded
+  until: result is succeeded
   #until: (result.failed is not defined or not result.failed)
   retries: "{{ jenkins_connection_retries }}"
   delay: "{{ jenkins_connection_delay }}"

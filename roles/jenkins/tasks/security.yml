@@ -4,7 +4,7 @@
   xml:
     path: "{{ jenkins_home}}/config.xml"
     xpath: "/hudson/useSecurity"
-    value: "true"
+    value: "{{ login_security_enabled }}}"
 
 - name: Set Jenkins Authorization Strategy to GlobalMatrixAuthorizationStrategy
   xml:

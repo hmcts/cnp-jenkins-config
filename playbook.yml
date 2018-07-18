@@ -44,7 +44,7 @@
       - { name: slack, version: "2.3" }
       - { name: mailer, version: "1.21" }
       - { name: sonar, version: "2.6.1" }
-      - { name: workflow-api, version: "2.26" }
+      - { name: workflow-api, version: "2.27" }
       - { name: jacoco, version: "3.0.1" }
       - { name: junit, version: "1.24" }
       - { name: blueocean-display-url, version: "2.2.0" }
@@ -63,10 +63,10 @@
       - { name: jquery-detached, version: "1.2.1" }
       - { name: blueocean, version: "1.4.2" }
       - { name: workflow-support, version: "2.18" }
-      - { name: workflow-cps, version: "2.45" }
-      - { name: workflow-job, version: "2.17" }
+      - { name: workflow-cps, version: "2.53" }
+      - { name: workflow-job, version: "2.21" }
       - { name: azure-credentials, version: "1.6.0" }
-      - { name: workflow-multibranch, version: "2.17" }
+      - { name: workflow-multibranch, version: "2.19" }
       - { name: jackson2-api, version: "2.8.11.1" }
       - { name: blueocean-pipeline-scm-api, version: "1.4.2" }
       - { name: cloud-stats, version: "0.18" }
@@ -75,7 +75,7 @@
       - { name: pipeline-stage-step, version: "2.3" }
       - { name: github-api, version: "1.90" }
       - { name: pipeline-graph-analysis, version: "1.6" }
-      - { name: azure-vm-agents, version: "0.6.2" }
+      - { name: azure-vm-agents, version: "0.7.1" }
       - { name: plain-credentials, version: "1.4" }
       - { name: pipeline-github-lib, version: "1.0" }
       - { name: credentials-binding, version: "1.16" }
@@ -127,7 +127,13 @@
       - { name: pipeline-stage-view, version: "2.10" }
       - { name: workflow-aggregator, version: "2.5" }
       - { name: build-monitor-plugin, version: "1.12+build.201708172343" }
+      - { name: gatling, version: "1.2.3" }
+      - { name: pipeline-utility-steps, version: "2.1.0"}
 #      - { name: azure-keyvault, version: "0.9.5-hmcts.4" }
+      - { name: sauce-ondemand, version: "1.176" }
+      - { name: maven-plugin, version: "3.1.2" }
+      - { name: run-condition, version: "1.0" }
+      - { name: javadoc, version: "1.4" }
 
     jenkins_manual_plugins:
       - file_name: 'azure-keyvault.hpi'
@@ -152,11 +158,10 @@
         - id: jenkins-github-hmcts-api-token
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
-          username: "jenkins-reform-hmcts"
+          username: "{{ api_key_username }}"
           password: "{{ hmcts_github_apikey }}"
         - id: github-enterprise-token
           type: cred-usrpwd
-          description: "cnpjenkins service account GitHub Enterprise API Token (Username/password format)"
           username: "github-enterprise-token"
           password: "{{ github_enterprise_apikey }}"
           description: "Github Enterprise API token from cnpjenkins AD service account"
@@ -186,6 +191,11 @@
           description: "Username and password for the OWASP vulnerability database"
           username: "owasp_administrator"
           password: "{{ owaspdb_password }}"
+        - id: buildlog-storage-account
+          type: cred-usrpwd
+          description: "Storage account name and access key for storing build reports"
+          username: "{{ buildlog_sa_name }}"
+          password: "{{ buildlog_sa_key }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
@@ -228,15 +238,15 @@
     # JVM options for Jenkins based on https://support.cloudbees.com/hc/en-us/articles/204859670-Java-Heap-settings-best-practice
     # and https://jenkins.io/blog/2016/11/21/gc-tuning/. Below assumes Standard DS13 v2 (8 vcpus, 56 GB memory) host
     jvm_options: "-Xms6G -Xmx12G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
-    
+
     jenkins_timezone: '-Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/London'
     jenkins_csp_policy: '-Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src ''self''; script-src ''self'' ''unsafe-inline''; style-src ''self'' ''unsafe-inline''; font-src data:\"'
     jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }}"
 
   roles:
-    - role: ansible-terraform
-    - role: azure-cli
-    - role: jenkins-dependencies
-    - role: jenkins
-    - role: docker
-    - role: nginx
+    - {role: ansible-terraform, tags: ['ansible-terraform']}
+    - {role: azure-cli, tags: ['azure-cli']}
+    - {role: jenkins-dependencies, tags: ['jenkins-dependencies']}
+    - {role: jenkins, tags: ['jenkins']}
+    - {role: docker, tags: ['docker']}
+    - {role: nginx, tags: ['nginx']}

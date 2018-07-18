@@ -12,6 +12,52 @@
     state: directory
   notify: reload nginx
 
+- name: Copy certificate CRT files if needed
+  shell: "echo '{{ item.ssl_certificate_pfx }}' | base64 --decode | openssl pkcs12 -out {{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.crt -nodes -passin pass: -nokeys"
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') != 'absent'
+  with_items: "{{ nginx_vhosts }}"
+  notify: reload nginx
+
+- name: Copy certificate KEY files if needed
+  shell: "echo '{{ item.ssl_certificate_pfx }}' | base64 --decode | openssl pkcs12 -out {{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.key -nodes -passin pass: -nocerts"
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') != 'absent'
+  with_items: "{{ nginx_vhosts }}"
+  notify: reload nginx
+
+- name: Enforce permissions on CRT files if needed
+  file:
+    path: "{{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.crt"
+    owner: nginx
+    group: root
+    mode: 0644
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') != 'absent'
+  with_items: "{{ nginx_vhosts }}"
+
+- name: Enforce permissions on KEY files if needed
+  file:
+    path: "{{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.key"
+    owner: nginx
+    group: root
+    mode: 0440
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') != 'absent'
+  with_items: "{{ nginx_vhosts }}"
+
+- name: Remove certificate CRT files if needed
+  file:
+    path: "{{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.crt"
+    state: absent
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') == 'absent'
+  with_items: "{{ nginx_vhosts }}"
+  notify: reload nginx
+
+- name: Remove certificate KEY files if needed
+  file:
+    path: "{{ nginx_vhost_path }}/{{ item.filename|default(item.server_name.split(' ')[0] ~ '.conf') }}.key"
+    state: absent
+  when: item.ssl_certificate_pfx is defined and item.state|default('present') == 'absent'
+  with_items: "{{ nginx_vhosts }}"
+  notify: reload nginx
+
 - name: Add managed vhost config files.
   template:
     src: "{{ item.template|default(nginx_vhost_template) }}"
