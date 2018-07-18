@@ -15,6 +15,8 @@ sonar_api_key: "{{ lookup('azure_keyvault', 'secret_name=sonar-api-key vault_uri
 hashicorp_vault_token: "{{ lookup('azure_keyvault', 'secret_name=hashicorp-vault-token vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 buildlog_sa_name: "blah"
 buildlog_sa_key: "blah"
+sauce_user: "{{ lookup('azure_keyvault', 'secret_name=sauce_user vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+sauce_access_key: "{{ lookup('azure_keyvault', 'secret_name=sauce_access_key vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 
 jenkins_agent_env: sandbox
 jenkins_agent_location: UK South
