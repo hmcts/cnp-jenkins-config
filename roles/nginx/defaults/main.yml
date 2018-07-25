@@ -51,6 +51,10 @@ nginx_vhosts:
       location / {
             return 301 https://$host$request_uri;
       }
+      location /health {
+            return 200 'healthy';
+            default_type text/plain;
+      }
   - listen: "443 ssl"
     server_name: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}"
     filename: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}-ssl.conf"
