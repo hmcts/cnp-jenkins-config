@@ -5,7 +5,7 @@
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
-          remote: "git@github.com:hmcts/moj-jenkins-library.git"
+          remote: "git@github.com:hmcts/cnp-jenkins-library.git"
           credentials_id: "git_access_ssh_key"
           include: "*"
           excludes: ""
@@ -15,12 +15,6 @@
           allow_version_override: true
 
     organization_folders:
-      - name: 'Contino'
-        displayName: 'Contino'
-        description: 'Contino'
-        credentials_id: 'jenkins-github-api-token'
-        github_api_url: 'https://api.github.com'
-        repoPattern: 'moj-.*'
       - name: 'HMCTS'
         displayName: 'HMCTS'
         description: 'HMCTS public repositories'
@@ -85,7 +79,6 @@
           description: "cnpjenkins service account GitHub Enterprise API Token (Username/password format)"
           username: "github-enterprise-token"
           password: "not a real password"
-          description: "Github Enterprise API token from cnpjenkins AD service account"
         - id: git_access_ssh_key
           type: cred-usrkey
           description: "Credential ID: git_access_key"

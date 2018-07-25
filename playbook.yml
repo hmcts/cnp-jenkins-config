@@ -160,9 +160,9 @@
           password: "{{ hmcts_github_apikey }}"
         - id: github-enterprise-token
           type: cred-usrpwd
+          description: "cnpjenkins service account GitHub Enterprise API Token (Username/password format)"
           username: "github-enterprise-token"
           password: "{{ github_enterprise_apikey }}"
-          description: "Github Enterprise API token from cnpjenkins AD service account"
         - id: github-enterprise-token-secret-text
           type: cred-secret-text
           description: "cnpjenkins service account GitHub Enterprise API Token (Used by the Github plugin for managing webhooks)"
@@ -197,7 +197,7 @@
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
-          remote: "git@github.com:hmcts/moj-jenkins-library.git"
+          remote: "git@github.com:hmcts/cnp-jenkins-library.git"
           credentials_id: "git_access_ssh_key"
           include: "*"
           excludes: ""
@@ -220,14 +220,14 @@
     # Variables specific to azure-vm-agent plugin
     jenkins_home: /opt/jenkins
     jenkins_agent_user: "jenkinsssh"
-    jenkins_agent_cloud_name: "moj-azure"
+    jenkins_agent_cloud_name: "cnp-azure"
     jenkins_agent_azure_sp_id: "jenkinsServicePrincipal"
     jenkins_agent_vm_limit: "10"
     jenkins_agent_deployment_timeout: "1200"
     jenkins_agent_storage_type: "Standard_LRS"
     jenkins_agent_machine_size: "Standard_D4_v3"
     jenkins_agent_vm_creds: "vm_agent_creds"
-    jenkins_agent_template_name: "moj-jenkins-builders"
+    jenkins_agent_template_name: "cnp-jenkins-builders"
     jenkins_agent_labels: ""
     jenkins_agent_executors: "4"
     jenkins_agent_jvm_options: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
@@ -242,9 +242,9 @@
     jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }}"
 
   roles:
-    - role: ansible-terraform
-    - role: azure-cli
-    - role: jenkins-dependencies
-    - role: jenkins
-    - role: docker
-    - role: nginx
+    - {role: ansible-terraform, tags: ['ansible-terraform']}
+    - {role: azure-cli, tags: ['azure-cli']}
+    - {role: jenkins-dependencies, tags: ['jenkins-dependencies']}
+    - {role: jenkins, tags: ['jenkins']}
+    - {role: docker, tags: ['docker']}
+    - {role: nginx, tags: ['nginx']}
