@@ -4,7 +4,7 @@ jenkins_external_url: 'https://sandbox-build.platform.hmcts.net'
 
 vault_uri: 'https://infra-vault-sandbox.vault.azure.net/'
 
-login_security_enabled: true
+login_security_enabled: 'true'
 
 organization_folders:
   - name: 'HMCTS'
