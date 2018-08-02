@@ -2,6 +2,7 @@
 # External Variable Required to build an instance of Jenkins via Vagrant. These are dummy values
 # only and should NOT contain real secrets!
 env: sandbox
+Jhostname: jhostname
 
 #Get Values from Azure Vault
 github_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"

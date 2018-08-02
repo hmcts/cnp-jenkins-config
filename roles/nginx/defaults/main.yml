@@ -44,8 +44,8 @@ nginx_extra_http_options: ""
 nginx_remove_default_vhost: true
 nginx_vhosts:
   - listen: "80"
-    server_name: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}"
-    filename: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}.conf"
+    server_name: "{{ Jhostname + env + '.uksouth.cloudapp.azure.com'}}"
+    filename: "{{ Jhostname + env + '.uksouth.cloudapp.azure.com'}}.conf"
     error_page: "403 /jenkins-on-azure"
     extra_parameters: |
       location / {
@@ -56,8 +56,8 @@ nginx_vhosts:
             default_type text/plain;
       }
   - listen: "443 ssl"
-    server_name: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}"
-    filename: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}-ssl.conf"
+    server_name: "{{ Jhostname + env + '.uksouth.cloudapp.azure.com'}}"
+    filename: "{{ Jhostname + env + '.uksouth.cloudapp.azure.com'}}-ssl.conf"
     error_page: "403 /jenkins-on-azure"
     ssl_certificate_pfx: "{{ lookup('azure_keyvault', 'secret_name=STAR-platform-hmcts-net vault_uri={{ vault_uri }}', errors='warn') }}"
     extra_parameters: |
@@ -66,6 +66,7 @@ nginx_vhosts:
             proxy_set_header Host $host:$server_port;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
             proxy_connect_timeout 150;
             proxy_send_timeout 100;
             proxy_read_timeout 100;
