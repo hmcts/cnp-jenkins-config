@@ -18,7 +18,7 @@ organization_folders:
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Pipeline Test'
     description: 'DO NOT USE! For automated pipeline testing only'
-    repoPattern: '(cnp-rhubarb-.*)|(cnp-jenkins-library)'
+    repoPattern: '(cnp-rhubarb-.*|cnp-jenkins-library)'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_pipeline_test']
