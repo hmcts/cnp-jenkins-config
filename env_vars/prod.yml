@@ -42,7 +42,7 @@ jenkins_permissions_list:
   - permission: hudson.model.Hudson.Read:authenticated
   - permission: hudson.model.Item.Build:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Build:authenticated
-  - permission: hudson.model.Item.Cancel:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Cancel:authenticated
   - permission: hudson.model.Item.Configure:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Configure:authenticated
   - permission: hudson.model.Item.Create:300e771f-856c-45cc-b899-40d78281e9c1
