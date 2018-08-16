@@ -90,7 +90,7 @@
       - { name: authentication-tokens, version: "1.3" }
       - { name: windows-slaves, version: "1.3.1" }
       - { name: docker-commons, version: "1.11" }
-      - { name: durable-task, version: "1.22" }
+      - { name: durable-task, version: "1.25" }
       - { name: favorite, version: "2.3.1" }
       - { name: workflow-durable-task-step, version: "2.19" }
       - { name: ldap, version: "1.20" }
