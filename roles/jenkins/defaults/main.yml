@@ -67,3 +67,50 @@ github_folder_jobs: false
 jenkins_manual_plugins: []
 
 aad_xml_config: "{{ lookup('file', 'files/aad-config.xml') }}"
+
+jenkins_build_monitor_views:
+  - {
+    name: "Evidence Dashboard",
+    regex: "(HMCTS.document-*.*|HMCTS.dm-*.*|HMCTS.em-*.*)",
+    title: "Evidence Dashboard"
+  }
+  - {
+    name: "CMC Dashboard",
+    regex: "(HMCTS.cmc-*.*)",
+    title: "CMC Dashboard"
+  }
+  - {
+    name: "Divorce Dashboard",
+    regex: "(HMCTS.div-*.*)",
+    title: "Divorce Dashboard"
+  }
+  - {
+    name: "Bar Dashboard",
+    regex: "(HMCTS.bar-*.*)",
+    title: "Bar Dashboard"
+  }
+  - {
+    name: "SSCS Dashboard",
+    regex: "(HMCTS.sscs-*.*)",
+    title: "SSCS Dashboard"
+  }
+  - {
+    name: "Financial Remedy Dashboard",
+    regex: "(HMCTS.finrem-*.*)",
+    title: "Financial Remedy Dashboard"
+  }
+  - {
+    name: "Fees register Dashboard",
+    regex: "(HMCTS.Fees-*.*|HMCTS.ccfr-*.*)",
+    title: "Fees Dashboard"
+  }
+  - {
+    name: "CCD Dashboard",
+    regex: "(HMCTS.ccd-*.*)",
+    title: "CCD Dashboard"
+  }
+  - {
+    name: "Probate Dashboard",
+    regex: "",
+    title: "Probate Dashboard"
+  }
