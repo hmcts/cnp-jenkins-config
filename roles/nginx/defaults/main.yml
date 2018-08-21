@@ -44,18 +44,22 @@ nginx_extra_http_options: ""
 nginx_remove_default_vhost: true
 nginx_vhosts:
   - listen: "80"
-    server_name: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}"
-    filename: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}.conf"
+    server_name: "{{ Jhostname + env + '.uksouth.cloudapp.azure.com'}}"
+    filename: "{{ Jhostname + env + '.uksouth.cloudapp.azure.com'}}.conf"
     error_page: "403 /jenkins-on-azure"
     extra_parameters: |
       location / {
             return 301 https://$host$request_uri;
       }
+      location /health {
+            return 200 'healthy';
+            default_type text/plain;
+      }
   - listen: "443 ssl"
-    server_name: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}"
-    filename: "{{ 'mgmtjenkins' + env + '.uksouth.cloudapp.azure.com'}}-ssl.conf"
+    server_name: "{{ Jhostname + env + '.uksouth.cloudapp.azure.com'}}"
+    filename: "{{ Jhostname + env + '.uksouth.cloudapp.azure.com'}}-ssl.conf"
     error_page: "403 /jenkins-on-azure"
-    ssl_certificate_pfx: "{{ lookup('azure_keyvault', 'secret_name=STAR-platform-hmcts-net vault_uri={{ vault_uri }}') }}"
+    ssl_certificate_pfx: "{{ lookup('azure_keyvault', 'secret_name=STAR-platform-hmcts-net vault_uri={{ vault_uri }}', errors='warn') }}"
     extra_parameters: |
       location / {
             proxy_pass http://localhost:8080;

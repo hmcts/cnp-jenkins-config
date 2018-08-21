@@ -1,10 +1,10 @@
 ---
 
-jenkins_external_url: 'https://build.platform.hmcts.net'
+jenkins_external_url: 'https://sandbox-build.platform.hmcts.net'
 
-vault_uri: 'https://infra-vault-prod.vault.azure.net/'
+vault_uri: 'https://infra-vault-sandbox.vault.azure.net/'
 
-login_security_enabled: 'true'
+login_security_enabled: false
 
 organization_folders:
   - name: 'HMCTS'
@@ -13,28 +13,19 @@ organization_folders:
     description: 'HMCTS public repositories'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
-    jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
-    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
-    branches_to_include: 'master demo cnp PR*'
-    
-  - name: 'HMCTS_Nightly'
+    jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
+    branches_to_include: '*'
+    branchesToAutoBuild: '' # Builds to be manually triggered in sandbox
+  - name: 'HMCTS_pipeline_test'
     repo_owner: 'HMCTS'
-    displayName: 'HMCTS Nightly Tests'
-    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
+    displayName: 'HMCTS Pipeline Test'
+    description: 'DO NOT USE! For automated pipeline testing only'
+    repoPattern: 'moj-rhubarb-.* moj-jenkins-library'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
-    jenkinsfile_path: ['Jenkinsfile_nightly']
-    branches_to_include: 'master'    
-
-  - name: 'HMCTS_Nightly'
-    repo_owner: 'HMCTS'
-    displayName: 'HMCTS Nightly Tests'
-    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
-    credentials_id: 'jenkins-github-hmcts-api-token'
-    github_api_url: 'https://api.github.com'
-    jenkinsfile_path: ['Jenkinsfile_nightly']
-    branches_to_include: 'master'
-
+    jenkinsfile_path: ['Jenkinsfile_pipeline_test']
+    branches_to_include: 'master PR*'
+    branchesToAutoBuild: '(PR-\d+.*|master)'
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
@@ -43,21 +34,31 @@ jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.View:authenticated
   - permission: hudson.model.Computer.Build:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Build:authenticated
   - permission: hudson.model.Computer.Configure:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Configure:authenticated
   - permission: hudson.model.Computer.Connect:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Connect:authenticated
   - permission: hudson.model.Computer.Create:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Create:authenticated
   - permission: hudson.model.Computer.Delete:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Delete:authenticated
   - permission: hudson.model.Computer.Disconnect:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Computer.Disconnect:authenticated
   - permission: hudson.model.Hudson.Administer:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Hudson.Read:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Hudson.Read:anonymous
   - permission: hudson.model.Hudson.Read:authenticated
   - permission: hudson.model.Item.Build:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Build:authenticated
+  - permission: hudson.model.Item.Cancel:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Cancel:authenticated
   - permission: hudson.model.Item.Configure:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Configure:authenticated
   - permission: hudson.model.Item.Create:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Create:authenticated
   - permission: hudson.model.Item.Delete:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Item.Delete:authenticated
   - permission: hudson.model.Item.Discover:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Discover:authenticated
   - permission: hudson.model.Item.Discover:anonymous
@@ -68,6 +69,7 @@ jenkins_permissions_list:
   - permission: hudson.model.Item.Workspace:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Workspace:authenticated
   - permission: hudson.model.Run.Delete:300e771f-856c-45cc-b899-40d78281e9c1
+  - permission: hudson.model.Run.Delete:authenticated
   - permission: hudson.model.Run.Replay:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Run.Replay:authenticated
   - permission: hudson.model.Run.Update:300e771f-856c-45cc-b899-40d78281e9c1
@@ -85,6 +87,6 @@ jenkins_permissions_list:
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:authenticated
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:300e771f-856c-45cc-b899-40d78281e9c1
-  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:b433063f-3da2-4865-9313-81ec472a53a
+  - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:authenticated
 
-api_key_username: 'jenkins-reform-hmcts2'
+api_key_username: 'jenkins-reform-hmcts3'

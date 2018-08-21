@@ -4,6 +4,8 @@ jenkins_external_url: 'https://sandbox-build.platform.hmcts.net'
 
 vault_uri: 'https://infra-vault-sandbox.vault.azure.net/'
 
+login_security_enabled: 'true'
+
 organization_folders:
   - name: 'HMCTS'
     repo_owner: 'HMCTS'
@@ -18,7 +20,7 @@ organization_folders:
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Pipeline Test'
     description: 'DO NOT USE! For automated pipeline testing only'
-    repoPattern: '(cnp-rhubarb-.*|cnp-jenkins-library)'
+    repoPattern: 'cnp-rhubarb-.* cnp-jenkins-library'
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_pipeline_test']
@@ -31,7 +33,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
-    branches_to_include: 'master'  
+    branches_to_include: 'master'
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1

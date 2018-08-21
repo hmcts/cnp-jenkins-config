@@ -35,5 +35,5 @@
   become_user: "{{jenkins_process_user}}"
   when: job_template_file.changed
   register: result
-  until: result|succeeded
+  until: result is succeeded
   ignore_errors: yes
