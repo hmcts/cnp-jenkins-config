@@ -33,7 +33,8 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
-    branches_to_include: 'master'
+    branches_to_include: '(master | crossBrowswerNightlyPipeline | feature/cross-browser-sandbox)'
+    regex_SCM_source_filter: 'probate-frontend|NightlyPipelineMutationfrontendRepo|NightlyPipelineTestCPS|PipelineTestRepo|track-your-appeal-frontend'
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
