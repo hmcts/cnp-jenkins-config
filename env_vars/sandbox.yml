@@ -38,7 +38,7 @@ organization_folders:
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Team A'
     description: 'HMCTS public repositories TEAM A'
-    credentials_id: 'jenkins-github-hmcts-api-token'
+    credentials_id: 'jenkins-github-hmcts-api-token_team_a'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: 'master'
