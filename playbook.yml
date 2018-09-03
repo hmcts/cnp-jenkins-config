@@ -163,7 +163,7 @@
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
           username: "danielev04"
-          password: "{{ hmcts_github_apikey_team_a }}"
+          password: "{{ hmcts_github_apikey_teams | map(attribute='teamA') }}"
         - id: github-enterprise-token
           type: cred-usrpwd
           description: "cnpjenkins service account GitHub Enterprise API Token (Username/password format)"
