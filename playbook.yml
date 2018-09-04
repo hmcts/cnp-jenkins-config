@@ -162,7 +162,7 @@
         - id: jenkins-github-hmcts-api-token_team_a
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
-          username: "danielev04"
+          username: "{{ api_key_username }}"
           password: "{{ hmcts_github_apikey_team_a }}"
         - id: github-enterprise-token
           type: cred-usrpwd
