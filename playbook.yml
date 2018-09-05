@@ -163,7 +163,7 @@
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
           username: "{{ api_key_username_cmc }}"
-          password: "{{ hmcts_github_apikey_cmc }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-cmc vault_uri={{ vault_uri }}', errors='warn') }}"
         - id: github-enterprise-token
           type: cred-usrpwd
           description: "cnpjenkins service account GitHub Enterprise API Token (Username/password format)"

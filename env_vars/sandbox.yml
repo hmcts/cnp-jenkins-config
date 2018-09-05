@@ -15,7 +15,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
-    branchesToAutoBuild: '' # Bu  ilds to be manually triggered in sandbox
+    branchesToAutoBuild: '' # Builds to be manually triggered in sandbox
   - name: 'HMCTS_pipeline_test'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Pipeline Test'
@@ -34,9 +34,9 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
-  - name: 'HMCTS_Team_CMC'
+  - name: 'HMCTS_CMC'
     repo_owner: 'HMCTS'
-    displayName: 'HMCTS Team CMC'
+    displayName: 'HMCTS - CMC'
     description: 'HMCTS public repositories CMC'
     credentials_id: 'jenkins-github-hmcts-api-token_cmc'
     github_api_url: 'https://api.github.com'
