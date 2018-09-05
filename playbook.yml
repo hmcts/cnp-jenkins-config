@@ -21,29 +21,29 @@
       - { name: authentication-tokens, version: "1.3" }
       - { name: azure-commons, version: "0.2.6" }
       - { name: azure-credentials, version: "1.6.0" }
-      - { name: azure-vm-agents, version: "0.7.1" }
+      - { name: azure-vm-agents, version: "0.7.3" }
+      - { name: blueocean, version: "1.8.2" }
       - { name: blueocean-autofavorite, version: "1.2.2" }
-      - { name: blueocean-bitbucket-pipeline, version: "1.7.1" }
-      - { name: blueocean-commons, version: "1.7.1" }
-      - { name: blueocean-config, version: "1.7.1" }
-      - { name: blueocean-core-js, version: "1.7.1" }
-      - { name: blueocean-dashboard, version: "1.7.1" }
+      - { name: blueocean-bitbucket-pipeline, version: "1.8.2" }
+      - { name: blueocean-commons, version: "1.8.2" }
+      - { name: blueocean-config, version: "1.8.2" }
+      - { name: blueocean-core-js, version: "1.8.2" }
+      - { name: blueocean-dashboard, version: "1.8.2" }
       - { name: blueocean-display-url, version: "2.2.0" }
-      - { name: blueocean-events, version: "1.7.1" }
-      - { name: blueocean-github-pipeline, version: "1.7.1" }
-      - { name: blueocean-git-pipeline, version: "1.7.1" }
-      - { name: blueocean-i18n, version: "1.7.1" }
-      - { name: blueocean-jira, version: "1.7.1" }
-      - { name: blueocean-jwt, version: "1.7.1" }
-      - { name: blueocean-personalization, version: "1.7.1" }
-      - { name: blueocean-pipeline-api-impl, version: "1.7.1" }
-      - { name: blueocean-pipeline-editor, version: "1.7.1" }
-      - { name: blueocean-pipeline-scm-api, version: "1.7.1" }
-      - { name: blueocean-rest-impl, version: "1.7.1" }
-      - { name: blueocean-rest, version: "1.7.1" }
-      - { name: blueocean, version: "1.7.1" }
-      - { name: blueocean-web, version: "1.7.1" }
-      - { name: bouncycastle-api, version: "2.16.3" }
+      - { name: blueocean-events, version: "1.8.2" }
+      - { name: blueocean-github-pipeline, version: "1.8.2" }
+      - { name: blueocean-git-pipeline, version: "1.8.2" }
+      - { name: blueocean-i18n, version: "1.8.2" }
+      - { name: blueocean-jira, version: "1.8.2" }
+      - { name: blueocean-jwt, version: "1.8.2" }
+      - { name: blueocean-personalization, version: "1.8.2" }
+      - { name: blueocean-pipeline-api-impl, version: "1.8.2" }
+      - { name: blueocean-pipeline-editor, version: "1.8.2" }
+      - { name: blueocean-pipeline-scm-api, version: "1.8.2" }
+      - { name: blueocean-rest-impl, version: "1.8.2" }
+      - { name: blueocean-rest, version: "1.8.2" }
+      - { name: blueocean-web, version: "1.8.2" }
+      - { name: bouncycastle-api, version: "2.17" }
       - { name: branch-api, version: "2.0.20" }
       - { name: build-monitor-plugin, version: "1.12+build.201805070054" }
       - { name: cloudbees-bitbucket-branch-source, version: "2.2.12" }
@@ -60,8 +60,8 @@
       - { name: extended-choice-parameter, version: "0.76" }
       - { name: external-monitor-job, version: "1.7" }
       - { name: favorite, version: "2.3.2" }
-      - { name: gatling, version: "1.2.4" }
-      - { name: git-client, version: "2.7.2" }
+      - { name: gatling, version: "1.2.5" }
+      - { name: git-client, version: "2.7.3" }
       - { name: github-api, version: "1.92" }
       - { name: github-branch-source, version: "2.3.6" }
       - { name: github, version: "1.29.2" }
@@ -73,11 +73,11 @@
       - { name: htmlpublisher, version: "1.16" }
       - { name: http_request, version: "1.8.22" }
       - { name: jackson2-api, version: "2.8.11.3" }
-      - { name: jacoco, version: "3.0.1" }
+      - { name: jacoco, version: "3.0.3" }
       - { name: javadoc, version: "1.4" }
       - { name: jdk-tool, version: "1.1" }
-      - { name: jenkins-design-language, version: "1.7.1" }
-      - { name: jira, version: "3.0.0" }
+      - { name: jenkins-design-language, version: "1.8.2" }
+      - { name: jira, version: "3.0.1" }
       - { name: jquery-detached, version: "1.2.1" }
       - { name: jquery, version: "1.12.4-0" }
       - { name: jsch, version: "0.1.54.2" }
@@ -90,30 +90,31 @@
       - { name: maven-plugin, version: "3.1.2" }
       - { name: mercurial, version: "2.4" }
       - { name: momentjs, version: "1.1.1" }
-      - { name: pam-auth, version: "1.3" }
+      - { name: monitoring, version: "1.74.0" }
+      - { name: pam-auth, version: "1.4" }
       - { name: pipeline-build-step, version: "2.7" }
       - { name: pipeline-github-lib, version: "1.0" }
       - { name: pipeline-graph-analysis, version: "1.7" }
       - { name: pipeline-input-step, version: "2.8" }
       - { name: pipeline-milestone-step, version: "1.3.1" }
-      - { name: pipeline-model-api, version: "1.3.1" }
+      - { name: pipeline-model-api, version: "1.3.2" }
       - { name: pipeline-model-declarative-agent, version: "1.1.1" }
-      - { name: pipeline-model-definition, version: "1.3.1" }
-      - { name: pipeline-model-extensions, version: "1.3.1" }
+      - { name: pipeline-model-definition, version: "1.3.2" }
+      - { name: pipeline-model-extensions, version: "1.3.2" }
       - { name: pipeline-rest-api, version: "2.10" }
       - { name: pipeline-stage-step, version: "2.3" }
-      - { name: pipeline-stage-tags-metadata, version: "1.3.1" }
+      - { name: pipeline-stage-tags-metadata, version: "1.3.2" }
       - { name: pipeline-stage-view, version: "2.10" }
       - { name: pipeline-utility-steps, version: "2.1.0"}
       - { name: plain-credentials, version: "1.4" }
       - { name: pubsub-light, version: "1.12" }
-      - { name: run-condition, version: "1.0" }
+      - { name: run-condition, version: "1.2" }
       - { name: saml, version: "1.0.7" }
       - { name: sauce-ondemand, version: "1.176" }
       - { name: scm-api, version: "2.2.7" }
-      - { name: script-security, version: "1.44" }
+      - { name: script-security, version: "1.45" }
       - { name: slack, version: "2.3" }
-      - { name: sonar, version: "2.7.1" }
+      - { name: sonar, version: "2.8" }
       - { name: sse-gateway, version: "1.15" }
       - { name: ssh-credentials, version: "1.14" }
       - { name: structs, version: "1.14" }
@@ -122,16 +123,16 @@
       - { name: variant, version: "1.1" }
       - { name: windows-slaves, version: "1.3.1" }
       - { name: workflow-aggregator, version: "2.5" }
-      - { name: workflow-api, version: "2.28" }
-      - { name: workflow-basic-steps, version: "2.9" }
-      - { name: workflow-cps-global-lib, version: "2.9" }
+      - { name: workflow-api, version: "2.29" }
+      - { name: workflow-basic-steps, version: "2.10" }
+      - { name: workflow-cps-global-lib, version: "2.10" }
       - { name: workflow-cps, version: "2.54" }
-      - { name: workflow-durable-task-step, version: "2.19" }
-      - { name: workflow-job, version: "2.23" }
+      - { name: workflow-durable-task-step, version: "2.21" }
+      - { name: workflow-job, version: "2.24" }
       - { name: workflow-multibranch, version: "2.20" }
       - { name: workflow-scm-step, version: "2.6" }
       - { name: workflow-step-api, version: "2.16" }
-      - { name: workflow-support, version: "2.19" }
+      - { name: workflow-support, version: "2.20" }
 
 
     jenkins_manual_plugins:
