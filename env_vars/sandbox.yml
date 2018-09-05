@@ -34,6 +34,24 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
+  - name: 'HMCTS_CMC'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS - CMC'
+    description: 'HMCTS public repositories CMC'
+    credentials_id: 'jenkins-github-hmcts-api-token_cmc'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
+    branches_to_include: 'master'
+    regex_SCM_source_filter: '(cmc.*)'
+  - name: 'HMCTS_Nightly_CMC'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS Nightly Tests - CMC'
+    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
+    credentials_id: 'jenkins-github-hmcts-api-token_cmc'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
+    branches_to_include: 'master'
+    regex_SCM_source_filter: '(cmc.*)'
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
@@ -98,3 +116,4 @@ jenkins_permissions_list:
   - permission: org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:authenticated
 
 api_key_username: 'jenkins-reform-hmcts3'
+api_key_username_cmc: 'jenkins-reform-cmc'
