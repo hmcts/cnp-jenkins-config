@@ -45,7 +45,7 @@ organization_folders:
     regex_SCM_source_filter: '(cmc.*)'
   - name: 'HMCTS_Nightly_CMC'
     repo_owner: 'HMCTS'
-    displayName: 'HMCTS Nightly Tests - CMC org'
+    displayName: 'HMCTS Nightly Tests - CMC'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
     credentials_id: 'jenkins-github-hmcts-api-token_cmc'
     github_api_url: 'https://api.github.com'
