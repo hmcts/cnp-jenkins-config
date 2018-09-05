@@ -103,6 +103,9 @@
           <includes>{{ folder.branches_to_include | default('master') }}</includes>
           <excludes/>
         </jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait>
+        <jenkins.scm.impl.trait.RegexSCMSourceFilterTrait plugin="scm-api@2.2.0">
+          <regex>{{ folder.regex_SCM_source_filter | default('') }}</regex>
+        </jenkins.scm.impl.trait.RegexSCMSourceFilterTrait>
         <org.jenkinsci.plugins.github__branch__source.SSHCheckoutTrait>
           <credentialsId>git_access_ssh_key</credentialsId>
         </org.jenkinsci.plugins.github__branch__source.SSHCheckoutTrait>
