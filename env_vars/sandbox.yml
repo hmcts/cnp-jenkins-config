@@ -78,7 +78,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '\b(?:document-management-store-app|document-management-node-demo|em-annotation-app|em-redaction-app)\b'
   - name: 'HMCTS_Nightly_CDM'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - CDM'
@@ -87,7 +87,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '\b(?:document-management-store-app|document-management-node-demo|em-annotation-app|em-redaction-app)\b'
   - name: 'HMCTS_IAC'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - IAC'
@@ -114,7 +114,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app)'
   - name: 'HMCTS_Nightly_PLATFORM'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - PLATFORM'
@@ -123,7 +123,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app)'
   - name: 'HMCTS_RPA'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - RPA'
@@ -132,7 +132,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '\b(?:jui-webapp)'
   - name: 'HMCTS_Nightly_RPA'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - RPA'
@@ -141,7 +141,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '\b(?:jui-webapp)'
   - name: 'HMCTS_COH'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - COH'
@@ -150,7 +150,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '(coh.*)'
   - name: 'HMCTS_Nightly_COH'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - COH'
@@ -159,7 +159,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '(coh.*)'
   - name: 'HMCTS_SSCS'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - SSCS'
@@ -168,7 +168,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '\b(?:tribunals-case-api|track-your-appeal-notifications|sscs-case-loader|track-your-appeal-frontend|submit-your-appeal)'
   - name: 'HMCTS_Nightly_SSCS'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - SSCS'
@@ -177,7 +177,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '\b(?:tribunals-case-api|track-your-appeal-notifications|sscs-case-loader|track-your-appeal-frontend|submit-your-appeal)'
   - name: 'HMCTS_PROBATE'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - PROBATE'
@@ -186,7 +186,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '(probate.*)'
   - name: 'HMCTS_Nightly_PROBATE'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - PROBATE'
@@ -195,7 +195,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '(probate.*)'
   - name: 'HMCTS_FEEPAY'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - FEEPAY'
@@ -204,8 +204,8 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(ccfr.*)'
-  - name: 'HMCTS_Nightly_CMC'
+    regex_SCM_source_filter: '(ccfr.*|ccpay.*|bar.*)'
+  - name: 'HMCTS_Nightly_FEEPAY'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - FEEPAY'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -213,7 +213,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(ccfr.*)'
+    regex_SCM_source_filter: '(ccfr.*|ccpay.*|bar.*)'
   - name: 'HMCTS_SL'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - SL'
@@ -222,7 +222,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '(snl.*)'
   - name: 'HMCTS_Nightly_SL'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - SL'
@@ -231,7 +231,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(???.*)'
+    regex_SCM_source_filter: '(snl.*)'
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
