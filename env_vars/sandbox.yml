@@ -7,15 +7,6 @@ vault_uri: 'https://infra-vault-sandbox.vault.azure.net/'
 login_security_enabled: 'true'
 
 organization_folders:
-  - name: 'HMCTS'
-    repo_owner: 'HMCTS'
-    displayName: 'HMCTS'
-    description: 'HMCTS public repositories'
-    credentials_id: 'jenkins-github-hmcts-api-token'
-    github_api_url: 'https://api.github.com'
-    jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
-    branches_to_include: '*'
-    branchesToAutoBuild: '' # Builds to be manually triggered in sandbox
   - name: 'HMCTS_pipeline_test'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Pipeline Test'
@@ -26,14 +17,6 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_pipeline_test']
     branches_to_include: 'master PR*'
     branchesToAutoBuild: '(PR-\d+.*|master)'
-  - name: 'HMCTS_Nightly'
-    repo_owner: 'HMCTS'
-    displayName: 'HMCTS Nightly Tests'
-    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
-    credentials_id: 'jenkins-github-hmcts-api-token'
-    github_api_url: 'https://api.github.com'
-    jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
-    branches_to_include: 'master'
   - name: 'HMCTS_CMC'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - CMC'
@@ -232,6 +215,24 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(snl.*)'
+  - name: 'HMCTS_CNP'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS - CNP'
+    description: 'HMCTS public repositories CNP'
+    credentials_id: 'jenkins-github-hmcts-api-token_cnp'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
+    branches_to_include: 'master'
+    regex_SCM_source_filter: '??'
+  - name: 'HMCTS_Nightly_CNP'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS Nightly Tests - CNP'
+    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
+    credentials_id: 'jenkins-github-hmcts-api-token_cnp'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
+    branches_to_include: 'master'
+    regex_SCM_source_filter: '??'
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
@@ -307,3 +308,4 @@ api_key_username_sscs: 'jenkins-reform-sscs'
 api_key_username_probate: 'jenkins-reform-probate'
 api_key_username_feepay: 'jenkins-reform-feepay'
 api_key_username_sl: 'jenkins-reform-sl'
+api_key_username_cnp: 'jenkins-reform-cnp'
