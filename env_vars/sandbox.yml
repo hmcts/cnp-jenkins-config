@@ -151,7 +151,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '\b(?:tribunals-case-api|track-your-appeal-notifications|sscs-case-loader|track-your-appeal-frontend|submit-your-appeal)'
+    regex_SCM_source_filter: '(sscs.*)'
   - name: 'HMCTS_Nightly_SSCS'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - SSCS'
@@ -160,7 +160,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '\b(?:tribunals-case-api|track-your-appeal-notifications|sscs-case-loader|track-your-appeal-frontend|submit-your-appeal)'
+    regex_SCM_source_filter: '(sscs.*)'
   - name: 'HMCTS_Probate'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - Probate'
