@@ -4,13 +4,12 @@
     <hudson.plugins.sonar.SonarInstallation>
       <name>SonarQube</name>
       <serverUrl>{{ sonar_server_url }}</serverUrl>
-      <serverVersion>5.3</serverVersion>
       <serverAuthenticationToken>{{ sonar_api_key }}</serverAuthenticationToken>
       <mojoVersion></mojoVersion>
       <databaseUrl></databaseUrl>
       <databaseLogin></databaseLogin>
       <additionalProperties></additionalProperties>
-      <additionalAnalysisProperties></additionalAnalysisProperties>
+      <additionalAnalysisProperties>sonar.organization=hmcts</additionalAnalysisProperties>
       <triggers>
         <skipScmCause>false</skipScmCause>
         <skipUpstreamCause>false</skipUpstreamCause>
