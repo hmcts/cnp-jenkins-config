@@ -165,6 +165,66 @@
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
           username: "{{ api_key_username_cmc }}"
           password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-cmc vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_div
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_div }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-div vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_cdm
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_cdm }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-cdm vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_iac
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_iac }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-iac vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_platform
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_platform }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-platform vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_rpa
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_rpa }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-rpa vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_coh
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_coh }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-coh vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_sscs
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_sscs }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-sscs vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_probate
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_probate }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-probate vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_feepay
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_feepay }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-feepay vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_sl
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_sl }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-sl vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_cnp
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_cnp }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-cnp vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_idam
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_idam }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-idam vault_uri={{ vault_uri }}', errors='warn') }}"
         - id: github-enterprise-token
           type: cred-usrpwd
           description: "cnpjenkins service account GitHub Enterprise API Token (Username/password format)"
