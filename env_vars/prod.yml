@@ -16,7 +16,6 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
     branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master demo cnp PR*'
-
   - name: 'HMCTS_CMC'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - CMC'
