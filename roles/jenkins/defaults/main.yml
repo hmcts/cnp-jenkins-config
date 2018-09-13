@@ -3,7 +3,7 @@
 # default Jenkins packaging URL.
 # Pinning to LTS repository
 jenkins_pkg_url: "https://pkg.jenkins.io/redhat-stable"
-jenkins_version: "2.121.3"
+jenkins_version: "2.138.1"
 
 # Change this to `latest` to update Jenkins if a newer version is available.
 jenkins_package_state: present

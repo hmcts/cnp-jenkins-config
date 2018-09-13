@@ -45,7 +45,7 @@
       - { name: blueocean-web, version: "1.8.2" }
       - { name: bouncycastle-api, version: "2.17" }
       - { name: branch-api, version: "2.0.20" }
-      - { name: build-monitor-plugin, version: "1.12+build.201805070054" }
+      - { name: build-monitor-plugin, version: "1.12+build.201809061734" }
       - { name: cloudbees-bitbucket-branch-source, version: "2.2.12" }
       - { name: cloudbees-folder, version: "6.5.1" }
       - { name: cloud-stats, version: "0.18" }
@@ -81,7 +81,7 @@
       - { name: jquery-detached, version: "1.2.1" }
       - { name: jquery, version: "1.12.4-0" }
       - { name: jsch, version: "0.1.54.2" }
-      - { name: junit, version: "1.24" }
+      - { name: junit, version: "1.25" }
       - { name: ldap, version: "1.20" }
       - { name: lockable-resources, version: "2.3" }
       - { name: mailer, version: "1.21" }
@@ -112,7 +112,7 @@
       - { name: saml, version: "1.0.7" }
       - { name: sauce-ondemand, version: "1.176" }
       - { name: scm-api, version: "2.2.7" }
-      - { name: script-security, version: "1.45" }
+      - { name: script-security, version: "1.46" }
       - { name: slack, version: "2.3" }
       - { name: sonar, version: "2.8" }
       - { name: sse-gateway, version: "1.15" }
@@ -124,11 +124,11 @@
       - { name: windows-slaves, version: "1.3.1" }
       - { name: workflow-aggregator, version: "2.5" }
       - { name: workflow-api, version: "2.29" }
-      - { name: workflow-basic-steps, version: "2.10" }
-      - { name: workflow-cps-global-lib, version: "2.10" }
-      - { name: workflow-cps, version: "2.54" }
+      - { name: workflow-basic-steps, version: "2.11" }
+      - { name: workflow-cps-global-lib, version: "2.11" }
+      - { name: workflow-cps, version: "2.55" }
       - { name: workflow-durable-task-step, version: "2.21" }
-      - { name: workflow-job, version: "2.24" }
+      - { name: workflow-job, version: "2.25" }
       - { name: workflow-multibranch, version: "2.20" }
       - { name: workflow-scm-step, version: "2.6" }
       - { name: workflow-step-api, version: "2.16" }
