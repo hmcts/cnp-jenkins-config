@@ -16,24 +16,6 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
     branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master demo cnp PR*'
-    
-  - name: 'HMCTS_Nightly'
-    repo_owner: 'HMCTS'
-    displayName: 'HMCTS Nightly Tests'
-    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
-    credentials_id: 'jenkins-github-hmcts-api-token'
-    github_api_url: 'https://api.github.com'
-    jenkinsfile_path: ['Jenkinsfile_nightly']
-    branches_to_include: 'master'    
-
-  - name: 'HMCTS_Nightly'
-    repo_owner: 'HMCTS'
-    displayName: 'HMCTS Nightly Tests'
-    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
-    credentials_id: 'jenkins-github-hmcts-api-token'
-    github_api_url: 'https://api.github.com'
-    jenkinsfile_path: ['Jenkinsfile_nightly']
-    branches_to_include: 'master'
 
   - name: 'HMCTS_CMC'
     repo_owner: 'HMCTS'
