@@ -306,7 +306,12 @@
 
     jenkins_timezone: '-Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/London'
     jenkins_csp_policy: '-Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src ''self''; script-src ''self'' ''unsafe-inline''; style-src ''self'' ''unsafe-inline''; font-src data:\"'
-    jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }}"
+
+    # can be removed after https://plugins.jenkins.io/durable-task is upgraded to 1.26
+    # see https://github.com/jenkinsci/durable-task-plugin/pull/81
+    heartbeat_interval: '-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL=300'
+
+    jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }} {{ heartbeat_interval }}"
 
   roles:
     - {role: ansible-terraform, tags: ['ansible-terraform']}
