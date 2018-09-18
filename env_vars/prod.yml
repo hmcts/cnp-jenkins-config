@@ -23,6 +23,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_cmc'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(cmc.*)'
   - name: 'HMCTS_Nightly_CMC'
@@ -41,6 +42,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_div'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(div.*)'
   - name: 'HMCTS_Nightly_Divorce'
@@ -59,6 +61,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_cdm'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '\b(?:document-management-store-app|document-management-node-demo|em-annotation-app|em-redaction-app|ccd.*)\b'
   - name: 'HMCTS_Nightly_CDM'
@@ -77,6 +80,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_iac'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(ia.*)'
   - name: 'HMCTS_Nightly_IAC'
@@ -95,6 +99,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_platform'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app)'
   - name: 'HMCTS_Nightly_Platform'
@@ -113,6 +118,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_rpa'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '\b(?:jui-webapp)'
   - name: 'HMCTS_Nightly_RPA'
@@ -131,6 +137,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_coh'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(coh.*)'
   - name: 'HMCTS_Nightly_COH'
@@ -149,6 +156,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_sscs'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(sscs.*)'
   - name: 'HMCTS_Nightly_SSCS'
@@ -167,6 +175,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_probate'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(probate.*)'
   - name: 'HMCTS_Nightly_Probate'
@@ -185,6 +194,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_feepay'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(ccfr.*|ccpay.*|bar.*)'
   - name: 'HMCTS_Nightly_Fees_and_Pay'
@@ -203,6 +213,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_sl'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(snl.*)'
   - name: 'HMCTS_Nightly_SL'
@@ -221,6 +232,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_cnp'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(cnp.*)'
   - name: 'HMCTS_Nightly_CNP'
@@ -239,6 +251,7 @@ organization_folders:
     credentials_id: 'jenkins-github-hmcts-api-token_idam'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
     branches_to_include: 'master'
     regex_SCM_source_filter: '(idam-.*|cnp-idam-.*)'
   - name: 'HMCTS_Nightly_IDAM'
