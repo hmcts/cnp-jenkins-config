@@ -1,6 +1,6 @@
 - name: Wait for Jenkins to start up before proceeding.
   get_url:
-    url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}/cli/"
+    url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}/"
     dest: "/tmp/call.html"
     force: yes
   register: result
