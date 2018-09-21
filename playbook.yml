@@ -190,11 +190,6 @@
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
           username: "{{ api_key_username_rpa }}"
           password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-rpa vault_uri={{ vault_uri }}', errors='warn') }}"
-        - id: jenkins-github-hmcts-api-token_coh
-          type: cred-usrpwd
-          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
-          username: "{{ api_key_username_coh }}"
-          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-coh vault_uri={{ vault_uri }}', errors='warn') }}"
         - id: jenkins-github-hmcts-api-token_sscs
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
