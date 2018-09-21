@@ -7,15 +7,6 @@ vault_uri: 'https://infra-vault-prod.vault.azure.net/'
 login_security_enabled: 'true'
 
 organization_folders:
-  - name: 'HMCTS'
-    repo_owner: 'HMCTS'
-    displayName: 'HMCTS'
-    description: 'HMCTS public repositories'
-    credentials_id: 'jenkins-github-hmcts-api-token'
-    github_api_url: 'https://api.github.com'
-    jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
-    branchesToAutoBuild: '(PR-\d+.*|master|demo)'
-    branches_to_include: 'master demo cnp PR*'
   - name: 'HMCTS_CMC'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - CMC'
