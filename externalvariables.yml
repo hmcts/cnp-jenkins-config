@@ -9,7 +9,7 @@ github_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri
 github_enterprise_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-enterprise-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 pipelinemetrics_cosmosdb_key: "{{ lookup('azure_keyvault', 'secret_name=OWASPDb-Password vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 owaspdb_password: "{{ lookup('azure_keyvault', 'secret_name=pipelinemetrics-cosmosdb-key vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
-sauce_password: "{{ lookup('azure_keyvault', 'secret_name=sauce_password vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+sauce_password: "{{ lookup('azure_keyvault', 'secret_name=sauce-access-key vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 hmcts_github_apikey: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 slack_token: "{{ lookup('azure_keyvault', 'secret_name=slack-token vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 slack_credential_id: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
