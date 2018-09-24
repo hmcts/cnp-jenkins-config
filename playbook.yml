@@ -256,6 +256,11 @@
           description: "Storage account name and access key for storing build reports"
           username: "{{ buildlog_sa_name }}"
           password: "{{ buildlog_sa_key }}"
+        - id: reform_tunnel
+          type: create-sauce
+          description: "Sauce Labs Reform Key"
+          username: "reform"
+          password: "{{ lookup('azure_keyvault', 'secret_name=sauce_password vault_uri={{ vault_uri }}', errors='warn') }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
