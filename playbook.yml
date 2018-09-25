@@ -273,6 +273,60 @@
           jobs: ["HMCTS/sscs-case-loader/master", "HMCTS/submit-your-appeal/master", "HMCTS/track-your-appeal-frontend/master", "HMCTS/track-your-appeal-notifications/master", "HMCTS/tribunals-case-api/master"],
           title: "SSCS Dashboard"
         }
+      - {
+          name: "CDM",
+          jobs: [
+              "HMCTS_CDM/ccd-admin-web/master",
+              "HMCTS_CDM/ccd-api-gateway/master",
+              "HMCTS_CDM/ccd-case-activity-api/master",
+              "HMCTS_CDM/ccd-case-management-web/master",
+              "HMCTS_CDM/ccd-case-print-service/master",
+              "HMCTS_CDM/ccd-data-store-api/master",
+              "HMCTS_CDM/ccd-definition-store-api/master",
+              "HMCTS_CDM/ccd-elastic-search/master",
+              "HMCTS_CDM/ccd-logstash/master",
+              "HMCTS_CDM/ccd-shared-infrastructure/master",
+              "HMCTS_CDM/ccd-user-profile-api/master",
+              "HMCTS_CDM/dm-shared-infrastructure/master",
+              "HMCTS_CDM/document-management-store-app/master"
+          ],
+          title: "CDM Master Builds"
+        }
+      - {
+          name: "CDM demo",
+          jobs: [
+              "HMCTS_CDM/ccd-admin-web/demo",
+              "HMCTS_CDM/ccd-api-gateway/demo",
+              "HMCTS_CDM/ccd-case-activity-api/demo",
+              "HMCTS_CDM/ccd-case-management-web/demo",
+              "HMCTS_CDM/ccd-case-print-service/demo",
+              "HMCTS_CDM/ccd-data-store-api/demo",
+              "HMCTS_CDM/ccd-definition-store-api/demo",
+              "HMCTS_CDM/ccd-user-profile-api/demo",
+              "HMCTS_CDM/document-management-store-app/demo"
+          ],
+          title: "CDM Demo Builds"
+        }
+      - {
+          name: "CDM Nightly",
+          jobs: [
+              "HMCTS_Nightly_CDM/ccd-admin-web/master",
+              "HMCTS_Nightly_CDM/ccd-api-gateway/master",
+              "HMCTS_Nightly_CDM/ccd-case-activity-api/master",
+              "HMCTS_Nightly_CDM/ccd-case-management-web/master",
+              "HMCTS_Nightly_CDM/ccd-case-print-service/master",
+              "HMCTS_Nightly_CDM/ccd-data-store-api/master",
+              "HMCTS_Nightly_CDM/ccd-definition-store-api/master",
+              "HMCTS_Nightly_CDM/ccd-user-profile-api/master",
+              "HMCTS_Nightly_CDM/document-management-store-app/master"
+          ],
+          title: "CDM Nightly Builds"
+        }
+      - {
+          name: "CDM PRs",
+          regex: ".*CDM.*PR-.*",
+          title: "CDM PR Builds"
+        }
 
     terraform_version: 0.11.3
     terraform_sha256sum: 6b8a7b83954597d36bbed23913dd51bc253906c612a070a21db373eab71b277b
