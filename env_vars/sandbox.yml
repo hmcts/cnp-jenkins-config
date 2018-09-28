@@ -233,7 +233,24 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(idam-.*|cnp-idam-.*)'
-jenkins_permissions_list:
+ - name: 'HMCTS_CET'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS - CET'
+    description: 'HMCTS public repositories CET'
+    credentials_id: 'jenkins-github-hmcts-api-token_rpa'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
+    branches_to_include: '*'
+    regex_SCM_source_filter: '(cet-.*)'
+  - name: 'HMCTS_Nightly_CET'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS Nightly Tests - CET'
+    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
+    credentials_id: 'jenkins-github-hmcts-api-token_rpa'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
+    branches_to_include: 'master'
+    regex_SCM_source_filter: '(cet-.*)'jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Delete:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:300e771f-856c-45cc-b899-40d78281e9c1
@@ -309,3 +326,4 @@ api_key_username_feepay: 'jenkins-reform-feepay'
 api_key_username_sl: 'jenkins-reform-sl'
 api_key_username_cnp: 'jenkins-reform-cnp'
 api_key_username_idam: 'jenkins-reform-idam'
+api_key_username_cet: 'jenkins-reform-cet'
