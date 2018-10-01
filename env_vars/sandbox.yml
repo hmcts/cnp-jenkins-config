@@ -233,7 +233,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(idam-.*|cnp-idam-.*)'
- - name: 'HMCTS_CET'
+  - name: 'HMCTS_CET'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - CET'
     description: 'HMCTS public repositories CET'
