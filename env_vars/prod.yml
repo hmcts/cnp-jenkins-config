@@ -45,6 +45,16 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(div.*)'
+  - name: 'HMCTS_FinancialRemedy'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS - Financial Remedy'
+    description: 'HMCTS public repositories Financial Remedy'
+    credentials_id: 'jenkins-github-hmcts-api-token_fr'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-.*|master|demo)'
+    branches_to_include: 'master demo cnp PR*'
+    regex_SCM_source_filter: '(finrem.*)'
   - name: 'HMCTS_CDM'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - CDM'
