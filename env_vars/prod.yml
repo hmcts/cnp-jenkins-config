@@ -321,6 +321,7 @@ jenkins_permissions_list:
 api_key_username: 'jenkins-reform-hmcts2'
 api_key_username_cmc: 'jenkins-reform-cmc'
 api_key_username_div: 'jenkins-reform-div'
+api_key_username_fr: 'jenkins-reform-fr'
 api_key_username_cdm: 'jenkins-reform-cdm'
 api_key_username_iac: 'jenkins-reform-iac'
 api_key_username_platform: 'jenkins-reform-platform'

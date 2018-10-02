@@ -53,6 +53,15 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(div.*)'
+  - name: 'HMCTS_FinancialRemedy'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS - Financial Remedy'
+    description: 'HMCTS public repositories Financial Remedy'
+    credentials_id: 'jenkins-github-hmcts-api-token_fr'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
+    branches_to_include: '*'
+    regex_SCM_source_filter: '(finrem.*)'
   - name: 'HMCTS_CDM'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - CDM'
@@ -318,6 +327,7 @@ jenkins_permissions_list:
 api_key_username: 'jenkins-reform-hmcts3'
 api_key_username_cmc: 'jenkins-reform-cmc'
 api_key_username_div: 'jenkins-reform-div'
+api_key_username_fr: 'jenkins-reform-fr'
 api_key_username_cdm: 'jenkins-reform-cdm'
 api_key_username_iac: 'jenkins-reform-iac'
 api_key_username_platform: 'jenkins-reform-platform'
