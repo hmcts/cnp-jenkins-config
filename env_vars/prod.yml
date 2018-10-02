@@ -53,7 +53,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
     branchesToAutoBuild: '(PR-.*|master|demo)'
-    branches_to_include: 'master demo cnp PR*'
+    branches_to_include: '*'
     regex_SCM_source_filter: '(finrem.*)'
   - name: 'HMCTS_CDM'
     repo_owner: 'HMCTS'
