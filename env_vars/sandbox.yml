@@ -260,6 +260,24 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(cet-.*)'
+  - name: 'HMCTS_FPL'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS - FPL'
+    description: 'HMCTS public repositories FPL'
+    credentials_id: 'jenkins-github-hmcts-api-token_fpl'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
+    branches_to_include: '*'
+    regex_SCM_source_filter: '(fpl-.*)'
+  - name: 'HMCTS_Nightly_FPL'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS Nightly Tests - FPL'
+    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
+    credentials_id: 'jenkins-github-hmcts-api-token_fpl'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
+    branches_to_include: 'master'
+    regex_SCM_source_filter: '(fpl-.*)'
 
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
@@ -339,3 +357,4 @@ api_key_username_sl: 'jenkins-reform-sl'
 api_key_username_cnp: 'jenkins-reform-cnp'
 api_key_username_idam: 'jenkins-reform-idam'
 api_key_username_cet: 'jenkins-reform-cet'
+api_key_username_fpl: 'jenkins-reform-fpl'
