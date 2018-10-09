@@ -137,8 +137,8 @@
 
     jenkins_manual_plugins:
       - file_name: 'azure-keyvault.hpi'
-        checksum: 'sha256:556a8491a092bc743e874534247cf3f0cf94c91222434f0111a55129319ea94e'
-        url: 'https://github.com/hmcts/azure-keyvault-plugin/releases/download/0.9.5-hmcts.4/azure-keyvault.hpi'
+        checksum: 'sha256:4acba3f9ca256b89c4da17c4342e4c41e893f2db183a0fac87e09319c3001b08'
+        url: 'https://github.com/hmcts/azure-keyvault-plugin/releases/download/0.9.6-hmcts/azure-keyvault.hpi'
 
     pipeline_jobs: []
 
