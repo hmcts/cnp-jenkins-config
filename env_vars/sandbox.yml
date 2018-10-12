@@ -17,7 +17,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_pipeline_test']
     branches_to_include: 'master PR*'
     branchesToAutoBuild: '(PR-\d+.*|master)'
-  - name: 'HMCTS_CMC'
+  - name: 'HMCTS_Sandbox_CMC'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - CMC'
     description: 'HMCTS public repositories CMC'
@@ -26,7 +26,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(cmc.*)'
-  - name: 'HMCTS_Nightly_CMC'
+  - name: 'HMCTS_Sandbox_Nightly_CMC'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - CMC'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -35,7 +35,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(cmc.*)'
-  - name: 'HMCTS_Divorce'
+  - name: 'HMCTS_Sandbox_Divorce'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - Divorce'
     description: 'HMCTS public repositories Divorce'
@@ -44,7 +44,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(div.*)'
-  - name: 'HMCTS_Nightly_Divorce'
+  - name: 'HMCTS_Sandbox_Nightly_Divorce'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - Divorce'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -53,7 +53,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(div.*)'
-  - name: 'HMCTS_FinancialRemedy'
+  - name: 'HMCTS_Sandbox_FinancialRemedy'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - Financial Remedy'
     description: 'HMCTS public repositories Financial Remedy'
@@ -62,7 +62,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(finrem.*)'
-  - name: 'HMCTS_CDM'
+  - name: 'HMCTS_Sandbox_CDM'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - CDM'
     description: 'HMCTS public repositories CDM'
@@ -71,7 +71,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\b'
-  - name: 'HMCTS_Nightly_CDM'
+  - name: 'HMCTS_Sandbox_Nightly_CDM'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - CDM'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -80,7 +80,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\b'
-  - name: 'HMCTS_IAC'
+  - name: 'HMCTS_Sandbox_IAC'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - IAC'
     description: 'HMCTS public repositories IAC'
@@ -89,7 +89,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(ia.*)'
-  - name: 'HMCTS_Nightly_IAC'
+  - name: 'HMCTS_Sandbox_Nightly_IAC'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - IAC'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -98,7 +98,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(ia.*)'
-  - name: 'HMCTS_Platform'
+  - name: 'HMCTS_Sandbox_Platform'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - Platform'
     description: 'HMCTS public repositories Platform'
@@ -107,7 +107,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app)'
-  - name: 'HMCTS_Nightly_Platform'
+  - name: 'HMCTS_Sandbox_Nightly_Platform'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - Platform'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -116,7 +116,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app)'
-  - name: 'HMCTS_RPA'
+  - name: 'HMCTS_Sandbox_RPA'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - RPA'
     description: 'HMCTS public repositories RPA'
@@ -125,7 +125,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(rpa-.*)'
-  - name: 'HMCTS_Nightly_RPA'
+  - name: 'HMCTS_Sandbox_Nightly_RPA'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - RPA'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -134,7 +134,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(rpa-.*)'
-  - name: 'HMCTS_SSCS'
+  - name: 'HMCTS_Sandbox_SSCS'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - SSCS'
     description: 'HMCTS public repositories SSCS'
@@ -143,7 +143,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(sscs.*)'
-  - name: 'HMCTS_Nightly_SSCS'
+  - name: 'HMCTS_Sandbox_Nightly_SSCS'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - SSCS'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -152,7 +152,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(sscs.*)'
-  - name: 'HMCTS_Probate'
+  - name: 'HMCTS_Sandbox_Probate'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - Probate'
     description: 'HMCTS public repositories Probate'
@@ -161,7 +161,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(probate.*)'
-  - name: 'HMCTS_Nightly_Probate'
+  - name: 'HMCTS_Sandbox_Nightly_Probate'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - Probate'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -170,7 +170,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(probate.*)'
-  - name: 'HMCTS_Fees_and_Pay'
+  - name: 'HMCTS_Sandbox_Fees_and_Pay'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - Fees and Pay'
     description: 'HMCTS public repositories Feepay'
@@ -179,7 +179,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(ccfr.*|ccpay.*|bar.*)'
-  - name: 'HMCTS_Nightly_Fees_and_Pay'
+  - name: 'HMCTS_Sandbox_Nightly_Fees_and_Pay'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - Fees and Pay'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -188,7 +188,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(ccfr.*|ccpay.*|bar.*)'
-  - name: 'HMCTS_SL'
+  - name: 'HMCTS_Sandbox_SL'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - SL'
     description: 'HMCTS public repositories SL'
@@ -197,7 +197,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(snl.*)'
-  - name: 'HMCTS_Nightly_SL'
+  - name: 'HMCTS_Sandbox_Nightly_SL'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - SL'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -206,7 +206,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(snl.*)'
-  - name: 'HMCTS_CNP'
+  - name: 'HMCTS_Sandbox_CNP'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - CNP'
     description: 'HMCTS public repositories CNP'
@@ -215,7 +215,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(cnp.*)'
-  - name: 'HMCTS_Nightly_CNP'
+  - name: 'HMCTS_Sandbox_Nightly_CNP'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - CNP'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -224,7 +224,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(cnp.*)'
-  - name: 'HMCTS_IDAM'
+  - name: 'HMCTS_Sandbox_IDAM'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - IDAM'
     description: 'HMCTS public repositories IDAM'
@@ -233,7 +233,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(idam-.*|cnp-idam-.*)'
-  - name: 'HMCTS_Nightly_IDAM'
+  - name: 'HMCTS_Sandbox_Nightly_IDAM'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - IDAM'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -242,7 +242,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(idam-.*|cnp-idam-.*)'
-  - name: 'HMCTS_CET'
+  - name: 'HMCTS_Sandbox_CET'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - CET'
     description: 'HMCTS public repositories CET'
@@ -251,7 +251,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(cet-.*)'
-  - name: 'HMCTS_Nightly_CET'
+  - name: 'HMCTS_Sandbox_Nightly_CET'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - CET'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -260,7 +260,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(cet-.*)'
-  - name: 'HMCTS_FPL'
+  - name: 'HMCTS_Sandbox_FPL'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - FPL'
     description: 'HMCTS public repositories FPL'
@@ -269,7 +269,7 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
     regex_SCM_source_filter: '(fpl-.*)'
-  - name: 'HMCTS_Nightly_FPL'
+  - name: 'HMCTS_Sandbox_Nightly_FPL'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - FPL'
     description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
@@ -300,7 +300,6 @@ jenkins_permissions_list:
   - permission: hudson.model.Computer.Disconnect:authenticated
   - permission: hudson.model.Hudson.Administer:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Hudson.Read:300e771f-856c-45cc-b899-40d78281e9c1
-  - permission: hudson.model.Hudson.Read:anonymous
   - permission: hudson.model.Hudson.Read:authenticated
   - permission: hudson.model.Item.Build:300e771f-856c-45cc-b899-40d78281e9c1
   - permission: hudson.model.Item.Build:authenticated
