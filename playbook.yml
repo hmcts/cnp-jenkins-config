@@ -272,7 +272,7 @@
           username: "{{ buildlog_sa_name }}"
           password: "{{ buildlog_sa_key }}"
         - id: reform_tunnel
-          type: create-sauce
+          type: cred-sauce
           description: "Sauce Labs Reform Key"
           username: "reform"
           password: "{{ lookup('azure_keyvault', 'secret_name=sauce-access-key vault_uri={{ vault_uri }}', errors='warn') }}"
