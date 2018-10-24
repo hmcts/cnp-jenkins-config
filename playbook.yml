@@ -46,10 +46,13 @@
       - { name: bouncycastle-api, version: "2.17" }
       - { name: branch-api, version: "2.0.20" }
       - { name: build-monitor-plugin, version: "1.12+build.201809061734" }
+      - { name: build-failure-analyzer, version: "1.20.0" }
       - { name: cloudbees-bitbucket-branch-source, version: "2.2.12" }
       - { name: cloudbees-folder, version: "6.5.1" }
       - { name: cloud-stats, version: "0.18" }
       - { name: command-launcher, version: "1.2" }
+      - { name: configuration-as-code, version: "1.2" }
+      - { name: configuration-as-code-support, version: "1.2" }
       - { name: credentials-binding, version: "1.16" }
       - { name: credentials, version: "2.1.18" }
       - { name: custom-tools-plugin, version: "0.5" }
