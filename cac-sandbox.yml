@@ -11,10 +11,3 @@ jenkins:
   views:
     - all:
         name: all
-    - buildMonitor:
-        includeRegex: >-
-          .+\/(bulk-scan-.*|draft-store|send-letter-service|cmc-pdf-service|feature-toggle-api|private-beta-invitation-service|service-auth-provider-app)\/master
-        name: Platform
-        recurse: true
-        title: Platform
-
