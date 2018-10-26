@@ -323,7 +323,7 @@
     # see https://github.com/jenkinsci/durable-task-plugin/pull/81
     heartbeat_interval: '-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL=300'
 
-    casc_location: '-Dcasc.jenkins.config=https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/cac/cac-{{ resolved_env }}.yml'
+    casc_location: '-Dcasc.jenkins.config=https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/cac-{{ resolved_env }}.yml'
     jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }} {{ heartbeat_interval }} {{ casc_location }}"
 
   roles:
