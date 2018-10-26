@@ -290,12 +290,6 @@
           default_version: "master"
           set_implicit: false
           allow_version_override: true
-    jenkins_build_monitor_views:
-      - {
-          name: "SSCS Dashboard",
-          jobs: ["HMCTS/sscs-case-loader/master", "HMCTS/submit-your-appeal/master", "HMCTS/track-your-appeal-frontend/master", "HMCTS/track-your-appeal-notifications/master", "HMCTS/tribunals-case-api/master"],
-          title: "SSCS Dashboard"
-        }
 
     terraform_version: 0.11.3
     terraform_sha256sum: 6b8a7b83954597d36bbed23913dd51bc253906c612a070a21db373eab71b277b
@@ -329,7 +323,8 @@
     # see https://github.com/jenkinsci/durable-task-plugin/pull/81
     heartbeat_interval: '-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL=300'
 
-    jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }} {{ heartbeat_interval }}"
+    casc_location: '-Dcasc.jenkins.config=https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/cac-{{ resolved_env }}.yml'
+    jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }} {{ heartbeat_interval }} {{ casc_location }}"
 
   roles:
     - {role: ansible-terraform, tags: ['ansible-terraform']}
