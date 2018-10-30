@@ -17,3 +17,15 @@ jenkins:
         name: Platform
         recurse: true
         title: Platform
+    - buildMonitor:
+        includeRegex: >-
+          .+\/(rpa-.*)\/(master|demo)
+        name: RPA
+        recurse: true
+        title: RPA
+    - buildMonitor:
+        includeRegex: >-
+          .+\/(rpa-.*)\/(.*PR-.*)
+        name: RPA-PR
+        recurse: true
+        title: RPA-PR
