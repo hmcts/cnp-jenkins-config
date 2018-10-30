@@ -31,13 +31,13 @@ jenkins:
         title: RPA-PR
     - buildMonitor:
         includeRegex: >-
-          .+HMCTS_CDM.+\/master
+          HMCTS_CDM.+\/master
         name: CDM
         recurse: true
         title: CDM master Builds
     - buildMonitor:
         includeRegex: >-
-          .+HMCTS_Nightly_CDM.+\/master
+          HMCTS_Nightly_CDM.+\/master
         name: CDM Nightly
         recurse: true
         title: CDM Nightly Builds
