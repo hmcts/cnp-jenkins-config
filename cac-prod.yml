@@ -41,3 +41,15 @@ jenkins:
         name: CDM Nightly
         recurse: true
         title: CDM Nightly Builds
+    - buildMonitor:
+        includeRegex: >-
+          ^HMCTS_.*SSCS.*\/(sscs-bulk-scan|sscs-case-loader|sscs-cor-backend|sscs-cor-frontend|sscs-shared-infrastructure|sscs-submit-your-appeal|sscs-track-your-appeal-frontend|sscs-track-your-appeal-notifications|sscs-tribunals-case-api|sscs-ccd-e2e-tests)\/master
+        name: SSCS
+        recurse: true
+        title: SSCS Dashboard
+    - buildMonitor:
+        includeRegex: >-
+          ^HMCTS_.*IAC.*\/(ia-case-api|ia-shared-infrastructure|ia-ccd-e2e-tests)\/master
+        name: IA
+        recurse: true
+        title: I & A Dashboard
