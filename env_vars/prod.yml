@@ -111,7 +111,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly']
     branches_to_include: 'master'
-    regex_SCM_source_filter: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app)'
+    regex_SCM_source_filter: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template)'
   - name: 'HMCTS_RPA'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - RPA'
