@@ -19,6 +19,12 @@ jenkins:
         title: Platform
     - buildMonitor:
         includeRegex: >-
+          ^HMCTS_.*Platform.*\/(bulk-scan-.*|send-letter-service)\/master
+        name: BSP
+        recurse: true
+        title: BSP
+    - buildMonitor:
+        includeRegex: >-
           .+\/(rpa-.*)\/(master|demo)
         name: RPA
         recurse: true
