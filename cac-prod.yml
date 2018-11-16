@@ -13,7 +13,7 @@ jenkins:
         name: all
     - buildMonitor:
         includeRegex: >-
-          ^HMCTS_.*Platform.*\/(draft-store|cmc-pdf-service|feature-toggle-api|private-beta-invitation-service|service-auth-provider-app|spring-boot-template)\/master
+          ^HMCTS_.*Platform.*\/(draft-store|cmc-pdf-service|feature-toggle-api|private-beta-invitation-service|service-auth-provider-app|spring-boot-template|cnp-rhubarb-recipes-service)\/master
         name: Platform
         recurse: true
         title: Platform
