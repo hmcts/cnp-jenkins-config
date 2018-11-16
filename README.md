@@ -148,6 +148,19 @@ Changes made to the Jenkins init script; the default set of changes set the conf
       become: true
 ```
 
+## Testing a branch of this
+This is not optimised for easy testing but in the current state you need to:
+ #. Create a branch
+ #. Update [casc_location](https://github.com/hmcts/cnp-jenkins-config/blob/master/playbook.yml#L326) to point to your branch, currently its hardcoded to master
+ #. Depending on the environment you are pointing to update cac-sandbox or cac-prod changes are (note commented out code is only in cac-sandbox.yml, copy it to prod if you need):
+   #. Uncomment Administer:authenticated
+   #. Uncomment the local security realm block
+   #. Comment out the saml security realm block
+
+The end result will be a secured jenkins with a local user account and everything else identical to a regular sandbox / prod jenkins, you can then iterate by pushing changes on your branch if they are configuration as code related.
+
+Then browsing to `<jenkins-url>/configuration-as-code` and click the reload button to apply the changes live
+
 ## License
 
 MIT (Expat) / BSD
