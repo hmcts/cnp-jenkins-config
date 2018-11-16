@@ -71,3 +71,39 @@ jenkins:
         name: INTESTACY
         recurse: true
         title: INTESTACY Dashboard
+  authorizationStrategy:
+    globalMatrix:
+      grantedPermissions:
+        - "Overall/Administer:300e771f-856c-45cc-b899-40d78281e9c1"
+        - "Overall/Read:authenticated"
+        - "View/Read:authenticated"
+        - "View/Configure:authenticated"
+        - "Run/Replay:authenticated"
+        - "Run/Update:authenticated"
+        - "Job/Configure:authenticated"
+        - "Job/Cancel:authenticated"
+        - "Job/Read:authenticated"
+        - "Job/Build:authenticated"
+        - "Job/Move:authenticated"
+        - "Job/Discover:authenticated"
+        - "Job/Discover:anonymous"
+        - "Job/Workspace:authenticated"
+        - "Credentials/View:authenticated"
+        - "Build Failure Analyzer/RemoveCause:authenticated"
+        - "Build Failure Analyzer/UpdateCauses:authenticated"
+        - "Build Failure Analyzer/ViewCauses:authenticated"
+        - "Lockable Resources/Unlock:authenticated"
+        - "Lockable Resources/Reserve:authenticated"
+        - "SCM/Tag:authenticated"
+
+  securityRealm:
+    saml:
+      binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+      displayNameAttributeName: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+      groupsAttributeName: "http://schemas.microsoft.com/ws/2008/06/identity/claims/groups"
+      idpMetadataConfiguration:
+        period: 15
+        url: "https://login.microsoftonline.com/hmcts.net/FederationMetadata/2007-06/FederationMetadata.xml"
+      maximumAuthenticationLifetime: 1209600
+      usernameAttributeName: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+      usernameCaseConversion: "none"

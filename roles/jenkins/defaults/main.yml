@@ -66,5 +66,3 @@ pipeline_jobs: false
 github_folder_jobs: false
 
 jenkins_manual_plugins: []
-
-aad_xml_config: "{{ lookup('file', 'files/aad-config.xml') }}"
