@@ -46,7 +46,6 @@
       - { name: bouncycastle-api, version: "2.17" }
       - { name: branch-api, version: "2.0.20" }
       - { name: build-monitor-plugin, version: "1.12+build.201809061734" }
-      - { name: build-failure-analyzer, version: "1.20.0" }
       - { name: cloudbees-bitbucket-branch-source, version: "2.2.12" }
       - { name: cloudbees-folder, version: "6.5.1" }
       - { name: cloud-stats, version: "0.18" }
@@ -142,6 +141,9 @@
       - file_name: 'azure-keyvault.hpi'
         checksum: 'sha256:4acba3f9ca256b89c4da17c4342e4c41e893f2db183a0fac87e09319c3001b08'
         url: 'https://github.com/hmcts/azure-keyvault-plugin/releases/download/0.9.6-hmcts/azure-keyvault.hpi'
+      - file_name: 'build-failure-analyzer.hpi'
+        checksum: 'sha256:0307ca9cfdaec84a55da449d51313f9bfb412140f94e708d12646b16889874b9'
+        url: 'https://github.com/hmcts/build-failure-analyzer-plugin/releases/download/1.21.0-hmcts/build-failure-analyzer.hpi'
 
     pipeline_jobs: []
 
