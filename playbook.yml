@@ -51,8 +51,6 @@
       - { name: cloudbees-folder, version: "6.5.1" }
       - { name: cloud-stats, version: "0.18" }
       - { name: command-launcher, version: "1.2" }
-      - { name: configuration-as-code, version: "1.2" }
-      - { name: configuration-as-code-support, version: "1.2" }
       - { name: credentials-binding, version: "1.16" }
       - { name: credentials, version: "2.1.18" }
       - { name: custom-tools-plugin, version: "0.5" }
@@ -136,7 +134,10 @@
       - { name: workflow-scm-step, version: "2.6" }
       - { name: workflow-step-api, version: "2.16" }
       - { name: workflow-support, version: "2.20" }
-
+    # configuration as code must be added last as it applied security changes which block further cli commands
+    late_jenkins_plugins:
+      - { name: configuration-as-code, version: "1.2" }
+      - { name: configuration-as-code-support, version: "1.2" }
 
     jenkins_manual_plugins:
       - file_name: 'azure-keyvault.hpi'
