@@ -1,0 +1,55 @@
+jenkins:
+  systemMessage: >-
+    This jenkins is managed by configuration as code, update <a
+    href="https://github.com/hmcts/cnp-jenkins-config/blob/master/cac-test.yml">here</a>
+  markupFormatter:
+    rawHtml:
+      disableSyntaxHighlighting: false
+  primaryView:
+    all:
+      name: all
+  views:
+    - all:
+        name: all
+  authorizationStrategy:
+    globalMatrix:
+      grantedPermissions:
+        - "Overall/Administer:authenticated"
+        - "Overall/Administer:300e771f-856c-45cc-b899-40d78281e9c1"
+        - "Overall/Read:authenticated"
+        - "View/Create:authenticated"
+        - "View/Read:authenticated"
+        - "View/Configure:authenticated"
+        - "View/Delete:authenticated"
+        - "Agent/Create:authenticated"
+        - "Agent/Build:authenticated"
+        - "Agent/Connect:authenticated"
+        - "Agent/Delete:authenticated"
+        - "Agent/Configure:authenticated"
+        - "Agent/Disconnect:authenticated"
+        - "Run/Delete:authenticated"
+        - "Run/Replay:authenticated"
+        - "Run/Update:authenticated"
+        - "Job/Configure:authenticated"
+        - "Job/Cancel:authenticated"
+        - "Job/Read:authenticated"
+        - "Job/Build:authenticated"
+        - "Job/Move:authenticated"
+        - "Job/Discover:authenticated"
+        - "Job/Discover:anonymous"
+        - "Job/Create:authenticated"
+        - "Job/Workspace:authenticated"
+        - "Job/Delete:authenticated"
+        - "Credentials/View:authenticated"
+        - "Build Failure Analyzer/RemoveCause:authenticated"
+        - "Build Failure Analyzer/UpdateCauses:authenticated"
+        - "Build Failure Analyzer/ViewCauses:authenticated"
+        - "Lockable Resources/Unlock:authenticated"
+        - "Lockable Resources/Reserve:authenticated"
+        - "SCM/Tag:authenticated"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin"
