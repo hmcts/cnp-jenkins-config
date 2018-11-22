@@ -329,6 +329,10 @@
     casc_location: '-Dcasc.jenkins.config=https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/cac-{{ resolved_env }}.yml'
     jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }} {{ heartbeat_interval }} {{ casc_location }}"
 
+    build_failure_analyzer:
+      hostname: '{{ build_failure_analyzer_hostname }}'
+      password: "{{ lookup('azure_keyvault', 'secret_name=bfa-user-password vault_uri={{ vault_uri }}', errors='warn') }}"
+
   roles:
     - {role: ansible-terraform, tags: ['ansible-terraform']}
     - {role: azure-cli, tags: ['azure-cli']}
