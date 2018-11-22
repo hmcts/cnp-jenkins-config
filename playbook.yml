@@ -110,7 +110,7 @@
       - { name: pubsub-light, version: "1.12" }
       - { name: run-condition, version: "1.2" }
       - { name: saml, version: "1.0.7" }
-      - { name: sauce-ondemand, version: "1.176" }
+      - { name: sauce-ondemand, version: "1.177" }
       - { name: scm-api, version: "2.2.7" }
       - { name: script-security, version: "1.46" }
       - { name: slack, version: "2.3" }
