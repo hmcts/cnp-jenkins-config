@@ -88,4 +88,7 @@
 - include_tasks: hashicorp-vault.yml
 
 - include_tasks: azure-agents.yml
+- include_tasks: build-failure-analyzer.yml
+
+# do not add anything after late-plugins.yml nothing that needs the azure-cli will work
 - include_tasks: late-plugins.yml

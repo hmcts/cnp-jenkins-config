@@ -284,6 +284,8 @@ organization_folders:
     branches_to_include: 'master'
     regex_SCM_source_filter: '(fpl-.*)'
 
+build_failure_analyzer_hostname: 'build-failure-analyzer.platform.hmcts.net'
+
 api_key_username: 'jenkins-reform-hmcts2'
 api_key_username_cmc: 'jenkins-reform-cmc'
 api_key_username_div: 'jenkins-reform-div'
