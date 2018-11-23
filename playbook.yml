@@ -143,8 +143,8 @@
         checksum: 'sha256:4acba3f9ca256b89c4da17c4342e4c41e893f2db183a0fac87e09319c3001b08'
         url: 'https://github.com/hmcts/azure-keyvault-plugin/releases/download/0.9.6-hmcts/azure-keyvault.hpi'
       - file_name: 'build-failure-analyzer.hpi'
-        checksum: 'sha256:0307ca9cfdaec84a55da449d51313f9bfb412140f94e708d12646b16889874b9'
-        url: 'https://github.com/hmcts/build-failure-analyzer-plugin/releases/download/1.21.0-hmcts/build-failure-analyzer.hpi'
+        checksum: 'sha256:2bc5baa25318b907d534692cd0e53a275999b4ca4341f72358c7f5123226f0cc'
+        url: 'https://github.com/hmcts/build-failure-analyzer-plugin/releases/download/1.21.1-hmcts/build-failure-analyzer.hpi'
 
     pipeline_jobs: []
 
