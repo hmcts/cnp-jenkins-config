@@ -114,7 +114,6 @@
       - { name: scm-api, version: "2.2.7" }
       - { name: script-security, version: "1.46" }
       - { name: slack, version: "2.3" }
-      - { name: sonar, version: "2.8.1" }
       - { name: sse-gateway, version: "1.15" }
       - { name: ssh-credentials, version: "1.14" }
       - { name: structs, version: "1.14" }
@@ -145,6 +144,9 @@
       - file_name: 'build-failure-analyzer.hpi'
         checksum: 'sha256:2bc5baa25318b907d534692cd0e53a275999b4ca4341f72358c7f5123226f0cc'
         url: 'https://github.com/hmcts/build-failure-analyzer-plugin/releases/download/1.21.1-hmcts/build-failure-analyzer.hpi'
+      - file_name: 'sonar.hpi'
+        checksum: 'sha256:03e2372d36c5bcd7794e0ccafc89bdb552f68ab905f82a55ebfd2e1f201d602f'
+        url: 'https://github.com/hmcts/sonarqube-plugin/releases/download/sonar-2.9-hmcts/sonar.hpi'
 
     pipeline_jobs: []
 
