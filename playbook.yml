@@ -306,14 +306,14 @@
     jenkins_agent_user: "jenkinsssh"
     jenkins_agent_cloud_name: "cnp-azure"
     jenkins_agent_azure_sp_id: "jenkinsServicePrincipal"
-    jenkins_agent_vm_limit: "10"
+    jenkins_agent_vm_limit: "40"
     jenkins_agent_deployment_timeout: "1200"
     jenkins_agent_storage_type: "Standard_LRS"
     jenkins_agent_machine_size: "Standard_D4_v3"
     jenkins_agent_vm_creds: "vm_agent_creds"
     jenkins_agent_template_name: "cnp-jenkins-builders"
     jenkins_agent_labels: ""
-    jenkins_agent_executors: "4"
+    jenkins_agent_executors: "1"
     jenkins_agent_jvm_options: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
     jenkins_agent_private_ip: true
 
