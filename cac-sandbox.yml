@@ -11,6 +11,12 @@ jenkins:
   views:
     - all:
         name: all
+    - buildMonitor:
+        includeRegex: >-
+          HMCTS_Sandbox_Divorce.+\/master
+        name: DIV
+        recurse: true
+        title: Divorce Dashboard
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
