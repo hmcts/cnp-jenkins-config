@@ -226,6 +226,16 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(cnp.*)'
+  - name: 'HMCTS_DevOps'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS - DevOps'
+    description: 'HMCTS public repositories DevOps'
+    credentials_id: 'jenkins-github-hmcts-api-token_cnp'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|hmctsdemo-\d+.*|demo)'
+    branches_to_include: 'master hmctsdemo* demo cnp PR*'
+    regex_SCM_source_filter: '(devops.*)'    
   - name: 'HMCTS_IDAM'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS - IDAM'
