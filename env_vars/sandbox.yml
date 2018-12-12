@@ -65,7 +65,7 @@ organization_folders:
   - name: 'HMCTS_Sandbox_Nightly_FinancialRemedy'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - FinancialRemedy'
-    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
+    description: 'HMCTS nightly tests will be scheduled using this organisation on sandbox Version'
     credentials_id: 'jenkins-github-hmcts-api-token_finrem'
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_nightly_sandbox']
