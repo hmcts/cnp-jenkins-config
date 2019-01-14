@@ -295,7 +295,7 @@ organization_folders:
     github_api_url: 'https://api.github.com'
     jenkinsfile_path: ['Jenkinsfile_parameterized', 'Jenkinsfile']
     branches_to_include: '*'
-    regex_SCM_source_filter: '(snl.*)'
+    regex_SCM_source_filter: '(am.*)'
   - name: 'HMCTS_Sandbox_Nightly_AM'
     repo_owner: 'HMCTS'
     displayName: 'HMCTS Nightly Tests - AM'
