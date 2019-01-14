@@ -284,6 +284,11 @@
           description: "Sauce Labs Reform Key"
           username: "reform"
           password: "{{ lookup('azure_keyvault', 'secret_name=sauce-access-key vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_am
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_am }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-am vault_uri={{ vault_uri }}', errors='warn') }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
