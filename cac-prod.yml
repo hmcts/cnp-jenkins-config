@@ -77,6 +77,18 @@ jenkins:
         name: DIV
         recurse: true
         title: Divorce Dashboard
+    - buildMonitor:
+        includeRegex: >-
+          .+\/(am-.*)\/(master|demo)
+        name: AM
+        recurse: true
+        title: AM
+    - buildMonitor:
+        includeRegex: >-
+          .+\/(am-.*)\/(.*PR-.*)
+        name: AM-PR
+        recurse: true
+        title: AM-PR
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
