@@ -321,6 +321,25 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(am.*)'
+  - name: 'HMCTS_CTSC'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS - CTSC'
+    description: 'HMCTS public repositories CTSC'
+    credentials_id: 'jenkins-github-hmcts-api-token_ctsc'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master|hmctsdemo-\d+.*|demo)'
+    branches_to_include: 'master hmctsdemo* demo cnp PR*'
+    regex_SCM_source_filter: '(ctsc.*)'
+  - name: 'HMCTS_Nightly_CTSC'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS Nightly Tests - CTSC'
+    description: 'HMCTS nightly tests will be scheduled using this organisation on AAT Version'
+    credentials_id: 'jenkins-github-hmcts-api-token_ctsc'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_nightly']
+    branches_to_include: 'master'
+    regex_SCM_source_filter: '(ctsc.*)'
 
 build_failure_analyzer_hostname: 'build-failure-analyzer.platform.hmcts.net'
 
@@ -341,3 +360,4 @@ api_key_username_idam: 'jenkins-reform-idam'
 api_key_username_cet: 'jenkins-reform-cet'
 api_key_username_fpl: 'jenkins-reform-fpl'
 api_key_username_am: 'jenkins-reform-am'
+api_key_username_ctsc: 'jenkins-reform-ctsc'
