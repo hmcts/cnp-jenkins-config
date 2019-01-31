@@ -2,13 +2,27 @@ String url = jenkins.model.JenkinsLocationConfiguration.get().getUrl()
 println "Running on ${url}"
 
 private boolean isSandbox() {
-    jenkins.model.JenkinsLocationConfiguration.get().getUrl().contains("localhost")
+    jenkins.model.JenkinsLocationConfiguration.get().getUrl().contains("sandbox")
 }
 
 List<Map> orgs = [
-        [name: 'cmc'],
-        [name: 'divorce', displayName: 'Divorce', regex: 'div.*'],
-        [name: 'cnp']
+        [name: 'CMC'],
+        [name: 'Divorce', regex: 'div.*'],
+        [name: 'CNP'],
+        [name: 'FinancialRemedy', displayName: 'Financial Remedy', regex: 'finrem.*'],
+        [name: 'CDM', regex: '\\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\\b'],
+        [name: 'IAC', regex: 'ia.*'],
+        [name: 'Platform', regex: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template)'],
+        [name: 'RPA'],
+        [name: 'SSCS'],
+        [name: 'Probate'],
+        [name: 'Fees_and_Pay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
+        [name: 'SL', regex: 'snl.*'],
+        [name: 'DevOps', nightlyDisabled: true],
+        [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
+        [name: 'CET'],
+        [name: 'FPL'],
+        [name: 'AM']
 ]
 orgs.each { Map org ->
     githubOrg(org).call()
@@ -20,7 +34,7 @@ orgs.each { Map org ->
 
 if (isSandbox()) {
     Map pipelineTestOrg = [
-            name                      : 'pipeline_test',
+            name                      : 'Pipeline_Test',
             displayName               : 'Pipeline Test',
             regex                     : 'cnp-rhubarb-.*|cnp-jenkins-library',
             branchesToInclude         : 'master',
@@ -30,10 +44,13 @@ if (isSandbox()) {
     githubOrg(pipelineTestOrg).call()
 }
 
+/**
+
+*/
 Closure githubOrg(Map args = [:]) {
     def config = [
-            displayName               : args.name.toUpperCase(),
-            regex                     : args.name + '.*',
+            displayName               : args.name,
+            regex                     : args.name.toLowerCase() + '.*',
             jenkinsfilePath           : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile: false
     ] << args
@@ -42,7 +59,7 @@ Closure githubOrg(Map args = [:]) {
     String jenkinsfilePath = config.jenkinsfilePath
 
     String folderSandboxPrefix = isSandbox() ? 'Sandbox_' : ''
-    GString orgFolderName = "HMCTS_${folderSandboxPrefix}${name.toUpperCase()}"
+    GString orgFolderName = "HMCTS_${folderSandboxPrefix}${name}"
     wildcardBranchesToInclude = 'master masterv2 hmctsdemo demo cnp PR*'
     GString orgDescription = "<br>${config.displayName} team repositories"
 
@@ -55,7 +72,7 @@ Closure githubOrg(Map args = [:]) {
     boolean suppressDefaultJenkinsfile = config.suppressDefaultJenkinsfile
 
     if (config.nightly) {
-        orgFolderName = "HMCTS_${folderSandboxPrefix}Nightly_${name.toUpperCase()}"
+        orgFolderName = "HMCTS_${folderSandboxPrefix}Nightly_${name}"
         //noinspection GroovyAssignabilityCheck
         orgDescription = "<br>Nightly tests for ${config.displayName}  will be scheduled using this organisation on the AAT Version of the application"
 
@@ -74,7 +91,7 @@ Closure githubOrg(Map args = [:]) {
                 github {
                     repoOwner("HMCTS")
                     apiUri("https://api.github.com")
-                    credentialsId("jenkins-github-hmcts-api-token_${name}")
+                    credentialsId("jenkins-github-hmcts-api-token_${name.toLowerCase()}")
                 }
             }
 
