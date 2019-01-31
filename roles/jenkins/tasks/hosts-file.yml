@@ -1,7 +1,7 @@
 ---
 
 # Needed so that jenkins can ssh/cli connect to itself with vanity hostname
-# otherwise e.g. prod-build.reform.hmcts.net - the ssh cli tries to connect to the proxy
+# otherwise e.g. build.reform.hmcts.net - the ssh cli tries to connect to the proxy
 - name: "Add jenkins_hostname to hosts file"
   lineinfile:
     path: /etc/hosts

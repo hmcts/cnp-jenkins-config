@@ -2,6 +2,15 @@ jenkins:
   systemMessage: >-
     This jenkins is managed by configuration as code, update <a
     href="https://github.com/hmcts/cnp-jenkins-config/blob/master/cac-prod.yml">here</a>
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: INFRA_VAULT_NAME
+            value: infra-vault-prod
+          - key: JAVA_OPTS
+            value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+          - key: GRADLE_OPTS
+            value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false

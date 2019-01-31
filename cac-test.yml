@@ -2,9 +2,31 @@ jenkins:
   systemMessage: >-
     This jenkins is managed by configuration as code, update <a
     href="https://github.com/hmcts/cnp-jenkins-config/blob/master/cac-test.yml">here</a>
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: INFRA_VAULT_NAME
+            value: infra-vault-sandbox
+          - key: NONPROD_ENVIRONMENT_NAME
+            value: saat
+          - key: NONPROD_SUBSCRIPTION_NAME
+            value: sandbox
+          - key: PROD_ENVIRONMENT_NAME
+            value: sprod
+          - key: PROD_SUBSCRIPTION_NAME
+            value: sandbox
+          - key: JAVA_OPTS
+            value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+          - key: GRADLE_OPTS
+            value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false
+  numExecutors: 0
   primaryView:
     all:
       name: all
@@ -53,3 +75,68 @@ jenkins:
       users:
         - id: "admin"
           password: "admin"
+
+unclassified:
+  location:
+    adminAddress: jenkins-reform@hmcts.net
+    url: 'http://localhost:8088'
+  globalLibraries:
+    libraries:
+      - name: 'Infrastructure'
+        includeInChangesets: false
+        retriever:
+          modernSCM:
+            scm:
+              github:
+                credentialsId: jenkins-github-hmcts-api-token
+                repoOwner: hmcts
+                repository: cnp-jenkins-library
+      - name: 'Pipeline'
+        includeInChangesets: false
+        retriever:
+          modernSCM:
+            scm:
+              github:
+                credentialsId: jenkins-github-hmcts-api-token
+                repoOwner: hmcts
+                repository: cnp-jenkins-library
+  # sonarglobalconfiguration:
+  #   installations:
+  #     - additionalAnalysisProperties: sonar.organization=hmcts
+  #       name: SonarQube
+  #       serverAuthenticationToken: '${SONARCLOUD}'
+  #       serverUrl: 'https://sonarcloud.io'
+  slackNotifier:
+    teamDomain: hmcts-reform
+    tokenCredentialId: slack-token
+  githubpluginconfig:
+    configs:
+      - name: "GitHub"
+        apiUrl: "https://api.github.com"
+        credentialsId: "jenkins-github-hmcts-api-token"
+        manageHooks: false
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - usernamePassword:
+              scope: GLOBAL
+              id: jenkins-github-hmcts-api-token
+              username: jenkins-reform-cnp
+              password: '${JENKINS_REFORM_CNP}'
+              description: CNP jenkins apo token
+          - string:
+              scope: GLOBAL
+              id: slack-token
+              secret: '${SLACK_TOKEN}'
+              description: Slack token
+
+jobs:
+  # - url: https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/jobdsl/organisations.groovy
+  - file:  '/usr/share/jenkins/jobdsl/organisations.groovy'
+#   - organizationFolder:
+#       name: "hmcts"
+#       navigators:
+#         - github:
+#             repoOwner: "hmcts"
