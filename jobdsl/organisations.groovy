@@ -2,7 +2,7 @@ String url = jenkins.model.JenkinsLocationConfiguration.get().getUrl()
 println "Running on ${url}"
 
 private boolean isSandbox() {
-    jenkins.model.JenkinsLocationConfiguration.get().getUrl().contains("localhost")
+    jenkins.model.JenkinsLocationConfiguration.get().getUrl().contains("sandbox")
 }
 
 List<Map> orgs = [
