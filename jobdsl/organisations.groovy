@@ -45,7 +45,14 @@ if (isSandbox()) {
 }
 
 /**
-
+* Creates a github organisation
+* @param args map of arguments
+*  - name: the name of the organisation
+*  - displayName (optional, name will be used by default): display name, will be prefixed by HMCTS -
+*  - regex (optional, name.* will be used by default): regex to use for finding repos owned by this team
+*  - jenkinsfilePath (advanced use only): custom jenkinsfile path
+*  - suppressDefaultJenkinsfile: don't use the default Jenkinsfile
+*  - nightly: whether this is nightly org automatically set by the dsl
 */
 Closure githubOrg(Map args = [:]) {
     def config = [
