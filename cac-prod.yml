@@ -89,6 +89,12 @@ jenkins:
         name: AM-PR
         recurse: true
         title: AM-PR
+    - buildMonitor:
+        includeRegex: >-
+          HMCTS_.*CTSC\/.+\/master
+        name: CTSC
+        recurse: true
+        title: CTSC
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:

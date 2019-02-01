@@ -173,6 +173,7 @@
     api_key_username_cet: 'jenkins-reform-cet'
     api_key_username_fpl: 'jenkins-reform-fpl'
     api_key_username_am: 'jenkins-reform-am'
+    api_key_username_ctsc: 'jenkins-reform-ctsc'
 
     jenkins_credentials:
         - id: jenkins-github-api-token
@@ -310,6 +311,11 @@
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
           username: "{{ api_key_username_am }}"
           password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-am vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_ctsc
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_ctsc }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-ctsc vault_uri={{ vault_uri }}', errors='warn') }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"

@@ -22,7 +22,8 @@ List<Map> orgs = [
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
         [name: 'CET'],
         [name: 'FPL'],
-        [name: 'AM']
+        [name: 'AM'],
+        [name: 'CTSC']
 ]
 orgs.each { Map org ->
     githubOrg(org).call()
