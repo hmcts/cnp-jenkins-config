@@ -55,7 +55,7 @@ jenkins:
         title: SSCS Dashboard
     - buildMonitor:
         includeRegex: >-
-          ^HMCTS_.*IAC.*\/(ia-case-api|ia-shared-infrastructure|ia-ccd-e2e-tests)\/master
+          ^HMCTS_.*IAC.*\/.+\/master
         name: IA
         recurse: true
         title: I & A Dashboard
