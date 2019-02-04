@@ -79,7 +79,7 @@ jenkins:
 unclassified:
   location:
     adminAddress: jenkins-reform@hmcts.net
-    url: 'http://localhost:8088'
+    url: 'http://sandbox:8088'
   globalLibraries:
     libraries:
       - name: 'Infrastructure'
@@ -100,12 +100,6 @@ unclassified:
                 credentialsId: jenkins-github-hmcts-api-token
                 repoOwner: hmcts
                 repository: cnp-jenkins-library
-  # sonarglobalconfiguration:
-  #   installations:
-  #     - additionalAnalysisProperties: sonar.organization=hmcts
-  #       name: SonarQube
-  #       serverAuthenticationToken: '${SONARCLOUD}'
-  #       serverUrl: 'https://sonarcloud.io'
   slackNotifier:
     teamDomain: hmcts-reform
     tokenCredentialId: slack-token
@@ -115,28 +109,29 @@ unclassified:
         apiUrl: "https://api.github.com"
         credentialsId: "jenkins-github-hmcts-api-token"
         manageHooks: false
+  # sonarglobalconfiguration:
+  #   installations:
+  #     - additionalAnalysisProperties: sonar.organization=hmcts
+  #       name: SonarQube
+  #       serverAuthenticationToken: '${SONARCLOUD}'
+  #       serverUrl: 'https://sonarcloud.io'
 
-credentials:
-  system:
-    domainCredentials:
-      - credentials:
-          - usernamePassword:
-              scope: GLOBAL
-              id: jenkins-github-hmcts-api-token
-              username: jenkins-reform-cnp
-              password: '${JENKINS_REFORM_CNP}'
-              description: CNP jenkins apo token
-          - string:
-              scope: GLOBAL
-              id: slack-token
-              secret: '${SLACK_TOKEN}'
-              description: Slack token
+#credentials:
+#  system:
+#    domainCredentials:
+#      - credentials:
+#          - usernamePassword:
+#              scope: GLOBAL
+#              id: jenkins-github-hmcts-api-token
+#              username: jenkins-reform-cnp
+#              password: '${JENKINS_REFORM_CNP}'
+#              description: CNP jenkins apo token
+#          - string:
+#              scope: GLOBAL
+#              id: slack-token
+#              secret: '${SLACK_TOKEN}'
+#              description: Slack token
 
 jobs:
-  # - url: https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/jobdsl/organisations.groovy
-  - file:  '/usr/share/jenkins/jobdsl/organisations.groovy'
-#   - organizationFolder:
-#       name: "hmcts"
-#       navigators:
-#         - github:
-#             repoOwner: "hmcts"
+   - url: https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/jobdsl/organisations.groovy
+#  - file:  '/usr/share/jenkins/jobdsl/organisations.groovy'
