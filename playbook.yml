@@ -22,6 +22,7 @@
       - { name: azure-commons, version: "0.2.8" }
       - { name: azure-credentials, version: "1.6.0" }
       - { name: azure-vm-agents, version: "0.8.0" }
+      - { name: basic-branch-build-strategies, version: "1.1.1" }
       - { name: blueocean, version: "1.10.2" }
       - { name: blueocean-autofavorite, version: "1.2.3" }
       - { name: blueocean-bitbucket-pipeline, version: "1.10.2" }
@@ -78,6 +79,7 @@
       - { name: jdk-tool, version: "1.2" }
       - { name: jenkins-design-language, version: "1.10.2" }
       - { name: jira, version: "3.0.5" }
+      - { name: job-dsl, version: "1.71" }
       - { name: jquery-detached, version: "1.2.1" }
       - { name: jquery, version: "1.12.4-0" }
       - { name: jsch, version: "0.1.55" }
@@ -148,6 +150,7 @@
         url: 'https://github.com/hmcts/sonarqube-plugin/releases/download/sonar-2.9-hmcts/sonar.hpi'
 
     pipeline_jobs: []
+    organization_folders: []
 
     slack_domain: 'hmcts-reform'
     slack_credential_id: 'slack-token'
@@ -169,7 +172,8 @@
     api_key_username_cet: 'jenkins-reform-cet'
     api_key_username_fpl: 'jenkins-reform-fpl'
     api_key_username_am: 'jenkins-reform-am'
-
+    api_key_username_ctsc: 'jenkins-reform-ctsc'
+    api_key_username_ethos: 'jenkins-reform-ethos'
 
     jenkins_credentials:
         - id: jenkins-github-api-token
@@ -307,6 +311,16 @@
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
           username: "{{ api_key_username_am }}"
           password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-am vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_ctsc
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_ctsc }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-ctsc vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_ethos
+            type: cred-usrpwd
+            description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+            username: "{{ api_key_username_ethos }}"
+            password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-ethos vault_uri={{ vault_uri }}', errors='warn') }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"

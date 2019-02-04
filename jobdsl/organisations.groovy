@@ -7,22 +7,24 @@ private boolean isSandbox() {
 
 List<Map> orgs = [
         [name: 'CMC'],
-        [name: 'Divorce', regex: 'div.*'],
+        [name: 'DIV', displayName: "Divorce"],
         [name: 'CNP'],
-        [name: 'FinancialRemedy', displayName: 'Financial Remedy', regex: 'finrem.*'],
+        [name: 'FinRem', displayName: 'Financial Remedy', regex: 'finrem.*'],
         [name: 'CDM', regex: '\\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\\b'],
         [name: 'IAC', regex: 'ia.*'],
         [name: 'Platform', regex: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template)'],
         [name: 'RPA'],
         [name: 'SSCS'],
         [name: 'Probate'],
-        [name: 'Fees_and_Pay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
+        [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'SL', regex: 'snl.*'],
         [name: 'DevOps', nightlyDisabled: true],
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
         [name: 'CET'],
         [name: 'FPL'],
-        [name: 'AM']
+        [name: 'AM'],
+        [name: 'ETHOS', displayName: "Ethos replacement"],
+        [name: 'CTSC']
 ]
 orgs.each { Map org ->
     githubOrg(org).call()
@@ -34,25 +36,36 @@ orgs.each { Map org ->
 
 if (isSandbox()) {
     Map pipelineTestOrg = [
-            name                      : 'Pipeline_Test',
-            displayName               : 'Pipeline Test',
-            regex                     : 'cnp-rhubarb-.*|cnp-jenkins-library',
-            branchesToInclude         : 'master',
-            jenkinsfilePath           : 'Jenkinsfile_pipeline_test',
-            suppressDefaultJenkinsfile: true
+            name                           : 'Pipeline_Test',
+            displayName                    : 'Pipeline Test',
+            regex                          : 'cnp-rhubarb-.*|cnp-jenkins-library',
+            branchesToInclude              : 'master PR*',
+            jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
+            suppressDefaultJenkinsfile     : true,
+            disableNamedBuildBranchStrategy: true,
+            credentialId                   : 'jenkins-github-hmcts-api-token_cnp'
     ]
     githubOrg(pipelineTestOrg).call()
 }
 
 /**
-
-*/
+ * Creates a github organisation
+ * @param args map of arguments
+ *  - name: the name of the organisation
+ *  - displayName (optional, name will be used by default): display name, will be prefixed by HMCTS -
+ *  - regex (optional, name.* will be used by default): regex to use for finding repos owned by this team
+ *  - jenkinsfilePath (advanced use only): custom jenkinsfile path
+ *  - suppressDefaultJenkinsfile: don't use the default Jenkinsfile
+ *  - nightly: whether this is nightly org automatically set by the dsl
+ */
 Closure githubOrg(Map args = [:]) {
     def config = [
-            displayName               : args.name,
-            regex                     : args.name.toLowerCase() + '.*',
-            jenkinsfilePath           : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
-            suppressDefaultJenkinsfile: false
+            displayName                    : args.name,
+            regex                          : args.name.toLowerCase() + '.*',
+            jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
+            suppressDefaultJenkinsfile     : false,
+            disableNamedBuildBranchStrategy: false,
+            credentialId                   : "jenkins-github-hmcts-api-token_" + args.name.toLowerCase()
     ] << args
     def name = config.name
 
@@ -60,7 +73,7 @@ Closure githubOrg(Map args = [:]) {
 
     String folderSandboxPrefix = isSandbox() ? 'Sandbox_' : ''
     GString orgFolderName = "HMCTS_${folderSandboxPrefix}${name}"
-    wildcardBranchesToInclude = 'master masterv2 hmctsdemo demo cnp PR*'
+    String wildcardBranchesToInclude = 'master masterv2 hmctsdemo demo cnp PR*'
     GString orgDescription = "<br>${config.displayName} team repositories"
 
     String displayNamePrefix = "HMCTS"
@@ -91,7 +104,7 @@ Closure githubOrg(Map args = [:]) {
                 github {
                     repoOwner("HMCTS")
                     apiUri("https://api.github.com")
-                    credentialsId("jenkins-github-hmcts-api-token_${name.toLowerCase()}")
+                    credentialsId(config.credentialId)
                 }
             }
 
@@ -119,6 +132,7 @@ Closure githubOrg(Map args = [:]) {
                 }
                 traits << 'jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait' {
                     includes(wildcardBranchesToInclude)
+                    excludes()
                 }
                 traits << 'org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait' {
                     strategyId(1)
@@ -128,7 +142,7 @@ Closure githubOrg(Map args = [:]) {
                 }
 
                 // prevent builds triggering automatically from SCM push for sandbox and nightly builds
-                if (isSandbox() || config.nightly) {
+                if ((isSandbox() || config.nightly) && !config.disableNamedBuildBranchStrategy) {
                     node / buildStrategies / 'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl'(plugin: 'basic-branch-build-strategies@1.1.1') {
                         filters()
                     }
