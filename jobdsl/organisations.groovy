@@ -35,32 +35,34 @@ orgs.each { Map org ->
 
 if (isSandbox()) {
     Map pipelineTestOrg = [
-            name                      : 'Pipeline_Test',
-            displayName               : 'Pipeline Test',
-            regex                     : 'cnp-rhubarb-.*|cnp-jenkins-library',
-            branchesToInclude         : 'master',
-            jenkinsfilePath           : 'Jenkinsfile_pipeline_test',
-            suppressDefaultJenkinsfile: true
+            name                           : 'Pipeline_Test',
+            displayName                    : 'Pipeline Test',
+            regex                          : 'cnp-rhubarb-.*|cnp-jenkins-library',
+            branchesToInclude              : 'master',
+            jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
+            suppressDefaultJenkinsfile     : true,
+            disableNamedBuildBranchStrategy: true
     ]
     githubOrg(pipelineTestOrg).call()
 }
 
 /**
-* Creates a github organisation
-* @param args map of arguments
-*  - name: the name of the organisation
-*  - displayName (optional, name will be used by default): display name, will be prefixed by HMCTS -
-*  - regex (optional, name.* will be used by default): regex to use for finding repos owned by this team
-*  - jenkinsfilePath (advanced use only): custom jenkinsfile path
-*  - suppressDefaultJenkinsfile: don't use the default Jenkinsfile
-*  - nightly: whether this is nightly org automatically set by the dsl
-*/
+ * Creates a github organisation
+ * @param args map of arguments
+ *  - name: the name of the organisation
+ *  - displayName (optional, name will be used by default): display name, will be prefixed by HMCTS -
+ *  - regex (optional, name.* will be used by default): regex to use for finding repos owned by this team
+ *  - jenkinsfilePath (advanced use only): custom jenkinsfile path
+ *  - suppressDefaultJenkinsfile: don't use the default Jenkinsfile
+ *  - nightly: whether this is nightly org automatically set by the dsl
+ */
 Closure githubOrg(Map args = [:]) {
     def config = [
-            displayName               : args.name,
-            regex                     : args.name.toLowerCase() + '.*',
-            jenkinsfilePath           : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
-            suppressDefaultJenkinsfile: false
+            displayName                    : args.name,
+            regex                          : args.name.toLowerCase() + '.*',
+            jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
+            suppressDefaultJenkinsfile     : false,
+            disableNamedBuildBranchStrategy: false
     ] << args
     def name = config.name
 
@@ -136,7 +138,7 @@ Closure githubOrg(Map args = [:]) {
                 }
 
                 // prevent builds triggering automatically from SCM push for sandbox and nightly builds
-                if (isSandbox() || config.nightly) {
+                if ((isSandbox() || config.nightly) && !config.disableNamedBuildBranchStrategy) {
                     node / buildStrategies / 'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl'(plugin: 'basic-branch-build-strategies@1.1.1') {
                         filters()
                     }
