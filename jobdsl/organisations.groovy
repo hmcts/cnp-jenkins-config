@@ -23,6 +23,7 @@ List<Map> orgs = [
         [name: 'CET'],
         [name: 'FPL'],
         [name: 'AM'],
+        [name: 'ETHOS', displayName: "Ethos replacement"],
         [name: 'CTSC']
 ]
 orgs.each { Map org ->
