@@ -38,7 +38,7 @@ if (isSandbox()) {
             name                           : 'Pipeline_Test',
             displayName                    : 'Pipeline Test',
             regex                          : 'cnp-rhubarb-.*|cnp-jenkins-library',
-            branchesToInclude              : 'master',
+            branchesToInclude              : 'master PR*',
             jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
             suppressDefaultJenkinsfile     : true,
             disableNamedBuildBranchStrategy: true,
