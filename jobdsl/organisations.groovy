@@ -41,7 +41,8 @@ if (isSandbox()) {
             branchesToInclude              : 'master',
             jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
             suppressDefaultJenkinsfile     : true,
-            disableNamedBuildBranchStrategy: true
+            disableNamedBuildBranchStrategy: true,
+            credentialId                   : 'jenkins-github-hmcts-api-token_cnp'
     ]
     githubOrg(pipelineTestOrg).call()
 }
@@ -62,7 +63,8 @@ Closure githubOrg(Map args = [:]) {
             regex                          : args.name.toLowerCase() + '.*',
             jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
-            disableNamedBuildBranchStrategy: false
+            disableNamedBuildBranchStrategy: false,
+            credentialId                   : "jenkins-github-hmcts-api-token_" + args.name.toLowerCase()
     ] << args
     def name = config.name
 
@@ -101,7 +103,7 @@ Closure githubOrg(Map args = [:]) {
                 github {
                     repoOwner("HMCTS")
                     apiUri("https://api.github.com")
-                    credentialsId("jenkins-github-hmcts-api-token_${name.toLowerCase()}")
+                    credentialsId(config.credentialId)
                 }
             }
 
