@@ -74,10 +74,7 @@
 
 - include_tasks: wait-for-jenkins-to-start.yml
 
-- include_tasks: folders.yml
-- include_tasks: jobs.yml
 - include_tasks: sonar-config.yml
-
 - include_tasks: azure-agents.yml
 - include_tasks: build-failure-analyzer.yml
 
