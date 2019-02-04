@@ -95,6 +95,12 @@ jenkins:
         name: CTSC
         recurse: true
         title: CTSC
+    - buildMonitor:
+        includeRegex: >-
+          HMCTS_.*ETHOS\/.+\/master
+        name: ETHOS
+        recurse: true
+        title: ETHOS
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
