@@ -131,6 +131,7 @@ Closure githubOrg(Map args = [:]) {
                 }
                 traits << 'jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait' {
                     includes(wildcardBranchesToInclude)
+                    excludes()
                 }
                 traits << 'org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait' {
                     strategyId(1)
