@@ -304,10 +304,10 @@
           username: "{{ api_key_username_ctsc }}"
           password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-ctsc vault_uri={{ vault_uri }}', errors='warn') }}"
         - id: jenkins-github-hmcts-api-token_ethos
-            type: cred-usrpwd
-            description: "Jenkins HMCTS GitHub credentials (Username/password format)"
-            username: "{{ api_key_username_ethos }}"
-            password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-ethos vault_uri={{ vault_uri }}', errors='warn') }}"
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_ethos }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-ethos vault_uri={{ vault_uri }}', errors='warn') }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
