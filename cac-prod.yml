@@ -43,6 +43,18 @@ jenkins:
         title: CDM master Builds
     - buildMonitor:
         includeRegex: >-
+          .+\/(prd-.*)\/(master|demo)
+        name: PRD
+        recurse: true
+        title: PRD
+    - buildMonitor:
+        includeRegex: >-
+          .+\/(prd-.*)\/(.*PR-.*)
+        name: PRD-PR
+        recurse: true
+        title: PRD-PR
+    - buildMonitor:
+        includeRegex: >-
           HMCTS_Nightly_CDM.+\/master
         name: CDM Nightly
         recurse: true
