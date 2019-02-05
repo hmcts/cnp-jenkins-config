@@ -44,6 +44,15 @@ jenkins:
         name: RPA-PR
         recurse: true
         title: RPA-PR
+    name: PRD
+        recurse: true
+        title: PRD
+    - buildMonitor:
+        includeRegex: >-
+          .+\/(prd-.*)\/(.*PR-.*)
+        name: PRD-PR
+        recurse: true
+        title: PRD-PR
     - buildMonitor:
         includeRegex: >-
           HMCTS_CDM.+\/master
