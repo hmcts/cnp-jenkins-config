@@ -2,6 +2,15 @@ jenkins:
   systemMessage: >-
     This jenkins is managed by configuration as code, update <a
     href="https://github.com/hmcts/cnp-jenkins-config/blob/master/cac-prod.yml">here</a>
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: INFRA_VAULT_NAME
+            value: infra-vault-prod
+          - key: JAVA_OPTS
+            value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+          - key: GRADLE_OPTS
+            value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false
@@ -140,3 +149,42 @@ jenkins:
 
 jobs:
   - url: https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/jobdsl/organisations.groovy
+
+unclassified:
+  location:
+    adminAddress: jenkins-reform@hmcts.net
+    url: 'https://build.platform.hmcts.net'
+  globalLibraries:
+    libraries:
+      - name: 'Infrastructure'
+        includeInChangesets: false
+        defaultVersion: master
+        retriever:
+          modernSCM:
+            scm:
+              github:
+                credentialsId: jenkins-github-hmcts-api-token
+                repoOwner: hmcts
+                repository: cnp-jenkins-library
+      - name: 'Pipeline'
+        includeInChangesets: false
+        defaultVersion: master
+        retriever:
+          modernSCM:
+            scm:
+              github:
+                credentialsId: jenkins-github-hmcts-api-token
+                repoOwner: hmcts
+                repository: cnp-jenkins-library
+  slackNotifier:
+    teamDomain: hmcts-reform
+    tokenCredentialId: slack-token
+  githubpluginconfig:
+    configs:
+      - name: "GitHub"
+        apiUrl: "https://api.github.com"
+        credentialsId: "jenkins-github-hmcts-api-token"
+        manageHooks: false
+  azureKeyVault:
+    keyVaultURL: https://infra-vault-prod.vault.azure.net
+    credentialID: jenkinsServicePrincipal
