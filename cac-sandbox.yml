@@ -84,6 +84,7 @@ unclassified:
     libraries:
       - name: 'Infrastructure'
         includeInChangesets: false
+        defaultVersion: master
         retriever:
           modernSCM:
             scm:
@@ -93,6 +94,7 @@ unclassified:
                 repository: cnp-jenkins-library
       - name: 'Pipeline'
         includeInChangesets: false
+        defaultVersion: master
         retriever:
           modernSCM:
             scm:
