@@ -109,3 +109,6 @@ unclassified:
         apiUrl: "https://api.github.com"
         credentialsId: "jenkins-github-hmcts-api-token"
         manageHooks: false
+  azureKeyVault:
+    keyVaultURL: https://infra-vault-sandbox.vault.azure.net
+    credentialID: jenkinsServicePrincipal
