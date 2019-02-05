@@ -44,7 +44,7 @@ jenkins:
         name: RPA-PR
         recurse: true
         title: RPA-PR
-    name: PRD
+        name: PRD
         recurse: true
         title: PRD
     - buildMonitor:
