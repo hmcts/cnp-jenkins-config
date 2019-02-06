@@ -2,21 +2,13 @@
 jenkins_role_yum_packages:
   - curl
   - libselinux-python
-  - initscripts
-  - which
-  - sudo
-  # from geerlingguy java dep:
   - java-1.8.0-openjdk
   - java-1.8.0-openjdk-devel
-  # from ocha.yarn dep:
-  - nodejs
-  - yarn
-  # from timja-kainos dep:
-  - rpmdevtools
   - gettext
   - git
   - python-jenkins
   - python-pip
+  - unzip
 
 jenkins_role_pip_packages:
   - azure-keyvault

@@ -55,12 +55,6 @@
 
 ## Sections that can run before Jenkins it started:
 
-#- include_tasks: proxy.yml
-#  when: jenkins_disable_proxy is not defined
-## Update Jenkins and install configured plugins.
-#- include_tasks: detect-cli-method.yml
-- include_tasks: envvars.yml
-
 - include_tasks: plugins.yml
 
 - name: force all notified handlers to run at this point, not waiting for normal sync points
@@ -80,15 +74,20 @@
 
 - include_tasks: wait-for-jenkins-to-start.yml
 
-- include_tasks: pipeline-libraries.yml
-- include_tasks: folders.yml
-- include_tasks: jobs.yml
-- include_tasks: sonar-config.yml
-- include_tasks: main-config.yml
-- include_tasks: hashicorp-vault.yml
+- name: Set jenkins location
+  jenkins_script:
+    script: "{{ lookup('file', 'location.groovy') }}"
+    args:
+      EXTERNAL_URL: '{{ jenkins_external_url }}'
+    user: '{{ jenkins_admin_username }}'
+    password: '{{ jenkins_admin_password }}'
+  become_user: '{{ jenkins_process_user }} '
+  register: result
+  until: result is succeeded
 
+- include_tasks: sonar-config.yml
 - include_tasks: azure-agents.yml
 - include_tasks: build-failure-analyzer.yml
 
-# do not add anything after late-plugins.yml nothing that needs the azure-cli will work
+# do not add anything after late-plugins.yml nothing that needs the jenkins cli will work
 - include_tasks: late-plugins.yml
