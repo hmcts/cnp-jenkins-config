@@ -74,6 +74,17 @@
 
 - include_tasks: wait-for-jenkins-to-start.yml
 
+- name: Set jenkins location
+  jenkins_script:
+    script: "{{ lookup('file', 'location.groovy') }}"
+    args:
+      EXTERNAL_URL: '{{ jenkins_external_url }}'
+    user: '{{ jenkins_admin_username }}'
+    password: '{{ jenkins_admin_password }}'
+  become_user: '{{ jenkins_process_user }} '
+  register: result
+  until: result is succeeded
+
 - include_tasks: sonar-config.yml
 - include_tasks: azure-agents.yml
 - include_tasks: build-failure-analyzer.yml
