@@ -13,7 +13,7 @@ List<Map> orgs = [
         [name: 'CDM', regex: '\\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\\b'],
         [name: 'IAC', regex: 'ia.*'],
         [name: 'Platform', regex: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template)'],
-        [name: 'RPA'],
+        [name: 'RPA', regex: '(rpa-.*|prd-.*)'],
         [name: 'SSCS'],
         [name: 'Probate'],
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
