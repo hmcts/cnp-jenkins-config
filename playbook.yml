@@ -47,7 +47,6 @@
       - { name: blueocean-web, version: "1.10.2" }
       - { name: bouncycastle-api, version: "2.17" }
       - { name: branch-api, version: "2.1.2" }
-      - { name: build-failure-analyzer, version: "1.21.0" }
       - { name: build-monitor-plugin, version: "1.12+build.201809061734" }
       - { name: cloudbees-bitbucket-branch-source, version: "2.4.1" }
       - { name: cloudbees-folder, version: "6.7" }
@@ -141,6 +140,9 @@
       - { name: configuration-as-code-support, version: "1.5" }
 
     jenkins_manual_plugins:
+      - file_name: 'build-failure-analyzer.hpi'
+        checksum: 'sha256:2bc5baa25318b907d534692cd0e53a275999b4ca4341f72358c7f5123226f0cc'
+        url: 'https://github.com/hmcts/build-failure-analyzer-plugin/releases/download/1.21.1-hmcts/build-failure-analyzer.hpi'
       - file_name: 'sonar.hpi'
         checksum: 'sha256:03e2372d36c5bcd7794e0ccafc89bdb552f68ab905f82a55ebfd2e1f201d602f'
         url: 'https://github.com/hmcts/sonarqube-plugin/releases/download/sonar-2.9-hmcts/sonar.hpi'

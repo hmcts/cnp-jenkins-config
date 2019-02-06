@@ -32,7 +32,7 @@ blueocean-web:1.10.2
 blueocean:1.10.2
 bouncycastle-api:2.17
 branch-api:2.1.2
-build-failure-analyzer:1.21.0
+#build-failure-analyzer:1.21.1-hmcts
 build-monitor-plugin:1.12+build.201809061734
 cloud-stats:0.20
 cloudbees-bitbucket-branch-source:2.4.1
