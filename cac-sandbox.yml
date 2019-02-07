@@ -5,6 +5,7 @@ jenkins:
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false
+  numExecutors: 0
   primaryView:
     all:
       name: all
