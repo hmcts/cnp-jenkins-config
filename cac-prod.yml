@@ -64,6 +64,12 @@ jenkins:
         title: CDM master Builds
     - buildMonitor:
         includeRegex: >-
+          HMCTS_CDM.+\/demo
+        name: CDM demo
+        recurse: true
+        title: CDM demo Builds
+    - buildMonitor:
+        includeRegex: >-
           HMCTS_Nightly_CDM.+\/master
         name: CDM Nightly
         recurse: true
