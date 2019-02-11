@@ -13,3 +13,4 @@ local_env.json
 .swp
 .pyc
 .vscode/
+secrets/

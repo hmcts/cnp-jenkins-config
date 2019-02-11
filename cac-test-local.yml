@@ -1,0 +1,300 @@
+---
+
+jenkins:
+  systemMessage: >-
+    This jenkins is managed by configuration as code, update <a
+    href="https://github.com/hmcts/cnp-jenkins-config/blob/master/cac-test.yml">here</a>
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: INFRA_VAULT_NAME
+            value: infra-vault-sandbox
+          - key: NONPROD_ENVIRONMENT_NAME
+            value: saat
+          - key: NONPROD_SUBSCRIPTION_NAME
+            value: sandbox
+          - key: PROD_ENVIRONMENT_NAME
+            value: sprod
+          - key: PROD_SUBSCRIPTION_NAME
+            value: sandbox
+          - key: JAVA_OPTS
+            value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+          - key: GRADLE_OPTS
+            value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  markupFormatter:
+    rawHtml:
+      disableSyntaxHighlighting: false
+  numExecutors: 0
+  primaryView:
+    all:
+      name: all
+  views:
+    - all:
+        name: all
+  authorizationStrategy:
+    globalMatrix:
+      grantedPermissions:
+        - "Overall/Administer:authenticated"
+        - "Overall/Administer:300e771f-856c-45cc-b899-40d78281e9c1"
+        - "Overall/Read:authenticated"
+        - "View/Create:authenticated"
+        - "View/Read:authenticated"
+        - "View/Configure:authenticated"
+        - "View/Delete:authenticated"
+        - "Agent/Create:authenticated"
+        - "Agent/Build:authenticated"
+        - "Agent/Connect:authenticated"
+        - "Agent/Delete:authenticated"
+        - "Agent/Configure:authenticated"
+        - "Agent/Disconnect:authenticated"
+        - "Run/Delete:authenticated"
+        - "Run/Replay:authenticated"
+        - "Run/Update:authenticated"
+        - "Job/Configure:authenticated"
+        - "Job/Cancel:authenticated"
+        - "Job/Read:authenticated"
+        - "Job/Build:authenticated"
+        - "Job/Move:authenticated"
+        - "Job/Discover:authenticated"
+        - "Job/Discover:anonymous"
+        - "Job/Create:authenticated"
+        - "Job/Workspace:authenticated"
+        - "Job/Delete:authenticated"
+        - "Credentials/View:authenticated"
+        - "Build Failure Analyzer/RemoveCause:authenticated"
+        - "Build Failure Analyzer/UpdateCauses:authenticated"
+        - "Build Failure Analyzer/ViewCauses:authenticated"
+        - "Lockable Resources/Unlock:authenticated"
+        - "Lockable Resources/Reserve:authenticated"
+        - "SCM/Tag:authenticated"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin"
+
+unclassified:
+  location:
+    adminAddress: jenkins-reform@hmcts.net
+    url: 'http://sandbox:8088'
+  globalLibraries:
+    libraries:
+      - name: 'Infrastructure'
+        includeInChangesets: false
+        defaultVersion: master
+        retriever:
+          modernSCM:
+            scm:
+              github:
+                credentialsId: jenkins-github-hmcts-api-token
+                repoOwner: hmcts
+                repository: cnp-jenkins-library
+      - name: 'Pipeline'
+        includeInChangesets: false
+        defaultVersion: master
+        retriever:
+          modernSCM:
+            scm:
+              github:
+                credentialsId: jenkins-github-hmcts-api-token
+                repoOwner: hmcts
+                repository: cnp-jenkins-library
+  slackNotifier:
+    teamDomain: hmcts-reform
+    tokenCredentialId: slack-token
+  githubpluginconfig:
+    configs:
+      - name: "GitHub"
+        apiUrl: "https://api.github.com"
+        credentialsId: "jenkins-github-hmcts-api-token-text"
+        manageHooks: false
+  azureKeyVault:
+    keyVaultURL: https://infra-vault-sandbox.vault.azure.net
+    credentialID: jenkinsServicePrincipal
+  sonarglobalconfiguration:
+    installations:
+      - additionalAnalysisProperties: sonar.organization=hmcts
+        name: SonarQube
+        serverAuthenticationToken: '${sonarcloud-api-token}'
+        serverUrl: 'https://sonarcloud.io'
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - usernamePassword:
+              scope: GLOBAL
+              id: jenkins-github-hmcts-api-token
+              username: jenkins-reform-cnp
+              password: '${hmcts-github-apikey-cnp}'
+              description: CNP jenkins github token
+          - string:
+              scope: GLOBAL
+              id: jenkins-github-hmcts-api-token-text
+              secret: '${hmcts-github-apikey-cnp}'
+              description: CNP jenkins github token
+          - string:
+              scope: GLOBAL
+              id: slack-token
+              secret: '${slack-token}'
+              description: Slack token
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token"
+              password: "${hmcts-github-apikey}"
+              scope: GLOBAL
+              username: "jenkins-reform-hmcts3"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_cmc"
+              password: "${hmcts-github-apikey-cmc}"
+              scope: GLOBAL
+              username: "jenkins-reform-cmc"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_div"
+              password: "${hmcts-github-apikey-div}"
+              scope: GLOBAL
+              username: "jenkins-reform-div"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_finrem"
+              password: "${hmcts-github-apikey-finrem}"
+              scope: GLOBAL
+              username: "jenkins-reform-finrem"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_cdm"
+              password: "${hmcts-github-apikey-cdm}"
+              scope: GLOBAL
+              username: "jenkins-reform-cdm"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_iac"
+              password: "${hmcts-github-apikey-iac}"
+              scope: GLOBAL
+              username: "jenkins-reform-iac"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_platform"
+              password: "${hmcts-github-apikey-platform}"
+              scope: GLOBAL
+              username: "jenkins-reform-platform"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_rpa"
+              password: "${hmcts-github-apikey-rpa}"
+              scope: GLOBAL
+              username: "jenkins-reform-rpa"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_sscs"
+              password: "${hmcts-github-apikey-sscs}"
+              scope: GLOBAL
+              username: "jenkins-reform-sscs"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_probate"
+              password: "${hmcts-github-apikey-probate}"
+              scope: GLOBAL
+              username: "jenkins-reform-probate"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_feepay"
+              password: "${hmcts-github-apikey-feepay}"
+              scope: GLOBAL
+              username: "jenkins-reform-feepay"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_sl"
+              password: "${hmcts-github-apikey-sl}"
+              scope: GLOBAL
+              username: "jenkins-reform-sl"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_cnp"
+              password: "${hmcts-github-apikey-cnp}"
+              scope: GLOBAL
+              username: "jenkins-reform-cnp"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_idam"
+              password: "${hmcts-github-apikey-idam}"
+              scope: GLOBAL
+              username: "jenkins-reform-idam"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_cet"
+              password: "${hmcts-github-apikey-cet}"
+              scope: GLOBAL
+              username: "jenkins-reform-cet"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_fpl"
+              password: "${hmcts-github-apikey-fpl}"
+              scope: GLOBAL
+              username: "jenkins-reform-fpl"
+          - usernamePassword:
+              description: "SSH credentials for Jenkins agents"
+              id: "vm_agent_creds"
+              password: "${mgmt-bastion-creds-password}"
+              scope: GLOBAL
+              username: "jenkinsssh"
+          - string:
+              description: "Read/Write Key To Publish CosmosDB Metrics"
+              id: "COSMOSDB_TOKEN_KEY"
+              scope: GLOBAL
+              secret: "${pipelinemetrics-cosmosdb-key}"
+          - usernamePassword:
+              description: "Username and password for the OWASP vulnerability database"
+              id: "owasp-db-login"
+              password: "${OWASPDb-Password}"
+              scope: GLOBAL
+              username: "owasp_administrator"
+          - usernamePassword:
+              description: "Storage account name and access key for storing build reports"
+              id: "buildlog-storage-account"
+              password: "${jenkins-build-logs-key}"
+              scope: GLOBAL
+              username: "mgmtbuildlogstoresandbox"
+          - sauce:
+              apiKey: "${sauce-access-key}"
+              description: "Sauce Labs Reform Key"
+              id: "reform_tunnel"
+              scope: GLOBAL
+              username: "reform"
+          - azure:
+              azureEnvironmentName: "Azure"
+              clientId: "${jenkins-sp-client-id}"
+              clientSecret: "${jenkins-sp-client-secret}"
+              description: "Jenkins Service Principal - only has access to infra key vault"
+              id: "jenkinsServicePrincipal"
+              scope: GLOBAL
+              subscriptionId: "${jenkins-sp-subscription-id}"
+              tenant: "${jenkins-sp-tenant-id}"
+          - usernamePassword:
+              description: "Jenkins-reform-am GitHub API token"
+              id: "jenkins-github-hmcts-api-token_am"
+              password: "${hmcts-github-apikey-am}"
+              scope: GLOBAL
+              username: "jenkins-reform-am"
+          - usernamePassword:
+              description: "Jenkins-reform-ctsc GitHub API token"
+              id: "jenkins-github-hmcts-api-token_ctsc"
+              password: "${hmcts-github-apikey-ctsc}"
+              scope: GLOBAL
+              username: "jenkins-reform-ctsc"
+          - usernamePassword:
+              description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+              id: "jenkins-github-hmcts-api-token_ethos"
+              password: "${hmcts-github-apikey-ethos}"
+              scope: GLOBAL
+              username: "jenkins-reform-ethos"
+
+jobs:
+  - file: '/usr/share/jenkins/jobdsl/organisations.groovy'

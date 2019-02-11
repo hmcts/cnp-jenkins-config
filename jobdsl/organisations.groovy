@@ -1,8 +1,10 @@
-String url = jenkins.model.JenkinsLocationConfiguration.get().getUrl()
-println "Running on ${url}"
-
 private boolean isSandbox() {
-    jenkins.model.JenkinsLocationConfiguration.get().getUrl().contains("sandbox")
+    def locationConfig = jenkins.model.JenkinsLocationConfiguration.get()
+    if (locationConfig != null && locationConfig.getUrl() != null) {
+      locationConfig.getUrl().contains("sandbox")
+    } else {
+        System.getenv("ENVIRONMENT") == "sandbox"
+    }
 }
 
 List<Map> orgs = [
