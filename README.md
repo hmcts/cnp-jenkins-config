@@ -148,6 +148,17 @@ Changes made to the Jenkins init script; the default set of changes set the conf
       become: true
 ```
 
+## Testing locally
+Run `./bootstrap-secrets.sh sandbox`, which will fetch the secrets required from the sandbox key vault
+Then run `docker-compose up -d`
+
+A fully automated Jenkins image will be spun up exposed on port 8088
+The credentials to login are `admin/admin` 
+
+The config is pulled from `cac-test-local.yml`, environment variables set in `docker-compose.yml` and the `init.groovy.d` folder for plugins that don't support `configuration-as-code`
+Plugins are defined in `plugins.txt`
+Forked plugins are defined in the `Dockerfile`
+
 ## Testing a branch of this
 This is not optimised for easy testing but in the current state you need to:
  1. Create a branch
