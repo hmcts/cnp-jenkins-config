@@ -1,0 +1,25 @@
+version: '3.6'
+services:
+  jenkins:
+    container_name: jenkins
+    image: hmcts/jenkins:latest
+    build: .
+    ports:
+      - '8088:8080'
+    environment:
+      - CASC_JENKINS_CONFIG=/usr/share/jenkins/jenkins.yaml
+      - JAVA_OPTS='-Djenkins.install.runSetupWizard=false -Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/London -Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src ''self''; script-src ''self'' ''unsafe-inline''; style-src ''self'' ''unsafe-inline''; font-src data:\"'
+      - ENVIRONMENT=sandbox
+      - DNS_SERVER=10.99.196.9
+      - JENKINS_AGENT_IMAGE_URI=/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555
+      - JENKINS_AGENT_VNET=mgmt-infra-sandbox
+      - JENKINS_AGENT_VNET_RG=mgmt-infra-sandbox
+      - JENKINS_AGENT_SUBNET=jenkins-subnet
+      - JENKINS_AGENT_EXECUTORS=1
+      - JENKINS_AGENT_MAX=10
+      - BFA_HOSTNAME=sandbox-build-failure-analyzer.platform.hmcts.net
+    volumes:
+      - './cac-test-local.yml:/usr/share/jenkins/jenkins.yaml'
+      - ./jobdsl:/usr/share/jenkins/jobdsl
+      - ./secrets:/run/secrets
+      - ./init.groovy.d:/usr/share/jenkins/ref/init.groovy.d
