@@ -189,6 +189,7 @@ unclassified:
       - name: 'Pipeline'
         includeInChangesets: false
         defaultVersion: master
+        allowVersionOverride: false
         retriever:
           modernSCM:
             scm:
