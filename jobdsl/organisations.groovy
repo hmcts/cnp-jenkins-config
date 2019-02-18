@@ -40,7 +40,7 @@ if (isSandbox()) {
     Map pipelineTestOrg = [
             name                           : 'Pipeline_Test',
             displayName                    : 'Pipeline Test',
-            regex                          : 'cnp-rhubarb-.*|cnp-jenkins-library',
+            regex                          : 'cnp-plum-.*|cnp-rhubarb-.*|cnp-jenkins-library',
             branchesToInclude              : 'master PR*',
             jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
             suppressDefaultJenkinsfile     : true,
