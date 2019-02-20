@@ -129,6 +129,12 @@ jenkins:
         name: ETHOS
         recurse: true
         title: ETHOS
+    - buildMonitor:
+        includeRegex: >-
+          ^HMCTS_.*(CMC).*\/(cmc-citizen-frontend)\/master
+        name: CMC
+        recurse: true
+        title: CMC
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
