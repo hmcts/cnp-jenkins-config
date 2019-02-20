@@ -131,7 +131,7 @@ jenkins:
         title: ETHOS
     - buildMonitor:
         includeRegex: >-
-          ^HMCTS_.*(CMC).*\/(cmc-citizen-frontend)\/master
+          ^HMCTS_.*(CMC).*\/(cmc-citizen-frontend|cmc-legal-frontend|cmc-claim-store)\/master
         name: CMC
         recurse: true
         title: CMC
