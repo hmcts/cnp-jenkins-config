@@ -27,7 +27,7 @@ List<Map> orgs = [
         [name: 'AM'],
         [name: 'ETHOS', displayName: "Ethos replacement"],
         [name: 'CTSC'],
-        [name: 'RD', displayName: 'Ref Data', regex: 'rd.*'],
+        [name: 'RD', displayName: 'Ref Data'],
 ]
 orgs.each { Map org ->
     githubOrg(org).call()
