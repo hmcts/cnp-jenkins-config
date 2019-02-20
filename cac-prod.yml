@@ -135,6 +135,12 @@ jenkins:
         name: CMC
         recurse: true
         title: CMC
+    - buildMonitor:
+        includeRegex: >-
+          ^HMCTS_.*RD.*\/.+\/master
+        name: RD
+        recurse: true
+        title: Ref Data Dashboard
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
