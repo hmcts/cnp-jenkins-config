@@ -19,7 +19,8 @@ jenkins:
             value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
           - key: GRADLE_OPTS
             value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
-
+          - key: REGISTRY_NAME
+            value: hmctssandbox
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false
