@@ -101,10 +101,10 @@ plain-credentials:1.5
 pubsub-light:1.12
 run-condition:1.2
 saml:1.1.2
-sauce-ondemand:1.178
+sauce-ondemand:1.184
 scm-api:2.3.0
 script-security:1.51
-slack:2.16
+slack:2.20
 sse-gateway:1.17
 ssh-credentials:1.14
 structs:1.17

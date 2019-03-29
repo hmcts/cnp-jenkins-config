@@ -122,6 +122,8 @@ unclassified:
         name: SonarQube
         serverAuthenticationToken: '${sonarcloud-api-token}'
         serverUrl: 'https://sonarcloud.io'
+  timestamperConfig:
+    allPipelines: true
 
 credentials:
   system:
