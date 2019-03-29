@@ -221,3 +221,5 @@ unclassified:
   azureKeyVault:
     keyVaultURL: https://infra-vault-prod.vault.azure.net
     credentialID: jenkinsServicePrincipal
+  timestamperConfig:
+    allPipelines: true

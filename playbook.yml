@@ -116,7 +116,7 @@
       - { name: sauce-ondemand, version: "1.184" }
       - { name: scm-api, version: "2.3.0" }
       - { name: script-security, version: "1.51" }
-      - { name: slack, version: "2.15" }
+      - { name: slack, version: "2.20" }
       - { name: sse-gateway, version: "1.17" }
       - { name: ssh-credentials, version: "1.14" }
       - { name: structs, version: "1.17" }
