@@ -123,10 +123,10 @@ unclassified:
   #       serverAuthenticationToken: '${SONARCLOUD}'
   #       serverUrl: 'https://sonarcloud.io'
 
-#credentials:
-#  system:
-#    domainCredentials:
-#      - credentials:
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
 #          - usernamePassword:
 #              scope: GLOBAL
 #              id: jenkins-github-hmcts-api-token
@@ -138,6 +138,12 @@ unclassified:
 #              id: slack-token
 #              secret: '${SLACK_TOKEN}'
 #              description: Slack token
+          - sauce:
+              apiKey: "${sauce-access-key}"
+              description: "Sauce Labs Reform Key"
+              id: "reform_tunnel"
+              scope: GLOBAL
+              username: "reform"
 
 jobs:
 #   - url: https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/jobdsl/organisations.groovy
