@@ -14,6 +14,7 @@ def credential = new SauceCredentials(
         "${cred_id}",
         "${cred_user}",
         "${cred_secret}",
+        "${cred_eudc}",
         "${cred_desc}"
 )
 
