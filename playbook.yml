@@ -356,7 +356,7 @@
     jenkins_timezone: '-Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/London'
     jenkins_csp_policy: '-Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src ''self''; script-src ''self'' ''unsafe-inline''; style-src ''self'' ''unsafe-inline''; font-src data:\"'
 
-    casc_location: '-Dcasc.jenkins.config=https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/cnp-1232-v2storage/cac-{{ resolved_env }}.yml'
+    casc_location: '-Dcasc.jenkins.config=https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/cnp-1233-softdelete/cac-{{ resolved_env }}.yml'
     jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }} {{ casc_location }}"
 
     build_failure_analyzer:

@@ -1,7 +1,7 @@
 jenkins:
   systemMessage: >-
     This jenkins is managed by configuration as code, update <a
-    href="https://github.com/hmcts/cnp-jenkins-config/blob/cnp-1232-v2storage/cac-test.yml">here</a>
+    href="https://github.com/hmcts/cnp-jenkins-config/blob/cnp-1233-softdelete/cac-test.yml">here</a>
   globalNodeProperties:
     - envVars:
         env:
