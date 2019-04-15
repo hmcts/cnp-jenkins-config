@@ -291,11 +291,11 @@
           description: "Storage account name and access key for storing build reports"
           username: "{{ buildlog_sa_name }}"
           password: "{{ buildlog_sa_key }}"
-        - id: reform_tunnel
-          type: cred-sauce
-          description: "Sauce Labs Reform Key"
-          username: "reform"
-          password: "{{ lookup('azure_keyvault', 'secret_name=sauce-access-key vault_uri={{ vault_uri }}', errors='warn') }}"
+   #     - id: reform_tunnel
+   #       type: cred-sauce
+   #       description: "Sauce Labs Reform Key"
+   #       username: "reform"
+   #       password: "{{ lookup('azure_keyvault', 'secret_name=sauce-access-key vault_uri={{ vault_uri }}', errors='warn') }}"
         - id: jenkins-github-hmcts-api-token_am
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
