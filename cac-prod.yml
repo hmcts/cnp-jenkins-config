@@ -15,10 +15,10 @@ jenkins:
             value: hmcts
           - key: AAT_AKS_CLUSTER_NAME
             value: cnp-aat-cluster
-          - key: PREVIEW_AKS_CLUSTER_NAME
-            value : cnp-aks-cluster
           - key: AAT_AKS_RESOURCE_GROUP
             value: cnp-aat-aks-rg
+          - key: PREVIEW_AKS_CLUSTER_NAME
+            value : cnp-aks-cluster
           - key : PREVIEW_AKS_CLUSTER_NAME
             value: cnp-aks-rg
   markupFormatter:
