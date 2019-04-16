@@ -13,21 +13,18 @@ jenkins:
             value: sandbox
           - key: PROD_ENVIRONMENT_NAME
             value: saat
+          - key: PREVIEW_ENVIRONMENT_NAME
+            value: saat
           - key: PROD_SUBSCRIPTION_NAME
             value: sandbox
           - key: JAVA_OPTS
             value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
           - key: GRADLE_OPTS
             value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
-          - key: AAT_AKS_CLUSTER_NAME
+          - key: SAAT_AKS_CLUSTER_NAME
             value: cnp-aks-sandbox-cluster
-          - key: AAT_AKS_RESOURCE_GROUP
+          - key: SAAT_AKS_RESOURCE_GROUP
             value: cnp-aks-sandbox-rg
-          - key: PREVIEW_AKS_CLUSTER_NAME
-            value: cnp-aks-sandbox-cluster
-          - key : PREVIEW_AKS_CLUSTER_NAME
-            value: cnp-aks-sandbox-rg
-
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false
