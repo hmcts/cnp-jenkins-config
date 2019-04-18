@@ -13,6 +13,14 @@ jenkins:
             value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
           - key: REGISTRY_NAME
             value: hmcts
+          - key: AAT_AKS_CLUSTER_NAME
+            value: cnp-aat-cluster
+          - key: AAT_AKS_RESOURCE_GROUP
+            value: cnp-aat-aks-rg
+          - key: PREVIEW_AKS_CLUSTER_NAME
+            value : cnp-aks-cluster
+          - key : PREVIEW_AKS_RESOURCE_GROUP
+            value: cnp-aks-rg
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false
