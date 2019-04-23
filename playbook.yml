@@ -316,6 +316,11 @@
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
           username: "{{ api_key_username_rd }}"
           password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-rd vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: owasp-postgresdb-login
+          type: cred-usrpwd
+          description: "Username and password for the OWASP vulnerability postgresql database"
+          username: "{{ lookup('azure_keyvault', 'secret_name=OWASPPostgresDb-Account vault_uri={{ vault_uri }}', errors='warn') }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=OWASPPostgresDb-Password vault_uri={{ vault_uri }}', errors='warn') }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
