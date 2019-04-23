@@ -14,6 +14,7 @@ def credential = new SauceCredentials(
         "${cred_id}",
         "${cred_user}",
         "${cred_secret}",
+        "https://eu-central-1.saucelabs.com/",
         "${cred_desc}"
 )
 
