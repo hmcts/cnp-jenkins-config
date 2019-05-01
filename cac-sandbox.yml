@@ -8,11 +8,11 @@ jenkins:
           - key: INFRA_VAULT_NAME
             value: infra-vault-sandbox
           - key: NONPROD_ENVIRONMENT_NAME
-            value: saat
+            value: sandbox
           - key: NONPROD_SUBSCRIPTION_NAME
             value: sandbox
           - key: PROD_ENVIRONMENT_NAME
-            value: saat
+            value: sandbox
           - key: PREVIEW_ENVIRONMENT_NAME
             value: saat
           - key: PROD_SUBSCRIPTION_NAME
