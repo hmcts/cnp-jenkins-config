@@ -21,9 +21,9 @@ jenkins:
             value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
           - key: GRADLE_OPTS
             value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
-          - key: SAAT_AKS_CLUSTER_NAME
+          - key: SANDBOX_AKS_CLUSTER_NAME
             value: cnp-aks-sandbox-cluster
-          - key: SAAT_AKS_RESOURCE_GROUP
+          - key: SANDBOX_AKS_RESOURCE_GROUP
             value: cnp-aks-sandbox-rg
   markupFormatter:
     rawHtml:
