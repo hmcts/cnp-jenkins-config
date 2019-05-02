@@ -9,11 +9,11 @@ private boolean isSandbox() {
 
 if (isSandbox()) {
     Map pipelineTestOrg = [
-            name                           : 'Pipeline_Test',
-            displayName                    : 'Pipeline Test',
-            regex                          : 'cnp-plum-.*|cnp-rhubarb-.*|cnp-jenkins-library',
+            name                           : 'CNP_test',
+            displayName                    : 'CNP_test',
+            regex                          : 'cnp-plum-.*',
             branchesToInclude              : 'master PR*',
-            jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
+            jenkinsfilePath                : 'Jenkinsfile_parameterized',
             suppressDefaultJenkinsfile     : true,
             disableNamedBuildBranchStrategy: true,
             credentialId                   : 'jenkins-github-hmcts-api-token_cnp'
