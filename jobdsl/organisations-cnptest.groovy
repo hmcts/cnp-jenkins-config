@@ -14,8 +14,8 @@ if (isSandbox()) {
             regex                          : 'cnp-plum-.*',
             branchesToInclude              : 'master PR*',
             jenkinsfilePath                : 'Jenkinsfile_parameterized',
-            suppressDefaultJenkinsfile     : true,
-            disableNamedBuildBranchStrategy: true,
+            suppressDefaultJenkinsfile     : false,
+            disableNamedBuildBranchStrategy: false,
             credentialId                   : 'jenkins-github-hmcts-api-token_cnp'
     ]
     githubOrg(pipelineTestOrg).call()
