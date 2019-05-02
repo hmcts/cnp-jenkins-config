@@ -78,9 +78,6 @@ jenkins:
         - id: "admin"
           password: "admin"
 
-jobs:
-  - url: https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/jobdsl/organisations-cnptest.groovy
-
 unclassified:
   location:
     adminAddress: jenkins-reform@hmcts.net
@@ -300,3 +297,6 @@ credentials:
               password: "${hmcts-github-apikey-ethos}"
               scope: GLOBAL
               username: "jenkins-reform-ethos"
+
+jobs:
+  - file: '/usr/share/jenkins/jobdsl/organisations.groovy'
