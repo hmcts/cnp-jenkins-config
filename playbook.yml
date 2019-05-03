@@ -320,7 +320,7 @@
           type: cred-usrpwd
           description: "Username and password for the OWASP vulnerability postgresql database"
           username: "owasp_admin@owaspdependency-prod"
-          password: "{{ lookup('azure_keyvault', 'secret_name=owasppostgresdb-password99 vault_uri={{ vault_uri }}', errors='warn') }}"
+          password: "null"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
