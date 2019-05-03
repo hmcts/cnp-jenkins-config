@@ -177,6 +177,8 @@
     owasppostgresdb_password: "{{ lookup('azure_keyvault', 'secret_name=owasppostgresdb-password99 vault_uri={{ vault_uri }}', errors='warn') }}"
 
     jenkins_credentials:
+        - debug:
+          msg: "A: {{ owasppostgresdb_account }} B: {{ owasppostgresdb_password }}" 
         - id: jenkins-github-hmcts-api-token
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
