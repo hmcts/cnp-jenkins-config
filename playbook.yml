@@ -175,8 +175,6 @@
     api_key_username_rd: 'jenkins-reform-rd'
 
     jenkins_credentials:
-        - debug:
-          msg: "A: {{ owasppostgresdb_account }} B: {{ owasppostgresdb_password }}" 
         - id: jenkins-github-hmcts-api-token
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
