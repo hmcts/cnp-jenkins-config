@@ -173,8 +173,6 @@
     api_key_username_ctsc: 'jenkins-reform-ctsc'
     api_key_username_ethos: 'jenkins-reform-ethos'
     api_key_username_rd: 'jenkins-reform-rd'
-    owasppostgresdb_account: "{{ lookup('azure_keyvault', 'secret_name=owasppostgresdb-account99 vault_uri={{ vault_uri }}', errors='warn') }}"
-    owasppostgresdb_password: "{{ lookup('azure_keyvault', 'secret_name=owasppostgresdb-password99 vault_uri={{ vault_uri }}', errors='warn') }}"
 
     jenkins_credentials:
         - debug:
@@ -323,8 +321,8 @@
         - id: owasp-postgresdb-login
           type: cred-usrpwd
           description: "Username and password for the OWASP vulnerability postgresql database"
-          username: "{{ owasppostgresdb_account }}"
-          password: "{{ owasppostgresdb_password }}"
+          username: "{{ lookup('azure_keyvault', 'secret_name=owasppgdb-account vault_uri={{ vault_uri }}', errors='warn') }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=owasppgdb-password vault_uri={{ vault_uri }}', errors='warn') }}"
 
     jenkins_global_pipeline_libraries:
         - name: "Infrastructure"
