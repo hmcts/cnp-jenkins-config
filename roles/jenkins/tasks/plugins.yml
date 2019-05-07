@@ -44,23 +44,6 @@
     - wait for jenkins to start
   ignore_errors: yes
 
-- name: Install Jenkins plugins using token.
-  jenkins_plugin:
-    name: "{{ item.name }}"
-    version: "{{ item.version }}"
-    url_token: "{{ jenkins_admin_token }}"
-    updates_expiration: "{{ jenkins_plugin_updates_expiration }}"
-    url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}"
-    state: "{{ jenkins_plugins_state }}"
-  with_items: "{{ jenkins_plugins }}"
-  when: jenkins_admin_token != ""
-  register: result
-  until: result|succeeded
-  notify:
-    - restart jenkins
-    - wait for jenkins to start
-  ignore_errors: yes
-
 # Needed if plugins aren't on the update centre
 - name: Install plugins manually - warning doesn't handle dependencies
   get_url:
