@@ -46,7 +46,7 @@ def myCloud = new AzureVMCloudBuilder()
         .withInitScript("""usermod -a -G docker jenkinsssh
 umount /mnt/resource
 mkdir -pv /opt/jenkins
-mount /dev/sdb1 /opt/jenkins
+mount /dev/sdc1 /opt/jenkins
 chown -R jenkinsssh:jenkinsssh /opt/jenkins
 mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
 chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
