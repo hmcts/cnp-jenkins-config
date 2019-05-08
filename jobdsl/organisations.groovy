@@ -14,7 +14,7 @@ List<Map> orgs = [
         [name: 'FinRem', displayName: 'Financial Remedy', regex: 'finrem.*'],
         [name: 'CDM', regex: '\\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\\b'],
         [name: 'IAC', regex: 'ia.*'],
-        [name: 'Platform', regex: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template)'],
+        [name: 'Platform', regex: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template|data-extractor)'],
         [name: 'RPA', regex: '(rpa-.*|prd-.*|rpx-.*)'],
         [name: 'SSCS'],
         [name: 'Probate'],
