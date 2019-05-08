@@ -15,7 +15,7 @@ List<Map> orgs = [
         [name: 'CDM', regex: '\\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\\b'],
         [name: 'IAC', regex: 'ia.*'],
         [name: 'Platform', regex: '(rpe-.*|send-letter.*|draft-store.*|bulk-scan.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template)'],
-        [name: 'RPA', regex: '(rpa-.*|prd-.*)'],
+        [name: 'RPA', regex: '(rpa-.*|prd-.*|rpx-.*)'],
         [name: 'SSCS'],
         [name: 'Probate'],
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
@@ -76,7 +76,7 @@ Closure githubOrg(Map args = [:]) {
 
     String folderSandboxPrefix = isSandbox() ? 'Sandbox_' : ''
     GString orgFolderName = "HMCTS_${folderSandboxPrefix}${name}"
-    String wildcardBranchesToInclude = isSandbox() ? '' : 'master hmctsdemo demo PR* perftest ithc'
+    String wildcardBranchesToInclude = isSandbox() ? '' : 'master hmctsdemo demo PR* perftest ithc preview'
     GString orgDescription = "<br>${config.displayName} team repositories"
 
     String displayNamePrefix = "HMCTS"

@@ -69,6 +69,18 @@ jenkins:
         title: RPA-PR
     - buildMonitor:
         includeRegex: >-
+          .+\/(rpx-.*)\/(master|demo)
+        name: RPX
+        recurse: true
+        title: RPX
+    - buildMonitor:
+        includeRegex: >-
+          .+\/(rpx-.*)\/(.*PR-.*)
+        name: RPX-PR
+        recurse: true
+        title: RPX-PR
+    - buildMonitor:
+        includeRegex: >-
           HMCTS_CDM.+\/master
         name: CDM
         recurse: true
