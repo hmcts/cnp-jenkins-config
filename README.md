@@ -16,19 +16,6 @@ The config is pulled from `cac-test-local.yml`, environment variables set in `do
 Plugins are defined in `plugins.txt`
 Forked plugins are defined in the `Dockerfile`
 
-## Testing on a Kubernetes cluster
-Configure a service principal that has read access to the infra-vault-sandbox key vault as a kubernetes secret:
-```
-kubectl create secret generic kvcreds --from-literal clientid="client-id" --from-literal clientsecret="client-secret" --type=azure/kv --namespace jenkins-test
-```
-
-Run 
-```
-helm upgrade jenkins-test --install --namespace jenkins-test stable/jenkins -f values.yaml
-```
-
-Port forward the container to your machine
-
 ## Testing a branch of this
 This is not optimised for easy testing but in the current state you need to:
  1. Create a branch
