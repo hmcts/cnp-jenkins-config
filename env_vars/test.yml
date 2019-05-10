@@ -4,6 +4,8 @@ jenkins_external_url: 'https://sandbox-build.platform.hmcts.net'
 
 vault_uri: 'https://infra-vault-sandbox.vault.azure.net/'
 
+build_failure_analyzer_hostname: 'sandbox-build-failure-analyzer.platform.hmcts.net'
+
 login_security_enabled: false
 
 organization_folders:
