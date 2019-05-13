@@ -22,7 +22,7 @@
       - { name: azure-commons, version: "0.2.8" }
       - { name: azure-credentials, version: "1.6.0" }
       - { name: azure-keyvault, version: "1.0.0" }
-      - { name: azure-vm-agents, version: "0.8.0" }
+      #- { name: azure-vm-agents, version: "0.8.0" }
       - { name: basic-branch-build-strategies, version: "1.1.1" }
       - { name: blueocean, version: "1.10.2" }
       - { name: blueocean-autofavorite, version: "1.2.3" }
@@ -146,6 +146,9 @@
       - file_name: 'sonar.hpi'
         checksum: 'sha256:03e2372d36c5bcd7794e0ccafc89bdb552f68ab905f82a55ebfd2e1f201d602f'
         url: 'https://github.com/hmcts/sonarqube-plugin/releases/download/sonar-2.9-hmcts/sonar.hpi'
+      - file_name: 'azure-vm-agents.hpi'
+        checksum: 'sha256:8a22cffee89d00f0676a2ffde1c9a954bb3eba3e4147512b692b4acbfc9f2016'
+        url: 'https://github.com/hmcts/azure-vm-agents-plugin-custom/releases/download/0.9.0-MI-cnp-1270-20190418.1/azure-vm-agents.hpi'
 
     pipeline_jobs: []
     organization_folders: []
