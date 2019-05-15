@@ -1,8 +1,24 @@
 ---
 
-- name: Install Jenkins credential using script for the {{ credential.id }} secret.
+- name: Configure Azure Agent VM - generic profile used with legacy SPs login.
   jenkins_script:
     script: "{{ lookup('template', 'templates/azure-vm-agent.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI TeamA profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-teamA.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI TeamB profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-teamB.groovy.j2') }}"
     user: "{{ jenkins_admin_username }}"
     password: "{{ jenkins_admin_password }}"
   become_user: "{{jenkins_process_user}}"

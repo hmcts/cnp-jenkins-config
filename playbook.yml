@@ -356,6 +356,8 @@
     jenkins_agent_executors: "1"
     jenkins_agent_jvm_options: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
     jenkins_agent_private_ip: true
+    jenkins_agent_UAMI-teamA: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/rgcnptestsandbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnpmitestinga"
+    jenkins_agent_UAMI-teamB: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/rgcnptestsandbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnpmitestingb"
 
     # JVM options for Jenkins based on https://support.cloudbees.com/hc/en-us/articles/204859670-Java-Heap-settings-best-practice
     # and https://jenkins.io/blog/2016/11/21/gc-tuning/. Below assumes Standard DS13 v2 (8 vcpus, 56 GB memory) host
