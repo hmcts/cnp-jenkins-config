@@ -356,7 +356,17 @@
     jenkins_agent_executors: "1"
     jenkins_agent_jvm_options: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
     jenkins_agent_private_ip: true
+    
+    # Team A
+    jenkins_agent_cloud_name_teamA: "cnp-azure-team-A"
+    jenkins_agent_template_name_teamA: "cnp-jenkins-builders-team-A"
+    jenkins_agent_labels_teamA: "teamA"
     jenkins_agent_UAMI_teamA: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/rgcnptestsandbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnpmitestinga"
+    
+    # Team B
+    jenkins_agent_cloud_name_teamB: "cnp-azure-team-B"
+    jenkins_agent_template_name_teamB: "cnp-jenkins-builders-team-B"
+    jenkins_agent_labels_teamA: "teamB"
     jenkins_agent_UAMI_teamB: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/rgcnptestsandbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnpmitestingb"
 
     # JVM options for Jenkins based on https://support.cloudbees.com/hc/en-us/articles/204859670-Java-Heap-settings-best-practice

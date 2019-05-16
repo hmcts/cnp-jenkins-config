@@ -3,14 +3,14 @@ import com.microsoft.azure.vmagent.builders.*;
 import jenkins.model.Jenkins;
 
 def myCloud = new AzureVMCloudBuilder()
-.withCloudName("{{ jenkins_agent_cloud_name }}")
+.withCloudName("{{ jenkins_agent_cloud_name_teamA }}")
 .withAzureCredentialsId("{{ jenkins_agent_azure_sp_id }}")
 .withExistingResourceGroupName("mgmt-vmimg-store-{{ jenkins_agent_env }}")
 .withMaxVirtualMachinesLimit("{{ jenkins_agent_vm_limit }}")
 .withDeploymentTimeout("{{ jenkins_agent_deployment_timeout }}")
 .addNewTemplate()
-    .withName("{{ jenkins_agent_template_name }}")
-    .withLabels("{{ jenkins_agent_labels }}")
+    .withName("{{ jenkins_agent_template_name_teamA }}")
+    .withLabels("{{ jenkins_agent_labels_teamA }}")
     .withDescription("Jenkins build agents for HMCTS")
     .withWorkspace("{{ jenkins_home }}")
     .withLocation("{{ jenkins_agent_location }}")
