@@ -1,6 +1,7 @@
 #!groovy
 import com.microsoft.azure.vmagent.builders.*;
 import jenkins.model.Jenkins;
+import hudson.model.Node.Mode;
 
 def myCloud = new AzureVMCloudBuilder()
 .withCloudName("{{ jenkins_agent_cloud_name_teamA }}")
@@ -14,6 +15,7 @@ def myCloud = new AzureVMCloudBuilder()
     .withDescription("Jenkins build agents for HMCTS")
     .withWorkspace("{{ jenkins_home }}")
     .withLocation("{{ jenkins_agent_location }}")
+    .withUsageMode(Mode.EXCLUSIVE)
     .withVirtualMachineSize("{{ jenkins_agent_machine_size }}")
     .withExistingStorageAccount("mgmtvmimgstore{{ jenkins_agent_env }}")
     .withStorageAccountType("{{jenkins_agent_storage_type}}")
