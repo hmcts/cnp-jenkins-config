@@ -19,7 +19,8 @@ buildlog_sa_name: "blah"
 buildlog_sa_key: "blah"
 
 jenkins_agent_env: sandbox
-jenkins_agent_location: UK South
+#jenkins_agent_location: UK South
+jenkins_agent_location: UK West
 jenkins_agent_image_uri: www.example.com
 jenkins_agent_password: mypass123
 jenkins_agent_virtual_net: vnet1
