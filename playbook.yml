@@ -147,8 +147,8 @@
         checksum: 'sha256:03e2372d36c5bcd7794e0ccafc89bdb552f68ab905f82a55ebfd2e1f201d602f'
         url: 'https://github.com/hmcts/sonarqube-plugin/releases/download/sonar-2.9-hmcts/sonar.hpi'
       - file_name: 'azure-vm-agents.hpi'
-        checksum: 'sha256:8a22cffee89d00f0676a2ffde1c9a954bb3eba3e4147512b692b4acbfc9f2016'
-        url: 'https://github.com/hmcts/azure-vm-agents-plugin-custom/releases/download/0.9.0-MI-cnp-1270-20190418.1/azure-vm-agents.hpi'
+        checksum: '6a335871098a223ee3ed217467eac153a260920d961827cc7f53c1944fd24fb0'
+        url: 'https://github.com/hmcts/azure-vm-agents-plugin-custom/releases/download/0.9.0-MI-cnp-1270-20190524.11/azure-vm-agents.hpi'
 
     pipeline_jobs: []
     organization_folders: []
