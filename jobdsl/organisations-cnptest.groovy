@@ -1,10 +1,4 @@
 
-// --dv
-import com.microsoft.azure.vmagent.builders.AzureVMCloudBuilder;
-import jenkins.model.Jenkins;
-import hudson.model.Node;
-// --dv
-
 private boolean isSandbox() {
     def locationConfig = jenkins.model.JenkinsLocationConfiguration.get()
     if (locationConfig != null && locationConfig.getUrl() != null) {
@@ -131,44 +125,3 @@ Closure githubOrg(Map args = [:]) {
         }
     }
 }
-
-
-// --dv
-def myCloud = new AzureVMCloudBuilder()
-.withCloudName("test")
-.withAzureCredentialsId("jenkinsServicePrincipal")
-.withExistingResourceGroupName("mgmt-vmimg-store-cnptest")
-.withMaxVirtualMachinesLimit("2")
-.withDeploymentTimeout("1200")
-.addNewTemplate()
-    .withName("test")
-    .withLabels("test")
-    .withDescription("Jenkins build agents for HMCTS")
-    .withWorkspace("test")
-    .withLocation("UK South")
-    .withUsageMode("Only build jobs with label expressions matching this node") 
-    .withVirtualMachineSize("Standard_D4_v3")
-    .withExistingStorageAccount("mgmtvmimgstorecnptest")
-    .withStorageAccountType("Standard_LRS")
-    .addNewAdvancedImage()
-        .withCustomManagedImage("/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555")
-        .withOsType("Linux")
-        .withLaunchMethod("SSH")
-        .withInitScript("usermod -a -G docker {{ jenkins_agent_user }}\numount /mnt/resource\nmkdir -pv {{ jenkins_home }}\nmount /dev/sdc1 {{ jenkins_home }}\nchown -R {{ jenkins_agent_user }}:{{ jenkins_agent_user }} {{ jenkins_home }}\nmv /tmp/jenkinsssh_id_rsa /home/{{ jenkins_agent_user }}/.ssh/id_rsa\nchown {{ jenkins_agent_user }}:{{ jenkins_agent_user }} /home/{{ jenkins_agent_user }}/.ssh/id_rsa\nchmod 0600 /home/{{ jenkins_agent_user }}/.ssh/id_rsa\nmv /tmp/vault-token /home/{{ jenkins_agent_user }}/.vault-token\nchown -R {{ jenkins_agent_user }}:{{ jenkins_agent_user }} /home/{{ jenkins_agent_user }}/.vault-token\nchmod 0600 /home/{{ jenkins_agent_user }}/.vault-token\nmkdir {{ jenkins_home }}/.gradle && echo 'org.gradle.daemon=false' >{{ jenkins_home }}/.gradle/gradle.properties\ncat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/{{ ansible_eth0.ipv4.address }}\nEOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n{{ jenkins_agent_user }} soft nofile {{ jenkins_nofile_soft }}\n{{ jenkins_agent_user }} hard nofile {{ jenkins_nofile_hard }}\n{{ jenkins_agent_user }} soft nproc {{ jenkins_nproc_soft }}\n{{ jenkins_agent_user }} hard nproc {{ jenkins_nproc_hard }}\nEOF\nssh-keyscan github.com github.com >> /home/{{ jenkins_agent_user }}/.ssh/known_hosts\nssh-keygen -F github.com -f /home/{{ jenkins_agent_user }}/.ssh/known_hosts # verifies key is correctly installed")
-        .withRunScriptAsRoot(true)
-        .withDoNotUseMachineIfInitFails(true)
-        .withVirtualNetworkName("vnet1")
-        .withVirtualNetworkResourceGroupName("vnet1-RG")
-        .withSubnetName("jenkins-subnet")
-        .withUsePrivateIP(true)
-        .withNumberOfExecutors("1")
-        .withJvmOptions("-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1")
-        .withEnableUAMI(true)
-        .withGetUamiID("/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/rgcnptestsandbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnpmitestinga")
-    .endAdvancedImage()
-    .withAdminCredential("vm_agent_creds")
-.endTemplate()
-.build();
-
-Jenkins.getInstance().clouds.add(myCloud);
-// --dv
