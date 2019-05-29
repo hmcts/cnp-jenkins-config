@@ -134,7 +134,7 @@ Closure githubOrg(Map args = [:]) {
 
 
 // --dv
-def myCloud = new com.microsoft.azure.vmagent.builders.AzureVMCloudBuilderr()
+def myCloud = new AzureVMCloudBuilder()
 .withCloudName("test")
 .withAzureCredentialsId("jenkinsServicePrincipal")
 .withExistingResourceGroupName("mgmt-vmimg-store-cnptest")
