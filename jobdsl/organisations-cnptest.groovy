@@ -1,6 +1,6 @@
 
 // --dv
-import com.microsoft.azure.vmagent.builders.*;
+import com.microsoft.azure.vmagent.builders.AzureVMCloudBuilder;
 import jenkins.model.Jenkins;
 import hudson.model.Node;
 // --dv
