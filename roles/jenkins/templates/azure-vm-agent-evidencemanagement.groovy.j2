@@ -1,21 +1,21 @@
 #!groovy
 import com.microsoft.azure.vmagent.builders.*;
 import jenkins.model.Jenkins;
-import hudson.model.Node.Mode;
+import hudson.model.Node;
 
 def myCloud = new AzureVMCloudBuilder()
-.withCloudName("{{ jenkins_agent_cloud_name_teamB }}")
+.withCloudName("{{ jenkins_agent_cloud_name_evidenceManagement }}")
 .withAzureCredentialsId("{{ jenkins_agent_azure_sp_id }}")
 .withExistingResourceGroupName("mgmt-vmimg-store-{{ jenkins_agent_env }}")
 .withMaxVirtualMachinesLimit("{{ jenkins_agent_vm_limit }}")
 .withDeploymentTimeout("{{ jenkins_agent_deployment_timeout }}")
 .addNewTemplate()
-    .withName("{{ jenkins_agent_template_name_teamB }}")
-    .withLabels("{{ jenkins_agent_labels_teamB }}")
+    .withName("{{ jenkins_agent_template_name_evidenceManagement }}")
+    .withLabels("{{ jenkins_agent_labels_evidenceManagement }}")
     .withDescription("Jenkins build agents for HMCTS")
     .withWorkspace("{{ jenkins_home }}")
     .withLocation("{{ jenkins_agent_location }}")
-    .withUsageMode("{{ jenkins_agent_mode_teamB }}")
+    .withUsageMode("{{ jenkins_agent_mode_per_team }}") 
     .withVirtualMachineSize("{{ jenkins_agent_machine_size }}")
     .withExistingStorageAccount("mgmtvmimgstore{{ jenkins_agent_env }}")
     .withStorageAccountType("{{jenkins_agent_storage_type}}")
@@ -33,7 +33,7 @@ def myCloud = new AzureVMCloudBuilder()
         .withNumberOfExecutors("{{ jenkins_agent_executors }}")
         .withJvmOptions("{{ jenkins_agent_jvm_options}} ")
         .withEnableUAMI(true)
-        .withGetUamiID("{{ jenkins_agent_UAMI_teamB }}")
+        .withGetUamiID("{{ jenkins_agent_UAMI_evidenceManagement }}")
     .endAdvancedImage()
     .withAdminCredential("{{ jenkins_agent_vm_creds }}")
 .endTemplate()

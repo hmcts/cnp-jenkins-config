@@ -16,9 +16,113 @@
   become_user: "{{jenkins_process_user}}"
   register: result
   until: result is succeeded
-- name: Configure Azure Agent VM - UMSI TeamB profile used with Managed Identity login.
+- name: Configure Azure Agent VM - UMSI Idam profile used with Managed Identity login.
   jenkins_script:
-    script: "{{ lookup('template', 'templates/azure-vm-agent-teamB.groovy.j2') }}"
+    script: "{{ lookup('template', 'templates/azure-vm-agent-idam.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI accessManagement profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-accessmanagement.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI cnp profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-cnp.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI coreCaseData profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-corecasedata.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI courtsTribunalsServiceCentres profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-courtstribunalsservicecentres.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI evidenceManagement profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-evidencemanagement.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI feesPay profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-feespay.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI moneyClaims profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-moneyclaims.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI probate profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-probate.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI professionalApplications profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-professionalapplications.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI referenceData profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-referencedata.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI rpe profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-rpe.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI socialSecurityChildSupport profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-socialsecuritychildsupport.groovy.j2') }}"
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
+  become_user: "{{jenkins_process_user}}"
+  register: result
+  until: result is succeeded
+- name: Configure Azure Agent VM - UMSI softwareEngineering profile used with Managed Identity login.
+  jenkins_script:
+    script: "{{ lookup('template', 'templates/azure-vm-agent-softwareengineering.groovy.j2') }}"
     user: "{{ jenkins_admin_username }}"
     password: "{{ jenkins_admin_password }}"
   become_user: "{{jenkins_process_user}}"
