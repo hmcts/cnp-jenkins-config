@@ -22,7 +22,6 @@
       - { name: azure-commons, version: "0.2.9" }
       - { name: azure-credentials, version: "1.6.1" }
       - { name: azure-keyvault, version: "1.0.0" }
-      #- { name: azure-vm-agents, version: "0.8.0" }
       - { name: basic-branch-build-strategies, version: "1.1.1" }
       - { name: blueocean, version: "1.10.2" }
       - { name: blueocean-autofavorite, version: "1.2.3" }
