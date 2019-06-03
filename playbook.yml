@@ -423,7 +423,7 @@
     jenkins_agent_cloud_name_professionalApplications: "cnp-azure-professionalapplications"
     jenkins_agent_template_name_professionalApplications: "cnp-jenkins-professionalapplications"
     jenkins_agent_labels_professionalApplications: "professionalapplications"
-    jenkins_agent_UAMI_professionalApplications: ""
+    jenkins_agent_UAMI_professionalApplications: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/pa-sandbox-mi"
 
     # Team referenceData
     jenkins_agent_cloud_name_referenceData: "cnp-azure-referencedata"
