@@ -212,8 +212,7 @@ unclassified:
         successfulLogging: false
         userName: "build-failure-analyzer"
     maxLogSize: 0
-    noCausesMessage: "No problems were identified. If you know why this problem occurred,\
-      \ please add a suitable Cause for it."
+    noCausesMessage: 'No problems were identified. If you know why this problem occurred, please add a suitable Cause for it - <a href="https://tools.hmcts.net/confluence/display/CNP/Build+failure+analyzer">documentation</a>'
     nrOfScanThreads: 3
     testResultCategories: "test-failures"
     testResultParsingEnabled: true
