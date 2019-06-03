@@ -188,14 +188,35 @@ unclassified:
   azureKeyVault:
     keyVaultURL: https://infra-vault-sandbox.vault.azure.net
     credentialID: jenkinsServicePrincipal
-  sonarglobalconfiguration:
+  sonarGlobalConfiguration:
+    buildWrapperEnabled: false
     installations:
       - additionalAnalysisProperties: sonar.organization=hmcts
         name: SonarQube
-        serverAuthenticationToken: '${sonarcloud-api-token}'
+        credentialsId: 'sonarcloud-api-token'
         serverUrl: 'https://sonarcloud.io'
   timestamperConfig:
     allPipelines: true
+  buildFailureAnalyzer:
+    doNotAnalyzeAbortedJob: false
+    gerritTriggerEnabled: true
+    globalEnabled: true
+    graphsEnabled: true
+    knowledgeBase:
+      mongoDB:
+        dbName: "build-failure-analyzer"
+        enableStatistics: true
+        host: "sandbox-build-failure-analyzer.platform.hmcts.net"
+        password: "${bfa-user-password}"
+        port: 27017
+        successfulLogging: false
+        userName: "build-failure-analyzer"
+    maxLogSize: 0
+    noCausesMessage: "No problems were identified. If you know why this problem occurred,\
+      \ please add a suitable Cause for it."
+    nrOfScanThreads: 3
+    testResultCategories: "test-failures"
+    testResultParsingEnabled: true
 
 credentials:
   system:
@@ -212,6 +233,11 @@ credentials:
               id: jenkins-github-hmcts-api-token-text
               secret: '${hmcts-github-apikey-cnp}'
               description: CNP jenkins github token
+          - string:
+              scope: GLOBAL
+              id: sonarcloud-api-token
+              secret: '${sonarcloud-api-token}'
+              description: SonarCloud API token
           - string:
               scope: GLOBAL
               id: slack-token
