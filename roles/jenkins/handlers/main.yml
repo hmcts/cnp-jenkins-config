@@ -19,7 +19,7 @@
   # wait 5 seconds once it says it is up, so it can finish starting
   # otherwise strange issues were happening
 - name: wait for jenkins to start
-  shell: "curl --fail -D - --silent --max-time 5 http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}/cli/  1>/tmp/jenkinsuptest.log 2>/tmp/jenkinsuptest.err;  res=$?;  if [ \"$res\" -eq 0 ] || [ \"$res\" -eq 22 ]; then echo \"OK\"; fi && sleep 10 || sleep 1"
+  shell: "curl --fail -D - --silent --max-time 5 http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}/cli/  1>/dev/null 2>/dev/null;  res=$?;  if [ \"$res\" -eq 0 ] || [ \"$res\" -eq 22 ]; then echo \"OK\"; fi && sleep 10 || sleep 1"
   #shell: "curl --fail -D - --silent --max-time 5 http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}/ && sleep 10 || sleep 1"
   register: result
   # until we get a 403 or (get a 200 ok and it has finished loading):
