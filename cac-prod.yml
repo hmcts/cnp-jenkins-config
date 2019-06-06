@@ -21,6 +21,10 @@ jenkins:
             value : cnp-aks-cluster
           - key : PREVIEW_AKS_RESOURCE_GROUP
             value: cnp-aks-rg
+          - key: AKS_PREVIEW_SUBSCRIPTION_NAME
+            value: nonprod
+          - key: AKS_AAT_SUBSCRIPTION_NAME
+            value: nonprod
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false

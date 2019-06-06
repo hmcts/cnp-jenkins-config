@@ -25,6 +25,11 @@ jenkins:
             value: cnp-aks-sandbox-cluster
           - key: SANDBOX_AKS_RESOURCE_GROUP
             value: cnp-aks-sandbox-rg
+          - key: AKS_PREVIEW_SUBSCRIPTION_NAME
+            value: akssandbox
+          - key: AKS_AAT_SUBSCRIPTION_NAME
+            value: akssandbox
+
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false
