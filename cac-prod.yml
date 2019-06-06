@@ -22,9 +22,9 @@ jenkins:
           - key : PREVIEW_AKS_RESOURCE_GROUP
             value: cnp-aks-rg
           - key: AKS_PREVIEW_SUBSCRIPTION_NAME
-            value: nonprod
+            value: DCD-CNP-DEV
           - key: AKS_AAT_SUBSCRIPTION_NAME
-            value: nonprod
+            value: DCD-CNP-DEV
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false

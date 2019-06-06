@@ -26,9 +26,9 @@ jenkins:
           - key: SANDBOX_AKS_RESOURCE_GROUP
             value: cnp-aks-sandbox-rg
           - key: AKS_PREVIEW_SUBSCRIPTION_NAME
-            value: akssandbox
+            value: DCD-CFTAPPS-SBOX
           - key: AKS_AAT_SUBSCRIPTION_NAME
-            value: akssandbox
+            value: DCD-CFTAPPS-SBOX
 
   markupFormatter:
     rawHtml:
