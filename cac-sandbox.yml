@@ -22,9 +22,13 @@ jenkins:
           - key: GRADLE_OPTS
             value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
           - key: SANDBOX_AKS_CLUSTER_NAME
-            value: cnp-aks-sandbox-cluster
+            value: sbox-00-aks
           - key: SANDBOX_AKS_RESOURCE_GROUP
-            value: cnp-aks-sandbox-rg
+            value: sbox-00-rg
+          - key: AKS_PREVIEW_SUBSCRIPTION_NAME
+            value: DCD-CFTAPPS-SBOX
+          - key: AKS_AAT_SUBSCRIPTION_NAME
+            value: DCD-CFTAPPS-SBOX
   clouds:
   - azureVM:
       azureCredentialsId: "jenkinsServicePrincipal"

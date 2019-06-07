@@ -7,3 +7,5 @@ vault_uri: 'https://infra-vault-sandbox.vault.azure.net/'
 login_security_enabled: 'true'
 
 build_failure_analyzer_hostname: 'sandbox-build-failure-analyzer.platform.hmcts.net'
+
+api_key_username_cdm: 'jenkins-reform-cdm-sandbox'
