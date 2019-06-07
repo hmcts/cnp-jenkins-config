@@ -144,7 +144,7 @@ jobs:
 #  - file:  '/usr/share/jenkins/jobdsl/organisations.groovy'
 azureVM1:
   azureCredentialsId: "azure-cred"
-  cloudName: "azure"
+  cloudName: "azure1"
   deploymentTimeout: 1200
   existingResourceGroupName: "vm-agents"
   maxVirtualMachinesLimit: 10
@@ -198,7 +198,7 @@ azureVM1:
     virtualNetworkResourceGroupName: "vm-agent"
 azureVM2:
   azureCredentialsId: "azure-cred"
-  cloudName: "azure"
+  cloudName: "azure2"
   deploymentTimeout: 1200
   existingResourceGroupName: "vm-agents"
   maxVirtualMachinesLimit: 10
