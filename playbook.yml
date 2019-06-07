@@ -340,6 +340,108 @@
 
     sonar_server_url: "https://sonarcloud.io"
 
+    # Variables specific to azure-vm-agent plugin
+    jenkins_home: /opt/jenkins
+    jenkins_agent_user: "jenkinsssh"
+    jenkins_agent_cloud_name: "cnp-azure"
+    jenkins_agent_azure_sp_id: "jenkinsServicePrincipal"
+    jenkins_agent_vm_limit: "40"
+    jenkins_agent_deployment_timeout: "1200"
+    jenkins_agent_storage_type: "Standard_LRS"
+    jenkins_agent_machine_size: "Standard_D4_v3"
+    jenkins_agent_vm_creds: "vm_agent_creds"
+    jenkins_agent_template_name: "cnp-jenkins-builders"
+    jenkins_agent_labels: ""
+    jenkins_agent_executors: "1"
+    jenkins_agent_jvm_options: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
+    jenkins_agent_private_ip: true
+    jenkins_agent_mode_per_team: "Only build jobs with label expressions matching this node"
+    
+    # Team A
+    jenkins_agent_cloud_name_teamA: "cnp-azure-team-a"
+    jenkins_agent_template_name_teamA: "cnp-jenkins-builders-team-a"
+    jenkins_agent_labels_teamA: "teama"
+    jenkins_agent_UAMI_teamA: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/rgcnptestsandbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnpmitestinga"
+
+    
+    # Team Idam
+    jenkins_agent_cloud_name_Idam: "cnp-azure-idam"
+    jenkins_agent_template_name_Idam: "cnp-jenkins-builders-idam"
+    jenkins_agent_labels_Idam: "idam"
+    jenkins_agent_UAMI_Idam: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/idam-sandbox-mi"
+
+    # Team accessManagement
+    jenkins_agent_cloud_name_accessManagement: "cnp-azure-accessmanagement"
+    jenkins_agent_template_name_accessManagement: "cnp-jenkins-builders-accessmanagement"
+    jenkins_agent_labels_accessManagement: "accessmanagement"
+    jenkins_agent_UAMI_accessManagement: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/am-sandbox-mi"
+
+    # Team cnp
+    jenkins_agent_cloud_name_cnp: "cnp-azure-cnp"
+    jenkins_agent_template_name_cnp: "cnp-jenkins-builders-cnp"
+    jenkins_agent_labels_cnp: "cnp"
+    jenkins_agent_UAMI_cnp: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnp-sandbox-mi"
+
+    # Team coreCaseData
+    jenkins_agent_cloud_name_coreCaseData: "cnp-azure-corecasedata"
+    jenkins_agent_template_name_coreCaseData: "cnp-jenkins-builders-corecasedata"
+    jenkins_agent_labels_coreCaseData: "corecasedata"
+    jenkins_agent_UAMI_coreCaseData: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ccd-sandbox-mi"
+
+    # Team courtsTribunalsServiceCentres
+    jenkins_agent_cloud_name_courtsTribunalsServiceCentres: "cnp-azure-courtstribunalsservicecentres"
+    jenkins_agent_template_name_courtsTribunalsServiceCentres: "cnp-jenkins-builders-courtstribunalsservicecentres"
+    jenkins_agent_labels_courtsTribunalsServiceCentres: "courtstribunalsservicecentres"
+    jenkins_agent_UAMI_courtsTribunalsServiceCentres: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ctsc-sandbox-mi"
+
+    # Team evidenceManagement
+    jenkins_agent_cloud_name_evidenceManagement: "cnp-azure-evidencemanagement"
+    jenkins_agent_template_name_evidenceManagement: "cnp-jenkins-builders-evidencemanagement"
+    jenkins_agent_labels_evidenceManagement: "evidencemanagement"
+    jenkins_agent_UAMI_evidenceManagement: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/em-sandbox-mi"
+
+    # Team feesPay
+    jenkins_agent_cloud_name_feesPay: "cnp-azure-feespay"
+    jenkins_agent_template_name_feesPay: "cnp-jenkins-builders-feespay"
+    jenkins_agent_labels_feesPay: "feespay"
+    jenkins_agent_UAMI_feesPay: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/fp-sandbox-mi"
+
+    # Team moneyClaims
+    jenkins_agent_cloud_name_moneyClaims: "cnp-azure-moneyclaims"
+    jenkins_agent_template_name_moneyClaims: "cnp-jenkins-builders-moneyclaims"
+    jenkins_agent_labels_moneyClaims: "moneyclaims"
+    jenkins_agent_UAMI_moneyClaims: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mc-sandbox-mi"
+
+    # Team probate
+    jenkins_agent_cloud_name_probate: "cnp-azure-probate"
+    jenkins_agent_template_name_probate: "cnp-jenkins-builders-probate"
+    jenkins_agent_labels_probate: "probate"
+    jenkins_agent_UAMI_probate: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/probate-sandbox-mi"
+
+    # Team professionalApplications
+    jenkins_agent_cloud_name_professionalApplications: "cnp-azure-professionalapplications"
+    jenkins_agent_template_name_professionalApplications: "cnp-jenkins-professionalapplications"
+    jenkins_agent_labels_professionalApplications: "professionalapplications"
+    jenkins_agent_UAMI_professionalApplications: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/pa-sandbox-mi"
+
+    # Team referenceData
+    jenkins_agent_cloud_name_referenceData: "cnp-azure-referencedata"
+    jenkins_agent_template_name_referenceData: "cnp-jenkins-builders-referencedata"
+    jenkins_agent_labels_referenceData: "referencedata"
+    jenkins_agent_UAMI_referenceData: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/rd-sandbox-mi"
+
+    # Team socialSecurityChildSupport
+    jenkins_agent_cloud_name_socialSecurityChildSupport: "cnp-azure-socialsecuritychildsupport"
+    jenkins_agent_template_name_socialSecurityChildSupport: "cnp-jenkins-builders-socialsecuritychildsupport"
+    jenkins_agent_labels_socialSecurityChildSupport: "socialsecuritychildsupport"
+    jenkins_agent_UAMI_socialSecurityChildSupport: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/sscs-sandbox-mi"
+
+    # Team softwareEngineering
+    jenkins_agent_cloud_name_softwareEngineering: "cnp-azure-softwareengineering"
+    jenkins_agent_template_name_softwareEngineering: "cnp-jenkins-builders-softwareengineering"
+    jenkins_agent_labels_softwareEngineering: "softwareengineering"
+    jenkins_agent_UAMI_softwareEngineering: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/se-sandbox-mi"
+
     # JVM options for Jenkins based on https://support.cloudbees.com/hc/en-us/articles/204859670-Java-Heap-settings-best-practice
     # and https://jenkins.io/blog/2016/11/21/gc-tuning/. Below assumes Standard DS13 v2 (8 vcpus, 56 GB memory) host
     jvm_options: "-Xms6G -Xmx12G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
@@ -347,7 +449,7 @@
     jenkins_timezone: '-Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/London'
     jenkins_csp_policy: '-Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src ''self''; script-src ''self'' ''unsafe-inline''; style-src ''self'' ''unsafe-inline''; font-src data:\"'
 
-    casc_location: '-Dcasc.jenkins.config=https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/CNP-1283-CNPTest/cac-{{ resolved_env }}.yml'
+    casc_location: '-Dcasc.jenkins.config=https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/cac-{{ resolved_env }}.yml'
     jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }} {{ casc_location }}"
 
     build_failure_analyzer:
