@@ -492,7 +492,7 @@ jenkins:
         virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
   - azureVM:
       azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-courtstribunalsservicecentres"
+      cloudName: "cnp-azure-ctsc"
       deploymentTimeout: 1200
       existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
