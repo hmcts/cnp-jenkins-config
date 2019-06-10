@@ -52,19 +52,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -114,19 +127,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -178,19 +204,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -242,19 +281,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -306,19 +358,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -370,19 +435,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -434,19 +512,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -498,19 +589,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -562,19 +666,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -626,19 +743,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -690,19 +820,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -754,19 +897,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -818,19 +974,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -882,19 +1051,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
@@ -946,19 +1128,32 @@ jenkins:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
         imageTopLevelType: "advanced"
-        initScript: "usermod -a -G docker jenkinsssh\numount /mnt/resource\nmkdir\
-          \ -pv /opt/jenkins\nmount /dev/sdc1 /opt/jenkins\nchown -R jenkinsssh:jenkinsssh\
-          \ /opt/jenkins\nmv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa\n\
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa\nchmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token\nchown -R jenkinsssh:jenkinsssh\
-          \ /home/jenkinsssh/.vault-token\nchmod 0600 /home/jenkinsssh/.vault-token\n\
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties\n\
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF\nserver=/#/10.99.196.4\n\
-          EOF\nsystemctl restart dnsmasq\ncat >/etc/security/limits.d/30-jenkins.conf<<EOF\n\
-          jenkinsssh soft nofile 40960\njenkinsssh hard nofile 40960\njenkinsssh soft\
-          \ nproc 32768\njenkinsssh hard nproc 32768\nEOF\nssh-keyscan github.com\
-          \ github.com >> /home/jenkinsssh/.ssh/known_hosts\nssh-keygen -F github.com\
-          \ -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed"
+        initScript: | 
+          usermod -a -G docker jenkinsssh
+          umount /mnt/resource
+          mkdir -pv /opt/jenkins
+          mount /dev/sdc1 /opt/jenkins
+          chown -R jenkinsssh:jenkinsssh /opt/jenkins
+          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          mv /tmp/vault-token /home/jenkinsssh/.vault-token
+          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+          chmod 0600 /home/jenkinsssh/.vault-token
+          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+          server=/#/10.99.196.4
+          EOF
+          systemctl restart dnsmasq
+          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+          jenkinsssh soft nofile 40960
+          jenkinsssh hard nofile 40960
+          jenkinsssh soft
+          proc 32768
+          jenkinsssh hard nproc 32768
+          EOF
+          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
         installDocker: false
         installGit: false
         installMaven: false
