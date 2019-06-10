@@ -34,7 +34,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -47,7 +47,7 @@ jenkins:
         enableMSI: false
         enableUAMI: false
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -109,7 +109,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-team-a"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -122,7 +122,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -186,7 +186,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-idam"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -199,7 +199,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -263,7 +263,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-accessmanagement"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -276,7 +276,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -340,7 +340,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-cnp"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -353,7 +353,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -417,7 +417,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-corecasedata"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -430,7 +430,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -494,7 +494,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-courtstribunalsservicecentres"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -507,7 +507,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -571,7 +571,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-evidencemanagement"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -584,7 +584,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -648,7 +648,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-feespay"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -661,7 +661,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -725,7 +725,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-moneyclaims"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -738,7 +738,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -802,7 +802,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-probate"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -815,7 +815,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -879,7 +879,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-professionalapplications"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -892,7 +892,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -956,7 +956,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-cnp"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -969,7 +969,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -1033,7 +1033,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-socialsecuritychildsupport"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -1046,7 +1046,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
@@ -1110,7 +1110,7 @@ jenkins:
       azureCredentialsId: "jenkinsServicePrincipal"
       cloudName: "cnp-azure-softwareengineering"
       deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-cnptest"
+      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
       maxVirtualMachinesLimit: 40
       resourceGroupReferenceType: "existing"
       vmTemplates:
@@ -1123,7 +1123,7 @@ jenkins:
         enableMSI: false
         enableUAMI: true
         executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstorecnptest"
+        existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
           id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20181113164555"
           version: "latest"
