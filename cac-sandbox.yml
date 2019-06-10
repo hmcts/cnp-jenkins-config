@@ -60,7 +60,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -135,7 +135,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -212,7 +212,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -289,7 +289,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -366,7 +366,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -443,7 +443,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -520,7 +520,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -597,7 +597,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -674,7 +674,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -751,7 +751,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -828,7 +828,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -905,7 +905,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -982,7 +982,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -1059,7 +1059,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
@@ -1136,7 +1136,7 @@ jenkins:
           chown -R jenkinsssh:jenkinsssh /opt/jenkins
           mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
           chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa\n\
+          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
           mv /tmp/vault-token /home/jenkinsssh/.vault-token
           chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
           chmod 0600 /home/jenkinsssh/.vault-token
