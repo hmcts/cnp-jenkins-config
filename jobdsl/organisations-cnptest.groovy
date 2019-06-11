@@ -1,3 +1,4 @@
+
 private boolean isSandbox() {
     def locationConfig = jenkins.model.JenkinsLocationConfiguration.get()
     if (locationConfig != null && locationConfig.getUrl() != null) {

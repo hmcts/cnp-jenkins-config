@@ -24,13 +24,14 @@
   register: result
   # until we get a 403 or (get a 200 ok and it has finished loading):
   #until: (result.stdout.find("403 Forbidden") != -1) or ((result.stdout.find("200 OK") != -1) and (result.stdout.find("Please wait while") == -1))
-  until: (result.stdout.find("OK") != -1)
+  until: (result.stdout.find("OK"))
   retries: "{{ jenkins_connection_retries }}"
   delay: "{{ jenkins_connection_delay }}"
   changed_when: false
   args:
     warn: no
   listen: "wait for jenkins to start"
+  become: yes
 
 - name: reload jenkins config
   jenkins_script:

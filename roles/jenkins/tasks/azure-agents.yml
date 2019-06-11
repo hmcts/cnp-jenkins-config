@@ -1,6 +1,6 @@
 ---
 
-- name: Install Jenkins credential using script for the {{ credential.id }} secret.
+- name: Configure Azure Agent VM - generic profile used with legacy SPs login.
   jenkins_script:
     script: "{{ lookup('template', 'templates/azure-vm-agent.groovy.j2') }}"
     user: "{{ jenkins_admin_username }}"
