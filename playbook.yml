@@ -146,8 +146,9 @@
         checksum: 'sha256:03e2372d36c5bcd7794e0ccafc89bdb552f68ab905f82a55ebfd2e1f201d602f'
         url: 'https://github.com/hmcts/sonarqube-plugin/releases/download/sonar-2.9-hmcts/sonar.hpi'
       - file_name: 'azure-vm-agents-1.0.2-rc686.884e8965006c.hpi'
-        checksum: 'sha256:1ed4be337d1fd8d44c0757e0a85394754598b8883c601587bef91aba7f98d81e'
-        url: 'https://repo.jenkins-ci.org/incrementals/org/jenkins-ci/plugins/azure-vm-agents/1.0.2-rc691.d86f19c14fa7/azure-vm-agents-1.0.2-rc691.d86f19c14fa7.hpi'
+        checksum: 'sha256:acd324c6b07fa984fc47467642e4b07f28e47ff418c8cf23e1ad6b92a5e5f70b'
+        # master pre-release version
+        url: 'https://repo.jenkins-ci.org/incrementals/org/jenkins-ci/plugins/azure-vm-agents/1.0.2-rc667.b5aae866d4ad/azure-vm-agents-1.0.2-rc667.b5aae866d4ad.hpi'
 
     pipeline_jobs: []
     organization_folders: []

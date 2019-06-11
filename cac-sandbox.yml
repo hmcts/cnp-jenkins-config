@@ -29,1160 +29,1161 @@ jenkins:
             value: DCD-CFTAPPS-SBOX
           - key: AKS_AAT_SUBSCRIPTION_NAME
             value: DCD-CFTAPPS-SBOX
-  clouds:
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: false
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders"
-        usageMode: "Use this node as much as possible"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-team-a"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "teama"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-team-a"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/rgcnptestsandbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnpmitestinga"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-idam"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "idam"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-idam"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/idam-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-accessmanagement"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "accessmanagement"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-accessmanagement"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/am-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-cnp"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "cnp"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-cnp"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnp-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-corecasedata"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "corecasedata"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-corecasedata"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ccd-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-ctsc"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "courtstribunalsservicecentres"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-courtstribunalsservicecentres"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ctsc-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-evidencemanagement"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "evidencemanagement"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-evidencemanagement"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/em-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-feespay"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "feespay"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-feespay"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/fp-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-moneyclaims"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "moneyclaims"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-moneyclaims"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mc-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-probate"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "probate"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-probate"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/probate-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-professionalapplications"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "professionalapplications"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-professionalapplications"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/pa-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-cnp"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "cnp"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-cnp"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnp-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-socialsecuritychildsupport"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "socialsecuritychildsupport"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-socialsecuritychildsupport"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/sscs-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
-  - azureVM:
-      azureCredentialsId: "jenkinsServicePrincipal"
-      cloudName: "cnp-azure-softwareengineering"
-      deploymentTimeout: 1200
-      existingResourceGroupName: "mgmt-vmimg-store-sandbox"
-      maxVirtualMachinesLimit: 40
-      resourceGroupReferenceType: "existing"
-      vmTemplates:
-      - agentLaunchMethod: "SSH"
-        agentWorkspace: "/opt/jenkins"
-        builtInImage: "Windows Server 2016"
-        credentialsId: "vm_agent_creds"
-        diskType: "managed"
-        doNotUseMachineIfInitFails: true
-        enableMSI: false
-        enableUAMI: true
-        executeInitScriptAsRoot: true
-        existingStorageAccountName: "mgmtvmimgstoresandbox"
-        imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
-          version: "latest"
-        imageTopLevelType: "advanced"
-        initScript: | 
-          usermod -a -G docker jenkinsssh
-          umount /mnt/resource
-          mkdir -pv /opt/jenkins
-          mount /dev/sdc1 /opt/jenkins
-          chown -R jenkinsssh:jenkinsssh /opt/jenkins
-          mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-          chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-          chmod 0600 /home/jenkinsssh/.ssh/id_rsa
-          mv /tmp/vault-token /home/jenkinsssh/.vault-token
-          chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
-          chmod 0600 /home/jenkinsssh/.vault-token
-          mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
-          cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
-          server=/#/10.99.196.4
-          EOF
-          systemctl restart dnsmasq
-          cat >/etc/security/limits.d/30-jenkins.conf<<EOF
-          jenkinsssh soft nofile 40960
-          jenkinsssh hard nofile 40960
-          jenkinsssh soft
-          proc 32768
-          jenkinsssh hard nproc 32768
-          EOF
-          ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
-          ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
-        installDocker: false
-        installGit: false
-        installMaven: false
-        jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
-          \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
-          \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
-          \ -XX:G1SummarizeRSetStatsPeriod=1 "
-        labels: "softwareengineering"
-        location: "UK South"
-        noOfParallelJobs: 1
-        osDiskSize: 0
-        osType: "Linux"
-        preInstallSsh: true
-        retentionStrategy:
-          azureVMCloudRetentionStrategy:
-            idleTerminationMinutes: 60
-        shutdownOnIdle: false
-        storageAccountNameReferenceType: "existing"
-        storageAccountType: "Standard_LRS"
-        subnetName: "jenkins-subnet"
-        templateDesc: "Jenkins build agents for HMCTS"
-        templateDisabled: false
-        templateName: "cnp-jenkins-builders-softwareengineering"
-        uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/se-sandbox-mi"
-        usageMode: "Only build jobs with label expressions matching this node"
-        usePrivateIP: true
-        virtualMachineSize: "Standard_D4_v3"
-        virtualNetworkName: "mgmt-infra-cnptest"
-        virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # leave clouds section commented out until the plugin is updated with 1.0.2 version
+  # clouds:
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: false
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders"
+  #       usageMode: "Use this node as much as possible"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-team-a"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "teama"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-team-a"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/rgcnptestsandbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnpmitestinga"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-idam"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "idam"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-idam"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/idam-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-accessmanagement"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "accessmanagement"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-accessmanagement"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/am-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-cnp"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "cnp"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-cnp"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnp-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-corecasedata"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "corecasedata"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-corecasedata"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ccd-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-ctsc"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "courtstribunalsservicecentres"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-courtstribunalsservicecentres"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ctsc-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-evidencemanagement"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "evidencemanagement"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-evidencemanagement"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/em-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-feespay"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "feespay"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-feespay"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/fp-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-moneyclaims"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "moneyclaims"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-moneyclaims"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mc-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-probate"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "probate"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-probate"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/probate-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-professionalapplications"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "professionalapplications"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-professionalapplications"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/pa-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-cnp"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "cnp"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-cnp"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/cnp-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-socialsecuritychildsupport"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "socialsecuritychildsupport"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-socialsecuritychildsupport"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/sscs-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
+  # - azureVM:
+  #     azureCredentialsId: "jenkinsServicePrincipal"
+  #     cloudName: "cnp-azure-softwareengineering"
+  #     deploymentTimeout: 1200
+  #     existingResourceGroupName: "mgmt-vmimg-store-sandbox"
+  #     maxVirtualMachinesLimit: 40
+  #     resourceGroupReferenceType: "existing"
+  #     vmTemplates:
+  #     - agentLaunchMethod: "SSH"
+  #       agentWorkspace: "/opt/jenkins"
+  #       builtInImage: "Windows Server 2016"
+  #       credentialsId: "vm_agent_creds"
+  #       diskType: "managed"
+  #       doNotUseMachineIfInitFails: true
+  #       enableMSI: false
+  #       enableUAMI: true
+  #       executeInitScriptAsRoot: true
+  #       existingStorageAccountName: "mgmtvmimgstoresandbox"
+  #       imageReference:
+  #         id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190415135134"
+  #         version: "latest"
+  #       imageTopLevelType: "advanced"
+  #       initScript: | 
+  #         usermod -a -G docker jenkinsssh
+  #         umount /mnt/resource
+  #         mkdir -pv /opt/jenkins
+  #         mount /dev/sdc1 /opt/jenkins
+  #         chown -R jenkinsssh:jenkinsssh /opt/jenkins
+  #         mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+  #         chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+  #         chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+  #         mv /tmp/vault-token /home/jenkinsssh/.vault-token
+  #         chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+  #         chmod 0600 /home/jenkinsssh/.vault-token
+  #         mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+  #         cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+  #         server=/#/10.99.196.4
+  #         EOF
+  #         systemctl restart dnsmasq
+  #         cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+  #         jenkinsssh soft nofile 40960
+  #         jenkinsssh hard nofile 40960
+  #         jenkinsssh soft
+  #         proc 32768
+  #         jenkinsssh hard nproc 32768
+  #         EOF
+  #         ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+  #         ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+  #       installDocker: false
+  #       installGit: false
+  #       installMaven: false
+  #       jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+  #         \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+  #         \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+  #         \ -XX:G1SummarizeRSetStatsPeriod=1 "
+  #       labels: "softwareengineering"
+  #       location: "UK South"
+  #       noOfParallelJobs: 1
+  #       osDiskSize: 0
+  #       osType: "Linux"
+  #       preInstallSsh: true
+  #       retentionStrategy:
+  #         azureVMCloudRetentionStrategy:
+  #           idleTerminationMinutes: 60
+  #       shutdownOnIdle: false
+  #       storageAccountNameReferenceType: "existing"
+  #       storageAccountType: "Standard_LRS"
+  #       subnetName: "jenkins-subnet"
+  #       templateDesc: "Jenkins build agents for HMCTS"
+  #       templateDisabled: false
+  #       templateName: "cnp-jenkins-builders-softwareengineering"
+  #       uamiID: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/managed-identities-sandbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/se-sandbox-mi"
+  #       usageMode: "Only build jobs with label expressions matching this node"
+  #       usePrivateIP: true
+  #       virtualMachineSize: "Standard_D4_v3"
+  #       virtualNetworkName: "mgmt-infra-cnptest"
+  #       virtualNetworkResourceGroupName: "mgmt-infra-cnptest"
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false
