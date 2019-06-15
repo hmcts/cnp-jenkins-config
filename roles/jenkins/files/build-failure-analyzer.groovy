@@ -6,7 +6,7 @@ import jenkins.model.Jenkins
 import hudson.util.Secret
 
 Jenkins jenkins = Jenkins.getInstance();
-def plugin = jenkins.getPlugin('build-failure-analyzer');
+def plugin = jenkins.getDescriptor('com.sonyericsson.jenkins.plugins.bfa.PluginImpl');
 
 plugin.noCausesMessage = 'No problems were identified. If you know why this problem occurred, please add a suitable Cause for it - <a href="https://tools.hmcts.net/confluence/display/CNP/Build+failure+analyzer">documentation</a>';
 plugin.globalEnabled = true;
@@ -17,20 +17,25 @@ plugin.testResultParsingEnabled = true;
 plugin.testResultCategories = "test-failures";
 plugin.maxLogSize = 0;
 plugin.nrOfScanThreads = 3;
-plugin.sodVariables.setSodCorePoolNumberOfThreads(ScanOnDemandVariables.DEFAULT_SOD_COREPOOL_THREADS);
-plugin.sodVariables.setSodWaitForJobShutdownTimeout(ScanOnDemandVariables.DEFAULT_SOD_WAIT_FOR_JOBS_SHUTDOWN_TIMEOUT);
-plugin.sodVariables.setSodThreadKeepAliveTime(ScanOnDemandVariables.DEFAULT_SOD_THREADS_KEEP_ALIVE_TIME);
-plugin.sodVariables.setMinimumSodWorkerThreads(ScanOnDemandVariables.DEFAULT_MINIMUM_SOD_WORKER_THREADS);
-plugin.sodVariables.setMaximumSodWorkerThreads(ScanOnDemandVariables.DEFAULT_MAXIMUM_SOD_WORKER_THREADS);
+
+sodVariables = new ScanOnDemandVariables()
+
+sodVariables.setSodCorePoolNumberOfThreads(ScanOnDemandVariables.DEFAULT_SOD_COREPOOL_THREADS);
+sodVariables.setSodWaitForJobShutdownTimeout(ScanOnDemandVariables.DEFAULT_SOD_WAIT_FOR_JOBS_SHUTDOWN_TIMEOUT);
+sodVariables.setSodThreadKeepAliveTime(ScanOnDemandVariables.DEFAULT_SOD_THREADS_KEEP_ALIVE_TIME);
+sodVariables.setMinimumSodWorkerThreads(ScanOnDemandVariables.DEFAULT_MINIMUM_SOD_WORKER_THREADS);
+sodVariables.setMaximumSodWorkerThreads(ScanOnDemandVariables.DEFAULT_MAXIMUM_SOD_WORKER_THREADS);
+
+plugin.sodVariables = sodVariables
 
 plugin.knowledgeBase = new MongoDBKnowledgeBase(
-    "${hostname}",
-    27017,
-    "build-failure-analyzer", // dbName
-    "build-failure-analyzer", // username
-    Secret.fromString("${password}"),
-    true, // enableStatistics
-    false // successfulLogging
+        "${hostname}",
+        27017,
+        "build-failure-analyzer", // dbName
+        "build-failure-analyzer", // username
+        Secret.fromString("${password}"),
+        true, // enableStatistics
+        false // successfulLogging
 );
 
 plugin.save();
