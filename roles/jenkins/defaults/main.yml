@@ -1,7 +1,7 @@
 ---
 # Optional method of pinning a specific version of Jenkins and/or overriding the
 # default Jenkins packaging URL.
-jenkins_version: "2.150.2"
+jenkins_version: "2.176.1"
 # Pinning to LTS repository
 jenkins_pkg_url: "https://pkg.jenkins.io/redhat-stable"
 
