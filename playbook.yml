@@ -45,7 +45,7 @@
       - { name: blueocean-rest, version: "1.17.0" }
       - { name: blueocean-web, version: "1.17.0" }
       - { name: bouncycastle-api, version: "2.17" }
-      - { name: branch-api, version: "2.1.2" }
+      - { name: branch-api, version: "2.5.2" }
       - { name: build-monitor-plugin, version: "1.12+build.201809061734" }
       - { name: cloudbees-bitbucket-branch-source, version: "2.4.4" }
       - { name: cloudbees-folder, version: "6.9" }
