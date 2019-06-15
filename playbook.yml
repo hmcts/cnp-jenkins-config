@@ -21,130 +21,129 @@
       - { name: authentication-tokens, version: "1.3" }
       - { name: azure-commons, version: "1.0.3" }
       - { name: azure-credentials, version: "1.6.1" }
-      - { name: azure-keyvault, version: "1.0.0" }
-      - { name: basic-branch-build-strategies, version: "1.1.1" }
-      - { name: blueocean, version: "1.10.2" }
-      - { name: blueocean-autofavorite, version: "1.2.3" }
-      - { name: blueocean-bitbucket-pipeline, version: "1.10.2" }
-      - { name: blueocean-commons, version: "1.10.2" }
-      - { name: blueocean-config, version: "1.10.2" }
-      - { name: blueocean-core-js, version: "1.10.2" }
-      - { name: blueocean-dashboard, version: "1.10.2" }
-      - { name: blueocean-display-url, version: "2.2.0" }
-      - { name: blueocean-events, version: "1.10.2" }
-      - { name: blueocean-github-pipeline, version: "1.10.2" }
-      - { name: blueocean-git-pipeline, version: "1.10.2" }
-      - { name: blueocean-i18n, version: "1.10.2" }
-      - { name: blueocean-jira, version: "1.10.2" }
-      - { name: blueocean-jwt, version: "1.10.2" }
-      - { name: blueocean-personalization, version: "1.10.2" }
-      - { name: blueocean-pipeline-api-impl, version: "1.10.2" }
-      - { name: blueocean-pipeline-editor, version: "1.10.2" }
-      - { name: blueocean-pipeline-scm-api, version: "1.10.2" }
-      - { name: blueocean-rest-impl, version: "1.10.2" }
-      - { name: blueocean-rest, version: "1.10.2" }
-      - { name: blueocean-web, version: "1.10.2" }
+      - { name: azure-keyvault, version: "1.2" }
+      - { name: basic-branch-build-strategies, version: "1.3.2" }
+      - { name: blueocean, version: "1.17.0" }
+      - { name: blueocean-autofavorite, version: "1.2.4" }
+      - { name: blueocean-bitbucket-pipeline, version: "1.17.0" }
+      - { name: blueocean-commons, version: "1.17.0" }
+      - { name: blueocean-config, version: "1.17.0" }
+      - { name: blueocean-core-js, version: "1.17.0" }
+      - { name: blueocean-dashboard, version: "1.17.0" }
+      - { name: blueocean-display-url, version: "2.3.0" }
+      - { name: blueocean-events, version: "1.17.0" }
+      - { name: blueocean-github-pipeline, version: "1.17.0" }
+      - { name: blueocean-git-pipeline, version: "1.17.0" }
+      - { name: blueocean-i18n, version: "1.17.0" }
+      - { name: blueocean-jira, version: "1.17.0" }
+      - { name: blueocean-jwt, version: "1.17.0" }
+      - { name: blueocean-personalization, version: "1.17.0" }
+      - { name: blueocean-pipeline-api-impl, version: "1.17.0" }
+      - { name: blueocean-pipeline-editor, version: "1.17.0" }
+      - { name: blueocean-pipeline-scm-api, version: "1.17.0" }
+      - { name: blueocean-rest-impl, version: "1.17.0" }
+      - { name: blueocean-rest, version: "1.17.0" }
+      - { name: blueocean-web, version: "1.17.0" }
       - { name: bouncycastle-api, version: "2.17" }
       - { name: branch-api, version: "2.1.2" }
       - { name: build-monitor-plugin, version: "1.12+build.201809061734" }
-      - { name: cloudbees-bitbucket-branch-source, version: "2.4.1" }
-      - { name: cloudbees-folder, version: "6.7" }
-      - { name: cloud-stats, version: "0.22" }
+      - { name: cloudbees-bitbucket-branch-source, version: "2.4.4" }
+      - { name: cloudbees-folder, version: "6.9" }
+      - { name: cloud-stats, version: "0.23" }
       - { name: command-launcher, version: "1.3" }
-      - { name: credentials-binding, version: "1.17" }
-      - { name: credentials, version: "2.1.18" }
+      - { name: credentials-binding, version: "1.19" }
+      - { name: credentials, version: "2.2.0" }
       - { name: custom-tools-plugin, version: "0.6" }
-      - { name: display-url-api, version: "2.3.0" }
-      - { name: docker-commons, version: "1.13" }
-      - { name: docker-workflow, version: "1.17" }
+      - { name: display-url-api, version: "2.3.1" }
+      - { name: docker-commons, version: "1.15" }
+      - { name: docker-workflow, version: "1.18" }
       - { name: durable-task, version: "1.29" }
-      - { name: extended-choice-parameter, version: "0.76" }
+      - { name: extended-choice-parameter, version: "0.78" }
       - { name: external-monitor-job, version: "1.7" }
       - { name: favorite, version: "2.3.2" }
-      - { name: gatling, version: "1.2.5" }
-      - { name: git-client, version: "2.7.6" }
+      - { name: gatling, version: "1.2.6" }
+      - { name: git-client, version: "2.7.7" }
       - { name: github-api, version: "1.95" }
-      - { name: github-branch-source, version: "2.4.2" }
-      - { name: github, version: "1.29.3" }
+      - { name: github-branch-source, version: "2.5.3" }
+      - { name: github, version: "1.29.4" }
       - { name: git-server, version: "1.7" }
-      - { name: git, version: "3.9.2" }
+      - { name: git, version: "3.10.0" }
       - { name: greenballs, version: "1.15" }
       - { name: handlebars, version: "1.1.1" }
-      - { name: handy-uri-templates-2-api, version: "2.1.6-1.0" }
+      - { name: handy-uri-templates-2-api, version: "2.1.7-1.0" }
       - { name: htmlpublisher, version: "1.18" }
       - { name: http_request, version: "1.8.22" }
-      - { name: jackson2-api, version: "2.9.8" }
+      - { name: jackson2-api, version: "2.9.9" }
       - { name: jacoco, version: "3.0.4" }
-      - { name: javadoc, version: "1.4" }
+      - { name: javadoc, version: "1.5" }
       - { name: jdk-tool, version: "1.2" }
-      - { name: jenkins-design-language, version: "1.10.2" }
-      - { name: jira, version: "3.0.5" }
-      - { name: job-dsl, version: "1.71" }
+      - { name: jenkins-design-language, version: "1.17.0" }
+      - { name: jira, version: "3.0.7" }
+      - { name: job-dsl, version: "1.74" }
       - { name: jquery-detached, version: "1.2.1" }
       - { name: jquery, version: "1.12.4-0" }
       - { name: jsch, version: "0.1.55" }
-      - { name: junit, version: "1.26.1" }
+      - { name: junit, version: "1.28" }
       - { name: ldap, version: "1.20" }
-      - { name: lockable-resources, version: "2.4" }
+      - { name: lockable-resources, version: "2.5" }
       - { name: mailer, version: "1.23" }
-      - { name: matrix-auth, version: "2.3" }
-      - { name: matrix-project, version: "1.13" }
-      - { name: maven-plugin, version: "3.2" }
-      - { name: mercurial, version: "2.5" }
+      - { name: matrix-auth, version: "2.4.2" }
+      - { name: matrix-project, version: "1.14" }
+      - { name: maven-plugin, version: "3.3" }
+      - { name: mercurial, version: "2.6" }
       - { name: momentjs, version: "1.1.1" }
-      - { name: monitoring, version: "1.76.0" }
-      - { name: pam-auth, version: "1.4" }
-      - { name: pipeline-build-step, version: "2.7" }
+      - { name: monitoring, version: "1.77.0" }
+      - { name: pam-auth, version: "1.5.1" }
+      - { name: pipeline-build-step, version: "2.9" }
       - { name: pipeline-github-lib, version: "1.0" }
-      - { name: pipeline-graph-analysis, version: "1.9" }
-      - { name: pipeline-input-step, version: "2.9" }
+      - { name: pipeline-graph-analysis, version: "1.10" }
+      - { name: pipeline-input-step, version: "2.10" }
       - { name: pipeline-milestone-step, version: "1.3.1" }
-      - { name: pipeline-model-api, version: "1.3.4.1" }
+      - { name: pipeline-model-api, version: "1.3.9" }
       - { name: pipeline-model-declarative-agent, version: "1.1.1" }
-      - { name: pipeline-model-definition, version: "1.3.4.1" }
-      - { name: pipeline-model-extensions, version: "1.3.4.1" }
-      - { name: pipeline-rest-api, version: "2.10" }
+      - { name: pipeline-model-definition, version: "1.3.9" }
+      - { name: pipeline-model-extensions, version: "1.3.9" }
+      - { name: pipeline-rest-api, version: "2.11" }
       - { name: pipeline-stage-step, version: "2.3" }
-      - { name: pipeline-stage-tags-metadata, version: "1.3.4.1" }
-      - { name: pipeline-stage-view, version: "2.10" }
-      - { name: pipeline-utility-steps, version: "2.2.0"}
+      - { name: pipeline-stage-tags-metadata, version: "1.3.9" }
+      - { name: pipeline-stage-view, version: "2.11" }
+      - { name: pipeline-utility-steps, version: "2.3.0"}
       - { name: plain-credentials, version: "1.5" }
       - { name: pubsub-light, version: "1.12" }
       - { name: run-condition, version: "1.2" }
       - { name: saml, version: "1.1.2" }
       - { name: sauce-ondemand, version: "1.184" }
-      - { name: scm-api, version: "2.3.0" }
-      - { name: script-security, version: "1.51" }
-      - { name: slack, version: "2.20" }
+      - { name: scm-api, version: "2.4.1" }
+      - { name: script-security, version: "1.60" }
+      - { name: slack, version: "2.24" }
       - { name: sse-gateway, version: "1.17" }
-      - { name: ssh-credentials, version: "1.14" }
-      - { name: structs, version: "1.17" }
+      - { name: ssh-credentials, version: "1.17" }
+      - { name: structs, version: "1.19" }
       - { name: timestamper, version: "1.9" }
-      - { name: token-macro, version: "2.6" }
-      - { name: variant, version: "1.1" }
+      - { name: token-macro, version: "2.8" }
+      - { name: variant, version: "1.2" }
       - { name: workflow-aggregator, version: "2.6" }
-      - { name: workflow-api, version: "2.33" }
-      - { name: workflow-basic-steps, version: "2.14" }
+      - { name: workflow-api, version: "2.35" }
+      - { name: workflow-basic-steps, version: "2.18" }
       - { name: workflow-cps-global-lib, version: "2.13" }
-      - { name: workflow-cps, version: "2.63" }
-      - { name: workflow-durable-task-step, version: "2.29" }
-      - { name: workflow-job, version: "2.31" }
-      - { name: workflow-multibranch, version: "2.20" }
-      - { name: workflow-scm-step, version: "2.7" }
-      - { name: workflow-step-api, version: "2.19" }
-      - { name: workflow-support, version: "3.2" }
+      - { name: workflow-cps, version: "2.70" }
+      - { name: workflow-durable-task-step, version: "2.31" }
+      - { name: workflow-job, version: "2.32" }
+      - { name: workflow-multibranch, version: "2.21" }
+      - { name: workflow-scm-step, version: "2.9" }
+      - { name: workflow-step-api, version: "2.20" }
+      - { name: workflow-support, version: "3.3" }
     # configuration as code must be added last as it applies security changes which block further cli commands
     late_jenkins_plugins:
-      - { name: configuration-as-code, version: "1.5" }
-      - { name: configuration-as-code-support, version: "1.5" }
+      - { name: configuration-as-code, version: "1.20" }
 
     jenkins_manual_plugins:
       - file_name: 'build-failure-analyzer.hpi'
-        checksum: 'sha256:2bc5baa25318b907d534692cd0e53a275999b4ca4341f72358c7f5123226f0cc'
-        url: 'https://github.com/hmcts/build-failure-analyzer-plugin/releases/download/1.21.1-hmcts/build-failure-analyzer.hpi'
+        checksum: 'sha256:fad32b428fe0eca9a36cf44086b38c3e38b90c991483d61fb077dd468f77ce5a'
+        url: 'https://github.com/hmcts/build-failure-analyzer-plugin/releases/download/1.23.0-hmcts/build-failure-analyzer.hpi'
       - file_name: 'sonar.hpi'
-        checksum: 'sha256:03e2372d36c5bcd7794e0ccafc89bdb552f68ab905f82a55ebfd2e1f201d602f'
-        url: 'https://github.com/hmcts/sonarqube-plugin/releases/download/sonar-2.9-hmcts/sonar.hpi'
+        checksum: 'sha256:d7951b2958141192f82d5a93f6426d45794730aeef5692c2fd32d548ad2917b9'
+        url: 'https://github.com/hmcts/sonarqube-plugin/releases/download/2.10-hmcts/sonar.hpi'
       # this is merged on master pending release and should be updated after 1.0.2 is release
       - file_name: 'azure-vm-agents-1.0.2-rc686.884e8965006c.hpi'
         checksum: 'sha256:acd324c6b07fa984fc47467642e4b07f28e47ff418c8cf23e1ad6b92a5e5f70b'
