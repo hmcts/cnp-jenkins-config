@@ -14,9 +14,9 @@ jenkins:
           - key: REGISTRY_NAME
             value: hmcts
           - key: AAT_AKS_CLUSTER_NAME
-            value: cnp-aat-cluster
+            value: aat-00-aks
           - key: AAT_AKS_RESOURCE_GROUP
-            value: cnp-aat-aks-rg
+            value: aat-00-rg
           - key: PREVIEW_AKS_CLUSTER_NAME
             value : cnp-aks-cluster
           - key : PREVIEW_AKS_RESOURCE_GROUP
@@ -24,7 +24,9 @@ jenkins:
           - key: AKS_PREVIEW_SUBSCRIPTION_NAME
             value: DCD-CNP-DEV
           - key: AKS_AAT_SUBSCRIPTION_NAME
-            value: DCD-CNP-DEV
+            value: DCD-CFTAPPS-STG
+          - key : AAT_TLS_KEY_VAULT
+            value: cftapps-stg
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false
