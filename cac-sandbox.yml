@@ -29,6 +29,51 @@ jenkins:
             value: DCD-CFTAPPS-SBOX
           - key: AKS_AAT_SUBSCRIPTION_NAME
             value: DCD-CFTAPPS-SBOX
+          - key : TEAMS
+            value: ["ccd":["team":"CCD","namespace":"ccd"],
+                    "cmc":["team":"Money Claims","namespace":"money-claims"],
+                    "custard":["team":"CNP","namespace":"cnp"],
+                    "cet":["team":"Civil Enforcement","namespace":"civil-enforcement"],
+                    "div":["team":"Divorce","namespace":"divorce"],
+                    "dm":["team":"CCD","namespace":"ccd"],
+                    "em":["team":"Evidence Mment","namespace":"evidence-mment"],
+                    "dg":["team":"Evidence Mment","namespace":"evidence-mment"],
+                    "finrem":["team":"Financial Remedy","namespace":"financial-remedy"],
+                    "ia":["team":"Immigration","namespace":"immigration"],
+                    "idam":["team":"IdAM","namespace":"idam"],
+                    "fees":["team":"Fees/Pay","namespace":"fees-pay"],
+                    "fees-register":["team":"Fees/Pay","namespace":"fees-pay"],
+                    "payment":["team":"Fees/Pay","namespace":"fees-pay"],
+                    "ccpay":["team":"Fees/Pay","namespace":"fees-pay"],
+                    "bar":["team":"Fees/Pay","namespace":"fees-pay"],
+                    "probate":["team":"Probate","namespace":"probate"],
+                    "bulk-scan":["team":"RPE","namespace":"rpe"],
+                    "rpe":["team":"RPE","namespace":"rpe"],
+                    "draft-store":["team":"RPE","namespace":"rpe"],
+                    "pbi":["team":"RPE","namespace":"rpe"],
+                    "jui":["team":"Professional Applications","namespace":"professional-applications"],
+                    "pui":["team":"Professional Applications","namespace":"professional-applications"],
+                    "xui":["team":"Professional Applications","namespace":"professional-applications"],
+                    "coh":["team":"Professional Applications","namespace":"professional-applications"],
+                    "rpa":["team":"Professional Applications","namespace":"professional-applications"],
+                    "rpx":["team":"Professional Applications","namespace":"professional-applications"],
+                    "ref":["team":"Professional Applications","namespace":"professional-applications"],
+                    "rhubarb":["team":"CNP","namespace":"cnp"],
+                    "rhubarb-shared-infrastructure":["team":"CNP","namespace":"cnp"],
+                    "plum":["team":"CNP","namespace":"cnp"],
+                    "crumble":["team":"CNP","namespace":"cnp"],
+                    "plum-shared-infrastructure":["team":"CNP","namespace":"cnp"],
+                    "sscs":["team":"SSCS","namespace":"sscs"],
+                    "sscs-cor":["team":"SSCS","namespace":"sscs"],
+                    "sscs-tya":["team":"SSCS","namespace":"sscs"],
+                    "sscs-tribunals":["team":"SSCS","namespace":"sscs"],
+                    "snl":["team":"SnL","namespace":"snl"],
+                    "am":["team":"AM","namespace":"am"],
+                    "fpl":["team":"Family Public Law","namespace":"family-public-law"],
+                    "ctsc":["team":"CTSC","namespace":"ctsc"],
+                    "rd":["team":"Reference Data","namespace":"reference-data"],
+                    "data-extractor":["team":"RPE","namespace":"rpe"]
+            ]
   # leave clouds section commented out until the plugin is updated with 1.0.2 version
   # clouds:
   # - azureVM:
