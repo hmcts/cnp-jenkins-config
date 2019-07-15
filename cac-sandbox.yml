@@ -29,6 +29,10 @@ jenkins:
             value: DCD-CFTAPPS-SBOX
           - key: AKS_AAT_SUBSCRIPTION_NAME
             value: DCD-CFTAPPS-SBOX
+          - key: AKS_AAT_INFRA_RESOURCE_GROUP
+            value: aks-infra-sbox-rg
+          - key: AKS_PROD_INFRA_RESOURCE_GROUP
+            value: aks-infra-sbox-rg
   # leave clouds section commented out until the plugin is updated with 1.0.2 version
   # clouds:
   # - azureVM:

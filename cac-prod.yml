@@ -25,6 +25,10 @@ jenkins:
             value: DCD-CNP-DEV
           - key: AKS_AAT_SUBSCRIPTION_NAME
             value: DCD-CFTAPPS-STG
+          - key: AKS_AAT_INFRA_RESOURCE_GROUP
+            value: aks-infra-aat-rg
+          - key: AKS_PROD_INFRA_RESOURCE_GROUP
+            value: aks-infra-prod-rg
           - key : AAT_AKS_KEY_VAULT
             value: cftapps-stg
   markupFormatter:
