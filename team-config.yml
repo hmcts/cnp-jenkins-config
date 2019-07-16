@@ -3,7 +3,7 @@ ccd:
   namespace:  "ccd"
 cmc:
   team:  "Money Claims"
-  namespace:  "money-claims",
+  namespace:  "money-claims"
 custard:
   team: "CNP"
   namespace:  "cnp"
