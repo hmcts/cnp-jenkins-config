@@ -127,3 +127,6 @@ rd:
 data-extractor:
   team: "Software Engineering"
   namespace: "rpe"
+data-generator:
+  team: "Software Engineering"
+  namespace: "rpe"
