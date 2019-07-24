@@ -210,7 +210,81 @@ jenkins:
       maximumAuthenticationLifetime: 1209600
       usernameAttributeName: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
       usernameCaseConversion: "none"
-
+  clouds:
+    - azureVM:
+        azureCredentialsId: "jenkinsServicePrincipal"
+        cloudName: "cnp-azure"
+        deploymentTimeout: 1200
+        existingResourceGroupName: "mgmt-vmimg-store-prod"
+        maxVirtualMachinesLimit: 60
+        resourceGroupReferenceType: "existing"
+        vmTemplates:
+        - agentLaunchMethod: "SSH"
+          agentWorkspace: "/opt/jenkins"
+          builtInImage: "Windows Server 2016"
+          credentialsId: "vm_agent_creds"
+          diskType: "managed"
+          doNotUseMachineIfInitFails: true
+          enableMSI: false
+          enableUAMI: false
+          executeInitScriptAsRoot: true
+          existingStorageAccountName: "mgmtvmimgstoreprod"
+          imageReference:
+            id: "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourceGroups/cnp-vmimages-prod/providers/Microsoft.Compute/images/moj-centos-agent74-20190415141712"
+          imageTopLevelType: "advanced"
+          initScript: |-
+            usermod -a -G docker jenkinsssh
+            umount /mnt/resource
+            mkdir -pv /opt/jenkins
+            mount /dev/sdc1 /opt/jenkins
+            chown -R jenkinsssh:jenkinsssh /opt/jenkins
+            mv /tmp/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+            chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+            chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+            mv /tmp/vault-token /home/jenkinsssh/.vault-token
+            chown -R jenkinsssh:jenkinsssh /home/jenkinsssh/.vault-token
+            chmod 0600 /home/jenkinsssh/.vault-token
+            mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' >/opt/jenkins/.gradle/gradle.properties
+            cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
+            server=/#/10.96.4.10
+            EOF
+            systemctl restart dnsmasq
+            cat >/etc/security/limits.d/30-jenkins.conf<<EOF
+            jenkinsssh soft nofile 40960
+            jenkinsssh hard nofile 40960
+            jenkinsssh soft nproc 32768
+            jenkinsssh hard nproc 32768
+            EOF
+            ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
+            ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
+          installDocker: false
+          installGit: false
+          installMaven: false
+          jvmOptions: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers\
+            \ -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled\
+            \ -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions\
+            \ -XX:G1SummarizeRSetStatsPeriod=1 "
+          location: "UK South"
+          noOfParallelJobs: 1
+          osDiskSize: 50
+          osType: "Linux"
+          preInstallSsh: true
+          retentionStrategy:
+            azureVMCloudRetentionStrategy:
+              idleTerminationMinutes: 60
+          shutdownOnIdle: false
+          storageAccountNameReferenceType: "existing"
+          storageAccountType: "Standard_LRS"
+          subnetName: "jenkins-subnet"
+          templateDesc: "Jenkins build agents for HMCTS"
+          templateDisabled: false
+          templateName: "cnp-jenkins-builders"
+          templateStatusDetails: "The provided Image ID does not exist"
+          usageMode: "Use this node as much as possible"
+          usePrivateIP: true
+          virtualMachineSize: "Standard_D4_v3"
+          virtualNetworkName: "mgmt-infra-prod"
+          virtualNetworkResourceGroupName: "mgmt-infra-prod"
 jobs:
   - url: https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/jobdsl/organisations.groovy
 
