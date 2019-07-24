@@ -29,10 +29,12 @@ jenkins:
             value: DCD-CFTAPPS-SBOX
           - key: AKS_AAT_SUBSCRIPTION_NAME
             value: DCD-CFTAPPS-SBOX
-          - key: AKS_AAT_INFRA_RESOURCE_GROUP
-            value: aks-infra-sbox-rg
-          - key: AKS_PROD_INFRA_RESOURCE_GROUP
-            value: aks-infra-sbox-rg
+          - key: AAT_AKS_KEY_VAULT
+            value: cftapps-sbox
+          - key: AKS_PROD_SUBSCRIPTION_NAME
+            value: DCD-CFTAPPS-SBOX
+          - key: PROD_AKS_KEY_VAULT
+            value: cftapps-sbox
   clouds:
   - azureVM:
       azureCredentialsId: "jenkinsServicePrincipal"
