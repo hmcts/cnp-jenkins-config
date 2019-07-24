@@ -25,6 +25,8 @@ jenkins:
             value: DCD-CNP-DEV
           - key: AKS_AAT_SUBSCRIPTION_NAME
             value: DCD-CFTAPPS-STG
+          - key : AAT_AKS_KEY_VAULT
+            value: cftapps-stg
   markupFormatter:
     rawHtml:
       disableSyntaxHighlighting: false
