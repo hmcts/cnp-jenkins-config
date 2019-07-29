@@ -73,6 +73,13 @@ jenkins:
           cat > /etc/dnsmasq.d/10-internal-forwarding<<EOF
           server=/#/10.99.196.7
           EOF
+
+          cat >> /home/jenkinsssh/.bashrc <<EOF
+          export NVM_DIR="/opt/nvm"
+          [ -s "/opt/nvm/nvm.sh" ] && \. "/opt/nvm/nvm.sh"  # This loads nvm
+          [ -s "/opt/nvm/bash_completion" ] && \. "/opt/nvm/bash_completion"  # This loads nvm bash_completion
+          EOF
+
           systemctl restart dnsmasq
           cat >/etc/security/limits.d/30-jenkins.conf<<EOF
           jenkinsssh soft nofile 40960
