@@ -130,3 +130,6 @@ data-extractor:
 data-generator:
   team: "Software Engineering"
   namespace: "rpe"
+camunda:
+  team: "Software Engineering"
+  namespace: "camunda"
