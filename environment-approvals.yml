@@ -1,3 +1,3 @@
 prod:
-  - hmcts/cnp-plum-recipes-service
-  - hmcts/cnp-plum-shared-infrastructure
+  - https://github.com/HMCTS/cnp-plum-recipes-service.git
+  - https://github.com/HMCTS/cnp-plum-shared-infrastructure.git
