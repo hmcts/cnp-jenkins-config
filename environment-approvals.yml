@@ -1,0 +1,3 @@
+prod:
+  - repo: https://github.com/HMCTS/cnp-plum-recipes-service.git
+  - repo: https://github.com/HMCTS/cnp-plum-shared-infrastructure.git
