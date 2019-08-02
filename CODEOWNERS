@@ -2,4 +2,4 @@
 
 * @hmcts/platform-engineering
 
-environment-approvals.yml @hmcts/production-apps-approvals
+/environment-approvals.yml  @hmcts/production-apps-approvals
