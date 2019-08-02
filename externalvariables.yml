@@ -5,7 +5,7 @@ env: sandbox
 Jhostname: jhostname
 
 #Get Values from Azure Vault
-github_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
+github_apik ey: "{{ lookup('azure_keyvault', 'secret_name=github-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 github_enterprise_apikey: "{{ lookup('azure_keyvault', 'secret_name=github-enterprise-apikey vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 pipelinemetrics_cosmosdb_key: "{{ lookup('azure_keyvault', 'secret_name=OWASPDb-Password vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
 owaspdb_password: "{{ lookup('azure_keyvault', 'secret_name=pipelinemetrics-cosmosdb-key vault_uri=https://infra-vault-sandbox.vault.azure.net/') }}"
