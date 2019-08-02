@@ -1,3 +1,5 @@
 # https://help.github.com/en/articles/about-code-owners
 
-externalvariables.yml @hmcts/platform-engineering @hmcts/production-apps-approvals @hmcts/devops
+* @hmcts/platform-engineering
+
+environment-approvals.yml @hmcts/production-apps-approvals
