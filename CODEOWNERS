@@ -1,0 +1,5 @@
+# https://help.github.com/en/articles/about-code-owners
+
+* @hmcts/platform-engineering
+
+environment-approvals.yml @hmcts/production-apps-approvals
