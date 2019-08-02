@@ -1,4 +1,4 @@
-# Ansible Role: Jenkins CI
+# Jenkins CI
 
 [![Build Status](https://travis-ci.org/geerlingguy/ansible-role-jenkins.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-jenkins)
 
