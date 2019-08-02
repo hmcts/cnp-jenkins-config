@@ -2,5 +2,4 @@
 
 * @hmcts/platform-engineering
 
-/environment-approvals.yml  @hmcts/production-apps-approvals
 externalvariables.yml @hmcts/production-apps-approvals
