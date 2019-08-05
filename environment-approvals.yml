@@ -87,6 +87,7 @@ prod:
   - repo: https://github.com/hmcts/probate-persistence-service.git
   - repo: https://github.com/hmcts/probate-shared-infrastructure.git
   - repo: https://github.com/hmcts/probate-submit-service.git
+  - repo: https://github.com/hmcts/probatemandb.git
   - repo: https://github.com/hmcts/rd-professional-api.git
   - repo: https://github.com/hmcts/rd-shared-infrastructure.git
   - repo: https://github.com/hmcts/rpa-coh-continuous-online-resolution.git
