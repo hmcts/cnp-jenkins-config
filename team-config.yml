@@ -97,19 +97,19 @@ xui:
 coh:
   team: "Professional Applications"
   namespace: "professional-applications"
-  defaultSlackChannel: "#rpe-build-notices"
+  defaultSlackChannel: "#coh-pipeline"
 rpa:
   team: "Professional Applications"
   namespace: "professional-applications"
-  defaultSlackChannel: "#rpe-build-notices"
+  defaultSlackChannel: "#rpa-pipeline"
 rpx:
   team: "Professional Applications"
   namespace: "professional-applications"
-  defaultSlackChannel: "#rpe-build-notices"
+  defaultSlackChannel: "#xui-pipeline"
 ref:
   team: "Professional Applications"
   namespace: "professional-applications"
-  defaultSlackChannel: "#rpe-build-notices"
+  defaultSlackChannel: ""
 rhubarb:
   team: "CNP"
   namespace: "cnp"
