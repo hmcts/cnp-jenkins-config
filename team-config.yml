@@ -19,17 +19,17 @@ div:
   namespace: "divorce"
   defaultSlackChannel: "#div-dev"
 dm:
-  team: "CCD"
-  namespace: "ccd"
-  defaultSlackChannel: "#ccd-master-builds"
+  team: "Evidence Mment"
+  namespace: "evidence-mment"
+  defaultSlackChannel: "#em-dev-chat"
 em:
   team: "Evidence Mment"
   namespace: "evidence-mment"
-  defaultSlackChannel: ""
+  defaultSlackChannel: "#em-dev-chat"
 dg:
   team: "Evidence Mment"
   namespace: "evidence-mment"
-  defaultSlackChannel: ""
+  defaultSlackChannel: "em-dev-chat"
 finrem:
   team: "Financial Remedy"
   namespace: "financial-remedy"
