@@ -1,135 +1,180 @@
 ccd:
   team: "CCD"
   namespace:  "ccd"
+  defaultSlackChannel: "#ccd-master-builds"
 cmc:
   team:  "Money Claims"
   namespace:  "money-claims"
+  defaultSlackChannel: "#cmc-tech-notification"
 custard:
   team: "CNP"
   namespace:  "cnp"
+  defaultSlackChannel: "#rpe-build-notices"
 cet:
   team: "Civil Enforcement"
   namespace: "civil-enforcement"
+  defaultSlackChannel: "#cet-pipeline"
 div:
   team: "Divorce"
   namespace: "divorce"
+  defaultSlackChannel: "#div-dev"
 dm:
   team: "CCD"
   namespace: "ccd"
+  defaultSlackChannel: "#ccd-master-builds"
 em:
   team: "Evidence Mment"
   namespace: "evidence-mment"
+  defaultSlackChannel: ""
 dg:
   team: "Evidence Mment"
   namespace: "evidence-mment"
+  defaultSlackChannel: ""
 finrem:
   team: "Financial Remedy"
   namespace: "financial-remedy"
+  defaultSlackChannel: "#finrem-dev"
 ia:
   team: "Immigration"
   namespace: "immigration"
+  defaultSlackChannel: "#ia-tech"
 idam:
   team: "IdAM"
   namespace: "idam"
+  defaultSlackChannel: "#idam_tech"
 fees:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  defaultSlackChannel: "#cc-payments-tech"
 fees-register:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  defaultSlackChannel: "#cc-payments-tech"
 payment:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  defaultSlackChannel: "#cc-payments-tech"
 ccpay:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  defaultSlackChannel: "#cc-payments-tech"
 bar:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  defaultSlackChannel: "#bar-tech"
 probate:
   team: "Probate"
   namespace: "probate"
+  defaultSlackChannel: "#probate-jenkins"
 bulk-scan:
   team: "Software Engineering"
   namespace: "rpe"
+  defaultSlackChannel: "#bsp-build-notices"
 rpe:
   team: "Software Engineering"
   namespace: "rpe"
+  defaultSlackChannel: "#rpe-build-notices"
 draft-store:
   team: "Software Engineering"
   namespace: "rpe"
+  defaultSlackChannel: "#rpe-build-notices"
 pbi:
   team: "Software Engineering"
   namespace: "rpe"
+  defaultSlackChannel: "#rpe-build-notices"
 jui:
   team: "Professional Applications"
   namespace: "professional-applications"
+  defaultSlackChannel: "#jui-pipeline"
 pui:
   team: "Professional Applications"
   namespace: "professional-applications"
+  defaultSlackChannel: "#pui-pipeline"
 xui:
   team: "Professional Applications"
   namespace: "professional-applications"
+  defaultSlackChannel: "#xui-pipeline"
 coh:
   team: "Professional Applications"
   namespace: "professional-applications"
+  defaultSlackChannel: "#coh-pipeline"
 rpa:
   team: "Professional Applications"
   namespace: "professional-applications"
+  defaultSlackChannel: "#rpa-pipeline"
 rpx:
   team: "Professional Applications"
   namespace: "professional-applications"
+  defaultSlackChannel: "#xui-pipeline"
 ref:
   team: "Professional Applications"
   namespace: "professional-applications"
+  defaultSlackChannel: ""
 rhubarb:
   team: "CNP"
   namespace: "cnp"
+  defaultSlackChannel: "#rpe-build-notices"
 rhubarb-shared-infrastructure:
   team: "CNP"
   namespace: "cnp"
+  defaultSlackChannel: "#rpe-build-notices"
 plum:
   team: "CNP"
   namespace: "cnp"
+  defaultSlackChannel: "#rpe-build-notices"
 crumble:
   team: "CNP"
   namespace: "cnp"
+  defaultSlackChannel: "#rpe-build-notices"
 plum-shared-infrastructure:
   team: "CNP"
   namespace: "cnp"
+  defaultSlackChannel: "#rpe-build-notices"
 sscs:
   team: "SSCS"
   namespace: "sscs"
+  defaultSlackChannel: "#sscs-tech"
 sscs-cor:
   team: "SSCS"
   namespace: "sscs"
+  defaultSlackChannel: "#sscs-tech"
 sscs-tya:
   team: "SSCS"
   namespace: "sscs"
+  defaultSlackChannel: "#sscs-tech"
 sscs-tribunals:
   team: "SSCS"
   namespace: "sscs"
+  defaultSlackChannel: "#sscs-tech"
 snl:
   team: "SnL"
   namespace: "snl"
+  defaultSlackChannel: "#snl-master-builds"
 am:
   team: "AM"
   namespace: "am"
+  defaultSlackChannel: "#am-master-builds"
 fpl:
   team: "Family Public Law"
   namespace: "family-public-law"
+  defaultSlackChannel: "#fpla-tech"
 ctsc:
   team: "CTSC"
   namespace: "ctsc"
+  defaultSlackChannel: "#ctsc-master-builds"
 rd:
   team: "Reference Data"
   namespace: "reference-data"
+  defaultSlackChannel: ""
 data-extractor:
   team: "Software Engineering"
   namespace: "rpe"
+  defaultSlackChannel: "#rpe-build-notices"
 data-generator:
   team: "Software Engineering"
   namespace: "rpe"
+  defaultSlackChannel: "#rpe-build-notices"
 camunda:
   team: "Software Engineering"
   namespace: "camunda"
+  defaultSlackChannel: "#rpe-build-notices"
