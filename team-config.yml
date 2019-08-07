@@ -8,7 +8,7 @@ cmc:
   team:  "Money Claims"
   namespace:  "money-claims"
   slack:
-    contact_channel: "#cmc-tech-notification"
+    contact_channel: "#cmc-tech"
     build_notices_channel: "#cmc-tech-notification"
 custard:
   team: "CNP"
@@ -99,19 +99,19 @@ probate:
   team: "Probate"
   namespace: "probate"
   slack:
-    contact_channel: "#probate-jenkins"
+    contact_channel: "#probate"
     build_notices_channel: "#probate-jenkins"
 bulk-scan:
   team: "Software Engineering"
   namespace: "rpe"
   slack:
-    contact_channel: "#bsp-build-notices"
+    contact_channel: "#rpe"
     build_notices_channel: "#bsp-build-notices"
 rpe:
   team: "Software Engineering"
   namespace: "rpe"
   slack:
-    contact_channel: "#rpe-build-notices"
+    contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
 draft-store:
   team: "Software Engineering"
