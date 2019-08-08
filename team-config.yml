@@ -249,8 +249,8 @@ rd:
   team: "Reference Data"
   namespace: "reference-data"
   slack:
-    contact_channel: ""
-    build_notices_channel: ""
+    contact_channel: "#referencedata_team"
+    build_notices_channel: "#rd-master-builds"
 data-extractor:
   team: "Software Engineering"
   namespace: "rpe"
