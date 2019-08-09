@@ -269,3 +269,9 @@ camunda:
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+ethos:
+  team: "Ethos Replacement"
+  namespace: "ethos"
+  slack:
+    contact_channel: "#ethos-repl-manchester"
+    build_notices_channel: "#ethos-repl-service"
