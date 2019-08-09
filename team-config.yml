@@ -273,5 +273,5 @@ ethos:
   team: "Ethos Replacement"
   namespace: "ethos"
   slack:
-    contact_channel: "#ethos-replacement"
+    contact_channel: "#ethos-repl-manchester"
     build_notices_channel: "#ethos-repl-service"
