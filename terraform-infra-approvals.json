@@ -1,0 +1,29 @@
+{
+  "resources": [
+    {"type": "azurerm_key_vault_secret"},
+    {"type": "azurerm_resource_group"},
+    {"type": "azurerm_application_insights"},
+    {"type": "azurerm_storage_account"},
+    {"type": "azurerm_storage_container"}
+  ],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=master"},
+    {"source":  "git@github.com:hmcts/iterraform-module-servicebus-topic?ref=master"},
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-keyvault?ref=master"},
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-shutterpage?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-storage?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-redis?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-trafficmanager?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-palo-alto?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-action-group?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-application-insights?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-app-service-plan?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-waf?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-trafficmanager-endpoint?ref=master"}
+  ]
+}
