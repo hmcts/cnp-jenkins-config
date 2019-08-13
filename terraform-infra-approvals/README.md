@@ -19,7 +19,6 @@ An example whitelist file could be as follows:
 ```
 
 To allow infrastructure builds to progress, its definition is matched against a whitelist of resources and modules, 
-
 using the following command:
 
 ```shell script
