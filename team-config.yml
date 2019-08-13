@@ -275,3 +275,9 @@ ethos:
   slack:
     contact_channel: "#ethos-repl-manchester"
     build_notices_channel: "#ethos-repl-service"
+azdnspoc:
+  team: "DevOps"
+  namespace: "azdnspoc"
+  slack:
+    contact_channel: "#azdnspoc-notices"
+    build_notices_channel: "#azdnspoc-notices"
