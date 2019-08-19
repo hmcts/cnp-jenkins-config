@@ -113,7 +113,7 @@ rpe:
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
-core-infa:
+core-infra:
   team: "Software Engineering"
   namespace: "rpe"
   slack:
