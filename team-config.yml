@@ -253,7 +253,7 @@ ctsc:
     build_notices_channel: "#ctsc-master-builds"
 rd:
   team: "Reference Data"
-  namespace: "reference-data"
+  namespace: "rd"
   slack:
     contact_channel: "#referencedata_team"
     build_notices_channel: "#rd-master-builds"
