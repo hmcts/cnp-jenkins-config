@@ -54,7 +54,7 @@ finrem:
     build_notices_channel: "#finrem-dev"
 ia:
   team: "Immigration"
-  namespace: "immigration"
+  namespace: "ia"
   slack:
     contact_channel: "#ia-tech"
     build_notices_channel: "#ia-tech"
