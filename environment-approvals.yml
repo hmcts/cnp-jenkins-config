@@ -16,6 +16,7 @@ prod:
   - repo: https://github.com/hmcts/ccd-definition-designer-api.git
   - repo: https://github.com/hmcts/ccd-definition-store-api.git
   - repo: https://github.com/hmcts/ccd-logstash.git
+  - repo: https://github.com/hmcts/ccd-elastic-search.git
   - repo: https://github.com/hmcts/ccd-shared-infrastructure.git
   - repo: https://github.com/hmcts/ccd-user-profile-api.git
   - repo: https://github.com/hmcts/ccfr-fees-register-admin-web.git
