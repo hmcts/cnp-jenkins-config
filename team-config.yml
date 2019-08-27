@@ -102,10 +102,10 @@ probate:
     contact_channel: "#probate"
     build_notices_channel: "#probate-jenkins"
 bulk-scan:
-  team: "Software Engineering"
+  team: "Bulk Scanning and Printing"
   namespace: "rpe"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
 rpe:
   team: "Software Engineering"
