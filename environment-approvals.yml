@@ -119,3 +119,4 @@ prod:
   - repo: https://github.com/hmcts/sscs-track-your-appeal-frontend.git
   - repo: https://github.com/hmcts/sscs-track-your-appeal-notifications.git
   - repo: https://github.com/hmcts/sscs-tribunals-case-api.git
+  - repo: https://github.com/hmcts/rpa-dg-docassembly-api.git
