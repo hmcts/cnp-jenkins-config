@@ -169,6 +169,12 @@ jenkins:
         name: RD
         recurse: true
         title: Ref Data Dashboard
+    - buildMonitor:
+        includeRegex: >-
+          HMCTS_.*IDAM.*\/(idam-api|idam-web-public|idam-web-admin)\/PR.*
+        name: IDAM-WAPR
+        recurse: true
+        title: IDAM Web App PR Pipelines
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
