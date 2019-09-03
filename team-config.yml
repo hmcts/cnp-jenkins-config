@@ -133,7 +133,7 @@ probate:
     build_notices_channel: "#probate-jenkins"
 bulk-scan:
   team: "Bulk Scanning and Printing"
-  namespace: "rpe"
+  namespace: "bsp"
   slack:
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
