@@ -4,7 +4,8 @@
     {"type": "azurerm_resource_group"},
     {"type": "azurerm_application_insights"},
     {"type": "azurerm_storage_account"},
-    {"type": "azurerm_storage_container"}
+    {"type": "azurerm_storage_container"},
+    {"type": "random_string"}
   ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=master"},
@@ -24,6 +25,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-application-insights?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-app-service-plan?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=master"},
-    {"source":  "git@github.com:hmcts/cnp-module-trafficmanager-endpoint?ref=master"}
+    {"source":  "git@github.com:hmcts/cnp-module-trafficmanager-endpoint?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-metric-alert?ref=master"}
   ]
 }
