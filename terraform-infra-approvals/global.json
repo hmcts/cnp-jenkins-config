@@ -5,8 +5,7 @@
     {"type": "azurerm_application_insights"},
     {"type": "azurerm_storage_account"},
     {"type": "azurerm_storage_container"},
-    {"type": "random_string"},
-    {"type": "azurerm_template_deployment"}
+    {"type": "random_string"}
   ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=master"},
