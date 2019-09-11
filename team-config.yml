@@ -4,6 +4,36 @@ ccd:
   slack:
     contact_channel: "#ccd-questions-answers"
     build_notices_channel: "#ccd-master-builds"
+ccdprobate:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
+ccdcmc:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
+ccddivorce:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
+ccdsscs:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
+sweeper:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
 cmc:
   team:  "Money Claims"
   namespace:  "money-claims"
@@ -287,34 +317,3 @@ azdnspoc:
   slack:
     contact_channel: "#azdnspoc-notices"
     build_notices_channel: "#azdnspoc-notices"
-# The below block are unique logstash instances see ccd-logstash repo for more info
-ccdprobate:
-  team: "DevOps"
-  namespace: "ccdprobate"
-  slack:
-    contact_channel: "#devops"
-    build_notices_channel: "#ccd-devops"
-ccdcmc:
-  team: "DevOps"
-  namespace: "ccdcmc"
-  slack:
-    contact_channel: "#devops"
-    build_notices_channel: "#ccd-devops"
-ccddivorce:
-  team: "DevOps"
-  namespace: "ccddivorce"
-  slack:
-    contact_channel: "#devops"
-    build_notices_channel: "#ccd-devops"
-ccdsscs:
-  team: "DevOps"
-  namespace: "ccdsscs"
-  slack:
-    contact_channel: "#devops"
-    build_notices_channel: "#ccd-devops"
-sweeper:
-  team: "DevOps"
-  namespace: "sweeper"
-  slack:
-    contact_channel: "#devops"
-    build_notices_channel: "#ccd-devops"
