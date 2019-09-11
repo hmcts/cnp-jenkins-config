@@ -4,6 +4,36 @@ ccd:
   slack:
     contact_channel: "#ccd-questions-answers"
     build_notices_channel: "#ccd-master-builds"
+ccdprobate:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
+ccdcmc:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
+ccddivorce:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
+ccdsscs:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
+sweeper:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
 cmc:
   team:  "Money Claims"
   namespace:  "money-claims"
@@ -287,9 +317,3 @@ azdnspoc:
   slack:
     contact_channel: "#azdnspoc-notices"
     build_notices_channel: "#azdnspoc-notices"
-ccdprobate:
-  team: "DevOps"
-  namespace: "ccdprobate"
-  slack:
-    contact_channel: "#devops"
-    build_notices_channel: "#ccd-devops"
