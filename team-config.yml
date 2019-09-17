@@ -71,8 +71,8 @@ em:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
 dg:
-  team: "Evidence Mment"
-  namespace: "evidence-mment"
+  team: "Evidence Management"
+  namespace: "dg"
   slack:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
