@@ -1,0 +1,7 @@
+{
+  "resources": [],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=SIDM-3089"}
+  ]
+}
+
