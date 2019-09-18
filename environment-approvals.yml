@@ -5,7 +5,6 @@ prod:
   - repo: https://github.com/hmcts/bar-web.git
   - repo: https://github.com/hmcts/bulk-scan-orchestrator.git
   - repo: https://github.com/hmcts/bulk-scan-processor.git
-  - repo: https://github.com/hmcts/bulk-scan-payment-processor.git
   - repo: https://github.com/hmcts/bulk-scan-shared-infrastructure.git
   - repo: https://github.com/hmcts/ccd-admin-web.git
   - repo: https://github.com/hmcts/ccd-admin-web-api.git
