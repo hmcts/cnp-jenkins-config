@@ -94,6 +94,13 @@ idam:
   slack:
     contact_channel: "#idam_tech"
     build_notices_channel: "#idam_tech"
+# Shared with Idam and platform engineering
+core-compute:
+  team: "CNP"
+  namespace: "cnp"
+  slack:
+    contact_channel: "#rpe, #idam_tech"
+    build_notices_channel: "#rpe"    
 fees:
   team: "Fees/Pay"
   namespace: "fees-pay"
