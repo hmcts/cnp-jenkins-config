@@ -3,3 +3,4 @@
 * @hmcts/platform-engineering
 
 environment-approvals.yml @hmcts/production-apps-approvals
+terraform-infra-approvals/*.json @hmcts/production-apps-approvals
