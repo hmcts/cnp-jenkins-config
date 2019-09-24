@@ -27,6 +27,6 @@
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-trafficmanager-endpoint?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-metric-alert?ref=master"}
-    {"source":  "git@github.com:hmcts/moj-module-webapp?ref=master"}
+    {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=master"}
   ]
 }
