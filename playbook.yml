@@ -160,6 +160,7 @@
     api_key_username_div: 'jenkins-reform-div'
     api_key_username_finrem: 'jenkins-reform-finrem'
     api_key_username_iac: 'jenkins-reform-iac'
+    api_key_username_bsp: 'jenkins-reform-bulkscan'
     api_key_username_platform: 'jenkins-reform-platform'
     api_key_username_rpa: 'jenkins-reform-rpa'
     api_key_username_sscs: 'jenkins-reform-sscs'
@@ -206,6 +207,11 @@
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
           username: "{{ api_key_username_iac }}"
           password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-iac vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_bsp
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_bsp }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-bsp vault_uri={{ vault_uri }}', errors='warn') }}"
         - id: jenkins-github-hmcts-api-token_platform
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
