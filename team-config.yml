@@ -324,3 +324,9 @@ azdnspoc:
   slack:
     contact_channel: "#azdnspoc-notices"
     build_notices_channel: "#azdnspoc-notices"
+payments:
+  team: "Fees/Pay"
+  namespace: "fees-pay"
+  slack:
+    contact_channel: "#cc-payments-tech"
+    build_notices_channel: "#cc-payments-tech"
