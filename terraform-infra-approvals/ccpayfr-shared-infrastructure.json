@@ -1,0 +1,7 @@
+{
+  "resources": [],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/cnp-module-waf?ref=ccd/CHG0033576"}
+  ]
+}
+
