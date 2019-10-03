@@ -127,7 +127,7 @@ ccpay:
     build_notices_channel: "#cc-payments-tech"
 bar:
   team: "Fees/Pay"
-  namespace: "fees-pay"
+  namespace: "bar"
   slack:
     contact_channel: "#bar-tech"
     build_notices_channel: "#bar-tech"
