@@ -15,7 +15,7 @@ List<Map> orgs = [
         [name: 'CDM', regex: '\\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\\b'],
         [name: 'IAC', regex: 'ia.*'],
         [name: 'BSP', regex: '(send-letter-client|send-letter-service|send-letter-performance-tests|bulk-scan.*)'],
-        [name: 'Platform', regex: '(rpe-.*|draft-store.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template|data-extractor|camunda-.*)'],
+        [name: 'Platform', regex: '(rpe-.*|draft-store.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)'],
         [name: 'RPA', regex: '(rpa-.*|prd-.*|rpx-.*)'],
         [name: 'SSCS'],
         [name: 'Probate'],
