@@ -122,7 +122,7 @@ prod:
   - repo: https://github.com/hmcts/rpa-dg-docassembly-api.git
   - repo: https://github.com/hmcts/rpa-em-stitching-api.git
   - repo: https://github.com/hmcts/rpa-em-ccd-orchestrator.git
-  - repo: https://github.com/hmcts/rpa-em-annotation-api
-  - repo: https://github.com/hmcts/rpa-native-pdf-annotator-app
+  - repo: https://github.com/hmcts/rpa-em-annotation-api.git
+  - repo: https://github.com/hmcts/rpa-native-pdf-annotator-app.git
   - repo: https://github.com/hmcts/ccpay-payment-api-gateway.git
   
