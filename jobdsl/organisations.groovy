@@ -145,6 +145,17 @@ Closure githubOrg(Map args = [:]) {
                     strategyId(1)
                 }
 
+                if (isSandbox() || config.nightly) {
+                    def label = isSandbox() && !config.nightly ? "Jenkins - sandbox" : null
+                    if (label == null) {
+                        label = isSandbox() ? "Jenkins - sandbox nightly" : "Jenkins - nightly"
+                    }
+                    traits << 'org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait' {
+                        contextLabel(label)
+                        typeSuffix(false)
+                    }
+                }
+
                 // prevent builds triggering automatically from SCM push for sandbox and nightly builds
                 if ((isSandbox() || config.nightly) && !config.disableNamedBuildBranchStrategy) {
                     node / buildStrategies / 'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl'(plugin: 'basic-branch-build-strategies@1.1.1') {

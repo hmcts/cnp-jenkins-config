@@ -68,6 +68,7 @@
       - { name: github-api, version: "1.95" }
       - { name: github-branch-source, version: "2.5.8" }
       - { name: github, version: "1.29.5" }
+      - { name: github-scm-trait-notification-context, version: "1.1" }
       - { name: git-server, version: "1.8" }
       - { name: git, version: "3.121" }
       - { name: greenballs, version: "1.15" }
