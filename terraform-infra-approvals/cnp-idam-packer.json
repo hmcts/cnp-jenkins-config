@@ -1,0 +1,5 @@
+{
+  "resources": [
+      {"type": "azurerm_resource_group"}
+  ]
+}
