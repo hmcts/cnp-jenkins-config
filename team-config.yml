@@ -187,8 +187,8 @@ xui:
     contact_channel: "#xui-pipeline"
     build_notices_channel: "#xui-pipeline"
 coh:
-  team: "Professional Applications"
-  namespace: "professional-applications"
+  team: "Evidence Management"
+  namespace: "coh"
   slack:
     contact_channel: "#coh-pipeline"
     build_notices_channel: "#coh-pipeline"
