@@ -144,6 +144,12 @@ bulk-scan:
   slack:
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
+reform-scan: # separate `bulk-scan` product copy since #349
+  team: "Bulk Scanning and Printing"
+  namespace: "bsp"
+  slack:
+    contact_channel: "#rbs"
+    build_notices_channel: "#bsp-build-notices"
 rpe:
   team: "Software Engineering"
   namespace: "rpe"
