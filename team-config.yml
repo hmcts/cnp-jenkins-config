@@ -336,3 +336,9 @@ payments:
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
+mi:
+  team: "Management Information"
+  namesace: "mi"
+  slack:
+    contact_channel: "#mi-data-platform"
+    build_notices_channel: "#mi-dev"
