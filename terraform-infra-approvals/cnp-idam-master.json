@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {"type": "azurerm_key_vault_access_policy"},
+    {"type": "azurerm_managed_disk"},
+    {"type": "azurerm_network_security_group"},
+    {"type": "azurerm_network_security_rule"},
+    {"type": "azurerm_network_interface"},
+    {"type": "azurerm_public_ip"},
+    {"type": "azurerm_subnet"},
+    {"type": "azurerm_virtual_machine_data_disk_attachment"}
+  ],
+  "module_calls": [
+    {"source":  "modules/module-scaleset"},
+    {"source":  "git@github.com:hmcts/cnp-module-consul?ref=0.1.6"},
+    {"source":  "git@github.com:hmcts/cnp-module-vnet?ref=increase_subnets"}
+  ]
+}
