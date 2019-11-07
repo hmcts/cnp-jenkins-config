@@ -169,6 +169,12 @@ jenkins:
         name: RD
         recurse: true
         title: Ref Data Dashboard
+    - buildMonitor:
+        includeRegex: >-
+          ^HMCTS_.*(MI).*\/(mi-integration-service|mi-staging-service|mi-presentation-service|mi-housekeeping-service|mi-shared-infrastructure)\/master
+        name: MI
+        recurse: true
+        title: Management Information Dashboard
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
