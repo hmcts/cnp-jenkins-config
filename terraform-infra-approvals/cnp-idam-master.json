@@ -7,7 +7,9 @@
     {"type": "azurerm_network_interface"},
     {"type": "azurerm_public_ip"},
     {"type": "azurerm_subnet"},
-    {"type": "azurerm_virtual_machine_data_disk_attachment"}
+    {"type": "azurerm_virtual_machine"},
+    {"type": "azurerm_virtual_machine_data_disk_attachment"},
+    {"type": "null_resource"}
   ],
   "module_calls": [
     {"source":  "modules/module-scaleset"},
