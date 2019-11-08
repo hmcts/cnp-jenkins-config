@@ -12,7 +12,7 @@
     {"type": "null_resource"}
   ],
   "module_calls": [
-    {"source":  "modules/module-scaleset"},
+    {"source":  "modules/module-scaleset?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-consul?ref=0.1.6"},
     {"source":  "git@github.com:hmcts/cnp-module-vnet?ref=increase_subnets"}
   ]
