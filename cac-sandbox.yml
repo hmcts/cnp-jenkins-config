@@ -1327,7 +1327,7 @@ jenkins:
       idpMetadataConfiguration:
         period: 15
         url: "https://login.microsoftonline.com/hmcts.net/FederationMetadata/2007-06/FederationMetadata.xml"
-      maximumAuthenticationLifetime: 1209600
+      maximumAuthenticationLifetime: 7862400
       usernameAttributeName: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
       usernameCaseConversion: "none"
 # uncomment when testing your own jenkins build / local testing (also uncomment admin:authenticated in grantedPermissions)
