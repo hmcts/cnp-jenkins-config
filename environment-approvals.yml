@@ -125,4 +125,4 @@ prod:
   - repo: https://github.com/hmcts/rpa-em-annotation-api.git
   - repo: https://github.com/hmcts/rpa-native-pdf-annotator-app.git
   - repo: https://github.com/hmcts/ccpay-payment-api-gateway.git
-  
+  - repo: https://github.com/hmcts/ctsc-work-allocation.git
