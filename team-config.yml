@@ -28,6 +28,12 @@ ccdsscs:
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
+ccdethos:
+  team: "CCD"
+  namespace: "ccd"
+  slack:
+    contact_channel: "#devops"
+    build_notices_channel: "#ccd-devops"
 sweeper:
   team: "CCD"
   namespace: "ccd"
