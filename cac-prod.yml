@@ -319,6 +319,7 @@ unclassified:
   slackNotifier:
     teamDomain: hmcts-reform
     tokenCredentialId: slack-token
+    botUser: true
   githubpluginconfig:
     configs:
       - name: "GitHub"
