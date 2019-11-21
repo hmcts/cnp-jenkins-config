@@ -193,8 +193,8 @@ pui:
     contact_channel: "#pui-pipeline"
     build_notices_channel: "#pui-pipeline"
 xui:
-  team: "Professional Applications"
-  namespace: "professional-applications"
+  team: "Expert UI"
+  namespace: "xui"
   slack:
     contact_channel: "#xui-pipeline"
     build_notices_channel: "#xui-pipeline"
