@@ -128,4 +128,3 @@ prod:
   - repo: https://github.com/hmcts/ctsc-work-allocation.git
   - repo: https://github.com/hmcts/ccpay-bulkscanning-app.git
   - repo: https://github.com/hmcts/bulk-scan-payment-processor.git
-  
