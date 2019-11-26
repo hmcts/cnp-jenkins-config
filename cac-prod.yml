@@ -294,6 +294,10 @@ unclassified:
   location:
     adminAddress: jenkins-reform@hmcts.net
     url: 'https://build.platform.hmcts.net'
+  simple-theme-plugin:
+    elements:
+    - cssUrl:
+        url: "https://cdn.jsdelivr.net/gh/hmcts/cnp-jenkins-config/jenkins-material-theme.css"
   globalLibraries:
     libraries:
       - name: 'Infrastructure'
