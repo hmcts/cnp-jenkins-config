@@ -55,7 +55,7 @@ jenkins:
         executeInitScriptAsRoot: true
         existingStorageAccountName: "mgmtvmimgstoresandbox"
         imageReference:
-          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/moj-centos-agent74-20190730101652"
+          id: "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-vmimages-sandbox/providers/Microsoft.Compute/images/cnp-jenkins-agent74-20191201102022"
         imageTopLevelType: "advanced"
         initScript: |-
           usermod -a -G docker jenkinsssh
