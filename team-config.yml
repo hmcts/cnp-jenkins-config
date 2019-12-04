@@ -344,7 +344,7 @@ payments:
     build_notices_channel: "#cc-payments-tech"
 mi:
   team: "Management Information"
-  namesace: "mi"
+  namespace: "mi"
   slack:
     contact_channel: "#mi-data-platform"
     build_notices_channel: "#mi-dev"
