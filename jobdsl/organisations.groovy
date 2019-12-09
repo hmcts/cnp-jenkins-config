@@ -39,20 +39,6 @@ orgs.each { Map org ->
     }
 }
 
-if (isSandbox()) {
-    Map pipelineTestOrg = [
-            name                           : 'Pipeline_Test',
-            displayName                    : 'Pipeline Test',
-            regex                          : 'cnp-plum-.*|cnp-rhubarb-.*|cnp-jenkins-library',
-            branchesToInclude              : 'master PR*',
-            jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
-            suppressDefaultJenkinsfile     : true,
-            disableNamedBuildBranchStrategy: true,
-            credentialId                   : 'jenkins-github-hmcts-api-token_cnp'
-    ]
-    githubOrg(pipelineTestOrg).call()
-}
-
 /**
  * Creates a github organisation
  * @param args map of arguments
