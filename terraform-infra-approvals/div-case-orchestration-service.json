@@ -1,8 +1,0 @@
-{
-  "resources": [
-  ],
-  "module_calls": [
-
-    {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=revert-159-tf-0.12.x"}
-  ]
-}
