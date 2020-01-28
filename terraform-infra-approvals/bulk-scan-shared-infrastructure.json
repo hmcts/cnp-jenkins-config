@@ -1,7 +1,7 @@
 {
   "resources": [
     {"type": "azurerm_subnet_network_security_group_association"},
-    {"type": "azure_security_group"}
+    {"type": "azurerm_security_group"}
   ],
   "module_calls": []
 }
