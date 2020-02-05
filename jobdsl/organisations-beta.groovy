@@ -9,7 +9,7 @@ private boolean isSandbox() {
 
 List<Map> orgs = [
         [name: 'CNP'],
-        [name: 'Platform', regex: '(rpe-.*|draft-store.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)']
+        [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)']
 ]
 
 orgs.each { Map org ->
@@ -29,7 +29,7 @@ if (isSandbox()) {
             jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
             suppressDefaultJenkinsfile     : true,
             disableNamedBuildBranchStrategy: true,
-            credentialId                   : 'jenkins-github-hmcts-api-token_cnp'
+            credentialId                   : 'hmcts-jenkins-cnp'
     ]
     githubOrg(pipelineTestOrg).call()
 }
@@ -51,7 +51,7 @@ Closure githubOrg(Map args = [:]) {
             jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
             disableNamedBuildBranchStrategy: false,
-            credentialId                   : "jenkins-github-hmcts-api-token_" + args.name.toLowerCase()
+            credentialId                   : "hmcts-jenkins-" + args.name.toLowerCase()
     ] << args
     def name = config.name
 
