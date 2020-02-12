@@ -4,6 +4,6 @@
     {"type": "azurerm_network_security_group"}
   ],
   "module_calls": [
-   {"source":  "git@github.com:hmcts/cnp-module-palo-alto?ref=master"}
+   {"source":  "git@github.com:hmcts/cnp-module-palo-alto?ref=test-pip-upgrade"}
   ]
 }
