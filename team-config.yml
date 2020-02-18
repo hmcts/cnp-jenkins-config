@@ -348,3 +348,9 @@ mi:
   slack:
     contact_channel: "#mi-data-platform"
     build_notices_channel: "#mi-dev"
+pcq:
+  team: "PCQ"
+  namespace: "pcq"
+  slack:
+    contact_channel: "#pcq-dev"
+    build_notices_channel: "#pcq-builds"
