@@ -1,7 +1,8 @@
 {
   "resources": [],
   "module_calls": [
-    {"source":  "git@github.com:hmcts/cnp-module-waf?ref=SIDM-2128_add_idam_waf_exclusions"}
+    {"source":  "git@github.com:hmcts/cnp-module-waf?ref=SIDM-2128_add_idam_waf_exclusions"},
+    {"source":  "git@github.com:hmcts/moj-module-key-vault?ref=master"}
   ]
 }
 
