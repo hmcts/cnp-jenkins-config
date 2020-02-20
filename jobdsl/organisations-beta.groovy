@@ -11,6 +11,7 @@ List<Map> orgs = [
         [name: 'CNP'],
         [name: 'PCQ', regex: 'pcq-.*'],
         [name: 'Adoption'],
+        [name: 'XUI', regex: '(rpa-.*|prd-.*|rpx-.*)'],
         [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|feature-toggle.*|private-beta-invitation.*|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)']
 ]
 

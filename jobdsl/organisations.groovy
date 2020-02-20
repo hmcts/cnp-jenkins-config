@@ -14,7 +14,6 @@ List<Map> orgs = [
         [name: 'CDM', regex: '\\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\\b'],
         [name: 'IAC', regex: 'ia.*'],
         [name: 'BSP', regex: '(send-letter-client|send-letter-service|send-letter-performance-tests|bulk-scan-.*|blob-router-service|reform-scan-.*)'],
-        [name: 'RPA', regex: '(rpa-.*|prd-.*|rpx-.*)'],
         [name: 'SSCS'],
         [name: 'Probate'],
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
