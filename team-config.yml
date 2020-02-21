@@ -354,3 +354,9 @@ pcq:
   slack:
     contact_channel: "#pcq-dev"
     build_notices_channel: "#pcq-builds"
+adoption:
+  team: "Adoption"
+  namespace: "adoption"
+  slack:
+    contact_channel: "#fpla_adoption_tech"
+    build_notices_channel: "#fpla_adoption_tech"
