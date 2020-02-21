@@ -106,7 +106,7 @@ core-compute:
   namespace: "cnp"
   slack:
     contact_channel: "#rpe, #idam_tech"
-    build_notices_channel: "#rpe"
+    build_notices_channel: "#rpe"    
 fees:
   team: "Fees/Pay"
   namespace: "fees-pay"
