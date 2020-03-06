@@ -364,7 +364,7 @@
     jvm_options: "-Xms6G -Xmx12G -XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1"
 
     jenkins_timezone: '-Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/London'
-    jenkins_csp_policy: '-Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src ''self''; script-src ''self'' ''unsafe-inline''; style-src ''self'' ''unsafe-inline''; font-src data:\"'
+    jenkins_csp_policy: '-Dhudson.model.DirectoryBrowserSupport.CSP=\"default-src ''self''; script-src ''self'' ''unsafe-inline''; style-src ''self'' ''unsafe-inline''; font-src data: ''self''; img-src data: ''self''\"'
 
     casc_location: '-Dcasc.jenkins.config=https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/cac-{{ resolved_env }}.yml'
     jenkins_java_options: "-Djenkins.install.runSetupWizard=false {{ jvm_options }} {{ jenkins_csp_policy }} {{ jenkins_timezone }} {{ casc_location }}"
