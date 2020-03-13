@@ -2,6 +2,7 @@
 jenkins_role_yum_packages:
   - curl
   - libselinux-python
+  - libselinux-python3
   - java-1.8.0-openjdk
   - java-1.8.0-openjdk-devel
   - gettext
