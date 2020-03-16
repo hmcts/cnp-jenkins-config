@@ -2,6 +2,5 @@
   "resources": [],
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=cmc-in-prevention-mode"}
-    {"source":  "git@github.com:hmcts/cnp-module-palo-alto?ref=test-pip-upgrade"}
   ]
 }
