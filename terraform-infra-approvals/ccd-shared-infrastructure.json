@@ -8,7 +8,8 @@
     {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=0.0.1"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=curator"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=master"},
-    {"source":  "git@github.com:hmcts/cnp-module-logstash.git?ref=master"}
+    {"source":  "git@github.com:hmcts/cnp-module-logstash.git?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-palo-alto?ref=test-pip-upgrade"}
   ]
 }
 
