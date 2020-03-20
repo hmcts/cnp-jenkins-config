@@ -19,6 +19,7 @@ List<Map> orgs = [
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
         [name: 'AM'],
         [name: 'CTSC'],
+        [name: 'FPL'],
         [name: 'RD', displayName: 'Ref Data']
 ]
 orgs.each { Map org ->
