@@ -11,7 +11,6 @@ List<Map> orgs = [
         [name: 'CNP'],
         [name: 'PCQ'],
         [name: 'Adoption'],
-        [name: 'FPL'],
         [name: 'SSCS'],
         [name: 'XUI', regex: 'rpx-.*'],
         [name: 'MI', displayName: 'Management Information'],
