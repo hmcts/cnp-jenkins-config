@@ -12,6 +12,7 @@ List<Map> orgs = [
         [name: 'PCQ'],
         [name: 'Adoption'],
         [name: 'FPL'],
+        [name: 'SSCS'],
         [name: 'XUI', regex: 'rpx-.*'],
         [name: 'MI', displayName: 'Management Information'],
         [name: 'ETHOS', displayName: "Ethos replacement"],
