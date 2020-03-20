@@ -19,7 +19,6 @@ List<Map> orgs = [
         [name: 'Probate'],
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'SL', regex: 'snl.*'],
-        [name: 'DevOps', nightlyDisabled: true],
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
         [name: 'CET'],
         [name: 'FPL'],
