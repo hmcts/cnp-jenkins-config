@@ -13,7 +13,6 @@ List<Map> orgs = [
         [name: 'FinRem', displayName: 'Financial Remedy', regex: 'finrem.*'],
         [name: 'CDM', regex: '\\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\\b'],
         [name: 'IAC', regex: 'ia.*'],
-        [name: 'BSP', regex: '(send-letter-client|send-letter-service|send-letter-performance-tests|bulk-scan-.*|blob-router-service|reform-scan-.*)'],
         [name: 'RPA', regex: '(rpa-.*|prd-.*)'],
         [name: 'SSCS'],
         [name: 'Probate'],
