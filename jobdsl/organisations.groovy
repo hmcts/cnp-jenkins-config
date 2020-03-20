@@ -20,7 +20,6 @@ List<Map> orgs = [
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
         [name: 'AM'],
-        [name: 'ETHOS', displayName: "Ethos replacement"],
         [name: 'CTSC'],
         [name: 'RD', displayName: 'Ref Data']
 ]
