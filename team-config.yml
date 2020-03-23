@@ -144,6 +144,12 @@ probate:
   slack:
     contact_channel: "#probate"
     build_notices_channel: "#probate-jenkins"
+probatemandb:
+  team: "Probate"
+  namespace: "probate"
+  slack:
+    contact_channel: "#probate"
+    build_notices_channel: "#probate-jenkins"
 bulk-scan:
   team: "Bulk Scanning and Printing"
   namespace: "bsp"
