@@ -8,15 +8,16 @@ private boolean isSandbox() {
 }
 
 List<Map> orgs = [
-        [name: 'CNP'],
-        [name: 'PCQ'],
         [name: 'Adoption'],
+        [name: 'BSP', regex: '(send-letter-client|send-letter-service|send-letter-performance-tests|bulk-scan-.*|blob-router-service|reform-scan-.*)'],
+        [name: 'CNP'],
+        [name: 'CTSC'],
+        [name: 'ETHOS', displayName: "Ethos replacement"],
+        [name: 'MI', displayName: 'Management Information'],
+        [name: 'PCQ'],
+        [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|feature-toggle.*|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)'],
         [name: 'SSCS'],
         [name: 'XUI', regex: 'rpx-.*'],
-        [name: 'MI', displayName: 'Management Information'],
-        [name: 'ETHOS', displayName: "Ethos replacement"],
-        [name: 'BSP', regex: '(send-letter-client|send-letter-service|send-letter-performance-tests|bulk-scan-.*|blob-router-service|reform-scan-.*)'],
-        [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|feature-toggle.*|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)']
 ]
 
 orgs.each { Map org ->
