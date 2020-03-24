@@ -18,7 +18,6 @@ List<Map> orgs = [
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
         [name: 'AM'],
-        [name: 'FPL'],
         [name: 'RD', displayName: 'Ref Data']
 ]
 orgs.each { Map org ->
