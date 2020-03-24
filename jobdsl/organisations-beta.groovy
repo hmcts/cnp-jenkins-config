@@ -13,6 +13,7 @@ List<Map> orgs = [
         [name: 'CNP'],
         [name: 'CTSC'],
         [name: 'ETHOS', displayName: "Ethos replacement"],
+        [name: 'FPL'],
         [name: 'MI', displayName: 'Management Information'],
         [name: 'PCQ'],
         [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|feature-toggle.*|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)'],
