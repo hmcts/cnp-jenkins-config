@@ -10,6 +10,7 @@ private boolean isSandbox() {
 List<Map> orgs = [
         [name: 'FinRem', displayName: 'Financial Remedy', regex: 'finrem.*'],
         [name: 'CDM', regex: '\\b(?:document-management-store-app|dm-shared-infrastructure|ccd.*)\\b'],
+        [name: 'FPL'],
         [name: 'IAC', regex: 'ia.*'],
         [name: 'RPA', regex: '(rpa-.*|prd-.*)'],
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
