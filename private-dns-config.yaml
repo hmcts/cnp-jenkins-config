@@ -2,8 +2,8 @@ subscriptions:
   - name: "DTS-CFTSBOX-INTSVC"
     zoneTemplate: "service.core-compute-${environment}.internal"
     ttl: 300
-    active: false
-    consulActive: false
+    active: true
+    consulActive: true
     environments:
       - name: sandbox
       - name: idam-sandbox
@@ -16,7 +16,7 @@ subscriptions:
     zoneTemplate: "service.core-compute-${environment}.internal"
     ttl: 300
     active: false
-    consulActive: false
+    consulActive: true
     environments:
       - name: prod
         ttl: 3600
