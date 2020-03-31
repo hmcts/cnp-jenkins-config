@@ -1,0 +1,34 @@
+subscriptions:
+  - name: "DTS-CFTSBOX-INTSVC"
+    zoneTemplate: "service.core-compute-${environment}.internal"
+    ttl: 300
+    active: true
+    consulActive: true
+    environments:
+      - name: sandbox
+      - name: idam-sandbox
+      - name: idam-saat
+      - name: idam-sprod
+    resourceGroup: core-infra-intsvc-rg
+
+  - name: "DTS-CFTPTL-INTSVC"
+    zoneTemplate: "service.core-compute-${environment}.internal"
+    ttl: 300
+    active: false
+    consulActive: true
+    environments:
+      - name: prod
+        ttl: 3600
+      - name: idam-prod
+        ttl: 3600
+      - name: aat
+      - name: demo
+      - name: ithc
+      - name: perftest
+      - name: preview
+      - name: idam-aat
+      - name: idam-demo
+      - name: idam-ithc
+      - name: idam-perftest
+      - name: idam-preview
+    resourceGroup: core-infra-intsvc-rg
