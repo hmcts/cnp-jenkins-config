@@ -9,7 +9,6 @@ subscriptions:
       - name: idam-sandbox
       - name: idam-saat
       - name: idam-sprod
-    id: 1497c3d7-ab6d-4bb7-8a10-b51d03189ee3
     resourceGroup: core-infra-intsvc-rg
 
   - name: "DTS-CFTPTL-INTSVC"
@@ -33,5 +32,4 @@ subscriptions:
       - name: idam-ithc
       - name: idam-perftest
       - name: idam-preview
-    id: 1baf5470-1c3e-40d3-a6f7-74bfbce4b348
     resourceGroup: core-infra-intsvc-rg
