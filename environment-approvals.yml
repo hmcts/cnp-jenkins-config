@@ -96,6 +96,8 @@ prod:
   - repo: https://github.com/hmcts/rd-user-profile-api.git
   - repo: https://github.com/hmcts/rd-profile-sync.git
   - repo: https://github.com/hmcts/rd-shared-infrastructure.git
+  - repo: https://github.com/hmcts/rd-judicial-api.git
+  - repo: https://github.com/hmcts/rd-judicial-data-load.git
   - repo: https://github.com/hmcts/rpa-coh-continuous-online-resolution.git
   - repo: https://github.com/hmcts/rpa-em-ccd-orchestrator.git
   - repo: https://github.com/hmcts/rpa-em-showcase.git
