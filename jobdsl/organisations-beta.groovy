@@ -89,7 +89,7 @@ Closure githubOrg(Map args = [:]) {
         orgDescription = "<br>Nightly tests for ${config.displayName}  will be scheduled using this organisation on the AAT Version of the application"
 
         displayNamePrefix += " Nightly Tests"
-        wildcardBranchesToInclude = "master"
+        wildcardBranchesToInclude = "master nightly-dev"
 
         jenkinsfilePath = isSandbox() ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly'
         suppressDefaultJenkinsfile = true
