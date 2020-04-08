@@ -366,3 +366,9 @@ adoption:
   slack:
     contact_channel: "#fpla_adoption_tech"
     build_notices_channel: "#fpla_adoption_tech"
+ccpay-functions:
+  team: "Fees/Pay"
+  namespace: "fees-pay"
+  slack:
+    contact_channel: "#cc-payments-tech"
+    build_notices_channel: "#cc-payments-tech"
