@@ -1,6 +1,6 @@
 {
-  "resources": [
-    {"type": "azurerm_template_deployment"}
-  ],
-  "module_calls": []
+  "resources": [],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/ccpay-module-function?ref=master"}
+  ]
 }
