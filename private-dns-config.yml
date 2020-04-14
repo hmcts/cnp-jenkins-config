@@ -33,4 +33,5 @@ subscriptions:
       - name: idam-ithc
       - name: idam-perftest
       - name: idam-preview
+      - name: ethosldata
     resourceGroup: core-infra-intsvc-rg
