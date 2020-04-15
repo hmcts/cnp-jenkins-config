@@ -372,3 +372,10 @@ ccpay-functions:
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
+rse:
+  team: "Reform Software Engineering"
+  namespace: "rse"
+  slack:
+    contact_channel: "#reform-swe"
+    build_notices_channel: "#reform-swe-builds"
+
