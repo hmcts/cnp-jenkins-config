@@ -41,9 +41,6 @@ prod:
   - repo: https://github.com/hmcts/cnp-idam-vault.git
   - repo: https://github.com/hmcts/cnp-owaspdependencycheck-database.git
   - repo: https://github.com/hmcts/cnp-pipelinemetrics-database.git
-  - repo: https://github.com/hmcts/cnp-plum-frontend.git
-  - repo: https://github.com/hmcts/cnp-plum-recipes-service.git
-  - repo: https://github.com/hmcts/cnp-plum-shared-infrastructure.git
   - repo: https://github.com/hmcts/cnp-rhubarb-frontend.git
   - repo: https://github.com/hmcts/cnp-rhubarb-recipes-service.git
   - repo: https://github.com/hmcts/cnp-rhubarb-shared-infrastructure.git
