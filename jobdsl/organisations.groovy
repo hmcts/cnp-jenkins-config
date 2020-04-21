@@ -8,7 +8,6 @@ private boolean isSandbox() {
 }
 
 List<Map> orgs = [
-        [name: 'IAC', regex: 'ia.*'],
         [name: 'RPA', regex: '(rpa-.*|prd-.*)'],
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)']
