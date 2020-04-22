@@ -17,6 +17,7 @@ List<Map> orgs = [
         [name: 'CTSC'],
         [name: 'DIV', displayName: "Divorce"],
         [name: 'ETHOS', displayName: "Ethos replacement"],
+        [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'FinRem', displayName: "Financial Remedy"],
         [name: 'FPL'],
         [name: 'IAC', regex: 'ia.*'],

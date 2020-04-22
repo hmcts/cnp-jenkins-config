@@ -9,7 +9,6 @@ private boolean isSandbox() {
 
 List<Map> orgs = [
         [name: 'RPA', regex: '(rpa-.*|prd-.*)'],
-        [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)']
 ]
 orgs.each { Map org ->
