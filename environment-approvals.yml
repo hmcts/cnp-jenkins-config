@@ -97,11 +97,11 @@ prod:
   - repo: https://github.com/hmcts/rd-judicial-api.git
   - repo: https://github.com/hmcts/rd-judicial-data-load.git
   - repo: https://github.com/hmcts/rpa-coh-continuous-online-resolution.git
-  - repo: https://github.com/hmcts/rpa-em-ccd-orchestrator.git
-  - repo: https://github.com/hmcts/rpa-em-showcase.git
+  - repo: https://github.com/hmcts/em-ccd-orchestrator.git
+  - repo: https://github.com/hmcts/em-showcase.git
   - repo: https://github.com/hmcts/rpa-jui-webapp.git
   - repo: https://github.com/hmcts/rpa-professional-api.git
-  - repo: https://github.com/hmcts/rpa-shared-infrastructure.git
+  - repo: https://github.com/hmcts/em-shared-infrastructure.git
   - repo: https://github.com/hmcts/rpe-pdf-service.git
   - repo: https://github.com/hmcts/rpe-shared-infrastructure.git
   - repo: https://github.com/hmcts/rpx-shared-infrastructure.git
@@ -123,11 +123,11 @@ prod:
   - repo: https://github.com/hmcts/sscs-track-your-appeal-frontend.git
   - repo: https://github.com/hmcts/sscs-track-your-appeal-notifications.git
   - repo: https://github.com/hmcts/sscs-tribunals-case-api.git
-  - repo: https://github.com/hmcts/rpa-dg-docassembly-api.git
-  - repo: https://github.com/hmcts/rpa-em-stitching-api.git
+  - repo: https://github.com/hmcts/dg-docassembly-api.git
+  - repo: https://github.com/hmcts/em-stitching-api.git
   - repo: https://github.com/hmcts/rpa-em-ccd-orchestrator.git
-  - repo: https://github.com/hmcts/rpa-em-annotation-api.git
-  - repo: https://github.com/hmcts/rpa-native-pdf-annotator-app.git
+  - repo: https://github.com/hmcts/em-annotation-api.git
+  - repo: https://github.com/hmcts/em-native-pdf-annotator-app.git
   - repo: https://github.com/hmcts/ccpay-payment-api-gateway.git
   - repo: https://github.com/hmcts/ctsc-work-allocation.git
   - repo: https://github.com/hmcts/ccpay-bulkscanning-app.git
