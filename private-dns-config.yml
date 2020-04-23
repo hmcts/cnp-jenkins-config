@@ -16,7 +16,7 @@ subscriptions:
   - name: "DTS-CFTPTL-INTSVC"
     zoneTemplate: "service.core-compute-${environment}.internal"
     ttl: 300
-    active: false
+    active: true
     consulActive: true
     environments:
       - name: prod
