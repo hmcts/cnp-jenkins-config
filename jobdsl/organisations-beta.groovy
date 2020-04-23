@@ -17,7 +17,7 @@ List<Map> orgs = [
         [name: 'CTSC'],
         [name: 'DIV', displayName: "Divorce"],
         [name: 'ETHOS', displayName: "Ethos replacement"],
-        [name: 'EM',displayName: 'Evidence Management', regex: '\\b(?:document-management-store-app|dm-shared-infrastructure|em.*)\\b'],
+        [name: 'EM',displayName: 'Evidence Management', regex: '(document-management-store-app|dm-shared-infrastructure|em-.*)'],
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'FinRem', displayName: "Financial Remedy"],
         [name: 'FPL'],
