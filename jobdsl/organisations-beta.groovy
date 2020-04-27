@@ -22,7 +22,7 @@ List<Map> orgs = [
         [name: 'FinRem', displayName: "Financial Remedy"],
         [name: 'FPL'],
         [name: 'IAC', regex: 'ia.*'],
-        [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)']
+        [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
         [name: 'MI', displayName: 'Management Information'],
         [name: 'PCQ'],
         [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|feature-toggle.*|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)'],
