@@ -7,9 +7,7 @@ private boolean isSandbox() {
     }
 }
 
-List<Map> orgs = [
-        [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)']
-]
+List<Map> orgs = []
 orgs.each { Map org ->
     githubOrg(org).call()
     org << [nightly: true]
