@@ -1,3 +1,9 @@
+aac:
+  team: "CDM"
+  namespace:  "aac"
+  slack:
+    contact_channel: "#ccd-questions-answers"
+    build_notices_channel: "#ccd-master-builds"
 ccd:
   team: "CCD"
   namespace:  "ccd"
