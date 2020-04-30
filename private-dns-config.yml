@@ -29,7 +29,7 @@ subscriptions:
       - name: perftest
       - name: preview
         active: false
-        consulActive: false
+        consulActive: true
       - name: idam-aat
       - name: idam-demo
       - name: idam-ithc
