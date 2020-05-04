@@ -62,6 +62,8 @@ prod:
   - repo: https://github.com/hmcts/document-management-store-app.git
   - repo: https://github.com/hmcts/draft-store.git
   - repo: https://github.com/hmcts/ethos-repl-docmosis-service.git
+  - repo: https://github.com/hmcts/ecm-consumer.git
+  - repo: https://github.com/hmcts/ecm-shared-infrastructure.git
   - repo: https://github.com/hmcts/feature-toggle-api.git
   - repo: https://github.com/hmcts/finrem-case-orchestration-service.git
   - repo: https://github.com/hmcts/finrem-document-generator-client.git
