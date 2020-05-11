@@ -80,7 +80,7 @@ Closure githubOrg(Map args = [:]) {
 
     String folderSandboxPrefix = isSandbox() ? 'Sandbox_' : ''
     GString orgFolderName = "HMCTS_${folderSandboxPrefix}${name}"
-    String wildcardBranchesToInclude = isSandbox() ? '*' : 'master demo PR* perftest ithc preview ethosldata'
+    String wildcardBranchesToInclude = isSandbox() ? '*' : 'master demo PR-* perftest ithc preview ethosldata'
     GString orgDescription = "<br>${config.displayName} team repositories"
 
     String displayNamePrefix = "HMCTS"
