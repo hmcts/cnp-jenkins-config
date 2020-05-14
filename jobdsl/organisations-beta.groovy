@@ -147,6 +147,8 @@ Closure githubOrg(Map args = [:]) {
                 traits << 'org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait' {
                     strategyId(1)
                 }
+                traits << 'org.jenkinsci.plugins.github__branch__source.ExcludeArchivedRepositoriesTrait' {
+                }
 
                 if (isSandbox() || config.nightly) {
                     def label = isSandbox() && !config.nightly ? "Jenkins - sandbox" : null
