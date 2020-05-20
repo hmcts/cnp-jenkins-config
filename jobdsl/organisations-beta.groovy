@@ -25,7 +25,7 @@ List<Map> orgs = [
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
         [name: 'MI', displayName: 'Management Information'],
         [name: 'PCQ'],
-        [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|feature-toggle.*|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)'],
+        [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)'],
         [name: 'Probate'],
         [name: 'RD', displayName: 'Ref Data'],
         [name: 'SSCS'],
