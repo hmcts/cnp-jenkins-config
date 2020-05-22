@@ -1,5 +1,8 @@
 {
-  "resources": [],
+  "resources": [
+    {"type": "azurerm_monitor_metric_alert"},
+    {"type": "azurerm_monitor_action_group"}
+  ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-adf?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=ccd/CHG0033576"},
