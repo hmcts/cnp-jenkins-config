@@ -388,5 +388,5 @@ ucmc:
   team: "Unspecified Civil Money Claims"
   namespace: "ucmc"
   slack:
-    contact_channel: "#ucmc_dev"
-    build_notices_channel: "#ucmc_notifications"
+    contact_channel: "#ucmc_contact"
+    build_notices_channel: "#ucmc_notification"
