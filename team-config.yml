@@ -112,7 +112,7 @@ core-compute:
   namespace: "cnp"
   slack:
     contact_channel: "#rpe, #idam_tech"
-    build_notices_channel: "#rpe"    
+    build_notices_channel: "#rpe"
 fees:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -384,4 +384,9 @@ rse:
   slack:
     contact_channel: "#reform-swe"
     build_notices_channel: "#reform-swe-builds"
-
+ucmc:
+  team: "Unspecified Civil Money Claims"
+  namespace: "ucmc"
+  slack:
+    contact_channel: "#ucmc_contact"
+    build_notices_channel: "#ucmc_notification"
