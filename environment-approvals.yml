@@ -140,3 +140,4 @@ prod:
   - repo: https://github.com/hmcts/ccpay-bulkscanning-app.git
   - repo: https://github.com/hmcts/bulk-scan-payment-processor.git
   - repo: https://github.com/hmcts/reform-scan-notification-service.git
+  - repo: https://github.com/hmcts/em-icp-api.git 
