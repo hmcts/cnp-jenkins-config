@@ -390,3 +390,9 @@ ucmc:
   slack:
     contact_channel: "#ucmc_contact"
     build_notices_channel: "#ucmc_notification"
+hmi:
+  team: "Future hearings - HMI"
+  namespace: "hmi"
+  slack:
+    contact_channel: "#hmi-devs"
+    build_notices_channel: "#hmi-build-notices"
