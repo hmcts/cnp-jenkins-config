@@ -1,5 +1,8 @@
 {
-  "resources": [],
+  "resources": [
+    {"type": "azurerm_subnet_network_security_group_association"},
+    {"type": "azurerm_network_security_group"}
+  ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-palo-alto?ref=add-pdf-threat-exclusion"}
   ]
