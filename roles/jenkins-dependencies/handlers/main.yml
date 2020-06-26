@@ -1,5 +1,0 @@
----
-# handlers file for jenkins-dependencies
-- name: NodeJs Run setup script
-  become: 'yes'
-  command: '/tmp/node_setup'
