@@ -105,7 +105,6 @@ prod:
   - repo: https://github.com/hmcts/rd-judicial-data-load.git
   - repo: https://github.com/hmcts/rpa-coh-continuous-online-resolution.git
   - repo: https://github.com/hmcts/em-ccd-orchestrator.git
-  - repo: https://github.com/hmcts/em-showcase.git
   - repo: https://github.com/hmcts/rpa-jui-webapp.git
   - repo: https://github.com/hmcts/rpa-professional-api.git
   - repo: https://github.com/hmcts/em-shared-infrastructure.git
