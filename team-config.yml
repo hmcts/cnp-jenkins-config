@@ -390,6 +390,12 @@ ucmc:
   slack:
     contact_channel: "#ucmc_contact"
     build_notices_channel: "#ucmc_notification"
+unspec:
+  team: "Unspecified"
+  namespace: "unspec"
+  slack:
+    contact_channel: "#unspec_contact"
+    build_notices_channel: "#unspec_notification"
 hmi:
   team: "Future hearings - HMI"
   namespace: "hmi"
