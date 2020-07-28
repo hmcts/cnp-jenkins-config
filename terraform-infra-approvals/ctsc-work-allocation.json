@@ -1,0 +1,5 @@
+{
+  "module_calls": [
+   {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=common-tag-team-name"}
+  ]
+}
