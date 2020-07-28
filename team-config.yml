@@ -249,12 +249,14 @@ rhubarb-shared-infrastructure:
 plum:
   team: "CNP"
   namespace: "cnp"
+  agent: "k8s-agent"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
 crumble:
   team: "CNP"
   namespace: "cnp"
+  agent: "k8s-agent"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
