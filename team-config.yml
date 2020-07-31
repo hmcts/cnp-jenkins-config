@@ -400,3 +400,9 @@ hmi:
   slack:
     contact_channel: "#hmi-devs"
     build_notices_channel: "#hmi-build-notices"
+wa:
+  team: "Work Allocation"
+  namespace: "wa"
+  slack:
+    contact_channel: "#wa-tech"
+    build_notices_channel: "#wa-tech"
