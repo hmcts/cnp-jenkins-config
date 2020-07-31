@@ -33,6 +33,7 @@ List<Map> orgs = [
         [name: 'XUI', regex: 'rpx-.*'],
         [name: 'RSE', displayName: 'Reform Software Engineering'],
         [name: 'Unspec'],
+        [name: 'WA'],
 ]
 
 orgs.each { Map org ->
