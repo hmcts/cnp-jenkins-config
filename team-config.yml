@@ -337,6 +337,7 @@ data-generator:
 camunda:
   team: "Software Engineering"
   namespace: "camunda"
+  registry: "hmctsprivate"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
