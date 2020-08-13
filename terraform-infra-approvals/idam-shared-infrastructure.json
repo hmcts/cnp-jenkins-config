@@ -1,7 +1,8 @@
 {
-  "resources": [],
+  "resources": [
+    {"type": "azurerm_monitor_scheduled_query_rules_alert"}
+  ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=SIDM-2128_add_idam_waf_exclusions"}
   ]
 }
-
