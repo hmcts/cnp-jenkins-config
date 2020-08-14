@@ -159,6 +159,7 @@ probatemandb:
 bulk-scan:
   team: "Bulk Scanning and Printing"
   namespace: "bsp"
+  agent: "k8s-agent"
   slack:
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
