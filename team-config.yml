@@ -91,6 +91,7 @@ dg:
 finrem:
   team: "Financial Remedy"
   namespace: "financial-remedy"
+  agent: "k8s-agent"
   slack:
     contact_channel: "#finrem-dev"
     build_notices_channel: "#finrem-dev"
