@@ -117,7 +117,7 @@ dg:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
   tags:
-    application: em
+    application: dg
 finrem:
   team: "Financial Remedy"
   namespace: "financial-remedy"
