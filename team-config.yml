@@ -4,108 +4,144 @@ aac:
   slack:
     contact_channel: "#ccd-questions-answers"
     build_notices_channel: "#ccd-master-builds"
+  tags:
+    application: aac
 ccd:
   team: "CCD"
   namespace:  "ccd"
   slack:
     contact_channel: "#ccd-questions-answers"
     build_notices_channel: "#ccd-master-builds"
+  tags:
+    application: ccd
 ccdprobate:
   team: "CCD"
   namespace: "ccd"
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
+  tags:
+    application: ccd
 ccdcmc:
   team: "CCD"
   namespace: "ccd"
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
+  tags:
+    application: ccd
 ccddivorce:
   team: "CCD"
   namespace: "ccd"
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
+  tags:
+    application: ccd
 ccdsscs:
   team: "CCD"
   namespace: "ccd"
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
+  tags:
+    application: ccd
 ccdethos:
   team: "CCD"
   namespace: "ccd"
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
+  tags:
+    application: ccd
 sweeper:
   team: "CCD"
   namespace: "ccd"
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
+  tags:
+    application: ccd
 cmc:
   team:  "Money Claims"
   namespace:  "money-claims"
   slack:
     contact_channel: "#cmc-tech"
     build_notices_channel: "#cmc-tech-notification"
+  tags:
+    application: cmc
 custard:
   team: "CNP"
   namespace:  "cnp"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: custard
 cet:
   team: "Civil Enforcement"
   namespace: "civil-enforcement"
   slack:
     contact_channel: "#cet-pipeline"
     build_notices_channel: "#cet-pipeline"
+  tags:
+    application: cet
 div:
   team: "Divorce"
   namespace: "divorce"
   slack:
     contact_channel: "#div-dev"
     build_notices_channel: "#div-dev"
+  tags:
+    application: divorce
 dm:
   team: "Evidence Management"
   namespace: "dm-store"
   slack:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
+  tags:
+    application: dm
 em:
   team: "Evidence Management"
   namespace: "em"
   slack:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
+  tags:
+    application: em
 dg:
   team: "Evidence Management"
   namespace: "dg"
   slack:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
+  tags:
+    application: em
 finrem:
   team: "Financial Remedy"
   namespace: "financial-remedy"
   slack:
     contact_channel: "#finrem-dev"
     build_notices_channel: "#finrem-dev"
+  tags:
+    application: finrem
 ia:
   team: "Immigration"
   namespace: "ia"
   slack:
     contact_channel: "#ia-tech"
     build_notices_channel: "#ia-tech"
+  tags:
+    application: ia
 idam:
   team: "IdAM"
   namespace: "idam"
   slack:
     contact_channel: "#idam_tech"
     build_notices_channel: "#idam_tech"
+  tags:
+    application: idam
 # Shared with Idam and platform engineering
 core-compute:
   team: "CNP"
@@ -113,30 +149,40 @@ core-compute:
   slack:
     contact_channel: "#rpe, #idam_tech"
     build_notices_channel: "#rpe"
+  tags:
+    application: platform
 fees:
   team: "Fees/Pay"
   namespace: "fees-pay"
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
+  tags:
+    application: payment
 fees-register:
   team: "Fees/Pay"
   namespace: "fees-pay"
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
+  tags:
+    application: payment
 payment:
   team: "Fees/Pay"
   namespace: "fees-pay"
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
+  tags:
+    application: payment
 ccpay:
   team: "Fees/Pay"
   namespace: "fees-pay"
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
+  tags:
+    application: payment
 bar:
   team: "Fees/Pay"
   namespace: "bar"
@@ -144,30 +190,40 @@ bar:
     contact_channel: "#bar-tech"
     build_notices_channel: "#bar-tech"
   defaultSlackChannel: "#bar-tech"
+  tags:
+    application: payment
 probate:
   team: "Probate"
   namespace: "probate"
   slack:
     contact_channel: "#probate"
     build_notices_channel: "#probate-jenkins"
+  tags:
+    application: probate
 probatemandb:
   team: "Probate"
   namespace: "probate"
   slack:
     contact_channel: "#probate"
     build_notices_channel: "#probate-jenkins"
+  tags:
+    application: probate
 bulk-scan:
   team: "Bulk Scanning and Printing"
   namespace: "bsp"
   slack:
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
+  tags:
+    application: bulk-scan
 reform-scan: # separate `bulk-scan` product copy since #349
   team: "Bulk Scanning and Printing"
   namespace: "reform-scan"
   slack:
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
+  tags:
+    application: reform-scan
 rpe:
   team: "Software Engineering"
   namespace: "rpe"
@@ -175,12 +231,16 @@ rpe:
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: platform
 core-infra:
   team: "Software Engineering"
   namespace: "rpe"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: platform
 draft-store:
   team: "Software Engineering"
   namespace: "rpe"
@@ -188,66 +248,88 @@ draft-store:
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: platform
 pbi:
   team: "Software Engineering"
   namespace: "rpe"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: platform
 jui:
   team: "Professional Applications"
   namespace: "professional-applications"
   slack:
     contact_channel: "#jui-pipeline"
     build_notices_channel: "#jui-pipeline"
+  tags:
+    application: jui
 pui:
   team: "Professional Applications"
   namespace: "professional-applications"
   slack:
     contact_channel: "#pui-pipeline"
     build_notices_channel: "#pui-pipeline"
+  tags:
+    application: pui
 xui:
   team: "Expert UI"
   namespace: "xui"
   slack:
     contact_channel: "#xui-pipeline"
     build_notices_channel: "#xui-pipeline"
+  tags:
+    application: xui
 coh:
   team: "Evidence Management"
   namespace: "coh"
   slack:
     contact_channel: "#coh-pipeline"
     build_notices_channel: "#coh-pipeline"
+  tags:
+    application: coh
 rpa:
   team: "Professional Applications"
   namespace: "professional-applications"
   slack:
     contact_channel: "#rpa-pipeline"
     build_notices_channel: "#rpa-pipeline"
+  tags:
+    application: rpa
 rpx:
   team: "Professional Applications"
   namespace: "professional-applications"
   slack:
     contact_channel: "#xui-pipeline"
     build_notices_channel: "#xui-pipeline"
+  tags:
+    application: rpx
 ref:
   team: "Professional Applications"
   namespace: "professional-applications"
   slack:
     contact_channel: ""
     build_notices_channel: ""
+  tags:
+    application: ref
 rhubarb:
   team: "CNP"
   namespace: "cnp"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: rhubarb
 rhubarb-shared-infrastructure:
   team: "CNP"
   namespace: "cnp"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: rhubarb
 plum:
   team: "CNP"
   namespace: "cnp"
@@ -255,6 +337,8 @@ plum:
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: plum
 crumble:
   team: "CNP"
   namespace: "cnp"
@@ -262,78 +346,104 @@ crumble:
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: crumble
 plum-shared-infrastructure:
   team: "CNP"
   namespace: "cnp"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: plum
 sscs:
   team: "SSCS"
   namespace: "sscs"
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
+  tags:
+    application: sscs
 sscs-cor:
   team: "SSCS"
   namespace: "sscs"
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
+  tags:
+    application: sscs
 sscs-tya:
   team: "SSCS"
   namespace: "sscs"
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
+  tags:
+    application: sscs
 sscs-tribunals:
   team: "SSCS"
   namespace: "sscs"
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
+  tags:
+    application: sscs
 snl:
   team: "SnL"
   namespace: "snl"
   slack:
     contact_channel: "#snl-master-builds"
     build_notices_channel: "#snl-master-builds"
+  tags:
+    application: snl
 am:
   team: "AM"
   namespace: "am"
   slack:
     contact_channel: "#am-master-builds"
     build_notices_channel: "#am-master-builds"
+  tags:
+    application: am
 fpl:
   team: "Family Public Law"
   namespace: "family-public-law"
   slack:
     contact_channel: "#fpla-tech"
     build_notices_channel: "#fpla-tech"
+  tags:
+    application: fpl
 ctsc:
   team: "CTSC"
   namespace: "ctsc"
   slack:
     contact_channel: "#ctsc-master-builds"
     build_notices_channel: "#ctsc-master-builds"
+  tags:
+    application: ctsc
 rd:
   team: "Reference Data"
   namespace: "rd"
   slack:
     contact_channel: "#referencedata_team"
     build_notices_channel: "#rd-master-builds"
+  tags:
+    application: rd
 data-extractor:
   team: "Software Engineering"
   namespace: "rpe"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: mi
 data-generator:
   team: "Software Engineering"
   namespace: "rpe"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: mi
 camunda:
   team: "Software Engineering"
   namespace: "camunda"
@@ -341,69 +451,93 @@ camunda:
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: camunda
 ethos:
   team: "Ethos Replacement"
   namespace: "ethos"
   slack:
     contact_channel: "#ethos-repl-manchester"
     build_notices_channel: "#ethos-repl-service"
+  tags:
+    application: ethos
 azdnspoc:
   team: "DevOps"
   namespace: "azdnspoc"
   slack:
     contact_channel: "#azdnspoc-notices"
     build_notices_channel: "#azdnspoc-notices"
+  tags:
+    application: platform
 payments:
   team: "Fees/Pay"
   namespace: "fees-pay"
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
+  tags:
+    application: payment
 mi:
   team: "Management Information"
   namespace: "mi"
   slack:
     contact_channel: "#mi-data-platform"
     build_notices_channel: "#mi-dev"
+  tags:
+    application: mi
 pcq:
   team: "PCQ"
   namespace: "pcq"
   slack:
     contact_channel: "#pcq-dev"
     build_notices_channel: "#pcq-builds"
+  tags:
+    application: pcq
 adoption:
   team: "Adoption"
   namespace: "adoption"
   slack:
     contact_channel: "#fpla_adoption_tech"
     build_notices_channel: "#fpla_adoption_tech"
+  tags:
+    application: adoption
 ccpay-functions:
   team: "Fees/Pay"
   namespace: "fees-pay"
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
+  tags:
+    application: payment
 rse:
   team: "Reform Software Engineering"
   namespace: "rse"
   slack:
     contact_channel: "#reform-swe"
     build_notices_channel: "#reform-swe-builds"
+  tags:
+    application: platform
 unspec:
   team: "Unspecified"
   namespace: "unspec"
   slack:
     contact_channel: "#unspec_contact"
     build_notices_channel: "#unspec_notification"
+  tags:
+    application: unspec
 hmi:
   team: "Future hearings - HMI"
   namespace: "hmi"
   slack:
     contact_channel: "#hmi-devs"
     build_notices_channel: "#hmi-build-notices"
+  tags:
+    application: hmi
 wa:
   team: "Work Allocation"
   namespace: "wa"
   slack:
     contact_channel: "#wa-tech"
     build_notices_channel: "#wa-tech"
+  tags:
+    application: wa
