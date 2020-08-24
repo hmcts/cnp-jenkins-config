@@ -231,7 +231,7 @@ rpe:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
   tags:
-    application: platform
+    application: core
 core-infra:
   team: "Software Engineering"
   namespace: "rpe"
@@ -248,7 +248,7 @@ draft-store:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
   tags:
-    application: platform
+    application: core
 jui:
   team: "Professional Applications"
   namespace: "professional-applications"
@@ -386,7 +386,7 @@ snl:
     contact_channel: "#snl-master-builds"
     build_notices_channel: "#snl-master-builds"
   tags:
-    application: snl
+    application: scheduling-and-listing
 am:
   team: "AM"
   namespace: "am"
@@ -410,7 +410,7 @@ ctsc:
     contact_channel: "#ctsc-master-builds"
     build_notices_channel: "#ctsc-master-builds"
   tags:
-    application: ctsc
+    application: courts-tribunals-service-centre
 rd:
   team: "Reference Data"
   namespace: "rd"
@@ -483,7 +483,7 @@ pcq:
     contact_channel: "#pcq-dev"
     build_notices_channel: "#pcq-builds"
   tags:
-    application: pcq
+    application: protected-characteristics-questionnaire
 adoption:
   team: "Adoption"
   namespace: "adoption"
@@ -507,7 +507,7 @@ rse:
     contact_channel: "#reform-swe"
     build_notices_channel: "#reform-swe-builds"
   tags:
-    application: platform
+    application: core
 unspec:
   team: "Unspecified"
   namespace: "unspec"
