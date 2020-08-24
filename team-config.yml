@@ -5,7 +5,7 @@ aac:
     contact_channel: "#ccd-questions-answers"
     build_notices_channel: "#ccd-master-builds"
   tags:
-    application: aac
+    application: core-case-data
 ccd:
   team: "CCD"
   namespace:  "ccd"
@@ -13,7 +13,7 @@ ccd:
     contact_channel: "#ccd-questions-answers"
     build_notices_channel: "#ccd-master-builds"
   tags:
-    application: ccd
+    application: core-case-data
 ccdprobate:
   team: "CCD"
   namespace: "ccd"
@@ -21,7 +21,7 @@ ccdprobate:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
   tags:
-    application: ccd
+    application: core-case-data
 ccdcmc:
   team: "CCD"
   namespace: "ccd"
@@ -29,7 +29,7 @@ ccdcmc:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
   tags:
-    application: ccd
+    application: core-case-data
 ccddivorce:
   team: "CCD"
   namespace: "ccd"
@@ -37,7 +37,7 @@ ccddivorce:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
   tags:
-    application: ccd
+    application: core-case-data
 ccdsscs:
   team: "CCD"
   namespace: "ccd"
@@ -45,7 +45,7 @@ ccdsscs:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
   tags:
-    application: ccd
+    application: core-case-data
 ccdethos:
   team: "CCD"
   namespace: "ccd"
@@ -53,7 +53,7 @@ ccdethos:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
   tags:
-    application: ccd
+    application: core-case-data
 sweeper:
   team: "CCD"
   namespace: "ccd"
@@ -61,7 +61,7 @@ sweeper:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
   tags:
-    application: ccd
+    application: core-case-data
 cmc:
   team:  "Money Claims"
   namespace:  "money-claims"
@@ -69,7 +69,7 @@ cmc:
     contact_channel: "#cmc-tech"
     build_notices_channel: "#cmc-tech-notification"
   tags:
-    application: cmc
+    application: civil-money-claims
 custard:
   team: "CNP"
   namespace:  "cnp"
@@ -85,7 +85,7 @@ cet:
     contact_channel: "#cet-pipeline"
     build_notices_channel: "#cet-pipeline"
   tags:
-    application: cet
+    application: civil-enforcement
 div:
   team: "Divorce"
   namespace: "divorce"
@@ -101,7 +101,7 @@ dm:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
   tags:
-    application: dm
+    application: evidence-management
 em:
   team: "Evidence Management"
   namespace: "em"
@@ -109,7 +109,7 @@ em:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
   tags:
-    application: em
+    application: evidence-management
 dg:
   team: "Evidence Management"
   namespace: "dg"
@@ -117,7 +117,7 @@ dg:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
   tags:
-    application: dg
+    application: evidence-management
 finrem:
   team: "Financial Remedy"
   namespace: "financial-remedy"
@@ -125,7 +125,7 @@ finrem:
     contact_channel: "#finrem-dev"
     build_notices_channel: "#finrem-dev"
   tags:
-    application: finrem
+    application: financial-remedy
 ia:
   team: "Immigration"
   namespace: "ia"
@@ -133,7 +133,7 @@ ia:
     contact_channel: "#ia-tech"
     build_notices_channel: "#ia-tech"
   tags:
-    application: ia
+    application: immigration
 idam:
   team: "IdAM"
   namespace: "idam"
@@ -150,7 +150,7 @@ core-compute:
     contact_channel: "#rpe, #idam_tech"
     build_notices_channel: "#rpe"
   tags:
-    application: platform
+    application: core
 fees:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -158,7 +158,7 @@ fees:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: payment
+    application: fees-pay
 fees-register:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -166,7 +166,7 @@ fees-register:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: payment
+    application: fees-pay
 payment:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -174,7 +174,7 @@ payment:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: payment
+    application: fees-pay
 ccpay:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -182,7 +182,7 @@ ccpay:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: payment
+    application: fees-pay
 bar:
   team: "Fees/Pay"
   namespace: "bar"
@@ -191,7 +191,7 @@ bar:
     build_notices_channel: "#bar-tech"
   defaultSlackChannel: "#bar-tech"
   tags:
-    application: payment
+    application: fees-pay
 probate:
   team: "Probate"
   namespace: "probate"
@@ -215,7 +215,7 @@ bulk-scan:
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
   tags:
-    application: bulk-scan
+    application: bulk-scan-print
 reform-scan: # separate `bulk-scan` product copy since #349
   team: "Bulk Scanning and Printing"
   namespace: "reform-scan"
@@ -223,7 +223,7 @@ reform-scan: # separate `bulk-scan` product copy since #349
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
   tags:
-    application: reform-scan
+    application: bulk-scan-print
 rpe:
   team: "Software Engineering"
   namespace: "rpe"
@@ -231,7 +231,7 @@ rpe:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
   tags:
-    application: platform
+    application: core
 core-infra:
   team: "Software Engineering"
   namespace: "rpe"
@@ -239,7 +239,7 @@ core-infra:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
   tags:
-    application: platform
+    application: core
 draft-store:
   team: "Software Engineering"
   namespace: "rpe"
@@ -248,15 +248,7 @@ draft-store:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
   tags:
-    application: platform
-pbi:
-  team: "Software Engineering"
-  namespace: "rpe"
-  slack:
-    contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
-  tags:
-    application: platform
+    application: core
 jui:
   team: "Professional Applications"
   namespace: "professional-applications"
@@ -264,7 +256,7 @@ jui:
     contact_channel: "#jui-pipeline"
     build_notices_channel: "#jui-pipeline"
   tags:
-    application: jui
+    application: professional-applications
 pui:
   team: "Professional Applications"
   namespace: "professional-applications"
@@ -272,7 +264,7 @@ pui:
     contact_channel: "#pui-pipeline"
     build_notices_channel: "#pui-pipeline"
   tags:
-    application: pui
+    application: professional-applications
 xui:
   team: "Expert UI"
   namespace: "xui"
@@ -280,7 +272,7 @@ xui:
     contact_channel: "#xui-pipeline"
     build_notices_channel: "#xui-pipeline"
   tags:
-    application: xui
+    application: expert-ui
 coh:
   team: "Evidence Management"
   namespace: "coh"
@@ -288,7 +280,7 @@ coh:
     contact_channel: "#coh-pipeline"
     build_notices_channel: "#coh-pipeline"
   tags:
-    application: coh
+    application: evidence-management
 rpa:
   team: "Professional Applications"
   namespace: "professional-applications"
@@ -296,7 +288,7 @@ rpa:
     contact_channel: "#rpa-pipeline"
     build_notices_channel: "#rpa-pipeline"
   tags:
-    application: rpa
+    application: professional-applications
 rpx:
   team: "Professional Applications"
   namespace: "professional-applications"
@@ -304,7 +296,7 @@ rpx:
     contact_channel: "#xui-pipeline"
     build_notices_channel: "#xui-pipeline"
   tags:
-    application: rpx
+    application: professional-applications
 ref:
   team: "Professional Applications"
   namespace: "professional-applications"
@@ -312,7 +304,7 @@ ref:
     contact_channel: ""
     build_notices_channel: ""
   tags:
-    application: ref
+    application: professional-applications
 rhubarb:
   team: "CNP"
   namespace: "cnp"
@@ -362,7 +354,7 @@ sscs:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
   tags:
-    application: sscs
+    application: social-service-child-support
 sscs-cor:
   team: "SSCS"
   namespace: "sscs"
@@ -370,7 +362,7 @@ sscs-cor:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
   tags:
-    application: sscs
+    application: social-service-child-support
 sscs-tya:
   team: "SSCS"
   namespace: "sscs"
@@ -378,7 +370,7 @@ sscs-tya:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
   tags:
-    application: sscs
+    application: social-service-child-support
 sscs-tribunals:
   team: "SSCS"
   namespace: "sscs"
@@ -386,7 +378,7 @@ sscs-tribunals:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
   tags:
-    application: sscs
+    application: social-service-child-support
 snl:
   team: "SnL"
   namespace: "snl"
@@ -394,7 +386,7 @@ snl:
     contact_channel: "#snl-master-builds"
     build_notices_channel: "#snl-master-builds"
   tags:
-    application: snl
+    application: scheduling-and-listing
 am:
   team: "AM"
   namespace: "am"
@@ -402,7 +394,7 @@ am:
     contact_channel: "#am-master-builds"
     build_notices_channel: "#am-master-builds"
   tags:
-    application: am
+    application: access-management
 fpl:
   team: "Family Public Law"
   namespace: "family-public-law"
@@ -410,7 +402,7 @@ fpl:
     contact_channel: "#fpla-tech"
     build_notices_channel: "#fpla-tech"
   tags:
-    application: fpl
+    application: family-public-law
 ctsc:
   team: "CTSC"
   namespace: "ctsc"
@@ -418,7 +410,7 @@ ctsc:
     contact_channel: "#ctsc-master-builds"
     build_notices_channel: "#ctsc-master-builds"
   tags:
-    application: ctsc
+    application: courts-tribunals-service-centre
 rd:
   team: "Reference Data"
   namespace: "rd"
@@ -426,7 +418,7 @@ rd:
     contact_channel: "#referencedata_team"
     build_notices_channel: "#rd-master-builds"
   tags:
-    application: rd
+    application: reference-data
 data-extractor:
   team: "Software Engineering"
   namespace: "rpe"
@@ -434,7 +426,7 @@ data-extractor:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
   tags:
-    application: mi
+    application: management-information
 data-generator:
   team: "Software Engineering"
   namespace: "rpe"
@@ -442,7 +434,7 @@ data-generator:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
   tags:
-    application: mi
+    application: management-information
 camunda:
   team: "Software Engineering"
   namespace: "camunda"
@@ -467,7 +459,7 @@ azdnspoc:
     contact_channel: "#azdnspoc-notices"
     build_notices_channel: "#azdnspoc-notices"
   tags:
-    application: platform
+    application: core
 payments:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -475,7 +467,7 @@ payments:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: payment
+    application: fees-pay
 mi:
   team: "Management Information"
   namespace: "mi"
@@ -483,7 +475,7 @@ mi:
     contact_channel: "#mi-data-platform"
     build_notices_channel: "#mi-dev"
   tags:
-    application: mi
+    application: management-information
 pcq:
   team: "PCQ"
   namespace: "pcq"
@@ -491,7 +483,7 @@ pcq:
     contact_channel: "#pcq-dev"
     build_notices_channel: "#pcq-builds"
   tags:
-    application: pcq
+    application: protected-characteristics-questionnaire
 adoption:
   team: "Adoption"
   namespace: "adoption"
@@ -507,7 +499,7 @@ ccpay-functions:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: payment
+    application: fees-pay
 rse:
   team: "Reform Software Engineering"
   namespace: "rse"
@@ -515,7 +507,7 @@ rse:
     contact_channel: "#reform-swe"
     build_notices_channel: "#reform-swe-builds"
   tags:
-    application: platform
+    application: core
 unspec:
   team: "Unspecified"
   namespace: "unspec"
@@ -523,7 +515,7 @@ unspec:
     contact_channel: "#unspec_contact"
     build_notices_channel: "#unspec_notification"
   tags:
-    application: unspec
+    application: unspecified-claims
 hmi:
   team: "Future hearings - HMI"
   namespace: "hmi"
@@ -531,7 +523,7 @@ hmi:
     contact_channel: "#hmi-devs"
     build_notices_channel: "#hmi-build-notices"
   tags:
-    application: hmi
+    application: hearing-management-interface
 wa:
   team: "Work Allocation"
   namespace: "wa"
@@ -539,4 +531,4 @@ wa:
     contact_channel: "#wa-tech"
     build_notices_channel: "#wa-tech"
   tags:
-    application: wa
+    application: work-allocation
