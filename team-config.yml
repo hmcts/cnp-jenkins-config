@@ -536,3 +536,11 @@ wa:
     build_notices_channel: "#wa-tech"
   tags:
     application: work-allocation
+ctf:
+  team: "Courts and Tribunal Finder"
+  namespace: "ctf"
+  slack:
+    contact_channel: "#ctf-tech"
+    build_notices_channel: "#ctf-builds"
+  tags:
+    application: courts-and-tribunals-finder
