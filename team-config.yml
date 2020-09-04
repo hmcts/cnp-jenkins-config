@@ -538,10 +538,10 @@ wa:
   tags:
     application: work-allocation
 ctf:
-  team: "Courts and Tribunal Finder"
-  namespace: "ctf"
+  team: "Find a Court or Tribunal"
+  namespace: "fact"
   slack:
-    contact_channel: "#ctf-tech"
-    build_notices_channel: "#ctf-builds"
+    contact_channel: "#fact-tech"
+    build_notices_channel: "#fact-builds"
   tags:
-    application: courts-and-tribunals-finder
+    application: find-a-court-or-tribunal
