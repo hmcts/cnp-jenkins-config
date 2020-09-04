@@ -537,7 +537,7 @@ wa:
     build_notices_channel: "#wa-tech"
   tags:
     application: work-allocation
-ctf:
+fact:
   team: "Find a Court or Tribunal"
   namespace: "fact"
   slack:
