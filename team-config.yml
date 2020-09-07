@@ -428,7 +428,7 @@ rd:
   team: "Reference Data"
   namespace: "rd"
   slack:
-    contact_channel: "#referencedata_team"
+    contact_channel: "#ref-data-support"
     build_notices_channel: "#rd-master-builds"
   tags:
     application: reference-data
