@@ -236,6 +236,15 @@ rpe:
     build_notices_channel: "#rpe-build-notices"
   tags:
     application: core
+rpetemplate:
+  team: "Software Engineering"
+  namespace: "rpe"
+  agent: "k8s-agent"
+  slack:
+    contact_channel: "#rpe"
+    build_notices_channel: "#rpe-build-notices"
+  tags:
+    application: core
 core-infra:
   team: "Software Engineering"
   namespace: "rpe"
