@@ -411,7 +411,6 @@ am:
 fpl:
   team: "Family Public Law"
   namespace: "family-public-law"
-  agent: "k8s-agent"  
   slack:
     contact_channel: "#fpla-tech"
     build_notices_channel: "#fpla-tech"
