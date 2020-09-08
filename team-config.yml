@@ -237,7 +237,6 @@ rpe:
 rpetemplate:
   team: "Software Engineering"
   namespace: "rpe"
-  agent: "k8s-agent"
   slack:
     contact_channel: "#rpe"
     build_notices_channel: "#rpe-build-notices"
