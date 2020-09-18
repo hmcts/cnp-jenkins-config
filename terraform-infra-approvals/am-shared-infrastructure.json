@@ -1,0 +1,10 @@
+{
+  "resources": [
+    {"type": "azurerm_application_insights"},
+    {"type": "azurerm_key_vault_secret"},
+    {"type": "azurerm_resource_group"},
+  ],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/cnp-module-key-vault?ref=azurermv2"}
+  ]
+}
