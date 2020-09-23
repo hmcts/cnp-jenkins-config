@@ -1,0 +1,6 @@
+{
+  "resources": [
+    {"type": "azurerm_postgresql_firewall_rule"}
+  ],
+  "module_calls": []
+}
