@@ -23,6 +23,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-key-vault?ref=azurermv2"},
     {"source":  "git@github.com:hmcts/cnp-module-shutterpage?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=azurermv2"},
     {"source":  "git@github.com:hmcts/cnp-module-storage?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=azurermv2"},
