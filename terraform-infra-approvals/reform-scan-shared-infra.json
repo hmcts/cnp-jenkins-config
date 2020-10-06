@@ -7,6 +7,6 @@
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-palo-alto?ref=add-pdf-threat-exclusion"},
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=add-exclusion-rule"},
-    {"source":  "./storage-containers"}
+    {"source":  "git@github.com:hmcts/create-storage-containers?ref=master"}
   ]
 }
