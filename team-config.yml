@@ -224,6 +224,22 @@ reform-scan: # separate `bulk-scan` product copy since #349
     build_notices_channel: "#bsp-build-notices"
   tags:
     application: bulk-scan-print
+bulk-scan-v2:
+  team: "Bulk Scanning and Printing"
+  namespace: "bsp"
+  slack:
+    contact_channel: "#rbs"
+    build_notices_channel: "#bsp-build-notices"
+  tags:
+    application: bulk-scan-print
+reform-scan-v2: # separate `bulk-scan` product copy since #349
+  team: "Bulk Scanning and Printing"
+  namespace: "reform-scan"
+  slack:
+    contact_channel: "#rbs"
+    build_notices_channel: "#bsp-build-notices"
+  tags:
+    application: bulk-scan-print
 rpe:
   team: "Software Engineering"
   namespace: "rpe"
