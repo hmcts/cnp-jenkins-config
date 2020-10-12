@@ -4,7 +4,8 @@
     {"type": "azurerm_network_security_group"},
     {"type": "azurerm_frontdoor"},
     {"type": "azurerm_frontdoor_firewall_policy"},
-    {"type": "azurerm_template_deployment"}
+    {"type": "azurerm_template_deployment"},
+    {"type": "azurerm_frontdoor_custom_https_configuration"} 
   ],
   "module_calls": [
    {"source":  "git@github.com:hmcts/cnp-module-palo-alto?ref=add-pdf-threat-exclusion"},
