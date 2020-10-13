@@ -8,10 +8,11 @@
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=ccd/CHG0033576"},
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=ccd-waf"},
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=njrich28-patch-1"},
-    {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=0.0.1"},
+    {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=azurermv2"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=curator"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=master"},
-    {"source":  "git@github.com:hmcts/cnp-module-logstash.git?ref=master"}
+    {"source":  "git@github.com:hmcts/cnp-module-logstash.git?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-key-vault?ref=azurermv2"}
   ]
 }
 
