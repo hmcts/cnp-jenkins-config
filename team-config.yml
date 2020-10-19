@@ -565,3 +565,12 @@ fact:
     build_notices_channel: "#fact-builds"
   tags:
     application: find-a-court-or-tribunal
+ccd-elastic-search:
+  team: "CCD"
+  namespace:  "ccd"
+  slack:
+    contact_channel: "#ccd-questions-answers"
+    build_notices_channel: "#ccd-master-builds"
+  tags:
+    application: core-case-data
+
