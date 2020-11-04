@@ -80,6 +80,7 @@ prod:
   - repo: https://github.com/hmcts/ia-shared-infrastructure.git
   - repo: https://github.com/hmcts/ia-aip-frontend.git
   - repo: https://github.com/hmcts/ia-timed-event-service.git
+  - repo: https://github.com/hmcts/ia-home-office-integration-api.git
   - repo: https://github.com/hmcts/idam-api.git
   - repo: https://github.com/hmcts/idam-shared-infrastructure.git
   - repo: https://github.com/hmcts/idam-web-admin.git
