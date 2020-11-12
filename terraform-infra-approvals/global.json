@@ -8,7 +8,9 @@
     {"type": "azurerm_user_assigned_identity"},
     {"type": "random_string"},
     {"type": "azurerm_subnet"},
-    {"type": "azurerm_api_management"}
+    {"type": "azurerm_api_management"},
+    {"type": "azurerm_management_lock"},
+    {"type": "azurerm_management_group"}
   ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=master"},
