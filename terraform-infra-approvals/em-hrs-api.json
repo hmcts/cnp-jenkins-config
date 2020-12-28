@@ -1,0 +1,7 @@
+{
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/cnp-module-key-vault?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=master"}
+  ]
+}
