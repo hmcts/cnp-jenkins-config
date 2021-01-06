@@ -74,7 +74,7 @@ custard:
   team: "CNP"
   namespace:  "cnp"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -147,8 +147,8 @@ core-compute:
   team: "CNP"
   namespace: "cnp"
   slack:
-    contact_channel: "#rpe, #idam_tech"
-    build_notices_channel: "#rpe"
+    contact_channel: "#platops-help, #idam_tech"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 fees:
@@ -240,35 +240,35 @@ reform-scan-v2: # separate `bulk-scan` product copy since #349
     build_notices_channel: "#bsp-build-notices"
   tags:
     application: bulk-scan-print
-rpe:
+platops-help:
   team: "Software Engineering"
-  namespace: "rpe"
+  namespace: "platops-help"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
-rpetemplate:
+platops-helptemplate:
   team: "Software Engineering"
-  namespace: "rpe"
+  namespace: "platops-help"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 core-infra:
   team: "Software Engineering"
-  namespace: "rpe"
+  namespace: "platops-help"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 draft-store:
   team: "Software Engineering"
-  namespace: "rpe"
+  namespace: "platops-help"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -332,7 +332,7 @@ rhubarb:
   team: "CNP"
   namespace: "cnp"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -340,7 +340,7 @@ rhubarb-shared-infrastructure:
   team: "CNP"
   namespace: "cnp"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -348,7 +348,7 @@ plum:
   team: "CNP"
   namespace: "cnp"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -356,7 +356,7 @@ crumble:
   team: "CNP"
   namespace: "cnp"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -364,7 +364,7 @@ plum-shared-infrastructure:
   team: "CNP"
   namespace: "cnp"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -442,17 +442,17 @@ rd:
     application: reference-data
 data-extractor:
   team: "Software Engineering"
-  namespace: "rpe"
+  namespace: "platops-help"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: management-information
 data-generator:
   team: "Software Engineering"
-  namespace: "rpe"
+  namespace: "platops-help"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: management-information
@@ -461,7 +461,7 @@ camunda:
   namespace: "camunda"
   registry: "hmctsprivate"
   slack:
-    contact_channel: "#rpe"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: camunda
