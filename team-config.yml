@@ -240,7 +240,7 @@ reform-scan-v2: # separate `bulk-scan` product copy since #349
     build_notices_channel: "#bsp-build-notices"
   tags:
     application: bulk-scan-print
-platops-help:
+rpe:
   team: "Software Engineering"
   namespace: "platops-help"
   slack:
@@ -248,7 +248,7 @@ platops-help:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
-platops-helptemplate:
+rpetemplate:
   team: "Software Engineering"
   namespace: "platops-help"
   slack:
