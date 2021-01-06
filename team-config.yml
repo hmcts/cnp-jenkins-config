@@ -75,7 +75,7 @@ custard:
   namespace:  "cnp"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 cet:
@@ -245,7 +245,7 @@ rpe:
   namespace: "rpe"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 rpetemplate:
@@ -253,7 +253,7 @@ rpetemplate:
   namespace: "rpe"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 core-infra:
@@ -261,7 +261,7 @@ core-infra:
   namespace: "rpe"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 draft-store:
@@ -269,7 +269,7 @@ draft-store:
   namespace: "rpe"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 jui:
@@ -333,7 +333,7 @@ rhubarb:
   namespace: "cnp"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 rhubarb-shared-infrastructure:
@@ -341,7 +341,7 @@ rhubarb-shared-infrastructure:
   namespace: "cnp"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 plum:
@@ -349,7 +349,7 @@ plum:
   namespace: "cnp"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 crumble:
@@ -357,7 +357,7 @@ crumble:
   namespace: "cnp"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 plum-shared-infrastructure:
@@ -365,7 +365,7 @@ plum-shared-infrastructure:
   namespace: "cnp"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 sscs:
@@ -445,7 +445,7 @@ data-extractor:
   namespace: "rpe"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: management-information
 data-generator:
@@ -453,7 +453,7 @@ data-generator:
   namespace: "rpe"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: management-information
 camunda:
@@ -462,7 +462,7 @@ camunda:
   registry: "hmctsprivate"
   slack:
     contact_channel: "#rpe"
-    build_notices_channel: "#rpe-build-notices"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: camunda
 ethos:
