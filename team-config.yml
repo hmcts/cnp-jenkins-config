@@ -242,7 +242,7 @@ reform-scan-v2: # separate `bulk-scan` product copy since #349
     application: bulk-scan-print
 rpe:
   team: "Software Engineering"
-  namespace: "platops-help"
+  namespace: "rpe"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -250,7 +250,7 @@ rpe:
     application: core
 rpetemplate:
   team: "Software Engineering"
-  namespace: "platops-help"
+  namespace: "rpe"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -258,7 +258,7 @@ rpetemplate:
     application: core
 core-infra:
   team: "Software Engineering"
-  namespace: "platops-help"
+  namespace: "rpe"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -266,7 +266,7 @@ core-infra:
     application: core
 draft-store:
   team: "Software Engineering"
-  namespace: "platops-help"
+  namespace: "rpe"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -442,7 +442,7 @@ rd:
     application: reference-data
 data-extractor:
   team: "Software Engineering"
-  namespace: "platops-help"
+  namespace: "rpe"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -450,7 +450,7 @@ data-extractor:
     application: management-information
 data-generator:
   team: "Software Engineering"
-  namespace: "platops-help"
+  namespace: "rpe"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
