@@ -32,7 +32,7 @@ List<Map> orgs = [
         [name: 'SSCS'],
         [name: 'XUI', regex: 'rpx-.*'],
         [name: 'RSE', displayName: 'Reform Software Engineering'],
-        [name: 'Unspec'],
+        [name: 'Unspec', regex: '(unspec.*|civil-damages.*)'],
         [name: 'WA'],
         [name: 'FACT'],
         [name: 'NFDIV', displayName: "No Fault Divorce"],

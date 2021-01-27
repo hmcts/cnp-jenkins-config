@@ -537,6 +537,14 @@ unspec:
     build_notices_channel: "#unspec_notification"
   tags:
     application: unspecified-claims
+civil-damages:
+  team: "Unspecified"
+  namespace: "unspec"
+  slack:
+    contact_channel: "#unspec_contact"
+    build_notices_channel: "#unspec_notification"
+  tags:
+    application: unspecified-claims
 hmi:
   team: "Future hearings - HMI"
   namespace: "hmi"
