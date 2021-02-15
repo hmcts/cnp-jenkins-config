@@ -26,7 +26,7 @@ List<Map> orgs = [
         [name: 'MI', displayName: 'Management Information'],
         [name: 'HMI'],
         [name: 'PCQ'],
-        [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|service-auth-provider-app|spring-boot-template|data-extractor|data-generator|camunda-.*)'],
+        [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|service-auth-provider-.*|spring-boot-template|data-extractor|data-generator|camunda-.*)'],
         [name: 'Probate'],
         [name: 'RD', displayName: 'Ref Data'],
         [name: 'SSCS'],
