@@ -384,6 +384,14 @@ sscs-cor:
     build_notices_channel: "#sscs-tech"
   tags:
     application: social-service-child-support
+sscs-mya:
+  team: "SSCS"
+  namespace: "sscs"
+  slack:
+    contact_channel: "#sscs-tech"
+    build_notices_channel: "#sscs-tech"
+  tags:
+    application: social-service-child-support
 sscs-tya:
   team: "SSCS"
   namespace: "sscs"
