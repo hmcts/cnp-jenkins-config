@@ -130,7 +130,6 @@ prod:
   - repo: https://github.com/hmcts/sscs-ccd-callback-orchestrator.git
   - repo: https://github.com/hmcts/sscs-cor-backend.git
   - repo: https://github.com/hmcts/sscs-cor-frontend.git
-  - repo: https://github.com/hmcts/sscs-mya-frontend.git
   - repo: https://github.com/hmcts/sscs-evidence-share.git
   - repo: https://github.com/hmcts/sscs-shared-infrastructure.git
   - repo: https://github.com/hmcts/sscs-submit-your-appeal.git
@@ -147,9 +146,9 @@ prod:
   - repo: https://github.com/hmcts/ccpay-bulkscanning-app.git
   - repo: https://github.com/hmcts/bulk-scan-payment-processor.git
   - repo: https://github.com/hmcts/reform-scan-notification-service.git
-  - repo: https://github.com/hmcts/em-icp-api.git
+  - repo: https://github.com/hmcts/em-icp-api.git 
   - repo: https://github.com/hmcts/camunda-bpm.git
   - repo: https://github.com/hmcts/fact-shared-infrastructure.git
   - repo: https://github.com/hmcts/fact-frontend.git
-  - repo: https://github.com/hmcts/fact-admin.git
+  - repo: https://github.com/hmcts/fact-admin.git 
   - repo: https://github.com/hmcts/fact-api.git
