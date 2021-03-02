@@ -1,0 +1,6 @@
+{
+  "resources": [
+    {"type": "azurerm_logic_app_workflow"}
+  ],
+  "module_calls": []
+}
