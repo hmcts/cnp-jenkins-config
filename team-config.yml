@@ -593,4 +593,11 @@ ccd-elastic-search:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
-
+paymentsgw:
+  team: "Fees/Pay"
+  namespace: "fees-pay"
+  slack:
+    contact_channel: "#cc-payments-tech"
+    build_notices_channel: "#cc-payments-tech"
+  tags:
+    application: fees-pay
