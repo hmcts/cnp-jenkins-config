@@ -152,3 +152,5 @@ prod:
   - repo: https://github.com/hmcts/fact-frontend.git
   - repo: https://github.com/hmcts/fact-admin.git 
   - repo: https://github.com/hmcts/fact-api.git
+  - repo: https://github.com/hmcts/em-hrs-api
+  - repo: https://github.com/hmcts/em-hrs-ingestor
