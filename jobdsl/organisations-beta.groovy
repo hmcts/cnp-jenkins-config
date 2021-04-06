@@ -79,13 +79,14 @@ Closure githubOrg(Map args = [:]) {
             disableNamedBuildBranchStrategy: false,
             credentialId                   : "hmcts-jenkins-" + args.name.toLowerCase()
     ] << args
-    def name = config.name
+    def folderName = config.name
 
     String jenkinsfilePath = config.jenkinsfilePath
 
-    String folderSandboxPrefix = isSandbox() ? 'Sandbox_' : ''
-    GString orgFolderName = "HMCTS_${folderSandboxPrefix}${name}"
-    String wildcardBranchesToInclude = isSandbox() ? '*' : 'master demo PR-* perftest ithc preview ethosldata'
+    def runningOnSandbox = isSandbox()
+    String folderSandboxPrefix = runningOnSandbox ? 'Sandbox_' : ''
+    GString orgFolderName = "HMCTS_${folderSandboxPrefix}${folderName}"
+    String wildcardBranchesToInclude = runningOnSandbox ? '*' : 'master demo PR-* perftest ithc preview ethosldata'
     GString orgDescription = "<br>${config.displayName} team repositories"
 
     String displayNamePrefix = "HMCTS"
@@ -97,14 +98,14 @@ Closure githubOrg(Map args = [:]) {
     boolean suppressDefaultJenkinsfile = config.suppressDefaultJenkinsfile
 
     if (config.nightly) {
-        orgFolderName = "HMCTS_${folderSandboxPrefix}Nightly_${name}"
+        orgFolderName = "HMCTS_${folderSandboxPrefix}Nightly_${folderName}"
         //noinspection GroovyAssignabilityCheck
         orgDescription = "<br>Nightly tests for ${config.displayName}  will be scheduled using this organisation on the AAT Version of the application"
 
         displayNamePrefix += " Nightly Tests"
         wildcardBranchesToInclude = "master nightly-dev"
 
-        jenkinsfilePath = isSandbox() ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly'
+        jenkinsfilePath = runningOnSandbox ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly'
         suppressDefaultJenkinsfile = true
     }
 
@@ -155,19 +156,19 @@ Closure githubOrg(Map args = [:]) {
                 traits << 'org.jenkinsci.plugins.github__branch__source.ExcludeArchivedRepositoriesTrait' {
                 }
 
-                if (isSandbox() || config.nightly) {
-                    def label = isSandbox() && !config.nightly ? "Jenkins - sandbox" : null
-                    if (label == null) {
-                        label = isSandbox() ? "Jenkins - sandbox nightly" : "Jenkins - nightly"
+                traits << 'io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait' {
+                    if (config.nightly) {
+                        // TODO enable skip globally at some point so we don't have 2 job statuses
+                        // not doing right now as tons of people will have it in their required commit statuses
+                        skipNotifications(true)
+                        def label = runningOnSandbox ? "Jenkins - sandbox nightly" : "Jenkins - nightly"
+                        name(label)
                     }
-                    traits << 'org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait' {
-                        contextLabel(label)
-                        typeSuffix(false)
-                    }
+                    skipProgressUpdates(true)
                 }
 
                 // prevent builds triggering automatically from SCM push for sandbox and nightly builds
-                if ((isSandbox() || config.nightly) && !config.disableNamedBuildBranchStrategy) {
+                if ((runningOnSandbox || config.nightly) && !config.disableNamedBuildBranchStrategy) {
                     node / buildStrategies / 'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl'(plugin: 'basic-branch-build-strategies@1.1.1') {
                         filters()
                     }

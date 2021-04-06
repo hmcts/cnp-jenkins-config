@@ -1,4 +1,3 @@
-
 private boolean isSandbox() {
     def locationConfig = jenkins.model.JenkinsLocationConfiguration.get()
     if (locationConfig != null && locationConfig.getUrl() != null) {
@@ -8,19 +7,29 @@ private boolean isSandbox() {
     }
 }
 
-if (isSandbox()) {
-    Map pipelineTestOrg = [
-            name                           : 'CNP_test',
-            displayName                    : 'CNP_test',
-            regex                          : 'cnp-plum-.*',
-            branchesToInclude              : 'master PR*',
-            jenkinsfilePath                : 'Jenkinsfile_parameterized',
-            suppressDefaultJenkinsfile     : false,
-            disableNamedBuildBranchStrategy: false,
-            credentialId                   : 'jenkins-github-hmcts-api-token_cnp'
-    ]
-    githubOrg(pipelineTestOrg).call()
+List<Map> orgs = [
+    [name: 'CNP'],
+]
+
+orgs.each { Map org ->
+    githubOrg(org).call()
+    org << [nightly: true]
+    if (!org.nightlyDisabled) {
+        githubOrg(org).call()
+    }
 }
+
+Map pipelineTestOrg = [
+        name                           : 'Pipeline_Test',
+        displayName                    : 'Pipeline Test',
+        regex                          : 'cnp-plum-.*|cnp-rhubarb-.*|cnp-jenkins-library',
+        branchesToInclude              : 'master PR*',
+        jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
+        suppressDefaultJenkinsfile     : true,
+        disableNamedBuildBranchStrategy: true,
+        credentialId                   : 'hmcts-jenkins-cnp'
+]
+githubOrg(pipelineTestOrg).call()
 
 /**
  * Creates a github organisation
@@ -36,18 +45,19 @@ Closure githubOrg(Map args = [:]) {
     def config = [
             displayName                    : args.name,
             regex                          : args.name.toLowerCase() + '.*',
-            jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : '',
+            jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
             disableNamedBuildBranchStrategy: false,
-            credentialId                   : "jenkins-github-hmcts-api-token_" + args.name.toLowerCase()
+            credentialId                   : "hmcts-jenkins-" + args.name.toLowerCase()
     ] << args
-    def name = config.name
+    def folderName = config.name
 
     String jenkinsfilePath = config.jenkinsfilePath
 
-    String folderSandboxPrefix = isSandbox() ? 'Sandbox_' : ''
-    GString orgFolderName = "HMCTS_${folderSandboxPrefix}${name}"
-    String wildcardBranchesToInclude = isSandbox() ? '' : ''
+    def runningOnSandbox = isSandbox()
+    String folderSandboxPrefix = runningOnSandbox ? 'Sandbox_' : ''
+    GString orgFolderName = "HMCTS_${folderSandboxPrefix}${folderName}"
+    String wildcardBranchesToInclude = runningOnSandbox ? '*' : 'master demo PR-* perftest ithc preview ethosldata'
     GString orgDescription = "<br>${config.displayName} team repositories"
 
     String displayNamePrefix = "HMCTS"
@@ -59,14 +69,14 @@ Closure githubOrg(Map args = [:]) {
     boolean suppressDefaultJenkinsfile = config.suppressDefaultJenkinsfile
 
     if (config.nightly) {
-        orgFolderName = "HMCTS_${folderSandboxPrefix}Nightly_${name}"
+        orgFolderName = "HMCTS_${folderSandboxPrefix}Nightly_${folderName}"
         //noinspection GroovyAssignabilityCheck
         orgDescription = "<br>Nightly tests for ${config.displayName}  will be scheduled using this organisation on the AAT Version of the application"
 
         displayNamePrefix += " Nightly Tests"
-        wildcardBranchesToInclude = "master"
+        wildcardBranchesToInclude = "master nightly-dev"
 
-        jenkinsfilePath = isSandbox() ? 'Jenkinsfile_nightly_sandbox' : ''
+        jenkinsfilePath = runningOnSandbox ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly'
         suppressDefaultJenkinsfile = true
     }
 
@@ -114,9 +124,22 @@ Closure githubOrg(Map args = [:]) {
                 traits << 'org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait' {
                     strategyId(1)
                 }
+                traits << 'org.jenkinsci.plugins.github__branch__source.ExcludeArchivedRepositoriesTrait' {
+                }
+
+                traits << 'io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait' {
+                    if (config.nightly) {
+                        // TODO enable skip globally at some point so we don't have 2 job statuses
+                        // not doing right now as tons of people will have it in their required commit statuses
+                        skipNotifications(true)
+                        def label = runningOnSandbox ? "Jenkins - sandbox nightly" : "Jenkins - nightly"
+                        name(label)
+                    }
+                    skipProgressUpdates(true)
+                }
 
                 // prevent builds triggering automatically from SCM push for sandbox and nightly builds
-                if ((isSandbox() || config.nightly) && !config.disableNamedBuildBranchStrategy) {
+                if ((runningOnSandbox || config.nightly) && !config.disableNamedBuildBranchStrategy) {
                     node / buildStrategies / 'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl'(plugin: 'basic-branch-build-strategies@1.1.1') {
                         filters()
                     }
