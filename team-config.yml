@@ -163,7 +163,7 @@ fees:
   team: "Fees/Pay"
   namespace: "fees-pay"
   slack:
-    contact_channel: "#cc-payments-tech"
+    contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
   tags:
     application: fees-pay
@@ -171,7 +171,7 @@ fees-register:
   team: "Fees/Pay"
   namespace: "fees-pay"
   slack:
-    contact_channel: "#cc-payments-tech"
+    contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
   tags:
     application: fees-pay
@@ -179,7 +179,7 @@ payment:
   team: "Fees/Pay"
   namespace: "fees-pay"
   slack:
-    contact_channel: "#cc-payments-tech"
+    contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
   tags:
     application: fees-pay
@@ -187,7 +187,7 @@ ccpay:
   team: "Fees/Pay"
   namespace: "fees-pay"
   slack:
-    contact_channel: "#cc-payments-tech"
+    contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
   tags:
     application: fees-pay
@@ -195,7 +195,7 @@ bar:
   team: "Fees/Pay"
   namespace: "bar"
   slack:
-    contact_channel: "#bar-tech"
+    contact_channel: "#cc-payments"
     build_notices_channel: "#bar-tech"
   defaultSlackChannel: "#bar-tech"
   tags:
