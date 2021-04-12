@@ -10,7 +10,7 @@ private boolean isSandbox() {
 List<Map> orgs = [
         [name: 'Adoption'],
         [name: 'AM'],
-        [name: 'BSP', regex: '(send-letter-client|send-letter-service|send-letter-performance-tests|bulk-scan-.*|blob-router-service|reform-scan-.*)'],
+        [name: 'BSP', regex: '(send-letter-client|send-letter-service|send-letter-performance-tests|send-letter-service-container-.*|bulk-scan-.*|blob-router-service|reform-scan-.*)'],
         [name: 'CDM', regex: '(ccd.*|aac.*|cpo.*)'],
         [name: 'CMC'],
         [name: 'CNP'],
