@@ -16,7 +16,7 @@ List<Map> orgs = [
         [name: 'CNP'],
         [name: 'CTSC'],
         [name: 'DIV', displayName: "Divorce"],
-        [name: 'ECM', displayName: "ECM", regex: '(ethos.*|ecm.*)'],
+        [name: 'ECM', displayName: "ECM", regex: '(ethos.*|ecm.*)', credentialId: 'hmcts-jenkins-ethos'],
         [name: 'EM',displayName: 'Evidence Management', regex: '(document-management-store-app|dm-shared-infrastructure|em-.*|dg-.*)'],
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'FinRem', displayName: "Financial Remedy"],
