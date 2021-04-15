@@ -167,6 +167,12 @@ Closure githubOrg(Map args = [:]) {
                     skipProgressUpdates(true)
                 }
 
+                if (!config.nightly) {
+                    traits << 'org.jenkinsci.plugins.scm_filter.GitHubAgedRefsTrait' {
+                        retentionDays(30)
+                    }
+                }
+
                 // prevent builds triggering automatically from SCM push for sandbox and nightly builds
                 if ((runningOnSandbox || config.nightly) && !config.disableNamedBuildBranchStrategy) {
                     node / buildStrategies / 'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl'(plugin: 'basic-branch-build-strategies@1.1.1') {
