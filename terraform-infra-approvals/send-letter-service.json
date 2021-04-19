@@ -1,0 +1,7 @@
+{
+  "resources": [
+    {"type": "azurerm_role_assignment"}
+  ],
+  "module_calls": []
+}
+
