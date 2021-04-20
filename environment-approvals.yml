@@ -110,6 +110,7 @@ prod:
   - repo: https://github.com/hmcts/rd-judicial-data-load.git
   - repo: https://github.com/hmcts/rd-location-ref-api.git
   - repo: https://github.com/hmcts/rd-location-ref-data-load.git
+  - repo: https://github.com/hmcts/rd-caseworker-ref-api.git
   - repo: https://github.com/hmcts/rpa-coh-continuous-online-resolution.git
   - repo: https://github.com/hmcts/em-ccd-orchestrator.git
   - repo: https://github.com/hmcts/rpa-jui-webapp.git
