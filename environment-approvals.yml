@@ -39,6 +39,7 @@ prod:
   - repo: https://github.com/hmcts/cmc-shared-infrastructure.git
   - repo: https://github.com/hmcts/cnp-core-compute.git
   - repo: https://github.com/hmcts/cnp-core-infrastructure.git
+  - repo: https://github.com/hmcts/cnp-keda-shared-infrastucture.git
   - repo: https://github.com/hmcts/cnp-module-api-mgmt.git
   - repo: https://github.com/hmcts/cnp-idam-compute.git
   - repo: https://github.com/hmcts/cnp-idam-master.git
