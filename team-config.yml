@@ -601,3 +601,11 @@ paymentsgw:
     build_notices_channel: "#cc-payments-tech"
   tags:
     application: fees-pay
+keda:
+  team: "CNP"
+  namespace: "admin"
+  slack:
+    contact_channel: "#platops-help"
+    build_notices_channel: "#platops-build-notices"
+  tags:
+    application: core    
