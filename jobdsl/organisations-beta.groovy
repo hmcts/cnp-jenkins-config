@@ -55,6 +55,7 @@ if (isSandbox()) {
             jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
             suppressDefaultJenkinsfile     : true,
             disableNamedBuildBranchStrategy: true,
+            disableAgedRefsBranchStrategy  : true,
             credentialId                   : 'hmcts-jenkins-cnp'
     ]
     githubOrg(pipelineTestOrg).call()
@@ -167,7 +168,7 @@ Closure githubOrg(Map args = [:]) {
                     skipProgressUpdates(true)
                 }
 
-                if (!config.nightly) {
+                if (!config.nightly && !config.disableAgedRefsBranchStrategy) {
                     traits << 'org.jenkinsci.plugins.scm_filter.GitHubAgedRefsTrait' {
                         retentionDays(30)
                     }
