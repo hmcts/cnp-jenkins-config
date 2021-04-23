@@ -86,6 +86,7 @@ prod:
   - repo: https://github.com/hmcts/ia-timed-event-service.git
   - repo: https://github.com/hmcts/ia-home-office-integration-api.git
   - repo: https://github.com/hmcts/ia-case-payments-api.git
+  - repo: https://github.com/hmcts/ia-task-configuration.git
   - repo: https://github.com/hmcts/idam-api.git
   - repo: https://github.com/hmcts/idam-shared-infrastructure.git
   - repo: https://github.com/hmcts/idam-web-admin.git
@@ -159,3 +160,9 @@ prod:
   - repo: https://github.com/hmcts/fact-api.git
   - repo: https://github.com/hmcts/em-hrs-api.git
   - repo: https://github.com/hmcts/em-hrs-ingestor.git
+  - repo: https://github.com/hmcts/wa-shared-infrastructure.git
+  - repo: https://github.com/hmcts/wa-case-event-handler.git
+  - repo: https://github.com/hmcts/wa-workflow-api.git
+  - repo: https://github.com/hmcts/wa-task-configuration-api.git
+  - repo: https://github.com/hmcts/wa-task-management-api.git
+  - repo: https://github.com/hmcts/wa-standalone-task-bpmn
