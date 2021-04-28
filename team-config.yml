@@ -537,14 +537,14 @@ rse:
     build_notices_channel: "#reform-swe-builds"
   tags:
     application: core
-unspec:
-  team: "Unspecified"
-  namespace: "unspec"
+civil:
+  team: "Civil"
+  namespace: "civil"
   slack:
-    contact_channel: "#unspec_contact"
-    build_notices_channel: "#unspec_notification"
+    contact_channel: "#civil_contact"
+    build_notices_channel: "#civil_notifications"
   tags:
-    application: unspecified-claims
+    application: civil
 civil-damages:
   team: "Unspecified"
   namespace: "unspec"
