@@ -609,3 +609,11 @@ keda:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core    
+vh:
+  team: "Video Hearings"
+  namespace: "vh"
+  slack: 
+    contact_channel: "#vh-devops"
+    build_notices_channel: "#vh-builds"
+  tags:
+    application: vh
