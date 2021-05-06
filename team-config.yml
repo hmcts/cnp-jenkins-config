@@ -13,7 +13,15 @@ cpo:
     contact_channel: "#ccd_support"
     build_notices_channel: "#ccd-master-builds"
   tags:
-    application: core-case-data    
+    application: core-case-data
+hmc:
+  team: "CDM"
+  namespace:  "hmc"
+  slack:
+    contact_channel: "#ccd_support"
+    build_notices_channel: "#ccd-master-builds"
+  tags:
+    application: core-case-data 
 ccd:
   team: "CCD"
   namespace:  "ccd"
