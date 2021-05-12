@@ -152,11 +152,11 @@ prod:
   - repo: https://github.com/hmcts/ccpay-bulkscanning-app.git
   - repo: https://github.com/hmcts/bulk-scan-payment-processor.git
   - repo: https://github.com/hmcts/reform-scan-notification-service.git
-  - repo: https://github.com/hmcts/em-icp-api.git 
+  - repo: https://github.com/hmcts/em-icp-api.git
   - repo: https://github.com/hmcts/camunda-bpm.git
   - repo: https://github.com/hmcts/fact-shared-infrastructure.git
   - repo: https://github.com/hmcts/fact-frontend.git
-  - repo: https://github.com/hmcts/fact-admin.git 
+  - repo: https://github.com/hmcts/fact-admin.git
   - repo: https://github.com/hmcts/fact-api.git
   - repo: https://github.com/hmcts/em-hrs-api.git
   - repo: https://github.com/hmcts/em-hrs-ingestor.git
@@ -166,3 +166,6 @@ prod:
   - repo: https://github.com/hmcts/wa-task-configuration-api.git
   - repo: https://github.com/hmcts/wa-task-management-api.git
   - repo: https://github.com/hmcts/wa-standalone-task-bpmn
+  - repo: https://github.com/hmcts/civil-service.git
+  - repo: https://github.com/hmcts/civil-ccd-definition.git
+  - repo: https://github.com/hmcts/civil-camunda-bpmn-definition.git
