@@ -32,7 +32,6 @@ List<Map> orgs = [
         [name: 'SSCS'],
         [name: 'XUI', regex: 'rpx-.*'],
         [name: 'RSE', displayName: 'Reform Software Engineering'],
-        [name: 'Unspec', regex: '(unspec.*|civil-damages.*)'],
         [name: 'Civil', regex: 'civil-(?!damages).*'],
         [name: 'WA'],
         [name: 'FACT'],

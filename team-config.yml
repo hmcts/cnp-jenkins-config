@@ -21,7 +21,7 @@ hmc:
     contact_channel: "#ccd_support"
     build_notices_channel: "#ccd-master-builds"
   tags:
-    application: core-case-data 
+    application: core-case-data
 ccd:
   team: "CCD"
   namespace:  "ccd"
@@ -553,14 +553,6 @@ civil:
     build_notices_channel: "#civil_notifications"
   tags:
     application: civil
-civil-damages:
-  team: "Unspecified"
-  namespace: "unspec"
-  slack:
-    contact_channel: "#unspec_contact"
-    build_notices_channel: "#unspec_notification"
-  tags:
-    application: unspecified-claims
 hmi:
   team: "Future hearings - HMI"
   namespace: "hmi"
@@ -616,11 +608,11 @@ keda:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
-    application: core    
+    application: core
 vh:
   team: "Video Hearings"
   namespace: "vh"
-  slack: 
+  slack:
     contact_channel: "#vh-devops"
     build_notices_channel: "#vh-builds"
   tags:
