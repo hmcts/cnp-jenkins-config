@@ -617,3 +617,11 @@ vh:
     build_notices_channel: "#vh-builds"
   tags:
     application: vh
+pih:
+  team: "Publishing and Listing Hub"
+  namespace: "pih"
+  slack: 
+    contact_channel: "#pih-devops"
+    build_notices_channel: "#pih-builds"
+  tags:
+    application: vh
