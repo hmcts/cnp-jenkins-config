@@ -1,20 +1,8 @@
 {
   "resources": [
-    {"type": "azurerm_key_vault_access_policy"},
-    {"type": "azurerm_managed_disk"},
-    {"type": "azurerm_network_security_group"},
-    {"type": "azurerm_network_security_rule"},
-    {"type": "azurerm_network_interface"},
-    {"type": "azurerm_public_ip"},
-    {"type": "azurerm_subnet"},
-    {"type": "azurerm_virtual_machine"},
-    {"type": "azurerm_virtual_machine_data_disk_attachment"},
-    {"type": "azurerm_private_dns_a_record"},
-    {"type": "azurerm_network_interface_security_group_association"},
-    {"type": "null_resource"}
+    {"type": "azurerm_route_table"},
+    {"type": "azurerm_route"}
+    {"type": "azurerm_subnet_route_table_association"}
   ],
-  "module_calls": [
-    {"source":  "./modules/module-scaleset?ref=master"},
-    {"source":  "git@github.com:hmcts/cnp-module-vnet?ref=increase_subnets"}
-  ]
+  "module_calls": []
 }
