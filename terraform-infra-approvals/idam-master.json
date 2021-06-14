@@ -1,0 +1,7 @@
+{
+  "resources": [
+    {"type": "azurerm_route_table"},
+    {"type": "azurerm_route"}
+  ],
+  "module_calls": []
+}
