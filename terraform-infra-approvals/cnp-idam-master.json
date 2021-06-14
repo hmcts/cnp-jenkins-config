@@ -11,7 +11,10 @@
     {"type": "azurerm_virtual_machine_data_disk_attachment"},
     {"type": "azurerm_private_dns_a_record"},
     {"type": "azurerm_network_interface_security_group_association"},
-    {"type": "null_resource"}
+    {"type": "null_resource"},
+    {"type": "azurerm_route_table"},
+    {"type": "azurerm_route"},
+    {"type": "azurerm_subnet_route_table_association"}
   ],
   "module_calls": [
     {"source":  "./modules/module-scaleset?ref=master"},
