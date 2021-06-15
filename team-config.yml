@@ -617,3 +617,11 @@ vh:
     build_notices_channel: "#vh-builds"
   tags:
     application: vh
+pip:
+  team: "Publishing and Information Project"
+  namespace: "pip"
+  slack:
+    contact_channel: "#vh-devops"
+    build_notices_channel: "#vh-builds"
+  tags:
+    application: pip
