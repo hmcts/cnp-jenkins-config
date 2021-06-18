@@ -440,6 +440,14 @@ fpl:
     build_notices_channel: "#fpla-tech"
   tags:
     application: family-public-law
+fprl:
+  team: "Family Private Law"
+  namespace: "family-private-law"
+  slack:
+    contact_channel: "#fprl-tech"
+    build_notices_channel: "#fprl-tech"
+  tags:
+    application: family-private-law
 ctsc:
   team: "CTSC"
   namespace: "ctsc"
