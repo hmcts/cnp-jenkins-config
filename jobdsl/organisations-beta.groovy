@@ -21,7 +21,7 @@ List<Map> orgs = [
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'FinRem', displayName: "Financial Remedy"],
         [name: 'FPL'],
-        [name: 'FPRL', displayName: 'Family Private Law', regex: 'fprl-*'],
+        [name: 'FPRL', displayName: 'Family Private Law'],
         [name: 'IAC', regex: 'ia.*'],
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
         [name: 'MI', displayName: 'Management Information'],
