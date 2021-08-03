@@ -8,7 +8,6 @@ subscriptions:
       - name: sandbox
       - name: idam-sandbox
       - name: idam-saat
-      - name: idam-sprod
     resourceGroup: core-infra-intsvc-rg
 
   - name: "DTS-CFTPTL-INTSVC"
