@@ -625,3 +625,11 @@ vh:
     build_notices_channel: "#vh-builds"
   tags:
     application: vh
+lau:
+  team: "LAU"
+  namespace: "lau"
+  slack:
+    contact_channel: "#lau-dev"
+    build_notices_channel: "#lau-builds"
+  tags:
+    application: log-and-audit
