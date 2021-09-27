@@ -14,7 +14,8 @@
     {"type": "null_resource"},
     {"type": "azurerm_route_table"},
     {"type": "azurerm_route"},
-    {"type": "azurerm_subnet_route_table_association"}
+    {"type": "azurerm_subnet_route_table_association"},
+    {"type": "azurerm_postgresql_configuration"}
   ],
   "module_calls": [
     {"source":  "./modules/module-scaleset?ref=master"},
