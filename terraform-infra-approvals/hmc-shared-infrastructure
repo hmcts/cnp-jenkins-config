@@ -1,0 +1,9 @@
+{
+  "resources": [],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"},
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=master"},
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=master"},
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=master"}
+  ]
+}
