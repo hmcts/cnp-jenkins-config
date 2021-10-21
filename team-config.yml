@@ -633,3 +633,11 @@ lau:
     build_notices_channel: "#lau-builds"
   tags:
     application: log-and-audit
+prl:
+  team: "Private Law"
+  namespace: "private-law"
+  slack:
+    contact_channel: "#prl-tech"
+    build_notices_channel: "#prl-tech"
+  tags:
+    application: private-law
