@@ -641,11 +641,27 @@ prl:
     build_notices_channel: "#prl-tech"
   tags:
     application: private-law
-adoption:
+adoption-web:
   team: "Adoption"
-  namespace:  "adoption"
+  namespace:  "adoption-web"
   slack:
     contact_channel: "#adoption-tech"
     build_notices_channel: "#adoption-tech"
   tags:
-    application: adoption
+    application: adoption-web
+adoption-cos-api:
+  team: "Adoption"
+  namespace:  "adoption-cos-api"
+  slack:
+    contact_channel: "#adoption-tech"
+    build_notices_channel: "#adoption-tech"
+  tags:
+    application: adoption-cos-api
+adoption-ccd-definitions:
+  team: "Adoption"
+  namespace:  "adoption-ccd-definitions"
+  slack:
+    contact_channel: "#adoption-tech"
+    build_notices_channel: "#adoption-tech"
+  tags:
+    application: adoption-ccd-definitions
