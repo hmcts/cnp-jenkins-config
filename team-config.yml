@@ -641,3 +641,11 @@ prl:
     build_notices_channel: "#prl-tech"
   tags:
     application: private-law
+adoption:
+  team: "Adoption"
+  namespace:  "adoption"
+  slack:
+    contact_channel: "#adoption-tech"
+    build_notices_channel: "#adoption-tech"
+  tags:
+    application: adoption
