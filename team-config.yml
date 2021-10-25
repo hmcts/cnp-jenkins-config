@@ -643,7 +643,7 @@ prl:
     application: private-law
 adoption-web:
   team: "Adoption"
-  namespace:  "adoption-web"
+  namespace:  "adoption"
   slack:
     contact_channel: "#adoption-tech"
     build_notices_channel: "#adoption-tech"
@@ -651,7 +651,7 @@ adoption-web:
     application: adoption-web
 adoption-cos-api:
   team: "Adoption"
-  namespace:  "adoption-cos-api"
+  namespace:  "adoption"
   slack:
     contact_channel: "#adoption-tech"
     build_notices_channel: "#adoption-tech"
@@ -659,7 +659,7 @@ adoption-cos-api:
     application: adoption-cos-api
 adoption-ccd-definitions:
   team: "Adoption"
-  namespace:  "adoption-ccd-definitions"
+  namespace:  "adoption"
   slack:
     contact_channel: "#adoption-tech"
     build_notices_channel: "#adoption-tech"
