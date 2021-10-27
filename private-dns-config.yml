@@ -5,6 +5,7 @@ subscriptions:
     active: true
     consulActive: true
     environments:
+      - name: aat
       - name: sandbox
       - name: idam-sandbox
       - name: idam-saat
