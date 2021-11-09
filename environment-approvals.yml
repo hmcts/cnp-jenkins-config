@@ -175,3 +175,4 @@ prod:
   - repo: https://github.com/hmcts/civil-service.git
   - repo: https://github.com/hmcts/civil-ccd-definition.git
   - repo: https://github.com/hmcts/civil-camunda-bpmn-definition.git
+  - repo: https://github.com/hmcts/ccpay-refunds-app.git
