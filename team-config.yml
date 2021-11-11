@@ -680,4 +680,4 @@ labs:
     contact_channel: "#platops-labs"
     build_notices_channel: "#platops-build-notices"
   tags:
-    application: labs
+    application: core
