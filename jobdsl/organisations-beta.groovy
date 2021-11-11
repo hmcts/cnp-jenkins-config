@@ -40,7 +40,7 @@ List<Map> orgs = [
         [name: 'LAU', displayName: "Logs and Audit"],
         [name: 'PRL', displayName: 'Private Law'],
         [name: 'DA', displayName: 'Domestic Abuse'],
-        [name: 'LABS', displayName: 'Labs', regex: 'golden-path-.*'],
+        [name: 'LABS', displayName: 'Labs'],
 ]
 
 orgs.each { Map org ->
