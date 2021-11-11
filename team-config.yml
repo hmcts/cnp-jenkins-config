@@ -678,6 +678,6 @@ labs:
   namespace: "labs"
   slack:
     contact_channel: "#platops-labs"
-    build_notices_channel: "#platops-build-notices"
+    build_notices_channel: "#labs-build-notices"
   tags:
     application: core
