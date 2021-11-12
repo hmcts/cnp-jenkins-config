@@ -61,7 +61,7 @@ if (isSandbox()) {
             suppressDefaultJenkinsfile     : true,
             disableNamedBuildBranchStrategy: true,
             disableAgedRefsBranchStrategy  : true,
-            credentialId                   : 'hmcts-jenkins-cnp'
+            credentialId                   : 'hmcts-jenkins-cft'
     ]
     githubOrg(pipelineTestOrg).call()
 }
@@ -83,7 +83,7 @@ Closure githubOrg(Map args = [:]) {
             jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
             disableNamedBuildBranchStrategy: false,
-            credentialId                   : "hmcts-jenkins-" + args.name.toLowerCase()
+            credentialId                   : "hmcts-jenkins-cft"
     ] << args
     def folderName = config.name
 
