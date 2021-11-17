@@ -667,7 +667,7 @@ adoption-ccd-definitions:
     application: adoption-ccd-definitions
 da:
   team: "Domestic Abuse"
-  namespace:  "da"
+  namespace:  "domestic-abuse"
   slack:
     contact_channel: "#da-tech-notifications"
     build_notices_channel: "#da-tech-notifications"
