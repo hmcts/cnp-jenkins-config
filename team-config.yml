@@ -673,3 +673,19 @@ da:
     build_notices_channel: "#da-tech-notifications"
   tags:
     application: da-cos-api
+labs:
+  team: "CNP"
+  namespace: "labs"
+  slack:
+    contact_channel: "#platops-labs"
+    build_notices_channel: "#labs-build-notices"
+  tags:
+    application: core
+et:
+  team: "Employment Tribunals"
+  namespace: "et"
+  slack:
+    contact_channel: "#et-tech"
+    build_notices_channel: "#et-builds"
+  tags:
+    application: employment-tribunals

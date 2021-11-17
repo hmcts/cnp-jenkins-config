@@ -18,6 +18,7 @@ List<Map> orgs = [
         [name: 'DIV', displayName: "Divorce"],
         [name: 'ECM', displayName: "ECM", regex: '(ethos.*|ecm.*)', credentialId: 'hmcts-jenkins-ethos'],
         [name: 'EM',displayName: 'Evidence Management', regex: '(document-management-store-app|dm-shared-infrastructure|em-.*|dg-.*)'],
+        [name: 'ET', displayName: "Employment Tribunals", regex: 'et-.*'],
         [name: 'FeePay', displayName: 'Fees and Pay', regex: '(ccfr.*|ccpay.*|bar.*)'],
         [name: 'FinRem', displayName: "Financial Remedy"],
         [name: 'FPL'],
@@ -40,6 +41,7 @@ List<Map> orgs = [
         [name: 'LAU', displayName: "Logs and Audit"],
         [name: 'PRL', displayName: 'Private Law'],
         [name: 'DA', displayName: 'Domestic Abuse'],
+        [name: 'LABS', displayName: 'Labs'],
 ]
 
 orgs.each { Map org ->
@@ -60,7 +62,7 @@ if (isSandbox()) {
             suppressDefaultJenkinsfile     : true,
             disableNamedBuildBranchStrategy: true,
             disableAgedRefsBranchStrategy  : true,
-            credentialId                   : 'hmcts-jenkins-cnp'
+            credentialId                   : 'hmcts-jenkins-cft'
     ]
     githubOrg(pipelineTestOrg).call()
 }
@@ -82,7 +84,7 @@ Closure githubOrg(Map args = [:]) {
             jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
             disableNamedBuildBranchStrategy: false,
-            credentialId                   : "hmcts-jenkins-" + args.name.toLowerCase()
+            credentialId                   : "hmcts-jenkins-cft"
     ] << args
     def folderName = config.name
 
