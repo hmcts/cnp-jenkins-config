@@ -588,6 +588,7 @@ fact:
 nfdiv:
   team: "No Fault Divorce"
   namespace: "nfdiv"
+  agent: "ubuntu"
   slack:
     contact_channel: "#nfdiv-tech"
     build_notices_channel: "#nfdiv-builds"
