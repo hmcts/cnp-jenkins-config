@@ -638,6 +638,7 @@ lau:
 prl:
   team: "Private Law"
   namespace: "private-law"
+  agent: "ubuntu"
   slack:
     contact_channel: "#prl-tech"
     build_notices_channel: "#prl-tech"
