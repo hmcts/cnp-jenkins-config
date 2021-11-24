@@ -459,6 +459,7 @@ ctsc:
 rd:
   team: "Reference Data"
   namespace: "rd"
+  agent: "ubuntu"
   slack:
     contact_channel: "#ref-data-support"
     build_notices_channel: "#rd-master-builds"
