@@ -153,6 +153,7 @@ ia:
 idam:
   team: "IdAM"
   namespace: "idam"
+  agent: "ubuntu"
   slack:
     contact_channel: "#idam_tech"
     build_notices_channel: "#idam_tech"
