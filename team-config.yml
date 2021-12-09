@@ -153,7 +153,6 @@ ia:
 idam:
   team: "IdAM"
   namespace: "idam"
-  agent: "ubuntu"
   slack:
     contact_channel: "#idam_tech"
     build_notices_channel: "#idam_tech"
@@ -460,7 +459,6 @@ ctsc:
 rd:
   team: "Reference Data"
   namespace: "rd"
-  agent: "ubuntu"
   slack:
     contact_channel: "#ref-data-support"
     build_notices_channel: "#rd-master-builds"
@@ -590,7 +588,6 @@ fact:
 nfdiv:
   team: "No Fault Divorce"
   namespace: "nfdiv"
-  agent: "ubuntu"
   slack:
     contact_channel: "#nfdiv-tech"
     build_notices_channel: "#nfdiv-builds"
@@ -639,7 +636,6 @@ lau:
 prl:
   team: "Private Law"
   namespace: "private-law"
-  agent: "ubuntu"
   slack:
     contact_channel: "#prl-tech"
     build_notices_channel: "#prl-tech"
