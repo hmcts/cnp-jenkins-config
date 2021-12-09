@@ -556,6 +556,7 @@ rse:
 civil:
   team: "Civil"
   namespace: "civil"
+  agent: "centos"
   slack:
     contact_channel: "#civil_contact"
     build_notices_channel: "#civil_notifications"
