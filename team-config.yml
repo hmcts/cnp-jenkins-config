@@ -105,7 +105,6 @@ cet:
 div:
   team: "Divorce"
   namespace: "divorce"
-  agent: "centos"
   slack:
     contact_channel: "#div-dev"
     build_notices_channel: "#div-dev"
