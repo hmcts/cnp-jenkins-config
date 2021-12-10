@@ -406,6 +406,7 @@ sscs-cor:
 sscs-tya:
   team: "SSCS"
   namespace: "sscs"
+  agent: "centos"
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
@@ -414,6 +415,7 @@ sscs-tya:
 sscs-tribunals:
   team: "SSCS"
   namespace: "sscs"
+  agent: "centos"
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
