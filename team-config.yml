@@ -25,7 +25,6 @@ hmc:
 ccd:
   team: "CCD"
   namespace:  "ccd"
-  agent: "centos"
   slack:
     contact_channel: "#ccd-questions-answers"
     build_notices_channel: "#ccd-master-builds"
@@ -106,7 +105,6 @@ cet:
 div:
   team: "Divorce"
   namespace: "divorce"
-  agent: "centos"
   slack:
     contact_channel: "#div-dev"
     build_notices_channel: "#div-dev"
@@ -389,7 +387,6 @@ plum-shared-infrastructure:
 sscs:
   team: "SSCS"
   namespace: "sscs"
-  agent: "centos"
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
@@ -398,7 +395,6 @@ sscs:
 sscs-cor:
   team: "SSCS"
   namespace: "sscs"
-  agent: "centos"
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
@@ -560,7 +556,6 @@ rse:
 civil:
   team: "Civil"
   namespace: "civil"
-  agent: "centos"
   slack:
     contact_channel: "#civil_contact"
     build_notices_channel: "#civil_notifications"
