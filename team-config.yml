@@ -676,7 +676,6 @@ da:
 labs:
   team: "CNP"
   namespace: "labs"
-  agent: "centos"
   slack:
     contact_channel: "#platops-labs"
     build_notices_channel: "#labs-build-notices"
