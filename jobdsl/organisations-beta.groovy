@@ -104,7 +104,7 @@ Closure githubOrg(Map args = [:]) {
         folderPrefix = 'Sandbox_'
         wildcardBranchesToInclude = '*'
         // We want the labs folder to build on push but others don't need to
-        disableNamedBuildBranchStrategy = config.name === 'LABS' ? false : true
+        disableNamedBuildBranchStrategy = config.name == 'LABS' ? false : true
     }
     GString orgFolderName = "HMCTS_${folderPrefix}${folderName}"
 
