@@ -60,7 +60,6 @@ if (isSandbox()) {
             branchesToInclude              : 'master PR*',
             jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
             suppressDefaultJenkinsfile     : true,
-            disableNamedBuildBranchStrategy: true,
             disableAgedRefsBranchStrategy  : true,
             credentialId                   : 'hmcts-jenkins-cft'
     ]
@@ -83,7 +82,7 @@ Closure githubOrg(Map args = [:]) {
             regex                          : args.name.toLowerCase() + '.*',
             jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
-            disableNamedBuildBranchStrategy: false,
+            enableNamedBuildBranchStrategy : false,
             credentialId                   : "hmcts-jenkins-cft"
     ] << args
     def folderName = config.name
@@ -104,7 +103,7 @@ Closure githubOrg(Map args = [:]) {
         folderPrefix = 'Sandbox_'
         wildcardBranchesToInclude = '*'
         // We want the labs folder to build on push but others don't need to
-        disableNamedBuildBranchStrategy = config.name == 'LABS' ? false : true
+        enableNamedBuildBranchStrategy = config.name == 'LABS' ? false : true
     }
     GString orgFolderName = "HMCTS_${folderPrefix}${folderName}"
 
@@ -122,7 +121,7 @@ Closure githubOrg(Map args = [:]) {
 
         jenkinsfilePath = runningOnSandbox ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly'
         suppressDefaultJenkinsfile = true
-        disableNamedBuildBranchStrategy = true
+        enableNamedBuildBranchStrategy = true
     }
 
     return {
@@ -190,7 +189,7 @@ Closure githubOrg(Map args = [:]) {
                 }
 
                 // prevent builds triggering automatically from SCM push for sandbox and nightly builds
-                if (!disableNamedBuildBranchStrategy) {
+                if (enableNamedBuildBranchStrategy) {
                     node / buildStrategies / 'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl'(plugin: 'basic-branch-build-strategies@1.1.1') {
                         filters()
                     }
