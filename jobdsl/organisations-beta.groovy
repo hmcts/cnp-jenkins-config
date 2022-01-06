@@ -104,6 +104,7 @@ Closure githubOrg(Map args = [:]) {
         wildcardBranchesToInclude = '*'
         // We want the labs folder to build on push but others don't need to
         enableNamedBuildBranchStrategy = config.name == 'LABS' ? false : true
+        println "enableNamedBuildBranchStrategy " + config.name +  " " enableNamedBuildBranchStrategy
     }
     GString orgFolderName = "HMCTS_${folderPrefix}${folderName}"
 
