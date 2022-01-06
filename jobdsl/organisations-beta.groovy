@@ -113,7 +113,7 @@ Closure githubOrg(Map args = [:]) {
     }
 
     if (config.nightly) {
-        orgFolderName = "HMCTS_${folderSandboxPrefix}Nightly_${folderName}"
+        orgFolderName = "HMCTS_${folderPrefix}Nightly_${folderName}"
         //noinspection GroovyAssignabilityCheck
         orgDescription = "<br>Nightly tests for ${config.displayName}  will be scheduled using this organisation on the AAT Version of the application"
 
