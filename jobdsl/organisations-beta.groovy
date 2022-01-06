@@ -91,18 +91,26 @@ Closure githubOrg(Map args = [:]) {
     String jenkinsfilePath = config.jenkinsfilePath
 
     def runningOnSandbox = isSandbox()
-    String folderSandboxPrefix = runningOnSandbox ? 'Sandbox_' : ''
-    GString orgFolderName = "HMCTS_${folderSandboxPrefix}${folderName}"
-    String wildcardBranchesToInclude = runningOnSandbox ? '*' : 'master demo PR-* perftest ithc preview ethosldata'
     GString orgDescription = "<br>${config.displayName} team repositories"
 
     String displayNamePrefix = "HMCTS"
 
+    String folderPrefix = ''
+    String wildcardBranchesToInclude = 'master demo PR-* perftest ithc preview ethosldata'
+    boolean suppressDefaultJenkinsfile = config.suppressDefaultJenkinsfile
+    boolean disableNamedBuildBranchStrategy = config.disableNamedBuildBranchStrategy
+
+    if (runningOnSandbox) {
+        folderPrefix = 'Sandbox_'
+        wildcardBranchesToInclude = '*'
+        // We want the labs folder to build on push but others don't need to
+        disableNamedBuildBranchStrategy = config.name === 'LABS' ? false : true
+    }
+    GString orgFolderName = "HMCTS_${folderPrefix}${folderName}"
+
     if (config.branchesToInclude) {
         wildcardBranchesToInclude = config.branchesToInclude
     }
-
-    boolean suppressDefaultJenkinsfile = config.suppressDefaultJenkinsfile
 
     if (config.nightly) {
         orgFolderName = "HMCTS_${folderSandboxPrefix}Nightly_${folderName}"
@@ -114,6 +122,7 @@ Closure githubOrg(Map args = [:]) {
 
         jenkinsfilePath = runningOnSandbox ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly'
         suppressDefaultJenkinsfile = true
+        disableNamedBuildBranchStrategy = true
     }
 
     return {
@@ -181,7 +190,7 @@ Closure githubOrg(Map args = [:]) {
                 }
 
                 // prevent builds triggering automatically from SCM push for sandbox and nightly builds
-                if ((runningOnSandbox || config.nightly) && !config.disableNamedBuildBranchStrategy) {
+                if (!disableNamedBuildBranchStrategy) {
                     node / buildStrategies / 'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl'(plugin: 'basic-branch-build-strategies@1.1.1') {
                         filters()
                     }
