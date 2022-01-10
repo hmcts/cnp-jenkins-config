@@ -6,6 +6,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=0.0.1"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=curator"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=ES-7x-Upgrade"},
+    {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=RDM-13038"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=Ethosldata"},
     {"source":  "git@github.com:hmcts/cnp-module-logstash.git?ref=master"}
