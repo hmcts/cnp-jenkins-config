@@ -665,14 +665,6 @@ adoption-ccd-definitions:
     build_notices_channel: "#adoption-tech"
   tags:
     application: adoption-ccd-definitions
-da:
-  team: "Domestic Abuse"
-  namespace:  "domestic-abuse"
-  slack:
-    contact_channel: "#da-tech-notifications"
-    build_notices_channel: "#da-tech-notifications"
-  tags:
-    application: da-cos-api
 labs:
   team: "CNP"
   namespace: "labs"

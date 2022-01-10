@@ -40,7 +40,6 @@ List<Map> orgs = [
         [name: 'NFDIV', displayName: "No Fault Divorce"],
         [name: 'LAU', displayName: "Logs and Audit"],
         [name: 'PRL', displayName: 'Private Law'],
-        [name: 'DA', displayName: 'Domestic Abuse'],
         [name: 'LABS', displayName: 'Labs'],
 ]
 
