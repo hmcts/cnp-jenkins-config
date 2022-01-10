@@ -171,7 +171,7 @@ prod:
   - repo: https://github.com/hmcts/wa-task-configuration-api.git
   - repo: https://github.com/hmcts/wa-task-management-api.git
   - repo: https://github.com/hmcts/wa-task-monitor.git
-  - repo: https://github.com/hmcts/wa-standalone-task-bpmn
+  - repo: https://github.com/hmcts/wa-standalone-task-bpmn.git
   - repo: https://github.com/hmcts/civil-service.git
   - repo: https://github.com/hmcts/civil-ccd-definition.git
   - repo: https://github.com/hmcts/civil-camunda-bpmn-definition.git
