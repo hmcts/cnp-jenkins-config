@@ -95,6 +95,7 @@ prod:
   - repo: https://github.com/hmcts/idam-shared-infrastructure.git
   - repo: https://github.com/hmcts/idam-web-admin.git
   - repo: https://github.com/hmcts/idam-web-public.git
+  - repo: https://github.com/hmcts/idam-user-dashboard.git
   - repo: https://github.com/hmcts/pcq-shared-infrastructure.git
   - repo: https://github.com/hmcts/pcq-consolidation-service.git
   - repo: https://github.com/hmcts/pcq-frontend.git
