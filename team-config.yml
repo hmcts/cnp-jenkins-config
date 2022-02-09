@@ -533,8 +533,8 @@ adoption:
   team: "Adoption"
   namespace: "adoption"
   slack:
-    contact_channel: "#fpla_adoption_tech"
-    build_notices_channel: "#fpla_adoption_tech"
+    contact_channel: "#adoption-tech"
+    build_notices_channel: "#adoption-tech"
   tags:
     application: adoption
 ccpay-functions:
