@@ -681,3 +681,11 @@ et:
     build_notices_channel: "#et-builds"
   tags:
     application: employment-tribunals
+ds:
+  team: "Integration Stream"
+  namespace: "ds"
+  slack:
+    contact_channel: "#family-integration-cicd-notice"
+    build_notices_channel: "family-integration-cicd-notice"
+  tags:
+    application: document-submission-ui
