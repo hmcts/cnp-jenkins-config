@@ -41,6 +41,7 @@ List<Map> orgs = [
         [name: 'LAU', displayName: "Logs and Audit"],
         [name: 'PRL', displayName: 'Private Law'],
         [name: 'LABS', displayName: 'Labs'],
+        [name: 'DS', displayName: 'Document Submissions'],
 ]
 
 orgs.each { Map org ->
