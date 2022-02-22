@@ -688,4 +688,4 @@ ds:
     contact_channel: "#family-integration-cicd-notice"
     build_notices_channel: "family-integration-cicd-notice"
   tags:
-    application: document-submission-ui
+    application: document-submission
