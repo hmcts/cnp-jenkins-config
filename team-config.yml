@@ -682,10 +682,10 @@ et:
   tags:
     application: employment-tribunals
 ds:
-  team: "Integration Stream"
+  team: "Family Integration Stream"
   namespace: "ds"
   slack:
-    contact_channel: "#family-integration-cicd-notice"
-    build_notices_channel: "family-integration-cicd-notice"
+    contact_channel: "#family-integration-devs"
+    build_notices_channel: "#family-integration-cicd-notice"
   tags:
     application: document-submission
