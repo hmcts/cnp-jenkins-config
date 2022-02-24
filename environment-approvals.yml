@@ -96,6 +96,10 @@ prod:
   - repo: https://github.com/hmcts/idam-web-admin.git
   - repo: https://github.com/hmcts/idam-web-public.git
   - repo: https://github.com/hmcts/idam-user-dashboard.git
+  - repo: https://github.com/hmcts/lau-frontend.git
+  - repo: https://github.com/hmcts/lau-case-backend.git
+  - repo: https://github.com/hmcts/lau-idam-backend.git
+  - repo: https://github.com/hmcts/lau-shared-infrastructure.git
   - repo: https://github.com/hmcts/nfdiv-case-api.git
   - repo: https://github.com/hmcts/nfdiv-frontend.git
   - repo: https://github.com/hmcts/nfdiv-shared-infrastructure.git
