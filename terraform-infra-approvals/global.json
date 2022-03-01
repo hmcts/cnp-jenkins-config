@@ -32,6 +32,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-storage?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=azurermv2"},
+    {"source":  "git@github.com:hmcts/cnp-module-redis?ref=add-diagnostic-settings"},
     {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=revert-159-tf-0.12.x"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=master"},
