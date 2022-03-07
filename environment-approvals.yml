@@ -188,3 +188,4 @@ prod:
   - repo: https://github.com/hmcts/ccpay-refunds-app.git
   - repo: https://github.com/hmcts/civil-general-applications.git
   - repo: https://github.com/hmcts/civil-general-apps-ccd-definition.git
+  - repo: https://github.com/hmcts/ccpay-paymentoutcome-web.git
