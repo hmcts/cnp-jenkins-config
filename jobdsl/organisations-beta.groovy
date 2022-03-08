@@ -31,6 +31,7 @@ List<Map> orgs = [
         [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|service-auth-provider-.*|spring-boot-template|data-extractor|data-generator|camunda-.*)'],
         [name: 'Probate'],
         [name: 'RD', displayName: 'Ref Data'],
+        [name: 'RPTS'],
         [name: 'SSCS'],
         [name: 'XUI', regex: 'rpx-.*'],
         [name: 'RSE', displayName: 'Reform Software Engineering'],
