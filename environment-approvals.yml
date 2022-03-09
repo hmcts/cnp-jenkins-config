@@ -189,3 +189,5 @@ prod:
   - repo: https://github.com/hmcts/civil-general-applications.git
   - repo: https://github.com/hmcts/civil-general-apps-ccd-definition.git
   - repo: https://github.com/hmcts/ccpay-paymentoutcome-web.git
+  - repo: https://github.com/hmcts/ccpay-paymentoutcome-web.git
+  - repo: https://github:com/hmcts/ccpay-service-request-cpo-update-service.git
