@@ -12,7 +12,6 @@
    {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=feature/add-count-input-variable"},
    {"source":  "git@github.com:hmcts/cnp-module-waf?ref=CHG5001024"},
    {"source":  "git@github.com:hmcts/cnp-module-waf?ref=bulkscan_stage"},
-   {"source":  "git@github.com:hmcts/create-storage-containers?ref=master"},
-   {"source":  "git@github.com:hmcts/terraform-module-common-tags?ref=master"}
+   {"source":  "git@github.com:hmcts/create-storage-containers?ref=master"}
   ]
 }
