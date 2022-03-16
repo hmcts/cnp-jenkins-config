@@ -9,6 +9,8 @@
     {"type": "random_string"},
     {"type": "azurerm_subnet"},
     {"type": "azurerm_api_management"},
+    {"type": "azurerm_api_management_subscription"},
+    {"type": "azurerm_api_management_user"},
     {"type": "azurerm_management_lock"},
     {"type": "azurerm_monitor_action_group"},
     {"type": "azurerm_application_insights_web_test"},
