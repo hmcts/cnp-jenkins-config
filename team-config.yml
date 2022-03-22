@@ -689,11 +689,19 @@ et:
     build_notices_channel: "#et-builds"
   tags:
     application: employment-tribunals
-ds:
+fis-ds-web:
   team: "Family Integration Stream"
-  namespace: "ds"
+  namespace: "fis"
   slack:
     contact_channel: "#family-integration-devs"
     build_notices_channel: "#family-integration-cicd-notice"
   tags:
-    application: document-submission
+    application: fis-ds-web
+fis-bulk-scan-api:
+  team: "Family Integration Stream"
+  namespace: "fis"
+  slack:
+    contact_channel: "#family-integration-devs"
+    build_notices_channel: "#family-integration-cicd-notice"
+  tags:
+    application: fis-bulk-scan-api
