@@ -697,7 +697,7 @@ fis:
     build_notices_channel: "#family-integration-cicd-notice"
   tags:
     application: fis-ds-web
-fis-bulk-scan-api:
+fis:
   team: "Family Integration Stream"
   namespace: "fis"
   slack:
