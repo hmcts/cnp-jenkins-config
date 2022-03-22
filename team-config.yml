@@ -689,7 +689,7 @@ et:
     build_notices_channel: "#et-builds"
   tags:
     application: employment-tribunals
-fis-ds-web:
+fis:
   team: "Family Integration Stream"
   namespace: "fis"
   slack:
