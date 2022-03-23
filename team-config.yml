@@ -696,4 +696,4 @@ fis:
     contact_channel: "#family-integration-devs"
     build_notices_channel: "#family-integration-cicd-notice"
   tags:
-    application: fis
+    application: family-integration-stream
