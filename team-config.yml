@@ -597,8 +597,8 @@ nfdiv:
   team: "No Fault Divorce"
   namespace: "nfdiv"
   slack:
-    contact_channel: "#nfdiv-tech"
-    build_notices_channel: "#nfdiv-builds"
+    contact_channel: "#no-fault-divorce-tech"
+    build_notices_channel: "#no-fault-divorce-builds"
   tags:
     application: no-fault-divorce
 ccd-elastic-search:
