@@ -13,7 +13,6 @@ List<Map> orgs = [
         [name: 'BSP', regex: '(send-letter-client|send-letter-service|send-letter-performance-tests|send-letter-service-container-.*|bulk-scan-.*|blob-router-service|reform-scan-.*)'],
         [name: 'CDM', regex: '(ccd.*|aac.*|cpo.*|hmc.*)'],
         [name: 'CMC', regex: '(cmc-c*|cmc-performance.*|cmc-shared.*)'],
-        [name: 'CNP'],
         [name: 'CTSC'],
         [name: 'DIV', displayName: "Divorce"],
         [name: 'ECM', displayName: "ECM", regex: '(ethos.*|ecm.*)', credentialId: 'hmcts-jenkins-ethos'],
@@ -25,10 +24,9 @@ List<Map> orgs = [
         [name: 'FPRL', displayName: 'Family Private Law'],
         [name: 'IAC', regex: 'ia.*'],
         [name: 'IDAM', regex: '(idam-.*|cnp-idam-.*)'],
-        [name: 'MI', displayName: 'Management Information'],
         [name: 'HMI', regex: 'hmi-(?!case-hq-emulator).*'],
         [name: 'PCQ'],
-        [name: 'Platform',credentialId: "hmcts-jenkins-rpe", regex: '(rpe-.*|draft-store.*|cmc-pdf-service|service-auth-provider-.*|spring-boot-template|data-extractor|data-generator|camunda-.*)'],
+        [name: 'Platform', credentialId: "hmcts-jenkins-rpe", topic: 'team-platform'],
         [name: 'Probate'],
         [name: 'RD', displayName: 'Ref Data'],
         [name: 'RPTS'],
@@ -73,6 +71,7 @@ if (isSandbox()) {
  *  - name: the name of the organisation
  *  - displayName (optional, name will be used by default): display name, will be prefixed by HMCTS -
  *  - regex (optional, name.* will be used by default): regex to use for finding repos owned by this team
+ *  - topic (optional): GitHub topic to use to find repos owned by the team
  *  - jenkinsfilePath (advanced use only): custom jenkinsfile path
  *  - suppressDefaultJenkinsfile: don't use the default Jenkinsfile
  *  - nightly: whether this is nightly org automatically set by the dsl
@@ -80,13 +79,16 @@ if (isSandbox()) {
 Closure githubOrg(Map args = [:]) {
     def config = [
             displayName                    : args.name,
-            regex                          : args.name.toLowerCase() + '.*',
             jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
             enableNamedBuildBranchStrategy : false,
             credentialId                   : "hmcts-jenkins-cft"
     ] << args
     def folderName = config.name
+
+    if (!config.topic) {
+        config.regex = args.name.toLowerCase() + '.*'
+    }
 
     String jenkinsfilePath = config.jenkinsfilePath
 
@@ -156,9 +158,19 @@ Closure githubOrg(Map args = [:]) {
             }
             configure { node ->
                 def traits = node / navigators / 'org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator' / traits
-                traits << 'jenkins.scm.impl.trait.RegexSCMSourceFilterTrait' {
-                    regex(config.regex)
+
+                if (config.regex) {
+                    traits << 'jenkins.scm.impl.trait.RegexSCMSourceFilterTrait' {
+                        regex(config.regex)
+                    }
                 }
+
+                if (config.topic) {
+                    traits << 'org.jenkinsci.plugins.github__branch__source.TopicsTrait' {
+                        topicList(config.topic)
+                    }
+                }
+
                 traits << 'jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait' {
                     includes(wildcardBranchesToInclude)
                     excludes()
@@ -172,15 +184,14 @@ Closure githubOrg(Map args = [:]) {
                 traits << 'org.jenkinsci.plugins.github__branch__source.ExcludeArchivedRepositoriesTrait' {
                 }
 
-                traits << 'io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait' {
-                    if (config.nightly) {
+                if (config.nightly) {
+                    traits << 'io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait' {
                         // TODO enable skip globally at some point so we don't have 2 job statuses
                         // not doing right now as tons of people will have it in their required commit statuses
                         skipNotifications(true)
                         def label = runningOnSandbox ? "Jenkins - sandbox nightly" : "Jenkins - nightly"
                         name(label)
                     }
-                    skipProgressUpdates(true)
                 }
 
                 if (!config.nightly && !config.disableAgedRefsBranchStrategy) {

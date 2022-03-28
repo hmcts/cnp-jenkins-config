@@ -8,7 +8,7 @@ private boolean isSandbox() {
 }
 
 List<Map> orgs = [
-    [name: 'CNP'],
+    [name: 'Platform', topic: 'team-platform'],
 ]
 
 orgs.each { Map org ->
@@ -37,6 +37,7 @@ githubOrg(pipelineTestOrg).call()
  *  - name: the name of the organisation
  *  - displayName (optional, name will be used by default): display name, will be prefixed by HMCTS -
  *  - regex (optional, name.* will be used by default): regex to use for finding repos owned by this team
+ *  - topic (optional): GitHub topic to use to find repos owned by the team
  *  - jenkinsfilePath (advanced use only): custom jenkinsfile path
  *  - suppressDefaultJenkinsfile: don't use the default Jenkinsfile
  *  - nightly: whether this is nightly org automatically set by the dsl
@@ -44,32 +45,43 @@ githubOrg(pipelineTestOrg).call()
 Closure githubOrg(Map args = [:]) {
     def config = [
             displayName                    : args.name,
-            regex                          : args.name.toLowerCase() + '.*',
             jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
-            disableNamedBuildBranchStrategy: false,
-            credentialId                   : "hmcts-jenkins-" + args.name.toLowerCase()
+            enableNamedBuildBranchStrategy : false,
+            credentialId                   : "hmcts-jenkins-cft"
     ] << args
     def folderName = config.name
+
+    if (!config.topic) {
+        config.regex = args.name.toLowerCase() + '.*'
+    }
 
     String jenkinsfilePath = config.jenkinsfilePath
 
     def runningOnSandbox = isSandbox()
-    String folderSandboxPrefix = runningOnSandbox ? 'Sandbox_' : ''
-    GString orgFolderName = "HMCTS_${folderSandboxPrefix}${folderName}"
-    String wildcardBranchesToInclude = runningOnSandbox ? '*' : 'master demo PR-* perftest ithc preview ethosldata'
     GString orgDescription = "<br>${config.displayName} team repositories"
 
     String displayNamePrefix = "HMCTS"
+
+    String folderPrefix = ''
+    String wildcardBranchesToInclude = 'master demo PR-* perftest ithc preview ethosldata'
+    boolean suppressDefaultJenkinsfile = config.suppressDefaultJenkinsfile
+    boolean enableNamedBuildBranchStrategy = config.enableNamedBuildBranchStrategy
+
+    if (runningOnSandbox) {
+        folderPrefix = 'Sandbox_'
+        wildcardBranchesToInclude = '*'
+        // We want the labs folder to build on push but others don't need to
+        enableNamedBuildBranchStrategy = config.name == 'LABS' ? false : true
+    }
+    GString orgFolderName = "HMCTS_${folderPrefix}${folderName}"
 
     if (config.branchesToInclude) {
         wildcardBranchesToInclude = config.branchesToInclude
     }
 
-    boolean suppressDefaultJenkinsfile = config.suppressDefaultJenkinsfile
-
     if (config.nightly) {
-        orgFolderName = "HMCTS_${folderSandboxPrefix}Nightly_${folderName}"
+        orgFolderName = "HMCTS_${folderPrefix}Nightly_${folderName}"
         //noinspection GroovyAssignabilityCheck
         orgDescription = "<br>Nightly tests for ${config.displayName}  will be scheduled using this organisation on the AAT Version of the application"
 
@@ -78,6 +90,7 @@ Closure githubOrg(Map args = [:]) {
 
         jenkinsfilePath = runningOnSandbox ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly'
         suppressDefaultJenkinsfile = true
+        enableNamedBuildBranchStrategy = true
     }
 
     return {
@@ -111,9 +124,19 @@ Closure githubOrg(Map args = [:]) {
             }
             configure { node ->
                 def traits = node / navigators / 'org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator' / traits
-                traits << 'jenkins.scm.impl.trait.RegexSCMSourceFilterTrait' {
-                    regex(config.regex)
+
+                if (config.regex) {
+                    traits << 'jenkins.scm.impl.trait.RegexSCMSourceFilterTrait' {
+                        regex(config.regex)
+                    }
                 }
+
+                if (config.topic) {
+                    traits << 'org.jenkinsci.plugins.github__branch__source.TopicsTrait' {
+                        topicList(config.topic)
+                    }
+                }
+
                 traits << 'jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait' {
                     includes(wildcardBranchesToInclude)
                     excludes()
@@ -127,19 +150,24 @@ Closure githubOrg(Map args = [:]) {
                 traits << 'org.jenkinsci.plugins.github__branch__source.ExcludeArchivedRepositoriesTrait' {
                 }
 
-                traits << 'io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait' {
-                    if (config.nightly) {
+                if (config.nightly) {
+                    traits << 'io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait' {
                         // TODO enable skip globally at some point so we don't have 2 job statuses
                         // not doing right now as tons of people will have it in their required commit statuses
                         skipNotifications(true)
                         def label = runningOnSandbox ? "Jenkins - sandbox nightly" : "Jenkins - nightly"
                         name(label)
                     }
-                    skipProgressUpdates(true)
+                }
+
+                if (!config.nightly && !config.disableAgedRefsBranchStrategy) {
+                    traits << 'org.jenkinsci.plugins.scm_filter.GitHubAgedRefsTrait' {
+                        retentionDays(30)
+                    }
                 }
 
                 // prevent builds triggering automatically from SCM push for sandbox and nightly builds
-                if ((runningOnSandbox || config.nightly) && !config.disableNamedBuildBranchStrategy) {
+                if (enableNamedBuildBranchStrategy) {
                     node / buildStrategies / 'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl'(plugin: 'basic-branch-build-strategies@1.1.1') {
                         filters()
                     }
