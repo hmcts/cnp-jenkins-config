@@ -193,3 +193,4 @@ prod:
   - repo: https://github.com/hmcts/prl-ccd-definitions.git
   - repo: https://github.com/hmcts/prl-cos-api.git
   - repo: https://github.com/hmcts/prl-dgs-api.git
+  - repo: https://github.com/hmcts/prl-shared-infrastructure.git
