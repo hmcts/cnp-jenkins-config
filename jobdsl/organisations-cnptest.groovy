@@ -134,7 +134,6 @@ Closure githubOrg(Map args = [:]) {
                 if (config.topic) {
                     traits << 'org.jenkinsci.plugins.github__branch__source.TopicsTrait' {
                         topicList(config.topic)
-                        topics([config.topic])
                     }
                 }
 
