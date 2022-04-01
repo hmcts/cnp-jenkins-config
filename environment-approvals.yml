@@ -194,3 +194,4 @@ prod:
   - repo: https://github.com/hmcts/prl-cos-api.git
   - repo: https://github.com/hmcts/prl-dgs-api.git
   - repo: https://github.com/hmcts/prl-shared-infrastructure.git
+  - repo: https://github.com/HMCTS/adoption-shared-infrastructure.git
