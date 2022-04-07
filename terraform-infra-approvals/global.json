@@ -50,7 +50,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-vnet?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=json-troubleshooting"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=DTSPO-6371_remove_provider"},
-    {"source":  "git@github.com:/hmcts/terraform-module-common-tags.git?ref=master"}
+    {"source":  "git@github.com:hmcts/terraform-module-common-tags.git?ref=master"}
     
   ]
 }
