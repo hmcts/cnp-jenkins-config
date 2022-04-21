@@ -28,7 +28,6 @@ if (isSandbox()) {
             jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
             suppressDefaultJenkinsfile     : true,
             disableAgedRefsBranchStrategy  : true,
-            credentialId                   : 'hmcts-jenkins-cft'
     ]
     githubOrg(pipelineTestOrg).call()
 }
@@ -50,7 +49,6 @@ Closure githubOrg(Map args = [:]) {
             jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
             enableNamedBuildBranchStrategy : false,
-            credentialId                   : "hmcts-jenkins-cft"
     ] << args
     def folderName = config.name
 
@@ -60,6 +58,8 @@ Closure githubOrg(Map args = [:]) {
     GString orgDescription = "<br>${config.displayName} team repositories"
 
     def orgDisplayName = config.displayName
+    
+    String credId = "hmcts-jenkins-cft"
 
     String folderSuffix = ''
     String wildcardBranchesToInclude = 'master demo PR-* perftest ithc preview ethosldata'
@@ -89,6 +89,8 @@ Closure githubOrg(Map args = [:]) {
         jenkinsfilePath = runningOnSandbox ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly'
         suppressDefaultJenkinsfile = true
         enableNamedBuildBranchStrategy = true
+
+        credId = "hmcts-jenkins-cnp"
     }
 
     return {
@@ -99,7 +101,7 @@ Closure githubOrg(Map args = [:]) {
                 github {
                     repoOwner("HMCTS")
                     apiUri("https://api.github.com")
-                    credentialsId(config.credentialId)
+                    credentialsId(credId)
                 }
             }
 
@@ -148,14 +150,15 @@ Closure githubOrg(Map args = [:]) {
                 traits << 'org.jenkinsci.plugins.github__branch__source.ExcludeArchivedRepositoriesTrait' {
                 }
 
-                if (config.nightly) {
-                    traits << 'io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait' {
+                traits << 'io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait' {
+                    if (config.nightly) {
                         // TODO enable skip globally at some point so we don't have 2 job statuses
                         // not doing right now as tons of people will have it in their required commit statuses
                         skipNotifications(true)
                         def label = runningOnSandbox ? "Jenkins - sandbox nightly" : "Jenkins - nightly"
                         name(label)
                     }
+                    skipProgressUpdates(true)
                 }
 
                 if (!config.nightly && !config.disableAgedRefsBranchStrategy) {
