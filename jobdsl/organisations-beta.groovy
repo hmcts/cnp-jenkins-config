@@ -54,10 +54,6 @@ Closure githubOrg(Map args = [:]) {
     ] << args
     def folderName = config.name
 
-    if (!config.topic) {
-        config.regex = args.name.toLowerCase() + '.*'
-    }
-
     String jenkinsfilePath = config.jenkinsfilePath
 
     def runningOnSandbox = isSandbox()
