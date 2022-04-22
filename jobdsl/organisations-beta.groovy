@@ -173,9 +173,6 @@ Closure githubOrg(Map args = [:]) {
                         filters()
                     }
                 }
-
-                node / buildStrategies / 'jenkins.branch.buildstrategies.basic.SkipInitialBuildOnFirstBranchIndexing'(plugin: 'basic-branch-build-strategies@1.3.2') {
-                }
             }
         }
     }
