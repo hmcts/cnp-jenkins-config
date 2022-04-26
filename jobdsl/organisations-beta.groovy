@@ -9,8 +9,8 @@ private boolean isSandbox() {
 
 List<Map> orgs = [
     [name: 'HMCTS_a_to_c', credentialsId: 'hmcts-jenkins-a-to-c', displayName: 'HMCTS - A to C', topic: 'jenkins-cft-a-c'],
-    [name: 'HMCTS_d_to_i', credentialsId: 'hmcts-jenkins-d-to-i', displayName: 'HMCTS - D to I', topic: 'jenkins-cft-d-to-i'],
-    [name: 'HMCTS_j_to_z', credentialsId: 'hmcts-jenkins-j-to-z', displayName: 'HMCTS - J to Z', topic: 'jenkins-cft-j-to-z']
+    [name: 'HMCTS_d_to_i', credentialsId: 'hmcts-jenkins-d-to-i', displayName: 'HMCTS - D to I', topic: 'jenkins-cft-d-i'],
+    [name: 'HMCTS_j_to_z', credentialsId: 'hmcts-jenkins-j-to-z', displayName: 'HMCTS - J to Z', topic: 'jenkins-cft-j-z']
 ]
 
 orgs.each { Map org ->
