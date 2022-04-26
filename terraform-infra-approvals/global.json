@@ -51,7 +51,8 @@
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=json-troubleshooting"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=DTSPO-6371_remove_provider"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=DTSPO-6371_azurerm_upgrade"},
-    {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=DTSPO-6371_azurerm_upgrade"}
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=DTSPO-6371_azurerm_upgrade"},
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=DTSPO-6371_azurerm_upgrade"}
     
   ]
 }
