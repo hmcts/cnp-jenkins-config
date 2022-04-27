@@ -24,7 +24,7 @@ orgs.each { Map org ->
 if (isSandbox()) {
     Map pipelineTestOrg = [
             name                           : 'Pipeline_Test',
-            displayName                    : 'Pipeline Test',
+            displayName                    : 'HMCTS - Pipeline Test',
             regex                          : 'cnp-plum-.*|cnp-rhubarb-.*|cnp-jenkins-library',
             branchesToInclude              : 'master PR*',
             jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
@@ -72,7 +72,7 @@ Closure githubOrg(Map args = [:]) {
         folderSuffix = '_Sandbox'
         wildcardBranchesToInclude = '*'
         // We want the labs folder to build on push but others don't need to
-        enableNamedBuildBranchStrategy = config.name == 'LABS' ? false : true
+        enableNamedBuildBranchStrategy = config.name == 'LABS' || config.name == 'Pipeline_Test' ? false : true
     }
     GString orgFolderName = "${folderName}${folderSuffix}"
 
