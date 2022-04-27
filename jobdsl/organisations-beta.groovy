@@ -28,6 +28,7 @@ if (isSandbox()) {
             regex                          : 'cnp-plum-.*|cnp-rhubarb-.*|cnp-jenkins-library',
             branchesToInclude              : 'master PR*',
             jenkinsfilePath                : 'Jenkinsfile_pipeline_test',
+            credentialsId                  : 'hmcts-jenkins-cft',
             suppressDefaultJenkinsfile     : true,
             disableAgedRefsBranchStrategy  : true,
     ]
