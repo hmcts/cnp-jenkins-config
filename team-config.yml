@@ -632,7 +632,7 @@ vh:
     contact_channel: "#vh-devops"
     build_notices_channel: "#vh-builds"
   tags:
-    application: vh
+    application: video-hearings-service
 lau:
   team: "LAU"
   namespace: "lau"
