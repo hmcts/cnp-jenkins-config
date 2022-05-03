@@ -174,7 +174,7 @@ fees:
     contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: fees-pay
+    application: fees-and-payments
 fees-register:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -182,7 +182,7 @@ fees-register:
     contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: fees-pay
+    application: fees-and-payments
 payment:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -190,7 +190,7 @@ payment:
     contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: fees-pay
+    application: fees-and-payments
 ccpay:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -198,7 +198,7 @@ ccpay:
     contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: fees-pay
+    application: fees-and-payments
 bar:
   team: "Fees/Pay"
   namespace: "bar"
@@ -207,7 +207,7 @@ bar:
     build_notices_channel: "#bar-tech"
   defaultSlackChannel: "#bar-tech"
   tags:
-    application: fees-pay
+    application: fees-and-payments
 probate:
   team: "Probate"
   namespace: "probate"
@@ -512,7 +512,7 @@ payments:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: fees-pay
+    application: fees-and-payments
 mi:
   team: "Management Information"
   namespace: "mi"
@@ -544,7 +544,7 @@ ccpay-functions:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: fees-pay
+    application: fees-and-payments
 rse:
   team: "Reform Software Engineering"
   namespace: "rse"
@@ -616,7 +616,7 @@ paymentsgw:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
   tags:
-    application: fees-pay
+    application: fees-and-payments
 keda:
   team: "CNP"
   namespace: "admin"
