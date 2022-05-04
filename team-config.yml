@@ -648,7 +648,7 @@ prl:
     contact_channel: "#prl-tech"
     build_notices_channel: "#prl-tech"
   tags:
-    application: private-law
+    application: family-private-law
 adoption-web:
   team: "Adoption"
   namespace:  "adoption"
