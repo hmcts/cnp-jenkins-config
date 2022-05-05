@@ -568,7 +568,7 @@ hmi:
     contact_channel: "#hmi-devs"
     build_notices_channel: "#hmi-build-notices"
   tags:
-    application: hearing-management-interface
+    application: hearings-management-interface
 wa:
   team: "Work Allocation"
   namespace: "wa"
