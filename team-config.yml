@@ -697,3 +697,11 @@ fis:
     build_notices_channel: "#family-integration-cicd-notice"
   tags:
     application: family-integration-systems
+ts:
+  team: "CDM"
+  namespace:  "ts"
+  slack:
+    contact_channel: "#ccd_support"
+    build_notices_channel: "#ccd-master-builds"
+  tags:
+    application: ts-translation-services
