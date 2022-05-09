@@ -101,7 +101,7 @@ cet:
     contact_channel: "#cet-pipeline"
     build_notices_channel: "#cet-pipeline"
   tags:
-    application: civil-enforcement
+    application: civil-inforcement
 div:
   team: "Divorce"
   namespace: "divorce"
