@@ -423,7 +423,7 @@ snl:
     contact_channel: "#snl-master-builds"
     build_notices_channel: "#snl-master-builds"
   tags:
-    application: scheduling-and-listing
+    application: schedule-and-listing
 am:
   team: "AM"
   namespace: "am"
