@@ -576,7 +576,7 @@ wa:
     contact_channel: "#wa-tech"
     build_notices_channel: "#wa-tech"
   tags:
-    application: work-allocation
+    application: task-management
 fact:
   team: "Find a Court or Tribunal"
   namespace: "fact"
