@@ -65,7 +65,7 @@ Closure githubOrg(Map args = [:]) {
     String credId = config.credentialsId
 
     String folderSuffix = ''
-    String wildcardBranchesToInclude = 'master demo PR-* perftest ithc preview ethosldata'
+    String wildcardBranchesToInclude = 'master demo PR-* perftest ithc preview'
     boolean suppressDefaultJenkinsfile = config.suppressDefaultJenkinsfile
     boolean enableNamedBuildBranchStrategy = config.enableNamedBuildBranchStrategy
 
