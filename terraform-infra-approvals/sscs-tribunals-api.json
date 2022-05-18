@@ -1,0 +1,6 @@
+{
+    "resources": [],
+    "module_calls": [
+      {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=SSCS-10510-add-flag-to-enable-queue-sessions"}
+    ]
+}
