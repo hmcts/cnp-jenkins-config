@@ -157,7 +157,7 @@ idam:
     contact_channel: "#idam_tech"
     build_notices_channel: "#idam_tech"
   tags:
-    application: idam
+    application: cft-idam
 # Shared with Idam and platform engineering
 core-compute:
   team: "CNP"
