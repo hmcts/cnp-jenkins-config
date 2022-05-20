@@ -618,7 +618,7 @@ paymentsgw:
   tags:
     application: fees-and-payments
 keda:
-  team: "CNP"
+  team: "Platform Operations"
   namespace: "admin"
   slack:
     contact_channel: "#platops-help"
