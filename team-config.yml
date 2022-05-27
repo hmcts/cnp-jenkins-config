@@ -645,8 +645,8 @@ prl:
   team: "Private Law"
   namespace: "private-law"
   slack:
-    contact_channel: "#prl-tech"
-    build_notices_channel: "#prl-tech"
+    contact_channel: "#prl-tech-notifications"
+    build_notices_channel: "#prl-tech-notifications"
   tags:
     application: family-private-law
 adoption-web:
