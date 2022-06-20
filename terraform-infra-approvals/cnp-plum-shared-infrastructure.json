@@ -1,0 +1,7 @@
+{
+  "resources": [
+    {"type": "azurerm_role_assignment"},
+    {"type": "azurerm_servicebus_queue"}
+  ],
+  "module_calls": []
+}
