@@ -693,8 +693,8 @@ familygw:
   team: "Family Api Gateway"
   namespace: "private-law"
   slack:
-    contact_channel: "##prl-tech-notifications"
-    build_notices_channel: "##prl-tech-notifications"
+    contact_channel: "#prl-tech-notifications"
+    build_notices_channel: "#prl-tech-notifications"
   tags:
     application: family-integration-systems
     
