@@ -696,8 +696,7 @@ familygw:
     contact_channel: "#prl-tech-notifications"
     build_notices_channel: "#prl-tech-notifications"
   tags:
-    application: family-integration-systems
-    
+    application: family-integration-systems  
 ts:
   team: "CDM"
   namespace:  "ts"
