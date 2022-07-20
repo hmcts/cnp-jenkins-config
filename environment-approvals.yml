@@ -95,6 +95,7 @@ prod:
   - repo: https://github.com/hmcts/ia-case-access-api.git
   - repo: https://github.com/hmcts/ia-task-configuration.git
   - repo: https://github.com/hmcts/ia-bail-case-api.git
+  - repo: https://github.com/hmcts/ia-hearings-api.git
   - repo: https://github.com/hmcts/idam-api.git
   - repo: https://github.com/hmcts/idam-shared-infrastructure.git
   - repo: https://github.com/hmcts/idam-web-admin.git
