@@ -202,3 +202,6 @@ prod:
   - repo: https://github.com/HMCTS/adoption-shared-infrastructure.git
   - repo: https://github.com/hmcts/adoption-web.git
   - repo: https://github.com/hmcts/adoption-cos-api.git
+  - repo: https://github.com/hmcts/et-ccd-callbacks.git
+  - repo: https://github.com/hmcts/et-message-handler.git
+  - repo: https://github.com/hmcts/et-shared-infrastructure.git
