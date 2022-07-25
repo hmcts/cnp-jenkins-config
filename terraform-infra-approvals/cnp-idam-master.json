@@ -7,7 +7,7 @@
     {"type": "azurerm_network_interface"},
     {"type": "azurerm_public_ip"},
     {"type": "azurerm_subnet"},
-    {"type": "azurerm_virtual_machine"},
+    {"type": "azurerm_virtual_linux_machine"},
     {"type": "azurerm_virtual_machine_data_disk_attachment"},
     {"type": "azurerm_private_dns_a_record"},
     {"type": "azurerm_network_interface_security_group_association"},
