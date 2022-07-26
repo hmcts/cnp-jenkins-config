@@ -26,6 +26,7 @@ prod:
   - repo: https://github.com/hmcts/ccd-elastic-search.git
   - repo: https://github.com/hmcts/ccd-shared-infrastructure.git
   - repo: https://github.com/hmcts/ccd-user-profile-api.git
+  - repo: https://github.com/hmcts/ccd-case-disposer.git  
   - repo: https://github.com/hmcts/ccd-case-document-am-api.git
   - repo: https://github.com/hmcts/cpo-case-payment-orders-api.git
   - repo: https://github.com/hmcts/ccfr-fees-register-admin-web.git
