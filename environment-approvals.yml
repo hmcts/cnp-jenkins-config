@@ -207,3 +207,5 @@ prod:
   - repo: https://github.com/hmcts/et-ccd-callbacks.git
   - repo: https://github.com/hmcts/et-message-handler.git
   - repo: https://github.com/hmcts/et-shared-infrastructure.git
+  - repo: https://github.com/hmcts/cnp-plum-shared-infrastructure.git
+  - repo: https://github.com/hmcts/cnp-plum-recipes-service.git
