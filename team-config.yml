@@ -712,4 +712,4 @@ sptribs:
     contact_channel: "#special-tribunals-dev-channel"
     build_notices_channel: "#special-tribunals-builds"
   tags:
-    application: special-tribunals
+    application: sptribs-case-api
