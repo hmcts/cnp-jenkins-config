@@ -1,5 +1,6 @@
 aac:
   team: "CDM"
+  azure_ad_group: dcd_ccd
   namespace:  "aac"
   slack:
     contact_channel: "#ccd-questions-answers"
@@ -9,6 +10,7 @@ aac:
 cpo:
   team: "CDM"
   namespace:  "cpo"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd_support"
     build_notices_channel: "#ccd-master-builds"
@@ -17,6 +19,7 @@ cpo:
 hmc:
   team: "CDM"
   namespace:  "hmc"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd_support"
     build_notices_channel: "#ccd-master-builds"
@@ -25,6 +28,7 @@ hmc:
 ccd:
   team: "CCD"
   namespace:  "ccd"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd-questions-answers"
     build_notices_channel: "#ccd-master-builds"
@@ -33,6 +37,7 @@ ccd:
 ccdprobate:
   team: "CCD"
   namespace: "ccd"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
@@ -41,6 +46,7 @@ ccdprobate:
 ccdcmc:
   team: "CCD"
   namespace: "ccd"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
@@ -49,6 +55,7 @@ ccdcmc:
 ccddivorce:
   team: "CCD"
   namespace: "ccd"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
@@ -57,6 +64,7 @@ ccddivorce:
 ccdsscs:
   team: "CCD"
   namespace: "ccd"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
@@ -65,6 +73,7 @@ ccdsscs:
 ccdethos:
   team: "CCD"
   namespace: "ccd"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
@@ -73,6 +82,7 @@ ccdethos:
 sweeper:
   team: "CCD"
   namespace: "ccd"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
     build_notices_channel: "#ccd-devops"
@@ -81,6 +91,7 @@ sweeper:
 cmc:
   team:  "Money Claims"
   namespace:  "money-claims"
+  azure_ad_group: DTS Civil
   slack:
     contact_channel: "#cmc-tech"
     build_notices_channel: "#cmc-tech-notification"
@@ -89,6 +100,7 @@ cmc:
 custard:
   team: "CNP"
   namespace:  "cnp"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -97,6 +109,7 @@ custard:
 cet:
   team: "Civil Enforcement"
   namespace: "civil-enforcement"
+  azure_ad_group: DTS Civil
   slack:
     contact_channel: "#cet-pipeline"
     build_notices_channel: "#cet-pipeline"
@@ -105,6 +118,7 @@ cet:
 div:
   team: "Divorce"
   namespace: "divorce"
+  azure_ad_group: dcd_divorce
   slack:
     contact_channel: "#div-dev"
     build_notices_channel: "#div-dev"
@@ -113,6 +127,7 @@ div:
 dm:
   team: "Evidence Management"
   namespace: "dm-store"
+  azure_ad_group: dcd_em
   slack:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
@@ -121,6 +136,7 @@ dm:
 em:
   team: "Evidence Management"
   namespace: "em"
+  azure_ad_group: dcd_em
   slack:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
@@ -129,6 +145,7 @@ em:
 dg:
   team: "Evidence Management"
   namespace: "dg"
+  azure_ad_group: dcd_em
   slack:
     contact_channel: "#em-dev-chat"
     build_notices_channel: "#em-dev-chat"
@@ -137,6 +154,7 @@ dg:
 finrem:
   team: "Financial Remedy"
   namespace: "financial-remedy"
+  azure_ad_group: dcd_financialremedy
   slack:
     contact_channel: "#finrem-dev"
     build_notices_channel: "#finrem-dev"
@@ -145,6 +163,7 @@ finrem:
 ia:
   team: "Immigration"
   namespace: "ia"
+  azure_ad_group: dcd_ia
   slack:
     contact_channel: "#ia-tech"
     build_notices_channel: "#ia-tech"
@@ -153,23 +172,26 @@ ia:
 idam:
   team: "IdAM"
   namespace: "idam"
+  azure_ad_group: dcd_idam
   slack:
     contact_channel: "#idam_tech"
     build_notices_channel: "#idam_tech"
   tags:
     application: cft-idam
-# Shared with Idam and platform engineering
+# Shared with Idam and Platform Operations
 core-compute:
   team: "CNP"
   namespace: "cnp"
+  azure_ad_group: "DTS Platform Operations"
   slack:
-    contact_channel: "#platops-help, #idam_tech"
+    contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 fees:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
@@ -178,6 +200,7 @@ fees:
 fees-register:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
@@ -186,6 +209,7 @@ fees-register:
 payment:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
@@ -194,6 +218,7 @@ payment:
 ccpay:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
     build_notices_channel: "#cc-payments-tech"
@@ -202,6 +227,7 @@ ccpay:
 bar:
   team: "Fees/Pay"
   namespace: "bar"
+  azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
     build_notices_channel: "#bar-tech"
@@ -211,6 +237,7 @@ bar:
 probate:
   team: "Probate"
   namespace: "probate"
+  azure_ad_group: dcd_probate
   slack:
     contact_channel: "#probate"
     build_notices_channel: "#probate-jenkins"
@@ -219,6 +246,7 @@ probate:
 probatemandb:
   team: "Probate"
   namespace: "probate"
+  azure_ad_group: dcd_probate
   slack:
     contact_channel: "#probate"
     build_notices_channel: "#probate-jenkins"
@@ -227,6 +255,7 @@ probatemandb:
 bulk-scan:
   team: "Bulk Scanning and Printing"
   namespace: "bsp"
+  azure_ad_group: dcd_group_bulkscan_v2
   slack:
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
@@ -235,6 +264,7 @@ bulk-scan:
 reform-scan: # separate `bulk-scan` product copy since #349
   team: "Bulk Scanning and Printing"
   namespace: "reform-scan"
+  azure_ad_group: dcd_group_bulkscan_v2
   slack:
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
@@ -243,6 +273,7 @@ reform-scan: # separate `bulk-scan` product copy since #349
 bulk-scan-v2:
   team: "Bulk Scanning and Printing"
   namespace: "bsp"
+  azure_ad_group: dcd_group_bulkscan_v2
   slack:
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
@@ -251,6 +282,7 @@ bulk-scan-v2:
 reform-scan-v2: # separate `bulk-scan` product copy since #349
   team: "Bulk Scanning and Printing"
   namespace: "reform-scan"
+  azure_ad_group: dcd_group_bulkscan_v2
   slack:
     contact_channel: "#rbs"
     build_notices_channel: "#bsp-build-notices"
@@ -259,6 +291,7 @@ reform-scan-v2: # separate `bulk-scan` product copy since #349
 rpe:
   team: "Software Engineering"
   namespace: "rpe"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -267,6 +300,7 @@ rpe:
 rpetemplate:
   team: "Software Engineering"
   namespace: "rpe"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -275,6 +309,7 @@ rpetemplate:
 core-infra:
   team: "Software Engineering"
   namespace: "rpe"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -283,46 +318,25 @@ core-infra:
 draft-store:
   team: "Software Engineering"
   namespace: "rpe"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
-jui:
-  team: "Professional Applications"
-  namespace: "professional-applications"
-  slack:
-    contact_channel: "#jui-pipeline"
-    build_notices_channel: "#jui-pipeline"
-  tags:
-    application: professional-applications
-pui:
-  team: "Professional Applications"
-  namespace: "professional-applications"
-  slack:
-    contact_channel: "#pui-pipeline"
-    build_notices_channel: "#pui-pipeline"
-  tags:
-    application: professional-applications
 xui:
   team: "Expert UI"
   namespace: "xui"
+  azure_ad_group: dcd_group_expertui_v2
   slack:
     contact_channel: "#xui-pipeline"
     build_notices_channel: "#xui-pipeline"
   tags:
     application: expert-ui
-coh:
-  team: "Evidence Management"
-  namespace: "coh"
-  slack:
-    contact_channel: "#coh-pipeline"
-    build_notices_channel: "#coh-pipeline"
-  tags:
-    application: evidence-management
 rpa:
   team: "Professional Applications"
   namespace: "professional-applications"
+  azure_ad_group: dcd_group_expertui_v2
   slack:
     contact_channel: "#rpa-pipeline"
     build_notices_channel: "#rpa-pipeline"
@@ -331,6 +345,7 @@ rpa:
 rpx:
   team: "Professional Applications"
   namespace: "professional-applications"
+  azure_ad_group: dcd_group_expertui_v2
   slack:
     contact_channel: "#xui-pipeline"
     build_notices_channel: "#xui-pipeline"
@@ -339,30 +354,16 @@ rpx:
 ref:
   team: "Professional Applications"
   namespace: "professional-applications"
+  azure_ad_group: dcd_group_referencedata_v2
   slack:
     contact_channel: ""
     build_notices_channel: ""
   tags:
     application: professional-applications
-rhubarb:
-  team: "CNP"
-  namespace: "cnp"
-  slack:
-    contact_channel: "#platops-help"
-    build_notices_channel: "#platops-build-notices"
-  tags:
-    application: core
-rhubarb-shared-infrastructure:
-  team: "CNP"
-  namespace: "cnp"
-  slack:
-    contact_channel: "#platops-help"
-    build_notices_channel: "#platops-build-notices"
-  tags:
-    application: core
 plum:
   team: "CNP"
   namespace: "cnp"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -371,6 +372,7 @@ plum:
 crumble:
   team: "CNP"
   namespace: "cnp"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -379,6 +381,7 @@ crumble:
 plum-shared-infrastructure:
   team: "CNP"
   namespace: "cnp"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -387,6 +390,7 @@ plum-shared-infrastructure:
 sscs:
   team: "SSCS"
   namespace: "sscs"
+  azure_ad_group: dcd_sscs
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
@@ -395,6 +399,7 @@ sscs:
 sscs-cor:
   team: "SSCS"
   namespace: "sscs"
+  azure_ad_group: dcd_sscs
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
@@ -403,6 +408,7 @@ sscs-cor:
 sscs-tya:
   team: "SSCS"
   namespace: "sscs"
+  azure_ad_group: dcd_sscs
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
@@ -411,22 +417,16 @@ sscs-tya:
 sscs-tribunals:
   team: "SSCS"
   namespace: "sscs"
+  azure_ad_group: dcd_sscs
   slack:
     contact_channel: "#sscs-tech"
     build_notices_channel: "#sscs-tech"
   tags:
     application: social-service-child-support
-snl:
-  team: "SnL"
-  namespace: "snl"
-  slack:
-    contact_channel: "#snl-master-builds"
-    build_notices_channel: "#snl-master-builds"
-  tags:
-    application: schedule-and-listing
 am:
   team: "AM"
   namespace: "am"
+  azure_ad_group: dcd_group_accessmanagement_v2
   slack:
     contact_channel: "#am-master-builds"
     build_notices_channel: "#am-master-builds"
@@ -435,6 +435,7 @@ am:
 fpl:
   team: "Family Public Law"
   namespace: "family-public-law"
+  azure_ad_group: dcd_group_fpl_v2
   slack:
     contact_channel: "#fpla-tech"
     build_notices_channel: "#fpla-tech"
@@ -443,6 +444,7 @@ fpl:
 ctsc:
   team: "CTSC"
   namespace: "ctsc"
+  azure_ad_group: dcd_group_ctsc_v2
   slack:
     contact_channel: "#ctsc-master-builds"
     build_notices_channel: "#ctsc-master-builds"
@@ -451,6 +453,7 @@ ctsc:
 rd:
   team: "Reference Data"
   namespace: "rd"
+  azure_ad_group: dcd_group_referencedata_v2
   slack:
     contact_channel: "#ref-data-support"
     build_notices_channel: "#rd-master-builds"
@@ -459,6 +462,7 @@ rd:
 data-extractor:
   team: "Software Engineering"
   namespace: "rpe"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -467,6 +471,7 @@ data-extractor:
 data-generator:
   team: "Software Engineering"
   namespace: "rpe"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -476,6 +481,7 @@ camunda:
   team: "Software Engineering"
   namespace: "camunda"
   registry: "hmctsprivate"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -484,22 +490,16 @@ camunda:
 ethos:
   team: "Ethos Replacement"
   namespace: "ethos"
+  azure_ad_group: dcd_group_ethos_v2
   slack:
     contact_channel: "#ethos-repl-manchester"
     build_notices_channel: "#ethos-repl-service"
   tags:
     application: ethos
-azdnspoc:
-  team: "DevOps"
-  namespace: "azdnspoc"
-  slack:
-    contact_channel: "#azdnspoc-notices"
-    build_notices_channel: "#azdnspoc-notices"
-  tags:
-    application: core
 payments:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
@@ -508,6 +508,7 @@ payments:
 mi:
   team: "Management Information"
   namespace: "mi"
+  azure_ad_group: DTS Contributors Data Platform Nonprod
   slack:
     contact_channel: "#mi-data-platform"
     build_notices_channel: "#mi-dev"
@@ -516,6 +517,7 @@ mi:
 pcq:
   team: "PCQ"
   namespace: "pcq"
+  azure_ad_group: dcd_group_pcq_v2
   slack:
     contact_channel: "#pcq-dev"
     build_notices_channel: "#pcq-builds"
@@ -524,6 +526,7 @@ pcq:
 adoption:
   team: "Adoption"
   namespace: "adoption"
+  azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
     build_notices_channel: "#adoption-tech"
@@ -532,6 +535,7 @@ adoption:
 ccpay-functions:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
@@ -540,6 +544,7 @@ ccpay-functions:
 rse:
   team: "Reform Software Engineering"
   namespace: "rse"
+  azure_ad_group: DTS CFT Software Engineering
   slack:
     contact_channel: "#reform-swe"
     build_notices_channel: "#reform-swe-builds"
@@ -548,6 +553,7 @@ rse:
 civil:
   team: "Civil"
   namespace: "civil"
+  azure_ad_group: DTS Civil
   slack:
     contact_channel: "#civil_contact"
     build_notices_channel: "#civil_notifications"
@@ -556,6 +562,7 @@ civil:
 hmi:
   team: "Future hearings - HMI"
   namespace: "hmi"
+  azure_ad_group: DTS HMI
   slack:
     contact_channel: "#hmi-devs"
     build_notices_channel: "#hmi-build-notices"
@@ -564,6 +571,7 @@ hmi:
 wa:
   team: "Work Allocation"
   namespace: "wa"
+  azure_ad_group: dcd_group_wa_v2
   slack:
     contact_channel: "#wa-tech"
     build_notices_channel: "#wa-tech"
@@ -572,6 +580,7 @@ wa:
 fact:
   team: "Find a Court or Tribunal"
   namespace: "fact"
+  azure_ad_group: DTS FaCT
   slack:
     contact_channel: "#fact-tech"
     build_notices_channel: "#fact-builds"
@@ -580,6 +589,7 @@ fact:
 rpts:
   team: "Residential Property Tribunals"
   namespace: "rpts"
+  azure_ad_group: DTS RPTS
   slack:
     contact_channel: "#fact-tech"
     build_notices_channel: "#rpts-builds"
@@ -588,6 +598,7 @@ rpts:
 nfdiv:
   team: "No Fault Divorce"
   namespace: "nfdiv"
+  azure_ad_group: dcd_divorce
   slack:
     contact_channel: "#no-fault-divorce-tech"
     build_notices_channel: "#no-fault-divorce-builds"
@@ -596,6 +607,7 @@ nfdiv:
 ccd-elastic-search:
   team: "CCD"
   namespace:  "ccd"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd-questions-answers"
     build_notices_channel: "#ccd-master-builds"
@@ -604,6 +616,7 @@ ccd-elastic-search:
 paymentsgw:
   team: "Fees/Pay"
   namespace: "fees-pay"
+  azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments-tech"
     build_notices_channel: "#cc-payments-tech"
@@ -612,6 +625,7 @@ paymentsgw:
 keda:
   team: "Platform Operations"
   namespace: "admin"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
     build_notices_channel: "#platops-build-notices"
@@ -620,6 +634,7 @@ keda:
 vh:
   team: "Video Hearings"
   namespace: "vh"
+  azure_ad_group: dcd_videohearings
   slack:
     contact_channel: "#vh-devops"
     build_notices_channel: "#vh-builds"
@@ -628,6 +643,7 @@ vh:
 lau:
   team: "LAU"
   namespace: "lau"
+  azure_ad_group: DTS LAU
   slack:
     contact_channel: "#lau-dev"
     build_notices_channel: "#lau-builds"
@@ -636,6 +652,7 @@ lau:
 prl:
   team: "Private Law"
   namespace: "private-law"
+  azure_ad_group: DTS Family Private Law
   slack:
     contact_channel: "#prl-tech-notifications"
     build_notices_channel: "#prl-tech-notifications"
@@ -644,6 +661,7 @@ prl:
 adoption-web:
   team: "Adoption"
   namespace:  "adoption"
+  azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
     build_notices_channel: "#adoption-tech"
@@ -652,6 +670,7 @@ adoption-web:
 adoption-cos-api:
   team: "Adoption"
   namespace:  "adoption"
+  azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
     build_notices_channel: "#adoption-tech"
@@ -660,6 +679,7 @@ adoption-cos-api:
 adoption-ccd-definitions:
   team: "Adoption"
   namespace:  "adoption"
+  azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
     build_notices_channel: "#adoption-tech"
@@ -668,6 +688,7 @@ adoption-ccd-definitions:
 labs:
   team: "CNP"
   namespace: "labs"
+  azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-labs"
     build_notices_channel: "#labs-build-notices"
@@ -676,6 +697,7 @@ labs:
 et:
   team: "Employment Tribunals"
   namespace: "et"
+  azure_ad_group: DTS Employment Tribunals
   slack:
     contact_channel: "#et-tech"
     build_notices_channel: "#et-builds"
@@ -684,6 +706,7 @@ et:
 fis:
   team: "Family Integration Stream"
   namespace: "fis"
+  azure_ad_group: DTS Family Integration
   slack:
     contact_channel: "#family-integration-devs"
     build_notices_channel: "#family-integration-cicd-notice"
@@ -692,6 +715,7 @@ fis:
 familygw:
   team: "Family Api Gateway"
   namespace: "private-law"
+  azure_ad_group: DTS Family Private Law
   slack:
     contact_channel: "#prl-tech-notifications"
     build_notices_channel: "#prl-tech-notifications"
@@ -699,7 +723,8 @@ familygw:
     application: family-integration-systems  
 ts:
   team: "CDM"
-  namespace:  "ts"
+  namespace: "ts"
+  azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd_support"
     build_notices_channel: "#ccd-master-builds"
