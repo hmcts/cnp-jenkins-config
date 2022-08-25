@@ -730,3 +730,12 @@ ts:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: ts-translation-services
+sptribs:
+  team: "Special Tribunals"
+  namespace: "sptribs"
+  azure_ad_group: DTS Special Tribunals
+  slack:
+    contact_channel: "#special-tribunals-dev-channel"
+    build_notices_channel: "#special-tribunals-builds"
+  tags:
+    application: special-tribunals
