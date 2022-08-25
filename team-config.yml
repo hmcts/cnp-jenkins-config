@@ -492,7 +492,7 @@ ethos:
   namespace: "ethos"
   azure_ad_group: dcd_group_ethos_v2
   slack:
-    contact_channel: "#ethos-repl-manchester"
+    contact_channel: "#ethos-repl-service"
     build_notices_channel: "#ethos-repl-service"
   tags:
     application: ethos
