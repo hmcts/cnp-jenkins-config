@@ -594,7 +594,7 @@ rpts:
     contact_channel: "#fact-tech"
     build_notices_channel: "#rpts-builds"
   tags:
-    application: my-time
+    application: residential-property-tribunals
 my-time:
   team: "My Time"
   namespace: "my-time"
@@ -602,7 +602,7 @@ my-time:
     contact_channel: "#my-time-builds"
     build_notices_channel: "#my-time-builds"
   tags:
-    application: residential-property-tribunals
+    application: my-time
 nfdiv:
   team: "No Fault Divorce"
   namespace: "nfdiv"
