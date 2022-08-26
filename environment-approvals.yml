@@ -26,6 +26,7 @@ prod:
   - repo: https://github.com/hmcts/ccd-elastic-search.git
   - repo: https://github.com/hmcts/ccd-shared-infrastructure.git
   - repo: https://github.com/hmcts/ccd-user-profile-api.git
+  - repo: https://github.com/hmcts/ccd-case-disposer.git  
   - repo: https://github.com/hmcts/ccd-case-document-am-api.git
   - repo: https://github.com/hmcts/cpo-case-payment-orders-api.git
   - repo: https://github.com/hmcts/ccfr-fees-register-admin-web.git
@@ -81,6 +82,9 @@ prod:
   - repo: https://github.com/hmcts/finrem-payment-service.git
   - repo: https://github.com/hmcts/finrem-shared-infrastructure.git
   - repo: https://github.com/hmcts/fpl-ccd-configuration.git
+  - repo: https://github.com/hmcts/hmc-cft-hearing-service.git
+  - repo: https://github.com/hmcts/hmc-hmi-inbound-adapter.git
+  - repo: https://github.com/hmcts/hmc-shared-infrastructure.git
   - repo: https://github.com/hmcts/ia-case-api.git
   - repo: https://github.com/hmcts/ia-case-documents-api.git
   - repo: https://github.com/hmcts/ia-case-notifications-api.git
@@ -91,6 +95,8 @@ prod:
   - repo: https://github.com/hmcts/ia-case-payments-api.git
   - repo: https://github.com/hmcts/ia-case-access-api.git
   - repo: https://github.com/hmcts/ia-task-configuration.git
+  - repo: https://github.com/hmcts/ia-bail-case-api.git
+  - repo: https://github.com/hmcts/ia-hearings-api.git
   - repo: https://github.com/hmcts/idam-api.git
   - repo: https://github.com/hmcts/idam-shared-infrastructure.git
   - repo: https://github.com/hmcts/idam-web-admin.git
@@ -156,6 +162,7 @@ prod:
   - repo: https://github.com/hmcts/sscs-track-your-appeal-frontend.git
   - repo: https://github.com/hmcts/sscs-track-your-appeal-notifications.git
   - repo: https://github.com/hmcts/sscs-tribunals-case-api.git
+  - repo: https://github.com/hmcts/ts-translation-service.git
   - repo: https://github.com/hmcts/dg-docassembly-api.git
   - repo: https://github.com/hmcts/em-stitching-api.git
   - repo: https://github.com/hmcts/rpa-em-ccd-orchestrator.git
@@ -190,3 +197,16 @@ prod:
   - repo: https://github.com/hmcts/civil-general-apps-ccd-definition.git
   - repo: https://github.com/hmcts/ccpay-paymentoutcome-web.git
   - repo: https://github.com/hmcts/ccpay-service-request-cpo-update-service.git
+  - repo: https://github.com/hmcts/prl-ccd-definitions.git
+  - repo: https://github.com/hmcts/prl-cos-api.git
+  - repo: https://github.com/hmcts/prl-dgs-api.git
+  - repo: https://github.com/hmcts/prl-shared-infrastructure.git
+  - repo: https://github.com/HMCTS/adoption-shared-infrastructure.git
+  - repo: https://github.com/hmcts/adoption-web.git
+  - repo: https://github.com/hmcts/adoption-cos-api.git
+  - repo: https://github.com/hmcts/et-ccd-callbacks.git
+  - repo: https://github.com/hmcts/et-message-handler.git
+  - repo: https://github.com/hmcts/et-shared-infrastructure.git
+  - repo: https://github.com/hmcts/cnp-plum-shared-infrastructure.git
+  - repo: https://github.com/hmcts/cnp-plum-recipes-service.git
+  - repo: https://github.com/hmcts/sptribs-case-api.git

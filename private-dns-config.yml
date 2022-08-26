@@ -11,7 +11,7 @@ subscriptions:
     resourceGroup: core-infra-intsvc-rg
 
   - name: "DTS-CFTPTL-INTSVC"
-    zoneTemplate: "service.core-compute-${environment}.internal"
+    zoneTemplate: '${["plum"].contains(product) || ["draft-store-service"].contains(appFullName) ? environment + ".platform.hmcts.net" : "service.core-compute-" + environment + ".internal"}'
     ttl: 300
     active: true
     consulActive: true
@@ -32,5 +32,4 @@ subscriptions:
       - name: idam-ithc
       - name: idam-perftest
       - name: idam-preview
-      - name: ethosldata
     resourceGroup: core-infra-intsvc-rg

@@ -9,6 +9,8 @@
     {"type": "random_string"},
     {"type": "azurerm_subnet"},
     {"type": "azurerm_api_management"},
+    {"type": "azurerm_api_management_subscription"},
+    {"type": "azurerm_api_management_user"},
     {"type": "azurerm_management_lock"},
     {"type": "azurerm_monitor_action_group"},
     {"type": "azurerm_application_insights_web_test"},
@@ -33,6 +35,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=azurermv2"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=add-diagnostic-settings"},
+    {"source":  "git@github.com:hmcts/cnp-module-redis?ref=redis-version-param"},
     {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=revert-159-tf-0.12.x"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=master"},
@@ -47,5 +50,6 @@
     {"source":  "git@github.com:hmcts/cnp-module-metric-alert?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-vnet?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=json-troubleshooting"}
+    
   ]
 }
