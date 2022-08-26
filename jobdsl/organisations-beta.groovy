@@ -32,6 +32,7 @@ List<Map> orgs = [
         [name: 'Probate'],
         [name: 'RD', displayName: 'Ref Data'],
         [name: 'RPTS'],
+        [name: 'MyTime', regex: 'my-time-.*'],
         [name: 'SSCS'],
         [name: 'XUI', regex: 'rpx-.*'],
         [name: 'RSE', displayName: 'Reform Software Engineering'],

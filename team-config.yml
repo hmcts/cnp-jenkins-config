@@ -593,6 +593,14 @@ rpts:
     build_notices_channel: "#rpts-builds"
   tags:
     application: residential-property-tribunals
+my-time:
+  team: "My Time"
+  namespace: "my-time"
+  slack:
+    contact_channel: "#my-time-builds"
+    build_notices_channel: "#my-time-builds"
+  tags:
+    application: residential-property-tribunals
 nfdiv:
   team: "No Fault Divorce"
   namespace: "nfdiv"
