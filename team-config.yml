@@ -594,7 +594,7 @@ rpts:
     contact_channel: "#fact-tech"
     build_notices_channel: "#rpts-builds"
   tags:
-    application: residential-property-tribunals
+    application: my-time
 my-time:
   team: "My Time"
   namespace: "my-time"
