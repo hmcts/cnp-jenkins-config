@@ -703,15 +703,6 @@ et:
     build_notices_channel: "#et-builds"
   tags:
     application: employment-tribunals
-fis:
-  team: "Family Integration Stream"
-  namespace: "fis"
-  azure_ad_group: DTS Family Integration
-  slack:
-    contact_channel: "#family-integration-devs"
-    build_notices_channel: "#family-integration-cicd-notice"
-  tags:
-    application: family-integration-systems
 fiservice:
   team: "Family Integration Stream"
   namespace: "fis"
