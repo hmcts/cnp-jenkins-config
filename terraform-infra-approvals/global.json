@@ -49,7 +49,8 @@
     {"source":  "git@github.com:hmcts/cnp-module-trafficmanager-endpoint?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-metric-alert?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-vnet?ref=master"},
-    {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=json-troubleshooting"}
+    {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=json-troubleshooting"},
+    {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=enable-replicas-master"}
     
   ]
 }
