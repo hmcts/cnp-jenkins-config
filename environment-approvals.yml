@@ -4,6 +4,7 @@ prod:
   - repo: https://github.com/hmcts/am-role-assignment-batch-service.git
   - repo: https://github.com/hmcts/am-org-role-mapping-service.git
   - repo: https://github.com/hmcts/am-role-assignment-refresh-batch.git
+  - repo: https://github.com/hmcts/am-judicial-booking-service.git
   - repo: https://github.com/hmcts/aac-manage-case-assignment.git
   - repo: https://github.com/hmcts/bar-api.git
   - repo: https://github.com/hmcts/bar-shared-infrastructure.git
