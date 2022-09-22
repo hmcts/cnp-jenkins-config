@@ -712,7 +712,7 @@ et:
     build_notices_channel: "#et-builds"
   tags:
     application: employment-tribunals
-fiservice:
+fis:
   team: "Family Integration Stream"
   namespace: "fis"
   azure_ad_group: DTS Family Integration
