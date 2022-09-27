@@ -3,5 +3,7 @@
     {"type": "azurerm_dashboard_grafana"},
     {"type": "azurerm_role_assignment"}
   ],
-  "module_calls": []
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=master"}
+  ]
 }
