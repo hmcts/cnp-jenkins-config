@@ -1,6 +1,7 @@
 {
   "resources": [
-    {"type": "azurerm_dashboard_grafana"}
+    {"type": "azurerm_dashboard_grafana"},
+    {"type": "azurerm_role_assignment"}
   ],
   "module_calls": []
 }
