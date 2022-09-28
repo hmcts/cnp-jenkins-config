@@ -1,7 +1,8 @@
 {
   "resources": [
     {"type": "azurerm_dashboard_grafana"},
-    {"type": "azurerm_role_assignment"}
+    {"type": "azurerm_role_assignment"},
+    {"type": "azurerm_postgresql_firewall_rule"}
   ],
   "module_calls": []
 }
