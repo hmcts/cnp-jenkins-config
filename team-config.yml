@@ -174,7 +174,7 @@ idam:
   namespace: "idam"
   azure_ad_group: dcd_idam
   slack:
-    contact_channel: "#idam_tech"
+    contact_channel: "#idam-support-cft"
     build_notices_channel: "#idam_tech"
   tags:
     application: cft-idam
