@@ -1,6 +1,7 @@
 {
   "resources": [
-    {"type": "azurerm_storage_management_policy"}
+    {"type": "azurerm_storage_management_policy"},
+    {"type": "azurerm_storage_account_network_rules"}
   ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-shutterpage?ref=CNP-585"},
