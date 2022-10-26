@@ -148,7 +148,7 @@ Closure githubOrg(Map args = [:]) {
                     strategyId(1)
                 }
                 traits << 'org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait' {
-                    strategyId(1)
+                    strategyId(2)
                 }
                 traits << 'org.jenkinsci.plugins.github__branch__source.ExcludeArchivedRepositoriesTrait' {
                 }
