@@ -243,6 +243,7 @@ probate:
     build_notices_channel: "#probate-jenkins"
   tags:
     application: probate
+    businessArea: CFT
 probatemandb:
   team: "Probate"
   namespace: "probate"
