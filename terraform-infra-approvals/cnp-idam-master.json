@@ -16,7 +16,7 @@
     {"type": "azurerm_route"},
     {"type": "azurerm_subnet_route_table_association"},
     {"type": "azurerm_postgresql_configuration"},
-    {"type": "managed azurerm_storage_management_policy"}
+    {"type": "azurerm_storage_management_policy"}
   ],
   "module_calls": [
     {"source":  "./modules/module-scaleset?ref=master"},
