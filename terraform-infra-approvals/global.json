@@ -53,6 +53,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=json-troubleshooting"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=enable-replicas-master"},
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=master"},
+    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=adding-postgresql-ad-administrator"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=redundant-backup-optional"}
   ]
 }
