@@ -1,6 +1,6 @@
 {
     "resources": [
-    {"type": "azapi_resource"},
+      {"type": "azapi_resource"}
     ],
     "module_calls": [
       {"source":  "git@github.com:hmcts/cnp-module-action-group?ref=SSCS-10638-output_id"},
