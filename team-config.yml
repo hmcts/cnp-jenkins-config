@@ -748,3 +748,12 @@ sptribs:
     build_notices_channel: "#special-tribunals-builds"
   tags:
     application: special-tribunals
+owaspdependency:
+  team: "CNP"
+  namespace: "cnp"
+  azure_ad_group: "DTS Platform Operations"
+  slack:
+    contact_channel: "#platops-help"
+    build_notices_channel: "#platops-build-notices"
+  tags:
+    application: core
