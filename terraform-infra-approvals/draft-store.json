@@ -1,7 +1,6 @@
 {
   "resources": [],
   "module_calls": [
-   {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=aad-auth"},
-   {"source":  "git@github.com/hmcts/terraform-module-postgresql-flexible.git?ref=master"}
+   {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=aad-auth"}
   ]
 }
