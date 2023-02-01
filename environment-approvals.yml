@@ -212,6 +212,7 @@ prod:
   - repo: https://github.com/hmcts/cnp-plum-shared-infrastructure.git
   - repo: https://github.com/hmcts/cnp-plum-recipes-service.git
   - repo: https://github.com/hmcts/fis-shared-infrastructure.git
+  - repo: https://github.com:hmcts/fis-hmc-api.git
   - repo: https://github.com/hmcts/family-api-gateway.git
   - repo: https://github.com/hmcts/et-sya-frontend.git
   - repo: https://github.com/hmcts/et-sya-api.git
