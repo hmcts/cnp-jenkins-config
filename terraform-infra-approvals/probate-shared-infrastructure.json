@@ -6,6 +6,7 @@
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-shutterpage?ref=CNP-585"},
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=probate_WAF_rules"},
-    {"source":  "git@github.com:hmcts/cnp-module-metric-alert?ref=damongreen123-patch-2"}
+    {"source":  "git@github.com:hmcts/cnp-module-metric-alert?ref=damongreen123-patch-2"},
+    {"source":  "git@github.com:hmcts/cnp-module-action-group?ref=update-template"}
   ]
 }
