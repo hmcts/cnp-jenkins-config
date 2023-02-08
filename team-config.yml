@@ -3,7 +3,7 @@ aac:
   azure_ad_group: dcd_ccd
   namespace:  "aac"
   slack:
-    contact_channel: "#ccd-questions-answers"
+    contact_channel: "#ccd-community"
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
@@ -30,7 +30,7 @@ ccd:
   namespace:  "ccd"
   azure_ad_group: dcd_ccd
   slack:
-    contact_channel: "#ccd-questions-answers"
+    contact_channel: "#ccd-community"
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
@@ -609,7 +609,7 @@ nfdiv:
   namespace: "nfdiv"
   azure_ad_group: dcd_divorce
   slack:
-    contact_channel: "#no-fault-divorce-tech"
+    contact_channel: "#no-fault-divorce"
     build_notices_channel: "#no-fault-divorce-builds"
   tags:
     application: no-fault-divorce
@@ -618,7 +618,7 @@ ccd-elastic-search:
   namespace:  "ccd"
   azure_ad_group: dcd_ccd
   slack:
-    contact_channel: "#ccd-questions-answers"
+    contact_channel: "#ccd-community"
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
