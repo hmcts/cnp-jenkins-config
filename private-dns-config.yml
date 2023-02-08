@@ -1,6 +1,6 @@
 subscriptions:
   - name: "DTS-CFTSBOX-INTSVC"
-    zoneTemplate: '${["camunda"].contains(product) ? environment + ".platform.hmcts.net" : "service.core-compute-" + environment + ".internal"}'
+    zoneTemplate: "${environment}.platform.hmcts.net"
     ttl: 300
     active: true
     environments:
