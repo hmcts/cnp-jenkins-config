@@ -1,9 +1,8 @@
 subscriptions:
   - name: "DTS-CFTSBOX-INTSVC"
-    zoneTemplate: "service.core-compute-${environment}.internal"
+    zoneTemplate: "${environment}.platform.hmcts.net"
     ttl: 300
     active: true
-    consulActive: true
     environments:
       - name: sandbox
       - name: idam-sandbox
@@ -11,10 +10,9 @@ subscriptions:
     resourceGroup: core-infra-intsvc-rg
 
   - name: "DTS-CFTPTL-INTSVC"
-    zoneTemplate: '${["plum","sscs","idam","camunda","crumble"].contains(product) || ["draft-store-service","em-ccdorc", "div-cos","civil-general-applications", "civil-service", "civil-ccd", "rpe-service-auth-provider", "rpe-pdf-service"].contains(appFullName) ? environment + ".platform.hmcts.net" : "service.core-compute-" + environment + ".internal"}'
+    zoneTemplate: '${["plum","sscs","idam","camunda"].contains(product) || ["draft-store-service","em-ccdorc", "div-cos","civil-general-applications", "civil-service", "civil-ccd", "rpe-service-auth-provider", "rpe-pdf-service"].contains(appFullName) ? environment + ".platform.hmcts.net" : "service.core-compute-" + environment + ".internal"}'
     ttl: 300
     active: true
-    consulActive: true
     environments:
       - name: prod
         ttl: 3600
@@ -26,7 +24,6 @@ subscriptions:
       - name: perftest
       - name: preview
         active: false
-        consulActive: true
       - name: idam-aat
       - name: idam-demo
       - name: idam-ithc
