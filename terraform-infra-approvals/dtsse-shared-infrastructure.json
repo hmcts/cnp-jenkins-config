@@ -2,7 +2,8 @@
   "resources": [
     {"type": "azurerm_dashboard_grafana"},
     {"type": "azurerm_role_assignment"},
-    {"type": "azurerm_postgresql_firewall_rule"}
+    {"type": "azurerm_postgresql_firewall_rule"},
+    {"type": "azurerm_key_vault_access_policy"}
   ],
   "module_calls": []
 }

@@ -125,6 +125,7 @@ prod:
   - repo: https://github.com/hmcts/probate-shared-infrastructure.git
   - repo: https://github.com/hmcts/probate-submit-service.git
   - repo: https://github.com/hmcts/probatemandb.git
+  - repo: https://github.com/hmcts/probate-ccd-data-migration-tool.git
   - repo: https://github.com/hmcts/rd-professional-api.git
   - repo: https://github.com/hmcts/rd-user-profile-api.git
   - repo: https://github.com/hmcts/rd-profile-sync.git
@@ -162,6 +163,7 @@ prod:
   - repo: https://github.com/hmcts/sscs-track-your-appeal-frontend.git
   - repo: https://github.com/hmcts/sscs-track-your-appeal-notifications.git
   - repo: https://github.com/hmcts/sscs-tribunals-case-api.git
+  - repo: https://github.com/hmcts/sscs-hearings-api.git
   - repo: https://github.com/hmcts/ts-translation-service.git
   - repo: https://github.com/hmcts/dg-docassembly-api.git
   - repo: https://github.com/hmcts/em-stitching-api.git
@@ -202,6 +204,7 @@ prod:
   - repo: https://github.com/hmcts/prl-dgs-api.git
   - repo: https://github.com/hmcts/prl-shared-infrastructure.git
   - repo: https://github.com/hmcts/prl-wa-task-configuration.git
+  - repo: https://github.com/hmcts/prl-citizen-frontend.git
   - repo: https://github.com/HMCTS/adoption-shared-infrastructure.git
   - repo: https://github.com/hmcts/adoption-web.git
   - repo: https://github.com/hmcts/adoption-cos-api.git
@@ -210,6 +213,9 @@ prod:
   - repo: https://github.com/hmcts/et-shared-infrastructure.git
   - repo: https://github.com/hmcts/cnp-plum-shared-infrastructure.git
   - repo: https://github.com/hmcts/cnp-plum-recipes-service.git
-  - repo: https://github.com/hmcts/sptribs-case-api.git
   - repo: https://github.com/hmcts/fis-shared-infrastructure.git
+  - repo: https://github.com/hmcts/fis-hmc-api.git
   - repo: https://github.com/hmcts/family-api-gateway.git
+  - repo: https://github.com/hmcts/et-sya-frontend.git
+  - repo: https://github.com/hmcts/et-sya-api.git
+  - repo: https://github.com/hmcts/dtsse-shared-infrastructure.git

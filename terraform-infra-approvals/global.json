@@ -15,7 +15,8 @@
     {"type": "azurerm_monitor_action_group"},
     {"type": "azurerm_application_insights_web_test"},
     {"type": "azurerm_monitor_action_rule_action_group"},
-    {"type": "azurerm_monitor_metric_alert"}
+    {"type": "azurerm_monitor_metric_alert"},
+    {"type": "azurerm_web_pubsub"}
   ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=master"},
@@ -52,6 +53,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=json-troubleshooting"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=enable-replicas-master"},
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=master"},
+    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=adding-postgresql-ad-administrator"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=redundant-backup-optional"}
   ]
 }
