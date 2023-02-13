@@ -1,6 +1,8 @@
 {
   "resources": [],
   "module_calls": [
-    {"source":  "git@github.com:hmcts/cnp-module-waf?ref=ccd/CHG0033576"}
+    {"source":  "git@github.com:hmcts/cnp-module-waf?ref=ccd/CHG0033576"},
+    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=db-collation"},
+    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=recreate-db-deletion"}
   ]
 }
