@@ -1,7 +1,7 @@
 {
   "resources": [],
   "module_calls": [
-    {"source":  "git@github.com:hmcts/cnp-module-waf?ref=ccd/CHG0033576"},
-    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=db-collation"}
+    {"source":  "git@github.com:hmcts/cnp-module-metric-alert?ref=revert-18-DTSPO-11969/sbox-tags"},
+    {"source":  "git@github.com:hmcts/cnp-module-action-group?ref=revert-15-update-template"}
   ]
 }
