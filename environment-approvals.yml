@@ -35,6 +35,7 @@ prod:
   - repo: https://github.com/hmcts/ccpay-bubble.git
   - repo: https://github.com/hmcts/ccpay-functions-node.git
   - repo: https://github.com/hmcts/ccpay-payment-app.git
+  - repo: https://github.com/hmcts/ccpay-notifications-service.git
   - repo: https://github.com/hmcts/ccpayfr-shared-infrastructure.git
   - repo: https://github.com/hmcts/cet-shared-infrastructure.git
   - repo: https://github.com/hmcts/cmc-citizen-frontend.git
