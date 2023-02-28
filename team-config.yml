@@ -375,7 +375,7 @@ crumble:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
-    build_notices_channel: "#test-ek-2"
+    build_notices_channel: "#platops-build-notices"
   tags:
     application: core
 plum-shared-infrastructure:
