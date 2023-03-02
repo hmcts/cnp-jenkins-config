@@ -757,3 +757,5 @@ owaspdependency:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
+    
+    
