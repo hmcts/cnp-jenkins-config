@@ -747,7 +747,7 @@ sptribs:
     contact_channel: "#special-tribunals-dev-channel"
     build_notices_channel: "#special-tribunals-builds"
   tags:
-    application: sptribs-case-api
+    application: special-tribunals
 owaspdependency:
   team: "CNP"
   namespace: "cnp"
