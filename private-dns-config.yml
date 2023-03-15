@@ -10,7 +10,7 @@ subscriptions:
     resourceGroup: core-infra-intsvc-rg
 
   - name: "DTS-CFTPTL-INTSVC"
-    zoneTemplate: '${["plum","sscs","idam","camunda","dg","dm","dtsse","em","et","sptribs","pcq","lau"].contains(product) || ["draft-store-service","div-cos","civil-general-applications", "civil-service", "civil-ccd","civil-ga-ccd","probate-back-office", "rpe-service-auth-provider", "rpe-pdf-service", "sptribs-case-api", "sptribs-frontend", "nfdiv-case-api", "nfdiv-frontend", "sptribs-dss-backend"].contains(appFullName) ? environment + ".platform.hmcts.net" : "service.core-compute-" + environment + ".internal"}'
+    zoneTemplate: '${["plum","sscs","idam","camunda","dg","dm","dtsse","em","et","sptribs","pcq","lau"].contains(product) || ["draft-store-service","div-cos","civil-general-applications", "civil-service", "civil-ccd","civil-ga-ccd","probate-back-office", "rpe-service-auth-provider", "rpe-pdf-service", "nfdiv-case-api", "nfdiv-frontend"].contains(appFullName) ? environment + ".platform.hmcts.net" : "service.core-compute-" + environment + ".internal"}'
     ttl: 300
     active: true
     environments:
