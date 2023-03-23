@@ -3,6 +3,7 @@
      {"type": "azurerm_key_vault_access_policy"} 
   ],
   "module_calls": [
-    {"source":  "git@github.com:hmcts/cnp-module-api-mgmt-api?ref=api_type"}
+    {"source":  "git@github.com:hmcts/cnp-module-api-mgmt-api?ref=api_type"},
+    {"source":  "git@github.com:hmcts/cnp-module-api-mgmt-api?ref=api_type_wsdl_selector"}
   ]
 }
