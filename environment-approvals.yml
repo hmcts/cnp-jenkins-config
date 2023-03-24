@@ -78,8 +78,6 @@ prod:
   - repo: https://github.com/hmcts/ecm-shared-infrastructure.git
   - repo: https://github.com/hmcts/feature-toggle-api.git
   - repo: https://github.com/hmcts/finrem-case-orchestration-service.git
-  - repo: https://github.com/hmcts/finrem-document-generator-client.git
-  - repo: https://github.com/hmcts/finrem-evidence-management-client-api.git
   - repo: https://github.com/hmcts/finrem-notification-service.git
   - repo: https://github.com/hmcts/finrem-shared-infrastructure.git
   - repo: https://github.com/hmcts/fpl-ccd-configuration.git
