@@ -4,6 +4,6 @@
     ],
     "module_calls": [
       {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=require_session"},
-      {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=thomast1906-patch-1"}
+      {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=thomast1906-patch-1"}
     ]
 }
