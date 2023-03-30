@@ -1,0 +1,5 @@
+{
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=Ethos-update"}
+  ]
+}
