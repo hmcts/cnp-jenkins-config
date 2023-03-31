@@ -3,6 +3,7 @@
       {"type": "azurerm_servicebus_subscription_rule"}
     ],
     "module_calls": [
-      {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=require_session"}
+      {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=require_session"},
+      {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=postgres-vnet-provider"}
     ]
 }
