@@ -1,6 +1,7 @@
 {
   "resources": [
     {"type": "azurerm_key_vault_access_policy"},
+    {"type": "azurerm_api_management_api"},
     {"type": "azurerm_api_management_global_schema"}
   ],
   "module_calls": []
