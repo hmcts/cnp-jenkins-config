@@ -3,5 +3,6 @@
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=postgresql_tf"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=postgresql_tf_changes"}
+    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=postgres-vnet-provider"}
   ]
 }
