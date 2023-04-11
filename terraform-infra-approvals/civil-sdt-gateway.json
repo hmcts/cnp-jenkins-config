@@ -1,8 +1,9 @@
 {
   "resources": [
-     {"type": "azurerm_key_vault_access_policy"} 
+    {"type": "azurerm_key_vault_access_policy"},
+    {"type": "azurerm_api_management_api"},
+    {"type": "azurerm_api_management_global_schema"},
+    {"type": "azurerm_api_management_product_api"}
   ],
-  "module_calls": [
-    {"source":  "git@github.com:hmcts/cnp-module-api-mgmt-api?ref=api_type"}
-  ]
+  "module_calls": []
 }
