@@ -6,6 +6,6 @@
       {"source":  "git@github.com:hmcts/cnp-module-action-group?ref=SSCS-10638-output_id"},
       {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=sscs-remove-default-provider"},
       {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=sscs-remove-default-provider"},
-      {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=feature/sftp-support"}
+      {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=fix/private-endpoint-provider"}
     ]
 }
