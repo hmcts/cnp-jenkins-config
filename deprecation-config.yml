@@ -1,22 +1,22 @@
 helm:
   java:
     - version: "4.0.13"
-      date: "2023-03-29"
+      date_deadline: "2023-03-29"
   nodejs:
     - version: "2.4.14"
-      date: "2023-03-29"
+      date_deadline: "2023-03-29"
   job:
     - version: "0.7.11"
-      date: "2023-03-29"
+      date_deadline: "2023-03-29"
   blobstorage:
     - version: "0.3.0"
-      date: "2023-03-29"
+      date_deadline: "2023-03-29"
   servicebus:
     - version: "0.4.0"
-      date: "2023-03-29"
+      date_deadline: "2023-03-29"
   ccd:
     - version: "8.0.27"
-      date: "2023-03-29"
+      date_deadline: "2023-03-29"
   elasticsearch:
     - version: "7.17.3"
-      date: "2023-03-29"
+      date_deadline: "2023-03-29"
