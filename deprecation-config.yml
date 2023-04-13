@@ -1,13 +1,9 @@
 helm:
   java:
     - version: "4.0.13"
-      date: "2023-04-29"
-    - version: "4.0.12"
-      date: "2023-04-29"
-    - version: "4.0.8"
       date: "2023-03-29"
   nodejs:
-    - version: "2.4.12"
+    - version: "2.4.14"
       date: "2023-03-29"
   job:
     - version: "0.7.11"
