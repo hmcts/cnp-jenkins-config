@@ -10,7 +10,7 @@ subscriptions:
     resourceGroup: core-infra-intsvc-rg
 
   - name: "DTS-CFTPTL-INTSVC"
-    zoneTemplate: '${["plum","probate","sscs","idam","ccd","ts","hmc","aac","rpo","camunda","dg","dm","dtsse","em","et","sptribs","nfdiv","pcq","lau","wa","finrem","jps","rd","xui", "reform-scan", "bulk-scan", "rpe", "fact", "rpts", "am", "ia", "div"].contains(product) || ["draft-store-service","civil-general-applications", "civil-service", "civil-ccd","civil-camunda","civil-citizen-ui","civil-ga-ccd","rpe-service-auth-provider", "rpe-pdf-service", "cmc-citizen-frontend", "nfdiv-case-api", "nfdiv-frontend","prl-ccd-definitions","prl-cos","prl-dgs","prl-citizen-frontend","adoption-cos-api","adoption-web","ccd-case-disposer", "fpl-case-service"].contains(appFullName) ? environment + ".platform.hmcts.net" : "service.core-compute-" + environment + ".internal"}'
+    zoneTemplate: '${["plum","probate","sscs","idam","ccd","ts","hmc","aac","rpo","camunda","dg","dm","dtsse","em","et","sptribs","nfdiv","pcq","lau","wa","finrem","jps","rd","xui", "reform-scan", "bulk-scan", "rpe", "fact", "rpts", "am", "ia", "fis", "div"].contains(product) || ["draft-store-service","div-cos","civil-general-applications", "civil-service", "civil-ccd","civil-camunda","civil-citizen-ui","civil-ga-ccd","rpe-service-auth-provider", "rpe-pdf-service", "cmc-citizen-frontend", "nfdiv-case-api", "nfdiv-frontend","prl-ccd-definitions","prl-cos","prl-dgs","prl-citizen-frontend","adoption-cos-api","adoption-web","ccd-case-disposer", "fpl-case-service"].contains(appFullName) ? environment + ".platform.hmcts.net" : "service.core-compute-" + environment + ".internal"}'
     ttl: 300
     active: true
     environments:
