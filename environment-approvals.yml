@@ -221,3 +221,4 @@ prod:
   - repo: https://github.com/hmcts/et-sya-frontend.git
   - repo: https://github.com/hmcts/et-sya-api.git
   - repo: https://github.com/hmcts/dtsse-shared-infrastructure.git
+  - repo: https://github.com/hmcts/tax-tribunals-shared-infrastructure.git
