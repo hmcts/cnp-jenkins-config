@@ -766,3 +766,12 @@ owaspdependency:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
+tt:
+  team: "Tax Tribunals"
+  namespace: "tt"
+  azure_ad_group: DTS Tax Tribunals
+  slack:
+    contact_channel: "#pet"
+    build_notices_channel: "#pet"
+  tags:
+    application: tax-tribunals
