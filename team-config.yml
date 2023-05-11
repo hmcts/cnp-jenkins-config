@@ -772,6 +772,6 @@ tt:
   azure_ad_group: dcd_group_pet_v2
   slack:
     contact_channel: "#pet"
-    build_notices_channel: "#pet"
+    build_notices_channel: "#pet-devops"
   tags:
     application: tax-tribunals
