@@ -768,7 +768,7 @@ owaspdependency:
     application: core
 tt:
   team: "Tax Tribunals"
-  namespace: "tt"
+  namespace: "tax-tribunals"
   azure_ad_group: dcd_group_pet_v2
   slack:
     contact_channel: "#pet"
