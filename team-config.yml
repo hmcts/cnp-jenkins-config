@@ -766,7 +766,7 @@ owaspdependency:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
-tt:
+tax-tribunals:
   team: "Tax Tribunals"
   namespace: "tax-tribunals"
   azure_ad_group: dcd_group_pet_v2
