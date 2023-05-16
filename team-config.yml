@@ -784,7 +784,7 @@ help-with-fees:
     build_notices_channel: "#pet-devops"
   tags:
     application: help-with-fees
-cui-ra:
+cui:
   team: "CCD"
   namespace:  "cui"
   azure_ad_group: dcd_ccd
