@@ -6,8 +6,8 @@ helm:
     - version: "2.4.14"
       date_deadline: "2023-03-29"
   job:
-    - version: "0.7.11"
-      date_deadline: "2023-03-29"
+    - version: "1.0.0"
+      date_deadline: "2023-05-31"
   blobstorage:
     - version: "0.3.0"
       date_deadline: "2023-03-29"
