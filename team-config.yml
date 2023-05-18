@@ -784,3 +784,12 @@ help-with-fees:
     build_notices_channel: "#pet-devops"
   tags:
     application: help-with-fees
+cui:
+  team: "CCD"
+  namespace:  "cui"
+  azure_ad_group: dcd_ccd
+  slack:
+    contact_channel: "#cui-ra-support"
+    build_notices_channel: "#cui-ra-master-builds"
+  tags:
+    application: core-case-data    
