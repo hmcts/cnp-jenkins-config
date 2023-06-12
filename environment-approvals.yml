@@ -225,4 +225,5 @@ prod:
   - repo: https://github.com/hmcts/dtsse-shared-infrastructure.git
   - repo: https://github.com/hmcts/cui-ra.git
   - repo: https://github.com/hmcts/idam-user-disposer.git
+  - repo: https://github.com/hmcts/disposer-shared-infrastructure.git
 
