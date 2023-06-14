@@ -667,6 +667,15 @@ lau:
     build_notices_channel: "#lau-builds"
   tags:
     application: log-and-audit
+disposer:
+  team: "Retain and Dispose"
+  namespace: "disposer"
+  azure_ad_group: DTS Retain and Dispose
+  slack:
+    contact_channel: "#disposer-dev"
+    build_notices_channel: "#disposer-builds"
+  tags:
+    application: disposer
 prl:
   team: "Private Law"
   namespace: "private-law"
