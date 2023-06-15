@@ -1,0 +1,7 @@
+{
+  "resources": [
+  ],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/cnp-module-key-vault?ref=azurermv2"}
+  ]
+}
