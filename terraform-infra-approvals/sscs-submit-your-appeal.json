@@ -1,0 +1,10 @@
+{
+    "resources": [
+      {"type": "azurerm_resource_group"},
+      {"type": "azurerm_redis_cache"}
+    ],
+    "module_calls": [
+      {"source":  "git@github.com:hmcts/cnp-module-redis?ref=add-redis-version-flag"}
+    ]
+  }
+  
