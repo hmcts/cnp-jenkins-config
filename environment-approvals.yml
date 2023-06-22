@@ -220,8 +220,6 @@ prod:
   - repo: https://github.com/hmcts/family-api-gateway.git
   - repo: https://github.com/hmcts/et-sya-frontend.git
   - repo: https://github.com/hmcts/et-sya-api.git
-  - repo: https://github.com/hmcts/sptribs-case-api.git
-  - repo: https://github.com/hmcts/sptribs-shared-infrastructure.git
   - repo: https://github.com/hmcts/dtsse-shared-infrastructure.git
   - repo: https://github.com/hmcts/cui-ra.git
   - repo: https://github.com/hmcts/idam-user-disposer.git
