@@ -198,6 +198,7 @@ prod:
   - repo: https://github.com/hmcts/civil-camunda-bpmn-definition.git
   - repo: https://github.com/hmcts/ccpay-refunds-app.git
   - repo: https://github.com/hmcts/civil-general-applications.git
+  - repo: https://github.com/hmcts/civil-orchestrator-service.git
   - repo: https://github.com/hmcts/civil-general-apps-ccd-definition.git
   - repo: https://github.com/hmcts/ccpay-paymentoutcome-web.git
   - repo: https://github.com/hmcts/ccpay-service-request-cpo-update-service.git
