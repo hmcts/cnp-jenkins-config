@@ -8,6 +8,6 @@
       {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=sscs-remove-default-provider"},
       {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=sscs-remove-default-provider"},
       {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=fix/private-endpoint-provider"},
-      {"source":  "git@github.com:hmcts/terraform-module-log-analytics-workspace-id.git?ref=master"}
+      {"source":  "git@github.com:hmcts/terraform-module-log-analytics-workspace-id?ref=master"}
     ]
 }
