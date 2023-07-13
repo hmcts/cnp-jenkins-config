@@ -9,11 +9,11 @@ helm:
     - version: "1.0.0"
       date_deadline: "2023-05-31"
   blobstorage:
-    - version: "0.3.0"
-      date_deadline: "2023-03-29"
+    - version: "1.0.1"
+      date_deadline: "2023-08-13"
   servicebus:
-    - version: "0.4.0"
-      date_deadline: "2023-03-29"
+    - version: "1.0.4"
+      date_deadline: "2023-08-13"
   ccd:
     - version: "8.0.27"
       date_deadline: "2023-03-29"
