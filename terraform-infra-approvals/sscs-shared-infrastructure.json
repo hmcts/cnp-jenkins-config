@@ -9,7 +9,7 @@
       {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=sscs-remove-default-provider"},
       {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=fix/private-endpoint-provider"},
       {"source":  "git@github.com:hmcts/terraform-module-log-analytics-workspace-id?ref=master"},
-      {"source":  "./modules/az_metric_alert?ref=master"}
+      {"source":  "./modules/az_metric_alert?ref=master"},
       {"source":  "./modules/az_metric_alert?ref=rhodrif"}
     ]
 }
