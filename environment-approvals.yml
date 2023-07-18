@@ -81,6 +81,7 @@ prod:
   - repo: https://github.com/hmcts/finrem-shared-infrastructure.git
   - repo: https://github.com/hmcts/fpl-ccd-configuration.git
   - repo: https://github.com/hmcts/fpl-ccd-data-migration-tool.git
+  - repo: https://github.com/hmcts/fpl-wa-task-configuration.git
   - repo: https://github.com/hmcts/hmc-cft-hearing-service.git
   - repo: https://github.com/hmcts/hmc-hmi-inbound-adapter.git
   - repo: https://github.com/hmcts/hmc-shared-infrastructure.git
