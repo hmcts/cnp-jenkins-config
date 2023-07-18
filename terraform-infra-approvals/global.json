@@ -23,7 +23,7 @@
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=master"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=master"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"},
-    {"source":  "git@github.com:hmcts/terraform-module-application-insights?ref=master"},
+    {"source":  "git@github.com:hmcts/terraform-module-application-insights?ref=main"},
     {"source":  "git@github.com:hmcts/cnp-module-api-mgmt?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-api-mgmt-product?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-api-mgmt-api?ref=master"},
