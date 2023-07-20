@@ -546,7 +546,7 @@ ccpay-functions:
   namespace: "fees-pay"
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
-    contact_channel: "#fee-pay-nightly-pipeline"
+    contact_channel: "#cc-payments"
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
@@ -636,7 +636,7 @@ paymentsgw:
   namespace: "fees-pay"
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
-    contact_channel: "#fee-pay-nightly-pipeline"
+    contact_channel: "#cc-payments"
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
