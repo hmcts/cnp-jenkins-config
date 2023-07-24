@@ -568,6 +568,8 @@ dtsse:
     build_notices_channel: "#reform-swe-builds"
   tags:
     application: core
+  ardoq:
+    application_id: "48f7e1661af3e8c64059f99f"
 civil:
   team: "Civil"
   namespace: "civil"
