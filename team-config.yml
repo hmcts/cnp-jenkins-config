@@ -203,7 +203,7 @@ fees:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
-    build_notices_channel: "#cc-payments-tech"
+    build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
 fees-register:
@@ -212,7 +212,7 @@ fees-register:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
-    build_notices_channel: "#cc-payments-tech"
+    build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
 payment:
@@ -221,7 +221,7 @@ payment:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
-    build_notices_channel: "#cc-payments-tech"
+    build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
 ccpay:
@@ -230,7 +230,7 @@ ccpay:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
-    build_notices_channel: "#cc-payments-tech"
+    build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
 bar:
@@ -239,8 +239,8 @@ bar:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
-    build_notices_channel: "#bar-tech"
-  defaultSlackChannel: "#bar-tech"
+    build_notices_channel: "#fee-pay-nightly-pipeline"
+  defaultSlackChannel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
 probate:
@@ -546,8 +546,8 @@ ccpay-functions:
   namespace: "fees-pay"
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
-    contact_channel: "#cc-payments-tech"
-    build_notices_channel: "#cc-payments-tech"
+    contact_channel: "#cc-payments"
+    build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
 rse:
@@ -568,6 +568,8 @@ dtsse:
     build_notices_channel: "#reform-swe-builds"
   tags:
     application: core
+  ardoq:
+    application_id: "48f7e1661af3e8c64059f99f"
 civil:
   team: "Civil"
   namespace: "civil"
@@ -636,8 +638,8 @@ paymentsgw:
   namespace: "fees-pay"
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
-    contact_channel: "#cc-payments-tech"
-    build_notices_channel: "#cc-payments-tech"
+    contact_channel: "#cc-payments"
+    build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
 keda:
