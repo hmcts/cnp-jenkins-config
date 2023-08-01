@@ -1,7 +1,8 @@
 {
   "resources": [
     {"type": "azurerm_storage_account"},
-    {"type": "azurerm_storage_container"}
+    {"type": "azurerm_storage_container"},
+    {"type": "azurerm_storage_management_policy"}
   ],
   "module_calls": []
 }
