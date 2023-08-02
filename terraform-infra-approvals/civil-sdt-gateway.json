@@ -5,5 +5,7 @@
     {"type": "azurerm_api_management_global_schema"},
     {"type": "azurerm_api_management_product_api"}
   ],
-  "module_calls": []
+  "module_calls": [
+    {"source": "git@github.com:hmcts/terraform-module-apim-application-gateway?ref=main"}
+  ]
 }
