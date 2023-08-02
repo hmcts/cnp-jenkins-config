@@ -812,4 +812,13 @@ pdda:
     contact_channel: "#pdda"
     build_notices_channel: "#pdda-builds"
   tags:
-    application: "pdda"
+    application: XHIBIT
+pdm:
+  team: "PDM"
+  namespace: "pdm"
+  azure_ad_group: DTS SDS PDM
+  slack:
+    contact_channel: "#pdm"
+    build_notices_channel: "#pdm-builds"
+  tags:
+    application: XHIBIT
