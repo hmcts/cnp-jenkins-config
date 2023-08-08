@@ -22,5 +22,5 @@ helm:
       date_deadline: "2023-03-29"
 gradle:
   java-logging:
-    - version: "6.0.5"
-      date_deadline: "2023-03-01"
+    - version: "6.0.1"
+      date_deadline: "2023-10-01"
