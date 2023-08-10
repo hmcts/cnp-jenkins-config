@@ -39,6 +39,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=revert-159-tf-0.12.x"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=postgresql_tf"},
+    {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=postgresql_tf_collation_fix"},
     {"source":  "git@github.com:hmcts/cnp-module-trafficmanager?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-palo-alto?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-action-group?ref=master"},
