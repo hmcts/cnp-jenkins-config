@@ -222,7 +222,6 @@ prod:
   - repo: https://github.com/hmcts/family-api-gateway.git
   - repo: https://github.com/hmcts/et-sya-frontend.git
   - repo: https://github.com/hmcts/et-sya-api.git
-  - repo: https://github.com/hmcts/et-hearings-api.git
   - repo: https://github.com/hmcts/dtsse-shared-infrastructure.git
   - repo: https://github.com/hmcts/cui-ra.git
   - repo: https://github.com/hmcts/disposer-idam-user.git
