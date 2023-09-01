@@ -3,7 +3,6 @@
     "module_calls": [
       {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=postgres-vnet-provider"},
       {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=jit-aat"},
-      {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=RWA-2648-read-non-default-schema"},
-      {"source":  "git@github.com:hmcts/terraform-module-sdp-db-user?ref=master"}
+      {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=RWA-2648-read-non-default-schema"}
     ]
 }
