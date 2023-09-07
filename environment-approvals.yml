@@ -227,4 +227,5 @@ prod:
   - repo: https://github.com/hmcts/disposer-idam-user.git
   - repo: https://github.com/hmcts/disposer-shared-infrastructure.git
   - repo: https://github.com/hmcts/tax-tribunals-shared-infrastructure.git
+  - repo: https://github.com/hmcts/tax-tribunals-datacapture.git
 
