@@ -798,6 +798,15 @@ help-with-fees:
     build_notices_channel: "#pet-devops"
   tags:
     application: help-with-fees
+et-pet:
+  team: "Employment Tribunals PET"
+  namespace: "et-pet"    
+  azure_ad_group: "dcd_group_pet_v2"
+  slack:
+    contact_channel: "#pet"
+    build_notices_channel: "#pet-devops"
+  tags:
+    application: et-pet
 cui:
   team: "CCD"
   namespace:  "cui"
