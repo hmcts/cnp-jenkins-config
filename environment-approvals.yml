@@ -228,4 +228,10 @@ prod:
   - repo: https://github.com/hmcts/disposer-shared-infrastructure.git
   - repo: https://github.com/hmcts/tax-tribunals-shared-infrastructure.git
   - repo: https://github.com/hmcts/tax-tribunals-datacapture.git
+  - repo: https://github.com/hmcts/et1.git
+  - repo: https://github.com/hmcts/et3.git
+  - repo: https://github.com/hmcts/et-api.git
+  - repo: https://github.com/hmcts/et-admin.git
+  - repo: https://github.com/hmcts/et-ccd-export.git
+  - repo: https://github.com/hmcts/et-pet-shared-infrastructure.git
 
