@@ -4,7 +4,8 @@
     {"type": "azurerm_role_assignment"},
     {"type": "azurerm_postgresql_firewall_rule"},
     {"type": "azurerm_key_vault_access_policy"},
-    {"type": "azurerm_postgresql_flexible_server_configuration"}
+    {"type": "azurerm_postgresql_flexible_server_configuration"},
+    {"type": "azurerm_consumption_budget_resource_group"}
   ],
   "module_calls": []
 }
