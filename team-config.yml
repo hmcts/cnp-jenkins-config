@@ -627,6 +627,8 @@ nfdiv:
     build_notices_channel: "#no-fault-divorce-builds"
   tags:
     application: no-fault-divorce
+  ardoq:
+    application_id: 5e008c29c8764747bd1f0da5
 ccd-elastic-search:
   team: "CCD"
   namespace:  "ccd"
