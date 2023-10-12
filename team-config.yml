@@ -7,6 +7,8 @@ aac:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 cpo:
   team: "CDM"
   namespace:  "cpo"
@@ -16,6 +18,8 @@ cpo:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 hmc:
   team: "CDM"
   namespace:  "hmc"
@@ -25,6 +29,8 @@ hmc:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 jps:
   team: "CDM"
   namespace:  "jps"
@@ -34,6 +40,8 @@ jps:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 ccd:
   team: "CCD"
   namespace:  "ccd"
@@ -43,6 +51,8 @@ ccd:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 ccdprobate:
   team: "CCD"
   namespace: "ccd"
@@ -52,6 +62,8 @@ ccdprobate:
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 ccdcmc:
   team: "CCD"
   namespace: "ccd"
@@ -61,6 +73,8 @@ ccdcmc:
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 ccddivorce:
   team: "CCD"
   namespace: "ccd"
@@ -70,6 +84,8 @@ ccddivorce:
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 ccdsscs:
   team: "CCD"
   namespace: "ccd"
@@ -79,6 +95,8 @@ ccdsscs:
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 ccdethos:
   team: "CCD"
   namespace: "ccd"
@@ -88,6 +106,8 @@ ccdethos:
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 sweeper:
   team: "CCD"
   namespace: "ccd"
@@ -97,6 +117,8 @@ sweeper:
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 cmc:
   team:  "Money Claims"
   namespace:  "money-claims"
@@ -124,6 +146,8 @@ cet:
     build_notices_channel: "#cet-pipeline"
   tags:
     application: civil-enforcement
+  ardoq:
+    application_id: "75501a00b521426c9e97b554"
 div:
   team: "Divorce"
   namespace: "divorce"
@@ -133,6 +157,8 @@ div:
     build_notices_channel: "#div-dev"
   tags:
     application: divorce
+  ardoq:
+    application_id: "59bf8ebd858e3a119b4d3c28"
 dm:
   team: "Evidence Management"
   namespace: "dm-store"
@@ -142,6 +168,8 @@ dm:
     build_notices_channel: "#em-dev-chat"
   tags:
     application: evidence-management
+  ardoq:
+    application_id: "3fcfe93bd7088a16fb47a418"
 em:
   team: "Evidence Management"
   namespace: "em"
@@ -151,6 +179,8 @@ em:
     build_notices_channel: "#em-dev-chat"
   tags:
     application: evidence-management
+  ardoq:
+    application_id: "3fcfe93bd7088a16fb47a418"
 dg:
   team: "Evidence Management"
   namespace: "dg"
@@ -160,6 +190,8 @@ dg:
     build_notices_channel: "#em-dev-chat"
   tags:
     application: evidence-management
+  ardoq:
+    application_id: "3fcfe93bd7088a16fb47a418"
 finrem:
   team: "Financial Remedy"
   namespace: "financial-remedy"
@@ -169,6 +201,8 @@ finrem:
     build_notices_channel: "#finrem-dev"
   tags:
     application: financial-remedy
+  ardoq:
+    application_id: "fc6321e6c017446b408d009e"
 ia:
   team: "Immigration"
   namespace: "ia"
@@ -187,6 +221,8 @@ idam:
     build_notices_channel: "#idam_tech"
   tags:
     application: cft-idam
+  ardoq:
+    application_id: "fb509874f3ada734cfdaeb2a"
 # Shared with Idam and Platform Operations
 core-compute:
   team: "CNP"
@@ -206,6 +242,8 @@ fees:
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
+  ardoq:
+    application_id: "d199803abb9a8bf422a26770"
 fees-register:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -215,6 +253,8 @@ fees-register:
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
+  ardoq:
+    application_id: "d199803abb9a8bf422a26770"
 payment:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -224,6 +264,8 @@ payment:
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
+  ardoq:
+    application_id: "d199803abb9a8bf422a26770"
 ccpay:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -233,6 +275,8 @@ ccpay:
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
+  ardoq:
+    application_id: "d199803abb9a8bf422a26770"
 bar:
   team: "Fees/Pay"
   namespace: "bar"
@@ -243,6 +287,8 @@ bar:
   defaultSlackChannel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
+  ardoq:
+    application_id: "d199803abb9a8bf422a26770"
 probate:
   team: "Probate"
   namespace: "probate"
@@ -252,6 +298,8 @@ probate:
     build_notices_channel: "#probate-jenkins"
   tags:
     application: probate
+  ardoq:
+    application_id: "01ee39924584ace3726a78ad"
 probatemandb:
   team: "Probate"
   namespace: "probate"
@@ -261,6 +309,8 @@ probatemandb:
     build_notices_channel: "#probate-jenkins"
   tags:
     application: probate
+  ardoq:
+    application_id: "01ee39924584ace3726a78ad"
 bulk-scan:
   team: "Bulk Scanning and Printing"
   namespace: "bsp"
@@ -279,6 +329,8 @@ reform-scan: # separate `bulk-scan` product copy since #349
     build_notices_channel: "#bsp-build-notices"
   tags:
     application: bulk-scan-print
+  ardoq:
+    application_id: "869a8652d5586f1c4f05ee4a"
 bulk-scan-v2:
   team: "Bulk Scanning and Printing"
   namespace: "bsp"
@@ -288,6 +340,8 @@ bulk-scan-v2:
     build_notices_channel: "#bsp-build-notices"
   tags:
     application: bulk-scan-print
+  ardoq:
+    application_id: "869a8652d5586f1c4f05ee4a"
 reform-scan-v2: # separate `bulk-scan` product copy since #349
   team: "Bulk Scanning and Printing"
   namespace: "reform-scan"
@@ -297,6 +351,8 @@ reform-scan-v2: # separate `bulk-scan` product copy since #349
     build_notices_channel: "#bsp-build-notices"
   tags:
     application: bulk-scan-print
+  ardoq:
+    application_id: "869a8652d5586f1c4f05ee4a"
 rpe:
   team: "Software Engineering"
   namespace: "rpe"
@@ -306,6 +362,8 @@ rpe:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
+  ardoq:
+    application_id: "48f7e1661af3e8c64059f99f"
 rpetemplate:
   team: "Software Engineering"
   namespace: "rpe"
@@ -315,6 +373,8 @@ rpetemplate:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
+  ardoq:
+    application_id: "48f7e1661af3e8c64059f99f"
 core-infra:
   team: "Software Engineering"
   namespace: "rpe"
@@ -324,6 +384,8 @@ core-infra:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
+  ardoq:
+    application_id: "48f7e1661af3e8c64059f99f"
 draft-store:
   team: "Software Engineering"
   namespace: "rpe"
@@ -333,6 +395,8 @@ draft-store:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
+  ardoq:
+    application_id: "48f7e1661af3e8c64059f99f"
 xui:
   team: "Expert UI"
   namespace: "xui"
@@ -444,6 +508,8 @@ am:
     build_notices_channel: "#am-master-builds"
   tags:
     application: access-management
+  ardoq:
+    application_id: "7a6a4ab30a22e5b86452ed78"
 fpl:
   team: "Family Public Law"
   namespace: "family-public-law"
@@ -453,6 +519,8 @@ fpl:
     build_notices_channel: "#fpla-tech"
   tags:
     application: family-public-law
+  ardoq:
+    application_id: "251b26f70d8ee783220e7c1f"
 ctsc:
   team: "CTSC"
   namespace: "ctsc"
@@ -480,6 +548,8 @@ data-extractor:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: management-information
+  ardoq:
+    application_id: "48f7e1661af3e8c64059f99f"
 data-generator:
   team: "Software Engineering"
   namespace: "rpe"
@@ -489,6 +559,8 @@ data-generator:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: management-information
+  ardoq:
+    application_id: "48f7e1661af3e8c64059f99f"
 camunda:
   team: "Software Engineering"
   namespace: "camunda"
@@ -499,6 +571,8 @@ camunda:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
+  ardoq:
+    application_id: "48f7e1661af3e8c64059f99f"
 ethos:
   team: "Ethos Replacement"
   namespace: "ethos"
@@ -517,6 +591,8 @@ payments:
     build_notices_channel: "#cc-payments-tech"
   tags:
     application: fees-and-payments
+  ardoq:
+    application_id: "d199803abb9a8bf422a26770"
 mi:
   team: "Management Information"
   namespace: "mi"
@@ -535,6 +611,8 @@ pcq:
     build_notices_channel: "#pcq-builds"
   tags:
     application: protected-characteristics-questionnaire
+  ardoq:
+    application_id: "50df9b5eb6ae7549b9ed079d"
 adoption:
   team: "Adoption"
   namespace: "adoption"
@@ -544,6 +622,8 @@ adoption:
     build_notices_channel: "#adoption-tech"
   tags:
     application: adoption
+  ardoq:
+    application_id: "0414daba1ab82b198143ba62"
 ccpay-functions:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -553,6 +633,8 @@ ccpay-functions:
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
+  ardoq:
+    application_id: "d199803abb9a8bf422a26770"
 rse:
   team: "Reform Software Engineering"
   namespace: "rse"
@@ -562,6 +644,8 @@ rse:
     build_notices_channel: "#reform-swe-builds"
   tags:
     application: core
+  ardoq:
+    application_id: "48f7e1661af3e8c64059f99f"
 dtsse:
   team: "DTS Software Engineering"
   namespace: "dtsse"
@@ -609,6 +693,8 @@ fact:
     build_notices_channel: "#fact-builds"
   tags:
     application: find-a-court-or-tribunal
+  ardoq:
+    application_id: "869a8652d5586f1c4f05ee4a"
 rpts:
   team: "Residential Property Tribunals"
   namespace: "rpts"
@@ -628,7 +714,7 @@ nfdiv:
   tags:
     application: no-fault-divorce
   ardoq:
-    application_id: 5e008c29c8764747bd1f0da5
+    application_id: "5e008c29c8764747bd1f0da5"
 ccd-elastic-search:
   team: "CCD"
   namespace:  "ccd"
@@ -638,6 +724,8 @@ ccd-elastic-search:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 paymentsgw:
   team: "Fees/Pay"
   namespace: "fees-pay"
@@ -647,6 +735,8 @@ paymentsgw:
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
+  ardoq:
+    application_id: "d199803abb9a8bf422a26770"
 keda:
   team: "Platform Operations"
   namespace: "admin"
@@ -692,6 +782,8 @@ prl:
     build_notices_channel: "#prl-tech-notifications"
   tags:
     application: family-private-law
+  ardoq:
+    application_id: "8dae7a1625ec10910f15ef28"
 adoption-web:
   team: "Adoption"
   namespace:  "adoption"
@@ -701,6 +793,8 @@ adoption-web:
     build_notices_channel: "#adoption-tech"
   tags:
     application: adoption-web
+  ardoq:
+    application_id: "0414daba1ab82b198143ba62"
 adoption-cos-api:
   team: "Adoption"
   namespace:  "adoption"
@@ -710,6 +804,8 @@ adoption-cos-api:
     build_notices_channel: "#adoption-tech"
   tags:
     application: adoption-cos-api
+  ardoq:
+    application_id: "0414daba1ab82b198143ba62"
 adoption-ccd-definitions:
   team: "Adoption"
   namespace:  "adoption"
@@ -719,6 +815,8 @@ adoption-ccd-definitions:
     build_notices_channel: "#adoption-tech"
   tags:
     application: adoption-ccd-definitions
+  ardoq:
+    application_id: "0414daba1ab82b198143ba62"
 labs:
   team: "CNP"
   namespace: "labs"
@@ -817,7 +915,9 @@ cui:
     contact_channel: "#cui-ra-support"
     build_notices_channel: "#cui-ra-master-builds"
   tags:
-    application: core-case-data    
+    application: core-case-data
+  ardoq:
+    application_id: "5ff9ddf80df3e00af06bd670"
 pdda:
   team: "PDDA"
   namespace: "pdda"
