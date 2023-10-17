@@ -831,7 +831,7 @@ et:
   namespace: "et"
   azure_ad_group: DTS Employment Tribunals
   slack:
-    contact_channel: "#et-tech"
+    contact_channel: "#et-developers"
     build_notices_channel: "#et-builds"
   tags:
     application: employment-tribunals
