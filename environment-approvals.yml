@@ -203,6 +203,7 @@ prod:
   - repo: https://github.com/hmcts/civil-general-apps-ccd-definition.git
   - repo: https://github.com/hmcts/civil-sdt.git
   - repo: https://github.com/hmcts/civil-sdt-gateway.git
+  - repo: https://github.com/hmcts/civil-citizen-ui.git
   - repo: https://github.com/hmcts/ccpay-paymentoutcome-web.git
   - repo: https://github.com/hmcts/ccpay-service-request-cpo-update-service.git
   - repo: https://github.com/hmcts/prl-ccd-definitions.git
@@ -232,4 +233,3 @@ prod:
   - repo: https://github.com/hmcts/tax-tribunals-datacapture.git
   - repo: https://github.com/hmcts/help-with-fees-shared-infrastructure.git
   - repo: https://github.com/hmcts/et-pet-shared-infrastructure.git
-  - repo: https://github.com/hmcts/civil-citizen-ui.git
