@@ -53,6 +53,7 @@
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=master"},
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=adding-postgresql-ad-administrator"},
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=postgres-vnet-provider"},
-    {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=redundant-backup-optional"}
+    {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=redundant-backup-optional"},
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=DTSPO-15347-add-subscription_rule"}
   ]
 }
