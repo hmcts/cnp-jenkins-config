@@ -571,8 +571,6 @@ dtsse:
     build_notices_channel: "#reform-swe-builds"
   tags:
     application: core
-  ardoq:
-    application_id: "48f7e1661af3e8c64059f99f"
 civil:
   team: "Civil"
   namespace: "civil"
@@ -731,7 +729,7 @@ et:
   namespace: "et"
   azure_ad_group: DTS Employment Tribunals
   slack:
-    contact_channel: "#et-tech"
+    contact_channel: "#et-developers"
     build_notices_channel: "#et-builds"
   tags:
     application: employment-tribunals
@@ -815,7 +813,7 @@ cui:
     contact_channel: "#cui-ra-support"
     build_notices_channel: "#cui-ra-master-builds"
   tags:
-    application: core-case-data    
+    application: core-case-data
 pdda:
   team: "PDDA"
   namespace: "pdda"
