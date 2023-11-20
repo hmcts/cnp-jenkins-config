@@ -1,6 +1,6 @@
 {
   "resources": [
-    {"type": "azurerm_role_assignment"}
+    {"type": "azurerm_pim_eligible_role_assignment"}
   ],
   "module_calls": [
   ]
