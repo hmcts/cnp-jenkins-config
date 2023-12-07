@@ -814,21 +814,3 @@ cui:
     build_notices_channel: "#cui-ra-master-builds"
   tags:
     application: core-case-data
-pdda:
-  team: "PDDA"
-  namespace: "pdda"
-  azure_ad_group: DTS SDS PDDA
-  slack:
-    contact_channel: "#pdda"
-    build_notices_channel: "#pdda-builds"
-  tags:
-    application: "pdda"
-pdm:
-  team: "PDM"
-  namespace: "pdm"
-  azure_ad_group: DTS SDS PDM
-  slack:
-    contact_channel: "#pdm"
-    build_notices_channel: "#pdm-builds"
-  tags:
-    application: "pdm"
