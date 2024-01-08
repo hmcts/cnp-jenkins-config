@@ -7,7 +7,7 @@ helm:
       date_deadline: "2023-10-23"
   job:
     - version: "2.1.0"
-      date_deadline: "2023-01-23"
+      date_deadline: "2023-01-24"
   function:
     - version: "2.4.1"
       date_deadline: "2023-10-23"
