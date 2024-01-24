@@ -3,5 +3,7 @@
     {"type": "azurerm_role_assignment"},
     {"type": "azurerm_servicebus_queue"}
   ],
-  "module_calls": []
+  "module_calls": [
+    git@github.com:hmcts/terraform-module-application-insights?ref=alert
+  ]
 }
