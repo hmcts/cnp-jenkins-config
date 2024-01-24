@@ -4,6 +4,6 @@
     {"type": "azurerm_servicebus_queue"}
   ],
   "module_calls": [
-    git@github.com:hmcts/terraform-module-application-insights?ref=alert
+    {"source": "git@github.com:hmcts/terraform-module-application-insights?ref=alert"}
   ]
 }
