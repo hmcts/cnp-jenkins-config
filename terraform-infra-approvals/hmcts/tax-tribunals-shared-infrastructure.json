@@ -1,0 +1,7 @@
+{
+  "resources": [
+    {"type": "action-group-kv"},
+    {"type": "action-group-db"},
+    {"type": "action-group-storage"}
+  ]
+}
