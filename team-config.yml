@@ -4,6 +4,7 @@ aac:
   namespace:  "aac"
   slack:
     contact_channel: "#ccd-community"
+    channel_id: "C6H1N9WRF"
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
@@ -13,6 +14,7 @@ cpo:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd_support"
+    channel_id: "CG1QC1L66"
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
@@ -22,6 +24,7 @@ hmc:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd_support"
+    channel_id: "CG1QC1L66"
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
@@ -31,6 +34,7 @@ jps:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd_support"
+    channel_id: "CG1QC1L66"
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
@@ -40,6 +44,7 @@ ccd:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd-community"
+    channel_id: "C6H1N9WRF"
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
@@ -49,6 +54,7 @@ ccdprobate:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
+    channel_id: "C23HK2Q58"
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
@@ -58,6 +64,7 @@ ccdcmc:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
+    channel_id: "C23HK2Q58"
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
@@ -67,6 +74,7 @@ ccddivorce:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
+    channel_id: "C23HK2Q58"
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
@@ -76,6 +84,7 @@ ccdsscs:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
+    channel_id: "C23HK2Q58"
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
@@ -85,6 +94,7 @@ ccdethos:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
+    channel_id: "C23HK2Q58"
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
@@ -94,6 +104,7 @@ sweeper:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#devops"
+    channel_id: "C23HK2Q58"
     build_notices_channel: "#ccd-devops"
   tags:
     application: core-case-data
@@ -103,6 +114,7 @@ cmc:
   azure_ad_group: DTS Civil
   slack:
     contact_channel: "#cmc-tech"
+    channel_id: "C3CAAF28N"
     build_notices_channel: "#cmc-tech-notification"
   tags:
     application: civil-money-claims
@@ -112,6 +124,7 @@ custard:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -130,6 +143,7 @@ div:
   azure_ad_group: dcd_divorce
   slack:
     contact_channel: "#div-dev"
+    channel_id: "C2QPUSQ7R"
     build_notices_channel: "#div-dev"
   tags:
     application: divorce
@@ -139,6 +153,7 @@ dm:
   azure_ad_group: dcd_em
   slack:
     contact_channel: "#em-dev-chat"
+    channel_id: "CDW07NDSP"
     build_notices_channel: "#em-dev-chat"
   tags:
     application: evidence-management
@@ -148,6 +163,7 @@ em:
   azure_ad_group: dcd_em
   slack:
     contact_channel: "#em-dev-chat"
+    channel_id: "CDW07NDSP"
     build_notices_channel: "#em-dev-chat"
   tags:
     application: evidence-management
@@ -157,6 +173,7 @@ dg:
   azure_ad_group: dcd_em
   slack:
     contact_channel: "#em-dev-chat"
+    channel_id: "CDW07NDSP"
     build_notices_channel: "#em-dev-chat"
   tags:
     application: evidence-management
@@ -166,6 +183,7 @@ finrem:
   azure_ad_group: dcd_financialremedy
   slack:
     contact_channel: "#finrem-dev"
+    channel_id: "CDRK0RFUP"
     build_notices_channel: "#finrem-dev"
   tags:
     application: financial-remedy
@@ -175,6 +193,7 @@ ia:
   azure_ad_group: dcd_ia
   slack:
     contact_channel: "#ia-tech"
+    channel_id: "CDLGV91HN"
     build_notices_channel: "#ia-tech"
   tags:
     application: immigration
@@ -184,6 +203,7 @@ idam:
   azure_ad_group: dcd_idam
   slack:
     contact_channel: "#idam-support-cft"
+    channel_id: "C034NQNPPRQ"
     build_notices_channel: "#idam_tech"
   tags:
     application: cft-idam
@@ -194,6 +214,7 @@ core-compute:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -203,6 +224,7 @@ fees:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
+    channel_id: "C422ARM9T"
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
@@ -212,6 +234,7 @@ fees-register:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
+    channel_id: "C422ARM9T"
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
@@ -221,6 +244,7 @@ payment:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
+    channel_id: "C422ARM9T"
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
@@ -230,6 +254,7 @@ ccpay:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
+    channel_id: "C422ARM9T"
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
@@ -239,6 +264,7 @@ bar:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
+    channel_id: "C422ARM9T"
     build_notices_channel: "#fee-pay-nightly-pipeline"
   defaultSlackChannel: "#fee-pay-nightly-pipeline"
   tags:
@@ -249,6 +275,7 @@ probate:
   azure_ad_group: dcd_probate
   slack:
     contact_channel: "#probate"
+    channel_id: "C28F28VGB"
     build_notices_channel: "#probate-jenkins"
   tags:
     application: probate
@@ -258,6 +285,7 @@ probatemandb:
   azure_ad_group: dcd_probate
   slack:
     contact_channel: "#probate"
+    channel_id: "C28F28VGB"
     build_notices_channel: "#probate-jenkins"
   tags:
     application: probate
@@ -267,6 +295,7 @@ bulk-scan:
   azure_ad_group: dcd_group_bulkscan_v2
   slack:
     contact_channel: "#rbs"
+    channel_id: "CGR6AG589"
     build_notices_channel: "#bsp-build-notices"
   tags:
     application: bulk-scan-print
@@ -276,6 +305,7 @@ reform-scan: # separate `bulk-scan` product copy since #349
   azure_ad_group: dcd_group_bulkscan_v2
   slack:
     contact_channel: "#rbs"
+    channel_id: "CGR6AG589"
     build_notices_channel: "#bsp-build-notices"
   tags:
     application: bulk-scan-print
@@ -285,6 +315,7 @@ bulk-scan-v2:
   azure_ad_group: dcd_group_bulkscan_v2
   slack:
     contact_channel: "#rbs"
+    channel_id: "CGR6AG589"
     build_notices_channel: "#bsp-build-notices"
   tags:
     application: bulk-scan-print
@@ -294,6 +325,7 @@ reform-scan-v2: # separate `bulk-scan` product copy since #349
   azure_ad_group: dcd_group_bulkscan_v2
   slack:
     contact_channel: "#rbs"
+    channel_id: "CGR6AG589"
     build_notices_channel: "#bsp-build-notices"
   tags:
     application: bulk-scan-print
@@ -303,6 +335,7 @@ rpe:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -312,6 +345,7 @@ rpetemplate:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -321,6 +355,7 @@ core-infra:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -330,6 +365,7 @@ draft-store:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -339,6 +375,7 @@ xui:
   azure_ad_group: dcd_group_expertui_v2
   slack:
     contact_channel: "#xui-pipeline"
+    channel_id: "CHW1CDDM0"
     build_notices_channel: "#xui-pipeline"
   tags:
     application: expert-ui
@@ -348,6 +385,7 @@ rpa:
   azure_ad_group: dcd_group_expertui_v2
   slack:
     contact_channel: "#rpa-pipeline"
+    channel_id: "CADBRMLLX"
     build_notices_channel: "#rpa-pipeline"
   tags:
     application: professional-applications
@@ -357,6 +395,7 @@ rpx:
   azure_ad_group: dcd_group_expertui_v2
   slack:
     contact_channel: "#xui-pipeline"
+    channel_id: "CHW1CDDM0"
     build_notices_channel: "#xui-pipeline"
   tags:
     application: professional-applications
@@ -376,6 +415,7 @@ plum:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -386,6 +426,7 @@ crumble:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -396,6 +437,7 @@ plum-shared-infrastructure:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -405,6 +447,7 @@ sscs:
   azure_ad_group: dcd_sscs
   slack:
     contact_channel: "#sscs-tech"
+    channel_id: "C3CNBP5A6"
     build_notices_channel: "#sscs-tech"
   tags:
     application: social-service-child-support
@@ -414,6 +457,7 @@ sscs-cor:
   azure_ad_group: dcd_sscs
   slack:
     contact_channel: "#sscs-tech"
+    channel_id: "C3CNBP5A6"
     build_notices_channel: "#sscs-tech"
   tags:
     application: social-service-child-support
@@ -423,6 +467,7 @@ sscs-tya:
   azure_ad_group: dcd_sscs
   slack:
     contact_channel: "#sscs-tech"
+    channel_id: "C3CNBP5A6"
     build_notices_channel: "#sscs-tech"
   tags:
     application: social-service-child-support
@@ -432,6 +477,7 @@ sscs-tribunals:
   azure_ad_group: dcd_sscs
   slack:
     contact_channel: "#sscs-tech"
+    channel_id: "C3CNBP5A6"
     build_notices_channel: "#sscs-tech"
   tags:
     application: social-service-child-support
@@ -441,6 +487,7 @@ am:
   azure_ad_group: dcd_group_accessmanagement_v2
   slack:
     contact_channel: "#am-master-builds"
+    channel_id: "CFK8M0V33"
     build_notices_channel: "#am-master-builds"
   tags:
     application: access-management
@@ -459,6 +506,7 @@ ctsc:
   azure_ad_group: dcd_group_ctsc_v2
   slack:
     contact_channel: "#ctsc-master-builds"
+    channel_id: "CFTA9F5TP"
     build_notices_channel: "#ctsc-master-builds"
   tags:
     application: courts-tribunals-service-centre
@@ -468,6 +516,7 @@ rd:
   azure_ad_group: dcd_group_referencedata_v2
   slack:
     contact_channel: "#ref-data-support"
+    channel_id: "CQPQZANRH"
     build_notices_channel: "#rd-master-builds"
   tags:
     application: reference-data
@@ -477,6 +526,7 @@ data-extractor:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: management-information
@@ -486,6 +536,7 @@ data-generator:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: management-information
@@ -496,6 +547,7 @@ camunda:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -505,6 +557,7 @@ ethos:
   azure_ad_group: dcd_group_ethos_v2
   slack:
     contact_channel: "#ethos-repl-service"
+    channel_id: "CHB46SFNU"
     build_notices_channel: "#ethos-repl-service"
   tags:
     application: ethos
@@ -541,6 +594,7 @@ adoption:
   azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
+    channel_id: "C02KDUDL9LG"
     build_notices_channel: "#adoption-tech"
   tags:
     application: adoption
@@ -550,6 +604,7 @@ ccpay-functions:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
+    channel_id: "C422ARM9T"
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
@@ -577,6 +632,7 @@ civil:
   azure_ad_group: DTS Civil
   slack:
     contact_channel: "#civil_contact"
+    channel_id: "C020H1XLM9S"
     build_notices_channel: "#civil_notifications"
   tags:
     application: civil
@@ -586,6 +642,7 @@ hmi:
   azure_ad_group: DTS HMI
   slack:
     contact_channel: "#hmi-devs"
+    channel_id: "C015QJ4597V"
     build_notices_channel: "#hmi-build-notices"
   tags:
     application: hearings-management-interface
@@ -595,6 +652,7 @@ wa:
   azure_ad_group: dcd_group_wa_v2
   slack:
     contact_channel: "#wa-tech"
+    channel_id: "C017MHHL4R5"
     build_notices_channel: "#wa-tech"
   tags:
     application: task-management
@@ -604,6 +662,7 @@ fact:
   azure_ad_group: DTS FaCT
   slack:
     contact_channel: "#fact-tech"
+    channel_id: "C019U8T8KJS"
     build_notices_channel: "#fact-builds"
   tags:
     application: find-a-court-or-tribunal
@@ -613,6 +672,7 @@ rpts:
   azure_ad_group: DTS RPTS
   slack:
     contact_channel: "#fact-tech"
+    channel_id: "C019U8T8KJS"
     build_notices_channel: "#rpts-builds"
   tags:
     application: residential-property-tribunals
@@ -622,6 +682,7 @@ nfdiv:
   azure_ad_group: dcd_divorce
   slack:
     contact_channel: "#no-fault-divorce"
+    channel_id: "C01AHGUSA10"
     build_notices_channel: "#no-fault-divorce-builds"
   tags:
     application: no-fault-divorce
@@ -631,6 +692,7 @@ ccd-elastic-search:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd-community"
+    channel_id: "C6H1N9WRF"
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
@@ -640,6 +702,7 @@ paymentsgw:
   azure_ad_group: dcd_group_fees&pay_v2
   slack:
     contact_channel: "#cc-payments"
+    channel_id: "C422ARM9T"
     build_notices_channel: "#fee-pay-nightly-pipeline"
   tags:
     application: fees-and-payments
@@ -649,6 +712,7 @@ keda:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -658,6 +722,7 @@ vh:
   azure_ad_group: dcd_videohearings
   slack:
     contact_channel: "#vh-devops"
+    channel_id: "C01DSEMVDJM"
     build_notices_channel: "#vh-builds"
   tags:
     application: video-hearings-service
@@ -667,6 +732,7 @@ lau:
   azure_ad_group: DTS LAU
   slack:
     contact_channel: "#lau-dev"
+    channel_id: "C02A53T7ACS"
     build_notices_channel: "#lau-builds"
   tags:
     application: log-and-audit
@@ -685,6 +751,7 @@ prl:
   azure_ad_group: DTS Family Private Law
   slack:
     contact_channel: "#prl-tech-notifications"
+    channel_id: "C031A49PQR4"
     build_notices_channel: "#prl-tech-notifications"
   tags:
     application: family-private-law
@@ -694,6 +761,7 @@ adoption-web:
   azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
+    channel_id: "C02KDUDL9LG"
     build_notices_channel: "#adoption-tech"
   tags:
     application: adoption-web
@@ -703,6 +771,7 @@ adoption-cos-api:
   azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
+    channel_id: "C02KDUDL9LG"
     build_notices_channel: "#adoption-tech"
   tags:
     application: adoption-cos-api
@@ -712,6 +781,7 @@ adoption-ccd-definitions:
   azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
+    channel_id: "C02KDUDL9LG"
     build_notices_channel: "#adoption-tech"
   tags:
     application: adoption-ccd-definitions
@@ -730,6 +800,7 @@ et:
   azure_ad_group: DTS Employment Tribunals
   slack:
     contact_channel: "#et-developers"
+    channel_id: "C05URPSN326"
     build_notices_channel: "#et-builds"
   tags:
     application: employment-tribunals
@@ -739,6 +810,7 @@ fis:
   azure_ad_group: DTS Family Integration
   slack:
     contact_channel: "#family-integration-devs"
+    channel_id: "C03139SFY22"
     build_notices_channel: "#family-integration-cicd-notice"
   tags:
     application: family-integration-systems
@@ -748,6 +820,7 @@ familygw:
   azure_ad_group: DTS Family Private Law
   slack:
     contact_channel: "#prl-tech-notifications"
+    channel_id: "C031A49PQR4"
     build_notices_channel: "#prl-tech-notifications"
   tags:
     application: family-integration-systems  
@@ -757,6 +830,7 @@ ts:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd_support"
+    channel_id: "CG1QC1L66"
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: ts-translation-services
@@ -775,6 +849,7 @@ owaspdependency:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
@@ -784,6 +859,7 @@ tax-tribunals:
   azure_ad_group: dcd_group_pet_v2
   slack:
     contact_channel: "#pet"
+    channel_id: "C99FPBSLC"
     build_notices_channel: "#pet-devops"
   tags:
     application: tax-tribunals
@@ -793,6 +869,7 @@ help-with-fees:
   azure_ad_group: dcd_group_pet_v2
   slack:
     contact_channel: "#pet"
+    channel_id: "C99FPBSLC"
     build_notices_channel: "#pet-devops"
   tags:
     application: help-with-fees
@@ -802,6 +879,7 @@ et-pet:
   azure_ad_group: "dcd_group_pet_v2"
   slack:
     contact_channel: "#pet"
+    channel_id: "C99FPBSLC"
     build_notices_channel: "#pet-devops"
   tags:
     application: et-pet
@@ -811,6 +889,7 @@ cui:
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#cui-ra-support"
+    channel_id: "C057J970H47"
     build_notices_channel: "#cui-ra-master-builds"
   tags:
     application: core-case-data
@@ -820,6 +899,7 @@ pdda:
   azure_ad_group: DTS SDS PDDA
   slack:
     contact_channel: "#pdda"
+    channel_id: "C05JGRC47TJ"
     build_notices_channel: "#pdda-builds"
   tags:
     application: "pdda"
