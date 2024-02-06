@@ -1,0 +1,11 @@
+{
+  "resources": [
+    {"type": "azurerm_monitor_metric_alert"},
+    {"type": "azurerm_monitor_action_group"}
+  ],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=azurermv2"},
+    {"source":  "git@github.com:hmcts/cnp-module-key-vault?ref=azurermv2"},
+    {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=tf_native_versioning"}
+  ]
+}
