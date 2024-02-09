@@ -2,6 +2,7 @@
   "resources": [
     {"type": "azurerm_servicebus_subscription_rule"},
     {"type": "azurerm_function_app"},
-    {"type": "azurerm_app_service_plan"}
+    {"type": "azurerm_app_service_plan"},
+    {"type": "azurerm_linux_function_app"}
   ]
 }
