@@ -4,7 +4,8 @@
     {"type": "azurerm_api_management_api"},
     {"type": "azurerm_api_management_global_schema"},
     {"type": "azurerm_api_management_product_api"},
-    {"type": "azurerm_api_management_api_diagnostic"}
+    {"type": "azurerm_api_management_api_diagnostic"},
+    {"type": "azurerm_api_management_api_operation"}
   ],
   "module_calls": []
 }
