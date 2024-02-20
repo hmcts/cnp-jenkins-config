@@ -55,6 +55,6 @@
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=postgres-vnet-provider"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=redundant-backup-optional"},
     {"source":  "git@github.com:hmcts/terraform-module-sdp-db-user?ref=master"},
-    {"source":  "git@github.com:hmcts/terraform-module-application-insights?ref=DTSPO-16829-prepare"}
+    {"source":  "git@github.com:hmcts/terraform-module-application-insights?ref=fix-count"}
   ]
 }
