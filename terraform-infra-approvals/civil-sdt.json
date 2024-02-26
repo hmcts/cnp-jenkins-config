@@ -1,7 +1,7 @@
 {
     "resources": [],
     "module_calls": [
-      {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?adding-premium-messaging-partitions"}
+      {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=adding-premium-messaging-partitions"}
     ]
   }
   
