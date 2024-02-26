@@ -11,7 +11,7 @@
       {"source":  "git@github.com:hmcts/terraform-module-log-analytics-workspace-id?ref=master"},
       {"source":  "./modules/az_metric_alert?ref=master"},
       {"source":  "./modules/az_metric_alert?ref=rhodrif"},
-      {"source":  "git@github.com:hmcts/cnp-module-key-vault?ref=jh-testing"} 
+      {"source":  "git@github.com:hmcts/cnp-module-key-vault?ref=jh-testing"}, 
       {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=adding-premium-messaging-partitions"}
     ]
 }
