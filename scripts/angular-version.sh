@@ -39,6 +39,9 @@ if [[ $angular_version -lt $latest_supported_version ]];then
     echo "New version ${latest_supported_version} needed in deprecation map"
     git config user.name github-actions
     git config user.email github-actions@github.com
+    git pull
+    git status
+    git checkout master
     yq eval -i '.npm["angular/core"][0].version = '\"$latest_supported_version\" $deprecation_config_file
     git status
 else
