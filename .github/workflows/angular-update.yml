@@ -1,6 +1,6 @@
 name: Auto-Update Angular Dependency
 on:
-  push:
+  workflow_dispatch:
   schedule: 
     # Run on first of every month
     - cron: "30 8 1 * *"
