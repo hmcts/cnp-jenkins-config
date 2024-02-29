@@ -14,6 +14,7 @@ angular_eol_data=$(curl -s https://endoflife.date/api/angular.json | jq -c '.[]'
 
 # Get the current date in Unix timestamp
 current_date=$(date +%s)
+current_date="1727609985"
 min_diff=""
 latest_supported_version=""
 
@@ -41,6 +42,8 @@ if [[ $angular_version -lt $latest_supported_version ]];then
     git pull
     git checkout -b angular-update
     yq eval -i '.npm["angular/core"][0].version = '\"$latest_supported_version\" $deprecation_config_file
+    one_month_from_now=$(date -d "$current_date +1 month" +"%Y-%m-%d")
+    yq eval -i '.npm["angular/core"][0].date_deadline = '\"$one_month_from_now\" $deprecation_config_file
     git add "$deprecation_config_file"
     git commit -m "Auto-Updating Angular Version"
     git push --set-upstream origin angular-update
