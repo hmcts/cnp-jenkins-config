@@ -15,4 +15,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Check Latest Angular Version
-        run: ./angular-version.sh ${GITHUB_REF##*/}
+        run: ./angular-version.sh
