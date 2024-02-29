@@ -1,14 +1,15 @@
 #!/bin/bash
 
-deprecation_config_file="../deprecation-config.yml"
+deprecation_config_file="./deprecation-config.yml"
 # Use yq to extract the version for Angular Core
 angular_version=$(yq eval '.npm["angular/core"][0].version' "$deprecation_config_file")
 echo "Current version is: ${angular_version}"
 
 date_to_timestamp() {
+    # If debugging locally use below date instead   
+    # date -jf "%Y-%m-%d" "$1" +%s
     date -d "$1" +%s
 }
-
 
 angular_eol_data=$(curl -s https://endoflife.date/api/angular.json | jq -c '.[]')
 
@@ -37,6 +38,9 @@ echo "Cycle with closest end of life date to current date: $latest_supported_ver
 if [[ $angular_version -lt $latest_supported_version ]];then
     echo "New version ${latest_supported_version} needed in deprecation map"
     yq eval -i '.npm["angular/core"][0].version = '\"$latest_supported_version\" $deprecation_config_file
+    git config user.name github-actions
+    git config user.email github-actions@github.com
+    git status
 else
     echo "File is showing most recent supported Angular version already"
 fi
