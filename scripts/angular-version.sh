@@ -9,6 +9,7 @@ date_to_timestamp() {
     date -d "$1" +%s
 }
 
+
 angular_eol_data=$(curl -s https://endoflife.date/api/angular.json | jq -c '.[]')
 
 # Get the current date in Unix timestamp
