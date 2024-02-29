@@ -4,8 +4,9 @@ deprecation_config_file="../deprecation-config.yml"
 # Use yq to extract the version for Angular Core
 angular_version=$(yq eval '.npm["angular/core"][0].version' "$deprecation_config_file")
 echo "Current version is: ${angular_version}"
+
 date_to_timestamp() {
-    date -jf "%Y-%m-%d" "$1" +%s
+    date -d "$1" +%s
 }
 
 angular_eol_data=$(curl -s https://endoflife.date/api/angular.json | jq -c '.[]')
