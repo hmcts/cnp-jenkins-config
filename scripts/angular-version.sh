@@ -14,7 +14,6 @@ angular_eol_data=$(curl -s https://endoflife.date/api/angular.json | jq -c '.[]'
 
 # Get the current date in Unix timestamp
 current_date=$(date +%s)
-current_date="1727609985"
 min_diff=""
 latest_supported_version=""
 
