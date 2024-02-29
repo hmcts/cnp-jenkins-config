@@ -1,0 +1,18 @@
+name: Auto-Update Angular Dependency
+on:
+  workflow_dispatch:
+  schedule: 
+    # Run on first of every month
+    - cron: "30 8 1 * *"
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scripts
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check Latest Angular Version
+        run: ./angular-version.sh ${GITHUB_REF##*/}

@@ -33,4 +33,4 @@ gradle:
 npm:
   angular/core:
     - version: "15"
-      date_deadline: "2024-03-25" 
+      date_deadline: "2024-03-25"
