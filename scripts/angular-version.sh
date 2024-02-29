@@ -9,6 +9,9 @@ date_to_timestamp() {
     # date -jf "%Y-%m-%d" "$1" +%s
     date -d "$1" +%s
 }
+timestamp_to_date() {
+    date -d "@$1" "+%Y-%m-%d"
+}
 
 angular_eol_data=$(curl -s https://endoflife.date/api/angular.json | jq -c '.[]')
 
@@ -44,6 +47,7 @@ if [[ $angular_version -lt $latest_supported_version ]];then
     yq eval -i '.npm["angular/core"][0].version = '\"$latest_supported_version\" $deprecation_config_file
     # Add 30 days
     one_month_from_now=$(expr $current_date + 2592000)
+    one_month_from_now=$(timestamp_to_date "$one_month_from_now")
     yq eval -i '.npm["angular/core"][0].date_deadline = '\"$one_month_from_now\" $deprecation_config_file
     git add "$deprecation_config_file"
     git commit -m "Auto-Updating Angular Version"
