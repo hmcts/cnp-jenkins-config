@@ -42,7 +42,6 @@ if [[ $angular_version -lt $latest_supported_version ]];then
     git pull
     git checkout -b angular-update
     yq eval -i '.npm["angular/core"][0].version = '\"$latest_supported_version\" $deprecation_config_file
-    git status
     git add "$deprecation_config_file"
     git commit -m "Auto-Updating Angular Version"
     git push --set-upstream origin angular-update
