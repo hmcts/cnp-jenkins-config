@@ -39,19 +39,18 @@ echo "Cycle with closest end of life date to current date: $latest_supported_ver
 if [[ $angular_version -lt $latest_supported_version ]];then
     echo "New version ${latest_supported_version} needed in deprecation map"
     if [[ "${BRANCH}" == "master" ]];then
-        echo "Will commit changes"
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git pull
+        git checkout master
+        yq eval -i '.npm["angular/core"][0].version = '\"$latest_supported_version\" $deprecation_config_file
+        git status
+        git add "$deprecation_config_file"
+        git commit -m "Auto-Updating Angular Version"
+        # git push
     else
-        echo "Not commiting changes on ${BRANCH}"
+        echo "Not commiting changes as running on: ${BRANCH}"
     fi
-    # git config user.name github-actions
-    # git config user.email github-actions@github.com
-    # git pull
-    # git checkout master
-    # yq eval -i '.npm["angular/core"][0].version = '\"$latest_supported_version\" $deprecation_config_file
-    # git status
-    # git add "$deprecation_config_file"
-    # git commit -m "Auto-Updating Angular Version"
-    # git push
 else
     echo "File is showing most recent supported Angular version already"
 fi
