@@ -40,7 +40,7 @@ if [[ $angular_version -lt $latest_supported_version ]];then
     git config user.name github-actions
     git config user.email github-actions@github.com
     git pull
-    git checkout master
+    git checkout -b angular-update
     yq eval -i '.npm["angular/core"][0].version = '\"$latest_supported_version\" $deprecation_config_file
     git status
     git add "$deprecation_config_file"

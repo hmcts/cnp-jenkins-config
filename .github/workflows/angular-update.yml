@@ -15,4 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Check Latest Angular Version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./angular-version.sh
