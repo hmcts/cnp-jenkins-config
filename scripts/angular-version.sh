@@ -1,5 +1,4 @@
 #!/bin/bash
-BRANCH=$1
 deprecation_config_file="../deprecation-config.yml"
 # Use yq to extract the version for Angular Core
 angular_version=$(yq eval '.npm["angular/core"][0].version' "$deprecation_config_file")
@@ -38,19 +37,22 @@ echo "Cycle with closest end of life date to current date: $latest_supported_ver
 
 if [[ $angular_version -lt $latest_supported_version ]];then
     echo "New version ${latest_supported_version} needed in deprecation map"
-    if [[ "${BRANCH}" == "master" ]];then
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git pull
-        git checkout master
-        yq eval -i '.npm["angular/core"][0].version = '\"$latest_supported_version\" $deprecation_config_file
-        git status
-        git add "$deprecation_config_file"
-        git commit -m "Auto-Updating Angular Version"
-        git push
-    else
-        echo "Not commiting changes as running on: ${BRANCH}"
-    fi
+    git config user.name github-actions
+    git config user.email github-actions@github.com
+    git pull
+    git checkout -b angular-update
+    yq eval -i '.npm["angular/core"][0].version = '\"$latest_supported_version\" $deprecation_config_file
+    git add "$deprecation_config_file"
+    git commit -m "Auto-Updating Angular Version"
+    git push --set-upstream origin angular-update
+
+    pr_args=(
+        --title "Update Angular Version"
+        --body "Automated updates for Angular deprecations"
+        --base master
+        --head angular-update
+    )
+    gh pr create "${pr_args[@]}"
 else
     echo "File is showing most recent supported Angular version already"
 fi
