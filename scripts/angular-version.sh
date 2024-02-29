@@ -1,6 +1,6 @@
 #!/bin/bash
 
-deprecation_config_file="./deprecation-config.yml"
+deprecation_config_file="../deprecation-config.yml"
 # Use yq to extract the version for Angular Core
 angular_version=$(yq eval '.npm["angular/core"][0].version' "$deprecation_config_file")
 echo "Current version is: ${angular_version}"
