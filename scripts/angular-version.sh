@@ -47,7 +47,7 @@ if [[ $angular_version -lt $latest_supported_version ]];then
         git status
         git add "$deprecation_config_file"
         git commit -m "Auto-Updating Angular Version"
-        # git push
+        git push
     else
         echo "Not commiting changes as running on: ${BRANCH}"
     fi
