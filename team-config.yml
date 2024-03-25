@@ -892,7 +892,7 @@ cui:
     channel_id: "C057J970H47"
     build_notices_channel: "#cui-ra-master-builds"
   tags:
-    application: core-case-data
+    application: cui-ra
 pdda:
   team: "PDDA"
   namespace: "pdda"
