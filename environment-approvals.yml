@@ -40,6 +40,7 @@ prod:
   - repo: https://github.com/hmcts/cet-shared-infrastructure.git
   - repo: https://github.com/hmcts/cmc-citizen-frontend.git
   - repo: https://github.com/hmcts/cmc-claim-store.git
+  - repo: https://github.com/hmcts/cmc-ccd-domain.git
   - repo: https://github.com/hmcts/cmc-claim-submit-api.git
   - repo: https://github.com/hmcts/cmc-legal-rep-frontend.git
   - repo: https://github.com/hmcts/cmc-shared-infrastructure.git
