@@ -884,15 +884,15 @@ et-pet:
   tags:
     application: et-pet
 cui:
-  team: "CCD"
+  team: "CUI-RA"
   namespace:  "cui"
-  azure_ad_group: dcd_ccd
+  azure_ad_group: DTS CUI-RA
   slack:
     contact_channel: "#cui-ra-support"
     channel_id: "C057J970H47"
     build_notices_channel: "#cui-ra-master-builds"
   tags:
-    application: core-case-data
+    application: cui-ra
 pdda:
   team: "PDDA"
   namespace: "pdda"
