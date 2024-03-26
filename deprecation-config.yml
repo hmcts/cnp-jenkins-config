@@ -1,6 +1,6 @@
 helm:
   java:
-    - version: "5.1.0"
+    - version: "5.2.0"
       date_deadline: "2024-04-30"
   nodejs:
     - version: "3.1.0"
