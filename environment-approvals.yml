@@ -156,8 +156,8 @@ prod:
   - repo: https://github.com/hmcts/send-letter-service.git
   - repo: https://github.com/hmcts/service-auth-provider-app.git
   - repo: https://github.com/hmcts/snl-shared-infrastructure.git
-  - repo: https://github.com/hmcts/-bulk-scan.git
-  - repo: https://github.com/hmcts/-case-loader.git
+  - repo: https://github.com/hmcts/sscs-bulk-scan.git
+  - repo: https://github.com/hmcts/sscs-case-loader.git
   - repo: https://github.com/hmcts/sscs-ccd-callback-orchestrator.git
   - repo: https://github.com/hmcts/sscs-cor-backend.git
   - repo: https://github.com/hmcts/sscs-cor-frontend.git
