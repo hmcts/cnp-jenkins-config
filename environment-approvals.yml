@@ -168,6 +168,7 @@ prod:
   - repo: https://github.com/hmcts/sscs-track-your-appeal-notifications.git
   - repo: https://github.com/hmcts/sscs-tribunals-case-api.git
   - repo: https://github.com/hmcts/sscs-hearings-api.git
+  - repo: https://github.com/hmcts/sscs-task-configuration.git
   - repo: https://github.com/hmcts/ts-translation-service.git
   - repo: https://github.com/hmcts/dg-docassembly-api.git
   - repo: https://github.com/hmcts/em-stitching-api.git
