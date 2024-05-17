@@ -100,7 +100,6 @@ prod:
   - repo: https://github.com/hmcts/ia-hearings-api.git
   - repo: https://github.com/hmcts/idam-api.git
   - repo: https://github.com/hmcts/idam-shared-infrastructure.git
-  - repo: https://github.com/hmcts/idam-web-admin.git
   - repo: https://github.com/hmcts/idam-web-public.git
   - repo: https://github.com/hmcts/idam-user-dashboard.git
   - repo: https://github.com/hmcts/lau-frontend.git
