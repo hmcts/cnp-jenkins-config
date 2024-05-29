@@ -1,7 +1,7 @@
 aac:
   team: "CDM"
   azure_ad_group: dcd_ccd
-  namespace:  "aac"
+  namespace: "aac"
   slack:
     contact_channel: "#ccd-community"
     channel_id: "C6H1N9WRF"
@@ -10,7 +10,7 @@ aac:
     application: core-case-data
 cpo:
   team: "CDM"
-  namespace:  "cpo"
+  namespace: "cpo"
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd_support"
@@ -20,7 +20,7 @@ cpo:
     application: core-case-data
 hmc:
   team: "CDM"
-  namespace:  "hmc"
+  namespace: "hmc"
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd_support"
@@ -30,7 +30,7 @@ hmc:
     application: core-case-data
 jps:
   team: "CDM"
-  namespace:  "jps"
+  namespace: "jps"
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd_support"
@@ -40,7 +40,7 @@ jps:
     application: core-case-data
 ccd:
   team: "CCD"
-  namespace:  "ccd"
+  namespace: "ccd"
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd-community"
@@ -109,8 +109,8 @@ sweeper:
   tags:
     application: core-case-data
 cmc:
-  team:  "Money Claims"
-  namespace:  "money-claims"
+  team: "Money Claims"
+  namespace: "money-claims"
   azure_ad_group: DTS Civil
   slack:
     contact_channel: "#cmc-tech"
@@ -120,7 +120,7 @@ cmc:
     application: civil-money-claims
 custard:
   team: "CNP"
-  namespace:  "cnp"
+  namespace: "cnp"
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
@@ -157,6 +157,16 @@ dm:
     build_notices_channel: "#em-dev-chat"
   tags:
     application: evidence-management
+docmosis:
+  team: "CNP"
+  namespace: "docmosis"
+  azure_ad_group: "DTS Platform Operations"
+  slack:
+    contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
+    build_notices_channel: "#platops-build-notices"
+  tags:
+    application: docmosis
 em:
   team: "Evidence Management"
   namespace: "em"
@@ -688,7 +698,7 @@ nfdiv:
     application: no-fault-divorce
 ccd-elastic-search:
   team: "CCD"
-  namespace:  "ccd"
+  namespace: "ccd"
   azure_ad_group: dcd_ccd
   slack:
     contact_channel: "#ccd-community"
@@ -757,7 +767,7 @@ prl:
     application: family-private-law
 adoption-web:
   team: "Adoption"
-  namespace:  "adoption"
+  namespace: "adoption"
   azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
@@ -767,7 +777,7 @@ adoption-web:
     application: adoption-web
 adoption-cos-api:
   team: "Adoption"
-  namespace:  "adoption"
+  namespace: "adoption"
   azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
@@ -777,7 +787,7 @@ adoption-cos-api:
     application: adoption-cos-api
 adoption-ccd-definitions:
   team: "Adoption"
-  namespace:  "adoption"
+  namespace: "adoption"
   azure_ad_group: DTS Adoption
   slack:
     contact_channel: "#adoption-tech"
@@ -823,7 +833,7 @@ familygw:
     channel_id: "C031A49PQR4"
     build_notices_channel: "#prl-tech-notifications"
   tags:
-    application: family-integration-systems  
+    application: family-integration-systems
 ts:
   team: "CDM"
   namespace: "ts"
@@ -875,7 +885,7 @@ help-with-fees:
     application: help-with-fees
 et-pet:
   team: "Employment Tribunals PET"
-  namespace: "et-pet"    
+  namespace: "et-pet"
   azure_ad_group: "dcd_group_pet_v2"
   slack:
     contact_channel: "#pet"
@@ -885,7 +895,7 @@ et-pet:
     application: et-pet
 cui:
   team: "CUI-RA"
-  namespace:  "cui"
+  namespace: "cui"
   azure_ad_group: DTS CUI-RA
   slack:
     contact_channel: "#cui-ra-support"
