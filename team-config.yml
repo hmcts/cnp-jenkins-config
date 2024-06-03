@@ -163,7 +163,7 @@ docmosis:
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
-    channel_id: "C8SR5CAMU"
+    channel_id: "G01E6GKRKAM"
     build_notices_channel: "#platops-build-notices"
   tags:
     application: docmosis
