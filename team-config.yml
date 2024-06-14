@@ -421,7 +421,6 @@ ref:
 plum:
   team: "CNP"
   namespace: "cnp"
-  agent: "arm"
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
@@ -432,7 +431,6 @@ plum:
 crumble:
   team: "CNP"
   namespace: "cnp"
-  agent: "arm"
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
@@ -443,7 +441,6 @@ crumble:
 plum-shared-infrastructure:
   team: "CNP"
   namespace: "cnp"
-  agent: "arm"
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
