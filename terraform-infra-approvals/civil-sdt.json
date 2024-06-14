@@ -1,8 +1,7 @@
 {
-    "resources": [],
-    "module_calls": [
-      {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=adding-premium-messaging-partitions"}
-    ]
-  }
-  
+  "resources": [
+    {"type": "azurerm_key_vault_access_policy"}
+  ],
+  "module_calls": []
+}
   
