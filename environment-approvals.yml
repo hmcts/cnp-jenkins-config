@@ -236,3 +236,4 @@ prod:
   - repo: https://github.com/hmcts/help-with-fees-shared-infrastructure.git
   - repo: https://github.com/hmcts/et-pet-shared-infrastructure.git
   - repo: https://github.com/hmcts/docmosis-infrastructure.git
+  - repo: https://github.com/hmcts/et-syr-frontend.git
