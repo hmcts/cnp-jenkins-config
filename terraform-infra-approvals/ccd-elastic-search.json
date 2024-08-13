@@ -11,6 +11,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=DTSPO-17635/datadisk-sku"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=Ethosldata"},
-    {"source":  "git@github.com:hmcts/cnp-module-logstash.git?ref=master"}
+    {"source":  "git@github.com:hmcts/cnp-module-logstash.git?ref=master"}, 
+    {"source": "git@github.com:hmcts/cnp-module-elk.git?ref=test-ccd-autoshutdown"}
   ]
 }
