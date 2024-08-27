@@ -22,6 +22,7 @@
   "module_calls": [
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=master"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=master"},
+    {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=DTSPO-18682"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=master"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"},
     {"source":  "git@github.com:hmcts/terraform-module-application-insights?ref=main"},
