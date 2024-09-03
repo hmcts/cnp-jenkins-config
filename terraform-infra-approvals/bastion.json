@@ -1,0 +1,8 @@
+{
+	"resources": [],
+	"module_calls": [
+		{
+			"source": "git@github.com:hmcts/terraform-module-vm-bootstrap?ref=DTSPO-18633-add-data-collection-rule"
+		}
+	]
+}
