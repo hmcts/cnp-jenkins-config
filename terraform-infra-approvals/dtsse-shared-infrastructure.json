@@ -8,8 +8,6 @@
     {"type": "azurerm_consumption_budget_resource_group"}
   ],
   "module_calls": [
-	  {
-		  "source": "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=ad-group-object-id"
-	  }
+    {"source": "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=ad-group-object-id"}
   ]
 }
