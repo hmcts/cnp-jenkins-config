@@ -7,5 +7,9 @@
     {"type": "azurerm_postgresql_flexible_server_configuration"},
     {"type": "azurerm_consumption_budget_resource_group"}
   ],
-  "module_calls": []
+  "module_calls": [
+    {
+			"source": "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=ad-group-object-id"
+		}
+  ]
 }
