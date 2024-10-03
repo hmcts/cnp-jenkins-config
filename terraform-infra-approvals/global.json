@@ -17,7 +17,8 @@
     {"type": "azurerm_monitor_action_rule_action_group"},
     {"type": "azurerm_monitor_metric_alert"},
     {"type": "azurerm_web_pubsub"},
-    {"type": "azurerm_web_pubsub_hub"}
+    {"type": "azurerm_web_pubsub_hub"},
+    {"type": "azurerm_monitor_data_collection_rule_association"}
   ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=master"},
