@@ -2,7 +2,7 @@
 	"resources": [],
 	"module_calls": [
 		{
-			"source": "git@github.com:hmcts/terraform-module-vm-bootstrap?ref=ieuanb74-patch-1"
+			"source": "git@github.com:hmcts/terraform-module-vm-bootstrap?ref=master"
 		}
 	]
 }
