@@ -910,3 +910,11 @@ pdda:
     build_notices_channel: "#pdda-builds"
   tags:
     application: "pdda"
+pcs:
+  team:
+  namespace:
+  slack:
+    contact_channel: "#pcs-tech"
+    build_notices_channel: "#pcs-tech"
+  tags:
+    application: "possession-claim-service"
