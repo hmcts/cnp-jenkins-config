@@ -911,8 +911,8 @@ pdda:
   tags:
     application: "pdda"
 pcs:
-  team:
-  namespace:
+  team: "Possession Claim Service"
+  namespace: "pcs"
   slack:
     contact_channel: "#pcs-tech"
     build_notices_channel: "#pcs-tech"
