@@ -16,10 +16,12 @@
     {"type": "azurerm_route"},
     {"type": "azurerm_subnet_route_table_association"},
     {"type": "azurerm_postgresql_configuration"},
-    {"type": "azurerm_storage_management_policy"}
+    {"type": "azurerm_storage_management_policy"},
+    {"type": "azurerm_virtual_machine_extension"}
   ],
   "module_calls": [
     {"source":  "./modules/module-scaleset?ref=master"},
-    {"source":  "git@github.com:hmcts/cnp-module-vnet?ref=increase_subnets"}
+    {"source":  "git@github.com:hmcts/cnp-module-vnet?ref=increase_subnets"},
+    {"source":  "git@github.com:hmcts/terraform-module-vm-bootstrap.git?ref=master"}
   ]
 }
