@@ -918,3 +918,13 @@ pcs:
     build_notices_channel: "#pcs-tech"
   tags:
     application: "possession-claim-service"
+recipes:
+  team: "CNP"
+  namespace: "cnp"
+  azure_ad_group: "DTS Platform Operations"
+  slack:
+    contact_channel: "#platops-help"
+    channel_id: "C05KAG00K1N"
+    build_notices_channel: "#platops-build-notices"
+  tags:
+    application: core
