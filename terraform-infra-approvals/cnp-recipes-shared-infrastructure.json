@@ -1,0 +1,20 @@
+{
+  "resources": [
+    {"type": "azurerm_role_assignment"},
+    {"type": "azurerm_servicebus_queue"}
+  ],
+  "module_calls": [
+    {"source": "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=master"},
+    {"source": "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=postgres-vnet-provider"},
+    {"source": "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=public-flexibleserver"},
+    {"source": "git@github.com:hmcts/cnp-module-redis?ref=master"},
+    {"source": "git@github.com:hmcts/cnp-module-redis?ref=4.x"},
+    {"source": "git@github.com:hmcts/cnp-module-redis?ref=DTSPO-17012-data-persistency"},
+    {"source": "git@github.com:hmcts/terraform-module-application-insights?ref=master"},
+    {"source": "git@github.com:hmcts/terraform-module-application-insights?ref=4.x"},
+    {"source": "git@github.com:hmcts/terraform-module-application-insights?ref=DTSPO-16829-prepare"},
+    {"source": "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"},
+    {"source": "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=4.x"},
+    {"source": "git@github.com:hmcts/cnp-module-key-vault?ref=master"}
+  ]
+}
