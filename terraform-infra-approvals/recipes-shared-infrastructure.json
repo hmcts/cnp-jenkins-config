@@ -1,7 +1,14 @@
 {
   "resources": [
+    {"type": "azurerm_resource_group"},
     {"type": "azurerm_role_assignment"},
-    {"type": "azurerm_servicebus_queue"}
+    {"type": "azurerm_servicebus_queue"},
+    {"type": "azurerm_redis_cache"},
+    {"type": "azurerm_postgresql_flexible_server"},
+    {"type": "azurerm_application_insights"},
+    {"type": "azurerm_servicebus_namespace"},
+    {"type": "azurerm_key_vault_secret"},
+    {"type": "azurerm_user_assigned_identity"}
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=master"},
