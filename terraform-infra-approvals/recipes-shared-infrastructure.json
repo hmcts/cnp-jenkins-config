@@ -17,6 +17,7 @@
     {"source": "git@github.com:hmcts/cnp-module-redis?ref=master"},
     {"source": "git@github.com:hmcts/cnp-module-redis?ref=4.x"},
     {"source": "git@github.com:hmcts/cnp-module-redis?ref=DTSPO-17012-data-persistency"},
+    {"source": "git@github.com:hmcts/cnp-module-redis?ref=DTSPO-17012-data-persistency-4.x"},
     {"source": "git@github.com:hmcts/terraform-module-application-insights?ref=master"},
     {"source": "git@github.com:hmcts/terraform-module-application-insights?ref=4.x"},
     {"source": "git@github.com:hmcts/terraform-module-application-insights?ref=DTSPO-16829-prepare"},
