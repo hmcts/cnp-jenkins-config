@@ -237,3 +237,6 @@ prod:
   - repo: https://github.com/hmcts/et-pet-shared-infrastructure.git
   - repo: https://github.com/hmcts/docmosis-infrastructure.git
   - repo: https://github.com/hmcts/et-syr-frontend.git
+  - repo: https://github.com/hmcts/recipes-shared-infrastructure.git
+  - repo: https://github.com/hmcts/recipes-frontend.git
+  - repo: https://github.com/hmcts/recipes-backend.git
