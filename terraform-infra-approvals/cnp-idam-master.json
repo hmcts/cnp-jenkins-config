@@ -17,7 +17,8 @@
     {"type": "azurerm_subnet_route_table_association"},
     {"type": "azurerm_postgresql_configuration"},
     {"type": "azurerm_storage_management_policy"},
-    {"type": "azurerm_virtual_machine_extension"}
+    {"type": "azurerm_virtual_machine_extension"},
+    {"type": "azurerm_subnet_network_security_group_association"}
   ],
   "module_calls": [
     {"source":  "./modules/module-scaleset?ref=master"},
