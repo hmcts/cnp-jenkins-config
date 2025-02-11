@@ -1,13 +1,15 @@
 {
     "resources": [
       {"type": "azapi_resource"},
-      {"type": "azurerm_monitor_diagnostic_setting"}
+      {"type": "azurerm_monitor_diagnostic_setting"},
+      {"type": "azurerm_servicebus_subscription_rule"}
     ],
     "module_calls": [
       {"source":  "git@github.com:hmcts/cnp-module-action-group?ref=SSCS-10638-output_id"},
       {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=sscs-remove-default-provider"},
       {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=sscs-remove-default-provider"},
       {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=fix/private-endpoint-provider"},
+      {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=fix/private-endpoint-provider-4.x"},
       {"source":  "git@github.com:hmcts/terraform-module-log-analytics-workspace-id?ref=master"},
       {"source":  "./modules/az_metric_alert?ref=master"},
       {"source":  "./modules/az_metric_alert?ref=rhodrif"},

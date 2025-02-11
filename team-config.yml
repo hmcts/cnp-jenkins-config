@@ -920,3 +920,31 @@ tcoe:
     build_notices_channel: "#tcoe-builds"
   tags:
     application: tcoe
+pcs:
+  team: "Possession Claim Service"
+  namespace: "pcs"
+  slack:
+    contact_channel: "#pcs-tech"
+    build_notices_channel: "#pcs-tech"
+  tags:
+    application: "possession-claim-service"
+recipes:
+  team: "CNP"
+  namespace: "cnp"
+  azure_ad_group: "DTS Platform Operations"
+  slack:
+    contact_channel: "#platops-help"
+    channel_id: "C05KAG00K1N"
+    build_notices_channel: "#platops-build-notices"
+  tags:
+    application: core
+recipes-shared-infrastructure:
+  team: "CNP"
+  namespace: "cnp"
+  azure_ad_group: "DTS Platform Operations"
+  slack:
+    contact_channel: "#platops-help"
+    channel_id: "C8SR5CAMU"
+    build_notices_channel: "#platops-build-notices"
+  tags:
+    application: core

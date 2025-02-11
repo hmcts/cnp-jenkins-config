@@ -44,6 +44,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=4.x"},
     {"source":  "git@github.com:hmcts/cnp-module-storage?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=master"},
+    {"source":  "git@github.com:hmcts/cnp-module-redis?ref=4.x"},
     {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-webapp?ref=revert-159-tf-0.12.x"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=master"},
@@ -64,6 +65,8 @@
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=postgres-vnet-provider"},
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=redundant-backup-optional"},
     {"source":  "git@github.com:hmcts/terraform-module-sdp-db-user?ref=master"},
-    {"source":  "git@github.com:hmcts/terraform-module-application-insights?ref=fix-count"}
+    {"source":  "git@github.com:hmcts/terraform-module-application-insights?ref=fix-count"},
+    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=CME-120"},
+    {"source":  "git@github.com:hmcts/terraform-module-vm-bootstrap?ref=master"}
   ]
 }
