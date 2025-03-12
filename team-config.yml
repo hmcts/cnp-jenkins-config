@@ -938,3 +938,11 @@ recipes-shared-infrastructure:
     build_notices_channel: "#platops-build-notices"
   tags:
     application: core
+enforcement:
+  team: "Enforcement Service"
+  namespace: "enforcement"
+  slack:
+    contact_channel: "#enforcement-tech"
+    build_notices_channel: "#enforcement-tech"
+  tags:
+    application: "enforcement-service"
