@@ -939,8 +939,8 @@ recipes-shared-infrastructure:
   tags:
     application: core
 enforcement:
-  team:
-  namespace:
+  team: "Enforcement Service"
+  namespace: "enforcement"
   slack:
     contact_channel: "#enforcement-tech"
     build_notices_channel: "#enforcement-tech"
