@@ -3,6 +3,7 @@
     {"type": "azurerm_monitor_scheduled_query_rules_alert"}
   ],
   "module_calls": [
-    {"source":  "git@github.com:hmcts/cnp-module-waf?ref=SIDM-2128_add_idam_waf_exclusions"}
+    {"source": "git@github.com:hmcts/cnp-module-waf?ref=SIDM-2128_add_idam_waf_exclusions"},
+    {"source": "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=fix%2Fremove-namespace_name"}
   ]
 }
