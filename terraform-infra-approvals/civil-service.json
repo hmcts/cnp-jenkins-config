@@ -1,8 +1,12 @@
 {
-  "resources": [
-    {"type": "azurerm_servicebus_subscription_rule"},
-    {"type": "azurerm_function_app"},
-    {"type": "azurerm_app_service_plan"},
-    {"type": "azurerm_linux_function_app"}
-  ]
+	"resources": [
+		{ "type": "azurerm_servicebus_subscription_rule" },
+		{ "type": "azurerm_function_app" },
+		{ "type": "azurerm_app_service_plan" },
+		{ "type": "azurerm_linux_function_app" }
+	],
+	"module_calls": [
+		{ "source": "git@github.com:hmcts/terraform-module-azurerm_servicebus_subscription?ref=DTSPO-25025-add-status-flag" },
+    { "source": "git@github.com:hmcts/terraform-module-azurerm_servicebus_subscription?ref=4.x" }
+	]
 }
