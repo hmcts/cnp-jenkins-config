@@ -6,7 +6,7 @@
 		{ "type": "azurerm_linux_function_app" }
 	],
 	"module_calls": [
-		{ "source": "git@github.com:hmcts/terraform-module-servicebus_subscription?ref=DTSPO-25025-add-status-flag" },
-    { "source": "git@github.com:hmcts/terraform-module-servicebus_subscription?ref=4.x" }
+		{ "source": "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=DTSPO-25025-add-status-flag" },
+    { "source": "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=4.x" }
 	]
 }
