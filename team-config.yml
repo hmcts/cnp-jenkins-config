@@ -643,6 +643,16 @@ civil:
     build_notices_channel: "#civil_notifications"
   tags:
     application: civil
+civil:
+  team: "Civil-Citizen-UI"
+  namespace: "civil"
+  azure_ad_group: DTS Civil
+  slack:
+    contact_channel: "#civil_contact"
+    channel_id: "C020H1XLM9S"
+    build_notices_channel: "#civil_notifications"
+  tags:
+    application: civil-citizen-ui
 hmi:
   team: "Future hearings - HMI"
   namespace: "hmi"
