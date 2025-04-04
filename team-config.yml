@@ -653,6 +653,7 @@ civil:
     build_notices_channel: "#civil_notifications"
   tags:
     application: civil-citizen-ui
+  agent: civil-citizen-ui
 hmi:
   team: "Future hearings - HMI"
   namespace: "hmi"
