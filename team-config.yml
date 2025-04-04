@@ -644,7 +644,7 @@ civil:
   tags:
     application: civil
 civil-citizen-ui:
-  team: "civil-citizen-ui"
+  team: "civil"
   namespace: "civil"
   azure_ad_group: DTS Civil
   slack:
