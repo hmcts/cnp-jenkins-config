@@ -643,8 +643,8 @@ civil:
     build_notices_channel: "#civil_notifications"
   tags:
     application: civil
-civil:
-  team: "Civil-Citizen-UI"
+civil-citizen-ui:
+  team: "Civil"
   namespace: "civil"
   azure_ad_group: DTS Civil
   slack:
