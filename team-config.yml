@@ -650,7 +650,7 @@ civil:
   slack:
     contact_channel: "#civil_contact"
     channel_id: "C020H1XLM9S"
-    build_notices_channel: "#civil_notifications "
+    build_notices_channel: "#civil_notifications"
   tags:
     application: civil-citizen-ui
   agent: civil-citizen-ui
