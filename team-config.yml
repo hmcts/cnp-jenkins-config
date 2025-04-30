@@ -643,6 +643,7 @@ civil:
     build_notices_channel: "#civil_notifications"
   tags:
     application: civil
+    agent: "civil"
 hmi:
   team: "Future hearings - HMI"
   namespace: "hmi"
