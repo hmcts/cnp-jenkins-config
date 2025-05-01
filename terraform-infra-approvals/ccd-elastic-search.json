@@ -1,5 +1,13 @@
 {
-  "resources": [],
+  "resources": [
+    {"type": "azurerm_application_security_group"},
+    {"type": "azurerm_network_interface_security_group_association"},
+    {"type": "terraform_data"},
+    {"type": "azurerm_network_interface_application_security_group_association"},
+    {"type": "random_password"},
+    {"type": "azurerm_network_security_group"},
+    {"type": "azurerm_network_security_rule"}
+  ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-adf?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=ccd/CHG0033576"},
@@ -12,6 +20,8 @@
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-elk.git?ref=Ethosldata"},
     {"source":  "git@github.com:hmcts/cnp-module-logstash.git?ref=master"}, 
-    {"source": "git@github.com:hmcts/cnp-module-elk.git?ref=test-ccd-autoshutdown"}
+    {"source": "git@github.com:hmcts/cnp-module-elk.git?ref=test-ccd-autoshutdown"}, 
+    {"source": "github.com/hmcts/ccd-module-elastic-search.git?ref=main"}, 
+    {"source": "github.com/hmcts/terraform-module-common-tags.git?ref=master"}
   ]
 }
