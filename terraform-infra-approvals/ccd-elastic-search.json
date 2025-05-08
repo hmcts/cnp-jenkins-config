@@ -6,7 +6,12 @@
     {"type": "azurerm_network_interface_application_security_group_association"},
     {"type": "random_password"},
     {"type": "azurerm_network_security_group"},
-    {"type": "azurerm_network_security_rule"}
+    {"type": "azurerm_network_security_rule"},
+    {"type": "azurerm_lb"},
+    {"type": "azurerm_lb_rule"},
+    {"type": "azurerm_lb_backend_address_pool_address"},
+    {"type": "azurerm_lb_backend_address_pool"},
+    {"type": "azurerm_lb_probe"}
   ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-adf?ref=master"},
