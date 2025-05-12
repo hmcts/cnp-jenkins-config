@@ -13,6 +13,7 @@ prod:
   - repo: https://github.com/hmcts/bulk-scan-processor.git
   - repo: https://github.com/hmcts/bulk-scan-shared-infrastructure.git
   - repo: https://github.com/hmcts/blob-router-service.git
+  - repo: https://github.com/hmcts/bsp-cron-trigger.git
   - repo: https://github.com/hmcts/reform-scan-shared-infra.git
   - repo: https://github.com/hmcts/ccd-admin-web.git
   - repo: https://github.com/hmcts/ccd-admin-web-api.git
