@@ -1,6 +1,7 @@
 {
   "resources": [
-    {"type": "azurerm_template_deployment"}
+    {"type": "azurerm_template_deployment"},
+    {"type": "azurerm_api_management_api_diagnostic"}
   ],
   "module_calls": []
 }
