@@ -25,7 +25,6 @@
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-queue?ref=4.x"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=master"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=4.x"},
-    {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=DTSPO-26253/use-namespace-id"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=DTSPO-18682"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=master"},
     {"source":  "git@github.com:hmcts/terraform-module-servicebus-topic?ref=4.x"},
