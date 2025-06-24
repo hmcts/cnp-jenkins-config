@@ -218,6 +218,16 @@ idam:
   tags:
     application: cft-idam
 # Shared with Idam and Platform Operations
+crime-idam:
+  team: "Crime IdAM"
+  namespace: "crime-idam"
+  azure_ad_group: cpp_crime
+  slack:
+    contact_channel: "#idam-team-crime"
+    channel_id: "DC07TZ1ES9U2"
+    build_notices_channel: "#idam-build-alerts-crime"
+  tags:
+    application: crime-idam
 core-compute:
   team: "CNP"
   namespace: "cnp"
