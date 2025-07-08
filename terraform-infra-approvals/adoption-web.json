@@ -1,6 +1,7 @@
 {
     "resources": [],
     "module_calls": [
-      {"source":  "git@github.com:hmcts/cnp-module-redis?ref=DTSPO-17012-data-persistency"}
+      {"source":  "git@github.com:hmcts/cnp-module-redis?ref=DTSPO-17012-data-persistency"},
+      {"source":  "git@github.com:hmcts/cnp-module-redis?ref=DTSPO-17012-data-persistency-4.x"}
     ]
 }
