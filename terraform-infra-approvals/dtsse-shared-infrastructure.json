@@ -1,11 +1,19 @@
 {
   "resources": [
     {"type": "azurerm_dashboard_grafana"},
+    {"type": "azurerm_dashboard_grafana_managed_private_endpoint"},
     {"type": "azurerm_role_assignment"},
     {"type": "azurerm_postgresql_firewall_rule"},
     {"type": "azurerm_key_vault_access_policy"},
     {"type": "azurerm_postgresql_flexible_server_configuration"},
-    {"type": "azurerm_consumption_budget_resource_group"}
+    {"type": "azurerm_consumption_budget_resource_group"},
+    {"type": "azurerm_network_interface"},
+    {"type": "azurerm_network_interface_backend_address_pool_association"},
+    {"type": "azurerm_lb"},
+    {"type": "azurerm_lb_rule"},
+    {"type": "azurerm_lb_probe"},
+    {"type": "azurerm_lb_backend_address_pool"},
+    {"type": "azurerm_private_link_service"}
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=ad-group-object-id"}
