@@ -1,7 +1,8 @@
 {
     "resources": [
       {"type": "azurerm_web_pubsub_network_acl"},
-      {"type": "azurerm_private_endpoint"}
+      {"type": "azurerm_private_endpoint"},
+      {"type": "azurerm_role_assignment"}
     ],
     "module_calls": []
 }
