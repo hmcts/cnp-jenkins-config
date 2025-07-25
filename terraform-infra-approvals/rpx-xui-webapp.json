@@ -1,7 +1,10 @@
 {
-    "resources": [],
-    "module_calls": [
-      {"source":  "git@github.com:hmcts/cnp-module-waf?ref=xui-waf-rules"},
-      {"source":  "git@github.com:hmcts/cnp-module-redis?ref=xui-webapp-temporary"}
-    ]
-}  
+  "resources": [
+    {"type": "azurerm_monitor_scheduled_query_rules_alert"},
+    {"type": "azurerm_monitor_action_group"}
+  ],
+  "module_calls": [
+    {"source": "git@github.com:hmcts/cnp-module-waf?ref=xui-waf-rules"},
+    {"source": "git@github.com:hmcts/cnp-module-redis?ref=xui-webapp-temporary"}
+  ]
+}
