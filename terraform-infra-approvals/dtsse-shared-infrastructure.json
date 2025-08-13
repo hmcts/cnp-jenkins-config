@@ -13,7 +13,8 @@
     {"type": "azurerm_lb_rule"},
     {"type": "azurerm_lb_probe"},
     {"type": "azurerm_lb_backend_address_pool"},
-    {"type": "azurerm_private_link_service"}
+    {"type": "azurerm_private_link_service"},
+    {"type": "azurerm_postgresql_flexible_server"}
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=ad-group-object-id"}
