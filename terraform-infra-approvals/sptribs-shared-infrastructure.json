@@ -1,0 +1,5 @@
+{
+  "resources": [
+    {"type": "azurerm_servicebus_topic_authorization_rule"}
+  ]
+}
