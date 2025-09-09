@@ -1,5 +1,8 @@
 {
   "resources": [
     {"type": "azurerm_servicebus_topic_authorization_rule"}
+  ],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/terraform-module-application-insights?ref=DTSPO-27514"}
   ]
 }
