@@ -18,7 +18,8 @@
     {"type": "azurerm_postgresql_configuration"},
     {"type": "azurerm_storage_management_policy"},
     {"type": "azurerm_virtual_machine_extension"},
-    {"type": "azurerm_subnet_network_security_group_association"}
+    {"type": "azurerm_subnet_network_security_group_association"},
+    {"type": "azurerm_role_assignment"}
   ],
   "module_calls": [
     {"source":  "./modules/module-scaleset?ref=master"},
