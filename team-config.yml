@@ -957,3 +957,11 @@ enforcement:
     build_notices_channel: "#enforcement-tech"
   tags:
     application: "enforcement-service"
+rota:
+  team: "Magistrates Rota"
+  namespace: "rota"
+  slack:
+    contact_channel: "#rota-builds"
+    build_notices_channel: "#rota-builds"
+  tags:
+    application: rota
