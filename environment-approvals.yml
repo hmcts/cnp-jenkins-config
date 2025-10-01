@@ -190,6 +190,7 @@ prod:
   - repo: https://github.com/hmcts/fact-frontend.git
   - repo: https://github.com/hmcts/fact-admin.git
   - repo: https://github.com/hmcts/fact-api.git
+  - repo: https://github.com/hmcts/fact-data-api.git
   - repo: https://github.com/hmcts/fact-cron-trigger.git
   - repo: https://github.com/hmcts/em-hrs-api.git
   - repo: https://github.com/hmcts/em-hrs-ingestor.git
