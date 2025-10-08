@@ -965,3 +965,11 @@ rota:
     build_notices_channel: "#rota-builds"
   tags:
     application: rota
+apim:
+  team: "API Marketplace"
+  namespace: "apim"
+  slack:
+    contact_channel: "#api-marketplace-tech"
+    build_notices_channel: "#api-marketplace-build-notices"
+  tags:
+    application: marketplace-api
