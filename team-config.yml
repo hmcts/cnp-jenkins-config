@@ -8,6 +8,16 @@ aac:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+apim:
+  team: "API Marketplace"
+  azure_ad_group: dcd_apim
+  namespace: "aac"
+  slack:
+    contact_channel: "#api-marketplace-tech"
+    channel_id: "C09K1JUSYVA"
+    build_notices_channel: "#api-marketplace-build-notices"
+  tags:
+    application: api-marketplace-service
 cpo:
   team: "CDM"
   namespace: "cpo"
