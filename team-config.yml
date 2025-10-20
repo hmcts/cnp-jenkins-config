@@ -9,8 +9,8 @@ aac:
   tags:
     application: core-case-data
 apim:
-  team: "DTS API Marketplace"
-  azure_ad_group: dcd_apim
+  team: "API Marketplace"
+  azure_ad_group: "DTS API Marketplace"
   namespace: "apim"
   slack:
     contact_channel: "#api-marketplace-tech"
