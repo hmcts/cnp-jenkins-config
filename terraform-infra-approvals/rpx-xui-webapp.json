@@ -2,7 +2,12 @@
   "resources": [
     {"type": "azurerm_monitor_scheduled_query_rules_alert"},
     {"type": "azurerm_monitor_scheduled_query_rules_alert_v2"},
-    {"type": "azurerm_monitor_action_group"}
+    {"type": "azurerm_monitor_action_group"},
+    {"type": "azurerm_logic_app_workflow"},
+    {"type": "azurerm_logic_app_trigger_recurrence"},
+    {"type": "azurerm_logic_app_action_custom"},
+    {"type": "azurerm_role_assignment"},
+    {"type": "azurerm_log_analytics_workspace"}
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/cnp-module-waf?ref=xui-waf-rules"},
