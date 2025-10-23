@@ -7,7 +7,7 @@
     {"type": "azurerm_logic_app_trigger_recurrence"},
     {"type": "azurerm_logic_app_action_custom"},
     {"type": "azurerm_role_assignment"},
-    {"type": "azurerm_api_connection"}
+    {"type": "azurerm_log_analytics_workspace"}
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/cnp-module-waf?ref=xui-waf-rules"},
