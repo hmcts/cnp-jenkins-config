@@ -1,0 +1,6 @@
+{
+  "resources": [
+    {"type": "azuread_application_federated_identity_credential"}
+  ],
+  "module_calls": []
+}
