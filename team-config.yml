@@ -8,6 +8,16 @@ aac:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+apim:
+  team: "API Marketplace"
+  azure_ad_group: "DTS API Marketplace"
+  namespace: "apim"
+  slack:
+    contact_channel: "#api-marketplace-tech"
+    channel_id: "C09K1JUSYVA"
+    build_notices_channel: "#api-marketplace-build-notices"
+  tags:
+    application: api-marketplace-service
 cpo:
   team: "CDM"
   namespace: "cpo"
@@ -957,3 +967,11 @@ enforcement:
     build_notices_channel: "#enforcement-tech"
   tags:
     application: "enforcement-service"
+rota:
+  team: "Magistrates Rota"
+  namespace: "rota"
+  slack:
+    contact_channel: "#rota-builds"
+    build_notices_channel: "#rota-builds"
+  tags:
+    application: rota

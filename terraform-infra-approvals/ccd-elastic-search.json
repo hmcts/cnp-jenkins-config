@@ -17,8 +17,10 @@
     {"source":  "git@github.com:hmcts/cnp-module-adf?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-waf?ref=ccd/CHG0033576"},
     {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=0.0.1"},
-    {"source":  "git@github.com:hmcts/cnp-module-logstash.git?ref=master"}, 
-    {"source": "github.com/hmcts/ccd-module-elastic-search.git?ref=main"}, 
-    {"source": "github.com/hmcts/terraform-module-common-tags.git?ref=master"}
+    {"source":  "git@github.com:hmcts/cnp-module-logstash.git?ref=master"},
+    {"source": "github.com/hmcts/ccd-module-elastic-search.git?ref=main"},
+    {"source": "github.com/hmcts/terraform-module-common-tags.git?ref=master"},
+    {"source":  "./modules/load-balancer?ref=master"},
+    {"source":  "./modules/load-balancer?ref=demo"}
   ]
 }
