@@ -975,3 +975,11 @@ rota:
     build_notices_channel: "#rota-builds"
   tags:
     application: rota
+justicetranscribe:
+  team: "Justice AI - Transcription Product"
+  namespace: "justicetranscribe"
+  slack:
+    contact_channel: "#justicetranscribe-ask"
+    build_notices_channel: "#justicetranscribe-builds"
+  tags:
+    application: justicetranscribe-web
