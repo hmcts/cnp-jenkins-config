@@ -5,7 +5,6 @@
     {"source":  "git@github.com:hmcts/cnp-module-postgres?ref=postgresql_tf_changes"},
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=postgres-vnet-provider"},
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=public-flexibleserver"},
-    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=DTSPO-27543-add-test-high-high-availability-environments"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=DTSPO-17012-data-persistency"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=DTSPO-17012-data-persistency-4.x"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=4.x"},
