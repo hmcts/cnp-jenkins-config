@@ -8,7 +8,8 @@
     {"type": "azurerm_logic_app_action_custom"},
     {"type": "azurerm_role_assignment"},
     {"type": "azurerm_log_analytics_workspace"},
-    {"type": "azurerm_communication_service"}
+    {"type": "azurerm_communication_service"},
+    {"type": "azurerm_api_connection"}
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/cnp-module-waf?ref=xui-waf-rules"},
