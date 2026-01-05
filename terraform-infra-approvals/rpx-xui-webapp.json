@@ -9,7 +9,15 @@
     {"type": "azurerm_role_assignment"},
     {"type": "azurerm_log_analytics_workspace"},
     {"type": "azurerm_communication_service"},
-    {"type": "azurerm_api_connection"}
+    {"type": "azurerm_api_connection"},
+    {"type": "azurerm_automation_account"},
+    {"type": "azurerm_automation_job_schedule"},
+    {"type": "azurerm_automation_module"},
+    {"type": "azurerm_automation_schedule"},
+    {"type": "azurerm_automation_runbook"},
+    {"type": "azurerm_email_communication_service"},
+    {"type": "azurerm_email_communication_service_domain"},
+    {"type": "azurerm_communication_service_email_domain_association"}
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/cnp-module-waf?ref=xui-waf-rules"},
