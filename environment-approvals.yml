@@ -108,6 +108,7 @@ prod:
   - repo: https://github.com/hmcts/lau-frontend.git
   - repo: https://github.com/hmcts/lau-case-backend.git
   - repo: https://github.com/hmcts/lau-idam-backend.git
+  - repo: https://github.com/hmcts/lau-eud-backend.git
   - repo: https://github.com/hmcts/lau-shared-infrastructure.git
   - repo: https://github.com/hmcts/sptribs-case-api.git
   - repo: https://github.com/hmcts/sptribs-frontend.git
