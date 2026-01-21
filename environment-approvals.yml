@@ -83,6 +83,7 @@ prod:
   - repo: https://github.com/hmcts/feature-toggle-api.git
   - repo: https://github.com/hmcts/finrem-case-orchestration-service.git
   - repo: https://github.com/hmcts/finrem-shared-infrastructure.git
+  - repo: https://github.com/hmcts/finrem-citizen-ui.git
   - repo: https://github.com/hmcts/fpl-ccd-configuration.git
   - repo: https://github.com/hmcts/fpl-ccd-data-migration-tool.git
   - repo: https://github.com/hmcts/fpl-wa-task-configuration.git
