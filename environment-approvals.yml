@@ -194,6 +194,7 @@ prod:
   - repo: https://github.com/hmcts/fact-cron-trigger.git
   - repo: https://github.com/hmcts/fact-public-frontend.git
   - repo: https://github.com/hmcts/fact-admin-frontend.git
+  - repo: https://github.com/hmcts/fact-shared-infrastructure-bootstrap.git
   - repo: https://github.com/hmcts/em-hrs-api.git
   - repo: https://github.com/hmcts/em-hrs-ingestor.git
   - repo: https://github.com/hmcts/wa-shared-infrastructure.git
