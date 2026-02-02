@@ -1,7 +1,8 @@
 {
   "resources": [
     {"type": "azurerm_monitor_metric_alert"},
-    {"type": "azurerm_monitor_action_group"}
+    {"type": "azurerm_monitor_action_group"}.
+    {"type": "azurerm_resource_group_template_deployment"}
   ],
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=azurermv2"},
