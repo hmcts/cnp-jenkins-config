@@ -931,6 +931,16 @@ pdda:
     build_notices_channel: "#pdda-builds"
   tags:
     application: "pdda"
+tcoe:
+  team: "Testing Centre of Excellence"
+  namespace: "tcoe"
+  azure_ad_group: TCoE
+  slack:
+    contact_channel: "#testing_centre_of_excellence"
+    channel_id: "C06808DHBSS"
+    build_notices_channel: "#tcoe-builds"
+  tags:
+    application: tcoe
 pcs:
   team: "Possession Claim Service"
   namespace: "pcs"
