@@ -13,7 +13,24 @@ List<Map> orgs = [
     [name: 'HMCTS_j_to_z', credentialsId: 'hmcts-jenkins-j-to-z', displayName: 'HMCTS - J to Z', topic: 'jenkins-cft-j-z']
 ]
 
+String environmentApprovals
+try {
+    environmentApprovals = new URL("https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/environment-approvals.yml").getText()
+} catch (Exception e) {
+    environmentApprovals = readFileFromWorkspace('environment-approvals.yml')
+}
+
+List<String> approvedRepos = []
+environmentApprovals.eachLine { line ->
+    def match = line =~ /^\s*-\s*repo:\s*https:\/\/github\.com\/hmcts\/(.+?)(\.git)?$/
+    if (match) {
+        approvedRepos << match[0][1]
+    }
+}
+String approvedReposRegex = approvedRepos.join('|')
+
 orgs.each { Map org ->
+    org.regex = approvedReposRegex
     githubOrg(org).call()
     org << [nightly: true]
     if (!org.nightlyDisabled) {
