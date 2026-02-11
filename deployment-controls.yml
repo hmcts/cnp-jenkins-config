@@ -1,4 +1,4 @@
 repositories:
   - repo: https://github.com/hmcts/cnp-plum-frontend.git
     build-enabled: true # Determines if the repository gets picked up by the DSL job and added to Jenkins. Will only be allowed to run build stages of the pipeline
-    deployment-enabled: true # Determines if the repository is allowed to run deployment stages of the pipeline
+    deployment-enabled: false # Determines if the repository is allowed to run deployment stages of the pipeline
