@@ -1,8 +1,3 @@
-# Approved repositories allowlist.
-# Only repositories listed here will be picked up by Jenkins org folder scans.
-# The repository name must match the GitHub repo name exactly.
-# Additional flags (e.g. deployment-enabled) are independent of the allowlist;
-# presence in this list is sufficient for Jenkins inclusion.
 repositories:
   - repo: https://github.com/hmcts/cnp-plum-frontend.git
     deployment-enabled: true
