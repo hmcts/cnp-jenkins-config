@@ -20,18 +20,12 @@ try {
     deploymentControls = readFileFromWorkspace('deployment-controls.yml')
 }
 
-import org.yaml.snakeyaml.Yaml
-def yaml = new Yaml()
-def deploymentControlsData = yaml.load(deploymentControls)
-
 List<String> buildEnabledRepos = []
-deploymentControlsData?.repositories?.each { repoEntry ->
-    if (repoEntry['build-enabled'] == true) {
-        def repoUrl = repoEntry['repo']
-        def match = repoUrl =~ /https:\/\/github\.com\/hmcts\/(.+?)(\.git)?$/
-        if (match) {
-            buildEnabledRepos << match[0][1].replaceAll('\\.git$', '')
-        }
+deploymentControls.eachLine { line ->
+    def match = line =~ /repo:\s*https:\/\/github\.com\/hmcts\/(.+?)(\.git)?$/
+    if (match) {
+        def repoName = match[0][1].replaceAll('\\.git$', '')
+        buildEnabledRepos << repoName
     }
 }
 String buildEnabledReposRegex = buildEnabledRepos.join('|')
