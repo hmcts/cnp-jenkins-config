@@ -1,3 +1,3 @@
 repositories:
   - repo: https://github.com/hmcts/cnp-plum-frontend.git
-    deployment-enabled: true # Determines if the repository is allowed to run deployment stages of the pipeline
+    deployment-enabled: true
