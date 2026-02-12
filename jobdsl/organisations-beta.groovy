@@ -12,10 +12,13 @@ private boolean isSandbox() {
 /**
  * Parses deployment-controls.yml to build a set of approved repository names.
  * Only repositories present in this allowlist will be picked up by Jenkins.
+ * Fetches the file from GitHub directly so it works during CasC startup
+ * when no build workspace is available.
  */
 Set<String> loadApprovedRepos() {
     def yaml = new Yaml()
-    def parsed = yaml.load(readFileFromWorkspace('deployment-controls.yml'))
+    def url = new URL('https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/DTSPO-29801-discovery-deployment-enablement/deployment-controls.yml')
+    def parsed = yaml.load(url.text)
     return (parsed?.repositories?.collect { entry ->
         // Extract repo name from URL, e.g. https://github.com/hmcts/cnp-plum-frontend.git -> cnp-plum-frontend
         entry.repo.replaceAll('.*/([^/]+?)(\\.git)?$', '$1')
