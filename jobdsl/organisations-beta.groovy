@@ -13,25 +13,7 @@ List<Map> orgs = [
     [name: 'HMCTS_j_to_z', credentialsId: 'hmcts-jenkins-j-to-z', displayName: 'HMCTS - J to Z', topic: 'jenkins-cft-j-z']
 ]
 
-String deploymentControls
-try {
-    deploymentControls = new URL("https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/deployment-controls.yml").getText()
-} catch (Exception e) {
-    deploymentControls = readFileFromWorkspace('deployment-controls.yml')
-}
-
-List<String> buildEnabledRepos = []
-deploymentControls.eachLine { line ->
-    def match = line =~ /repo:\s*https:\/\/github\.com\/hmcts\/(.+?)(\.git)?$/
-    if (match) {
-        def repoName = match[0][1].replaceAll('\\.git$', '')
-        buildEnabledRepos << repoName
-    }
-}
-String buildEnabledReposRegex = buildEnabledRepos.join('|')
-
 orgs.each { Map org ->
-    org.regex = buildEnabledReposRegex
     githubOrg(org).call()
     org << [nightly: true]
     if (!org.nightlyDisabled) {
