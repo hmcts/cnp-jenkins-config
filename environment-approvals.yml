@@ -77,6 +77,8 @@ prod:
   - repo: https://github.com/hmcts/dm-shared-infrastructure.git
   - repo: https://github.com/hmcts/document-management-store-app.git
   - repo: https://github.com/hmcts/draft-store.git
+  - repo: https://github.com/hmcts/devextreme-poc-spa.git
+  - repo: https://github.com/hmcts/devextreme-poc-ssr.git
   - repo: https://github.com/hmcts/ethos-repl-docmosis-service.git
   - repo: https://github.com/hmcts/ecm-consumer.git
   - repo: https://github.com/hmcts/ecm-shared-infrastructure.git
@@ -193,6 +195,9 @@ prod:
   - repo: https://github.com/hmcts/fact-api.git
   - repo: https://github.com/hmcts/fact-data-api.git
   - repo: https://github.com/hmcts/fact-cron-trigger.git
+  - repo: https://github.com/hmcts/fact-public-frontend.git
+  - repo: https://github.com/hmcts/fact-admin-frontend.git
+  - repo: https://github.com/hmcts/fact-shared-infrastructure-bootstrap.git
   - repo: https://github.com/hmcts/em-hrs-api.git
   - repo: https://github.com/hmcts/em-hrs-ingestor.git
   - repo: https://github.com/hmcts/wa-shared-infrastructure.git
@@ -206,7 +211,6 @@ prod:
   - repo: https://github.com/hmcts/civil-ccd-definition.git
   - repo: https://github.com/hmcts/civil-camunda-bpmn-definition.git
   - repo: https://github.com/hmcts/ccpay-refunds-app.git
-  - repo: https://github.com/hmcts/civil-general-applications.git
   - repo: https://github.com/hmcts/civil-orchestrator-service.git
   - repo: https://github.com/hmcts/civil-general-apps-ccd-definition.git
   - repo: https://github.com/hmcts/civil-sdt.git
@@ -240,6 +244,8 @@ prod:
   - repo: https://github.com/hmcts/disposer-shared-infrastructure.git
   - repo: https://github.com/hmcts/tax-tribunals-shared-infrastructure.git
   - repo: https://github.com/hmcts/tax-tribunals-datacapture.git
+  - repo: https://github.com/hmcts/telerik-poc-spa.git
+  - repo: https://github.com/hmcts/telerik-poc-ssr.git
   - repo: https://github.com/hmcts/help-with-fees-shared-infrastructure.git
   - repo: https://github.com/hmcts/et-pet-shared-infrastructure.git
   - repo: https://github.com/hmcts/docmosis-infrastructure.git

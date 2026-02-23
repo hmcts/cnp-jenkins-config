@@ -1,6 +1,7 @@
 {
   "resources": [
-    {"type": "azurerm_storage_blob"}
+    {"type": "azurerm_storage_blob"},
+    {"type": "random_password"}
   ],
   "module_calls": []
 }

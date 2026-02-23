@@ -975,3 +975,43 @@ rota:
     build_notices_channel: "#rota-builds"
   tags:
     application: rota
+justicetranscribe:
+  team: "Justice AI - Transcription Product"
+  namespace: "justicetranscribe"
+  slack:
+    contact_channel: "#justicetranscribe-ask"
+    build_notices_channel: "#justicetranscribe-builds"
+  tags:
+    application: justicetranscribe-web
+softwarecoe-telerik-ssr:
+  team: "Centre of Excellence: Software Engineering"
+  namespace: "telerik-poc-ssr"
+  slack:
+    contact_channel: "#coe-slack-channel"
+    build_notices_channel: "#poc-build-notices"
+  tags:
+    application: telerik-poc-ssr
+softwarecoe-telerik-spa:
+  team: "Centre of Excellence: Software Engineering"
+  namespace: "telerik-poc-spa"
+  slack:
+    contact_channel: "#coe-slack-channel"
+    build_notices_channel: "#poc-build-notices"
+  tags:
+    application: telerik-poc-spa
+softwarecoe-devexpress-ssr:
+  team: "Centre of Excellence: Software Engineering"
+  namespace: "devextreme-poc-ssr"
+  slack:
+    contact_channel: "#coe-slack-channel"
+    build_notices_channel: "#poc-build-notices"
+  tags:
+    application: devextreme-poc-ssr
+softwarecoe-devexpress-spa:
+  team: "Centre of Excellence: Software Engineering"
+  namespace: "devextreme-poc-spa"
+  slack:
+    contact_channel: "#coe-slack-channel"
+    build_notices_channel: "#poc-build-notices"
+  tags:
+    application: devextreme-poc-spa
