@@ -983,35 +983,11 @@ justicetranscribe:
     build_notices_channel: "#justicetranscribe-builds"
   tags:
     application: justicetranscribe-web
-softwarecoe-telerik-ssr:
+coe:
   team: "Centre of Excellence: Software Engineering"
-  namespace: "telerik"
+  namespace: "coe"
   slack:
     contact_channel: "#coe-slack-channel"
     build_notices_channel: "#poc-build-notices"
   tags:
-    application: telerik-poc-ssr
-softwarecoe-telerik-spa:
-  team: "Centre of Excellence: Software Engineering"
-  namespace: "telerik"
-  slack:
-    contact_channel: "#coe-slack-channel"
-    build_notices_channel: "#poc-build-notices"
-  tags:
-    application: telerik-poc-spa
-softwarecoe-devexpress-ssr:
-  team: "Centre of Excellence: Software Engineering"
-  namespace: "devextreme"
-  slack:
-    contact_channel: "#coe-slack-channel"
-    build_notices_channel: "#poc-build-notices"
-  tags:
-    application: devextreme-poc-ssr
-softwarecoe-devexpress-spa:
-  team: "Centre of Excellence: Software Engineering"
-  namespace: "devextreme"
-  slack:
-    contact_channel: "#coe-slack-channel"
-    build_notices_channel: "#poc-build-notices"
-  tags:
-    application: devextreme-poc-spa
+    application: coe-poc
