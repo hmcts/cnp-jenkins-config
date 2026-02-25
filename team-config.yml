@@ -985,7 +985,7 @@ justicetranscribe:
     application: justicetranscribe-web
 softwarecoe-telerik-ssr:
   team: "Centre of Excellence: Software Engineering"
-  namespace: "telerik-poc-ssr"
+  namespace: "telerik"
   slack:
     contact_channel: "#coe-slack-channel"
     build_notices_channel: "#poc-build-notices"
@@ -993,7 +993,7 @@ softwarecoe-telerik-ssr:
     application: telerik-poc-ssr
 softwarecoe-telerik-spa:
   team: "Centre of Excellence: Software Engineering"
-  namespace: "telerik-poc-spa"
+  namespace: "telerik"
   slack:
     contact_channel: "#coe-slack-channel"
     build_notices_channel: "#poc-build-notices"
@@ -1001,7 +1001,7 @@ softwarecoe-telerik-spa:
     application: telerik-poc-spa
 softwarecoe-devexpress-ssr:
   team: "Centre of Excellence: Software Engineering"
-  namespace: "devextreme-poc-ssr"
+  namespace: "devextreme"
   slack:
     contact_channel: "#coe-slack-channel"
     build_notices_channel: "#poc-build-notices"
@@ -1009,7 +1009,7 @@ softwarecoe-devexpress-ssr:
     application: devextreme-poc-ssr
 softwarecoe-devexpress-spa:
   team: "Centre of Excellence: Software Engineering"
-  namespace: "devextreme-poc-spa"
+  namespace: "devextreme"
   slack:
     contact_channel: "#coe-slack-channel"
     build_notices_channel: "#poc-build-notices"
