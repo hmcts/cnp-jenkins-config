@@ -5,6 +5,7 @@
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/terraform-module-application-insights?ref=DTSPO-16829-prepare"},
-    {"source": "git@github.com:hmcts/terraform-module-application-insights?ref=DTSPO-28826-Reduce-log-analytics-cost-in-nonprod"}
+    {"source": "git@github.com:hmcts/terraform-module-application-insights?ref=DTSPO-28826-Reduce-log-analytics-cost-in-nonprod"},
+    {"source": "git@github.com:hmcts/cnp-module-webapp?ref=DTSPO-30615-modernise-module"}
   ]
 }
