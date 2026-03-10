@@ -10,6 +10,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=4.x"},
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=DTSPO-17844-publicNetworkAccessConflicts"},
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=dtspo-25133-configuring-database-groups"},
-    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=backup-vault-update"}
+    {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=backup-vault-update"},
+    {"source":  "git@github.com:hmcts/cnp-module-app-service-plan?ref=DTSPO-30614-modernise-app-service-plan-module"}
   ]
 }
