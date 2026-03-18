@@ -42,6 +42,7 @@
     {"source":  "git@github.com:hmcts/cnp-module-shutterpage?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=4.x"},
+    {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=30795"},
     {"source":  "git@github.com:hmcts/cnp-module-storage?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-redis?ref=4.x"},
