@@ -1,0 +1,5 @@
+{
+  "resources": [
+    {"type": "random_password"}
+  ]
+}
