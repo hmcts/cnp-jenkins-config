@@ -1,6 +1,7 @@
 {
     "resources": [
-      {"type": "azurerm_role_assignment"}
+      {"type": "azurerm_role_assignment"},
+      {"type": "azurerm_servicebus_topic_authorization_rule"}
     ],
     "module_calls": [
       {"source":  "git@github.com:hmcts/cnp-module-redis?ref=DTSPO-17012-data-persistency-4.x"}
