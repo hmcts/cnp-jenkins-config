@@ -991,3 +991,11 @@ coe:
     build_notices_channel: "#poc-build-notices"
   tags:
     application: coe-poc
+rpt:
+  team: "Residential Property Tribunal"
+  namespace: "rpt"
+  slack:
+    contact_channel: "#rpt-tech"
+    build_notices_channel: "#rpt-tech"
+  tags:
+    application: "residential-property-tribunal-service"
