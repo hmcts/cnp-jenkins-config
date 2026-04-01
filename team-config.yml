@@ -998,4 +998,4 @@ rpt:
     contact_channel: "#rpt-tech"
     build_notices_channel: "#rpt-tech"
   tags:
-    application: "residential-property-tribunal-service"
+    application: "residential-property-tribunal"
