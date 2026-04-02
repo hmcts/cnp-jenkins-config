@@ -992,10 +992,10 @@ coe:
   tags:
     application: coe-poc
 rpt:
-  team: "Residential Property Tribunal"
-  namespace: "rpt"
+  team: "Property Tribunal"
+  namespace: "pt"
   slack:
-    contact_channel: "#rpt-tech"
-    build_notices_channel: "#rpt-tech"
+    contact_channel: "#pt-tech"
+    build_notices_channel: "#pt-tech"
   tags:
-    application: "residential-property-tribunal"
+    application: "property-tribunal"
