@@ -991,7 +991,7 @@ coe:
     build_notices_channel: "#poc-build-notices"
   tags:
     application: coe-poc
-rpt:
+pt:
   team: "Property Tribunal"
   namespace: "pt"
   slack:
