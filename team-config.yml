@@ -570,7 +570,7 @@ data-generator:
 camunda:
   team: "Software Engineering"
   namespace: "camunda"
-  registry: "hmctsprivate"
+  registry: "hmctsprod"
   azure_ad_group: "DTS Platform Operations"
   slack:
     contact_channel: "#platops-help"
