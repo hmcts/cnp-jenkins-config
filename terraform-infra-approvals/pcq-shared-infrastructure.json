@@ -1,6 +1,6 @@
 {
   "resources": [
-    {"type": "azurerm_storage_management_policy"}
+    {"type": "azurerm_storage_management_policy"},
     {"type": "azurerm_monitor_scheduled_query_rules_alert_v2"}
   ],
   "module_calls": [
