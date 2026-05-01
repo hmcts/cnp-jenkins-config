@@ -606,6 +606,15 @@ mi:
     build_notices_channel: "#mi-dev"
   tags:
     application: management-information
+halo:
+  team: "Halo"
+  namespace: "halo"
+  azure_ad_group: DTS Halo QA Test Group
+  slack:
+    contact_channel: "#halo-e2e"
+    contact_channel: "#halo-e2e-builds"
+  tags:
+    application: halo
 pcq:
   team: "PCQ"
   namespace: "pcq"
