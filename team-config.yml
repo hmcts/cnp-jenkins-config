@@ -612,7 +612,7 @@ halo:
   azure_ad_group: DTS Halo QA Test Group
   slack:
     contact_channel: "#halo-e2e"
-    contact_channel: "#halo-e2e-builds"
+    build_notices_channel: "#halo-e2e-builds"
   tags:
     application: halo
 pcq:
