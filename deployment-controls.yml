@@ -14,7 +14,7 @@ repositories:
   - repo: https://github.com/hmcts/aip-performance.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/am-judicial-booking-service.git
-    deployment-enabled: true
+    deployment-enabled: trueefregfhgh
   - repo: https://github.com/hmcts/am-org-role-mapping-service.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/am-performance-tests.git
