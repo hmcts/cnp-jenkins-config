@@ -1,0 +1,797 @@
+repositories:
+  - repo: https://github.com/hmcts/aac-manage-case-assignment.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/adoption-ccd-data-migration-tool.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/adoption-cos-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/adoption-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/adoption-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/adoption-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/aip-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/am-judicial-booking-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/am-org-role-mapping-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/am-performance-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/am-role-assignment-batch-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/am-role-assignment-refresh-batch.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/am-role-assignment-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/am-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/backstage-hmcts-examples.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/backstage-test-DanielKChristou-nodejs.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/bar-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/bar-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/bar-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/blob-router-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/bsp-cron-trigger.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/bulk-scan-orchestrator.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/bulk-scan-payment-processor.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/bulk-scan-processor.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/bulk-scan-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/camunda-bpm.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/camunda-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-admin-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-api-gateway.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-cache-warm-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-case-activity-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-case-disposer.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-case-document-am-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-case-migration-starter.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-case-print-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-cdm-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-data-store-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-definition-store-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-elastic-search.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-message-publisher.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-next-hearing-date-updater.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-test-stubs-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-user-profile-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccfr-fees-register-admin-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccfr-fees-register-app.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-bubble.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-bulkscanning-app.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-cpo-function-node.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-functions-node.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-notifications-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-paybubble-performance-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-payment-api-gateway.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-payment-app.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-payment-status-function-node.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-paymentoutcome-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-refunds-app.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-scheduled-jobs.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpay-service-request-cpo-update-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ccpayfr-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-camunda-bpmn-definition.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-ccd-definition.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-ccd-migration-tool.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-citizen-ui.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-general-applications.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-general-apps-ccd-definition.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-orchestrator-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-rtl-export.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-sdt.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-sdt-commissioning.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-sdt-gateway.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/civil-wa-task-configuration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cmc-ccd-domain.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cmc-ccd-e2e-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cmc-ccd-migration-tool.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cmc-citizen-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cmc-claim-store.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cmc-e2etests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cmc-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-apimarketplace-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-database-subnet-whitelisting.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-idam-master.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-idam-storage.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-idam-vault.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-keda-shared-infrastucture.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-module-adf.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-module-automation-account.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-module-elk.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-module-key-vault.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-module-postgres.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-module-redis.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-owaspdependencycheck-database.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-plum-batch.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-plum-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-plum-recipes-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-plum-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/coe-2026-jenkins-test.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/coe-2026-jenkins-test-2.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cpo-case-payment-orders-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/crime-idam-am-idam-account-validator.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/crime-idam-keyvault.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/crime-idam-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ctsc-work-allocation.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cui-ra.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/cve-dashboard-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/data-ingestion-lib.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/devextreme-poc-spa.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/devextreme-poc-ssr.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/dg-docassembly-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/disposer-fee-and-pay.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/disposer-idam-user.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/disposer-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-case-data-formatter.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-case-maintenance-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-case-orchestration-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-ccd-definitions.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-ccd-e2e-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-decree-absolute-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-decree-nisi-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-document-generator-client.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-evidence-management-client-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-fees-and-payments-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-petitioner-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-respondent-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/div-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/dm-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/docmosis-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/document-management-store-app.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/draft-store.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/dtsse-ardoq-adapter.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/dtsse-dashboard-ingestion.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/dtsse-dashboard-jira-ingestion.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/dtsse-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ecm-ccd-case-migration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ecm-consumer.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ecm-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-annotation-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-ccd-orchestrator.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-hrs-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-hrs-ingestor.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-icp-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-in-court-presentation-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-media-viewer.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-native-pdf-annotator-app.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-ped-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-showcase.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/em-stitching-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/enforcement-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/enforcement-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et_gds_design_system.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-ccd-callbacks.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-ccd-case-migration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-ccd-definitions-admin.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-hearings-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-pet-admin.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-pet-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-pet-ccd-export.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-pet-et1.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-pet-et3.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-pet-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-sya-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-sya-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-syr-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-wa-post-deployment-ft-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-wa-task-configuration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-xui-e2e-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ethos-repl-docmosis-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/expressjs-template.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fact-admin.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fact-admin-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fact-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fact-cron-trigger.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fact-data-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fact-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fact-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fact-public-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fact-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fact-shared-infrastructure-bootstrap.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/family-api-gateway.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fh-pip-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fh-vh-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/finrem-case-orchestration-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/finrem-ccd-definitions.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/finrem-citizen-ui.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/finrem-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fis-bulk-scan-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fis-cos-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fis-ds-update-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fis-ds-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fis-hmc-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fis-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fpl-api-gateway.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fpl-ccd-configuration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fpl-ccd-data-migration-tool.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fpl-performance-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/fpl-wa-task-configuration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/halo-itsm-bpt.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/help-with-fees-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hmc-admin-ui.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hmc-cft-hearing-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hmc-hmi-inbound-adapter.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hmc-hmi-outbound-adapter.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hmc-operational-reports-runner.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hmc-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hofse-ardoq-api-prototype.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hwf-benefit-checker-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hwf-publicapp.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hwf-staffapp.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-aip-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-bail-case-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-case-access-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-case-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-case-documents-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-case-notifications-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-case-payments-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-ccd-definitions.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-ccd-e2e-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-ccd-migration-tool.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-e2etests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-hearings-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-home-office-integration-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-home-office-mock-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-task-configuration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-timed-event-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-wa-post-deployment-ft-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-access-config.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-config-as-code-poc.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-data-provisioning.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-forgerock-idm.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-hmcts-access.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-java-client.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-performance-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-testing-support-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-user-dashboard.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-user-profile-bridge.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/idam-web-public.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/jps-judicial-payment-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/jps-judicial-payment-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/jps-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-apps-njs.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-debolina-seal.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-hub-ngfw-poc.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-hurricanepilot.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-marketplace-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-njk-debolina-seal.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-peterpilgrim-v2.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-peterpilgrim2.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs2-peterpilgrim.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/lau-case-backend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/lau-eud-backend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/lau-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/lau-idam-backend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/lau-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/lau-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/manageorg-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/nfdiv-case-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/nfdiv-ccd-case-migration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/nfdiv-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/nfdiv-manage-case-e2e-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/nfdiv-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/nfdiv-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pcq-backend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pcq-consolidation-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pcq-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pcq-loader.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pcq-performance-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pcq-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pcs-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pcs-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pcs-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/PrivateLaw-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-ccd-case-migration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-ccd-definitions.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-citizen-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-cos-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-cron.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-dgs-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-e2e-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-wa-post-deployment-ft-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/prl-wa-task-configuration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/probate-back-office.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/probate-business-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/probate-caveats-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/probate-ccd-data-migration-tool.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/probate-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/probate-orchestrator-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/probate-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/probate-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/probate-submit-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/probatemandb.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pt-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pt-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/pt-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-caseworker-ref-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-commondata-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-commondata-dataload.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-crd-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-judicial-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-location-ref-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-location-ref-data-load.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-professional-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-profile-sync.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rd-user-profile-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/recipes-backend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/recipes-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/recipes-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/reform-scan-notification-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/reform-scan-shared-infra.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/retired-sptribs-wa-post-deployment-ft-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rota-admin-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rota-application-database.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rota-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rota-magistrate-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rota-optimiser.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rota-optimiser-database.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rota-resource.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rota-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rota-worker.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpe-pdf-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpe-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpts-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpts-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpts-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpx-case-activity-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpx-case-activity-api-temp.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpx-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpx-xui-approve-org.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpx-xui-e2e-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpx-xui-manage-organisations.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/rpx-xui-webapp.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/send-letter-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/send-letter-service-container-new.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/send-letter-service-container-proc.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/send-letter-service-container-zip.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/service-auth-provider-app.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/service-auth-provider-java-client.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/Special-Tribunals-Perftest.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sptribs-case-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sptribs-dss-backend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sptribs-dss-update-case-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sptribs-e2etests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sptribs-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sptribs-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-bulk-scan.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-case-loader.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-case-migration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-ccd-case-migration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-ccd-definitions.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-ccd-e2e-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-cor-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-cron-trigger.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-e2e-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-hmc-stub.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-post-deployment-ft-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-submit-your-appeal.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-task-configuration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-test-repo.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-track-your-appeal-notifications.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sscs-tribunals-case-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/st-wa-task-configuration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/tax-tribunals-datacapture.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/tax-tribunals-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/tcoe-playwright-example.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/telerik-poc-spa.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/telerik-poc-ssr.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/template-expressjs.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/test-spring-java-upgrade.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ts-translation-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-case-event-handler.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-message-cron-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-post-deployment-ft-tests.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-reporting-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-standalone-task-bpmn.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-task-batch-service.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-task-configuration-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-task-configuration-template.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-task-management-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-task-monitor.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/wa-workflow-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/xui-performance.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/xui-performance-dataprep.git
+    deployment-enabled: true
