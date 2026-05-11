@@ -2,7 +2,7 @@ name: Remove archived repos from deployment controls
 
 on:
   schedule:
-    - cron: '0 8 * * 1'  # Every Monday at 08:00 UTC
+    - cron: '0 7 * * 1'  # Every Monday at 08:00 UK time (07:00 UTC during BST)
   workflow_dispatch:
 
 env:
@@ -58,4 +58,5 @@ jobs:
             git commit -m "chore: remove ${REMOVED} archived repo(s) from deployment-controls.yml"
             git push
           else
-            echo "No archived repos found in deployment-controls.yml - no changes
+            echo "No archived repos found in deployment-controls.yml - no changes"
+          fi
