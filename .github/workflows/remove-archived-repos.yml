@@ -51,12 +51,8 @@ jobs:
       - name: Commit to master
         continue-on-error: true
         run: |
-          if [[ -n $(git status -s) ]]; then
-            git config user.name hmcts-platform-operations
-            git config user.email github-platform-operations@hmcts.net
-            git add deployment-controls.yml
-            git commit -m "chore: remove ${REMOVED} archived repo(s) from deployment-controls.yml"
-            git push
-          else
-            echo "No archived repos found in deployment-controls.yml - no changes"
-          fi
+          git config user.name hmcts-platform-operations
+          git config user.email github-platform-operations@hmcts.net
+          git add deployment-controls.yml
+          git commit -m "chore: remove archived repos from deployment-controls.yml"
+          git push
