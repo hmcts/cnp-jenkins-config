@@ -64,6 +64,7 @@ jobs:
             git config user.email github-platform-operations@hmcts.net
             git add deployment-controls.yml
             git commit -m "chore: remove archived repos from deployment-controls.yml"
+            git pull --rebase
             git push
           else
             echo "No archived repos to remove - skipping commit"
