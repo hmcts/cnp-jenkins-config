@@ -65,7 +65,7 @@ jobs:
             git add deployment-controls.yml
             git commit -m "chore: remove archived repos from deployment-controls.yml"
             git pull --rebase
-            git push
+            git push --force-with-lease
           else
             echo "No archived repos to remove - skipping commit"
           fi
