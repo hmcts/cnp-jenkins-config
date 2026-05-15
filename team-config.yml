@@ -409,6 +409,7 @@ xui:
     build_notices_channel: "#xui-pipeline"
   tags:
     application: expert-ui
+  agent: "xui"
 rpa:
   team: "Professional Applications"
   namespace: "professional-applications"
