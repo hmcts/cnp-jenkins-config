@@ -403,6 +403,7 @@ xui:
   team: "Expert UI"
   namespace: "xui"
   azure_ad_group: dcd_group_expertui_v2
+  agent: "xui"
   slack:
     contact_channel: "#xui-pipeline"
     channel_id: "CHW1CDDM0"
