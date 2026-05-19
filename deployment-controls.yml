@@ -543,6 +543,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/probatemandb.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/probate-wa-post-deployment-ft-tests.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/pt-api.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/pt-frontend.git
