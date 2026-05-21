@@ -1,9 +1,0 @@
-{
-  "resources": [
-    {"type": "azurerm_role_assignment"},
-    {"type": "azurerm_servicebus_queue"}
-  ],
-  "module_calls": [
-    {"source": "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access"}
-  ]
-}
