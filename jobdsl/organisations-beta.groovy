@@ -61,7 +61,7 @@ Closure githubOrg(Map args = [:]) {
     GString orgDescription = "<br>${config.displayName} team repositories"
 
     def orgDisplayName = config.displayName
-    
+
     String credId = config.credentialsId
 
     String folderSuffix = ''
@@ -110,8 +110,8 @@ Closure githubOrg(Map args = [:]) {
 
             orphanedItemStrategy {
                 discardOldItems {
-                    daysToKeep(7)
-                    numToKeep(10)
+                    daysToKeep(3)
+                    numToKeep(5)
                 }
             }
 
@@ -166,7 +166,7 @@ Closure githubOrg(Map args = [:]) {
 
                 if (!config.nightly && !config.disableAgedRefsBranchStrategy) {
                     traits << 'org.jenkinsci.plugins.scm_filter.GitHubAgedRefsTrait' {
-                        retentionDays(30)
+                        retentionDays(14)
                     }
                 }
 
