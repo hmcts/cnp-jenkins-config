@@ -109,8 +109,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/civil-citizen-ui.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/civil-orchestrator-service.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/civil-performance.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/civil-rtl-export.git
