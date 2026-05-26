@@ -8,6 +8,7 @@
 	"module_calls": [
 		{ "source": "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=DTSPO-25025-add-status-flag" },
     { "source": "git@github.com:hmcts/terraform-module-servicebus-subscription?ref=4.x" },
-    { "source": "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access" }
+    { "source": "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access" },
+    { "source": "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access-da" }
 	]
 }
