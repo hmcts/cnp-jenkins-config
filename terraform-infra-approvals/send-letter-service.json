@@ -1,7 +1,7 @@
 {
   "resources": [],
   "module_calls": [
-    {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=mi-role-assignments"}
+    {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=mi-role-assignments"},
+    {"source": "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access-da"}
   ]
 }
-
