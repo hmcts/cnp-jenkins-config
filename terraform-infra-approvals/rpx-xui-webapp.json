@@ -17,7 +17,8 @@
     {"type": "azurerm_automation_runbook"},
     {"type": "azurerm_email_communication_service"},
     {"type": "azurerm_email_communication_service_domain"},
-    {"type": "azurerm_communication_service_email_domain_association"}
+    {"type": "azurerm_communication_service_email_domain_association"},
+    {"type": "azurerm_key_vault_access_policy"}
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/cnp-module-waf?ref=xui-waf-rules"},
