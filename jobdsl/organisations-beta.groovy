@@ -1,3 +1,5 @@
+import org.yaml.snakeyaml.Yaml
+
 private boolean isSandbox() {
     def locationConfig = jenkins.model.JenkinsLocationConfiguration.get()
     if (locationConfig != null && locationConfig.getUrl() != null) {
@@ -7,6 +9,33 @@ private boolean isSandbox() {
     }
 }
 
+/**
+ * Parses deployment-controls.yml to build a set of approved repository names.
+ * Only repositories present in this allowlist will be picked up by Jenkins.
+ * Fetches the file from GitHub directly so it works during CasC startup
+ * when no build workspace is available.
+ */
+Set<String> loadApprovedRepos() {
+    try {
+        def yaml = new Yaml()
+        def url = new URL('https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/deployment-controls.yml')
+        def parsed = yaml.load(url.text)
+        def repos = (parsed?.repositories?.collect { entry ->
+            // Extract repo name from URL, e.g. https://github.com/hmcts/cnp-plum-frontend.git -> cnp-plum-frontend
+            entry.repo.replaceAll('.*/([^/]+?)(\\.git)?$', '$1')
+        } ?: []).toSet()
+        if (repos.isEmpty()) {
+            throw new IllegalStateException("Approved repos list is empty — refusing to continue with no allowlist filter")
+        }
+        println("[loadApprovedRepos] Loaded ${repos.size()} approved repositories from deployment-controls.yml")
+        return repos
+    } catch (Exception e) {
+        throw new RuntimeException("Failed to load approved repos from deployment-controls.yml: ${e.message}", e)
+    }
+}
+
+Set<String> approvedRepos = loadApprovedRepos()
+
 List<Map> orgs = [
     [name: 'HMCTS_a_to_c', credentialsId: 'hmcts-jenkins-a-to-c', displayName: 'HMCTS - A to C', topic: 'jenkins-cft-a-c'],
     [name: 'HMCTS_d_to_i', credentialsId: 'hmcts-jenkins-d-to-i', displayName: 'HMCTS - D to I', topic: 'jenkins-cft-d-i'],
@@ -14,10 +43,10 @@ List<Map> orgs = [
 ]
 
 orgs.each { Map org ->
-    githubOrg(org).call()
+    githubOrg(org, approvedRepos).call()
     org << [nightly: true]
     if (!org.nightlyDisabled) {
-        githubOrg(org).call()
+        githubOrg(org, approvedRepos).call()
     }
 }
 
@@ -32,7 +61,7 @@ if (isSandbox()) {
             suppressDefaultJenkinsfile     : true,
             disableAgedRefsBranchStrategy  : true,
     ]
-    githubOrg(pipelineTestOrg).call()
+    githubOrg(pipelineTestOrg, approvedRepos).call()
 }
 
 /**
@@ -45,8 +74,9 @@ if (isSandbox()) {
  *  - jenkinsfilePath (advanced use only): custom jenkinsfile path
  *  - suppressDefaultJenkinsfile: don't use the default Jenkinsfile
  *  - nightly: whether this is nightly org automatically set by the dsl
+ * @param approvedRepos set of repository names approved for Jenkins inclusion via deployment-controls.yml
  */
-Closure githubOrg(Map args = [:]) {
+Closure githubOrg(Map args = [:], Set<String> approvedRepos) {
     def config = [
             displayName                    : args.name,
             jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
@@ -128,7 +158,26 @@ Closure githubOrg(Map args = [:]) {
             configure { node ->
                 def traits = node / navigators / 'org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator' / traits
 
-                if (config.regex) {
+                // Build a regex from the approved repos allowlist.
+                // If an org-level regex is also configured, use a lookahead to
+                // require the repo matches BOTH the allowlist AND the org regex.
+                if (approvedRepos) {
+                    def quotedNames = approvedRepos.collect { java.util.regex.Pattern.quote(it) }
+                    String allowlistRegex = quotedNames.join('|')
+
+                    String combinedRegex
+                    if (config.regex) {
+                        // Must match the org regex AND be in the allowlist
+                        combinedRegex = "(?=(?:${config.regex}))(?:${allowlistRegex})"
+                    } else {
+                        combinedRegex = allowlistRegex
+                    }
+
+                    traits << 'jenkins.scm.impl.trait.RegexSCMSourceFilterTrait' {
+                        regex(combinedRegex)
+                    }
+                } else if (config.regex) {
+                    // Fallback: no allowlist loaded, use org regex only
                     traits << 'jenkins.scm.impl.trait.RegexSCMSourceFilterTrait' {
                         regex(config.regex)
                     }
