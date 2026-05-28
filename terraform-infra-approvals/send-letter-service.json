@@ -2,6 +2,7 @@
   "resources": [],
   "module_calls": [
     {"source":  "git@github.com:hmcts/cnp-module-storage-account.git?ref=mi-role-assignments"},
-    {"source": "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access-da"}
+    {"source": "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access-da"},
+    {"source": "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=DTSPO-30107-additional-postgres-admins"}
   ]
 }
