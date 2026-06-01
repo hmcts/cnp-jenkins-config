@@ -2,7 +2,7 @@ name: Remove archived repos from deployment controls
 
 on:
   schedule:
-    - cron: '0 7 * * 1'  # Every Monday at 08:00 UK time (07:00 UTC during BST)
+    - cron: '0 7 * * 1-5'  # Every weekday at 08:00 UK time (07:00 UTC during BST)
   workflow_dispatch:
 
 jobs:
