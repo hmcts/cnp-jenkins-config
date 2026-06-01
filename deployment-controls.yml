@@ -403,6 +403,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/ia-ccd-migration-tool.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/ia-citizen-ui-e2e.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/ia-e2etests.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ia-hearings-api.git
@@ -454,6 +456,8 @@ repositories:
   - repo: https://github.com/hmcts/labs-hub-ngfw-poc.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-hurricanepilot.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-Ibrahimelsanosi-moj.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-marketplace-api.git
     deployment-enabled: true
