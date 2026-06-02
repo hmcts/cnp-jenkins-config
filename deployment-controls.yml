@@ -361,6 +361,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/fpl-wa-task-configuration.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/francishelloworld.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/halo-itsm-bpt.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/help-with-fees-shared-infrastructure.git
