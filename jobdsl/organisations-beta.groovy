@@ -158,28 +158,19 @@ Closure githubOrg(Map args = [:], Set<String> approvedRepos) {
             configure { node ->
                 def traits = node / navigators / 'org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator' / traits
 
-                // Build a regex from the approved repos allowlist.
-                // If an org-level regex is also configured, use a lookahead to
-                // require the repo matches BOTH the allowlist AND the org regex.
-                if (approvedRepos) {
-                    def quotedNames = approvedRepos.collect { java.util.regex.Pattern.quote(it) }
-                    String allowlistRegex = quotedNames.join('|')
-
-                    String combinedRegex
-                    if (config.regex) {
-                        // Must match the org regex AND be in the allowlist
-                        combinedRegex = "(?=(?:${config.regex}))(?:${allowlistRegex})"
-                    } else {
-                        combinedRegex = allowlistRegex
-                    }
-
-                    traits << 'jenkins.scm.impl.trait.RegexSCMSourceFilterTrait' {
-                        regex(combinedRegex)
-                    }
-                } else if (config.regex) {
-                    // Fallback: no allowlist loaded, use org regex only
+                // Build a regex filter for repo discovery.
+                // If an org-level regex is configured, it acts as its own explicit allowlist
+                // and takes precedence — no need to intersect with approvedRepos.
+                // For open-ended orgs (topic-based discovery), use the approvedRepos allowlist.
+                if (config.regex) {
                     traits << 'jenkins.scm.impl.trait.RegexSCMSourceFilterTrait' {
                         regex(config.regex)
+                    }
+                } else if (approvedRepos) {
+                    def quotedNames = approvedRepos.collect { java.util.regex.Pattern.quote(it) }
+                    String allowlistRegex = quotedNames.join('|')
+                    traits << 'jenkins.scm.impl.trait.RegexSCMSourceFilterTrait' {
+                        regex(allowlistRegex)
                     }
                 }
 
