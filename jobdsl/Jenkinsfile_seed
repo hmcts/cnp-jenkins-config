@@ -6,7 +6,7 @@ node {
       credentialsId: 'hmcts-jenkins-cnp'
     ]]
   ])
-  jobDsl targets: 'jobdsl/organisations-beta.groovy',
+  jobDsl scriptText: readFile('jobdsl/organisations-beta.groovy'),
          removedJobAction: 'IGNORE',
          removedViewAction: 'IGNORE'
 }
