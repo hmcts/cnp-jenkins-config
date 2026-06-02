@@ -1,5 +1,12 @@
 node {
-  jobDsl scriptText: new URL('https://raw.githubusercontent.com/hmcts/cnp-jenkins-config/master/jobdsl/organisations-beta.groovy').text,
+  checkout([$class: 'GitSCM',
+    branches: [[name: 'master']],
+    userRemoteConfigs: [[
+      url: 'https://github.com/hmcts/cnp-jenkins-config.git',
+      credentialsId: 'hmcts-jenkins-cnp'
+    ]]
+  ])
+  jobDsl targets: 'jobdsl/organisations-beta.groovy',
          removedJobAction: 'IGNORE',
          removedViewAction: 'IGNORE'
 }
