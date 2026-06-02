@@ -61,7 +61,7 @@ if (isSandbox()) {
             suppressDefaultJenkinsfile     : true,
             disableAgedRefsBranchStrategy  : true,
     ]
-    githubOrg(pipelineTestOrg).call()
+    githubOrg(pipelineTestOrg, approvedRepos).call()
 }
 
 /**
