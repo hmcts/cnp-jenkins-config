@@ -145,6 +145,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/cnp-idam-vault.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-jenkins-library.git
+    deployment-enabled: false
   - repo: https://github.com/hmcts/cnp-keda-shared-infrastucture.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/cnp-module-adf.git
