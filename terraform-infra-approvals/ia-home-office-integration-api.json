@@ -1,6 +1,7 @@
 {
   "resources": [    
-    {"type": "azurerm_api_management_api_diagnostic"}   
+    {"type": "azurerm_api_management_api_diagnostic"},
+    {"type": "azurerm_api_management_named_value"}
   ],
   "module_calls": []
 }
