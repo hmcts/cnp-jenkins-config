@@ -103,8 +103,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccpayfr-shared-infrastructure.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/civil-camunda-bpmn-definition.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/civil-ccd-definition.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/civil-citizen-ui.git
