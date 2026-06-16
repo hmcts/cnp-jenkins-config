@@ -507,6 +507,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/pcs-shared-infrastructure.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/performance-test-orchestrator.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/prl-ccd-case-migration.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/prl-ccd-definitions.git
