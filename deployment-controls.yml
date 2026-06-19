@@ -161,6 +161,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/cnp-plum-batch.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/cnp-plum-fastapi-backend.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/cnp-plum-frontend.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/cnp-plum-recipes-service.git
