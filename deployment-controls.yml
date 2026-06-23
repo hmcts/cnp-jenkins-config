@@ -275,8 +275,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/et-ccd-definitions-admin.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/et-hearings-api.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/et-performance.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/et-pet-admin.git
