@@ -1,5 +1,8 @@
 {
   "resources": [
     {"type": "random_password"}
+  ],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/terraform-module-azure-managed-redis?ref=main"}
   ]
 }
