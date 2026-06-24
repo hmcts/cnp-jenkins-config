@@ -489,6 +489,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/nfdiv-performance.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/nfdiv-shared-infrastructure.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/pcq-backend.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/pcq-consolidation-service.git
