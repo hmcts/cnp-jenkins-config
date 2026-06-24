@@ -714,4 +714,4 @@ repositories:
   - repo: https://github.com/hmcts/xui-performance-dataprep.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-ConnorOKane-Kainos.git
-    deployment-enabled: true. 
+    deployment-enabled: true
