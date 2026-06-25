@@ -45,6 +45,7 @@ prod:
   - repo: https://github.com/hmcts/cmc-claim-submit-api.git
   - repo: https://github.com/hmcts/cmc-legal-rep-frontend.git
   - repo: https://github.com/hmcts/cmc-shared-infrastructure.git
+  - repo: https://github.com/hmcts/cnp-apimarketplace-service.git
   - repo: https://github.com/hmcts/cnp-core-compute.git
   - repo: https://github.com/hmcts/cnp-core-infrastructure.git
   - repo: https://github.com/hmcts/cnp-keda-shared-infrastucture.git
