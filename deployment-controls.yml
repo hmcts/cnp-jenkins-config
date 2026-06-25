@@ -387,8 +387,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/ia-bail-case-api.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/ia-case-access-api.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/ia-case-api.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ia-case-documents-api.git
