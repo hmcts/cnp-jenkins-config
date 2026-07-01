@@ -627,6 +627,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/rpx-xui-manage-organisations.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/rpx-xui-media-viewer.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/rpx-xui-webapp.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/send-letter-service.git
