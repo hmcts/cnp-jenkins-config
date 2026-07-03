@@ -10,6 +10,7 @@
     {"type": "azurerm_linux_virtual_machine"},
     {"type": "azurerm_virtual_machine_data_disk_attachment"},
     {"type": "azurerm_private_dns_a_record"},
+    {"type": "azurerm_private_dns_cname_record"},
     {"type": "azurerm_network_interface_security_group_association"},
     {"type": "null_resource"},
     {"type": "azurerm_route_table"},
