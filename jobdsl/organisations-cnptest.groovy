@@ -10,7 +10,7 @@ private boolean isSandbox() {
 List<Map> orgs = [
     [name: 'HMCTS_a_to_c', credentialsId: 'hmcts-jenkins-a-to-c', displayName: 'HMCTS - A to C', topic: 'jenkins-cft-a-c'],
     [name: 'HMCTS_d_to_i', credentialsId: 'hmcts-jenkins-d-to-i', displayName: 'HMCTS - D to I', topic: 'jenkins-cft-d-i'],
-    [name: 'HMCTS_j_to_z', credentialsId: 'hmcts-jenkins-j-to-z', displayName: 'HMCTS - J to Z', topic: 'jenkins-cft-j-z']
+    [name: 'HMCTS_j_to_z', credentialsId: 'hmcts-jenkins-j-to-z', displayName: 'HMCTS - J to Z', topic: 'jenkins-cft-j-z', nightlyBranchesToBuildAutomatically: ['nightly-dev']]
 ]
 
 orgs.each { Map org ->
@@ -45,6 +45,7 @@ if (isSandbox()) {
  *  - jenkinsfilePath (advanced use only): custom jenkinsfile path
  *  - suppressDefaultJenkinsfile: don't use the default Jenkinsfile
  *  - nightly: whether this is nightly org automatically set by the dsl
+ *  - nightlyBranchesToBuildAutomatically: branch names allowed to auto-build in nightly orgs
  */
 Closure githubOrg(Map args = [:]) {
     def config = [
@@ -52,6 +53,7 @@ Closure githubOrg(Map args = [:]) {
             jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
             enableNamedBuildBranchStrategy : false,
+            nightlyBranchesToBuildAutomatically: [],
     ] << args
     def folderName = config.name
 
@@ -170,10 +172,19 @@ Closure githubOrg(Map args = [:]) {
                     }
                 }
 
-                // prevent builds triggering automatically from SCM push for sandbox and nightly builds
+                // Prevent automatic builds for sandbox and nightly builds unless an org explicitly opts in.
                 if (enableNamedBuildBranchStrategy) {
                     node / buildStrategies / 'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl'(plugin: 'basic-branch-build-strategies@1.3.2') {
-                        filters()
+                        filters {
+                            if (config.nightly) {
+                                config.nightlyBranchesToBuildAutomatically.each { String branchName ->
+                                    'jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-ExactNameFilter' {
+                                        name(branchName)
+                                        caseSensitive(true)
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
