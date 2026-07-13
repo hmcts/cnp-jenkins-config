@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"type": "azurerm_key_vault_access_policy"},
     {"type": "azurerm_key_vault_secret"},
     {"type": "azurerm_resource_group"},
     {"type": "azurerm_application_insights"},
