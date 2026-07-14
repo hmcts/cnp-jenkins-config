@@ -734,6 +734,16 @@ ccd-elastic-search:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+ccd-elasticsearch-app:
+  team: "CCD"
+  namespace: "ccd"
+  azure_ad_group: dcd_ccd
+  slack:
+    contact_channel: "#ccd-community"
+    channel_id: "C6H1N9WRF"
+    build_notices_channel: "#ccd-master-builds"
+  tags:
+    application: core-case-data
 paymentsgw:
   team: "Fees/Pay"
   namespace: "fees-pay"
