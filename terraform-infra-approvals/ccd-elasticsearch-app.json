@@ -1,0 +1,36 @@
+{
+  "resources": [
+    {"type": "azurerm_application_security_group"},
+    {"type": "azurerm_availability_set"},
+    {"type": "azurerm_disk_encryption_set"},
+    {"type": "azurerm_key_vault_access_policy"},
+    {"type": "azurerm_key_vault_key"},
+    {"type": "azurerm_key_vault_secret"},
+    {"type": "azurerm_lb"},
+    {"type": "azurerm_lb_backend_address_pool"},
+    {"type": "azurerm_lb_backend_address_pool_address"},
+    {"type": "azurerm_lb_probe"},
+    {"type": "azurerm_lb_rule"},
+    {"type": "azurerm_linux_virtual_machine"},
+    {"type": "azurerm_managed_disk"},
+    {"type": "azurerm_monitor_data_collection_rule_association"},
+    {"type": "azurerm_network_interface"},
+    {"type": "azurerm_network_interface_application_security_group_association"},
+    {"type": "azurerm_network_interface_security_group_association"},
+    {"type": "azurerm_network_security_group"},
+    {"type": "azurerm_network_security_rule"},
+    {"type": "azurerm_resource_group"},
+    {"type": "azurerm_role_assignment"},
+    {"type": "azurerm_virtual_machine_data_disk_attachment"},
+    {"type": "azurerm_virtual_machine_extension"},
+    {"type": "azurerm_virtual_machine_scale_set_extension"},
+    {"type": "azurerm_windows_virtual_machine"}
+  ],
+  "module_calls": [
+    {"source": "github.com/hmcts/terraform-module-common-tags.git?ref=master"},
+    {"source": "github.com/hmcts/ccd-module-elastic-search.git?ref=main"},
+    {"source": "github.com/hmcts/terraform-module-virtual-machine.git?ref=master"},
+    {"source": "git::https://github.com/hmcts/terraform-module-vm-bootstrap.git?ref=master"},
+    {"source": "git@github.com:hmcts/cnp-module-storage-account.git?ref=4.x"}
+  ]
+}

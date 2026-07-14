@@ -67,6 +67,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-elastic-search.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-elasticsearch-app.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-message-publisher.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-next-hearing-date-updater.git
