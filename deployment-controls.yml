@@ -287,6 +287,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/et-pet-et3.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/et-pet-shared-infrastructure.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/et-shared-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/et-sya-api.git
