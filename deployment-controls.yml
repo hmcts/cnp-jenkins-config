@@ -521,8 +521,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/prl-cron.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/prl-dgs-api.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/prl-e2e-tests.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/prl-performance.git
