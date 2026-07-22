@@ -67,6 +67,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-elastic-search.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-elasticsearch-app.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-message-publisher.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-next-hearing-date-updater.git
@@ -251,8 +253,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/em-icp-api.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/em-media-viewer.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/em-native-pdf-annotator-app.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/em-performance.git
@@ -286,6 +286,8 @@ repositories:
   - repo: https://github.com/hmcts/et-pet-et1.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/et-pet-et3.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/et-pet-shared-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/et-shared-infrastructure.git
     deployment-enabled: true
@@ -518,8 +520,6 @@ repositories:
   - repo: https://github.com/hmcts/prl-cos-api.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/prl-cron.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/prl-dgs-api.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/prl-e2e-tests.git
     deployment-enabled: true
