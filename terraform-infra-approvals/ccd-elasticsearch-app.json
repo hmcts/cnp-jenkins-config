@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"type": "azapi_resource"},
     {"type": "azurerm_application_security_group"},
     {"type": "azurerm_availability_set"},
     {"type": "azurerm_disk_encryption_set"},
