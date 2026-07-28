@@ -1,5 +1,11 @@
 node {
-  checkout scm
+  checkout([$class: 'GitSCM',
+    branches: [[name: 'master']],
+    userRemoteConfigs: [[
+      url: 'https://github.com/hmcts/cnp-jenkins-config.git',
+      credentialsId: 'hmcts-jenkins-cnp'
+    ]]
+  ])
   jobDsl scriptText: readFile('jobdsl/organisations-beta.groovy'),
          removedJobAction: 'IGNORE',
          removedViewAction: 'IGNORE'
