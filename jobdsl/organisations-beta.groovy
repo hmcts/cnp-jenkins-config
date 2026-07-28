@@ -69,7 +69,7 @@ pipelineJob('Archive Completed Builds') {
     definition {
         cps {
             script('''
-                @Library('Infrastructure@archive-complete-build-results') _
+                @Library('Infrastructure@master') _
 
                 archiveCompletedBuild(
                     sourceBuildUrl: params.SOURCE_BUILD_URL,
