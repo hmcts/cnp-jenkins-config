@@ -301,8 +301,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/et-wa-task-configuration.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/et-xui-e2e-tests.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/ethos-repl-docmosis-service.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/expressjs-template.git
