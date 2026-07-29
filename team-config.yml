@@ -1019,3 +1019,11 @@ pt:
     build_notices_channel: "#pt-tech"
   tags:
     application: "property-tribunal"
+snl:
+  team: "Scheduling & Listing"
+  namespace: "snl"
+  slack:
+    contact_channel: "#dts-schedule-and-listing-dev-and-test"
+    build_notices_channel: "#dts-schedule-and-listing-build-notices"
+  tags:
+    application: "snl"
