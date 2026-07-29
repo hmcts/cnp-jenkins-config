@@ -50,6 +50,41 @@ orgs.each { Map org ->
     }
 }
 
+pipelineJob('Archive Completed Builds') {
+    description('Copies completed failed-build records and artifacts to long-term Azure Blob Storage.')
+
+    logRotator {
+        numToKeep(20)
+    }
+
+    parameters {
+        stringParam('SOURCE_BUILD_URL', '', 'URL of the completed Jenkins build to archive.')
+        stringParam('SOURCE_JOB_NAME', '', 'Full Jenkins name of the source job.')
+        stringParam('SOURCE_BUILD_NUMBER', '', 'Jenkins build number to archive.')
+        stringParam('SOURCE_BUILD_RESULT', '', 'Final result of the source build.')
+        stringParam('SOURCE_PRODUCT', '', 'Product identifier supplied by the source pipeline.')
+        stringParam('SOURCE_COMPONENT', '', 'Component identifier supplied by the source pipeline.')
+    }
+
+    definition {
+        cps {
+            script('''
+                @Library('Infrastructure@master') _
+
+                archiveCompletedBuild(
+                    sourceBuildUrl: params.SOURCE_BUILD_URL,
+                    sourceJobName: params.SOURCE_JOB_NAME,
+                    sourceBuildNumber: params.SOURCE_BUILD_NUMBER,
+                    sourceBuildResult: params.SOURCE_BUILD_RESULT,
+                    sourceProduct: params.SOURCE_PRODUCT,
+                    sourceComponent: params.SOURCE_COMPONENT
+                )
+            '''.stripIndent())
+            sandbox()
+        }
+    }
+}
+
 if (isSandbox()) {
     Map pipelineTestOrg = [
             name                           : 'Pipeline_Test',
