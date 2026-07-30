@@ -635,6 +635,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/service-auth-provider-java-client.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/service-api-marketplace.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/Special-Tribunals-Perftest.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/sptribs-case-api.git
