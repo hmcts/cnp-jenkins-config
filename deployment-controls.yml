@@ -719,3 +719,7 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/snl-ui
     deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-harveymoj
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-harveymoj-nodejs
+    deployment-enabled: true
