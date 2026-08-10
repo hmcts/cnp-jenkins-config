@@ -1,0 +1,8 @@
+{
+  "resources": [
+    {"type": "random_password"},
+    {"type": "postgresql_role"},
+    {"type": "postgresql_grant"},
+    {"type": "postgresql_default_privileges"}
+  ]
+}
