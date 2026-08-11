@@ -158,6 +158,7 @@ prod:
   - repo: https://github.com/hmcts/rpe-shared-infrastructure.git
   - repo: https://github.com/hmcts/rpx-shared-infrastructure.git
   - repo: https://github.com/hmcts/rpx-xui-approve-org.git
+  - repo: https://github.com/hmcts/rpx-xui-icp-api.git
   - repo: https://github.com/hmcts/rpx-xui-manage-organisations.git
   - repo: https://github.com/hmcts/rpx-xui-webapp.git
   - repo: https://github.com/hmcts/rpx-xui-terms-and-conditions.git
