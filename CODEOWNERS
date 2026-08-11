@@ -4,4 +4,4 @@
 
 deployment-controls.yml @hmcts/platform-operations
 environment-approvals.yml @hmcts/production-apps-approvals
-terraform-infra-approvals.yml/*.json @hmcts/production-apps-approvals
+terraform-infra-approvals/*.json @hmcts/production-apps-approvals
