@@ -106,7 +106,8 @@ if (isSandbox()) {
  *  - displayName (optional, name will be used by default): display name, will be prefixed by HMCTS -
  *  - regex (optional, name.* will be used by default): regex to use for finding repos owned by this team
  *  - topic (optional): GitHub topic to use to find repos owned by the team
- *  - jenkinsfilePath (advanced use only): custom jenkinsfile path
+ *  - jenkinsfilePath (advanced use only): custom jenkinsfile path (single)
+ *  - jenkinsfilePaths (advanced use only): custom jenkinsfile paths (multiple)
  *  - suppressDefaultJenkinsfile: don't use the default Jenkinsfile
  *  - nightly: whether this is nightly org automatically set by the dsl
  * @param approvedRepos set of repository names approved for Jenkins inclusion via deployment-controls.yml
@@ -114,13 +115,15 @@ if (isSandbox()) {
 Closure githubOrg(Map args = [:], Set<String> approvedRepos) {
     def config = [
             displayName                    : args.name,
-            jenkinsfilePath                : isSandbox() ? 'Jenkinsfile_parameterized' : 'Jenkinsfile_CNP',
+        jenkinsfilePath                : isSandbox() ? ['Jenkinsfile_parameterized', 'Jenkinsfile_base'] : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
             enableNamedBuildBranchStrategy : false,
     ] << args
     def folderName = config.name
 
-    String jenkinsfilePath = config.jenkinsfilePath
+        List<String> jenkinsfilePaths = config.jenkinsfilePaths ?: (
+            config.jenkinsfilePath instanceof List ? config.jenkinsfilePath : [config.jenkinsfilePath]
+        )
 
     def runningOnSandbox = isSandbox()
     GString orgDescription = "<br>${config.displayName} team repositories"
@@ -154,7 +157,7 @@ Closure githubOrg(Map args = [:], Set<String> approvedRepos) {
         orgDisplayName += " Nightly Tests"
         wildcardBranchesToInclude = "master nightly-dev"
 
-        jenkinsfilePath = runningOnSandbox ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly'
+        jenkinsfilePaths = [runningOnSandbox ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly']
         suppressDefaultJenkinsfile = true
         enableNamedBuildBranchStrategy = true
 
@@ -181,8 +184,10 @@ Closure githubOrg(Map args = [:], Set<String> approvedRepos) {
             }
 
             projectFactories {
-                workflowMultiBranchProjectFactory {
-                    scriptPath(jenkinsfilePath)
+                jenkinsfilePaths.each { String jenkinsfilePath ->
+                    workflowMultiBranchProjectFactory {
+                        scriptPath(jenkinsfilePath)
+                    }
                 }
                 if (!suppressDefaultJenkinsfile) {
                     workflowMultiBranchProjectFactory {
