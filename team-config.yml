@@ -1027,3 +1027,11 @@ snl:
     build_notices_channel: "#dts-schedule-and-listing-build-notices"
   tags:
     application: "snl"
+performance:
+  team: "Performance Testing"
+  namespace: "performance"
+  slack:
+    contact_channel: "#performance-slack-channel"
+    build_notices_channel: "#performance-build-notices"
+  tags:
+    application: performance
