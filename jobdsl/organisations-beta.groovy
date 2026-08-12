@@ -115,7 +115,7 @@ if (isSandbox()) {
 Closure githubOrg(Map args = [:], Set<String> approvedRepos) {
     def config = [
             displayName                    : args.name,
-        jenkinsfilePath                : isSandbox() ? ['Jenkinsfile_parameterized', 'Jenkinsfile_base'] : 'Jenkinsfile_CNP',
+            jenkinsfilePath                : isSandbox() ? ['Jenkinsfile_parameterized', 'Jenkinsfile_base'] : 'Jenkinsfile_CNP',
             suppressDefaultJenkinsfile     : false,
             enableNamedBuildBranchStrategy : false,
     ] << args
