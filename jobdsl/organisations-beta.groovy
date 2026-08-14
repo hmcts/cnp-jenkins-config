@@ -136,7 +136,7 @@ Closure githubOrg(Map args = [:], Set<String> approvedRepos) {
 
     if (runningOnSandbox) {
         folderSuffix = '_Sandbox'
-        wildcardBranchesToInclude = '*'
+        wildcardBranchesToInclude = 'master PR-*'
         // We want the labs folder to build on push but others don't need to
         enableNamedBuildBranchStrategy = config.name == 'LABS' || config.name == 'Pipeline_Test' ? false : true
     }
