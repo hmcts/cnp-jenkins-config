@@ -623,8 +623,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/rpx-xui-e2e-tests.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/rpx-xui-icp-api.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/rpx-xui-manage-organisations.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/rpx-xui-media-viewer.git
