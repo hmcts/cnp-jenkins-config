@@ -731,3 +731,5 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-ujimulia
     deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-SPattnaikS.git
+    deployment-enabled: true
