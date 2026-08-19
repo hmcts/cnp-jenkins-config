@@ -86,6 +86,7 @@ prod:
   - repo: https://github.com/hmcts/finrem-case-orchestration-service.git
   - repo: https://github.com/hmcts/finrem-shared-infrastructure.git
   - repo: https://github.com/hmcts/finrem-task-configuration.git
+  - repo: https://github.com/hmcts/finrem-citizen-ui.git
   - repo: https://github.com/hmcts/fpl-ccd-configuration.git
   - repo: https://github.com/hmcts/fpl-ccd-data-migration-tool.git
   - repo: https://github.com/hmcts/fpl-wa-task-configuration.git
@@ -261,3 +262,4 @@ prod:
   - repo: https://github.com/hmcts/pcs-api.git
   - repo: https://github.com/hmcts/pcs-frontend.git
   - repo: https://github.com/hmcts/pcs-shared-infrastructure.git
+  - repo: https://github.com/hmcts/hwf-benefit-checker-api.git
