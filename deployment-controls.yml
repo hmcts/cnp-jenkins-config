@@ -735,3 +735,5 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-spattnaiks-nodejs.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-tmckillop95-nodejs
+    deployment-enabled: true
