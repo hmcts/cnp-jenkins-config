@@ -357,8 +357,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/fpl-wa-task-configuration.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/frontend-api-marketplace.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/halo-itsm-bpt.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/help-with-fees-shared-infrastructure.git
@@ -712,6 +710,8 @@ repositories:
   - repo: https://github.com/hmcts/wa-task-monitor.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/wa-workflow-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/web-api-marketplace.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/xui-performance.git
     deployment-enabled: true
