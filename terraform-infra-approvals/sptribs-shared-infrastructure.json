@@ -7,6 +7,6 @@
   "module_calls": [
     {"source":  "git@github.com:hmcts/terraform-module-application-insights?ref=DTSPO-27514"},
     {"source":  "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=custom-schema-support"},
-    {"source":  "github.com/hmcts/terraform-module-ai-services?ref=main"}
+    {"source":  "git@github.com:hmcts/terraform-module-ai-services?ref=main"}
   ]
 }
