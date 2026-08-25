@@ -399,7 +399,7 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/ia-ccd-migration-tool.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/ia-citizen-ui-e2e.git
+  - repo: https://github.com/hmcts/ia-ui-e2e-tests.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ia-e2etests.git
     deployment-enabled: true
