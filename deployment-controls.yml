@@ -500,11 +500,9 @@ repositories:
   - repo: https://github.com/hmcts/pcq-shared-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/pcs-api.git
-    # Temporary freeze: model office testing on AAT, no new deployments until testing completes (PCS team, 26 Aug)
-    deployment-enabled: false
+    deployment-enabled: true
   - repo: https://github.com/hmcts/pcs-frontend.git
-    # Temporary freeze: model office testing on AAT, no new deployments until testing completes (PCS team, 26 Aug)
-    deployment-enabled: false
+    deployment-enabled: true
   - repo: https://github.com/hmcts/pcs-shared-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/performance-test-orchestrator.git
