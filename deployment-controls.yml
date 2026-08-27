@@ -741,3 +741,5 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-beardfacekainos-nodejs
     deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-tmckillop95
+    deployment-enabled: true
