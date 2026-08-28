@@ -1,0 +1,5 @@
+{
+  "resources": [
+    {"type": "azurerm_monitor_diagnostic_setting"}
+  ]
+}
