@@ -236,6 +236,7 @@ repositories:
   - repo: https://github.com/hmcts/dtsse-dashboard-ingestion.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/dtsse-github-metrics.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/dtsse-shared-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ecm-ccd-case-migration.git
