@@ -375,6 +375,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/hmc-shared-infrastructure.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/hmcts-api-marketplace-auth.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/hofse-ardoq-api-prototype.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/hwf-benefit-checker-api.git
