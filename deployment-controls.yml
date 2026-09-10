@@ -189,6 +189,14 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/data-ingestion-lib.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-admin.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-infra.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-web.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/devextreme-poc-spa.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/devextreme-poc-ssr.git
