@@ -1035,3 +1035,13 @@ performance:
     build_notices_channel: "#performance-build-notices"
   tags:
     application: performance
+deed-poll:
+  team: "Deed Poll"
+  namespace: "deed-poll"
+  azure_ad_group: DTS Deed Poll
+  slack:
+    contact_channel: "#adoption-tech"
+    channel_id: "C02KDUDL9LG"
+    build_notices_channel: "#adoption-tech"
+  tags:
+    application: deed-poll
