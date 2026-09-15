@@ -189,6 +189,14 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/data-ingestion-lib.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-admin.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-infra.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-web.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/devextreme-poc-spa.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/devextreme-poc-ssr.git
@@ -235,9 +243,9 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/dtsse-dashboard-ingestion.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/ecm-ccd-case-migration.git
+  - repo: https://github.com/hmcts/dtsse-github-metrics.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/ecm-consumer.git
+  - repo: https://github.com/hmcts/ecm-ccd-case-migration.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ecm-shared-infrastructure.git
     deployment-enabled: true
@@ -372,6 +380,8 @@ repositories:
   - repo: https://github.com/hmcts/hmc-operational-reports-runner.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/hmc-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/hmcts-api-marketplace-auth.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/hofse-ardoq-api-prototype.git
     deployment-enabled: true
@@ -649,6 +659,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/sptribs-frontend.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/sptribs-send-prototype.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/sptribs-shared-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/sscs-case-loader.git
@@ -741,7 +753,9 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-beardfacekainos-nodejs
     deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-tmckillop95
+  - repo: https://github.com/hmcts/labs-tmckillop95.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-beardfacekainos
+  - repo: https://github.com/hmcts/labs-beardfacekainos.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-chris47dev.git
     deployment-enabled: true
