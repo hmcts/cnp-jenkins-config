@@ -735,11 +735,11 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-connorokane-kainos.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/snl-shared-infra
+  - repo: https://github.com/hmcts/snl-shared-infra.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/snl-backend
+  - repo: https://github.com/hmcts/snl-backend.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/snl-ui
+  - repo: https://github.com/hmcts/snl-ui.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-harveymoj
     deployment-enabled: true
