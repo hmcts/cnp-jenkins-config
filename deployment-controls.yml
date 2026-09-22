@@ -61,6 +61,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-case-print-service.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-case-ui-toolkit.git
+    deployment-enabled: false
   - repo: https://github.com/hmcts/ccd-data-store-api.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-definition-store-api.git
