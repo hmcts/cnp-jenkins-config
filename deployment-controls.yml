@@ -61,6 +61,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-case-print-service.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-case-ui-toolkit.git
+    deployment-enabled: false
   - repo: https://github.com/hmcts/ccd-data-store-api.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-definition-store-api.git
@@ -653,6 +655,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/service-api-marketplace.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/service-api-marketplace-examples.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/Special-Tribunals-Perftest.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/sptribs-case-api.git
@@ -735,11 +739,11 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-connorokane-kainos.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/snl-shared-infra
+  - repo: https://github.com/hmcts/snl-shared-infra.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/snl-backend
+  - repo: https://github.com/hmcts/snl-backend.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/snl-ui
+  - repo: https://github.com/hmcts/snl-ui.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-harveymoj
     deployment-enabled: true
