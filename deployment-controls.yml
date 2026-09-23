@@ -183,6 +183,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/crime-idam-master.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/crime-idam-master-deploy.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/crime-idam-shared-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/cui-ra.git
