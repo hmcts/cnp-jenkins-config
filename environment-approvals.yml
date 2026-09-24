@@ -60,6 +60,7 @@ prod:
   - repo: https://github.com/hmcts/cnp-rhubarb-shared-infrastructure.git
   - repo: https://github.com/hmcts/crime-idam-keyvault.git
   - repo: https://github.com/hmcts/crime-idam-master.git
+  - repo: https://github.com/hmcts/crime-idam-master-deploy.git
   - repo: https://github.com/hmcts/crime-idam-shared-infrastructure.git
   - repo: https://github.com/hmcts/ctsc-shared-infrastructure.git
   - repo: https://github.com/hmcts/div-case-data-formatter.git
