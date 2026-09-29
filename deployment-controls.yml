@@ -775,3 +775,5 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/transcribe-shared-infrastructure.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-chris47dev-java.git
+    deployment-enabled: true
