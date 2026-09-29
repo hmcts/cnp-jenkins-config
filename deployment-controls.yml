@@ -767,3 +767,9 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-chris47dev.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/transcribe-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/transcribe-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/transcribe-shared-infrastructure.git
+    deployment-enabled: true
