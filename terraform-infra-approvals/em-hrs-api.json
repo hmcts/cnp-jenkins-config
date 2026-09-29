@@ -3,6 +3,7 @@
       {"type": "azurerm_private_endpoint"}
     ],
     "module_calls": [
-      {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=fix/private-endpoint-provider-4.x"}
+      {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=fix/private-endpoint-provider-4.x"},
+      {"source":  "git@github.com:hmcts/cnp-module-storage-account?ref=feat/remove-azurerm-version-constraint"}
     ]
 }
