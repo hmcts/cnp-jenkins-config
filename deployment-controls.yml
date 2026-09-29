@@ -247,6 +247,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/draft-store.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/dtsse-agent-hub.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/dtsse-dashboard-ingestion.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/dtsse-github-metrics.git
