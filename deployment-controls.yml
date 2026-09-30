@@ -245,6 +245,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/draft-store.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/dtsse-agent-hub.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/dtsse-dashboard-ingestion.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/dtsse-github-metrics.git
@@ -764,4 +766,12 @@ repositories:
   - repo: https://github.com/hmcts/labs-beardfacekainos.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-chris47dev.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/transcribe-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/transcribe-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/transcribe-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-chris47dev-java.git
     deployment-enabled: true
