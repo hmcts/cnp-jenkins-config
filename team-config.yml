@@ -663,6 +663,15 @@ dtsse:
     build_notices_channel: "#reform-swe-builds"
   tags:
     application: core
+dtsse-services:
+  team: "DTS Software Engineering"
+  namespace: "dtsse-services"
+  azure_ad_group: DTS CFT Software Engineering
+  slack:
+    contact_channel: "#reform-swe"
+    build_notices_channel: "#reform-swe-builds"
+  tags:
+    application: core
 civil:
   team: "Civil"
   namespace: "civil"
