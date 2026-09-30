@@ -79,6 +79,7 @@ prod:
   - repo: https://github.com/hmcts/dm-shared-infrastructure.git
   - repo: https://github.com/hmcts/document-management-store-app.git
   - repo: https://github.com/hmcts/draft-store.git
+  - repo: https://github.com/hmcts/dtsse-services.git
   - repo: https://github.com/hmcts/devextreme-poc-spa.git
   - repo: https://github.com/hmcts/devextreme-poc-ssr.git
   - repo: https://github.com/hmcts/ethos-repl-docmosis-service.git
