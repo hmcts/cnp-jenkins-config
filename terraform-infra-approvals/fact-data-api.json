@@ -1,6 +1,7 @@
 {
   "resources": [
-    {"type": "azuread_application_federated_identity_credential"}
+    {"type": "azuread_application_federated_identity_credential"},
+    {"type": "azurerm_api_management_api_diagnostic"}
   ],
   "module_calls": []
 }
