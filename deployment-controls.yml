@@ -777,3 +777,5 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-chris47dev-java.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-chris47dev1.git
+    deployment-enabled: true
