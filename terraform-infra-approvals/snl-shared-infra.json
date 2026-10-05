@@ -1,5 +1,6 @@
 {
   "resources": [
-    {"type": "random_password"}
+    {"type": "random_password"},
+    {"type": "azurerm_private_dns_a_record"}
   ]
 }
