@@ -997,6 +997,7 @@ rota:
     application: rota
 transcribe:
   team: "AI Enablement"
+  azure_ad_group: "DTS Transcribe"
   namespace: "transcribe"
   slack:
     contact_channel: "#justicetranscribe-ask"
