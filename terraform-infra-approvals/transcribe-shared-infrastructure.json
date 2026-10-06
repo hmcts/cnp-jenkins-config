@@ -1,5 +1,6 @@
 {
   "resources": [
-    {"type": "azurerm_role_assignment"}
+    {"type": "azurerm_role_assignment"},
+    {"type": "azurerm_private_endpoint"}
   ]
 }
