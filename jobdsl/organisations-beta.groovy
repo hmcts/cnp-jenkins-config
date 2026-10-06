@@ -36,13 +36,20 @@ Set<String> loadApprovedRepos() {
 
 Set<String> approvedRepos = loadApprovedRepos()
 
-List<Map> orgs = [
-    [name: 'HMCTS_a_to_c', credentialsId: 'hmcts-jenkins-a-to-c', displayName: 'HMCTS - A to C', topic: 'jenkins-cft-a-c'],
-    [name: 'HMCTS_d_to_i', credentialsId: 'hmcts-jenkins-d-to-i', displayName: 'HMCTS - D to I', topic: 'jenkins-cft-d-i'],
-    [name: 'HMCTS_j_to_z', credentialsId: 'hmcts-jenkins-j-to-z', displayName: 'HMCTS - J to Z', topic: 'jenkins-cft-j-z']
+Map<String, Map> orgGroups = [
+    'A-C': [name: 'HMCTS_a_to_c', credentialsId: 'hmcts-jenkins-a-to-c', displayName: 'HMCTS - A to C', topic: 'jenkins-cft-a-c'],
+    'D-I': [name: 'HMCTS_d_to_i', credentialsId: 'hmcts-jenkins-d-to-i', displayName: 'HMCTS - D to I', topic: 'jenkins-cft-d-i'],
+    'J-Z': [name: 'HMCTS_j_to_z', credentialsId: 'hmcts-jenkins-j-to-z', displayName: 'HMCTS - J to Z', topic: 'jenkins-cft-j-z'],
 ]
 
-orgs.each { Map org ->
+String requestedGroup = binding.variables.get('ORG_GROUP') ?: 'ALL'
+if (requestedGroup != 'ALL' && !orgGroups.containsKey(requestedGroup)) {
+    throw new IllegalArgumentException("Unknown ORG_GROUP '${requestedGroup}', expected one of ${orgGroups.keySet()} or ALL")
+}
+Collection<String> groupsToProcess = requestedGroup == 'ALL' ? orgGroups.keySet() : [requestedGroup]
+
+groupsToProcess.each { String group ->
+    Map org = new LinkedHashMap(orgGroups[group])
     githubOrg(org, approvedRepos).call()
     org << [nightly: true]
     if (!org.nightlyDisabled) {
@@ -50,42 +57,47 @@ orgs.each { Map org ->
     }
 }
 
-pipelineJob('Archive Completed Builds') {
-    description('Copies completed failed-build records and artifacts to long-term Azure Blob Storage.')
+// Shared jobs are owned by A-C so only one seed job generates them
+boolean ownsSharedJobs = requestedGroup in ['ALL', 'A-C']
 
-    logRotator {
-        numToKeep(20)
-    }
+if (ownsSharedJobs) {
+    pipelineJob('Archive Completed Builds') {
+        description('Copies completed failed-build records and artifacts to long-term Azure Blob Storage.')
 
-    parameters {
-        stringParam('SOURCE_BUILD_URL', '', 'URL of the completed Jenkins build to archive.')
-        stringParam('SOURCE_JOB_NAME', '', 'Full Jenkins name of the source job.')
-        stringParam('SOURCE_BUILD_NUMBER', '', 'Jenkins build number to archive.')
-        stringParam('SOURCE_BUILD_RESULT', '', 'Final result of the source build.')
-        stringParam('SOURCE_PRODUCT', '', 'Product identifier supplied by the source pipeline.')
-        stringParam('SOURCE_COMPONENT', '', 'Component identifier supplied by the source pipeline.')
-    }
+        logRotator {
+            numToKeep(20)
+        }
 
-    definition {
-        cps {
-            script('''
-                @Library('Infrastructure@master') _
+        parameters {
+            stringParam('SOURCE_BUILD_URL', '', 'URL of the completed Jenkins build to archive.')
+            stringParam('SOURCE_JOB_NAME', '', 'Full Jenkins name of the source job.')
+            stringParam('SOURCE_BUILD_NUMBER', '', 'Jenkins build number to archive.')
+            stringParam('SOURCE_BUILD_RESULT', '', 'Final result of the source build.')
+            stringParam('SOURCE_PRODUCT', '', 'Product identifier supplied by the source pipeline.')
+            stringParam('SOURCE_COMPONENT', '', 'Component identifier supplied by the source pipeline.')
+        }
 
-                archiveCompletedBuild(
-                    sourceBuildUrl: params.SOURCE_BUILD_URL,
-                    sourceJobName: params.SOURCE_JOB_NAME,
-                    sourceBuildNumber: params.SOURCE_BUILD_NUMBER,
-                    sourceBuildResult: params.SOURCE_BUILD_RESULT,
-                    sourceProduct: params.SOURCE_PRODUCT,
-                    sourceComponent: params.SOURCE_COMPONENT
-                )
-            '''.stripIndent())
-            sandbox()
+        definition {
+            cps {
+                script('''
+                    @Library('Infrastructure@master') _
+
+                    archiveCompletedBuild(
+                        sourceBuildUrl: params.SOURCE_BUILD_URL,
+                        sourceJobName: params.SOURCE_JOB_NAME,
+                        sourceBuildNumber: params.SOURCE_BUILD_NUMBER,
+                        sourceBuildResult: params.SOURCE_BUILD_RESULT,
+                        sourceProduct: params.SOURCE_PRODUCT,
+                        sourceComponent: params.SOURCE_COMPONENT
+                    )
+                '''.stripIndent())
+                sandbox()
+            }
         }
     }
 }
 
-if (isSandbox()) {
+if (isSandbox() && ownsSharedJobs) {
     Map pipelineTestOrg = [
             name                           : 'Pipeline_Test',
             displayName                    : 'HMCTS - Pipeline Test',
