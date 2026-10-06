@@ -1,8 +1,0 @@
-{
-  "resources": [
-    {"type": "azurerm_key_vault_secret"}
-  ],
-  "module_calls": [
-    {"source": "git@github.com:hmcts/terraform-module-postgresql-flexible"}
-  ]
-}
