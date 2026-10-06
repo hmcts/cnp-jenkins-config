@@ -707,6 +707,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/test-spring-java-upgrade.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/try-cp-crime-schedulingandlisting-courtschedule.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/ts-translation-service.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/wa-case-event-handler.git
