@@ -781,3 +781,5 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-chris47dev1.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/tcoe-infrastructure.git
+    deployment-enabled: true
