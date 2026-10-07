@@ -50,6 +50,10 @@ orgs.each { Map org ->
     }
 }
 
+Map<String, String> archiveCredentialsIds = isSandbox() ?
+        [prod: 'buildlog-storage-account', nonprod: 'buildlog-storage-account'] :
+        [prod: 'buildlog-storage-account-prod', nonprod: 'buildlog-storage-account-nonprod']
+
 pipelineJob('Archive Completed Builds') {
     description('Copies completed failed-build records and artifacts to long-term Azure Blob Storage.')
 
@@ -68,8 +72,16 @@ pipelineJob('Archive Completed Builds') {
 
     definition {
         cps {
-            script('''
+            script("""
                 @Library('Infrastructure@master') _
+
+                // Only master builds outside the nightly folders deploy to prod
+                def sourceJobPath = params.SOURCE_JOB_NAME.tokenize('/')
+                boolean deploysToProd = sourceJobPath.size() == 3 &&
+                    sourceJobPath.last() == 'master' &&
+                    !sourceJobPath.first().endsWith('_Nightly')
+                String storageCredentialsId = deploysToProd ? '${archiveCredentialsIds.prod}' : '${archiveCredentialsIds.nonprod}'
+                echo "Build archive storage credential: \${storageCredentialsId}"
 
                 archiveCompletedBuild(
                     sourceBuildUrl: params.SOURCE_BUILD_URL,
@@ -77,9 +89,10 @@ pipelineJob('Archive Completed Builds') {
                     sourceBuildNumber: params.SOURCE_BUILD_NUMBER,
                     sourceBuildResult: params.SOURCE_BUILD_RESULT,
                     sourceProduct: params.SOURCE_PRODUCT,
-                    sourceComponent: params.SOURCE_COMPONENT
+                    sourceComponent: params.SOURCE_COMPONENT,
+                    storageCredentialsId: storageCredentialsId
                 )
-            '''.stripIndent())
+            """.stripIndent())
             sandbox()
         }
     }
