@@ -1,12 +1,10 @@
-node {
-  checkout([$class: 'GitSCM',
-    branches: [[name: 'master']],
-    userRemoteConfigs: [[
-      url: 'https://github.com/hmcts/cnp-jenkins-config.git',
-      credentialsId: 'hmcts-jenkins-cnp'
-    ]]
-  ])
-  jobDsl scriptText: readFile('jobdsl/organisations-beta.groovy'),
-         removedJobAction: 'IGNORE',
-         removedViewAction: 'IGNORE'
+// lock is outside node so waiting jobs don't hold an executor
+lock(resource: 'cnp-seed-job') {
+  node {
+    checkout scm
+    jobDsl scriptText: readFile('jobdsl/organisations-beta.groovy'),
+           additionalParameters: [ORG_GROUP: params.ORG_GROUP],
+           removedJobAction: 'IGNORE',
+           removedViewAction: 'IGNORE'
+  }
 }
