@@ -157,8 +157,6 @@ Closure githubOrg(Map args = [:], Set<String> approvedRepos) {
         jenkinsfilePath = runningOnSandbox ? 'Jenkinsfile_nightly_sandbox' : 'Jenkinsfile_nightly'
         suppressDefaultJenkinsfile = true
         enableNamedBuildBranchStrategy = true
-
-        credId = "hmcts-jenkins-cnp"
     }
 
     return {
