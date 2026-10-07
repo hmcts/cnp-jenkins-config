@@ -8,6 +8,16 @@ aac:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+amp:
+  team: "API Marketplace"
+  azure_ad_group: "DTS API Marketplace"
+  namespace: "amp"
+  slack:
+    contact_channel: "#api-marketplace-tech"
+    channel_id: "C09K1JUSYVA"
+    build_notices_channel: "#api-marketplace-build-notices"
+  tags:
+    application: api-marketplace
 apim:
   team: "API Marketplace"
   azure_ad_group: "DTS API Marketplace"
