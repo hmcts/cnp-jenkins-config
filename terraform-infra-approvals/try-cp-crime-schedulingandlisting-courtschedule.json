@@ -1,0 +1,6 @@
+{
+  "resources": [
+    {"type": "tls_private_key"}
+  ],
+  "module_calls": []
+}
