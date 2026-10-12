@@ -479,6 +479,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-peterpilgrim2.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-tgjustice.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/lau-case-backend.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/lau-eud-backend.git
