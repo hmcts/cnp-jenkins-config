@@ -1,0 +1,6 @@
+{
+  "resources": [
+    {"type": "random_password"}
+  ],
+  "module_calls": []
+}
