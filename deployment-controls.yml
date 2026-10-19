@@ -61,6 +61,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-case-print-service.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/ccd-case-ui-toolkit.git
+    deployment-enabled: false
   - repo: https://github.com/hmcts/ccd-data-store-api.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ccd-definition-store-api.git
@@ -181,6 +183,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/crime-idam-keyvault.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/crime-idam-forgerock-terraform.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/crime-idam-shared-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/cui-ra.git
@@ -188,6 +192,14 @@ repositories:
   - repo: https://github.com/hmcts/cve-dashboard-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/data-ingestion-lib.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-admin.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-infra.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/deed-poll-web.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/devextreme-poc-spa.git
     deployment-enabled: true
@@ -233,11 +245,15 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/draft-store.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/dtsse-agent-hub.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/dtsse-dashboard-ingestion.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/ecm-ccd-case-migration.git
+  - repo: https://github.com/hmcts/dtsse-github-metrics.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/ecm-consumer.git
+  - repo: https://github.com/hmcts/dtsse-services.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/ecm-ccd-case-migration.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ecm-shared-infrastructure.git
     deployment-enabled: true
@@ -373,6 +389,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/hmc-shared-infrastructure.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/hmcts-api-marketplace-auth.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/hofse-ardoq-api-prototype.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/hwf-benefit-checker-api.git
@@ -460,6 +478,8 @@ repositories:
   - repo: https://github.com/hmcts/labs-njk-debolina-seal.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-peterpilgrim2.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-tgjustice.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/lau-case-backend.git
     deployment-enabled: true
@@ -639,6 +659,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/service-api-marketplace.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/service-api-marketplace-examples.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/Special-Tribunals-Perftest.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/sptribs-case-api.git
@@ -648,6 +670,8 @@ repositories:
   - repo: https://github.com/hmcts/sptribs-e2etests.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/sptribs-frontend.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/sptribs-send-prototype.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/sptribs-shared-infrastructure.git
     deployment-enabled: true
@@ -685,6 +709,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/test-spring-java-upgrade.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/try-cp-crime-schedulingandlisting-courtschedule.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/ts-translation-service.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/wa-case-event-handler.git
@@ -719,11 +745,11 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-connorokane-kainos.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/snl-shared-infra
+  - repo: https://github.com/hmcts/snl-shared-infra.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/snl-backend
+  - repo: https://github.com/hmcts/snl-backend.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/snl-ui
+  - repo: https://github.com/hmcts/snl-ui.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-harveymoj
     deployment-enabled: true
@@ -741,7 +767,19 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-beardfacekainos-nodejs
     deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-tmckillop95
+  - repo: https://github.com/hmcts/labs-tmckillop95.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-beardfacekainos
+  - repo: https://github.com/hmcts/labs-beardfacekainos.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-chris47dev.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/transcribe-api.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/transcribe-web.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/transcribe-shared-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-chris47dev-java.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/labs-chris47dev1.git
     deployment-enabled: true

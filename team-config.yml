@@ -8,6 +8,16 @@ aac:
     build_notices_channel: "#ccd-master-builds"
   tags:
     application: core-case-data
+amp:
+  team: "API Marketplace"
+  azure_ad_group: "DTS API Marketplace"
+  namespace: "amp"
+  slack:
+    contact_channel: "#api-marketplace-tech"
+    channel_id: "C09K1JUSYVA"
+    build_notices_channel: "#api-marketplace-build-notices"
+  tags:
+    application: api-marketplace
 apim:
   team: "API Marketplace"
   azure_ad_group: "DTS API Marketplace"
@@ -995,6 +1005,15 @@ rota:
     build_notices_channel: "#rota-builds"
   tags:
     application: rota
+transcribe:
+  team: "AI Enablement"
+  azure_ad_group: "DTS Transcribe"
+  namespace: "transcribe"
+  slack:
+    contact_channel: "#justicetranscribe-ask"
+    build_notices_channel: "#justicetranscribe-builds"
+  tags:
+    application: transcribe
 justicetranscribe:
   team: "Justice AI - Transcription Product"
   namespace: "justicetranscribe"
@@ -1035,3 +1054,13 @@ performance:
     build_notices_channel: "#performance-build-notices"
   tags:
     application: performance
+deed-poll:
+  team: "Deed Poll"
+  namespace: "deed-poll"
+  azure_ad_group: DTS Deed Poll
+  slack:
+    contact_channel: "#adoption-tech"
+    channel_id: "C02KDUDL9LG"
+    build_notices_channel: "#adoption-tech"
+  tags:
+    application: deed-poll
