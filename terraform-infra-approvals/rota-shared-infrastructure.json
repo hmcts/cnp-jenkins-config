@@ -1,5 +1,7 @@
 {
   "resources": [
-    {"type": "azurerm_monitor_diagnostic_setting"}
+    {"type": "azurerm_monitor_diagnostic_setting"},
+    {"type": "azurerm_role_assignment"},
+    {"type": "random_password"}
   ]
 }
