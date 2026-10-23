@@ -27,6 +27,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/am-shared-infrastructure.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/amp-try-it-now.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/backstage-hmcts-examples.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/backstage-test-DanielKChristou-nodejs.git
