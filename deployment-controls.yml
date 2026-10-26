@@ -243,6 +243,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/docmosis-infrastructure.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/docmosis.git
+    deployment-enabled: false
   - repo: https://github.com/hmcts/document-management-store-app.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/draft-store.git
