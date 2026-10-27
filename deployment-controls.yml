@@ -31,8 +31,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/backstage-hmcts-examples.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/backstage-test-DanielKChristou-nodejs.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/blob-router-service.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/bsp-cron-trigger.git
@@ -467,11 +465,7 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/jps-shared-infrastructure.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-apps-njs.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/labs-debolina-seal.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-hub-ngfw-poc.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-hurricanepilot.git
     deployment-enabled: true
@@ -480,8 +474,6 @@ repositories:
   - repo: https://github.com/hmcts/labs-marketplace-api.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-njk-debolina-seal.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-peterpilgrim2.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-tgjustice.git
     deployment-enabled: true
@@ -710,8 +702,6 @@ repositories:
   - repo: https://github.com/hmcts/telerik-poc-ssr.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/template-expressjs.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/test-spring-java-upgrade.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/try-cp-crime-schedulingandlisting-courtschedule.git
     deployment-enabled: true
