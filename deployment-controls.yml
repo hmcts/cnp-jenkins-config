@@ -27,9 +27,9 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/am-shared-infrastructure.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/backstage-hmcts-examples.git
+  - repo: https://github.com/hmcts/amp-try-it-now.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/backstage-test-DanielKChristou-nodejs.git
+  - repo: https://github.com/hmcts/backstage-hmcts-examples.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/blob-router-service.git
     deployment-enabled: true
@@ -240,6 +240,8 @@ repositories:
   - repo: https://github.com/hmcts/dm-shared-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/docmosis-infrastructure.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/docmosis.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/document-management-store-app.git
     deployment-enabled: true
@@ -463,11 +465,7 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/jps-shared-infrastructure.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-apps-njs.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/labs-debolina-seal.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-hub-ngfw-poc.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-hurricanepilot.git
     deployment-enabled: true
@@ -476,8 +474,6 @@ repositories:
   - repo: https://github.com/hmcts/labs-marketplace-api.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-njk-debolina-seal.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-peterpilgrim2.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-tgjustice.git
     deployment-enabled: true
@@ -707,8 +703,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/template-expressjs.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/test-spring-java-upgrade.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/try-cp-crime-schedulingandlisting-courtschedule.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ts-translation-service.git
@@ -763,23 +757,9 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/labs-spattnaiks-nodejs.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-tmckillop95-nodejs
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-beardfacekainos-nodejs
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-tmckillop95.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-beardfacekainos.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-chris47dev.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/transcribe-api.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/transcribe-web.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/transcribe-shared-infrastructure.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-chris47dev-java.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/labs-chris47dev1.git
     deployment-enabled: true

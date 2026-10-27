@@ -62,6 +62,7 @@ prod:
   - repo: https://github.com/hmcts/crime-idam-forgerock-terraform.git
   - repo: https://github.com/hmcts/crime-idam-shared-infrastructure.git
   - repo: https://github.com/hmcts/ctsc-shared-infrastructure.git
+  - repo: https://github.com/hmcts/deed-poll-infra.git
   - repo: https://github.com/hmcts/div-case-data-formatter.git
   - repo: https://github.com/hmcts/div-case-maintenance-service.git
   - repo: https://github.com/hmcts/div-case-orchestration-service.git
