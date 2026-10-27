@@ -28,6 +28,7 @@
   "module_calls": [
     {"source":  "./modules/module-scaleset?ref=master"},
     {"source":  "git@github.com:hmcts/cnp-module-vnet?ref=increase_subnets"},
+    {"source":  "git@github.com:hmcts/cnp-module-vnet?ref=azurerm-v5"},
     {"source":  "git@github.com:hmcts/terraform-module-vm-bootstrap?ref=master"}
   ]
 }
