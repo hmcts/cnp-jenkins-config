@@ -1,4 +1,4 @@
-@Library('Infrastructure@githubapp-ratelimits') _
+@Library('Infrastructure@master') _
 
 node {
   publishGithubAppRateLimits()
