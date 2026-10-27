@@ -1,0 +1,5 @@
+@Library('Infrastructure@master') _
+
+node {
+  publishGithubAppRateLimits()
+}
