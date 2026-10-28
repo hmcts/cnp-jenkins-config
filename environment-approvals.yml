@@ -266,3 +266,5 @@ prod:
   - repo: https://github.com/hmcts/pcs-frontend.git
   - repo: https://github.com/hmcts/pcs-shared-infrastructure.git
   - repo: https://github.com/hmcts/hwf-benefit-checker-api.git
+  - repo: https://github.com/hmcts/transcribe-api.git
+  - repo: https://github.com/hmcts/transcribe-web.git
