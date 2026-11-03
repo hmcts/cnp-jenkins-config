@@ -40,3 +40,6 @@ branches:
   - name: move-allowed-library-branches-config
     allowed: true
     date_deadline: "2026-12-01"
+  - name: "2.10.1"
+    allowed: true
+    date_deadline: "2026-12-01"
