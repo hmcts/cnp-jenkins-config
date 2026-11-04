@@ -271,3 +271,4 @@ prod:
   - repo: https://github.com/hmcts/transcribe-web.git
   - repo: https://github.com/hmcts/service-api-marketplace.git
   - repo: https://github.com/hmcts/web-api-marketplace.git
+  - repo: https://github.com/hmcts/amp-try-it-now.git
