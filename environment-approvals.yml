@@ -269,3 +269,5 @@ prod:
   - repo: https://github.com/hmcts/transcribe-shared-infrastructure.git
   - repo: https://github.com/hmcts/transcribe-api.git
   - repo: https://github.com/hmcts/transcribe-web.git
+  - repo: https://github.com/hmcts/service-api-marketplace.git
+  - repo: https://github.com/hmcts/web-api-marketplace.git
