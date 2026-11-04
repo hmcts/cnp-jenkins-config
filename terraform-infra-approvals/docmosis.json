@@ -1,6 +1,6 @@
 {
   "resources": [
-    {"type": "tls_private_key"}
+    {"type": "azurerm_role_assignment"}
   ],
   "module_calls": []
 }
