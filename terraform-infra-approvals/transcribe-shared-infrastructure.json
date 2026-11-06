@@ -1,6 +1,10 @@
 {
   "resources": [
     {"type": "azurerm_role_assignment"},
-    {"type": "azurerm_private_endpoint"}
+    {"type": "azurerm_private_endpoint"},
+    {"type": "azurerm_monitor_diagnostic_setting"}
+  ],
+  "module_calls": [
+    {"source":  "git@github.com:hmcts/terraform-module-log-analytics-workspace-id?ref=master"}
   ]
 }
