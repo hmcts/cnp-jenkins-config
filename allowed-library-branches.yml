@@ -37,6 +37,8 @@ branches:
     allowed: true
   - name: DTSPO-34796/smart-retry
     allowed: true
+  - name: DTSPO-34796/improve-build-recovery
+    allowed: true
   - name: "35961"
     allowed: true
   - name: move-allowed-library-branches-config
