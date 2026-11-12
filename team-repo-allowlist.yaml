@@ -1,0 +1,19 @@
+# Central ACR ownership policy for cnp-jenkins-library.
+#
+# mode applies globally to all pipelines:
+# - off: gate logs allow and does not enforce
+# - audit: gate logs deny/allow but does not block
+# - enforce: gate blocks deny decisions before ACR write operations
+mode: off
+
+allow_list:
+  # Global exceptions applied to all products.
+  global: []
+
+  # Per-product repository destination exceptions.
+  # Values must be repository destinations only (no registry hostname, no tag).
+  products:
+    recipes:
+      mode: off
+      repositories:
+        - recipes/frontend
