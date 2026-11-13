@@ -43,3 +43,5 @@ branches:
     allowed: true
   - name: move-allowed-library-branches-config
     allowed: true
+  - name: dtspo-29662-research-poc
+    allowed: true
