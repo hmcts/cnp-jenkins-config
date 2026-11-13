@@ -267,8 +267,6 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/em-hrs-ingestor.git
     deployment-enabled: true
-  - repo: https://github.com/hmcts/em-icp-api.git
-    deployment-enabled: true
   - repo: https://github.com/hmcts/em-native-pdf-annotator-app.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/em-performance.git
@@ -356,6 +354,8 @@ repositories:
   - repo: https://github.com/hmcts/finrem-shared-infrastructure.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/finrem-task-configuration.git
+    deployment-enabled: true
+  - repo: https://github.com/hmcts/finrem-wa-post-deployment-ft-tests.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/fis-bulk-scan-api.git
     deployment-enabled: true
@@ -702,8 +702,6 @@ repositories:
   - repo: https://github.com/hmcts/telerik-poc-ssr.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/template-expressjs.git
-    deployment-enabled: true
-  - repo: https://github.com/hmcts/try-cp-crime-schedulingandlisting-courtschedule.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/ts-translation-service.git
     deployment-enabled: true

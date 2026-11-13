@@ -4,6 +4,16 @@
 
 Configuration for jenkins pipeline at HMCTS
 
+## Shared library branch controls
+
+`allowed-library-branches.yml` controls which `cnp-jenkins-library` branches may be used by pipelines. Temporary branches can define an optional `date_deadline` in `YYYY-MM-DD` format; usage generates deprecation warnings before the deadline and fails after it has passed.
+
+```yaml
+- name: feature/example
+  allowed: true
+  date_deadline: "2026-12-01"
+```
+
 ## Requirements
 
 Before creating a new Jenkins organisation, check you are observing the steps to [creating a Github respository](https://hmcts.github.io/ways-of-working/new-component/github-repo.html#create-a-github-repository)
