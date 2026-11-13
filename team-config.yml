@@ -538,6 +538,15 @@ ctsc:
     build_notices_channel: "#ctsc-master-builds"
   tags:
     application: courts-tribunals-service-centre
+ctam:
+  team: "CTAM" # TODO: confirm owning team name
+  namespace: "ctam"
+  azure_ad_group: "DTS CTAM dev"
+  slack:
+    contact_channel: "#ctam-builds" # TODO: replace with the team's Slack channel
+    build_notices_channel: "#ctam-builds" # TODO: replace with the team's build notices channel
+  tags:
+    application: ctam
 rd:
   team: "Reference Data"
   namespace: "rd"
