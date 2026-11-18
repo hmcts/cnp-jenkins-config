@@ -187,6 +187,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/crime-idam-shared-infrastructure.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/ctam-jomockapi2.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/cui-ra.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/cve-dashboard-infrastructure.git
