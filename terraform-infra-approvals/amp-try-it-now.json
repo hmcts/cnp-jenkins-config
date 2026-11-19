@@ -1,0 +1,6 @@
+{
+  "resources": [
+    {"type": "azurerm_log_analytics_workspace"}
+  ],
+  "module_calls": []
+}
