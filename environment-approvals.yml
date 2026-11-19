@@ -160,6 +160,7 @@ prod:
   - repo: https://github.com/hmcts/em-shared-infrastructure.git
   - repo: https://github.com/hmcts/rpe-pdf-service.git
   - repo: https://github.com/hmcts/rpe-shared-infrastructure.git
+  - repo: https://github.com/hmcts/rota-shared-infrastructure.git
   - repo: https://github.com/hmcts/rpx-shared-infrastructure.git
   - repo: https://github.com/hmcts/rpx-xui-approve-org.git
   - repo: https://github.com/hmcts/rpx-xui-icp-api.git
