@@ -45,3 +45,5 @@ branches:
     allowed: true
   - name: dtspo-29662-research-poc
     allowed: true
+  - name: fixforjavavuln
+    allowed: true
