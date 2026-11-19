@@ -675,6 +675,8 @@ repositories:
     deployment-enabled: true
   - repo: https://github.com/hmcts/sptribs-shared-infrastructure.git
     deployment-enabled: true
+  - repo: https://github.com/hmcts/sptribs-wpaf1-prototype.git
+    deployment-enabled: true
   - repo: https://github.com/hmcts/sscs-case-loader.git
     deployment-enabled: true
   - repo: https://github.com/hmcts/sscs-ccd-case-migration.git
