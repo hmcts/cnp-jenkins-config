@@ -2,7 +2,9 @@
   "resources": [
     {"type": "azurerm_key_vault_access_policy"},
     {"type": "azurerm_key_vault_secret"},
-    {"type": "random_password"}
+    {"type": "random_password"},
+    {"type": "azurerm_log_analytics_workspace"},
+    {"type": "azurerm_log_analytics_workspace_table"}
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/cnp-module-key-vault"},
