@@ -4,7 +4,10 @@
     {"type": "azurerm_key_vault_secret"},
     {"type": "random_password"},
     {"type": "azurerm_log_analytics_workspace"},
-    {"type": "azurerm_log_analytics_workspace_table"}
+    {"type": "azurerm_log_analytics_workspace_table"},
+    {"type": "azurerm_log_analytics_workspace_table_custom_log"},
+    {"type": "azurerm_monitor_data_collection_rule"},
+    {"type": "azurerm_role_assignment"}
   ],
   "module_calls": [
     {"source": "git@github.com:hmcts/cnp-module-key-vault"},
