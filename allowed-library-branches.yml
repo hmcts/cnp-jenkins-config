@@ -9,8 +9,9 @@ branches:
     allowed: true
   - name: "2.9.1"
     allowed: true
-  - name: "2.10.0"
+  - name: "2.14.0"
     allowed: true
+    date_deadline: "2026-12-01"
   - name: library-branch-controls
     allowed: true
   - name: cve-dashboard
@@ -41,9 +42,5 @@ branches:
     allowed: true
   - name: "35961"
     allowed: true
-  - name: move-allowed-library-branches-config
-    allowed: true
   - name: dtspo-29662-research-poc
-    allowed: true
-  - name: fixforjavavuln
     allowed: true
