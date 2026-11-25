@@ -1072,3 +1072,12 @@ pvp:
     build_notices_channel: "#pvp-check-builds"
   tags:
     application: pvp
+cft-listing:
+  team: "PVP Check"
+  namespace: "cft-listing"
+  azure_ad_group: "DTS PVP Check"
+  slack:
+    contact_channel: "#pvp-check"
+    build_notices_channel: "#pvp-check-builds"
+  tags:
+    application: cft-listing
