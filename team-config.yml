@@ -1063,3 +1063,12 @@ deed-poll:
     build_notices_channel: "#adoption-tech"
   tags:
     application: deed-poll
+pvp:
+  team: "PVP Check"
+  namespace: "pvp"
+  azure_ad_group: "DTS PVP Check"
+  slack:
+    contact_channel: "#pvp-check"
+    build_notices_channel: "#pvp-check-builds"
+  tags:
+    application: pvp
