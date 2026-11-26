@@ -44,3 +44,5 @@ branches:
     allowed: true
   - name: dtspo-29662-research-poc
     allowed: true
+  - name: DTSPO-36642
+    allowed: true
