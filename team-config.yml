@@ -15,7 +15,7 @@ amp:
   slack:
     contact_channel: "#api-marketplace-tech"
     channel_id: "C09K1JUSYVA"
-    build_notices_channel: "#api-marketplace-build-notices"
+    build_notices_channel: "#amp-ci-alerts"
   tags:
     application: api-marketplace
 cpo:
